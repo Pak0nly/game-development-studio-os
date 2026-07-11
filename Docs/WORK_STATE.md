@@ -4,11 +4,11 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Complete the remaining independent encrypted offline backup portion of DEC-023 after the private GitHub remote setup and initial push.
+Prepare and validate the first Match-3 workflow test project while keeping the independent encrypted offline backup portion of DEC-023 open.
 
 ## Current Repository Status
 
-- **Fact:** The repository contains the project-independent Studio Operating System foundation and no game project yet.
+- **Fact:** The repository contains the project-independent Studio Operating System foundation and the initial `Match3WorkflowTest` project structure.
 - **Fact:** Persistent work-state and session-handover version 1 was committed as `f82ad01` (`Add persistent work state and session handover v1`).
 - **Validation result:** Immediate task continuity passed in version 1.
 - **Validation result:** Durable decision continuity failed in version 1.
@@ -23,6 +23,14 @@ Complete the remaining independent encrypted offline backup portion of DEC-023 a
 - **Fact:** The private GitHub remote is configured, and the first push completed successfully.
 - **Fact:** Local `main` tracks `origin/main`, and the local and remote states match.
 - **Open implementation item:** The independent encrypted offline backup is not yet configured because no external storage device is currently available.
+- **Fact:** `Projects/Match3WorkflowTest/` was created according to `Docs/PROJECT_TEMPLATE.md`.
+- **Fact:** The Unity project is located at `Projects/Match3WorkflowTest/Source/Match3WorkflowTest` and uses Unity 6000.3.19f1 for Windows Desktop.
+- **Validation result:** Unity licensing resolved successfully during project creation and validation.
+- **Validation result:** The project opened in batch mode, completed script compilation without compiler errors, and exited with return code 0.
+- **Validation result:** Unity 6000.3.19f1 has only Windows Standalone platform support installed. No additional platform module was added for this task.
+- **Validation result:** The automatically generated Multiplayer Center package was removed. The remaining direct package-manifest entries are built-in Unity modules.
+- **Fact:** Visual Studio Community 2022 and its Unity component are installed. Unity was instructed to use its `devenv.exe` as the external script editor.
+- **Manual validation result:** The Human Developer confirmed that `Match3WorkflowTest` opens with Unity 6000.3.19f1, shows no red Console errors, and opens C# files correctly in Visual Studio 2022.
 
 ## Completed Foundation Work
 
@@ -34,7 +42,7 @@ Complete the remaining independent encrypted offline backup portion of DEC-023 a
 
 ## Active Task
 
-Defer the independent encrypted offline backup portion of DEC-023 until a suitable separate storage device is obtained or selected.
+The initial empty Match-3 workflow test project setup and automated and manual validation are complete.
 
 ## Relevant Confirmed Decisions
 
@@ -74,7 +82,7 @@ There are currently no active assumptions.
 
 ## Next Concrete Step
 
-Obtain or select a suitable separate storage device for the independent encrypted offline backup. This portion of DEC-023 is deliberately deferred and remains open.
+Define the first narrowly scoped Match-3 implementation task.
 
 ## Relevant Sources of Truth
 

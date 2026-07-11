@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Purpose of the Current Work
 
-Continue from the completed private GitHub remote setup and first push, with the independent encrypted offline backup portion of DEC-023 still open.
+Continue from the completed initial setup and automated validation of the first Match-3 workflow test project, with the independent encrypted offline backup portion of DEC-023 still open.
 
 ## Why Version 1 Failed
 
@@ -26,6 +26,16 @@ The independent encrypted offline backup is not yet configured because no extern
 
 The completed remote configuration and first push were separately authorized. No further push or other external implementation action is authorized by those one-time approvals.
 
+The first workflow validation project now exists at `Projects/Match3WorkflowTest/Source/Match3WorkflowTest` and uses Unity 6000.3.19f1 for Windows Desktop.
+
+Unity licensing resolved successfully. Project creation, project opening, script compilation, and repeated batch-mode shutdown completed successfully with return code 0 and no detected compiler errors.
+
+Only Windows Standalone platform support is installed for Unity 6000.3.19f1. No additional platform module was added. Unity's automatically generated Multiplayer Center package was removed; the remaining direct manifest entries are built-in Unity modules.
+
+Visual Studio Community 2022 and its Unity component are installed. Unity was instructed to use Visual Studio's `devenv.exe` as the external script editor. The Human Developer manually confirmed that the project opens with Unity 6000.3.19f1 without red Console errors and that C# files open correctly in Visual Studio 2022.
+
+The accidentally generated second Unity configuration at the project-template root was removed with explicit Human Developer approval. The only valid Unity project root is `Projects/Match3WorkflowTest/Source/Match3WorkflowTest`.
+
 ## Restart Procedure
 
 1. Read `AGENTS.md`.
@@ -45,7 +55,7 @@ The completed remote configuration and first push were separately authorized. No
 
 ## Exact Next Task
 
-Obtain or select a suitable separate storage device for the independent encrypted offline backup.
+Define the first narrowly scoped Match-3 implementation task.
 
 ## Known Uncertainties
 
