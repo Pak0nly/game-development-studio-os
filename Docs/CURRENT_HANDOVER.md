@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Purpose of the Current Work
 
-Prepare version 1 of the persistent work-state and session-handover system for commit and subsequent fresh-session validation.
+Validate version 1 of the persistent work-state and session-handover system in a fresh session.
 
 ## Relevant Confirmed Decisions
 
@@ -13,22 +13,12 @@ Prepare version 1 of the persistent work-state and session-handover system for c
 - Historical session files are archived under `Sessions/`.
 - The Session Handover Protocol remains proposed and non-adopted during validation.
 
-## Files Changed or Created
-
-- Created `AGENTS.md`.
-- Created `Docs/WORK_STATE.md`.
-- Created `Docs/CURRENT_HANDOVER.md`.
-- Updated `Docs/README.md`.
-- Moved `SESSION_001.md` to `Sessions/SESSION_001.md`.
-- Moved `SESSION_002_START_PROMPT.txt` to `Sessions/SESSION_002_START_PROMPT.txt`.
-
 ## Current Status
 
-Implementation and read-only review are complete. The review found no blocking contradiction. The operational files still require final diff review and version-1 commit before the fresh-session continuity test.
+Implementation, review, and commit are complete. Version 1 was committed as `f82ad01` (`Add persistent work state and session handover v1`), and the review found no blocking contradiction.
 
 ## Unresolved Items
 
-- Review the final diff, confirm that only intended files changed, and commit version 1.
 - Run the fresh-session continuity test after the commit.
 - Validate whether the operational files remain concise, current, and sufficient across repeated sessions.
 - Gather evidence before evaluating the proposed Session Handover Protocol for governance adoption.
@@ -45,9 +35,13 @@ Implementation and read-only review are complete. The review found no blocking c
 
 ## Exact Next Task
 
-Review the final Git diff, confirm that only intended files changed, then commit version 1.
+Start a new Work task without using the previous Work-task conversation. Follow `AGENTS.md` and this handover, and perform a read-only continuity test using repository context alone. Report:
 
-After the commit, run a fresh-session continuity test by following the restart procedure without reading the old chat. Report whether the available context is sufficient and list only concrete gaps or contradictions. Do not change governance content during that test.
+1. The understood current objective.
+2. The exact next action.
+3. Any missing context.
+4. Any contradictions.
+5. Whether continuation is safe.
 
 ## Known Uncertainties
 

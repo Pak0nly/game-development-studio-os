@@ -4,14 +4,13 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Prepare version 1 of the persistent work-state and session-handover system for a fresh-session continuity test.
+Run the fresh-session continuity test for the persistent work-state and session-handover system.
 
 ## Current Repository Status
 
 - **Fact:** The repository contains the project-independent Studio Operating System foundation and no game project yet.
-- **Fact:** Version 1 of the operational work-state and handover files has been created.
-- **Fact:** Implementation and read-only review of version 1 are complete.
-- **Fact:** The version-1 changes are present in the working tree and remain uncommitted.
+- **Fact:** Persistent work-state and session-handover version 1 was committed successfully as `f82ad01` (`Add persistent work state and session handover v1`).
+- **Fact:** The working tree was clean immediately after the commit.
 
 ## Completed Foundation Work
 
@@ -22,7 +21,7 @@ Prepare version 1 of the persistent work-state and session-handover system for a
 
 ## Active Task
 
-Prepare the repository for a fresh-session continuity test.
+Perform the fresh-session continuity test.
 
 ## Confirmed Decisions
 
@@ -57,7 +56,7 @@ There are currently no active assumptions.
 
 ## Next Concrete Step
 
-Review the final Git diff and commit version 1 before starting the fresh-session continuity test.
+Start a new Work task without using the previous task conversation, follow AGENTS.md and CURRENT_HANDOVER.md, and report whether continuation is possible from repository context alone.
 
 ## Relevant Sources of Truth
 
