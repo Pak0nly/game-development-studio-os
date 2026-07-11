@@ -4,7 +4,7 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Validate Continuity Version 2 in a completely new Director chat.
+Plan the separately authorized setup of the confirmed private GitHub remote and encrypted offline backup model.
 
 ## Current Repository Status
 
@@ -16,8 +16,9 @@ Validate Continuity Version 2 in a completely new Director chat.
 - **Fact:** Continuity Version 2 was implemented and committed successfully as `bd559872a09a934d1eecdec4e377a8564f65a8d8`.
 - **Validation result:** Immediate Task Continuity: Passed.
 - **Validation result:** Durable Decision Continuity: Passed on repository level.
-- **Validation result:** New Director Chat Validation: Pending.
-- **Validation result:** Overall Continuity Version 2: Not yet finally validated.
+- **Validation result:** New Director Chat Validation: Passed.
+- **Validation result:** Overall Continuity Version 2: Passed.
+- **Fact:** DEC-023 is confirmed: GitHub private repositories are the primary managed Git remote, with an independent encrypted offline backup on a separate physical device.
 
 ## Completed Foundation Work
 
@@ -29,7 +30,7 @@ Validate Continuity Version 2 in a completely new Director chat.
 
 ## Active Task
 
-Validate Continuity Version 2 in a completely new Director chat.
+Plan the separate, authorized setup of the private GitHub remote and encrypted offline backup.
 
 ## Relevant Confirmed Decisions
 
@@ -38,12 +39,12 @@ Validate Continuity Version 2 in a completely new Director chat.
 - Local-first Git, least privilege, and approval gates: DEC-010 through DEC-014.
 - Unity automation and workflow validation direction: DEC-015 through DEC-019.
 - Later 3D pipeline direction and provider approach: DEC-020 through DEC-022.
+- Private Git remote and backup model: DEC-023.
 
 The authoritative substance and status of these decisions is recorded in `Docs/CONFIRMED_DECISIONS.md`.
 
 ## Open Decisions
 
-- DEC-023: Select the private Git remote and backup model; this is the next unresolved environment decision after continuity validation.
 - Whether repeated use provides enough evidence to evaluate or adopt a Session Handover Protocol.
 - What maintenance cadence, if any, should be formalized after validation.
 
@@ -62,10 +63,11 @@ There are currently no active assumptions.
 - The standing autonomous maintenance permission in `AGENTS.md` applies only to `Docs/WORK_STATE.md` and `Docs/CURRENT_HANDOVER.md`.
 - There is no standing write permission for other repository files.
 - All other write access is task-specific and requires explicit scope or approval.
+- No account creation, remote configuration, credential creation, installation, download, or push has been authorized.
 
 ## Next Concrete Step
 
-Generate a final Director Sync Report from the corrected committed repository state for use in a completely new Director chat.
+Separately plan and request authorization for setting up the private GitHub remote and encrypted offline backup; do not create accounts or credentials, configure a remote, install or download anything, or push without explicit authorization.
 
 ## Relevant Sources of Truth
 

@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Purpose of the Current Work
 
-Complete the final Continuity Version 2 validation in a completely new Director chat.
+Continue from the passed Continuity Version 2 validation and confirmed private remote and backup decision.
 
 ## Why Version 1 Failed
 
@@ -14,17 +14,11 @@ Immediate task continuity therefore passed, durable decision continuity failed, 
 
 ## Current Status
 
-Continuity Version 2 implementation and repository-level decision reconciliation are complete. The implementation was committed as `bd559872a09a934d1eecdec4e377a8564f65a8d8`.
+Continuity Version 2 passed immediate task continuity, durable decision continuity, authority classification, open-decision handling, and unsupported-assumption checks in a completely new Director chat.
 
-The remaining validation is a completely new Director-chat test. The final Director Sync Report must reconcile all confirmed decisions relevant to the next phase and identify anything missing, ambiguous, contradictory, or represented only in a lower-authority source.
+DEC-023 is confirmed. Studio repositories use GitHub private repositories as their primary managed Git remote while retaining local-first work and an independent encrypted offline backup on a separate physical device.
 
-The new chat must verify:
-
-- immediate task continuity
-- durable decision continuity
-- authority classification
-- open decisions
-- absence of unsupported assumptions
+No account creation, remote configuration, credential creation, installation, download, or push has been authorized. These remain separate implementation actions requiring explicit Human Developer approval.
 
 ## Restart Procedure
 
@@ -45,10 +39,8 @@ The new chat must verify:
 
 ## Exact Next Task
 
-Generate a final Director Sync Report from the corrected repository state and use it in a completely new Director chat.
+Separately plan the authorized setup of the private GitHub remote and encrypted offline backup, then request explicit Human Developer authorization before any implementation action.
 
 ## Known Uncertainties
 
-- DEC-023 remains open: select the private Git remote and backup model.
-- Continuity version 2 has not passed the fresh-Director validation test yet.
 - No maintenance cadence or completion criteria for the continuity experiment has been approved.

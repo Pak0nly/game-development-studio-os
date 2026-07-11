@@ -212,13 +212,34 @@ Proposals, assumptions, open decisions, operational status, and governance stand
 **Human confirmation source:** Director Session 002, persisted during continuity repair
 **Supersedes:** None
 
-## Open Decisions
-
 ### DEC-023 â€” Private Git Remote and Backup Model
 
-**Status:** Pending
+**Status:** Confirmed
 **Scope:** Environment
-**Confirmed decision:** Select the private Git remote and backup model.
-**Implications:** No private remote or backup model has been confirmed; local-first Git work remains in effect under DEC-010.
-**Human confirmation source:** Director Session 002, persisted during continuity repair
+**Confirmed decision:** The Studio Operating System repository and future studio repositories use GitHub private repositories as their primary managed Git remote.
+
+Local-first Git remains the standard working model. The local repository is the active development workspace. The remote provides an external Git replica, recovery capability, and a controlled integration point for future workflows.
+
+Each active repository must additionally have an independent encrypted backup stored on a separate physical storage device that is not permanently connected to the development machine.
+
+The minimum operating model is:
+
+- approved commits are pushed to the private remote at the end of each completed work session or coherent approved change set;
+- an encrypted offline backup is created at least weekly and after significant milestones;
+- backup copies must include the complete Git history;
+- recovery must be tested after initial setup and periodically thereafter;
+- a Git remote alone is not treated as a complete backup;
+- generated files, caches, temporary files, and reproducible builds remain excluded unless a separate decision explicitly includes them;
+- large binary assets, Git LFS, build archives, and non-Git asset storage require a separate evaluation when an actual project creates that need.
+
+AI Agents receive no standing access to the remote by default.
+
+Remote creation, credential creation, remote configuration, pushes, permission changes, and any future AI Agent remote access require explicit Human Developer authorization unless a narrower standing permission is adopted later.
+
+Any future AI Agent remote access must follow least privilege and should be task-specific, time-limited, and restricted to the minimum required repository and permission level.
+
+The GitHub account used for studio repositories must use strong multi-factor authentication or passkeys. Recovery credentials must be stored separately from the primary development machine.
+
+**Implications:** This decision does not authorize paid services, new tool installation, external downloads, account creation, credential creation, remote configuration, or the initial push. Those remain separate implementation actions requiring explicit Human Developer approval.
+**Human confirmation source:** Human Developer confirmation after Continuity Version 2 validation
 **Supersedes:** None
