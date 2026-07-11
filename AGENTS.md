@@ -2,22 +2,28 @@
 
 This file is the local entry point for AI agents working in this repository. The documentation index is [`Docs/README.md`](Docs/README.md).
 
-Before starting work, read [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md). Read [`Docs/CURRENT_HANDOVER.md`](Docs/CURRENT_HANDOVER.md) when continuing work from another session or when the current task depends on recent context.
+Before starting work, read [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md) and [`Docs/CONFIRMED_DECISIONS.md`](Docs/CONFIRMED_DECISIONS.md). Read [`Docs/CURRENT_HANDOVER.md`](Docs/CURRENT_HANDOVER.md) when continuing work from another session or when the current task depends on recent context.
+
+A Director or Work session must check the confirmed decisions relevant to its assigned task before planning or execution.
 
 ## Authority Order
 
 When information conflicts, use this order of authority:
 
 1. adopted Studio Operating System documents
-2. approved project documents
-3. verified repository state
-4. [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md)
-5. [`Docs/CURRENT_HANDOVER.md`](Docs/CURRENT_HANDOVER.md)
-6. current chat context
+2. approved project documents within their defined project scope
+3. [`Docs/CONFIRMED_DECISIONS.md`](Docs/CONFIRMED_DECISIONS.md)
+4. verified repository state
+5. [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md)
+6. [`Docs/CURRENT_HANDOVER.md`](Docs/CURRENT_HANDOVER.md)
+7. historical session files
+8. current chat context
 
 Proposals, assumptions, Governance Backlog items, and Parking Lot items are not adopted standards. Do not apply them as rules unless their adoption is confirmed by an authoritative document.
 
 Report unresolved contradictions, including the conflicting sources and practical impact. Do not guess which source should prevail.
+
+A Director Sync Report is incomplete if confirmed decisions relevant to the next phase are missing, ambiguous, or represented only in chat, historical session files, or the Governance Backlog.
 
 Conversation about this repository should be in German unless the Human Developer requests otherwise. Repository content, including documentation, Markdown, code comments, and project files, should be in English unless a specific project requires otherwise.
 

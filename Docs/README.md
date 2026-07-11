@@ -42,17 +42,25 @@ Stores governance ideas, engineering principles, roles, processes, risks, and op
 
 Use this document to track proposals and Parking Lot items without treating them as official rules.
 
+## Confirmed Decision Register
+
+### CONFIRMED_DECISIONS.md
+
+Records Human Developer-confirmed durable decisions that are not necessarily adopted governance standards.
+
+Adopted Studio Operating System documents remain the highest project-independent authority. Approved project documentation may override a general confirmed decision within its explicitly defined project scope. The confirmed-decision register is authoritative for confirmed decisions within their stated scope and takes precedence over operational state, handover context, historical session material, and chat context.
+
 ## Operational Continuity Documents
 
 ### WORK_STATE.md
 
-Records the concise current repository focus, active work, confirmed decisions, open decisions, risks, permissions, and next concrete step.
+Records the concise current repository focus, active work, operational projections of relevant confirmed decisions, open decisions, risks, permissions, and next concrete step.
 
 This is an operational state record, not an adopted governance standard.
 
 ### CURRENT_HANDOVER.md
 
-Provides the minimum context and exact restart procedure required for a new ChatGPT or Work session to continue without reading the old chat.
+Preserves concise transition context, restart instructions, unresolved items, and the exact next task for a new Director or Work session. The repository entry procedure is defined by `AGENTS.md`; this file supplements that procedure rather than replacing it.
 
 This is an operational handover record, not an adopted governance standard.
 
@@ -68,6 +76,14 @@ Historical handover material is stored under the repository-root `Sessions/` dir
 - `Sessions/SESSION_002_START_PROMPT.txt`
 
 These files preserve historical context. They are not official governance documents and should not override current Sources of Truth or operational state files.
+
+## Information Classes
+
+- Adopted governance defines official Studio Operating System standards.
+- Confirmed decisions record durable Human Developer decisions within their stated scope.
+- Operational state records current facts, active work, risks, permissions, and next actions.
+- Handover context preserves the minimum transition information needed between sessions.
+- Historical session material preserves prior context but is not authoritative.
 
 ## Working Rules
 

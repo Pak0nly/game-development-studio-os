@@ -4,15 +4,16 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Refine and validate the continuity system through normal project work.
+Implement and validate continuity version 2 by adding an authoritative confirmed-decision layer.
 
 ## Current Repository Status
 
 - **Fact:** The repository contains the project-independent Studio Operating System foundation and no game project yet.
-- **Fact:** Persistent work-state and session-handover version 1 was committed successfully as `f82ad01` (`Add persistent work state and session handover v1`).
-- **Fact:** The first fresh-session continuity test completed successfully.
-- **Fact:** From repository context alone, the new session reconstructed the current objective, exact next action, governance status, Git branch (`main`), clean working tree, and relevant commits (`f82ad01` and `b64c4ef`).
-- **Fact:** No blocking contradiction or required missing context was found.
+- **Fact:** Persistent work-state and session-handover version 1 was committed as `f82ad01` (`Add persistent work state and session handover v1`).
+- **Validation result:** Immediate task continuity passed in version 1.
+- **Validation result:** Durable decision continuity failed in version 1.
+- **Validation result:** Overall continuity version 1 is incomplete and not validated.
+- **Current work:** Continuity version 2 is being implemented with `Docs/CONFIRMED_DECISIONS.md` as the authoritative confirmed-decision layer.
 
 ## Completed Foundation Work
 
@@ -20,30 +21,32 @@ Refine and validate the continuity system through normal project work.
 - The Studio Dictionary, Governance Lifecycle, and Governance Backlog exist.
 - The standard high-level project template exists.
 - Historical Session 001 handover material exists under `Sessions/`.
+- The decision-continuity gap in version 1 has been analyzed.
 
 ## Active Task
 
-Prepare the next Studio Operating System setup phase.
+Implement and validate the confirmed-decision layer, including startup authority, documentation indexing, operational projection, and restart reconciliation.
 
-## Confirmed Decisions
+## Relevant Confirmed Decisions
 
-- Repository conversation is German; repository content is English.
-- `Docs/README.md` is the documentation index, and `AGENTS.md` is the local AI-agent entry point.
-- `WORK_STATE.md` records concise current state; `CURRENT_HANDOVER.md` enables continuation without the old chat.
-- Historical session files belong under `Sessions/`.
-- Builds are local artifacts and are excluded from normal Git tracking.
-- The Session Handover Protocol remains a proposed backlog item while this implementation is validated.
-- One successful continuity test is evidence of feasibility, not sufficient evidence for governance adoption.
+- Environment baselines and replacement control: DEC-001 through DEC-003.
+- Studio and agent operating model: DEC-004 through DEC-009.
+- Local-first Git, least privilege, and approval gates: DEC-010 through DEC-014.
+- Unity automation and workflow validation direction: DEC-015 through DEC-019.
+- Later 3D pipeline direction and provider approach: DEC-020 through DEC-022.
+
+The authoritative substance and status of these decisions is recorded in `Docs/CONFIRMED_DECISIONS.md`.
 
 ## Open Decisions
 
+- DEC-023: Select the private Git remote and backup model.
 - Whether repeated use provides enough evidence to evaluate or adopt a Session Handover Protocol.
 - What maintenance cadence, if any, should be formalized after validation.
 
 ## Known Risks or Blockers
 
-- State or handover content can become stale or duplicate authoritative documents.
-- Treating this version-1 experiment as adopted governance would conflict with the Governance Backlog.
+- Operational projections can become stale if they are not reconciled against `Docs/CONFIRMED_DECISIONS.md`.
+- Treating the Session Handover Protocol or detailed 3D-pipeline proposal as adopted governance would conflict with their Governance Backlog status.
 - There is no current blocker.
 
 ## Active Assumptions
@@ -58,11 +61,12 @@ There are currently no active assumptions.
 
 ## Next Concrete Step
 
-Define the local development environment, backup, and security foundation before Unity automation.
+Review and commit continuity version 2, then generate a Director Sync Report that includes decision-continuity reconciliation for a completely new Director chat.
 
 ## Relevant Sources of Truth
 
 - `Docs/README.md`
+- `Docs/CONFIRMED_DECISIONS.md`
 - `Docs/PROJECT_PRINCIPLES.md`
 - `Docs/AI_DEVELOPMENT_RULES.md`
 - `Docs/PROJECT_TEMPLATE.md`
