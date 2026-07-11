@@ -4,7 +4,7 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Plan the separately authorized setup of the confirmed private GitHub remote and encrypted offline backup model.
+Complete the remaining independent encrypted offline backup portion of DEC-023 after the private GitHub remote setup and initial push.
 
 ## Current Repository Status
 
@@ -19,6 +19,9 @@ Plan the separately authorized setup of the confirmed private GitHub remote and 
 - **Validation result:** New Director Chat Validation: Passed.
 - **Validation result:** Overall Continuity Version 2: Passed.
 - **Fact:** DEC-023 is confirmed: GitHub private repositories are the primary managed Git remote, with an independent encrypted offline backup on a separate physical device.
+- **Fact:** The private GitHub remote is configured, and the first push completed successfully.
+- **Fact:** Local `main` tracks `origin/main`, and the local and remote states match.
+- **Open implementation item:** The independent encrypted offline backup is not yet configured because no external storage device is currently available.
 
 ## Completed Foundation Work
 
@@ -30,7 +33,7 @@ Plan the separately authorized setup of the confirmed private GitHub remote and 
 
 ## Active Task
 
-Plan the separate, authorized setup of the private GitHub remote and encrypted offline backup.
+Defer the independent encrypted offline backup portion of DEC-023 until a suitable separate storage device is obtained or selected.
 
 ## Relevant Confirmed Decisions
 
@@ -52,7 +55,7 @@ The authoritative substance and status of these decisions is recorded in `Docs/C
 
 - Operational projections can become stale if they are not reconciled against `Docs/CONFIRMED_DECISIONS.md`.
 - Treating the Session Handover Protocol or detailed 3D-pipeline proposal as adopted governance would conflict with their Governance Backlog status.
-- There is no current blocker.
+- The independent encrypted offline backup cannot be configured until a suitable separate external storage device is available.
 
 ## Active Assumptions
 
@@ -63,11 +66,12 @@ There are currently no active assumptions.
 - The standing autonomous maintenance permission in `AGENTS.md` applies only to `Docs/WORK_STATE.md` and `Docs/CURRENT_HANDOVER.md`.
 - There is no standing write permission for other repository files.
 - All other write access is task-specific and requires explicit scope or approval.
-- No account creation, remote configuration, credential creation, installation, download, or push has been authorized.
+- The private GitHub remote configuration and first push were separately authorized and completed.
+- No further push, account creation, credential creation, installation, or download is authorized by the completed one-time actions.
 
 ## Next Concrete Step
 
-Separately plan and request authorization for setting up the private GitHub remote and encrypted offline backup; do not create accounts or credentials, configure a remote, install or download anything, or push without explicit authorization.
+Obtain or select a suitable separate storage device for the independent encrypted offline backup. This portion of DEC-023 is deliberately deferred and remains open.
 
 ## Relevant Sources of Truth
 

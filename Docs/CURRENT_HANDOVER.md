@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Purpose of the Current Work
 
-Continue from the passed Continuity Version 2 validation and confirmed private remote and backup decision.
+Continue from the completed private GitHub remote setup and first push, with the independent encrypted offline backup portion of DEC-023 still open.
 
 ## Why Version 1 Failed
 
@@ -18,7 +18,11 @@ Continuity Version 2 passed immediate task continuity, durable decision continui
 
 DEC-023 is confirmed. Studio repositories use GitHub private repositories as their primary managed Git remote while retaining local-first work and an independent encrypted offline backup on a separate physical device.
 
-No account creation, remote configuration, credential creation, installation, download, or push has been authorized. These remain separate implementation actions requiring explicit Human Developer approval.
+The private GitHub remote is configured, and the first push completed successfully. Local `main` tracks `origin/main`, and the local and remote states match.
+
+The independent encrypted offline backup is not yet configured because no external storage device is currently available. This portion of DEC-023 is deliberately deferred and remains open.
+
+The completed remote configuration and first push were separately authorized. No further push or other external implementation action is authorized by those one-time approvals.
 
 ## Restart Procedure
 
@@ -39,8 +43,9 @@ No account creation, remote configuration, credential creation, installation, do
 
 ## Exact Next Task
 
-Separately plan the authorized setup of the private GitHub remote and encrypted offline backup, then request explicit Human Developer authorization before any implementation action.
+Obtain or select a suitable separate storage device for the independent encrypted offline backup.
 
 ## Known Uncertainties
 
 - No maintenance cadence or completion criteria for the continuity experiment has been approved.
+- The suitable separate storage device for the encrypted offline backup has not yet been selected or obtained.
