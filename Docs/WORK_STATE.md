@@ -4,7 +4,7 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Record the successful completion of the first minimally playable Match-3 workflow test while keeping the independent encrypted offline backup portion of DEC-023 open.
+Validate the second workflow test, `SideScrollerWorkflowTest`, as a small 3D side-scrolling jump-and-run while keeping the independent encrypted offline backup portion of DEC-023 open.
 
 ## Current Repository Status
 
@@ -40,6 +40,12 @@ Record the successful completion of the first minimally playable Match-3 workflo
 - **Fact:** The immediate-mode UI now reuses one runtime-generated background texture to repaint the frame before existing text labels, preventing score and message text from visually accumulating across frames or restarts.
 - **Validation result:** The UI-only fix passed the complete deterministic logic validation and an independent Unity batch-mode load, both with return code 0 and no detected compiler errors.
 - **Manual validation result:** The Human Developer confirmed successful end-to-end Play Mode behavior, including swaps, match resolution, refill, invalid-swap rollback, score, restart, UI text repainting, and the absence of red Console errors.
+- **Fact:** The second workflow validation project was created at `Projects/SideScrollerWorkflowTest/Source/SideScrollerWorkflowTest` using Unity 6000.3.19f1 for Windows Desktop.
+- **Fact:** Phase 1 implements a single short 3D side-scrolling level built from Unity primitives, including horizontal movement, jumping, a following side camera, elevation changes, gaps, a moving platform, a horizontally moving obstacle, fall reset, start and goal markers, landing dust, goal particles, and success feedback.
+- **Fact:** The prototype uses only Unity-native primitives, solid-color runtime materials, built-in modules, and native particle systems. No external assets, downloads, additional packages, enemies, inventory, dialogue, save system, menu, additional level, textures, or Phase 2 work were added.
+- **Validation result:** Automated editor-driven structure tests passed for the player controller, following camera, moving platform, moving obstacle, goal trigger, fall-reset threshold, landing VFX, and goal VFX.
+- **Validation result:** Unity generated the scene, compiled the implementation, and completed both the validation run and an independent batch-mode project load with return code 0 and no detected compiler or unhandled errors.
+- **Manual validation result:** The Human Developer confirmed that Phase 1 passed visible Play Mode validation, including the playable level and its required gameplay elements.
 
 ## Completed Foundation Work
 
@@ -51,7 +57,7 @@ Record the successful completion of the first minimally playable Match-3 workflo
 
 ## Active Task
 
-The first minimal playable Match-3 workflow test, automated validation, and Human Developer Play Mode validation are complete.
+The second workflow test Phase 1 implementation, automated validation, and Human Developer Play Mode validation are complete.
 
 ## Relevant Confirmed Decisions
 
@@ -91,7 +97,7 @@ There are currently no active assumptions.
 
 ## Next Concrete Step
 
-Review and commit the completed first Match-3 workflow test after explicit Human Developer approval.
+Review the staged Phase 1 completion change set and create the commit only after explicit Human Developer approval.
 
 ## Relevant Sources of Truth
 

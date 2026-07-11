@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Purpose of the Current Work
 
-Continue from the successfully completed and manually validated first playable Match-3 workflow test, with the independent encrypted offline backup portion of DEC-023 still open.
+Record the successful completion of Phase 1 of the second workflow test, `SideScrollerWorkflowTest`, with the independent encrypted offline backup portion of DEC-023 still open.
 
 ## Why Version 1 Failed
 
@@ -48,6 +48,16 @@ The UI text accumulation defect was addressed without changing game rules: the e
 
 The Human Developer completed manual Play Mode validation successfully, including swaps, match resolution, refill, invalid-swap rollback, score, restart, UI text repainting, and the absence of red Console errors. The first Match-3 workflow test is complete.
 
+The second workflow validation project exists at `Projects/SideScrollerWorkflowTest/Source/SideScrollerWorkflowTest` and uses Unity 6000.3.19f1 for Windows Desktop.
+
+Phase 1 provides one short 3D side-scrolling jump-and-run level made entirely from Unity primitives. It includes A/D and arrow-key movement, Space jumping, a fixed-plane Rigidbody player, a following side camera, elevation changes, gaps, a vertically moving platform, a horizontally moving obstacle, reset to the start after falling or touching the obstacle, a clear start marker, a goal gate, landing dust, looping goal particles, and success feedback that stops player movement.
+
+No external assets, downloads, additional packages, enemies, inventory, dialogue, save system, menu, additional level, textures, or Phase 2 content were added.
+
+Automated editor-driven structure validation passed for all required gameplay components and VFX. Unity scene generation and compilation completed successfully. A separate batch-mode project load also completed with return code 0 and no detected compiler or unhandled errors.
+
+The Human Developer confirmed that Phase 1 passed visible Play Mode validation. Phase 1 of the second workflow test is complete. Staging is authorized for commit review; no commit or push is authorized yet.
+
 ## Restart Procedure
 
 1. Read `AGENTS.md`.
@@ -67,7 +77,7 @@ The Human Developer completed manual Play Mode validation successfully, includin
 
 ## Exact Next Task
 
-Review and commit the completed first Match-3 workflow test after explicit Human Developer approval.
+Review the staged Phase 1 completion change set and create the commit only after explicit Human Developer approval.
 
 ## Known Uncertainties
 
