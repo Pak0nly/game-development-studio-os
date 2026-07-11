@@ -18,6 +18,7 @@ Complete the remaining independent encrypted offline backup portion of DEC-023 a
 - **Validation result:** Durable Decision Continuity: Passed on repository level.
 - **Validation result:** New Director Chat Validation: Passed.
 - **Validation result:** Overall Continuity Version 2: Passed.
+- **Fact:** The operational definition of Autonomy Level B was confirmed by the Human Developer and adopted in `Docs/AI_DEVELOPMENT_RULES.md`.
 - **Fact:** DEC-023 is confirmed: GitHub private repositories are the primary managed Git remote, with an independent encrypted offline backup on a separate physical device.
 - **Fact:** The private GitHub remote is configured, and the first push completed successfully.
 - **Fact:** Local `main` tracks `origin/main`, and the local and remote states match.
@@ -45,6 +46,8 @@ Defer the independent encrypted offline backup portion of DEC-023 until a suitab
 - Private Git remote and backup model: DEC-023.
 
 The authoritative substance and status of these decisions is recorded in `Docs/CONFIRMED_DECISIONS.md`.
+
+The adopted operating rules for Autonomy Level B are defined in `Docs/AI_DEVELOPMENT_RULES.md`.
 
 ## Open Decisions
 

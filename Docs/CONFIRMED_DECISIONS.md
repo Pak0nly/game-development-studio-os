@@ -82,7 +82,7 @@ Proposals, assumptions, open decisions, operational status, and governance stand
 **Status:** Confirmed
 **Scope:** Workflow
 **Confirmed decision:** The initial autonomy level is B.
-**Implications:** Work begins at level B; the detailed meaning and operating rules of the level must come from applicable authoritative definitions when established.
+**Implications:** Work begins at level B. Its adopted operating rules are defined in `Docs/AI_DEVELOPMENT_RULES.md`.
 **Human confirmation source:** Director Session 002, persisted during continuity repair
 **Supersedes:** None
 

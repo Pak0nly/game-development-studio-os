@@ -16,6 +16,8 @@ Immediate task continuity therefore passed, durable decision continuity failed, 
 
 Continuity Version 2 passed immediate task continuity, durable decision continuity, authority classification, open-decision handling, and unsupported-assumption checks in a completely new Director chat.
 
+The Human Developer confirmed the operational definition of Autonomy Level B, and it is adopted in `Docs/AI_DEVELOPMENT_RULES.md`. DEC-008 points to that authoritative definition.
+
 DEC-023 is confirmed. Studio repositories use GitHub private repositories as their primary managed Git remote while retaining local-first work and an independent encrypted offline backup on a separate physical device.
 
 The private GitHub remote is configured, and the first push completed successfully. Local `main` tracks `origin/main`, and the local and remote states match.

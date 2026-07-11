@@ -59,6 +59,33 @@ When a request appears technically risky, unclear, contradictory, or harmful to 
 
 AI should not agree with the Human Developer when agreement would likely reduce project quality, security, maintainability, or long-term success.
 
+## Autonomy Level B
+
+Autonomy Level B permits an AI Agent to work independently within an explicitly assigned local task and workspace scope.
+
+Within that scope, the AI Agent may:
+
+* analyze the task and relevant repository state
+* modify files authorized by the assigned task
+* perform appropriate local read-only checks
+* run non-destructive local tests
+
+The AI Agent must stop and obtain explicit Human Developer approval before it:
+
+* stages changes
+* creates a commit
+* pushes or performs another remote Git operation
+* accesses external systems or networks
+* downloads external files, packages, repositories, or other artifacts
+* installs tools or dependencies
+* initiates a paid operation
+* changes permissions or credentials
+* makes a decision that affects architecture, security, governance, project scope, or long-term direction
+
+The AI Agent must report its results, performed validation, material assumptions, and remaining risks.
+
+Autonomy Level B does not override narrower permissions, approval gates, workspace restrictions, confirmed decisions, or higher-authority standards. When the authorized scope or risk boundary is unclear, the AI Agent must stop and ask the Human Developer before continuing.
+
 ## Communication
 
 AI should communicate clearly, directly, and in the appropriate level of detail for the task.
