@@ -4,7 +4,7 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Implement and validate continuity version 2 by adding an authoritative confirmed-decision layer.
+Validate Continuity Version 2 in a completely new Director chat.
 
 ## Current Repository Status
 
@@ -13,7 +13,11 @@ Implement and validate continuity version 2 by adding an authoritative confirmed
 - **Validation result:** Immediate task continuity passed in version 1.
 - **Validation result:** Durable decision continuity failed in version 1.
 - **Validation result:** Overall continuity version 1 is incomplete and not validated.
-- **Current work:** Continuity version 2 is being implemented with `Docs/CONFIRMED_DECISIONS.md` as the authoritative confirmed-decision layer.
+- **Fact:** Continuity Version 2 was implemented and committed successfully as `bd559872a09a934d1eecdec4e377a8564f65a8d8`.
+- **Validation result:** Immediate Task Continuity: Passed.
+- **Validation result:** Durable Decision Continuity: Passed on repository level.
+- **Validation result:** New Director Chat Validation: Pending.
+- **Validation result:** Overall Continuity Version 2: Not yet finally validated.
 
 ## Completed Foundation Work
 
@@ -25,7 +29,7 @@ Implement and validate continuity version 2 by adding an authoritative confirmed
 
 ## Active Task
 
-Implement and validate the confirmed-decision layer, including startup authority, documentation indexing, operational projection, and restart reconciliation.
+Validate Continuity Version 2 in a completely new Director chat.
 
 ## Relevant Confirmed Decisions
 
@@ -39,7 +43,7 @@ The authoritative substance and status of these decisions is recorded in `Docs/C
 
 ## Open Decisions
 
-- DEC-023: Select the private Git remote and backup model.
+- DEC-023: Select the private Git remote and backup model; this is the next unresolved environment decision after continuity validation.
 - Whether repeated use provides enough evidence to evaluate or adopt a Session Handover Protocol.
 - What maintenance cadence, if any, should be formalized after validation.
 
@@ -61,7 +65,7 @@ There are currently no active assumptions.
 
 ## Next Concrete Step
 
-Review and commit continuity version 2, then generate a Director Sync Report that includes decision-continuity reconciliation for a completely new Director chat.
+Generate a final Director Sync Report from the corrected committed repository state for use in a completely new Director chat.
 
 ## Relevant Sources of Truth
 

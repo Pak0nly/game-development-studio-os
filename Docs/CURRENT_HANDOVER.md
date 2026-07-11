@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Purpose of the Current Work
 
-Implement and validate continuity version 2 by adding the authoritative confirmed-decision layer missing from version 1.
+Complete the final Continuity Version 2 validation in a completely new Director chat.
 
 ## Why Version 1 Failed
 
@@ -14,11 +14,17 @@ Immediate task continuity therefore passed, durable decision continuity failed, 
 
 ## Current Status
 
-`Docs/CONFIRMED_DECISIONS.md` is being added as the authoritative confirmed-decision layer. Future restarts must read it and reconcile the assigned task against relevant Decision IDs before planning or execution.
+Continuity Version 2 implementation and repository-level decision reconciliation are complete. The implementation was committed as `bd559872a09a934d1eecdec4e377a8564f65a8d8`.
 
-The next Director Sync Report must reconcile all confirmed decisions relevant to the next phase and identify anything missing, ambiguous, contradictory, or represented only in a lower-authority source.
+The remaining validation is a completely new Director-chat test. The final Director Sync Report must reconcile all confirmed decisions relevant to the next phase and identify anything missing, ambiguous, contradictory, or represented only in a lower-authority source.
 
-A completely new Director chat will be used for the next validation test.
+The new chat must verify:
+
+- immediate task continuity
+- durable decision continuity
+- authority classification
+- open decisions
+- absence of unsupported assumptions
 
 ## Restart Procedure
 
@@ -39,7 +45,7 @@ A completely new Director chat will be used for the next validation test.
 
 ## Exact Next Task
 
-Review and commit continuity version 2, then generate a Director Sync Report that includes decision-continuity reconciliation for a completely new Director chat.
+Generate a final Director Sync Report from the corrected repository state and use it in a completely new Director chat.
 
 ## Known Uncertainties
 
