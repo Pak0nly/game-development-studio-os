@@ -18,6 +18,12 @@ Defines how AI Agents are expected to participate in development.
 
 Use this document to understand AI responsibilities, limits, communication behavior, code generation expectations, testing, debugging, documentation, and security rules.
 
+### PROJECT_TEMPLATE.md
+
+Defines the standard high-level structure for game projects created under the Studio Operating System.
+
+Use this document when creating or reviewing the structure of a game project. `Builds/` directories contain local playable or distributable artifacts and are intentionally excluded from normal Git tracking.
+
 ### Governance/STUDIO_DICTIONARY.md
 
 Defines the shared terminology used throughout the Studio Operating System.
@@ -35,6 +41,33 @@ Use this document when a new rule, process, role, or standard may need to become
 Stores governance ideas, engineering principles, roles, processes, risks, and open questions that may be useful but are not yet adopted standards.
 
 Use this document to track proposals and Parking Lot items without treating them as official rules.
+
+## Operational Continuity Documents
+
+### WORK_STATE.md
+
+Records the concise current repository focus, active work, confirmed decisions, open decisions, risks, permissions, and next concrete step.
+
+This is an operational state record, not an adopted governance standard.
+
+### CURRENT_HANDOVER.md
+
+Provides the minimum context and exact restart procedure required for a new ChatGPT or Work session to continue without reading the old chat.
+
+This is an operational handover record, not an adopted governance standard.
+
+## Repository Entry Point
+
+The repository-root [`AGENTS.md`](../AGENTS.md) is the entry point for local AI agents. It identifies this documentation index, defines the authority order, and directs agents to read `WORK_STATE.md` before starting work.
+
+## Session Archive
+
+Historical handover material is stored under the repository-root `Sessions/` directory:
+
+- `Sessions/SESSION_001.md`
+- `Sessions/SESSION_002_START_PROMPT.txt`
+
+These files preserve historical context. They are not official governance documents and should not override current Sources of Truth or operational state files.
 
 ## Working Rules
 
