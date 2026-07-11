@@ -1,0 +1,49 @@
+﻿# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE files
+.vscode/
+.idea/
+.vs/
+*.user
+*.suo
+
+# Secrets and local environment files
+.env
+.env.*
+*.secret
+secrets.*
+credentials.*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
+
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Unity generated files
+*.csproj
+*.sln
+*.slnx
+*.pidb
+*.booproj
+
+# Build artifacts
+*.apk
+*.aab
+*.app
+*.exe
+*.unitypackage
