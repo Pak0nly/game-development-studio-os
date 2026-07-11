@@ -4,7 +4,7 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Prepare and validate the first Match-3 workflow test project while keeping the independent encrypted offline backup portion of DEC-023 open.
+Record the successful completion of the first minimally playable Match-3 workflow test while keeping the independent encrypted offline backup portion of DEC-023 open.
 
 ## Current Repository Status
 
@@ -31,6 +31,15 @@ Prepare and validate the first Match-3 workflow test project while keeping the i
 - **Validation result:** The automatically generated Multiplayer Center package was removed. The remaining direct package-manifest entries are built-in Unity modules.
 - **Fact:** Visual Studio Community 2022 and its Unity component are installed. Unity was instructed to use its `devenv.exe` as the external script editor.
 - **Manual validation result:** The Human Developer confirmed that `Match3WorkflowTest` opens with Unity 6000.3.19f1, shows no red Console errors, and opens C# files correctly in Visual Studio 2022.
+- **Fact:** The first minimal playable implementation now provides an 8x8 board, five stone types, adjacent selection and swapping, horizontal and vertical matches of three or more, removal, collapse, refill, invalid-swap rollback, score, and restart.
+- **Fact:** Placeholder visuals are generated locally at runtime. No external assets, downloads, or additional packages were used.
+- **Validation result:** Deterministic editor-driven logic tests passed for initial-board validity, horizontal and vertical detection, valid swap resolution and scoring, invalid swap rollback, refill validity, and restart.
+- **Validation result:** The implementation compiled successfully in Unity 6000.3.19f1 and completed an independent batch-mode project load with return code 0 and no detected compiler errors.
+- **Validation result:** A domain-reload initialization defect found during visible Play Mode was corrected and the full deterministic validation reran successfully with return code 0.
+- **Validation result:** The final visible editor session loaded `Assets/Scenes/Match3.unity`, entered Play Mode, started the runtime component, and remained responsive without subsequent detected compiler or runtime exceptions.
+- **Fact:** The immediate-mode UI now reuses one runtime-generated background texture to repaint the frame before existing text labels, preventing score and message text from visually accumulating across frames or restarts.
+- **Validation result:** The UI-only fix passed the complete deterministic logic validation and an independent Unity batch-mode load, both with return code 0 and no detected compiler errors.
+- **Manual validation result:** The Human Developer confirmed successful end-to-end Play Mode behavior, including swaps, match resolution, refill, invalid-swap rollback, score, restart, UI text repainting, and the absence of red Console errors.
 
 ## Completed Foundation Work
 
@@ -42,7 +51,7 @@ Prepare and validate the first Match-3 workflow test project while keeping the i
 
 ## Active Task
 
-The initial empty Match-3 workflow test project setup and automated and manual validation are complete.
+The first minimal playable Match-3 workflow test, automated validation, and Human Developer Play Mode validation are complete.
 
 ## Relevant Confirmed Decisions
 
@@ -82,7 +91,7 @@ There are currently no active assumptions.
 
 ## Next Concrete Step
 
-Define the first narrowly scoped Match-3 implementation task.
+Review and commit the completed first Match-3 workflow test after explicit Human Developer approval.
 
 ## Relevant Sources of Truth
 

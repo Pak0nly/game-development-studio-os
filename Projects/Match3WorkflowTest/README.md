@@ -2,7 +2,7 @@
 
 ## Status
 
-Empty Unity workflow-validation project created and validated in batch mode.
+First minimally playable Unity workflow-validation project completed and validated.
 
 ## Purpose
 
@@ -49,8 +49,10 @@ Validate the governed development workflow with a deliberately simple Match-3 pr
 ## Known Risks
 
 - The Human Developer confirmed that the project opens in Unity 6000.3.19f1 without red Console errors and that C# files open correctly in Visual Studio 2022.
+- Automated validation passed for initial-board generation, horizontal and vertical matches, valid swap resolution, invalid-swap rollback, refill, score, and restart.
+- The Human Developer completed Play Mode validation of the playable Match-3 workflow test, including the UI text repaint fix.
 - The independent encrypted offline backup required by DEC-023 is still pending.
 
 ## Next Step
 
-Define the first narrowly scoped Match-3 implementation task.
+Review and commit the completed first Match-3 workflow test after explicit Human Developer approval.
