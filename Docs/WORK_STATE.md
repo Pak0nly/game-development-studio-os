@@ -4,115 +4,55 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Validate the Phase 2 visual integration for `SideScrollerWorkflowTest` while preserving the completed Phase 1 gameplay and keeping the independent encrypted offline backup portion of DEC-023 open.
+Prepare transition to a new Director chat after completing both workflow validation projects. The next major topic is preparation of a possible main project discussed in the chat `GTA 2 Neuauflage Umsetzbarkeit`; that project is not yet finalized or approved.
 
-## Current Repository Status
+## Confirmed Studio OS State
 
-- **Fact:** The repository contains the project-independent Studio Operating System foundation and the initial `Match3WorkflowTest` project structure.
-- **Fact:** Persistent work-state and session-handover version 1 was committed as `f82ad01` (`Add persistent work state and session handover v1`).
-- **Validation result:** Immediate task continuity passed in version 1.
-- **Validation result:** Durable decision continuity failed in version 1.
-- **Validation result:** Overall continuity version 1 is incomplete and not validated.
-- **Fact:** Continuity Version 2 was implemented and committed successfully as `bd559872a09a934d1eecdec4e377a8564f65a8d8`.
-- **Validation result:** Immediate Task Continuity: Passed.
-- **Validation result:** Durable Decision Continuity: Passed on repository level.
-- **Validation result:** New Director Chat Validation: Passed.
-- **Validation result:** Overall Continuity Version 2: Passed.
-- **Fact:** The operational definition of Autonomy Level B was confirmed by the Human Developer and adopted in `Docs/AI_DEVELOPMENT_RULES.md`.
-- **Fact:** DEC-023 is confirmed: GitHub private repositories are the primary managed Git remote, with an independent encrypted offline backup on a separate physical device.
-- **Fact:** The private GitHub remote is configured, and the first push completed successfully.
-- **Fact:** Local `main` tracks `origin/main`, and the local and remote states match.
-- **Open implementation item:** The independent encrypted offline backup is not yet configured because no external storage device is currently available.
-- **Fact:** `Projects/Match3WorkflowTest/` was created according to `Docs/PROJECT_TEMPLATE.md`.
-- **Fact:** The Unity project is located at `Projects/Match3WorkflowTest/Source/Match3WorkflowTest` and uses Unity 6000.3.19f1 for Windows Desktop.
-- **Validation result:** Unity licensing resolved successfully during project creation and validation.
-- **Validation result:** The project opened in batch mode, completed script compilation without compiler errors, and exited with return code 0.
-- **Validation result:** Unity 6000.3.19f1 has only Windows Standalone platform support installed. No additional platform module was added for this task.
-- **Validation result:** The automatically generated Multiplayer Center package was removed. The remaining direct package-manifest entries are built-in Unity modules.
-- **Fact:** Visual Studio Community 2022 and its Unity component are installed. Unity was instructed to use its `devenv.exe` as the external script editor.
-- **Manual validation result:** The Human Developer confirmed that `Match3WorkflowTest` opens with Unity 6000.3.19f1, shows no red Console errors, and opens C# files correctly in Visual Studio 2022.
-- **Fact:** The first minimal playable implementation now provides an 8x8 board, five stone types, adjacent selection and swapping, horizontal and vertical matches of three or more, removal, collapse, refill, invalid-swap rollback, score, and restart.
-- **Fact:** Placeholder visuals are generated locally at runtime. No external assets, downloads, or additional packages were used.
-- **Validation result:** Deterministic editor-driven logic tests passed for initial-board validity, horizontal and vertical detection, valid swap resolution and scoring, invalid swap rollback, refill validity, and restart.
-- **Validation result:** The implementation compiled successfully in Unity 6000.3.19f1 and completed an independent batch-mode project load with return code 0 and no detected compiler errors.
-- **Validation result:** A domain-reload initialization defect found during visible Play Mode was corrected and the full deterministic validation reran successfully with return code 0.
-- **Validation result:** The final visible editor session loaded `Assets/Scenes/Match3.unity`, entered Play Mode, started the runtime component, and remained responsive without subsequent detected compiler or runtime exceptions.
-- **Fact:** The immediate-mode UI now reuses one runtime-generated background texture to repaint the frame before existing text labels, preventing score and message text from visually accumulating across frames or restarts.
-- **Validation result:** The UI-only fix passed the complete deterministic logic validation and an independent Unity batch-mode load, both with return code 0 and no detected compiler errors.
-- **Manual validation result:** The Human Developer confirmed successful end-to-end Play Mode behavior, including swaps, match resolution, refill, invalid-swap rollback, score, restart, UI text repainting, and the absence of red Console errors.
-- **Fact:** The second workflow validation project was created at `Projects/SideScrollerWorkflowTest/Source/SideScrollerWorkflowTest` using Unity 6000.3.19f1 for Windows Desktop.
-- **Fact:** Phase 1 implements a single short 3D side-scrolling level built from Unity primitives, including horizontal movement, jumping, a following side camera, elevation changes, gaps, a moving platform, a horizontally moving obstacle, fall reset, start and goal markers, landing dust, goal particles, and success feedback.
-- **Fact:** The prototype uses only Unity-native primitives, solid-color runtime materials, built-in modules, and native particle systems. No external assets, downloads, additional packages, enemies, inventory, dialogue, save system, menu, additional level, textures, or Phase 2 work were added.
-- **Validation result:** Automated editor-driven structure tests passed for the player controller, following camera, moving platform, moving obstacle, goal trigger, fall-reset threshold, landing VFX, and goal VFX.
-- **Validation result:** Unity generated the scene, compiled the implementation, and completed both the validation run and an independent batch-mode project load with return code 0 and no detected compiler or unhandled errors.
-- **Manual validation result:** The Human Developer confirmed that Phase 1 passed visible Play Mode validation, including the playable level and its required gameplay elements.
-- **Fact:** Phase 2 imports five supplied PNG textures for ground, raised platforms, the moving platform, the moving obstacle, and distant ruins.
-- **Fact:** Five Built-in Standard Shader materials preserve the Phase 1 color coding as tint and are assigned by a separate Phase 2 visual component without changing Phase 1 gameplay files, colliders, physics, level structure, or movement logic.
-- **Fact:** Two static colliderless background layers use the supplied ruins texture. Player, goal, start marker, particles, and UI continue to use the Phase 1 solid-color treatment.
-- **Validation result:** Phase 2 texture import settings and material assets passed editor-driven validation.
-- **Validation result:** The unchanged Phase 1 structure tests passed after Phase 2 integration, and an independent Unity batch-mode load completed with return code 0 and no detected compiler or unhandled errors.
-- **Manual validation result:** The Human Developer confirmed that Phase 2 passed visible visual validation, including the integrated textures, materials, tint readability, and background treatment.
+- **Validation result:** Continuity Version 2 passed immediate task continuity, durable decision continuity, and new Director chat validation.
+- **Confirmed and adopted:** Autonomy Level B is active. Its binding operating rules are defined in `Docs/AI_DEVELOPMENT_RULES.md`, with DEC-008 recording the confirmed autonomy decision.
+- **Environment:** Windows 11, Unity 6000.3.19f1, Visual Studio Community 2022 with Unity support, and Windows Desktop.
+- **Git:** The private GitHub remote is configured. Local `main` and `origin/main` are synchronized at `a1765250dd00c2997ffd1f25b3855bbe73acc957`.
+- **Open implementation item:** The independent encrypted offline backup required by DEC-023 is not configured because a suitable separate physical storage device is not currently available.
 
-## Completed Foundation Work
+## Completed Workflow Tests
 
-- Project principles and AI development rules are documented.
-- The Studio Dictionary, Governance Lifecycle, and Governance Backlog exist.
-- The standard high-level project template exists.
-- Historical Session 001 handover material exists under `Sessions/`.
-- The decision-continuity gap in version 1 has been analyzed.
+- **Match3WorkflowTest:** Implementation, deterministic tests, Unity compilation, batch-mode validation, and Human Developer Play Mode validation passed.
+- **SideScrollerWorkflowTest Phase 1:** Gameplay implementation, editor-driven structure tests, Unity compilation, batch-mode validation, and Human Developer Play Mode validation passed.
+- **SideScrollerWorkflowTest Phase 2:** Texture and material integration, Phase 1 regression tests, Unity compilation, batch-mode validation, and Human Developer visual validation passed.
 
-## Active Task
+## Measured Work Consumption
 
-Phase 2 visual integration, automated regression validation, and Human Developer visual Play Mode validation are complete.
+These are approximate operational measurements supplied by the Human Developer, not adopted performance standards or governance decisions:
 
-## Relevant Confirmed Decisions
+- SideScroller Phase 1: approximately 30-35% of the five-hour work allowance.
+- SideScroller Phase 2: approximately 23 percentage points.
 
-- Environment baselines and replacement control: DEC-001 through DEC-003.
-- Studio and agent operating model: DEC-004 through DEC-009.
-- Local-first Git, least privilege, and approval gates: DEC-010 through DEC-014.
-- Unity automation and workflow validation direction: DEC-015 through DEC-019.
-- Later 3D pipeline direction and provider approach: DEC-020 through DEC-022.
-- Private Git remote and backup model: DEC-023.
+## Open Points
 
-The authoritative substance and status of these decisions is recorded in `Docs/CONFIRMED_DECISIONS.md`.
+- Configure and recovery-test the independent encrypted offline backup when suitable external storage is available.
+- Decide whether repeated usage provides enough evidence to evaluate or adopt a Session Handover Protocol.
+- Decide whether a maintenance cadence should be formalized.
+- Define the possible main project before treating it as approved scope: concept, goals, constraints, target platform, project name, repository location, and first validation milestone remain open.
 
-The adopted operating rules for Autonomy Level B are defined in `Docs/AI_DEVELOPMENT_RULES.md`.
+## Unfinalized Main Project Topic
 
-## Open Decisions
-
-- Whether repeated use provides enough evidence to evaluate or adopt a Session Handover Protocol.
-- What maintenance cadence, if any, should be formalized after validation.
-
-## Known Risks or Blockers
-
-- Operational projections can become stale if they are not reconciled against `Docs/CONFIRMED_DECISIONS.md`.
-- Treating the Session Handover Protocol or detailed 3D-pipeline proposal as adopted governance would conflict with their Governance Backlog status.
-- The independent encrypted offline backup cannot be configured until a suitable separate external storage device is available.
-- The supplied textures are permitted for this workflow test, but perfect seamless tiling is not guaranteed and requires visual review.
-
-## Active Assumptions
-
-There are currently no active assumptions.
+The chat `GTA 2 Neuauflage Umsetzbarkeit` is the next major context source for project preparation. Its historical ideas and discussion are not confirmed decisions, approved requirements, or authorization to create a project. A new Director must review that chat, separate proposals from Human Developer-confirmed intent, and request confirmation of the final project brief before setup or implementation.
 
 ## Current Permissions
 
-- The standing autonomous maintenance permission in `AGENTS.md` applies only to `Docs/WORK_STATE.md` and `Docs/CURRENT_HANDOVER.md`.
-- There is no standing write permission for other repository files.
-- All other write access is task-specific and requires explicit scope or approval.
-- The private GitHub remote configuration and first push were separately authorized and completed.
-- No further push, account creation, credential creation, installation, or download is authorized by the completed one-time actions.
+- Autonomy Level B applies within explicitly assigned local task and workspace scope.
+- No staging, commit, push, download, installation, paid operation, credential change, or external access is authorized by this handover unless separately approved.
+- Standing autonomous documentation maintenance remains limited to `Docs/WORK_STATE.md` and `Docs/CURRENT_HANDOVER.md` under the conditions in `AGENTS.md`.
 
 ## Next Concrete Step
 
-Review the staged Phase 2 completion change set and create the commit only after explicit Human Developer approval.
+In a new Director chat, review the repository entry documents and the chat `GTA 2 Neuauflage Umsetzbarkeit`, then produce a decision-separated preparation report for Human Developer confirmation. Do not create or implement the main project until its scope is finalized and explicitly authorized.
 
 ## Relevant Sources of Truth
 
+- `AGENTS.md`
 - `Docs/README.md`
 - `Docs/CONFIRMED_DECISIONS.md`
-- `Docs/PROJECT_PRINCIPLES.md`
 - `Docs/AI_DEVELOPMENT_RULES.md`
 - `Docs/PROJECT_TEMPLATE.md`
-- `Docs/Governance/STUDIO_DICTIONARY.md`
-- `Docs/Governance/GOVERNANCE_LIFECYCLE.md`
-- `Docs/Governance/GOVERNANCE_BACKLOG.md`
+- `Docs/CURRENT_HANDOVER.md`
