@@ -48,15 +48,16 @@ Read the project documents in this order:
 2. [`GDD/GDD_INDEX.md`](GDD/GDD_INDEX.md)
 3. [`GDD/16_PROTOTYPE_SCOPE.md`](GDD/16_PROTOTYPE_SCOPE.md)
 4. [`PROTOTYPE_ROADMAP.md`](PROTOTYPE_ROADMAP.md)
-5. [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md)
-6. [`RISK_REGISTER.md`](RISK_REGISTER.md)
-7. the remaining GDD modules as required
+5. [`ASSET_STYLE_PREFLIGHT_PLAN.md`](ASSET_STYLE_PREFLIGHT_PLAN.md) when planning or reviewing the first Asset and Style Preflight
+6. [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md)
+7. [`RISK_REGISTER.md`](RISK_REGISTER.md)
+8. the remaining GDD modules as required
 
 ## Document Roles
 
 ### Historical Pre-Correction Archive
 
-`Crime99.zip` is an unchanged snapshot from before the 2026-07-14 correction pass. Its contents are historical evidence only, are not part of the current 24-file Markdown set, must not be used as current authority or scope, and are excluded from the documentation-baseline commit.
+`Crime99.zip` is an unchanged snapshot from before the 2026-07-14 correction pass. Its contents are historical evidence only, are not part of the then-current 24-file Markdown correction set or the later asset-planning documents, must not be used as current authority or scope, and are excluded from the documentation baseline.
 
 ### [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md)
 
@@ -142,6 +143,12 @@ It defines:
 * final review outcomes.
 
 The roadmap does not authorise implementation.
+
+### [`ASSET_STYLE_PREFLIGHT_PLAN.md`](ASSET_STYLE_PREFLIGHT_PLAN.md)
+
+The bounded execution plan for the first Crime99 Asset and Style Preflight.
+
+It defines the proposed isolated Unity test environment, exact package categories, provisional test-only URP choice, import and reset gates, technical and visual evaluation matrix, both-camera protocol, pass/fail and exception-only stop criteria, evidence requirements, one comprehensive `Initial Execution Approval`, and one `Final Human Review`. The plan does not itself authorise purchase, download, import, installation, Unity project creation, Preflight execution, main-project transfer, architecture, staging, commit, or push.
 
 ### [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md)
 

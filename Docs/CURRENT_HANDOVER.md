@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Handover Summary
 
-The Studio Operating System foundation and both workflow validation projects remain complete and validated. The bounded Crime99 asset-strategy documentation correction and the authorised cross-document camera correction are complete as a validated 13-file staged review set. The repository remains on `main`; local `main` and `origin/main` were synchronized at `5a064204eeee5ab77d616621a1a3849e5b2c3b9b` before these changes. No purchase, download, import, installation, Unity test-environment or project creation, Asset and Style Preflight, asset production, technical integration, commit, or push is authorised.
+The Studio Operating System foundation and both workflow validation projects remain complete and validated. The Crime99 asset inventory and strategy correction are committed at `0485b0d6e9e92ee3867492a9355552b983887d4c`. The current assignment completes the final process simplification of the first Asset and Style Preflight plan and authorises exact staging of its four-document set. The repository remains on `main`; local `main` and `origin/main` were synchronized before these documentation changes. No commit, push, download, import, installation, Unity test-environment or project creation, Asset and Style Preflight execution, asset production, or technical integration is authorised.
 
 ## Confirmed Studio OS State
 
@@ -31,9 +31,9 @@ These values are operational observations, not adopted targets or governance rul
 
 The Project Brief is `Confirmed`. Prototype Scope and Prototype Roadmap are `In Review`. The Roadmap is the sole canonical source for `Gate A — Basic Control Quality` through `Gate F — Technical Viability`; Prototype Scope contains the canonical design-level rules and references the Roadmap instead of redefining gates.
 
-The current correction records the confirmed first-prototype asset strategy. The Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot` is the planned primary source, but requires separate purchase and download approval. The production principle is `Buy, reuse, adapt lightly`; `1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` receive first-priority review. Before download, import, or Unity test work, catalogue, licence/metadata review, prioritisation, and a bounded test-selection decision must occur. A later separately authorised Asset and Style Preflight may download and import only that selection into a minimal isolated Unity test environment, evaluate technical usability, both confirmed camera variants, and visual cohesion, then perform gap analysis and support the final main-prototype asset decision. The Style Slice cannot occur without this bounded test import. No generative derivation, training, or generative-reference use is permitted without separate licence review.
+The confirmed first-prototype asset strategy uses the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot` as the planned primary source and follows `Buy, reuse, adapt lightly`. `1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` are the exact required first-Preflight packages; `POLYGON Particle FX` is optional only when included in the comprehensive start approval. `ASSET_STYLE_PREFLIGHT_PLAN.md` defines the minimal representative categories, isolated project proposal, import/reset sequence, untouched-original boundary, both-camera protocol, technical matrix, provisional test-only performance and adaptation thresholds, one `Initial Execution Approval`, exception-only stops, evidence outputs, and one `Final Human Review`. No generative derivation, training, or generative-reference use is permitted.
 
-The corrected camera documents compare `Fixed Camera` and `Rotatable Camera` without preselecting either variant. Both retain fixed elevation and distance; the rotatable variant allows only free rotation around the player. Automatic, speed-based, or variable zoom, panning, and independent translation are excluded. Original Claude/Blender 3D production is deferred until after the first prototype, while remaining a later option for unique or missing project-specific assets. The separate Cyberpunk Gigapack is not a current purchase. The Gumroad coupon is reviewed only after inventory and overlap analysis. No main-project render pipeline, shader solution, import structure, or technical architecture has been selected. A Preflight would require a provisional test-only render-pipeline choice under separate authorisation, which would not define the main project.
+The camera documents compare `Fixed Camera` and `Rotatable Camera` without preselecting either variant. Both retain fixed elevation and distance; the rotatable variant allows only free rotation around the player. Automatic, speed-based, or variable zoom, panning, and independent translation are excluded. The plan proposes the installed `Unity 6000.3.19f1` and URP solely for the isolated test: recorded official rows place URP in the compatibility intersection of all three priority packages, while `Cyberpunk Port City` excludes Built-in at its listed 2021.3.6 version. This does not prove Unity 6.3 compatibility or select the main-project pipeline, shader solution, import structure, or architecture.
 
 This is still a Definition-phase documentation state, not architecture or implementation authorisation. `Crime99` is an internal working title only.
 
@@ -41,10 +41,9 @@ This is still a Definition-phase documentation state, not architecture or implem
 
 - Select suitable separate physical storage, configure the encrypted offline backup, and test recovery.
 - Continue evaluating continuity and handover practices without treating proposed protocols as adopted.
-- Obtain Human Developer review of the completed staged Crime99 asset-strategy correction and consistency follow-up.
-- Keep documentation/status drift `Triggered` until that review succeeds.
-- Obtain separate approval before any bundle purchase or download.
-- If later authorised, complete pre-download steps 1 through 4 and then obtain separate applicable authorisation for Preflight steps 5 through 8 before any asset is proposed for transfer into the main prototype.
+- Obtain Human Developer review of the exact staged four-document Preflight-plan set. The untracked ZIP is an earlier pre-simplification export and is not staged.
+- Before technical work, obtain one comprehensive `Initial Execution Approval` covering the path, Unity/URP test hypothesis, package/category boundaries, optional VFX boundary, download, isolated project creation, import, limits, reset strategy, raw-asset/provenance/Git boundaries, light adaptations, performance criteria, stop criteria, and complete regular execution.
+- If later authorised, execute only the gates and exception-stop model in `Docs/Projects/Crime99/ASSET_STYLE_PREFLIGHT_PLAN.md`; do not transfer assets into a main project without a later decision and approval.
 - Any later commit or push requires separate exact-scope approval.
 
 ## Restart Procedure
@@ -55,11 +54,11 @@ This is still a Definition-phase documentation state, not architecture or implem
 4. Read `Docs/CONFIRMED_DECISIONS.md` and task-relevant authoritative documents.
 5. Verify branch, HEAD, working tree, and `origin/main` synchronization without changing Git state.
 6. Read `Docs/Projects/Crime99/README.md`, its confirmed Project Brief, in-review Prototype Scope and Roadmap, Decision Register, Risk Register, and validation report.
-7. Review the exact 13-file staged asset-strategy and camera-correction scope and confirm that no unrelated files changed.
-8. Await Human Developer review; do not purchase, download, import, install, create a Unity test environment, run the Asset and Style Preflight or Style Slice, commit, push, promote document status, create main-project architecture, produce assets, integrate assets, or implement the project.
+7. Read `Docs/Projects/Crime99/ASSET_STYLE_PREFLIGHT_PLAN.md` and review the exact staged four-document scope; treat the untracked ZIP as an earlier pre-simplification export.
+8. Await Human Developer review; do not commit, push, download, import, install, create a Unity test environment, run the Asset and Style Preflight or Style Slice, promote document status, create main-project architecture, produce assets, integrate assets, or implement the project.
 
 ## Exact Next Task
 
-Present the completed staged Crime99 asset-strategy and authorised cross-document camera corrections for Human Developer review. Stop before purchase, download, import, installation, Unity test-environment or project creation, Preflight or Style Slice execution, commit, push, architecture, asset production, technical integration, implementation, or further documentation changes.
+Present the simplified Preflight-plan documentation, validation results, and exact staged Git state for Human Developer review. Stop before commit, push, download, import, installation, Unity test-environment or project creation, Preflight or Style Slice execution, main-project architecture, asset production, technical integration, or implementation.
 
-No further staging, commit, push, purchase, download, import, installation, external access, Unity test-environment or project creation, Asset and Style Preflight, asset production, technical integration, or architecture is authorised by this handover without separate approval.
+No commit, push, download, import, installation, external access, Unity test-environment or project creation, Asset and Style Preflight execution, asset production, technical integration, or main-project architecture is authorised by this handover without separate approval.
