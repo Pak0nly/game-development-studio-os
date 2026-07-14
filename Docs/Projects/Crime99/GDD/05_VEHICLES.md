@@ -548,36 +548,24 @@ Handbrake behaviour is failing if:
 
 Vehicle handling and camera behaviour are directly connected.
 
-The camera should:
+The prototype compares `Fixed Camera` and `Rotatable Camera` while driving.
 
-* zoom farther out when entering a vehicle;
-* increase distance with speed;
-* preserve forward visibility;
-* avoid sudden disorienting changes;
-* return closer after exiting.
+Both variants use a fixed elevation and fixed distance. Neither variant uses zoom, panning, independent camera translation, automatic distance changes, or speed-dependent distance changes. Only the `Rotatable Camera` may rotate freely around the player.
 
-The fixed world orientation remains a prototype assumption.
+Fast vehicles must remain readable and controllable with both variants. The final choice between them remains `Needs Prototype Validation`.
 
 ## Main Road Alignment
 
 The prototype’s main road runs primarily from top to bottom.
 
-This supports:
+This supports testing:
 
 * better forward visibility;
 * high-speed testing;
 * fewer horizontal screen-edge limitations;
 * clearer anticipation of traffic.
 
-## Look-Ahead
-
-A small speed-based look-ahead may be tested.
-
-It should improve visibility without:
-
-* moving the player too far from the screen centre;
-* making aiming difficult;
-* creating camera instability.
+Both camera variants must be compared on the same map. Road alignment must not bias the test so strongly toward either variant that the comparison becomes invalid.
 
 ## Vehicle Entry
 

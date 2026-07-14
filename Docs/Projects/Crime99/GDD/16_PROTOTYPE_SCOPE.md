@@ -30,6 +30,7 @@ It must validate:
 * basic city population and police reaction;
 * camera readability;
 * the visual identity “Neon over Dirt”;
+* asset usability and visual cohesion;
 * stability under the intended prototype load.
 
 The prototype is not intended to validate the full game, multiplayer infrastructure, factions, economy, story, or long-term progression.
@@ -175,7 +176,7 @@ Required vehicle features:
 * drive with keyboard; controller input is optional only if negligible in effort;
 * separate handbrake;
 * slower reverse speed;
-* speed-based camera zoom;
+* fixed camera distance during vehicle driving;
 * steal stationary vehicles;
 * steal slow-moving occupied vehicles;
 * take damage when leaving at speed;
@@ -349,7 +350,9 @@ Final camera behaviour is `Needs Prototype Validation`. Test two distinct varian
 1. `Fixed Camera`: fixed orientation, fixed elevation angle, and fixed distance.
 2. `Rotatable Camera`: freely rotatable around the player, with fixed elevation angle and fixed distance, no panning, and no independent camera translation.
 
-Do not introduce stepped 90-degree rotation. Evaluate both variants for orientation while moving on foot, aiming and combat readability, driving feel, building occlusion, readability during chaotic situations, and fit with the intended visual identity.
+The `Rotatable Camera` permits only rotation around the player. Neither variant permits panning, independent translation, automatic zoom, speed-based zoom, or variable camera distance.
+
+Do not introduce stepped 90-degree rotation. Evaluate both variants for orientation while moving on foot, aiming and combat readability, driving feel, building occlusion, readability during chaotic situations, and fit with the intended visual identity. The final choice between `Fixed Camera` and `Rotatable Camera` remains `Needs Prototype Validation`.
 
 Both variants may require a simple building-occlusion solution. This scope defines the desired readable outcome, not its technical implementation.
 
@@ -449,7 +452,15 @@ The guiding art principle is:
 
 Neon must enhance an old, dirty, industrial city rather than replace it.
 
-The prototype must show whether Store assets and AI-produced assets can be unified into one coherent visual style.
+The prototype must deliberately support both cleaner and more heavily worn or dirty areas while keeping them within one coherent city identity.
+
+The production principle through completion of the first prototype is `Buy, reuse, adapt lightly.` The planned primary source is the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot`, subject to separate purchase and download approval.
+
+`1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` are the first-priority packages for suitability review. Selected assets are treated as raw material and may receive a light shared style pass. The Style Slice and prototype must explicitly prove asset usability and visual cohesion.
+
+Before import, the licence, Unity support, render-pipeline compatibility, shaders, materials, scale, textures, LODs, colliders, pivots, modularity, performance, and adaptation effort must be documented. No generative derivation, training, or use as a generative reference is permitted without a separate licence review.
+
+Original AI-assisted 3D production with Claude and Blender is deferred until after the first prototype, while remaining a later option for unique or missing project-specific assets. The separate Cyberpunk Gigapack is not a current purchase; the Gumroad coupon is assessed only after bundle inventory and overlap review.
 
 ## 16. Characters and Asset Variety
 
@@ -587,7 +598,7 @@ The following values must remain easy to adjust during testing:
 * respawn delay;
 * score values;
 * camera distance;
-* camera zoom speed.
+* rotation sensitivity for the `Rotatable Camera`.
 
 ## 21. Stress Test
 
@@ -708,7 +719,7 @@ Do not reduce before the prototype decision:
 
 The prototype platform, internal working title, future repository separation, Unity 6.3 LTS baseline, and primary reference system are closed decisions. Exact CPU, memory, resolution, frame-rate, weaker minimum profile, camera tuning, vehicle tuning, AI behaviour, navigation outcomes, traffic behaviour, damage thresholds, and performance targets remain `Needs Prototype Validation` or require later definition.
 
-Technical architecture, package selection, networking, asset acquisition, and pipeline implementation are later separately authorised work, not decisions that this design-scope document may resolve.
+Technical architecture, exact package and import selection, networking, asset acquisition, and pipeline implementation are later separately authorised work, not decisions that this design-scope document may resolve.
 
 These decisions are not part of this GDD document.
 
@@ -738,4 +749,4 @@ Population, police, and full visual integration must not expand before movement,
 
 The prototype succeeds when it proves that the core action loop is enjoyable, readable, reproducible, and technically viable.
 
-It fails when repeated tuning cannot produce satisfying movement, vehicle control, combat impact, fair vehicle interaction, a coherent camera, or a scalable asset workflow.
+It fails when repeated tuning cannot produce satisfying movement, vehicle control, combat impact, fair vehicle interaction, a coherent camera, or usable and visually cohesive assets through the bounded sourcing and light-adaptation model.

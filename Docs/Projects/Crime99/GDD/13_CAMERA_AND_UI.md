@@ -16,7 +16,9 @@ This document defines the camera, occlusion, player highlighting, HUD, minimap, 
 
 ## Camera Direction
 
-Final camera behaviour is `Needs Prototype Validation`. Test the `Fixed Camera` and `Rotatable Camera` variants exactly as defined in [`16_PROTOTYPE_SCOPE.md`](16_PROTOTYPE_SCOPE.md#12-camera). Do not add stepped 90-degree rotation, panning, or independent camera translation.
+Final camera behaviour is `Needs Prototype Validation`. Test the `Fixed Camera` and `Rotatable Camera` variants exactly as defined in [`16_PROTOTYPE_SCOPE.md`](16_PROTOTYPE_SCOPE.md#12-camera).
+
+Both variants use fixed elevation and fixed distance. Neither permits automatic, speed-based, or variable zoom, panning, or independent camera translation. Only `Rotatable Camera` permits free rotation around the player; `Fixed Camera` keeps a fixed orientation. Do not add stepped 90-degree rotation.
 
 ## Camera Goals
 
@@ -32,73 +34,32 @@ The camera should support:
 - nostalgic genre recognition;
 - modern 3D presentation.
 
-## Fixed Orientation
+## Camera Variants
 
-Players cannot manually rotate the camera.
+### Fixed Camera
 
-Benefits:
+`Fixed Camera` keeps its orientation, elevation, and distance fixed.
 
-- stable orientation;
-- easier map learning;
-- clearer art composition;
-- simpler control expectations;
-- stronger camera-aligned road design.
+### Rotatable Camera
 
-Risks:
+`Rotatable Camera` keeps its elevation and distance fixed and allows only free rotation around the player.
 
-- foreground occlusion;
-- poor visibility on horizontal roads;
-- reduced driving anticipation;
-- constrained building design.
+It does not allow:
 
-## Map Alignment
+- panning;
+- independent translation;
+- automatic rotation;
+- distance changes tied to walking, driving, speed, or player state.
 
-The main road runs primarily from top to bottom.
+## Fixed Distance
 
-This supports the selected camera variant.
+Camera distance remains constant during each controlled test. Exact fixed angle, distance, and rotatable-camera sensitivity values may be tuned between comparison rounds, but the camera must not zoom or change distance during play.
 
-Secondary roads may vary, but the map should avoid excessive horizontal high-speed routes.
+## Shared-Map Comparison
 
-## Automatic Zoom
+Both variants must be tested on the same representative map and against the same walking, aiming, combat, driving, occlusion, and chaos scenarios.
 
-## On Foot
-
-Camera is closer to support:
-
-- aim readability;
-- character visibility;
-- nearby combat;
-- pickup recognition.
-
-## In Vehicle
-
-Camera moves farther out.
-
-## At Speed
-
-Higher speed increases distance to improve forward visibility.
-
-## Requirements
-
-Zoom should:
-
-- be smooth;
-- avoid sudden changes;
-- preserve aim readability;
-- avoid motion sickness;
-- recover quickly after exiting a vehicle.
-
-## Look-Ahead
-
-A slight speed-based look-ahead may be tested.
-
-It should show more space in the direction of travel.
-
-It must not:
-
-- push the player too close to the screen edge;
-- make aiming difficult;
-- create unstable camera motion.
+Roads and landmarks should support orientation with either variant. The comparison must not optimise the map so strongly for one variant that the result becomes biased.
 
 ## Camera Shake
 
@@ -110,7 +71,7 @@ Camera feedback may support:
 
 Shake must remain restrained.
 
-It should not reduce control or readability.
+It should not reduce control or readability, change camera distance, or introduce independent camera translation.
 
 ## Occlusion
 
@@ -381,8 +342,8 @@ Detailed accessibility scope remains open.
 - Is the player always visible?
 - Is aiming clear?
 - Is enough road visible at speed?
-- Does zoom remain comfortable?
-- Does look-ahead help?
+- Do both variants remain readable at their fixed distance?
+- Does free rotation help orientation without introducing panning or translation?
 - Do buildings hide combat?
 - Is the HUD readable during chaos?
 - Are creative callouts exciting but not obstructive?
@@ -396,7 +357,7 @@ Camera and UI succeed when:
 - high-speed driving remains readable;
 - foot combat remains precise;
 - the player is easy to locate;
-- zoom feels natural;
+- both variants remain usable at fixed elevation and distance on the same map;
 - occlusion is controlled;
 - HUD information is understandable;
 - kill feedback feels strong;
@@ -408,7 +369,8 @@ Camera and UI succeed when:
 Revise if:
 
 - traffic appears too late;
-- camera zoom disorients;
+- either variant becomes unreadable at its fixed distance;
+- the shared map unfairly favours one variant;
 - horizontal routes become unusable;
 - buildings regularly hide combat;
 - outlines become excessively bright;
@@ -421,11 +383,7 @@ Revise if:
 - camera height;
 - camera tilt;
 - camera distance;
-- foot zoom;
-- vehicle zoom;
-- speed zoom;
-- zoom smoothing;
-- look-ahead distance;
+- rotation sensitivity for `Rotatable Camera`;
 - camera shake;
 - occlusion threshold;
 - highlight intensity;

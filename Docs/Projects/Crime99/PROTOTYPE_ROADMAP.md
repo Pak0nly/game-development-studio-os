@@ -27,6 +27,7 @@ The prototype must validate:
 * basic traffic, civilians, and police;
 * camera readability;
 * the visual direction Neon over Dirt;
+* asset usability and visual cohesion;
 * technical stability under the intended prototype load.
 
 Each milestone has a clear validation purpose.
@@ -59,19 +60,42 @@ Movement, weapons, vehicles, AI, traffic, police, camera, and scoring must remai
 
 If effort becomes excessive, visual variety, UI polish, audio variety, and secondary environment content should be reduced before core feel is compromised.
 
+## Asset Pre-Production and Asset and Style Preflight — Before Prototype Production
+
+The production principle through completion of the first prototype is `Buy, reuse, adapt lightly.` The planned primary source is the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot`; purchase and download remain subject to separate Human Developer approval.
+
+Before download, import, or Unity test work, the following documentation and selection steps may be performed only under their applicable authorisation:
+
+1. **Bundle catalogue:** inventory the bundle contents and preserve source and licence references.
+2. **Licence and metadata review:** document the licence and all available metadata for Unity support, render-pipeline compatibility, shaders, materials, scale, textures, LODs, colliders, pivots, modularity, expected performance, and likely adaptation effort without downloading or importing assets.
+3. **Relevant-package prioritisation:** assess `1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` first.
+4. **Bounded test-selection decision:** identify the smallest representative asset selection that could answer the technical, camera-readability, and visual-cohesion questions. This decision does not authorise acquisition, download, import, or testing.
+
+A separately authorised Asset and Style Preflight may then perform:
+
+5. **Bounded test download and import:** download and import only the explicitly approved representative test selection into an isolated, minimal Unity test environment.
+6. **Preflight evaluation:** test technical usability, camera readability with both confirmed camera variants, and visual cohesion under `Neon over Dirt`, including deliberately cleaner and dirtier areas. Assets are raw material and may receive a light shared style pass where needed.
+7. **Asset-gap analysis:** identify unique or missing project-specific needs after the bounded test rather than assuming new production is required.
+8. **Main-prototype asset decision:** decide which packages or individual assets, if any, may later be proposed for the actual prototype. The final main-prototype selection occurs only after the Preflight and does not itself authorise a later import.
+
+The Asset and Style Preflight requires a minimal, separately authorised Unity test environment and a provisional render-pipeline selection used only for this isolated test. That provisional choice is not the complete technical architecture or final render-pipeline decision for the main project. A Style Slice cannot occur without the bounded test import in step 5.
+
+No generative derivation, training, or use of bundle assets as generative references is allowed without a separate licence review. Original AI-assisted 3D production with Claude and Blender is deferred until after the first prototype and remains a later option for unique or missing project-specific assets. The separate Cyberpunk Gigapack is not a current purchase; the Gumroad coupon is reviewed only after inventory and overlap analysis.
+
+Purchase, download, import, creation of the test environment, and execution of the Asset and Style Preflight or Style Slice each require the applicable explicit assignment. The current documentation task authorises none of those actions and does not authorise installation, technical integration, main-project architecture, or prototype production.
+
 ## Milestone 0 — Technical and Visual Preflight
 
 ### Goal
 
-Confirm that the selected camera, rendering approach, visual direction, and asset strategy can support the intended prototype.
+Compare both confirmed camera variants and confirm that the visual direction and preflighted asset strategy can support the intended prototype without selecting the main-project technical architecture.
 
 ### Included
 
 * empty prototype project;
 * separate rudimentary test area;
-* fixed elevated 3D camera;
-* no manual camera rotation;
-* basic automatic zoom;
+* `Fixed Camera` with fixed orientation, fixed elevation angle, and fixed distance;
+* `Rotatable Camera` with fixed elevation angle and fixed distance, free rotation around the player, no panning, and no independent translation;
 * one placeholder character;
 * one placeholder vehicle;
 * simple road and sidewalk;
@@ -79,14 +103,14 @@ Confirm that the selected camera, rendering approach, visual direction, and asse
 * basic neon lighting;
 * smoke or steam;
 * initial performance measurement;
-* first comparison between Store assets and AI-produced assets.
+* a bounded representative selection approved through the Asset Pre-Production Sequence.
 
 ### Questions to Answer
 
-* Is the camera suitable for fast driving?
-* Is enough of the road visible ahead?
-* Does automatic zoom work without becoming distracting?
-* Does the selected camera variant remain readable while walking and driving?
+* How do `Fixed Camera` and `Rotatable Camera` compare during walking, aiming, combat, and driving?
+* Does each variant provide enough road visibility at its fixed distance?
+* Does free rotation improve orientation without requiring panning or independent translation?
+* Does each camera variant remain readable while walking and driving?
 * Can simple geometry already communicate Neon over Dirt?
 * Can wet asphalt, neon, smoke, and grime create the intended atmosphere?
 * Can assets from different sources be visually unified?
@@ -94,11 +118,12 @@ Confirm that the selected camera, rendering approach, visual direction, and asse
 
 ### Completion Criteria
 
-* camera direction and tilt are provisionally accepted;
-* automatic zoom works for walking and driving;
+* both confirmed camera variants have been compared against the same representative scene and activities;
+* fixed elevation and distance remain readable during walking and driving;
+* at least one variant is provisionally acceptable without closing the final camera decision;
 * the scene communicates the intended visual direction;
 * no major technical blocker prevents further prototyping;
-* at least one plausible asset-production route exists;
+* the selected asset route appears usable and visually cohesive;
 * the prototype project runs reliably enough to continue.
 
 ### Explicitly Not Included
@@ -187,7 +212,7 @@ Prove that driving is enjoyable enough to become one of the project’s main gam
 * controller driving only if negligible in effort;
 * separate handbrake;
 * slower reverse speed;
-* speed-based camera zoom;
+* fixed camera distance during vehicle driving;
 * long straight road in the test area;
 * compact car;
 * saloon;
@@ -640,7 +665,7 @@ Prove that the intended final identity works during active gameplay.
 * Does neon improve atmosphere without hiding gameplay?
 * Does the player remain visible?
 * Are enemies readable?
-* Do Store and AI-produced assets appear coherent?
+* Do the selected raw-material assets appear usable and coherent after only a light shared style pass?
 * Does simple geometry appear intentional?
 * Do impacts and explosions have enough audiovisual power?
 * Does the style work during fast driving and chaos?
@@ -654,7 +679,7 @@ Prove that the intended final identity works during active gameplay.
 * wet-road reflections do not hide hazards;
 * the visual direction works during movement;
 * audio gives roadkills, weapon hits, and explosions sufficient weight;
-* the asset workflow appears reproducible.
+* the limited asset adaptation workflow appears reproducible.
 
 ## Gate E — Visual Identity
 
@@ -665,7 +690,7 @@ Stress testing may begin only if:
 * assets appear consistent;
 * the intended final quality is visible;
 * the visual approach appears scalable;
-* routine asset production does not require continuous manual human work.
+* routine asset adaptation does not require continuous manual human work.
 
 If this gate fails, revise:
 
@@ -712,7 +737,7 @@ Determine whether the complete prototype remains playable and technically viable
 * respawn delay;
 * score values;
 * camera distance;
-* camera zoom behaviour.
+* rotation sensitivity for the `Rotatable Camera`.
 
 ### Maximum Stress Scenario
 
@@ -856,7 +881,7 @@ Proceed to multiplayer planning if:
 * impacts and explosions are satisfying;
 * bots sustain replayable FFA rounds;
 * the visual identity works in motion;
-* assets can be produced consistently;
+* assets can be sourced, reused, and lightly adapted consistently;
 * the stress scenario is technically manageable.
 
 ### Iterate
@@ -892,18 +917,20 @@ Stop or replace the concept if repeated iteration cannot produce:
 
 ## Recommended Implementation Order
 
-1. Technical and visual preflight
-2. Player movement and pistol combat
-3. Vehicle handling
-4. Vehicle combat and destruction
-5. Complete FFA loop
-6. Combat bots
-7. Civilians, traffic, and police
-8. Main prototype map
-9. Visual and audio integration
-10. Live tuning and stress testing
-11. Final prototype review
-12. Decision on multiplayer planning
+1. Complete pre-download documentation and selection steps 1 through 4
+2. Obtain the applicable authorisations and complete Asset and Style Preflight steps 5 through 8
+3. Technical and visual preflight
+4. Player movement and pistol combat
+5. Vehicle handling
+6. Vehicle combat and destruction
+7. Complete FFA loop
+8. Combat bots
+9. Civilians, traffic, and police
+10. Main prototype map
+11. Visual and audio integration
+12. Live tuning and stress testing
+13. Final prototype review
+14. Decision on multiplayer planning
 
 ## Scope Reduction Order
 
@@ -948,7 +975,11 @@ It does not authorise:
 * Unity project creation;
 * technical architecture;
 * asset purchases;
-* Store downloads;
+* asset downloads or imports;
+* creation of the minimal Unity test environment;
+* provisional render-pipeline selection for the test environment;
+* Asset and Style Preflight or Style Slice execution;
+* asset production or technical integration;
 * external tool integration;
 * Blender workflow setup;
 * implementation;

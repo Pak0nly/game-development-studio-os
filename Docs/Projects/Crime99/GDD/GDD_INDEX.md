@@ -171,9 +171,10 @@ Open Decisions do not override confirmed design. They identify unresolved areas.
 
 ### Prototype Visual Systems
 
-* fixed elevated camera;
-* no camera rotation;
-* automatic zoom;
+* comparison of `Fixed Camera` and `Rotatable Camera`;
+* fixed elevation and fixed distance for both variants;
+* free rotation around the player only for `Rotatable Camera`;
+* no zoom, panning, or independent camera translation;
 * wet asphalt;
 * neon lighting;
 * smoke and steam;
@@ -255,9 +256,9 @@ These pillars remain subject to final wording review in the dedicated module.
 
 The following assumptions require practical validation:
 
-* fixed elevated camera supports high-speed driving;
-* automatic zoom provides enough forward visibility;
-* movement remains precise from the selected camera;
+* at least one of the two confirmed camera variants supports high-speed driving;
+* fixed camera distance provides enough forward visibility in both variants;
+* movement remains precise with both variants on the same map;
 * vehicle handling is fun without combat;
 * instant lethal roadkills can remain fair;
 * foot players can counter vehicles;
@@ -265,9 +266,9 @@ The following assumptions require practical validation:
 * bots can sustain an engaging FFA round;
 * traffic and police improve rather than obstruct the match;
 * chain reactions remain readable and stable;
-* Store and AI assets can be visually unified;
+* selected bundle assets can be used and lightly adapted into one coherent visual style;
 * Neon over Dirt remains readable in motion;
-* the AI-orchestrated asset pipeline can avoid routine human production;
+* the two-phase Asset Pre-Production and Asset and Style Preflight sequence can identify a usable main-prototype asset selection;
 * the complete stress scenario is technically manageable.
 
 ## Long-Term Mode Direction

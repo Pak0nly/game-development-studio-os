@@ -407,9 +407,7 @@ Higher rewards for roadkills, chain reactions, police-assisted kills, and enviro
 
 ### Description
 
-The camera is fixed, elevated, moderately tilted, and non-rotating.
-
-Fast driving may exceed the visible reaction distance.
+The prototype compares `Fixed Camera` and `Rotatable Camera`. Both use fixed elevation and fixed distance; only the rotatable variant may rotate around the player. One or both variants may become unreadable during fast driving, building occlusion, or chaotic combat.
 
 ### Consequences
 
@@ -417,14 +415,14 @@ Fast driving may exceed the visible reaction distance.
 * traffic appears too late;
 * aiming and driving conflict;
 * the main road becomes frustrating;
-* camera direction may need redesign.
+* neither camera variant may remain viable without map or readability revision.
 
 ### Mitigation
 
-* align the main road primarily top to bottom;
-* use speed-based zoom;
-* test look-ahead;
-* validate camera in Milestone 0;
+* compare both variants directly on the same representative map;
+* validate map and landmark readability without optimising the test unfairly for one variant;
+* test building occlusion and chaotic combat with both variants;
+* validate both variants in Milestone 0 and at the later visual gate;
 * keep road obstacles readable;
 * avoid dense foreground buildings;
 * tune vehicle top speed against visibility.
@@ -434,12 +432,12 @@ Fast driving may exceed the visible reaction distance.
 * players repeatedly hit unseen traffic;
 * braking distance exceeds visibility;
 * high speed feels unsafe rather than exciting;
-* camera zoom causes disorientation;
-* horizontal road sections are consistently harder to read.
+* one variant repeatedly loses the player or incoming threats;
+* buildings or effects make either variant consistently unreadable.
 
 ### Failure Boundary
 
-If camera and vehicle speed remain incompatible after repeated testing, reconsider tilt, zoom, look-ahead, or fixed orientation.
+If neither variant remains readable after repeated testing, reconsider the exact fixed angle and distance values, map readability, occlusion treatment, vehicle speed, or the project camera direction through explicit Human Developer review.
 
 ## R-011 — Buildings Obscure Gameplay
 
@@ -880,10 +878,11 @@ A vehicle, traffic, AI, VFX, or city package may become deeply embedded.
 
 ### Mitigation
 
-* research before purchase;
+* catalogue and assess the planned bundle before any import;
+* document licence, Unity support, render-pipeline compatibility, shaders, materials, scale, textures, LODs, colliders, pivots, modularity, performance, and adaptation effort;
 * prefer modular packages;
 * isolate third-party dependencies;
-* test in a small branch or test project;
+* validate only a bounded representative selection in the separately authorised Asset and Style Preflight;
 * document package ownership and version;
 * avoid modifying vendor code unless necessary.
 
@@ -896,7 +895,7 @@ A vehicle, traffic, AI, VFX, or city package may become deeply embedded.
 
 ## Asset and Production Risks
 
-## R-024 — Store and AI Assets Do Not Match
+## R-024 — Bundle Assets Do Not Form a Coherent Visual Library
 
 **State:** Open
 **Probability:** High
@@ -904,7 +903,7 @@ A vehicle, traffic, AI, VFX, or city package may become deeply embedded.
 
 ### Description
 
-Assets may differ in:
+Assets within the planned primary bundle may be usable individually but differ in:
 
 * scale;
 * proportions;
@@ -928,7 +927,9 @@ Assets may differ in:
 * limit colour palette;
 * use consistent roughness and metallic values;
 * apply unified dirt and wear;
-* validate through a Style Slice;
+* treat the bundle as raw material and apply only a light shared style pass where needed;
+* preserve deliberately cleaner and dirtier areas within the `Neon over Dirt` direction;
+* validate usability and cohesion through the bounded, separately authorised Asset and Style Preflight;
 * reject sources requiring excessive repair.
 
 ### Trigger Indicators
@@ -946,7 +947,7 @@ Assets may differ in:
 
 ### Description
 
-The project requires AI-orchestrated production without routine manual human asset work.
+Original AI-assisted 3D production with Claude and Blender is deferred until after the first prototype. If later activated for unique or missing project-specific assets, it may still require substantial human production.
 
 Generated assets may still require:
 
@@ -967,11 +968,12 @@ Generated assets may still require:
 
 ### Mitigation
 
-* validate pipeline before large production;
+* do not activate this pipeline during the first prototype;
+* validate the pipeline before any later large production;
 * define game-ready acceptance criteria;
 * assign AI correction passes;
 * prefer modular reusable assets;
-* use Store assets where more efficient;
+* use suitable purchased assets where more efficient;
 * measure correction effort per asset;
 * stop using sources that repeatedly fail.
 
@@ -1077,9 +1079,10 @@ Multiple packages may be purchased before their usefulness is proven.
 ### Mitigation
 
 * define purchase limits;
-* research complete packages first;
-* compare packages with AI alternatives;
-* validate demos and documentation;
+* require separate approval before purchasing or downloading the planned Humble Bundle;
+* complete bundle inventory, overlap review, and gap analysis before considering additions;
+* do not currently purchase the separate Cyberpunk Gigapack;
+* evaluate the Gumroad coupon only after inventory and overlap review;
 * purchase only against a specific prototype need.
 
 ### Trigger Indicators
@@ -1308,26 +1311,26 @@ Bots enable solo play and testing, but commercial success may still depend on sa
 
 ### Description
 
-All 24 Crime99 Markdown files are currently staged for the planned documentation-baseline commit but have not been committed. There is therefore still no versioned authority baseline or durable review history. `Crime99.zip` remains untracked, unstaged, and excluded from the commit.
+The Crime99 Markdown baseline is versioned, but the current asset-strategy and camera correction is staged as an exact 13-file Markdown review set and remains uncommitted. There is no reviewed versioned authority baseline for this correction until a separately authorised commit succeeds.
 
 ### Mitigation
 
 * complete Human Developer review;
-* preserve one coherent 24-file Crime99 Markdown baseline plus the two authorised Studio OS continuity documents;
-* keep `Crime99.zip` outside the staged scope;
-* verify the exact staged scope and cached diff;
+* keep the correction limited to the authorised documentation scope;
+* review the complete staged diff and consistency evidence;
+* verify the exact staged file scope and keep the working tree free of additional changes;
 * request separate commit authorisation.
 
 ### Trigger Indicators
 
-* the staged baseline remains uncommitted;
+* the staged correction remains unreviewed;
 * the staged scope changes without review;
-* `Crime99.zip` enters the staged change set;
+* unstaged changes or unrelated files enter the review set;
 * later sessions cannot distinguish reviewed content from local drafts.
 
 ### Review Point
 
-After Human Developer review of the staged baseline and again after any separately authorised commit. This risk is fully resolved only after the baseline commit succeeds and its exact contents are verified.
+After Human Developer review of this staged correction and again after any separately authorised commit. This risk is fully resolved for the correction only after that commit succeeds and its exact contents are verified.
 
 ## R-037 — Decision and Status Drift
 
@@ -1364,18 +1367,21 @@ At every documentation review and status change.
 
 ### Description
 
-Assets, music, signs, logos, generated content, or source files may lack adequate licence and provenance evidence.
+Assets, music, signs, logos, generated content, or source files may lack adequate licence and provenance evidence, or bundle content may be used for generative derivation, training, or as a generative reference without confirming that the licence permits it.
 
 ### Mitigation
 
 * require traceable source, licence, transformation, and acceptance records;
+* document the full pre-import asset checklist;
+* prohibit generative derivation, training, and generative-reference use until a separate licence review permits the exact use;
 * reject ambiguous material;
 * preserve separate approval for acquisition and external operations.
 
 ### Trigger Indicators
 
 * a source or licence cannot be verified;
-* generated or modified material lacks an audit trail.
+* generated or modified material lacks an audit trail;
+* an asset is proposed for training, derivation, or generative-reference use without specific licence evidence.
 
 ### Review Point
 
@@ -1520,7 +1526,7 @@ The highest current risks are:
 3. camera-variant compatibility;
 4. foot-versus-vehicle fairness;
 5. combat-bot complexity;
-6. AI asset-pipeline viability;
+6. bundle-asset usability and visual cohesion;
 7. technical stability under combined simulation load.
 
 The roadmap mitigates these risks only if milestone gates are enforced.

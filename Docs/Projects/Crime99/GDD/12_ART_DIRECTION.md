@@ -36,6 +36,8 @@ Neon enhances the city.
 
 It does not replace dirt, age, or criminal atmosphere.
 
+The city should contain deliberately different maintenance states. Cleaner, controlled, or recently renovated areas may sit beside heavily worn, dirty, and industrial areas, while both remain recognisably part of the same `Neon over Dirt` world.
+
 ## Visual Identity
 
 The intended style is:
@@ -312,9 +314,19 @@ Consistency is more important than the specific language.
 
 ## Asset Sources
 
-Store assets and AI-produced assets are evaluated equally during the prototype.
+Until completion of the first prototype, the production principle is:
 
-The preferred source is determined by:
+> Buy, reuse, adapt lightly.
+
+The planned primary source is the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot`. It may be acquired and used only after separate Human Developer approval for purchase and download.
+
+The bundle is a raw-material library, not a ready-made project style. The first-priority packages for catalogue and suitability review are:
+
+- `1950s NYC`;
+- `Cyberpunk Port City`;
+- `Fuyoh Cyberpunk Diner`.
+
+Selection is determined by:
 
 - efficiency;
 - consistency;
@@ -325,22 +337,28 @@ The preferred source is determined by:
 - licence;
 - performance.
 
-## Later Asset Evaluation Scope
+Before any import, each candidate package or asset category must document:
 
-No package, source, purchase, download, subscription, or installation is authorised or preferred by this document. A separately authorised evaluation may compare complete and specialised options for:
+- licence and permitted uses;
+- Unity support;
+- render-pipeline compatibility without selecting a pipeline here;
+- shaders and materials;
+- scale;
+- textures;
+- LODs;
+- colliders;
+- pivot points;
+- modularity;
+- performance implications;
+- expected adaptation effort.
 
-- modular city packages;
-- vehicle foundations;
-- humanoid animations;
-- traffic systems;
-- VFX;
-- wet-road materials;
-- lighting systems;
-- UI foundations.
+No bundle asset may be used for generative derivation, training, or as a generative reference without a separate licence review for that exact use.
+
+The separate Cyberpunk Gigapack is not a current purchase. The Gumroad coupon is evaluated only after bundle inventory and overlap review.
 
 ## Deferred AI-Assisted Production Evaluation
 
-The confirmed Studio OS direction supports a later project-specific Claude/Blender evaluation. Its acceptance evidence, provenance requirements, correction cost, and Human Developer review points remain to be defined before any setup or use. Other possible production categories include:
+Original AI-assisted 3D production with Claude and Blender is deferred until after the first prototype. It remains a later option for unique or missing project-specific assets identified by the Asset-Gap Analysis. Its acceptance evidence, provenance requirements, correction cost, and Human Developer review points remain to be defined before any setup or use. Other possible later production categories include:
 
 - ChatGPT or image generation for 2D;
 - procedural variation;
@@ -384,7 +402,7 @@ If an asset category repeatedly requires manual repair, the production method sh
 
 ## Style Unification
 
-All sources must pass through a shared visual layer.
+Selected assets remain raw material and receive a light shared style pass where needed to create one visual language.
 
 Requirements include:
 
@@ -421,6 +439,7 @@ Validate:
 - material response;
 - lighting;
 - atmosphere;
+- asset usability;
 - visual cohesion.
 
 ## Stage 2
@@ -457,7 +476,7 @@ Proceed when:
 - vehicles remain readable;
 - simple geometry looks intentional;
 - wet roads do not hide gameplay;
-- asset production is repeatable;
+- asset selection and light adaptation are repeatable;
 - human manual correction remains exceptional.
 
 ## Visual Failure Conditions
@@ -469,7 +488,7 @@ Revise direction when:
 - neon creates visual noise;
 - reflections hide hazards;
 - vehicles and characters use incompatible proportions;
-- AI assets require routine manual fixes;
+- selected source assets require extensive or routine manual fixes;
 - the camera cannot show the intended detail.
 
 ## Scope Reduction Order
@@ -499,10 +518,11 @@ This document defines art direction.
 It does not authorise:
 
 - asset purchases;
+- asset downloads, imports, or installation;
 - asset generation;
 - Blender integration;
 - Style Slice production;
-- package downloads;
+- technical integration;
 - production work.
 
 Those actions require separate approval.

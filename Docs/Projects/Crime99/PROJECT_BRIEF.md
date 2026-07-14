@@ -216,6 +216,20 @@ Vehicles receive more visual and audio detail than most other prototype assets b
 
 The project is intended to use the applicable Studio OS AI-production governance. This brief adds no architecture, tool, purchase, download, installation, or external-call authority.
 
+Until the first prototype is complete, the production principle is:
+
+> Buy, reuse, adapt lightly.
+
+The planned primary asset source for the first prototype is the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot`. Acquisition and use require separate Human Developer approval for purchase and download.
+
+The bundle is treated as a raw-material library rather than a ready-made visual identity. `1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` receive first-priority suitability review. Any selected assets may receive a light shared style pass where needed to support `Neon over Dirt`, including deliberately cleaner and dirtier areas within one coherent city.
+
+Before any import, the licence, Unity support, render-pipeline compatibility, shaders, materials, scale, textures, LODs, colliders, pivots, modularity, performance, and adaptation effort must be documented. No generative derivation, training, or use as a generative reference is permitted without a separate licence review.
+
+Original AI-assisted 3D production with Claude and Blender is deferred until after the first prototype. It remains a later option for unique or missing project-specific assets.
+
+The separate Cyberpunk Gigapack is not a current purchase. The Gumroad coupon will be evaluated only after bundle inventory and overlap have been assessed.
+
 Human involvement remains responsible for:
 
 * creative direction;
@@ -225,7 +239,7 @@ Human involvement remains responsible for:
 * approval;
 * final design decisions.
 
-Any later asset-source or AI-assisted pipeline evaluation must preserve traceable code and asset provenance, project-specific acceptance evidence, and Human Developer review at defined acceptance points. Purchases, subscriptions, downloads, installations, and paid external calls require separate approval.
+Asset usability and visual cohesion are explicit Style Slice and prototype goals. Any later asset-source or AI-assisted pipeline evaluation must preserve traceable code and asset provenance, project-specific acceptance evidence, and Human Developer review at defined acceptance points. Purchases, subscriptions, downloads, installations, and paid external calls require separate approval.
 
 ## Platform Direction
 
@@ -258,8 +272,8 @@ The project is not intended to be:
 3. Validate fair interaction between foot players and vehicles.
 4. Validate explosions, destruction, and creative kills.
 5. Validate a complete Free-for-All round against bots.
-6. Compare the two camera variants and validate the visual identity.
-7. Validate the asset-production approach.
+6. Catalogue and assess the planned bundle, then validate a limited Asset and Style Slice.
+7. Compare the two camera variants and validate asset usability, visual cohesion, and the visual identity.
 8. Validate technical stability under the intended prototype load.
 9. Only then evaluate real multiplayer development.
 10. Expand toward Team Deathmatch and Faction War after the foundation succeeds.
@@ -273,6 +287,8 @@ It does not authorise:
 * Unity project creation;
 * technical architecture;
 * asset purchases;
+* asset downloads or imports;
+* asset production or technical integration;
 * external tool integration;
 * production implementation;
 * network development.
