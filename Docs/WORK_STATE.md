@@ -4,7 +4,7 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Prepare transition to a new Director chat after completing both workflow validation projects. The next major topic is preparation of a possible main project discussed in the chat `GTA 2 Neuauflage Umsetzbarkeit`; that project is not yet finalized or approved.
+Present the staged Crime99 documentation baseline candidate for Human Developer review. Exactly 26 authorised Markdown files are staged; the historical ZIP remains untracked and unstaged. The project remains in Definition; commit, push, technical architecture, and implementation are not authorised.
 
 ## Confirmed Studio OS State
 
@@ -32,11 +32,14 @@ These are approximate operational measurements supplied by the Human Developer, 
 - Configure and recovery-test the independent encrypted offline backup when suitable external storage is available.
 - Decide whether repeated usage provides enough evidence to evaluate or adopt a Session Handover Protocol.
 - Decide whether a maintenance cadence should be formalized.
-- Define the possible main project before treating it as approved scope: concept, goals, constraints, target platform, project name, repository location, and first validation milestone remain open.
+- Review the follow-up-corrected `Docs/Projects/Crime99/` documentation set. Prototype Scope and Roadmap remain `In Review`.
+- Decide the active Crime99 product questions recorded in its decision register, including public title, original identity anchors, future project path, and weaker minimum test profile.
+- The 24 Crime99 Markdown files and the two operational continuity documents are staged as the documentation-baseline candidate. No versioned authority baseline exists until a separately authorised commit succeeds.
+- The historical `Docs/Projects/Crime99/Crime99.zip` archive is excluded from any later proposed documentation-baseline commit and must remain unstaged.
 
-## Unfinalized Main Project Topic
+## Crime99 Definition State
 
-The chat `GTA 2 Neuauflage Umsetzbarkeit` is the next major context source for project preparation. Its historical ideas and discussion are not confirmed decisions, approved requirements, or authorization to create a project. A new Director must review that chat, separate proposals from Human Developer-confirmed intent, and request confirmation of the final project brief before setup or implementation.
+The Human Developer confirmed the Crime99 Project Brief and authorised a documentation-only correction assignment. The corrected set records the confirmed project decisions, canonical gate sequence, prototype boundary, open and deferred decisions, and risk updates. `Crime99` remains an internal working title. The correction pass does not authorise a project directory, repository, architecture, Unity project, implementation, code, assets, downloads, installations, purchases, staging, commit, or push.
 
 ## Current Permissions
 
@@ -46,7 +49,7 @@ The chat `GTA 2 Neuauflage Umsetzbarkeit` is the next major context source for p
 
 ## Next Concrete Step
 
-In a new Director chat, review the repository entry documents and the chat `GTA 2 Neuauflage Umsetzbarkeit`, then produce a decision-separated preparation report for Human Developer confirmation. Do not create or implement the main project until its scope is finalized and explicitly authorized.
+Human Developer reviews the staged Crime99 documentation diff and either requests revisions or separately authorises a commit. Do not commit, push, create, architect, or implement the project without separate authorisation.
 
 ## Relevant Sources of Truth
 

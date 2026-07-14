@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Handover Summary
 
-The Studio Operating System foundation and both workflow validation projects are complete and validated. The repository is on `main` at `a1765250dd00c2997ffd1f25b3855bbe73acc957`; local `main` and `origin/main` match, and the working tree was clean when this handover was prepared.
+The Studio Operating System foundation and both workflow validation projects remain complete and validated. The Crime99 documentation follow-up correction is complete and staged for Human Developer review. The repository remains on `main`; exactly 26 authorised Markdown files are staged. The historical `Docs/Projects/Crime99/Crime99.zip` archive remains the only untracked file and is not staged.
 
 ## Confirmed Studio OS State
 
@@ -27,19 +27,22 @@ Approximate work-consumption measurements supplied by the Human Developer:
 
 These values are operational observations, not adopted targets or governance rules.
 
-## Next Major Topic: Not Yet Finalized
+## Crime99 Documentation State
 
-The next intended discussion concerns preparation of the possible main project from the chat `GTA 2 Neuauflage Umsetzbarkeit`.
+The Project Brief is `Confirmed`. Prototype Scope and Prototype Roadmap are `In Review`. The Roadmap is the sole canonical source for `Gate A — Basic Control Quality` through `Gate F — Technical Viability`; Prototype Scope contains the canonical design-level rules and references the Roadmap instead of redefining gates.
 
-This is not yet a finalized or approved project. Historical chat ideas must not be represented as confirmed decisions, approved requirements, or implementation authorization. The next Director must review that chat, classify confirmed intent separately from proposals and assumptions, identify missing decisions, and obtain Human Developer confirmation of a final project brief before creating files or beginning implementation.
+The follow-up correction removed four residual Van/Pickup formulations—three from the vehicle module and one from the design-pillars module—corrected the validation report's earlier overstatement, and separated Parking Lot document maturity from register state. Renewed checks found no contradictory Van/Pickup wording outside the correction evidence, broken relative links, or status-field defects. `git diff --check` produced no output.
 
-At minimum, the project concept, scope, target platform, technical boundaries, project name, repository location, and first milestone still require explicit confirmation.
+This is still a Definition-phase documentation state, not architecture or implementation authorisation. `Crime99` is an internal working title only.
 
 ## Open Items
 
 - Select suitable separate physical storage, configure the encrypted offline backup, and test recovery.
 - Continue evaluating continuity and handover practices without treating proposed protocols as adopted.
-- Finalize the possible main project through a decision-separated preparation report.
+- Obtain Human Developer review of the corrected Crime99 documentation.
+- Keep documentation/status drift `Triggered` until that follow-up review succeeds.
+- The staged Crime99 documentation remains a baseline candidate, not a versioned authority baseline; any commit requires separate explicit approval after review.
+- The historical `Docs/Projects/Crime99/Crime99.zip` archive is excluded from any later proposed documentation-baseline commit and must remain unstaged.
 
 ## Restart Procedure
 
@@ -48,12 +51,12 @@ At minimum, the project concept, scope, target platform, technical boundaries, p
 3. Read this file.
 4. Read `Docs/CONFIRMED_DECISIONS.md` and task-relevant authoritative documents.
 5. Verify branch, HEAD, working tree, and `origin/main` synchronization.
-6. Review the chat `GTA 2 Neuauflage Umsetzbarkeit` as non-authoritative context.
-7. Separate confirmed intent, proposals, assumptions, and open decisions.
-8. Ask the Human Developer to confirm the final project brief before setup or implementation.
+6. Read `Docs/Projects/Crime99/README.md`, its confirmed Project Brief, in-review Prototype Scope and Roadmap, Decision Register, Risk Register, and validation report.
+7. Verify the exact 26-file staged scope and confirm that `Crime99.zip` remains untracked and unstaged.
+8. Await Human Developer review; do not commit, push, promote document status, create architecture, or implement the project.
 
 ## Exact Next Task
 
-Prepare the still-unfinalized main project for a decision: review the named chat, produce a compact scope-and-feasibility report, and request confirmation of all decisions that materially affect project creation or implementation.
+Present the staged Crime99 documentation baseline candidate for Human Developer review and address any requested documentation revisions. Stop before commit, push, architecture, project creation, or implementation.
 
 No staging, commit, push, download, installation, external access, or project creation is authorized by this handover without separate approval.
