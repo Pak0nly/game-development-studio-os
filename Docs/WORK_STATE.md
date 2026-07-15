@@ -4,7 +4,7 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Preserve the Human Developer-confirmed local Crime99 main-project baseline and record its backup status. Project creation and the one-time local initial commit are complete and accepted. Creation of the required private GitHub repository could not be performed because the available GitHub connector exposes no repository-creation operation and the GitHub CLI is not installed; no Crime99 remote was configured and no push was attempted. No asset import, Gate A, or gameplay implementation is authorised.
+Crime99 Gate A basic controls are implemented, objectively validated, accepted by Human review, and pushed in the separate project repository. Air Dodge is blocked: dodge can start only while grounded, and blocked airborne input consumes neither stamina nor cooldown. Gate B vehicle feel is now explicitly authorised within the existing minimal-custom architecture and governance boundaries. No Store-asset adoption, purchase, download, import, or additional installation is authorised.
 
 ## Confirmed Studio OS State
 
@@ -20,38 +20,41 @@ Preserve the Human Developer-confirmed local Crime99 main-project baseline and r
 - **SideScrollerWorkflowTest Phase 1:** Gameplay implementation, editor-driven structure tests, Unity compilation, batch-mode validation, and Human Developer Play Mode validation passed.
 - **SideScrollerWorkflowTest Phase 2:** Texture and material integration, Phase 1 regression tests, Unity compilation, batch-mode validation, and Human Developer visual validation passed.
 
-## Crime99 Main-Project Setup State
+## Crime99 Gate A State
 
-- Separate local repository: `Projects/Crime99/`, branch `main`, no remote.
+- Separate local repository: `Projects/Crime99/`, branch `main`, remote `origin` at `https://github.com/Pak0nly/crime99.git`.
 - Sole Unity project root: `Projects/Crime99/Source/Crime99/`.
 - Baseline: Unity `6000.3.19f1`, URP `17.3.0`, Windows Standalone 64-bit.
-- Validation scene: `Assets/_Crime99/Scenes/Bootstrap/BaselineValidation.unity`, containing only a validation camera and directional light.
-- Automated result: final configuration/compile batch run passed; separate scene-load batch run passed; all four EditMode structure tests passed.
+- Gate A scene: `Assets/_Crime99/Scenes/TestAreas/GateAControls.unity`.
+- Implemented scope: normalized movement, independent mouse aim, fixed elevated follow camera, sprint/stamina, jump, dodge, hitscan pistol, magazine/reserve/reload rules, damage, six targets, primitive feedback, test arena, and minimal HUD.
+- Automated result after Air-Dodge closure: final compilation/configuration passed; targeted `16/16` EditMode and `3/3` PlayMode tests passed; full `20/20` EditMode and `3/3` PlayMode suites passed; separate scene-load validation passed; Windows Development Build and built-player start passed; visible Editor Play Mode entered and exited cleanly.
 - Local initial commit: `76724a9103e3bf2b072f4e36f419b1f7802f354c`, subject `Initialize Crime99 Unity project baseline`, exactly 86 text files.
 - Baseline acceptance: confirmed by the Human Developer on 2026-07-15.
-- Repository status: clean `main`; the requested private repository URL is `https://github.com/Pak0nly/crime99`, but repository creation was unavailable through the authorised local tooling. No remote was configured and no Crime99 push was attempted.
-- Scope boundary: no gameplay implementation, Store asset import, third-party raw asset, download, purchase, installation, Git LFS, remote, push, or Gate A work occurred.
+- Amended Gate A commit: `0f12673086959765978311ca6f65307065340387`, subject `Implement Crime99 Gate A basic controls`, exactly 53 files.
+- Repository status at Gate B authorisation: clean `main`; local `HEAD` and `origin/main` both point to pushed Gate A commit `0f12673086959765978311ca6f65307065340387`.
+- Review status: Human review passed the listed Gate A functions. The reported airborne-dodge defect is corrected: dodge may start only while grounded, with no cost or cooldown on a blocked airborne request. Automated closure evidence passes; only an optional brief Human confirmation of that corrected input case remains.
+- Scope boundary through Gate A: no Store asset, third-party raw asset, purchase, download, installation, Git LFS, Gate B, vehicle, bot, match, or additional gameplay work occurred.
 
 ## Open Points
 
 - Configure and recovery-test the independent encrypted offline backup when suitable external storage is available.
 - Decide whether repeated usage provides enough evidence to evaluate or adopt a Session Handover Protocol.
 - Decide whether a maintenance cadence should be formalized.
-- Create `Pak0nly/crime99` manually as an empty private GitHub repository, then configure `origin` and push only the confirmed baseline commit under a separately verified continuation.
-- Any asset acquisition/import, Gate A, or gameplay work requires separate explicit authorisation.
+- Optionally confirm the corrected airborne-dodge input case in a short Human Play Mode check.
+- Gate B is authorised only for the defined vehicle-feel slice. Store-asset adoption, asset acquisition/import, Gate C, and unrelated gameplay remain unauthorised.
 - `1950s NYC` and `Fuyoh Cyberpunk Diner` remain `Suitable with Light Adaptation`; `Cyberpunk Port City` remains `Needs Further Testing`; no package is a `Potential Release Asset`.
 
 ## Current Permissions
 
 - Autonomy Level B applies within explicitly assigned local task and workspace scope.
-- The Crime99 main-project setup assignment is complete and its baseline is accepted; its one-time local staging and initial-commit authority has been consumed.
-- This backup assignment authorised creation of a private Crime99 repository and the first push, but the creation step was unavailable through the installed connector and local tools. No workaround or repeated attempt is authorised.
-- No purchase, download, installation, asset import/transfer, Gate A, or gameplay implementation is currently authorised.
+- Crime99 Gate A implementation, airborne-dodge closure, Human review, and push are complete at `0f12673086959765978311ca6f65307065340387`.
+- Gate B vehicle feel is explicitly authorised within the requested scope and the existing architecture and governance boundaries.
+- No purchase, download, installation, Store-asset adoption, asset import/transfer, Gate C, or unrelated gameplay implementation is authorised.
 - Standing autonomous documentation maintenance remains limited to `Docs/WORK_STATE.md` and `Docs/CURRENT_HANDOVER.md` under the conditions in `AGENTS.md`.
 
 ## Next Concrete Step
 
-Human Developer creates `Pak0nly/crime99` as an empty private repository without generated files, then provides or performs the verified `origin` configuration and first push. Stop before Gate A, gameplay implementation, purchase, download, installation, asset import, or Preflight transfer.
+Implement and objectively validate the authorised Crime99 Gate B vehicle-feel slice. Stop before Store-asset adoption, Gate C, or pushing the Gate B commit.
 
 ## Relevant Sources of Truth
 
