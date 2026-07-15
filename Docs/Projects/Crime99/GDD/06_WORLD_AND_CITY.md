@@ -30,7 +30,7 @@ The city should feel:
 - dangerous;
 - suitable for both foot and vehicle play;
 - visually coherent;
-- easy to understand with both confirmed camera variants.
+- easy to understand with the first-prototype `Fixed Camera` and not structurally hostile to a later rotatable comparison.
 
 The world is not intended to be a large seamless open world.
 
@@ -73,7 +73,7 @@ The map must be:
 - large enough for up to twelve combatants;
 - suitable for vehicles and foot combat;
 - dense enough to avoid long inactive travel;
-- open enough to support both confirmed camera variants.
+- open enough for the first-prototype fixed camera while preserving a later rotatable comparison path.
 
 Exact physical dimensions require greybox testing.
 
@@ -84,12 +84,12 @@ The confirmed main road structure remains primarily top to bottom.
 This supports:
 
 - rapid orientation and recognisable map structure;
-- forward visibility with both camera variants;
+- forward visibility with the first-prototype fixed camera;
 - high-speed driving;
 - clearer anticipation of traffic;
 - landmark-based navigation.
 
-Secondary streets may run in other directions. Roads and landmarks must keep the map readable and playable with both `Fixed Camera` and `Rotatable Camera`. Both variants are compared on the same map, and the layout must not be optimised so strongly for either variant that the comparison becomes biased.
+Secondary streets may run in other directions. Roads and landmarks must keep the map readable and playable with the first-prototype `Fixed Camera`. The layout should avoid unnecessary structural blockers for a later same-map `Rotatable Camera` comparison, but the later comparison is not part of first-prototype implementation.
 
 ## Required Prototype Areas
 
@@ -424,7 +424,7 @@ The prototype must determine:
 - whether AI can route correctly;
 - whether traffic understands level separation;
 - whether shadows and roofs hide gameplay;
-- whether both camera variants remain useful on the same map.
+- whether the fixed camera remains useful and the map preserves a later rotatable comparison path.
 
 ## Map Connectivity
 
@@ -533,7 +533,7 @@ Buildings should be:
 - visually consistent;
 - simple enough to produce efficiently;
 - suitable for neon and dirt treatment;
-- readable with both camera variants;
+- readable with the first-prototype fixed camera;
 - easy to use as natural boundaries.
 
 ## Landmark Buildings
@@ -580,7 +580,7 @@ Enemies should not gain unfair hidden positions because of foreground geometry.
 
 Map layout should reduce the problem through:
 
-- a clear road hierarchy readable with both camera variants;
+- a clear road hierarchy readable with the first-prototype fixed camera;
 - controlled building height;
 - open combat spaces;
 - limited foreground clutter;
@@ -957,7 +957,7 @@ It supports fast isolated testing of:
 - burning;
 - explosions;
 - chain reactions;
-- camera readability with both variants at fixed distance.
+- fixed-camera readability at fixed distance and preservation of the later camera-policy seam.
 
 ## Visual Requirement
 
@@ -1075,7 +1075,7 @@ The prototype must answer:
 - Is the map large enough for twelve combatants?
 - Is it small enough to maintain frequent action?
 - Does the main road support high speed?
-- Do both camera variants remain readable and playable on the same map?
+- Does the fixed camera remain readable and playable, without creating an avoidable blocker for the later rotatable comparison?
 - Are foot and vehicle areas meaningfully different?
 - Does the park reduce vehicle dominance?
 - Does the industrial area support destruction?
@@ -1105,7 +1105,7 @@ The prototype world succeeds when:
 - police can reach incidents;
 - map boundaries feel natural;
 - visual areas remain coherent;
-- both camera variants remain readable on the same map without variant-biased layout optimisation;
+- the fixed camera remains readable, and the map does not create an avoidable blocker for the later rotatable comparison;
 - the map supports the stress scenario.
 
 ## Failure Conditions

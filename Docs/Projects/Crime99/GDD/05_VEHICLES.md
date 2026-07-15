@@ -548,11 +548,11 @@ Handbrake behaviour is failing if:
 
 Vehicle handling and camera behaviour are directly connected.
 
-The prototype compares `Fixed Camera` and `Rotatable Camera` while driving.
+The first prototype validates `Fixed Camera` while driving. A later comparison may replace only the camera policy with `Rotatable Camera`.
 
-Both variants use a fixed elevation and fixed distance. Neither variant uses zoom, panning, independent camera translation, automatic distance changes, or speed-dependent distance changes. Only the `Rotatable Camera` may rotate freely around the player.
+Both policies use a fixed elevation and fixed distance. Neither uses zoom, panning, independent camera translation, automatic distance changes, or speed-dependent distance changes. Only the later `Rotatable Camera` may rotate freely around the player.
 
-Fast vehicles must remain readable and controllable with both variants. The final choice between them remains `Needs Prototype Validation`.
+Fast vehicles must remain readable and controllable with the first-prototype fixed camera. Vehicle input and steering must not depend on fixed camera orientation so the later comparison remains possible.
 
 ## Main Road Alignment
 
@@ -565,7 +565,7 @@ This supports testing:
 * fewer horizontal screen-edge limitations;
 * clearer anticipation of traffic.
 
-Both camera variants must be compared on the same map. Road alignment must not bias the test so strongly toward either variant that the comparison becomes invalid.
+The later rotatable-camera version should be compared on the same map and against the accepted fixed-camera driving baseline. Road alignment should not create an avoidable blocker for that later comparison.
 
 ## Vehicle Entry
 

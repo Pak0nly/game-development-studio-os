@@ -74,7 +74,7 @@ Before download, import, or Unity test work, the following documentation and sel
 A separately authorised Asset and Style Preflight may then perform:
 
 5. **Bounded test download and import:** download and import only the explicitly approved representative test selection into an isolated, minimal Unity test environment.
-6. **Preflight evaluation:** test technical usability, camera readability with both confirmed camera variants, and visual cohesion under `Neon over Dirt`, including deliberately cleaner and dirtier areas. Assets are raw material and may receive a light shared style pass where needed.
+6. **Preflight evaluation:** test technical usability, camera readability with both isolated Preflight camera rigs, and visual cohesion under `Neon over Dirt`, including deliberately cleaner and dirtier areas. Assets are raw material and may receive a light shared style pass where needed.
 7. **Asset-gap analysis:** identify unique or missing project-specific needs after the bounded test rather than assuming new production is required.
 8. **Main-prototype asset decision:** decide which packages or individual assets, if any, may later be proposed for the actual prototype. The final main-prototype selection occurs only after the Preflight and does not itself authorise a later import.
 
@@ -88,7 +88,7 @@ Purchase, download, import, creation of the test environment, and execution of t
 
 ### Goal
 
-Compare both confirmed camera variants and confirm that the visual direction and preflighted asset strategy can support the intended prototype without selecting the main-project technical architecture.
+Compare both isolated Preflight camera rigs and confirm that the visual direction and preflighted asset strategy can support the intended prototype without selecting the main-project technical architecture. This historical Preflight comparison does not change the later decision that prototype 1 uses `Fixed Camera`.
 
 ### Included
 
@@ -118,7 +118,7 @@ Compare both confirmed camera variants and confirm that the visual direction and
 
 ### Completion Criteria
 
-* both confirmed camera variants have been compared against the same representative scene and activities;
+* both isolated Preflight camera rigs have been compared against the same representative scene and activities;
 * fixed elevation and distance remain readable during walking and driving;
 * at least one variant is provisionally acceptable without closing the final camera decision;
 * the scene communicates the intended visual direction;
@@ -686,7 +686,7 @@ Prove that the intended final identity works during active gameplay.
 Stress testing may begin only if:
 
 * the style works in motion;
-* the `Fixed Camera` and `Rotatable Camera` variants have been compared against the scope criteria and at least one supports fast play;
+* the first-prototype `Fixed Camera` supports fast play and the architecture preserves the later `Rotatable Camera` comparison path;
 * assets appear consistent;
 * the intended final quality is visible;
 * the visual approach appears scalable;
@@ -737,7 +737,6 @@ Determine whether the complete prototype remains playable and technically viable
 * respawn delay;
 * score values;
 * camera distance;
-* rotation sensitivity for the `Rotatable Camera`.
 
 ### Maximum Stress Scenario
 

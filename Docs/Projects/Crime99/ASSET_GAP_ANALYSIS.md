@@ -65,7 +65,7 @@ The practical distinction is important:
 | 3 | Pedestrian navigation/population | Required for civilians, flee/return behaviour, density and city life | Prefer a system that integrates with the selected traffic approach or a common navigation layer |
 | 4 | Combat-bot navigation | Required for complete solo testing | A reusable navigation library may save time, but FFA behaviour remains custom |
 | 5 | Vehicle art and damage states | Four distinct classes and readable damage/burning/exploded states are absent | Research targeted vehicle art after environment/style preflight establishes proportions |
-| 6 | Camera occlusion | Both confirmed camera variants may be blocked by buildings | A small render-pipeline-compatible fade/see-through tool is a focused candidate |
+| 6 | Camera occlusion | The first-prototype fixed camera may be blocked by buildings; a later rotatable comparison increases angle coverage | A small render-pipeline-compatible fade/see-through tool is a focused candidate |
 | 7 | Audio | Required for impact and readability | Separate later content search; do not let broad audio bundles distract from core systems |
 | 8 | Performance/LOD | Stress test includes bots, pedestrians, traffic, police, fire, explosions and minimap | Measure the bounded prototype first; only then consider proposing a separately authorised limited preflight purchase against a demonstrated bottleneck |
 

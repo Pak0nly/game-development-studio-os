@@ -5,10 +5,10 @@
 **Document Maturity:** In Review
 **Prototype Disposition:** Project documentation entry point
 **Validation State:** Not applicable
-**Approval Status:** Pending Human Developer review
+**Approval Status:** Mixed; technical planning baseline confirmed, broader project documentation remains in review
 **Project Phase:** Definition
 **Implementation Status:** Not authorised
-**Last Reviewed:** 2026-07-14
+**Last Reviewed:** 2026-07-15
 
 This directory contains the current project definition and design documentation for an original elevated-camera urban action game. `Crime99` is an internal working title only; no final public or commercial name is confirmed.
 
@@ -35,7 +35,7 @@ The prototype should determine whether the following combination is enjoyable an
 * civilians and traffic;
 * limited police pressure;
 * creative scoring;
-* comparison of the `Fixed Camera` and `Rotatable Camera` variants;
+* `Fixed Camera` for the first prototype with an architectural path to a later `Rotatable Camera` comparison;
 * Neon over Dirt visual identity.
 
 Network multiplayer, factions, economy, story, and long-term progression are not part of the first prototype.
@@ -48,10 +48,14 @@ Read the project documents in this order:
 2. [`GDD/GDD_INDEX.md`](GDD/GDD_INDEX.md)
 3. [`GDD/16_PROTOTYPE_SCOPE.md`](GDD/16_PROTOTYPE_SCOPE.md)
 4. [`PROTOTYPE_ROADMAP.md`](PROTOTYPE_ROADMAP.md)
-5. [`ASSET_STYLE_PREFLIGHT_PLAN.md`](ASSET_STYLE_PREFLIGHT_PLAN.md) when planning or reviewing the first Asset and Style Preflight
-6. [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md)
-7. [`RISK_REGISTER.md`](RISK_REGISTER.md)
-8. the remaining GDD modules as required
+5. [`TECHNICAL_ARCHITECTURE.md`](TECHNICAL_ARCHITECTURE.md)
+6. [`TECHNICAL_DECISIONS.md`](TECHNICAL_DECISIONS.md)
+7. [`IMPLEMENTATION_SEQUENCE.md`](IMPLEMENTATION_SEQUENCE.md)
+8. [`TECHNICAL_RISK_REVIEW.md`](TECHNICAL_RISK_REVIEW.md)
+9. [`ASSET_STYLE_PREFLIGHT_PLAN.md`](ASSET_STYLE_PREFLIGHT_PLAN.md) when reviewing the completed first Asset and Style Preflight plan
+10. [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md)
+11. [`RISK_REGISTER.md`](RISK_REGISTER.md)
+12. the remaining GDD modules as required
 
 ## Document Roles
 
@@ -144,6 +148,22 @@ It defines:
 
 The roadmap does not authorise implementation.
 
+### [`TECHNICAL_ARCHITECTURE.md`](TECHNICAL_ARCHITECTURE.md)
+
+The confirmed first-prototype planning baseline for runtime, project, test, asset, data, and dependencies. It selects a small project-owned modular monolith and Variant A while prohibiting precautionary abstractions.
+
+### [`TECHNICAL_DECISIONS.md`](TECHNICAL_DECISIONS.md)
+
+The technical decision register and package/tool evaluation. It separates accepted planning decisions, conditional preflight candidates, deferred systems, and rejected excess scope.
+
+### [`IMPLEMENTATION_SEQUENCE.md`](IMPLEMENTATION_SEQUENCE.md)
+
+The gate-aligned technical work-package plan, including dependencies, tests, Human Review criteria, stop criteria, simplifications, exclusions, and rough non-binding effort ranges.
+
+### [`TECHNICAL_RISK_REVIEW.md`](TECHNICAL_RISK_REVIEW.md)
+
+The focused technical risk, contingency, Store-candidate rejection, work-consumption, and gate-stop plan.
+
 ### [`ASSET_STYLE_PREFLIGHT_PLAN.md`](ASSET_STYLE_PREFLIGHT_PLAN.md)
 
 The bounded execution plan for the first Crime99 Asset and Style Preflight.
@@ -229,18 +249,18 @@ The current authority chain is:
 3. confirmed project decisions recorded by the Human Developer;
 4. the in-review [`GDD/16_PROTOTYPE_SCOPE.md`](GDD/16_PROTOTYPE_SCOPE.md) for exact prototype design rules;
 5. the in-review [`PROTOTYPE_ROADMAP.md`](PROTOTYPE_ROADMAP.md) for the canonical gate sequence and completion checks;
-6. the decision and risk registers;
-7. other GDD modules for supporting context.
+6. the current technical planning set for implementation architecture, technical decisions, execution detail, and technical risks;
+7. the project decision and risk registers;
+8. other GDD modules for supporting context.
 
 ## Current Implementation Boundary
 
-No implementation is currently authorised.
+Technical architecture planning is confirmed as the planning baseline. No implementation is currently authorised. `Accepted for Planning` in the technical decision register is not an implementation status or permission.
 
 The existing documentation does not authorise:
 
 * Unity project creation;
 * source-code generation;
-* technical architecture;
 * Asset Store purchases;
 * asset downloads;
 * external tool integration;
@@ -254,14 +274,14 @@ Implementation requires a separate explicit approval through the Studio Operatin
 
 ## Current Blocking Topics
 
-The current activity is documentation correction and decision confirmation. Genuine unresolved, deferred, and validation-dependent items are maintained in [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md). Technical architecture is a later, separately authorised activity and is not a deliverable or prerequisite to complete this correction pass.
+The current activity is final consistency validation and exact-scope staging of the confirmed technical planning baseline. Genuine unresolved, deferred, and validation-dependent items remain in [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md). The main blockers before implementation are exact project path, implementation authorisation, any candidate preflight/purchase authority, final fixed-camera tuning, Store-tool adoption after evidence, and binding performance targets.
 
 ## Current Recommended Next Steps
 
-1. Complete the Human Developer review of this correction pass.
+1. Review the exact staged 18-file architecture documentation set and either approve or revise a later commit.
 2. Keep [`GDD/16_PROTOTYPE_SCOPE.md`](GDD/16_PROTOTYPE_SCOPE.md) and [`PROTOTYPE_ROADMAP.md`](PROTOTYPE_ROADMAP.md) `In Review` unless the Human Developer explicitly confirms them.
-3. Resolve active decisions and collect prototype evidence only through separately authorised work.
-4. Authorise technical architecture or implementation separately if and when the Definition phase is approved to advance.
+3. Confirm the exact project path and a bounded first setup/Gate A work package only through a later explicit implementation approval.
+4. Treat every purchase, download, installation, import, Store preflight, commit, push, and implementation step as separately permissioned.
 
 ## Maintenance Rules
 

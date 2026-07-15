@@ -16,9 +16,9 @@ This document defines the camera, occlusion, player highlighting, HUD, minimap, 
 
 ## Camera Direction
 
-Final camera behaviour is `Needs Prototype Validation`. Test the `Fixed Camera` and `Rotatable Camera` variants exactly as defined in [`16_PROTOTYPE_SCOPE.md`](16_PROTOTYPE_SCOPE.md#12-camera).
+The first prototype uses `Fixed Camera` exactly as defined in [`16_PROTOTYPE_SCOPE.md`](16_PROTOTYPE_SCOPE.md#12-camera): fixed orientation, fixed elevation, and fixed distance, with no zoom, panning, or independent translation.
 
-Both variants use fixed elevation and fixed distance. Neither permits automatic, speed-based, or variable zoom, panning, or independent camera translation. Only `Rotatable Camera` permits free rotation around the player; `Fixed Camera` keeps a fixed orientation. Do not add stepped 90-degree rotation.
+A later comparison version may use `Rotatable Camera`. It adds only free rotation around the player while retaining fixed elevation and distance. It does not belong to first-prototype implementation scope, but camera, control, aim, map, and occlusion architecture must not block it. Do not add automatic rotation or stepped 90-degree rotation.
 
 ## Camera Goals
 
@@ -34,7 +34,7 @@ The camera should support:
 - nostalgic genre recognition;
 - modern 3D presentation.
 
-## Camera Variants
+## Camera Policies
 
 ### Fixed Camera
 
@@ -42,7 +42,7 @@ The camera should support:
 
 ### Rotatable Camera
 
-`Rotatable Camera` keeps its elevation and distance fixed and allows only free rotation around the player.
+`Rotatable Camera` is deferred until the later comparison version. It keeps its elevation and distance fixed and allows only free rotation around the player.
 
 It does not allow:
 
@@ -53,13 +53,13 @@ It does not allow:
 
 ## Fixed Distance
 
-Camera distance remains constant during each controlled test. Exact fixed angle, distance, and rotatable-camera sensitivity values may be tuned between comparison rounds, but the camera must not zoom or change distance during play.
+Camera distance remains constant during play. Exact fixed-camera angle and distance remain prototype tuning values. Later rotatable-camera sensitivity is not a first-prototype tuning variable.
 
-## Shared-Map Comparison
+## Later Shared-Map Comparison
 
-Both variants must be tested on the same representative map and against the same walking, aiming, combat, driving, occlusion, and chaos scenarios.
+After the first prototype, the deferred rotatable version should be tested on the same representative map and against the same walking, aiming, combat, driving, occlusion, and chaos scenarios as the accepted fixed-camera baseline.
 
-Roads and landmarks should support orientation with either variant. The comparison must not optimise the map so strongly for one variant that the result becomes biased.
+Roads and landmarks should not create an avoidable architectural blocker for that later comparison, but first-prototype layout and acceptance use `Fixed Camera`.
 
 ## Camera Shake
 
@@ -342,7 +342,8 @@ Detailed accessibility scope remains open.
 - Is the player always visible?
 - Is aiming clear?
 - Is enough road visible at speed?
-- Do both variants remain readable at their fixed distance?
+- Does the fixed camera remain readable at its fixed distance?
+- Does the architecture preserve a later rotatable comparison without changing control or aim rules?
 - Does free rotation help orientation without introducing panning or translation?
 - Do buildings hide combat?
 - Is the HUD readable during chaos?
@@ -357,7 +358,8 @@ Camera and UI succeed when:
 - high-speed driving remains readable;
 - foot combat remains precise;
 - the player is easy to locate;
-- both variants remain usable at fixed elevation and distance on the same map;
+- the fixed camera remains usable at fixed elevation and distance on the prototype map;
+- the camera-policy boundary preserves a later same-map rotatable comparison;
 - occlusion is controlled;
 - HUD information is understandable;
 - kill feedback feels strong;
@@ -383,7 +385,7 @@ Revise if:
 - camera height;
 - camera tilt;
 - camera distance;
-- rotation sensitivity for `Rotatable Camera`;
+- later rotation sensitivity for `Rotatable Camera` after separate comparison authorisation;
 - camera shake;
 - occlusion threshold;
 - highlight intensity;

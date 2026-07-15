@@ -116,7 +116,7 @@ An official demo, trial, or other legal advance evaluation may precede purchase 
 - **Rough planning estimate — work saved:** 1–3 weeks for a polished, configurable multi-obstacle solution and editor tooling.
 - **Rough planning estimate — integration effort:** 2–5 days for a representative building set, more if bundle shaders are unusual.
 - **Vendor/architecture dependence:** **Medium-low** if wrapped behind a simple occlusion interface and applied only to selected materials.
-- **Prototype value:** **High**, because both confirmed camera variants explicitly require occlusion validation.
+- **Prototype value:** **High**, because the fixed first-prototype camera explicitly requires occlusion validation and the solution should preserve a later rotatable comparison.
 - **Release value:** **High** if material compatibility and performance pass.
 - **Research status:** **Research-shortlist entry.** After the owned-asset preflight establishes the provisional test render pipeline and representative environment materials, this may be proposed for a separately authorised, limited preflight purchase. Only a subsequent isolated technical preflight could establish material compatibility, visual suitability, and performance. It is not technically validated or recommended for main-prototype use.
 

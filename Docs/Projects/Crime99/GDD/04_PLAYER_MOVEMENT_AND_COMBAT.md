@@ -35,7 +35,7 @@ Player movement and combat should feel:
 * easy to understand;
 * difficult to master;
 * compatible with keyboard and mouse; optional controller support may be evaluated only if negligible in effort;
-* clear with both confirmed camera variants at fixed elevation and distance.
+* clear with the first-prototype fixed camera at fixed elevation and distance, without coupling movement to that camera policy.
 
 The system should support frequent switching between:
 
@@ -402,7 +402,7 @@ Aiming must remain clear:
 
 * near the player;
 * at screen edges;
-* with both camera variants at their fixed distance;
+* with the first-prototype fixed camera at its fixed distance;
 * during vehicle movement;
 * under neon lighting;
 * during explosions and smoke.

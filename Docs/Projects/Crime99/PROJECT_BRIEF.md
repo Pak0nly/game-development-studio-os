@@ -187,7 +187,7 @@ It focuses on:
 * civilians and traffic;
 * wanted level 1 police pressure;
 * creative scoring;
-* validation of `Fixed Camera` and `Rotatable Camera` variants;
+* validation of `Fixed Camera` for the first prototype while preserving a later `Rotatable Camera` comparison path;
 * a small multi-block city map;
 * the visual direction Neon over Dirt.
 
@@ -195,7 +195,7 @@ Network multiplayer, factions, economy, higher police escalation, story, and ent
 
 ## Visual Direction
 
-The final camera behaviour is `Needs Prototype Validation`. Two variants must be compared: `Fixed Camera` and `Rotatable Camera`. Both use a fixed elevation angle and fixed distance; the rotatable variant rotates freely around the player without panning or independent translation.
+The first prototype uses `Fixed Camera` with fixed orientation, fixed elevation angle, and fixed distance. It permits no zoom, panning, or independent translation. A later comparison version is explicitly planned with `Rotatable Camera`, which adds only free rotation around the player while retaining fixed elevation and distance. The first prototype must preserve that replacement path without implementing the later comparison early.
 
 The art direction uses:
 
@@ -273,7 +273,7 @@ The project is not intended to be:
 4. Validate explosions, destruction, and creative kills.
 5. Validate a complete Free-for-All round against bots.
 6. Catalogue and assess the planned bundle, then validate a limited Asset and Style Slice.
-7. Compare the two camera variants and validate asset usability, visual cohesion, and the visual identity.
+7. Validate the fixed camera, asset usability, visual cohesion, and the visual identity while preserving the later rotatable-camera comparison path.
 8. Validate technical stability under the intended prototype load.
 9. Only then evaluate real multiplayer development.
 10. Expand toward Team Deathmatch and Faction War after the foundation succeeds.

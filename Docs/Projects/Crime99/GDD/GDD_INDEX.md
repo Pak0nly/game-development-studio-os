@@ -171,9 +171,10 @@ Open Decisions do not override confirmed design. They identify unresolved areas.
 
 ### Prototype Visual Systems
 
-* comparison of `Fixed Camera` and `Rotatable Camera`;
-* fixed elevation and fixed distance for both variants;
-* free rotation around the player only for `Rotatable Camera`;
+* `Fixed Camera` for the first prototype;
+* a later `Rotatable Camera` comparison path;
+* fixed elevation and fixed distance for both policies;
+* free rotation around the player only for the later `Rotatable Camera`;
 * no zoom, panning, or independent camera translation;
 * wet asphalt;
 * neon lighting;
@@ -256,9 +257,9 @@ These pillars remain subject to final wording review in the dedicated module.
 
 The following assumptions require practical validation:
 
-* at least one of the two confirmed camera variants supports high-speed driving;
-* fixed camera distance provides enough forward visibility in both variants;
-* movement remains precise with both variants on the same map;
+* `Fixed Camera` supports high-speed driving in the first prototype;
+* its fixed distance provides enough forward visibility;
+* movement remains precise while control and aim stay compatible with a later rotatable comparison;
 * vehicle handling is fun without combat;
 * instant lethal roadkills can remain fair;
 * foot players can counter vehicles;
@@ -348,7 +349,7 @@ The highest current risks are:
 1. prototype scope is too large;
 2. on-foot movement is not fun;
 3. driving is not fun;
-4. camera variants fail at high speed;
+4. the fixed camera fails at high speed;
 5. foot players cannot fairly counter vehicles;
 6. combat bots become the largest cost;
 7. AI systems collapse under stress;

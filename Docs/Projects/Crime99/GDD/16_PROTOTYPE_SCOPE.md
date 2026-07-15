@@ -97,7 +97,7 @@ The prototype must include:
 * no invulnerability during dodge;
 * fist combat as a permanent fallback.
 
-Movement must feel direct, responsive, and readable with both camera variants under evaluation.
+Movement must feel direct, responsive, and readable with the first-prototype `Fixed Camera`. Player control and aiming must not prevent a later `Rotatable Camera` comparison.
 
 ## 3. Health, Armour, and Healing
 
@@ -345,16 +345,13 @@ Exact score values remain live-tuning variables.
 
 ## 12. Camera
 
-Final camera behaviour is `Needs Prototype Validation`. Test two distinct variants:
+The first prototype uses `Fixed Camera`: fixed orientation, fixed elevation angle, and fixed distance. It permits no panning, independent translation, automatic zoom, speed-based zoom, or variable camera distance.
 
-1. `Fixed Camera`: fixed orientation, fixed elevation angle, and fixed distance.
-2. `Rotatable Camera`: freely rotatable around the player, with fixed elevation angle and fixed distance, no panning, and no independent camera translation.
+A later comparison version is explicitly required but is outside first-prototype implementation scope. Its `Rotatable Camera` may add only free rotation around the player while retaining the same fixed elevation and fixed distance. It may not add panning, independent translation, automatic or speed-based zoom, variable distance, automatic rotation, or stepped 90-degree rotation.
 
-The `Rotatable Camera` permits only rotation around the player. Neither variant permits panning, independent translation, automatic zoom, speed-based zoom, or variable camera distance.
+Evaluate the fixed camera for orientation while moving on foot, aiming and combat readability, driving feel, building occlusion, readability during chaotic situations, and fit with the intended visual identity. The architecture must separate camera policy from player control and world aiming so the later comparison does not require a gameplay rewrite.
 
-Do not introduce stepped 90-degree rotation. Evaluate both variants for orientation while moving on foot, aiming and combat readability, driving feel, building occlusion, readability during chaotic situations, and fit with the intended visual identity. The final choice between `Fixed Camera` and `Rotatable Camera` remains `Needs Prototype Validation`.
-
-Both variants may require a simple building-occlusion solution. This scope defines the desired readable outcome, not its technical implementation.
+The fixed camera requires a simple building-occlusion solution. The later rotatable comparison must be able to reuse or replace that solution behind the same boundary. This scope defines the desired readable outcome, not its technical implementation.
 
 The building-occlusion solution may use:
 
@@ -598,7 +595,6 @@ The following values must remain easy to adjust during testing:
 * respawn delay;
 * score values;
 * camera distance;
-* rotation sensitivity for the `Rotatable Camera`.
 
 ## 21. Stress Test
 

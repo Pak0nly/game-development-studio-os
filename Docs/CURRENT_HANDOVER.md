@@ -4,7 +4,7 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Handover Summary
 
-The Studio Operating System foundation and both workflow validation projects remain complete and validated. The Crime99 asset inventory and strategy correction are committed at `0485b0d6e9e92ee3867492a9355552b983887d4c`. The current assignment completes the final process simplification of the first Asset and Style Preflight plan and authorises exact staging of its four-document set. The repository remains on `main`; local `main` and `origin/main` were synchronized before these documentation changes. No commit, push, download, import, installation, Unity test-environment or project creation, Asset and Style Preflight execution, asset production, or technical integration is authorised.
+The Human Developer confirmed the complete Crime99 first-prototype technical architecture as the planning baseline on 2026-07-15. It selects Variant A, Unity `6000.3.19f1`, Windows Standalone, URP, Unity Input System, Unity NavMesh for foot navigation, a small project lane graph, a small custom arcade vehicle controller, project-owned core rules, built-in/small pools, Particle System before VFX Graph, project-owned occlusion, and a simple minimap. Prototype 1 uses `Fixed Camera`; the later `Rotatable Camera` comparison remains separately authorised future work and is not preimplemented. Abstractions are added only for concrete current-gate needs. No commit, push, purchase, download, installation, main-project creation, asset transfer, or gameplay implementation is authorised.
 
 ## Confirmed Studio OS State
 
@@ -33,17 +33,17 @@ The Project Brief is `Confirmed`. Prototype Scope and Prototype Roadmap are `In 
 
 The confirmed first-prototype asset strategy uses the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot` as the planned primary source and follows `Buy, reuse, adapt lightly`. `1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` are the exact required first-Preflight packages; `POLYGON Particle FX` is optional only when included in the comprehensive start approval. `ASSET_STYLE_PREFLIGHT_PLAN.md` defines the minimal representative categories, isolated project proposal, import/reset sequence, untouched-original boundary, both-camera protocol, technical matrix, provisional test-only performance and adaptation thresholds, one `Initial Execution Approval`, exception-only stops, evidence outputs, and one `Final Human Review`. No generative derivation, training, or generative-reference use is permitted.
 
-The camera documents compare `Fixed Camera` and `Rotatable Camera` without preselecting either variant. Both retain fixed elevation and distance; the rotatable variant allows only free rotation around the player. Automatic, speed-based, or variable zoom, panning, and independent translation are excluded. The plan proposes the installed `Unity 6000.3.19f1` and URP solely for the isolated test: recorded official rows place URP in the compatibility intersection of all three priority packages, while `Cyberpunk Port City` excludes Built-in at its listed 2021.3.6 version. This does not prove Unity 6.3 compatibility or select the main-project pipeline, shader solution, import structure, or architecture.
+Prototype 1 uses `Fixed Camera` at fixed elevation and distance with no zoom, panning, or independent translation. A later separately authorised comparison may add only free rotation around the player while retaining fixed elevation and distance; no rotatable rig or camera abstraction is required in prototype 1. Unity `6000.3.19f1`, Windows Standalone, and URP are confirmed for the technical planning baseline. Store systems remain unadopted candidates until a demonstrated gap and separately authorised preflight.
 
-This is still a Definition-phase documentation state, not architecture or implementation authorisation. `Crime99` is an internal working title only.
+This remains a Definition-phase documentation state. The architecture is confirmed for planning but does not authorise project creation or implementation. `Crime99` is an internal working title only.
 
 ## Open Items
 
 - Select suitable separate physical storage, configure the encrypted offline backup, and test recovery.
 - Continue evaluating continuity and handover practices without treating proposed protocols as adopted.
-- Obtain Human Developer review of the exact staged four-document Preflight-plan set. The untracked ZIP is an earlier pre-simplification export and is not staged.
-- Before technical work, obtain one comprehensive `Initial Execution Approval` covering the path, Unity/URP test hypothesis, package/category boundaries, optional VFX boundary, download, isolated project creation, import, limits, reset strategy, raw-asset/provenance/Git boundaries, light adaptations, performance criteria, stop criteria, and complete regular execution.
-- If later authorised, execute only the gates and exception-stop model in `Docs/Projects/Crime99/ASSET_STYLE_PREFLIGHT_PLAN.md`; do not transfer assets into a main project without a later decision and approval.
+- Human Developer reviews the exact staged 18-file Crime99 architecture documentation set and either requests revisions or separately approves a later commit.
+- Any project setup, Gate A implementation, Store candidate preflight, asset transfer, alternate graphics API, development build, or gameplay work requires a new explicit scope.
+- Use the final dated review ZIP created by this execution; do not rely on earlier missing or obsolete archives.
 - Any later commit or push requires separate exact-scope approval.
 
 ## Restart Procedure
@@ -54,11 +54,9 @@ This is still a Definition-phase documentation state, not architecture or implem
 4. Read `Docs/CONFIRMED_DECISIONS.md` and task-relevant authoritative documents.
 5. Verify branch, HEAD, working tree, and `origin/main` synchronization without changing Git state.
 6. Read `Docs/Projects/Crime99/README.md`, its confirmed Project Brief, in-review Prototype Scope and Roadmap, Decision Register, Risk Register, and validation report.
-7. Read `Docs/Projects/Crime99/ASSET_STYLE_PREFLIGHT_PLAN.md` and review the exact staged four-document scope; treat the untracked ZIP as an earlier pre-simplification export.
-8. Await Human Developer review; do not commit, push, download, import, install, create a Unity test environment, run the Asset and Style Preflight or Style Slice, promote document status, create main-project architecture, produce assets, integrate assets, or implement the project.
+7. Read the four technical planning documents, then `OPEN_DECISIONS.md` and the technical package evidence in `ASSET_PURCHASE_CANDIDATES.md`.
+8. Verify the dated architecture ZIP and current Git state. Do not stage, commit, push, add unapproved assets/tools, create or transfer into a main project, or implement gameplay.
 
 ## Exact Next Task
 
-Present the simplified Preflight-plan documentation, validation results, and exact staged Git state for Human Developer review. Stop before commit, push, download, import, installation, Unity test-environment or project creation, Preflight or Style Slice execution, main-project architecture, asset production, technical integration, or implementation.
-
-No commit, push, download, import, installation, external access, Unity test-environment or project creation, Asset and Style Preflight execution, asset production, technical integration, or main-project architecture is authorised by this handover without separate approval.
+Human Developer reviews the staged documentation set and either requests revisions or separately approves a commit. Stop before commit, push, purchase, download, installation, project creation, asset transfer, or gameplay implementation.
