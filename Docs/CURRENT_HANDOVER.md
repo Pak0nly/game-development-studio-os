@@ -4,59 +4,44 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Handover Summary
 
-The Human Developer confirmed the complete Crime99 first-prototype technical architecture as the planning baseline on 2026-07-15. It selects Variant A, Unity `6000.3.19f1`, Windows Standalone, URP, Unity Input System, Unity NavMesh for foot navigation, a small project lane graph, a small custom arcade vehicle controller, project-owned core rules, built-in/small pools, Particle System before VFX Graph, project-owned occlusion, and a simple minimap. Prototype 1 uses `Fixed Camera`; the later `Rotatable Camera` comparison remains separately authorised future work and is not preimplemented. Abstractions are added only for concrete current-gate needs. No commit, push, purchase, download, installation, main-project creation, asset transfer, or gameplay implementation is authorised.
+The Human Developer explicitly confirmed the separate local Crime99 main-project workspace and empty Unity baseline on 2026-07-15. The setup is complete and accepted at `Projects/Crime99/` with the sole Unity root `Projects/Crime99/Source/Crime99/`. The separate repository is on `main` at root commit `76724a9103e3bf2b072f4e36f419b1f7802f354c` (`Initialize Crime99 Unity project baseline`), contains exactly 86 committed text files, is clean, and has no remote.
 
-## Confirmed Studio OS State
+Unity `6000.3.19f1`, URP `17.3.0`, and Windows Standalone 64-bit are configured. The minimal validation scene contains only a camera and directional light. The final configuration/compile batch run, separate scene-load run, and all four EditMode structure tests passed. No gameplay, Store assets, third-party raw assets, purchases, downloads, installations, Git LFS, remote configuration, or push occurred.
 
-- Continuity Version 2 passed, including validation in a new Director chat.
-- Autonomy Level B is binding and active under `Docs/AI_DEVELOPMENT_RULES.md` and DEC-008.
-- The active environment is Windows 11, Unity 6000.3.19f1, Visual Studio Community 2022 with Unity support, and Windows Desktop.
-- The private GitHub remote is configured and synchronized.
-- DEC-023 remains only partially implemented: the independent encrypted offline backup on a separate physical device is still open.
+The approved target repository is the empty private GitHub repository `Pak0nly/crime99` at `https://github.com/Pak0nly/crime99`. Repository creation could not be executed: the installed GitHub connector has no repository-creation operation and the GitHub CLI is not installed. In accordance with the assignment, no workaround, repeated creation attempt, remote configuration, or Crime99 push was performed.
 
-## Passed Workflow Tests
+## Continuation Boundary
 
-- `Projects/Match3WorkflowTest/`: fully passed automated, compilation, batch-mode, and Human Developer Play Mode validation.
-- `Projects/SideScrollerWorkflowTest/` Phase 1: fully passed gameplay, structure, compilation, batch-mode, and Human Developer Play Mode validation.
-- `Projects/SideScrollerWorkflowTest/` Phase 2: fully passed texture/material integration, regression, compilation, batch-mode, and Human Developer visual validation.
+The completed setup authority included the one-time local initial commit. The later backup assignment authorised an empty private GitHub repository, `origin`, and the first push, but this authority was not exercised because repository creation was unavailable through the authorised tooling. Gate A, gameplay code, asset acquisition, asset import, and transfer from the isolated Asset Style Preflight project remain outside scope.
 
-Approximate work-consumption measurements supplied by the Human Developer:
+Immediately before the separately authorised baseline-state commit, the Studio OS repository was synchronized at `861e7b8e6e68f0b1772fd50e0ee1b5f56322177a`. That commit is limited to `Docs/WORK_STATE.md` and this file; its resulting hash and push status are verified through Git rather than embedded self-referentially here. Both `Projects/Crime99/` and `Projects/Crime99AssetStylePreflight/` remain untracked from the Studio OS repository and must not be accidentally staged there.
 
-- SideScroller Phase 1: approximately 30-35% of the five-hour work allowance.
-- SideScroller Phase 2: approximately 23 percentage points.
+## Evidence and Review Files
 
-These values are operational observations, not adopted targets or governance rules.
+- Project entry point: `Projects/Crime99/README.md`
+- Setup instructions: `Projects/Crime99/Docs/PROJECT_SETUP.md`
+- Asset provenance: `Projects/Crime99/Docs/ASSET_PROVENANCE.md`
+- Third-party policy: `Projects/Crime99/Docs/THIRD_PARTY_ASSET_POLICY.md`
+- Validation report: `Projects/Crime99/Docs/VALIDATION_REPORT.md`
+- Exact committed-file manifest: `Projects/Crime99/Docs/COMMITTED_FILES.txt`
+- Local logs, test XML, and review ZIP: `Projects/Crime99/Artifacts/` (ignored by the Crime99 repository)
 
-## Crime99 Documentation State
+## Remaining Risks and Open Items
 
-The Project Brief is `Confirmed`. Prototype Scope and Prototype Roadmap are `In Review`. The Roadmap is the sole canonical source for `Gate A — Basic Control Quality` through `Gate F — Technical Viability`; Prototype Scope contains the canonical design-level rules and references the Roadmap instead of redefining gates.
-
-The confirmed first-prototype asset strategy uses the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot` as the planned primary source and follows `Buy, reuse, adapt lightly`. `1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` are the exact required first-Preflight packages; `POLYGON Particle FX` is optional only when included in the comprehensive start approval. `ASSET_STYLE_PREFLIGHT_PLAN.md` defines the minimal representative categories, isolated project proposal, import/reset sequence, untouched-original boundary, both-camera protocol, technical matrix, provisional test-only performance and adaptation thresholds, one `Initial Execution Approval`, exception-only stops, evidence outputs, and one `Final Human Review`. No generative derivation, training, or generative-reference use is permitted.
-
-Prototype 1 uses `Fixed Camera` at fixed elevation and distance with no zoom, panning, or independent translation. A later separately authorised comparison may add only free rotation around the player while retaining fixed elevation and distance; no rotatable rig or camera abstraction is required in prototype 1. Unity `6000.3.19f1`, Windows Standalone, and URP are confirmed for the technical planning baseline. Store systems remain unadopted candidates until a demonstrated gap and separately authorised preflight.
-
-This remains a Definition-phase documentation state. The architecture is confirmed for planning but does not authorise project creation or implementation. `Crime99` is an internal working title only.
-
-## Open Items
-
-- Select suitable separate physical storage, configure the encrypted offline backup, and test recovery.
-- Continue evaluating continuity and handover practices without treating proposed protocols as adopted.
-- Human Developer reviews the exact staged 18-file Crime99 architecture documentation set and either requests revisions or separately approves a later commit.
-- Any project setup, Gate A implementation, Store candidate preflight, asset transfer, alternate graphics API, development build, or gameplay work requires a new explicit scope.
-- Use the final dated review ZIP created by this execution; do not rely on earlier missing or obsolete archives.
-- Any later commit or push requires separate exact-scope approval.
+- The setup baseline is accepted and validates editor compilation, URP activation, Windows target selection, scene loading, and structure; it does not validate a player build or gameplay because neither was required or authorised.
+- Unity Test Runner logs benign missing-dependency messages for unused URP terrain Shader Graph preview templates; the active pipeline, Crime99 scene, compile, and all tests pass.
+- Licensed third-party assets still require separate acquisition/import authority, provenance entries, import recipes, and technical preflight before any main-project use.
+- Crime99 has no external Git replica until `Pak0nly/crime99` is manually created as an empty private repository and the confirmed root commit is pushed.
+- DEC-023's independent encrypted offline backup remains open.
 
 ## Restart Procedure
 
-1. Read `AGENTS.md`.
-2. Read `Docs/WORK_STATE.md`.
-3. Read this file.
-4. Read `Docs/CONFIRMED_DECISIONS.md` and task-relevant authoritative documents.
-5. Verify branch, HEAD, working tree, and `origin/main` synchronization without changing Git state.
-6. Read `Docs/Projects/Crime99/README.md`, its confirmed Project Brief, in-review Prototype Scope and Roadmap, Decision Register, Risk Register, and validation report.
-7. Read the four technical planning documents, then `OPEN_DECISIONS.md` and the technical package evidence in `ASSET_PURCHASE_CANDIDATES.md`.
-8. Verify the dated architecture ZIP and current Git state. Do not stage, commit, push, add unapproved assets/tools, create or transfer into a main project, or implement gameplay.
+1. Read `AGENTS.md`, `Docs/WORK_STATE.md`, `Docs/CONFIRMED_DECISIONS.md`, and this file.
+2. Verify the Studio OS repository remains synchronized and that only the two operational documents plus the two known nested project directories are outside its committed state.
+3. Enter `Projects/Crime99/` as a separate repository and verify branch `main`, clean status, root commit `76724a9103e3bf2b072f4e36f419b1f7802f354c`, and no remotes.
+4. Review the project README, validation report, committed-file manifest, and review ZIP.
+5. Do not stage the nested project through the Studio OS repository. Create only the empty private repository `Pak0nly/crime99` when the required GitHub capability is available, then re-verify the local baseline before configuring `origin` or pushing. Do not import assets, transfer the Preflight project, or begin Gate A/gameplay.
 
 ## Exact Next Task
 
-Human Developer reviews the staged documentation set and either requests revisions or separately approves a commit. Stop before commit, push, purchase, download, installation, project creation, asset transfer, or gameplay implementation.
+Human Developer manually creates `Pak0nly/crime99` as an empty private repository without generated files. The next continuation re-verifies the confirmed baseline, configures `origin`, and pushes only commit `76724a9103e3bf2b072f4e36f419b1f7802f354c`. Stop before Gate A, asset import, Preflight transfer, or gameplay work.
