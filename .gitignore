@@ -47,3 +47,14 @@ credentials.*
 *.app
 *.exe
 *.unitypackage
+
+# Local Crime99 preflight workspaces
+# Keep top-level Markdown reports visible while excluding Unity projects,
+# imported packages, generated evidence, captures, downloads, and helper tools.
+/Projects/Crime99*Preflight/Source/
+/Projects/Crime99*Preflight/Evidence/
+/Projects/Crime99*Preflight/Artifacts/
+/Projects/Crime99*Preflight/Captures/
+/Projects/Crime99*Preflight/Downloads/
+/Projects/Crime99*Preflight/Snapshots/
+/Projects/Crime99*Preflight/Tools/

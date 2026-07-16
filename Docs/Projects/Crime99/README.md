@@ -8,7 +8,7 @@
 **Approval Status:** Mixed; technical planning baseline confirmed, broader project documentation remains in review
 **Project Phase:** Definition
 **Implementation Status:** Not authorised
-**Last Reviewed:** 2026-07-15
+**Last Reviewed:** 2026-07-16
 
 This directory contains the current project definition and design documentation for an original elevated-camera urban action game. `Crime99` is an internal working title only; no final public or commercial name is confirmed.
 
@@ -155,6 +155,8 @@ The confirmed first-prototype planning baseline for runtime, project, test, asse
 ### [`TECHNICAL_DECISIONS.md`](TECHNICAL_DECISIONS.md)
 
 The technical decision register and package/tool evaluation. It separates accepted planning decisions, conditional preflight candidates, deferred systems, and rejected excess scope.
+
+It is also the canonical tracked location for completed Crime99 package-preflight dispositions. Detailed recurring integration risks and verified troubleshooting knowledge are retained in [`TECHNICAL_RISK_REVIEW.md`](TECHNICAL_RISK_REVIEW.md); local Unity preflight workspaces and raw reports are supporting evidence, not repository Sources of Truth.
 
 ### [`IMPLEMENTATION_SEQUENCE.md`](IMPLEMENTATION_SEQUENCE.md)
 

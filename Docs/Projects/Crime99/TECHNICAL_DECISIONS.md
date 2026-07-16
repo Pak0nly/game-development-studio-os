@@ -4,7 +4,7 @@
 
 **Document Maturity:** Confirmed Planning Baseline
 **Implementation Status:** Not authorised
-**Last Reviewed:** 2026-07-15
+**Last Reviewed:** 2026-07-16
 
 This register records the Human Developer-confirmed technical planning baseline for the first playable prototype. `Accepted for Planning` means only that a decision belongs to this confirmed plan and should guide a later separately authorised implementation. It is not an implementation status and does not authorise project creation, implementation, purchase, download, package installation, asset import, commit, or push. `Preflight Candidate` requires a separately authorised isolated evaluation before adoption. `Deferred` is deliberately outside the first-prototype architecture.
 
@@ -33,9 +33,9 @@ Design decisions remain in [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md) and the GDD.
 | TD-015 | Custom simple minimap | Accepted for Planning |
 | TD-016 | Particle System first; VFX Graph deferred | Accepted for Planning |
 | TD-017 | Project-owned occlusion first | Accepted for Planning |
-| TD-018 | Complete City Traffic & Pedestrian System | Preflight Candidate |
+| TD-018 | Complete City Traffic & Pedestrian System | Retain for Controlled Prototype Trial (`Adopt with Conditions`) |
 | TD-019 | A* Pathfinding Project Pro | Conditional Preflight Candidate |
-| TD-020 | Realistic Car Controller Pro | Conditional Preflight Candidate |
+| TD-020 | Realistic Car Controller Pro | Conditional Candidate; successful F3 parity preflight |
 | TD-021 | See-through Shader | Conditional Preflight Candidate |
 | TD-022 | No network architecture in prototype | Accepted for Planning |
 | TD-023 | Automated evidence plus mandatory human feel gates | Accepted for Planning |
@@ -155,9 +155,9 @@ Build one small concrete URP-compatible occluder fade/material-swap component wi
 
 ### TD-018 — Complete City Traffic & Pedestrian System
 
-**Status:** Preflight Candidate
+**Status:** Retain for Controlled Prototype Trial (`Adopt with Conditions`)
 
-**Decision category:** `Preflight Candidate`
+**Decision category:** `Adopt with Conditions`; this is conditional retention for a later prototype trial, not current integration or final adoption.
 
 **Benefit and coverage:** traffic lanes, intersections, lights, crossings, pedestrian routes, population, and pooling cover the largest combined systems gap.
 
@@ -165,9 +165,13 @@ Build one small concrete URP-compatible occluder fade/material-swap component wi
 
 **Binding and maintenance risk:** high vendor and authoring lock-in. Source availability reduces but does not remove risk.
 
-**Unity 6/URP evidence:** local research records version `1.5.9`, original Unity `2022.3.62`, publisher-stated Unity 6 support, and no store pipeline table. No isolated Unity `6000.3.19f1` validation exists. URP is not the main functional risk, but dependencies and rendering still require preflight.
+**Direct preflight evidence:** isolated and combined testing ran under Unity `6000.3.19f1` and URP `17.3.0` with Traffic `3.6.3`, Pedestrian `1.5.8`, and Urban Example `1.5.9`. Technical integration and the six-scenario review harness ran successfully, but Human recovery review failed F1 pedestrian-to-pedestrian interaction, F3 representative pedestrian-versus-player-vehicle avoidance, F4 traffic-versus-small-obstacle recovery, and F5 multi-vehicle deadlock recovery. F2 and corrected F6 passed.
 
-**Adoption gate:** purchase/download only after separate approval; isolated one-intersection test; prove project control, traffic recovery, custom vehicle coexistence, flee/return extension, visibility-safe spawn, batch stability, and acceptable authoring time. No adapter is built before an authorised integration package concretely requires one.
+**Technical finding:** `Package Limitation`. The supplied behaviours provide waypoint, lane-link, population, and optional static-graph pathfinding primitives, but no universal reciprocal crowd avoidance or runtime blocked-road recovery. The bounded recovery adapter PoC did not solve F1/F3/F4/F5. This finding is retained in full and is not converted into a technical Pass by the product decision.
+
+**Controlled prototype-trial conditions:** any later Crime99 trial requires separate authority and Inspector-accessible, documented settings for traffic/pedestrian density, spawn/despawn areas, obstacle detection, wait/blockage timing, waypoint/lane-change behaviour, pedestrian avoidance distance, stuck/recovery thresholds, and dead or prone road objects. The trial may deliberately use controlled waypoint networks, sufficient road width, bounded agent counts, selected ambient situations, and optional cleanup of persistent blockers. It must not assume universal local avoidance and must receive a new Human review under representative Crime99 map, camera, and gameplay conditions.
+
+**Current boundary:** no Crime99 import or integration has occurred, and no final adoption is approved. Crime99 continues to own population policy, gameplay reactions, cleanup rules, and acceptance criteria.
 
 ### TD-019 — A* Pathfinding Project Pro
 
@@ -185,7 +189,7 @@ Build one small concrete URP-compatible occluder fade/material-swap component wi
 
 ### TD-020 — Realistic Car Controller Pro
 
-**Status:** Conditional Preflight Candidate
+**Status:** Conditional Candidate; successful F3 parity preflight
 
 **Decision category:** `Preflight Candidate`
 
@@ -193,9 +197,9 @@ Build one small concrete URP-compatible occluder fade/material-swap component wi
 
 **Integration:** high. Crime99 must still own theft, bot input, damage, burning, explosion, roadkill, score, and traffic coexistence.
 
-**Unity 6/URP evidence:** local research records version `2.57.0.LTS`, original Unity `6000.0.49`, and Built-in/URP/HDRP compatibility for that version. This is promising but not proof for `6000.3.19f1` or the project configuration.
+**Direct preflight evidence:** RCCP `2.57.0` ran under Unity `6000.3.19f1`/URP. The combined F2 comparison was invalid because it changed the manufacturer Coupe from `1750 kg`, `300 Nm`, and `40 degrees` steering to `1150 kg`, `250 Nm`, and `38 degrees`, recomputed steering-axle ownership, changed presentation, and replaced the RCCP camera. F3 restored the exact manufacturer Coupe and RCCP camera while retaining only required integration layers and the obstacle proxy. Human review accepted F3 as sufficiently close to the manufacturer-faithful F1 reference.
 
-**Adoption gate:** only after the small controller reaches its stop criterion or a separately approved early comparison is judged cheaper. Prove four distinct arcade profiles, AI intent input, stable roadkills/collisions, ten-vehicle chain load, fixed-camera readability, and clean project-owned lifecycle separation.
+**Current boundary and remaining conditions:** RCCP remains a conditional candidate, not integrated or finally adopted. A later Crime99 trial must still prove the required vehicle classes, bot intent, project-owned theft/damage/lifecycle, roadkills/collisions, population load, Crime99 camera conditions, and acceptable per-class feel. Manufacturer vehicle and camera configuration must remain the parity baseline; derived tuning must be labelled and reviewed separately.
 
 ### TD-021 — See-through Shader
 
@@ -238,8 +242,8 @@ Third-party originals remain under `Assets/ThirdParty/<Publisher>/<Package>` and
 | Simple custom camera | Exact fixed/rotatable policies | Full prototype camera | Low | Low | Plain Unity/URP code; exact behavior still needs tests | `Build Small Custom` |
 | Unity NavMesh / AI Navigation | Foot paths and obstacles | Bots, pedestrians, foot police | Low-medium; use concrete baseline first | Low-medium | Exact package/version unresolved | `Use Built-In` |
 | A* Pathfinding Project Pro | Paths, graphs, local avoidance | Foot navigation, not behavior/traffic | High vendor API binding | Medium | No exact Unity 6.3 proof | `Preflight Candidate` |
-| Complete City Traffic & Pedestrian | Traffic, intersections, pedestrians | Broad city population | High authoring/runtime binding | High | Publisher Unity 6 claim; no exact local proof | `Preflight Candidate` |
-| Realistic Car Controller Pro | Vehicle physics/setup | Drive model only | High component binding | Medium-high | Unity 6000.0.49 URP row; exact baseline unproven | `Preflight Candidate` |
+| Complete City Traffic & Pedestrian | Controlled ambient traffic and pedestrians | Broad population primitives; recovery limitation | High authoring/runtime binding | High | Direct Unity `6000.3.19f1`/URP preflight; F1/F3/F4/F5 recovery failed | `Retain for Controlled Prototype Trial` / `Adopt with Conditions` |
+| Realistic Car Controller Pro | Vehicle physics/setup | Drive model only | High component binding | Medium-high | Direct Unity `6000.3.19f1`/URP preflight; F3 parity accepted | `Conditional Candidate` |
 | Simple custom vehicle | Arcade four-class drive model | Minimum Gate B | Medium physics/tuning work | Medium | Unity built-in physics | `Build Small Custom` |
 | See-through Shader | Building occlusion | Camera readability | Medium material binding | Medium | URP evidence for older Unity; exact baseline unproven | `Preflight Candidate` |
 | Unity Object Pooling | Allocation control | Common transient objects | Low | Low | Unity built-in API | `Use Built-In` |
@@ -256,10 +260,10 @@ Architecture planning does not resolve:
 
 * OD-004 exact project path and repository creation approval;
 * OD-006 implementation authorisation and exact first work package;
-* any purchase/download/installation or Store candidate preflight;
+* any new purchase/download/installation or Store candidate preflight;
 * final camera values and later camera-variant comparison result;
 * final performance target and weaker hardware profile;
-* adoption of a Store traffic, navigation, vehicle, or occlusion system after evidence;
+* execution and final adoption outcome of the separately authorised controlled Traffic/Pedestrian and RCCP prototype trials;
 * any Git LFS or external large-asset storage model;
 * release-asset classifications.
 

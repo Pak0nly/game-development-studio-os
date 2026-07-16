@@ -276,7 +276,7 @@ Reuse lane navigation where possible, allow limited pursuit steering offsets, an
 |---|---|---|---|
 | Small project-specific solution | Lowest coupling; sufficient lane traffic and simple policies | Foot pathfinding/avoidance becomes expensive | Use custom lane graph; do not build custom general pathfinding |
 | Unity NavMesh | Built-in, familiar, adequate for foot agents | Local avoidance and dynamic urban edge cases require validation | Baseline foot navigation |
-| Complete City Traffic & Pedestrian System | Broad traffic, intersection, pedestrian, pooling coverage | High authoring/API lock-in; Crime99 reactions remain custom | Preflight candidate only |
+| Complete City Traffic & Pedestrian System | Broad traffic, intersection, pedestrian, pooling coverage | `Package Limitation` for general recovery; high authoring/API lock-in | Retain only for a separately authorised controlled prototype trial under TD-018 conditions |
 | A* Pathfinding Project Pro | Strong graphs, pathfinding, local avoidance, debugging | Paid dependency; does not solve behaviour or traffic | Preflight only if NavMesh fails measured bot/police needs |
 | Hybrid | Uses each tool only where valuable | Multiple spatial representations can raise integration cost | Recommended shape: NavMesh for foot agents plus project-owned lane graph; add an integration boundary only for a proven and authorised replacement |
 
@@ -401,7 +401,7 @@ Automated evidence may establish correctness and stability, never subjective fee
 | Future multiplayer | No networking, but rules separated from presentation | Vendor runtime state may be difficult to replicate or serialize |
 | Third-party dependence | Low | High in the selected expensive domains |
 
-**Recommendation:** implement Variant A through Gate A. At Gate B, compare the small controller against a separately authorised RCCP preflight only if custom feel/stability work exceeds the stop criteria. Before Gate D population work, preflight Complete City Traffic & Pedestrian System only if the lane/pedestrian vertical slice demonstrates that custom traffic cost threatens the gate. Keep Unity NavMesh as baseline and preflight A* Pro only against a recorded navigation failure. This is a hybrid acquisition strategy, not early adoption of Variant B.
+**Current recommendation:** Variant A remains the project-owned baseline. The completed RCCP preflight retains RCCP as a conditional candidate after successful F3 parity. The completed Complete City Traffic & Pedestrian preflight records `Package Limitation` but retains the package for a separately authorised controlled prototype trial with constrained ambient scenarios and no assumption of universal recovery. Keep Unity NavMesh as baseline and preflight A* Pro only against a recorded navigation failure. No package is currently integrated or finally adopted.
 
 ## Multiplayer-Safe Boundaries Without Multiplayer Work
 

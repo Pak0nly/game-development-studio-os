@@ -61,9 +61,13 @@ Do not remove one human plus up to eleven bots, required weapons/vehicles, vehic
 
 Run a compact Gate B spike before vehicle content. Keep the lifecycle project-owned. Add an AI input boundary only when the bot-driving work package actually begins. If stable arcade feel is not reached within the approved custom budget, stop; do not deepen custom suspension/drivetrain complexity or prebuild a Store adapter. A separately authorised RCCP preflight must compare total integration cost, not demo-scene appearance.
 
+The completed RCCP comparison confirms why parity must be configuration-based: the first combined F2 variant changed mass, torque, steering, axle ownership, presentation, and camera. F3 restored the manufacturer Coupe and camera and passed Human parity review. RCCP remains conditional; preserve F3 as the baseline and do not treat derived tuning as manufacturer parity.
+
 ### TR-003 — Traffic and Pedestrian Cost
 
 Build exactly one representative intersection with lanes, one signal/reservation mode, pedestrian crossing, flee/return, stuck detection, recovery, and visibility-safe population. Measure authoring time and failure rate. Scale only if the approach is maintainable. A combined Store system is justified for preflight only if it closes this demonstrated gap and accepts `PopulationDirector` authority.
+
+The completed combined preflight establishes `Package Limitation`: the bounded recovery PoC failed F1 pedestrian-to-pedestrian recovery, F3 representative pedestrian avoidance around the player vehicle, F4 small-road-obstacle recovery, and F5 multi-vehicle deadlock recovery. Complete City Traffic & Pedestrian System is retained only for a controlled ambient prototype trial that constrains route networks, road width, agent count, and scenario selection and may remove persistent blockers. Universal local avoidance is not an acceptance assumption.
 
 ### TR-005 — Camera and Occlusion
 
@@ -129,6 +133,18 @@ Stop/reject if the adapter leaks vendor types into actor/AI rules, graph generat
 ### Realistic Car Controller Pro
 
 Stop/reject if arcade tuning remains simulation-heavy, bot intent requires demo/input coupling, theft/damage lifecycle cannot stay project-owned, collisions/roadkills are unstable, ten simultaneous vehicle failures are costly, or the package conflicts with traffic vehicles.
+
+## Verified Preflight Troubleshooting Knowledge
+
+These recurring findings are retained here because they affect later Crime99 package trials. Detailed raw reports remain local in the untracked preflight workspaces.
+
+- **URP and legacy materials:** Built-in `Standard`/legacy materials and vendor property-block emission can render objects black or magenta under URP. Use project-owned runtime material clones or separately approved converted derivatives, copy only compatible properties, clear conflicting property blocks, and never edit publisher originals.
+- **Scene lighting:** material compatibility alone did not make the review scene reliable. Establish explicit bounded ambient light and a review-only directional light, then validate a visible Windows render. Review lighting is not approved production art.
+- **Unity Hub IPC licensing:** Unity Hub was signed in and the Personal licence active. Unity started inside an isolated process could not see Hub's IPC licensing channel and exited with code `198`. The verified path starts Unity from the normal host process context with `-useHub -hubIPC` and, for unattended runs, `-acceptSoftwareTermsForThisRunOnly`; a login or licence reactivation request is not the first remedy.
+- **RCCP parity:** compare exact manufacturer vehicle, Rigidbody, wheel/axle, input, and camera configuration before diagnosing integration physics. The F2 derivative invalidated parity; F3 restored the manufacturer Coupe and camera and passed Human comparison.
+- **Review particles:** legacy RCCP exhaust and braking particles became oversized, opaque, and red after review rendering conversion. The review-only fix stops, clears, and disables all RCCP particle emission/renderers without changing physics, wheels, input, camera, or F3 handling. Production particle migration remains separate.
+
+Later trials must verify these fixes in a visible player and record Unity/package versions, cause, solution, validation result, remaining limitation, and date. This summary does not authorise vendor-file edits or production migration.
 
 ### See-through Shader
 

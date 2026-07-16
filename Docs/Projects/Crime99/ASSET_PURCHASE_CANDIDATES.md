@@ -7,6 +7,8 @@
 **Project phase:** Definition
 **Authority:** Research and decision support only
 
+**Supersession notice:** the Complete City Traffic & Pedestrian System and Realistic Car Controller Pro entries preserve the 2026-07-14 purchase research only. Both packages were subsequently purchased and preflighted. Their current project status is authoritative only in [`TECHNICAL_DECISIONS.md`](TECHNICAL_DECISIONS.md) TD-018 and TD-020.
+
 The entries below are research findings, not purchase recommendations or purchase, download, import, installation, architecture, implementation, or main-prototype-use approvals. None of the non-owned assets in this document has been technically validated. No checkout, coupon, key redemption, cart, download, or import action was performed.
 
 ## Evidence Rules
@@ -32,9 +34,9 @@ An official demo, trial, or other legal advance evaluation may precede purchase 
 
 | Priority | Candidate | Gap | Live price on 2026-07-14 | Current research status |
 |---:|---|---|---|---|
-| 1 | Complete City Traffic & Pedestrian System | Traffic, intersections, vehicle AI, pedestrians, crossings, pooling | €89.70 / €179.41 (-50%) | **Research shortlist — leading potential future candidate after owned-asset preflight** |
+| 1 | Complete City Traffic & Pedestrian System | Traffic, intersections, vehicle AI, pedestrians, crossings, pooling | €89.70 / €179.41 (-50%) | **Historical research entry; purchased and preflighted; see TD-018** |
 | 2 | A* Pathfinding Project Pro | Combat-bot and general pedestrian navigation, local avoidance | €64.40 / €128.81 (-50%) | **Research shortlist — potential future candidate after owned-asset preflight** |
-| 3 | Realistic Car Controller Pro | Arcade-capable vehicle controller for four classes | €46.00; no current discount shown | **Research shortlist — potential future primary candidate after owned-asset preflight** |
+| 3 | Realistic Car Controller Pro | Arcade-capable vehicle controller for four classes | €46.00; no current discount shown | **Historical research entry; purchased and preflighted; see TD-020** |
 | 4 | See-through Shader | Building/camera occlusion | €45.99; no current discount shown | **Research shortlist — potential candidate after the provisional test pipeline is known** |
 | 5 | GPU Instancer Pro | LOD/culling/instancing if stress test proves a rendering bottleneck | €58.88 / €117.77 (-50%) | **Deferred research lead — no purchase case without a measured bottleneck** |
 | 6 | NWH Vehicle Physics 2 | Alternative vehicle controller | €27.60 / €55.20 (-50%) | **Fallback research lead — redundant unless the primary controller fails technical preflight** |
@@ -61,7 +63,7 @@ An official demo, trial, or other legal advance evaluation may precede purchase 
 - **Vendor/architecture dependence:** **High**. Road/pedestrian waypoints, pooling and APIs influence city architecture.
 - **Prototype value:** **Very high** because it closes two major required gaps and includes the interaction between them.
 - **Release value:** **High** if scalability and source quality pass; otherwise replacement cost is significant.
-- **Research status:** **Leading research-shortlist entry.** After the owned-asset preflight confirms this gap and the technical requirements, it may be proposed for a separately authorised, limited preflight purchase. Only a subsequent isolated technical preflight could establish Unity 6.3 compatibility, map-authoring cost, fixed/rotatable camera behaviour, custom vehicle-controller integration, emergency/police routing, blocked-road recovery, visibility-based spawn control, and extensibility of flee/return behaviour. It is not technically validated or recommended for main-prototype use.
+- **Research status:** **Historical and superseded for current status.** The package was purchased and preflighted. TD-018 records `Package Limitation` and `Retain for Controlled Prototype Trial` (`Adopt with Conditions`), without current Crime99 integration or final adoption.
 
 ### 2. A* Pathfinding Project Pro
 
@@ -99,7 +101,7 @@ An official demo, trial, or other legal advance evaluation may precede purchase 
 - **Vendor/architecture dependence:** **High** because vehicle state and bot driving will interface with its components.
 - **Prototype value:** **Very high** if responsive arcade tuning is achievable.
 - **Release value:** **High** if stable under many simultaneous traffic/player/bot vehicles.
-- **Research status:** **Potential primary research-shortlist entry for the vehicle-controller gap.** If the owned-asset preflight confirms requirements and a separate limited purchase is approved, a subsequent isolated technical preflight should evaluate compact/saloon/van/refuse-truck differentiation, fast arcade response, stable collisions/roadkills, fixed-camera readability, an AI input interface, traffic-system coexistence, and ten-vehicle chain-reaction stability. It is not technically validated or recommended for main-prototype use.
+- **Research status:** **Historical and superseded for current status.** RCCP was purchased and preflighted; F3 parity passed. TD-020 retains it as a conditional candidate without current Crime99 integration or final adoption.
 
 ### 4. See-through Shader
 
