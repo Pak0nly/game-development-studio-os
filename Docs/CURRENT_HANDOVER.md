@@ -4,11 +4,11 @@ This file preserves only the context needed to continue current work. It is an o
 
 ## Handover Summary
 
-The Human Developer accepted Crime99 Gate A and authorised Gate B vehicle feel on 2026-07-15. Gate B is implemented and objectively validated at `Projects/Crime99/` with the sole Unity root `Projects/Crime99/Source/Crime99/`. Clean local `main` points to `840c05694e0d7e3c16ac8e5a2d62c2a99b47f7de` (`Implement Crime99 Gate B vehicle feel`) and is one commit ahead of `origin/main` at pushed Gate A commit `0f12673086959765978311ca6f65307065340387`. Human vehicle-feel review failed: only the Compact accelerated correctly; the Saloon, Van, and Refuse Truck moved very slowly and sideways; vehicles rotated excessively around their centres; and credible front-axle/wheel steering was absent. Gate B is not accepted and no Gate B push occurred.
+The Human Developer accepted Crime99 Gate B on the RCCP basis. Commit `b1faed2bff92ac4a151eb63a5758c02654b31210` (`Integrate RCCP for Crime99 Gate B`) is pushed to `origin/main` without force. The failed custom implementation remains preserved only on the local archive branch `archive/gate-b-custom-controller-failed` at `840c05694e0d7e3c16ac8e5a2d62c2a99b47f7de`. RCCP `2.57.0` remains in an ignored local vendor area with manufacturer originals unchanged. Gate C — Impact and Destruction is authorised, including an approximately 20% proportional acceleration increase for all four vehicle classes during the general vehicle iteration. Traffic/pedestrian integration remains separate and unauthorised.
 
 Gate A implements normalized keyboard movement, independent mouse aiming, a fixed elevated camera, sprint/stamina, jump, ground-only dodge, a hitscan pistol with magazine/reserve/reload rules, central health damage, six targets, primitive feedback, a test arena, and minimal HUD. Human review confirmed the requested movement, combat, resource, collision, and simple traversal behavior, then identified airborne dodge start as the only defect. The correction blocks jump/fall dodge before stamina or cooldown changes while allowing a grounded dodge to finish normally. Targeted `16/16` EditMode and `3/3` PlayMode tests, full `20/20` EditMode and `3/3` PlayMode suites, compilation, scene loading, visible Play Mode, Development Build, and built-player start passed.
 
-Gate B provides Compact Car, Saloon, Van, and Refuse Truck placeholders; direct arcade driving; entry/exit and takeover; fixed-camera target switching; controlled collisions; simple impact damage; a disabled state; minimal vehicle HUD; and a technical arena. Full `30/30` EditMode and `10/10` PlayMode suites including Gate A regression, scene loading, visible Editor Play Mode, Development Build, and built-player start passed. No Store asset, third-party raw payload, purchase, download, installation, Git LFS, Preflight transfer, Gate C system, or architecture/governance change occurred.
+RCCP Gate B provides project-owned Compact Car, Saloon, Van, and Refuse Truck variants backed by unchanged manufacturer assets; player/script/null/disabled control boundaries; safe entry/exit; fixed camera profiles; controlled collisions; damage/disable; minimal HUD; and a bounded technical arena. Compact is now `1600 kg / 330 Nm / 190 km/h / 44°`; Saloon is `2000 kg / 320 Nm / 230 km/h / 34°`; Van and Refuse Truck are unchanged. The arena is `100 m × 360 m` with four safety walls, speed checks through `250 m`, brake markings, and runoff. Camera profiles blend between foot `(0,14,-12)` and vehicle `(0,18,-22)`. Full `31/31` EditMode and `11/11` PlayMode suites including Gate A regression, scene loading, visible Editor Play Mode, Development Build, and built-player start passed. SHA-256 verification confirmed all 3,804 manufacturer files match with no mismatches or extras. Vendor files and generated outputs remain ignored; the amended commit contains 58 project-owned text files.
 
 The Human Developer purchased Realistic Car Controller Pro and Complete City Traffic & Pedestrian System and authorised two sequential isolated technical Preflights plus a later isolated combined integration Preflight. Neither package has been integrated into or finally adopted for Crime99. Both isolated technical Preflights pass and both corrected repeat Human Reviews returned `Conditional Pass`. The combined project technically passes its interface suite, but Human Review exposed poor RCCP feel, vehicle entrapment, pedestrian circling, inadequate detours, crossing blockage, and traffic queues stopped by small obstacles. RCCP parity was later restored; Complete City Traffic & Pedestrian System is now conditionally retained for a controlled prototype trial despite its unchanged recovery limitation.
 
@@ -18,9 +18,9 @@ The recovery/local-avoidance build technically passes, but Human review failed F
 
 ## Continuation Boundary
 
-Gate A and Gate B objective implementation work are complete, but Gate B failed subjective Human review and remains blocked. The one local Gate B commit exists and must not be pushed or treated as accepted. The two purchased packages remain Preflight candidates and cannot be adopted by technical results alone. Combined integration, RCCP parity, and the completed bounded recovery pass are confined to the designated isolated project. Further remediation is not authorised. Main-project transfer/adoption, Gate B repair or push, Gate C, further purchases, and broader implementation remain outside scope.
+Gate A and RCCP Gate B are accepted and pushed. Gate C — Impact and Destruction is the active authorised Crime99 task. It includes three distinct weapons, central damage rules, vehicle damage states, fire, explosions and bounded chain reactions, ramming, destructible street objects, feedback, a Gate C test arena, automated and visible validation, a Windows Development Build, evidence, documentation, and one local commit. Complete City Traffic & Pedestrian System remains outside Crime99. Gate C must not be pushed; Gate D, traffic/pedestrian work, purchases, downloads, and broader implementation remain outside scope.
 
-The Studio OS Gate A state commit is local `3e8a22d` (`Record Crime99 Gate A completion`), limited to `Docs/WORK_STATE.md` and this file. Its authorised push was blocked because the environment could not verify the external remote as private. The repository-closure decision set is recorded in one later local documentation commit without a push, leaving root `main` two commits ahead of `origin/main`. Crime99 and all Preflight project workspaces remain untracked from Studio OS and must not be staged there.
+At Gate C authorisation, Studio OS root `main` and `origin/main` pointed to `b556a2c214765f9c98b3912af55bc1b5b49b75ac` (`Record Crime99 preflight closure decisions`). The Gate B completion status is recorded by the subsequent `Record Crime99 Gate B completion` commit. Crime99 and all Preflight project workspaces remain untracked from Studio OS and must not be staged there.
 
 ## Evidence and Review Files
 
@@ -40,9 +40,10 @@ The following project paths are local untracked supporting evidence and are deli
 - Gate A scene: `Projects/Crime99/Source/Crime99/Assets/_Crime99/Scenes/TestAreas/GateAControls.unity`
 - Gate B scene: `Projects/Crime99/Source/Crime99/Assets/_Crime99/Scenes/TestAreas/GateBVehicleFeel.unity`
 - Gate B Development Build: `Projects/Crime99/Builds/GateB/Crime99.exe` (ignored)
-- Gate B Editor screenshot: `Projects/Crime99/Artifacts/GateB-Screenshot.png` (ignored)
-- Gate B runtime evidence and player log: `Projects/Crime99/Builds/GateB/` (ignored)
-- Gate B logs, test XML, committed-file list, and review ZIP: `Projects/Crime99/Artifacts/` (ignored)
+- RCCP Gate B Human review guide: `Projects/Crime99/Docs/GATE_B_HUMAN_REVIEW.md`
+- RCCP Gate B Editor screenshot: `Projects/Crime99/Artifacts/gate-b-rccp-visible.png` (ignored)
+- RCCP Gate B build: `Projects/Crime99/Builds/GateB/Crime99.exe` (ignored)
+- RCCP Gate B logs, test XML, runtime evidence, and review ZIP: `Projects/Crime99/Artifacts/` (ignored), including `Crime99-GateB-RCCP-Review-Evidence.zip`
 - RCCP report: `Projects/Crime99RCCPPreflight/RCCP_PREFLIGHT_REPORT.md`
 - RCCP Human Review guide: `Projects/Crime99RCCPPreflight/HUMAN_REVIEW.md`
 - RCCP Development Build: `Projects/Crime99RCCPPreflight/Builds/Windows/Crime99RCCPPreflight.exe`
@@ -74,8 +75,8 @@ The following project paths are local untracked supporting evidence and are deli
 ## Remaining Risks and Open Items
 
 - Human review accepted Gate A. Air Dodge remains blocked by the corrected grounded-only rule, with no stamina or cooldown cost for blocked airborne input.
-- Gate B feel has objective evidence but failed Human review. Acceleration and directional behaviour for three heavy classes, centred rotation, visible/credible steering geometry, braking, inertia, collision feel, and final per-class tuning remain open.
-- Realistic Car Controller Pro is the preferred candidate after technical pass and conditional Human pass. Remaining adoption conditions are per-class turning-radius differentiation, reduced centre-pivot impression, camera evaluation, and conscious Van rollover calibration.
+- RCCP Gate B has complete objective evidence and Human acceptance, including Compact/Saloon differentiation, the extended bounded course, and the perceptible smooth camera transition.
+- Realistic Car Controller Pro is the accepted physics basis for Gate B and remains locally ignored and unchanged. This does not authorise manufacturer-file modification or unrelated package use.
 - Complete City Traffic & Pedestrian System passes its isolated technical checks and corrected Repeat Human Review returned `Conditional Pass`. General obstacle reaction is present but not optimal. Adoption conditions include obstacle-response tuning, refreshing incomplete local editor-only URP/Collections package-cache resources and validating without the fallback, resolving remaining visual defects, a longer deadlock soak, blank-scene road-network authoring proof, and a separately authorised RCCP integration test.
 - The combined preflight is formally closed at `Retain for Controlled Prototype Trial`; it is not a current import or final adoption. Its recovery Human Fail and `Package Limitation` remain unchanged. A later trial must constrain waypoint networks, street width, agent count, and scenario selection; expose and document relevant Inspector settings; optionally clean up persistent blockers; and repeat Human review under representative Crime99 conditions.
 - NWH Vehicle Physics 2 has a stronger explicit axle/input/source architecture but a higher complexity and dependency burden. Edy's Vehicle Physics has the smallest footprint of the three but an unresolved Unity 6 compatibility risk. Store claims are research evidence, not technical validation or adoption approval.
@@ -84,19 +85,19 @@ The following project paths are local untracked supporting evidence and are deli
 - The visible Editor review logged a Unity Search indexing exception and shutdown-only temporary-allocation diagnostics; neither occurred in the built-player run or affected tests, scene loading, rendering, or build completion.
 - The legacy Input Manager is used behind one project-owned intent component because no new Input System package download was authorised; Unity marks that manager as deprecated.
 - Licensed third-party assets still require separate acquisition/import authority, provenance entries, import recipes, and technical preflight before any main-project use.
-- The Crime99 private remote contains accepted Gate A commit `0f12673086959765978311ca6f65307065340387`; local Gate B commit `840c05694e0d7e3c16ac8e5a2d62c2a99b47f7de` is intentionally unpushed.
+- The Crime99 private remote contains accepted Gate B commit `b1faed2bff92ac4a151eb63a5758c02654b31210`. Failed custom Gate B commit `840c05694e0d7e3c16ac8e5a2d62c2a99b47f7de` remains preserved only on its local archive branch.
 - DEC-023's independent encrypted offline backup remains open.
 
 ## Restart Procedure
 
 1. Read `AGENTS.md`, `Docs/WORK_STATE.md`, `Docs/CONFIRMED_DECISIONS.md`, and this file.
-2. Verify Studio OS local `main` remains two commits ahead of `origin/main` after the Gate A state commit and repository-closure documentation commit, with the known project workspaces still untracked.
-3. Enter `Projects/Crime99/` and verify clean local `main` at `840c05694e0d7e3c16ac8e5a2d62c2a99b47f7de`, one commit ahead of `origin/main` at `0f12673086959765978311ca6f65307065340387`.
-4. Treat the failed Human review as authoritative over the passing automated checks; do not repeat the already-completed review as the next task.
-5. Treat the RCCP report as technically passed with conditional Human approval and no main-project adoption. Preserve its listed tuning conditions.
+2. Verify Studio OS root `main` and `origin/main` include `Record Crime99 Gate B completion`, with the known project workspaces still untracked.
+3. Enter `Projects/Crime99/` and verify local `main` and `origin/main` both start Gate C from accepted Gate B commit `b1faed2bff92ac4a151eb63a5758c02654b31210`; verify the failed implementation remains at `archive/gate-b-custom-controller-failed`.
+4. Implement and validate the authorised Gate C scope using only project-owned files and unchanged ignored RCCP manufacturer originals.
+5. Apply the authorised acceleration increase proportionally to all four classes and preserve their differences; document it as a Human-review point.
 6. Treat the Traffic & Pedestrian report as technically passed with conditional Human approval and no main-project adoption. Preserve its obstacle-response and visual/package-cache conditions.
-7. Do not stage nested projects through Studio OS. Do not modify or push Gate B, import into Crime99, adopt either package, begin Gate C, or make further purchases without new authority. Combined work remains confined to the authorised integration Preflight project.
+7. Do not stage nested projects through Studio OS. Stop after the local Gate C commit and before Gate C push, Gate D, traffic/pedestrian systems, purchases, downloads, or further implementation.
 
 ## Exact Next Task
 
-Repository closure is complete. Stop before push or further project work. A controlled Crime99 prototype trial, integration, remediation, Gate change, or other implementation requires separate authority.
+Implement and fully validate Crime99 Gate C — Impact and Destruction. Create the authorised local commit `Implement Crime99 Gate C impact and destruction`, then stop before push, Gate D, traffic/pedestrian integration, purchases, downloads, or further implementation.
