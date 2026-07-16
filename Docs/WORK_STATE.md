@@ -4,7 +4,7 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Crime99 Gate B is accepted on the RCCP basis and commit `b1faed2bff92ac4a151eb63a5758c02654b31210` (`Integrate RCCP for Crime99 Gate B`) is pushed to `origin/main`. The failed custom implementation remains preserved only on the local archive branch `archive/gate-b-custom-controller-failed` at `840c05694e0d7e3c16ac8e5a2d62c2a99b47f7de`. Realistic Car Controller Pro `2.57.0` remains in unchanged, ignored local manufacturer files with project-owned adapters and variants. Gate C — Impact and Destruction is authorised. The next general vehicle iteration may raise acceleration for all four vehicle classes by approximately 20% while preserving their differences; this is not an isolated Gate B fix. Complete City Traffic & Pedestrian System remains outside Crime99 at `Retain for Controlled Prototype Trial` with the unchanged technical result `Package Limitation`.
+Crime99 Gate C — Impact and Destruction is accepted and pushed to `origin/main` at `97bba7e8ea8c544f5a4d2dc3a7e2b707c6724f8f` (`Implement Crime99 Gate C impact and destruction`) without force. Gate D — Replayable FFA is now authorised. Its first technical item is the known Compact Car and Saloon weapon/projectile hitbox defect; this must be corrected and regression-tested before match, bot, traffic, or police work. Complete City Traffic & Pedestrian System remains conditionally limited to the controlled prototype slice, with the unchanged technical result `Package Limitation`. Gate E remains blocked.
 
 ## Confirmed Studio OS State
 
@@ -49,7 +49,7 @@ Crime99 Gate B is accepted on the RCCP basis and commit `b1faed2bff92ac4a151eb63
 - Decide whether repeated usage provides enough evidence to evaluate or adopt a Session Handover Protocol.
 - Decide whether a maintenance cadence should be formalized.
 - Human recovery review failed F1/F3/F4/F5. Corrected F6 and review-particle suppression are confirmed. `Package Limitation` remains the technical result. Complete City Traffic & Pedestrian System is conditionally retained for a controlled prototype trial, not yet integrated or finally adopted.
-- Gate C — Impact and Destruction is authorised. Traffic/pedestrian integration and unrelated gameplay remain unauthorised.
+- Gate C is Human-accepted and pushed. Gate D — Replayable FFA is authorised in the mandated sequence, beginning with the Compact Car and Saloon hitbox correction. Traffic and pedestrians remain a conditional controlled slice under the documented package limits. Gate E remains blocked.
 - `1950s NYC` and `Fuyoh Cyberpunk Diner` remain `Suitable with Light Adaptation`; `Cyberpunk Port City` remains `Needs Further Testing`; no package is a `Potential Release Asset`.
 
 ## Current Permissions
@@ -57,16 +57,16 @@ Crime99 Gate B is accepted on the RCCP basis and commit `b1faed2bff92ac4a151eb63
 - Autonomy Level B applies within explicitly assigned local task and workspace scope.
 - Crime99 Gate A implementation, airborne-dodge closure, Human review, and push are complete at `0f12673086959765978311ca6f65307065340387`.
 - The RCCP Gate B implementation is accepted and pushed at `b1faed2bff92ac4a151eb63a5758c02654b31210`.
-- Gate C — Impact and Destruction implementation, validation, evidence, documentation, staging, and one local commit are authorised in `Projects/Crime99/`. Gate C must not be pushed.
-- The approximately 20% acceleration increase is authorised only as part of the general Gate C vehicle iteration, applied proportionally to all four classes while preserving their differences and without a fundamental suspension change.
+- Gate C is Human-accepted and pushed at `97bba7e8ea8c544f5a4d2dc3a7e2b707c6724f8f`.
+- The authorised acceleration iteration is complete: Compact `396 Nm`, Saloon `384 Nm`, Van `504 Nm`, and Refuse Truck `900 Nm`; subjective class differentiation remains a Human-review point.
 - Download/import of the already purchased RCCP package, its required free Unity dependencies, isolated test work, evidence capture, and Development Builds are authorised only in `Projects/Crime99RCCPPreflight/`.
 - After the complete RCCP report, equivalent isolated work for the already purchased Complete City Traffic & Pedestrian System is authorised only in `Projects/Crime99TrafficPedestrianPreflight/`; RCCP must not be imported there.
-- The combined integration preflight is formally closed at `Retain for Controlled Prototype Trial`. Its `Package Limitation`, failed PoC, F1/F3/F4/F5 failures, and all constraints remain authoritative. No current Crime99 import, integration, final adoption, new remediation, custom local-avoidance system, build, Gate change, staging, commit, or push is authorised.
+- Gate D implementation, validation, evidence, documentation, staging, and one local Crime99 commit are authorised. The combined integration preflight remains `Retain for Controlled Prototype Trial`; its `Package Limitation`, failed PoC, F1/F3/F4/F5 failures, and all constraints remain authoritative. Traffic/pedestrian use is authorised only as the controlled Gate D slice and may not grow into a general recovery or coordination system.
 - Standing autonomous documentation maintenance remains limited to `Docs/WORK_STATE.md` and `Docs/CURRENT_HANDOVER.md` under the conditions in `AGENTS.md`.
 
 ## Next Concrete Step
 
-Implement and fully validate Crime99 Gate C — Impact and Destruction, then create the authorised local Gate C commit and stop before push, Gate D, traffic/pedestrian integration, purchases, downloads, or further implementation.
+Implement Crime99 Gate D — Replayable FFA in the authorised sequence, starting with the Compact Car and Saloon hitbox defect and its four-class, three-weapon regression coverage. Stop after the fully validated local Gate D commit and before Gate D push, Gate E, purchases, downloads, or further implementation.
 
 ## Relevant Sources of Truth
 
