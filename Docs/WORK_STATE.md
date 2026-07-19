@@ -4,81 +4,86 @@ This file records the current operational state. It is not an adopted governance
 
 ## Current Focus
 
-Crime99 is on `feature/style-slice-composition` at `5924160723e282b1cb8d6214a5cf4c49c223f52e`, ahead/behind `2/0` relative to `origin/main`. The Playable Presentation Block Pass 1 and Pass 2 remain technically valid but are classified as `Technically Valid — Visual Review Failed`: runtime occlusion is not implemented, the player is not kept visible behind buildings, the existing twelve matched captures prove static composition only, and the expanded twenty-position coverage/path matrix is incomplete. Studio OS now has a project-independent blind visual review, camera coverage, occlusion, hard-fail, two-round correction, matched-evidence, and Human-approval workflow. Crime99 has linked project-specific Visual QA, Camera Coverage, and Occlusion standards. The Human Developer has now authorised the first bounded Unity pass under that workflow, but only after the Studio-OS governance and Crime99 QA documentation are committed as separately defined. The Unity pass is limited to vehicle material, visibility lighting, surface materials, believable Neon sources, Moderate/High differentiation, a small Presentation-only runtime-occlusion slice, complete coverage/path evidence, and up to two internal correction rounds. No Gate F, purchase, download, manufacturer edit, Unity commit, or Unity push is authorised.
+The controlled Specialist Role and Review Board integration is complete. No additional project work is active or authorised.
 
-## Confirmed Studio OS State
+The Crime99 Presentation Foundation is a technically valid local checkpoint, but internal visual QA did not pass. The exact next recommended assignment is `Environment Dressing, Usage Story and Style Cohesion Pass`; it is not authorised and must start only under a new Human-approved work order.
 
-- **Adopted visual workflow:** `Docs/Visual/Visual_Quality_Assurance_Workflow.md` is the project-independent Source of Truth for blind visual review, the 0–5 matrix, camera/path coverage, runtime occlusion review, up to two bounded correction rounds, matched Before/After evidence, permitted internal statuses, and the Human visual-approval boundary.
-- **Validation result:** Continuity Version 2 passed immediate task continuity, durable decision continuity, and new Director chat validation.
-- **Confirmed and adopted:** Autonomy Level B is active. Its binding operating rules are defined in `Docs/AI_DEVELOPMENT_RULES.md`, with DEC-008 recording the confirmed autonomy decision.
-- **Environment:** Windows 11, Unity `6000.3.19f1`, Visual Studio Community 2022 with Unity support, and Windows Desktop.
-- **Studio OS Git:** Root `main` and `origin/main` both point to `d9992bba593da04a46dcf2e759e9c7bde7541f88` (`Record Crime99 Gate D completion`). Crime99 and all Preflight project workspaces remain untracked by this root repository. The current Gate E failure/reset entries in this file and `Docs/CURRENT_HANDOVER.md` are intentionally local, unstaged, and uncommitted.
-- **Open implementation item:** The independent encrypted offline backup required by DEC-023 is not configured because a suitable separate physical storage device is not currently available.
+## Source-of-Truth Order
 
-## Completed Workflow Tests
+1. adopted Studio Operating System documents;
+2. approved project documents within their defined project scope;
+3. `Docs/CONFIRMED_DECISIONS.md`;
+4. verified repository and runtime state;
+5. this file;
+6. `Docs/CURRENT_HANDOVER.md`;
+7. historical session files;
+8. current chat context.
 
-- **Match3WorkflowTest:** Implementation, deterministic tests, Unity compilation, batch-mode validation, and Human Developer Play Mode validation passed.
-- **SideScrollerWorkflowTest Phase 1:** Gameplay implementation, editor-driven structure tests, Unity compilation, batch-mode validation, and Human Developer Play Mode validation passed.
-- **SideScrollerWorkflowTest Phase 2:** Texture and material integration, Phase 1 regression tests, Unity compilation, batch-mode validation, and Human Developer visual validation passed.
+Unresolved contradictions must be reported rather than guessed.
 
-## Crime99 Gate A and Gate B State
+## Studio OS Repository
 
-- Separate local repository: `Projects/Crime99/`, branch `main`, remote `origin` at `https://github.com/Pak0nly/crime99.git`.
-- Sole Unity project root: `Projects/Crime99/Source/Crime99/`.
-- Baseline: Unity `6000.3.19f1`, URP `17.3.0`, Windows Standalone 64-bit.
-- Gate A scene: `Assets/_Crime99/Scenes/TestAreas/GateAControls.unity`.
-- Implemented scope: normalized movement, independent mouse aim, fixed elevated follow camera, sprint/stamina, jump, dodge, hitscan pistol, magazine/reserve/reload rules, damage, six targets, primitive feedback, test arena, and minimal HUD.
-- Automated result after Air-Dodge closure: final compilation/configuration passed; targeted `16/16` EditMode and `3/3` PlayMode tests passed; full `20/20` EditMode and `3/3` PlayMode suites passed; separate scene-load validation passed; Windows Development Build and built-player start passed; visible Editor Play Mode entered and exited cleanly.
-- Local initial commit: `76724a9103e3bf2b072f4e36f419b1f7802f354c`, subject `Initialize Crime99 Unity project baseline`, exactly 86 text files.
-- Baseline acceptance: confirmed by the Human Developer on 2026-07-15.
-- Amended Gate A commit: `0f12673086959765978311ca6f65307065340387`, subject `Implement Crime99 Gate A basic controls`, exactly 53 files.
-- Repository status at Gate B authorisation: clean `main`; local `HEAD` and `origin/main` both point to pushed Gate A commit `0f12673086959765978311ca6f65307065340387`.
-- Review status: Human review passed the listed Gate A functions. The reported airborne-dodge defect is corrected: dodge may start only while grounded, with no cost or cooldown on a blocked airborne request. Automated closure evidence passes; only an optional brief Human confirmation of that corrected input case remains.
-- Scope boundary through Gate A: no Store asset, third-party raw asset, purchase, download, installation, Git LFS, Gate B, vehicle, bot, match, or additional gameplay work occurred.
-- Gate B scene: `Assets/_Crime99/Scenes/TestAreas/GateBVehicleFeel.unity`.
-- Failed custom Gate B history: commit `840c05694e0d7e3c16ac8e5a2d62c2a99b47f7de` is preserved unchanged at `archive/gate-b-custom-controller-failed` and is no longer on `main`.
-- RCCP Gate B scope: RCCP `2.57.0`; four project-owned vehicle variants (Compact Car, Saloon, Van, and Refuse Truck); manufacturer-backed direct driving; safe entry/exit and takeover; fixed-camera target switching; impact-scaled health and disabled state; minimal vehicle HUD; and a technical driving arena.
-- Gate B objective result: compilation/configuration passed; full `31/31` EditMode and `11/11` PlayMode suites including Gate A regression passed; Gate A and Gate B scene loading passed; visible Editor Play Mode passed; Windows Development Build passed with zero build errors/warnings; built-player start passed with exit code `0`.
-- RCCP Gate B commit: amended local `b1faed2bff92ac4a151eb63a5758c02654b31210`, subject `Integrate RCCP for Crime99 Gate B`, exactly 58 project-owned text files.
-- RCCP Gate B repository status: clean `main` and `origin/main` at accepted Gate B commit `b1faed2bff92ac4a151eb63a5758c02654b31210`; the push completed without force.
-- RCCP Gate B review status: accepted by the Human Developer on the RCCP basis. General handling, directionality, centre-pivot behaviour, heavy vehicles, entry/exit, Gate A restoration, focused Compact/Saloon differentiation, the extended bounded arena, and the camera transition are accepted. Objective closure passes `31/31` EditMode, `11/11` PlayMode, all scene loads, visible Play Mode, Windows Development Build, and built-player startup. Manufacturer verification reports 3,804 matching files with no mismatches or extras.
-- External-system research result: Realistic Car Controller Pro ranks first for an isolated preflight because its current Asset Store release explicitly supports Unity 6 and URP and the vendor documents behaviour presets, external input override, AI, damage, trailers, runtime spawning, and vehicle management. NWH Vehicle Physics 2 ranks second because it offers stronger axle, wheel-contact, modular input, truck, and source-code capabilities but has a larger integration and tuning surface plus an Input System dependency. Edy's Vehicle Physics ranks third because it is compact, semi-arcade-oriented, externally controllable, and damage-capable, but its current Store compatibility table does not explicitly verify Unity 6.
+- Repository: `C:\Users\jarid\Desktop\Game Development`.
+- Branch: `main`.
+- Framework integration commit: `c00d1c431cb2707f74601cff5f8311c36f6f3db1` (`Add specialist role and review board framework`).
+- `origin/main` contains `c00d1c4`.
+- The state commit containing this file directly follows `c00d1c4` and is authorised to be pushed. After that push, local `main` and `origin/main` must match.
+- Crime99 and all Preflight repositories remain intentionally untracked by the Studio OS repository and must not be staged there.
+- The five pre-cherry-pick role drafts were preserved outside the repository at `C:\Users\jarid\.codex\visualizations\2026\07\19\019f7a5b-d846-7480-85d4-230003502686\Studio-Role-PreCherryPick-Backup`.
 
-## Open Points
+## Crime99 Repository and Worktrees
 
-- Configure and recovery-test the independent encrypted offline backup when suitable external storage is available.
-- Decide whether repeated usage provides enough evidence to evaluate or adopt a Session Handover Protocol.
-- Decide whether a maintenance cadence should be formalized.
-- Human recovery review failed F1/F3/F4/F5. Corrected F6 and review-particle suppression are confirmed. `Package Limitation` remains the technical result. Complete City Traffic & Pedestrian System is integrated only as the bounded Gate D controlled trial and is not generally adopted.
-- Gate D is conditionally Human-accepted for progression and remains the valid pushed baseline at `f0ec9bfc827ef31677a348ce9d39c3eeb336cf41`. Gate E failed visual Human Review and its full-map implementation exists only on local archive branch `archive/gate-e-full-map-failed`. Carryover changes made inside that rejected commit are not part of `main`. Traffic and pedestrians remain a conditional controlled Gate D slice under the documented package limits.
-- `1950s NYC` and `Fuyoh Cyberpunk Diner` remain `Suitable with Light Adaptation`; `Cyberpunk Port City` remains `Needs Further Testing`; no package is a `Potential Release Asset`.
+- Repository remote baseline: `origin/main` at `f0ec9bfc827ef31677a348ce9d39c3eeb336cf41` (`Implement Crime99 Gate D replayable FFA`).
+- Last valid pushed gameplay baseline: Gate D at `f0ec9bfc`; no later gameplay baseline is adopted or pushed.
+- Original/checkpoint worktree: `C:\Users\jarid\Desktop\Game Development\Projects\Crime99`, branch `checkpoint/presentation-foundation-internal-visual-fail`, HEAD `d9498d1e43cb453ec80c2e145638df2e582f3e25`.
+- Integration worktree: `C:\Users\jarid\Desktop\Crime99 Presentation Integration`, branch `feature/presentation-role-framework-integration`, HEAD `77500c4242f8fcab1c63c049b6358da880f86169`.
+- Role worktree: `C:\Users\jarid\Desktop\Crime99 Role Framework`, branch `feature/specialist-review-framework`, HEAD `e5dc4df51ecee0117ac57e1b0a8e0f39939e065e`.
+- Local planning chain: `2223958`, `5924160`, and `3ee2e0f`.
+- Foundation checkpoint: `d9498d1`.
+- Role integration commits: `63d746c` and `6542838`.
+- Project handover state commit: `77500c4`.
+- No Crime99 integration, checkpoint, role, or handover commit was pushed.
 
-## Current Permissions
+## Presentation Foundation and Review Status
 
-- Autonomy Level B applies within explicitly assigned local task and workspace scope.
-- Crime99 Gate A implementation, airborne-dodge closure, Human review, and push are complete at `0f12673086959765978311ca6f65307065340387`.
-- The RCCP Gate B implementation is accepted and pushed at `b1faed2bff92ac4a151eb63a5758c02654b31210`.
-- Gate C is Human-accepted and pushed at `97bba7e8ea8c544f5a4d2dc3a7e2b707c6724f8f`.
-- The authorised acceleration iteration is complete: Compact `396 Nm`, Saloon `384 Nm`, Van `504 Nm`, and Refuse Truck `900 Nm`; subjective class differentiation remains a Human-review point.
-- Download/import of the already purchased RCCP package, its required free Unity dependencies, isolated test work, evidence capture, and Development Builds are authorised only in `Projects/Crime99RCCPPreflight/`.
-- After the complete RCCP report, equivalent isolated work for the already purchased Complete City Traffic & Pedestrian System is authorised only in `Projects/Crime99TrafficPedestrianPreflight/`; RCCP must not be imported there.
-- Gate D is complete and pushed. The failed Gate E full-map attempt is archived locally and must not be pushed or resumed as the implementation base. After the Studio-OS workflow is committed/pushed and the Crime99 QA standards are committed locally, one bounded Presentation Block Unity correction pass is authorised for vehicle material, visibility lighting, surfaces, believable Neon sources, profile differentiation, Presentation-only runtime occlusion, twenty-position/path evidence, validation, and up to two internal correction rounds. Unity work must remain uncommitted and unpushed. Gate F, purchases, downloads, manufacturer changes, broad dressing, figures, HUD, Combat VFX, traffic, Bots, and broader Gate E work remain blocked. The combined integration preflight remains `Retain for Controlled Prototype Trial`; its `Package Limitation`, failed PoC, F1/F3/F4/F5 failures, and all constraints remain authoritative.
-- Standing autonomous documentation maintenance remains limited to `Docs/WORK_STATE.md` and `Docs/CURRENT_HANDOVER.md` under the conditions in `AGENTS.md`.
+- Checkpoint commit `d9498d1` contains exactly 108 selected project files: the current Presentation scene, project-owned runtime/editor code and focused tests, project-owned materials/textures, seven current review documents, and eight required Urban Block Kit marker files.
+- Manufacturer payloads, builds, logs, screenshots, review ZIPs, and other evidence artifacts are excluded.
+- Focused validation recorded at checkpoint: EditMode `8/8`, PlayMode `3/3`, Windows Development Build with `0` errors and seven non-failing publisher warnings, successful player walk/drive/enter/exit/reset, clean log, and `180.00 s` stability.
+- Runtime occlusion is implemented for the bounded scene and all twenty camera positions plus foot/vehicle transitions are documented.
+- Current status: `Technically Valid - Internal Visual QA Not Passed`.
+- Matrix: spatial `3`, materials `4`, light/shadow `4`, credible sources `4`, use history `2`, prop density `2`, style `3`, placeholder freedom `4`, camera coverage `4`, occlusion `4`, UI `3`, presentation value `3`.
+- Art Director: `FAIL`. Producer: `FAIL` for visual handoff. All other mandatory trial roles: `PASS WITH CONCERNS`.
+- Two bounded Foundation correction rounds are complete. Further visual correction requires a new work order.
+
+## Preserved Local State
+
+- The original/checkpoint worktree retains 188 deliberately excluded status paths: 18 old planning/review or evidence paths, 64 old Style Slice paths, 53 old Graybox V2 paths, 51 other old Urban Block Kit/Graybox paths, modified `BaselineStructureTests.cs`, and modified `TagManager.asset`.
+- These 188 paths were not reset, deleted, merged, staged, or committed by the controlled integration.
+- RCCP, Gley, 1950s NYC, Cyberpunk Port City, and Fuyoh Cyberpunk Diner payloads remain local, ignored, and uncommitted in the original Unity workspace.
+- Latest integrity record: RCCP `3,804` files / `699,044,637` bytes; Gley `1,519` files / `290,733,491` bytes; zero recorded integrity differences.
+- No 1950s-NYC manufacturer source changed. Port City and Fuyoh Diner were not used in the Presentation Block.
+
+## Known Issues and Human Decisions
+
+- Visual deficits: use history `2`, prop density `2`, style `3`, presentation value `3`, sparse secondary spaces, and incomplete `Neon over Dirt` cohesion.
+- Technical exception: monolithic publisher LOD geometry requires a bounded full-renderer occlusion fade to alpha `0.22`.
+- Seven non-failing publisher shader-graph warnings remain.
+- The Integration worktree has not been opened in Unity; ignored manufacturer dependencies are not automatically present there.
+- Human decisions remain open for checkpoint acceptance as a technical base, authorisation and priorities for the next assignment, the longer-term occlusion strategy, and disposition of the 188 excluded paths.
+
+## Explicitly Not Authorised
+
+- the recommended dressing assignment or any other new project work;
+- Unity, scene, code, test, build, evidence, material, lighting, or asset changes;
+- Gate E or Gate F implementation;
+- Crime99 push or merge into an original branch;
+- purchase, download, import, installation, activation, or manufacturer-source modification;
+- cleanup, reset, deletion, staging, or commit of the 188 excluded paths.
 
 ## Next Concrete Step
 
-Commit and push the six authorised Studio-OS workflow files, commit locally the eight authorised Crime99 QA documentation files without pushing, and only then execute the bounded Presentation Block Visibility, Materials, Lighting, and Occlusion Foundation Pass. Leave all Unity and resulting QA/evidence work uncommitted and unpushed, then stop for Human Review.
+Stop. Await a new Human-approved work order. If authorised later, the exact recommended assignment is:
 
-## Relevant Sources of Truth
+`Environment Dressing, Usage Story and Style Cohesion Pass`
 
-- `AGENTS.md`
-- `Docs/README.md`
-- `Docs/CONFIRMED_DECISIONS.md`
-- `Docs/AI_DEVELOPMENT_RULES.md`
-- `Docs/PROJECT_TEMPLATE.md`
-- `Docs/CURRENT_HANDOVER.md`
-- `Docs/Projects/Crime99/TECHNICAL_ARCHITECTURE.md`
-- `Docs/Projects/Crime99/TECHNICAL_DECISIONS.md`
-- `Docs/Projects/Crime99/TECHNICAL_RISK_REVIEW.md`
-- `Projects/Crime99/README.md`
-- `Projects/Crime99/Docs/VALIDATION_REPORT.md`
+Before resuming, read `Docs/CURRENT_HANDOVER.md`, `Docs/SESSION_HANDOVER_ROLE_FRAMEWORK_INTEGRATION.md`, and the current Crime99 `Docs/CURRENT_HANDOVER.md`; then verify all Git and worktree facts.
