@@ -36,6 +36,12 @@ Defines how governance ideas move from initial discussion to official adoption, 
 
 Use this document when a new rule, process, role, or standard may need to become part of the Studio Operating System.
 
+### Visual/Visual_Quality_Assurance_Workflow.md
+
+Defines the adopted project-independent workflow for blind visual review, the reusable 0–5 quality matrix, camera coverage, runtime occlusion review, two bounded internal correction rounds, matched Before/After evidence, and the Human visual-approval boundary.
+
+Use this document for every assignment that creates or changes visible game content. Technical validation never substitutes for this workflow.
+
 ### Governance/GOVERNANCE_BACKLOG.md
 
 Stores governance ideas, engineering principles, roles, processes, risks, and open questions that may be useful but are not yet adopted standards.

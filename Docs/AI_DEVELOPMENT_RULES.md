@@ -147,6 +147,14 @@ AI should help maintain consistency across assets by documenting relevant style,
 
 AI should not treat generated assets as automatically game-ready unless their technical requirements, licensing status, format, scale, optimization, and integration needs have been checked.
 
+## Visual Quality Assurance
+
+Every assignment that creates or changes visible game content must follow the adopted [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md).
+
+The AI Agent must keep technical validation separate from visual review, perform a blind review from final gameplay-camera evidence, maintain required camera and path coverage, test runtime occlusion transitions, apply the hard-fail criteria and rating matrix, and run up to two bounded correction rounds inside the authorised scope before handoff.
+
+The AI Agent may reject its own technically valid result when visible quality fails. It must not claim final visual approval; creative direction and final visual acceptance remain with the Human Developer.
+
 ## Documentation
 
 Documentation is part of development.

@@ -62,8 +62,11 @@ Typical contents may include:
 * release documentation
 * decision records
 * project backlog
+* project-specific visual QA, camera coverage, and occlusion standards
 
 Project documentation must not redefine project-independent Studio Operating System standards.
+
+Projects with visible game content must link to the Studio OS [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md) from their README and may define stricter project-specific visual, camera, and occlusion rules in `Docs/`.
 
 When a project reveals a potentially reusable governance need, it should be added to the Governance Backlog instead of being silently treated as a new Studio Operating System rule.
 
@@ -168,6 +171,12 @@ Folders, documents, systems, and tools should only be added when they solve a cu
 A project should not inherit unnecessary complexity from previous projects.
 
 Reusable standards should be shared through the Studio Operating System, while project-specific decisions should remain inside the project.
+
+## Visual Work Assignment Template
+
+Every project template or work-order pattern for visible content must include the required work-assignment block from the [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md). It must require blind visual review, a camera-coverage matrix, continuous occlusion-path review, hard-fail checks, up to two bounded internal correction rounds, matched Before/After evidence, and an explicit Human approval boundary.
+
+The project README must identify the applicable project-local standards and the current internal visual status. A technical pass must never be presented as visual acceptance.
 
 ## Project Independence
 
