@@ -42,6 +42,32 @@ Defines the adopted project-independent workflow for blind visual review, the re
 
 Use this document for every assignment that creates or changes visible game content. Technical validation never substitutes for this workflow.
 
+### Roles/ROLE_OPERATING_MODEL.md
+
+Defines the adopted lightweight specialist-role model, authority boundaries, independent review outputs, consolidation, anti-loop rules, and activation discipline for larger or cross-domain work.
+
+Use it with the [Role Catalog](Roles/ROLE_CATALOG.md), [Role Activation Matrix](Roles/ROLE_ACTIVATION_MATRIX.md), [Role Review Output Schema](Roles/ROLE_REVIEW_OUTPUT_SCHEMA.md), and [Review Board Protocol](Roles/REVIEW_BOARD_PROTOCOL.md). The reusable work-order block is in [Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md).
+
+### Visual/ART_BIBLE_STANDARD.md
+
+Defines the minimum structure, ownership, evidence, and approval boundary for project art bibles without replacing project-specific art direction.
+
+### Assets/ASSET_CANDIDATE_AND_INTEGRATION_STANDARD.md
+
+Defines candidate classification, provenance, adaptation, package coverage, integration evidence, reimport safety, and release-readiness gates for external and internal assets.
+
+### Level/LEVEL_DESIGN_REVIEW_STANDARD.md
+
+Defines project-independent level-design review criteria for routes, scale, gameplay space, camera interaction, occlusion, boundaries, and evidence.
+
+### Level/ENVIRONMENT_REALISM_REFERENCE_STANDARD.md
+
+Defines a reference method for believable environment use, layering, wear, density, period coherence, and visible causality without imposing a universal style.
+
+### Research/CLAUDE_CODE_GAME_STUDIOS_ADOPTION_MATRIX.md
+
+Records the source-based adoption, adaptation, and rejection decisions that informed this role and review framework. It is research evidence, not an independent authority over adopted Studio OS documents.
+
 ### Governance/GOVERNANCE_BACKLOG.md
 
 Stores governance ideas, engineering principles, roles, processes, risks, and open questions that may be useful but are not yet adopted standards.

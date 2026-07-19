@@ -6,6 +6,8 @@ Before starting work, read [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md) and [`Docs
 
 A Director or Work session must check the confirmed decisions relevant to its assigned task before planning or execution.
 
+For a larger or cross-domain work order, the Director or Work session must also apply the adopted [`Role Operating Model`](Docs/Roles/ROLE_OPERATING_MODEL.md), select only the roles justified by the work, and include the [`Work Order Role and Review Block`](Docs/Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md). Specialist findings are advisory inputs until the accountable builder or Producer consolidates them under the authority order below.
+
 ## Authority Order
 
 When information conflicts, use this order of authority:

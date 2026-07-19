@@ -155,6 +155,14 @@ The AI Agent must keep technical validation separate from visual review, perform
 
 The AI Agent may reject its own technically valid result when visible quality fails. It must not claim final visual approval; creative direction and final visual acceptance remain with the Human Developer.
 
+## Specialist Roles and Review
+
+Larger, higher-risk, or cross-domain assignments must use the adopted [Role Operating Model](Roles/ROLE_OPERATING_MODEL.md) and [Role Activation Matrix](Roles/ROLE_ACTIVATION_MATRIX.md). The work order must name one accountable builder, activate only roles whose checks materially reduce risk, and define their questions, evidence, hard errors, and decision boundary through the [Work Order Role and Review Block](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md).
+
+Each activated specialist produces an independent result using the [Role Review Output Schema](Roles/ROLE_REVIEW_OUTPUT_SCHEMA.md). A role verdict is not a separate implementation stream, does not override the authority order, and does not grant new permission. The accountable builder or Producer consolidates findings through the applicable [Review Board Protocol](Roles/REVIEW_BOARD_PROTOCOL.md).
+
+Review must remain bounded. A board may run at most two correction rounds unless the Human Developer explicitly authorises more. Repeated review without new evidence, repeated reopening of an unchanged finding, or role activation that adds no distinct check is a process failure and must stop with a clear blocker or decision request.
+
 ## Documentation
 
 Documentation is part of development.

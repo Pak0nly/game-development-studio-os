@@ -1,0 +1,53 @@
+# Claude Code Game Studios Adoption Matrix
+
+## Purpose and Method
+
+This matrix records a bounded, read-only review of [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios). The repository was inspected through its public GitHub file views on 2026-07-19. It was not cloned, forked, installed, or copied into this workspace. The assessment extracts professional patterns and reformulates them for the Studio OS; no foreign text is reproduced as a Studio OS rule.
+
+Decisions mean:
+
+- `Adopt`: use the underlying pattern substantially as-is within Studio OS authority.
+- `Adapt`: keep the value but change authority, scope, format, or execution model.
+- `Reference Only`: retain as an example, not an operating requirement.
+- `Defer`: potentially useful after evidence establishes a need.
+- `Reject`: conflicts with current governance or creates unjustified cost.
+
+## Sources Actually Inspected
+
+- repository `README.md` and `CLAUDE.md`;
+- `.claude/agents/` directory listing and the files `art-director.md`, `level-designer.md`, `technical-artist.md`, `producer.md`, `qa-lead.md`, and `unity-specialist.md`;
+- `.claude/skills/` directory listing and `art-bible/SKILL.md`, `asset-spec/SKILL.md`, `asset-audit/SKILL.md`, `team-level/SKILL.md`, `team-polish/SKILL.md`, `team-qa/SKILL.md`, and `perf-profile/SKILL.md`;
+- `.claude/hooks/` directory listing;
+- `.claude/rules/` directory listing;
+- `.claude/docs/templates/` directory listing;
+- `.claude/settings.json`.
+
+No claim is made about the detailed contents of files not listed above. Directory-level findings are labelled accordingly.
+
+## Adoption Matrix
+
+| Source or file group | Purpose observed | Studio OS value | Crime99 value | Governance conflict | Required adaptation | Relevant when | Decision |
+|---|---|---|---|---|---|---|---|
+| `README.md`; `.claude/agents/` listing | Multi-discipline studio hierarchy and discoverable role set | Makes missing perspectives visible | Identifies art, level, technical-art, Unity, QA, and performance checks | Forty-nine standing agents would add parallel hierarchy and operational cost | Convert agents into task-activated responsibility and review perspectives under Director/Work | Any work-order planning | `Adapt` |
+| `art-director.md` | Visual identity, art-bible, palette, lighting, hierarchy, asset standards, explicit exclusions | Strong independent visual review lens | Directly supports `Neon over Dirt` coherence | Its lead hierarchy and write-approval loop do not match Governed Autonomy | Retain domain mission, evidence, exclusions, and verdict; Human retains taste | Visible-content work | `Adapt` |
+| `level-designer.md` | Spatial layout, sightlines, paths, pacing, encounters, environmental storytelling | Establishes a distinct spatial-quality review | Supports FFA routes, vehicle flow, landmarks, alleys, yards, and map edges | Generic critical-path framing is insufficient for sandbox/FFA | Add multi-route, traffic, escape, camera, occlusion, and urban-realism tests | Level/map and visual slice work | `Adapt` |
+| `technical-artist.md` | Art/engineering bridge for shaders, VFX, render optimization, LOD, occlusion, and pipeline | Separates visual correctness from implementation validity | Detects magenta materials, URP/import failures, LOD/collider/occlusion problems | Architecture approval and implementation role can overlap review | Require visible-result evidence and independent verdict; no architecture authority | Asset, visual, VFX, lighting, performance work | `Adapt` |
+| `producer.md` | Scope, risk, milestones, coordination, and consolidation | Useful bounded scope-control lens | Prevents Presentation Block work from expanding into Gate E/F | Described as a highest-level consultant, which would compete with Director | Producer is a scope controller only; cannot set strategy or rewrite FAIL | All larger work orders | `Adapt` |
+| `qa-lead.md` | Shift-left QA, evidence by work type, release quality gates | Connects acceptance criteria to evidence before implementation | Keeps automated, gameplay, visual, and Human evidence distinct | Some visual evidence is advisory in the source; Studio OS visual hard fails are blocking | Studio OS hard-fail and verdict rules prevail | Features, bugs, builds, releases | `Adapt` |
+| `unity-specialist.md` | Unity-specific API, subsystem, render, memory, settings, and build review | Adds engine-specific expertise without changing architecture authority | Relevant to Unity 6.3, URP, scenes, imports, tests, and builds | Source role calls itself the Unity authority | Limit authority to technical assessment inside confirmed project decisions | Unity-related work | `Adapt` |
+| `art-bible/SKILL.md` | Sectioned visual source of truth with identity, mood, shape, color, production rules, references, and cross-discipline conflict checks | Provides a producible art-direction structure | Enables a concise Crime99 Art Bible from confirmed direction | Repeated Human approvals and mandatory agent spawning create delay | One maintained standard, task-scoped reviews, Human decisions only where genuinely needed | Before visual production and when direction changes | `Adapt` |
+| `asset-spec/SKILL.md` | Inventory before production, source linkage, per-asset specs, art and technical review | Prevents unexamined package use and missing asset families | Important for NYC, RCCP, Gley, Port City, and Diner coverage | AI-generation prompt emphasis is not generally required; source lacks full licence/provenance depth | Add licence, provenance, package integrity, multi-angle, camera, occlusion, original/override, release, and reimport fields | Before import, purchase, integration, or map construction | `Adapt` |
+| `asset-audit/SKILL.md` | Read-only naming, format, budget, orphan, and missing-reference audit with verdict | Useful audit/report pattern | Helps package and project-owned asset hygiene | Deletion suggestions and code-reference-only orphan logic are unsafe for licensed Unity assets | Audit package coverage, scenes, families, provenance, GUID/import state, and actual use; never infer deletion automatically | After import and before release | `Adapt` |
+| `team-level/SKILL.md` | Parallel discipline input followed by staged level design | Makes cross-discipline dependencies explicit | Useful for coordinated visual/level evaluation | Mandatory user approval at each phase and standing subagents conflict with Autonomy B | Use one Work run with separate role reviews and at most two correction rounds | Major level/map assignments | `Adapt` |
+| `team-polish/SKILL.md` | Performance, technical art, audio, and QA assessment/hardening pipeline | Valuable polish checklist and independent results | Useful before presentation and release candidates | Source permits blocked gaps to be merely reported; Studio OS requires in-scope correction | Correct resolvable defects before handoff; preserve separate verdicts | Polish and release work | `Adapt` |
+| `team-qa/SKILL.md`; `perf-profile/SKILL.md` | Coordinated QA and explicit profiling/evidence | Strengthens test selection and performance evidence | Supports representative Crime99 load and regression review | Detailed workflows were not adopted wholesale; numerical evidence could overshadow feel/visual quality | Performance remains one specialist verdict and cannot override gameplay or visual FAIL | QA, performance, build/release | `Adapt` |
+| `.claude/hooks/` listing; hook summary in `README.md` | Automatic session, commit, push, asset, skill, and audit-trail checks | Some future low-cost checks could reduce omissions | Possible later asset/provenance or review-block lint | Claude Code/Bash coupling, hidden automation, Windows portability, and maintenance cost | Evaluate individual checks only after repeated omissions; document and test any adopted automation | After manual workflow validation | `Defer` |
+| `.claude/rules/` listing; path table in `README.md` | Path-dependent coding and document standards | Context-specific rules can reduce irrelevant instructions | Unity path rules may later help large code areas | Current Studio OS already uses authoritative docs; silent path magic risks drift | Prefer explicit linked standards; evaluate path tooling only when repository scale justifies it | Larger codebase or recurring violations | `Defer` |
+| `.claude/docs/templates/` listing | Reusable structured documents for art, level, architecture, release, risk, and production | Confirms value of small reusable templates | Supports consistent work orders and reviews | Forty-one templates would create unused maintenance surface | Add only the role/review block and one worked visual example now | Immediate; expand only from demonstrated need | `Adapt` |
+| `CLAUDE.md`; collaboration protocol repeated in inspected role/skill files | Question, options, decision, draft, approval before writes | Strong Human control and explicit decision ownership | Useful for actual taste/product decisions | Mandatory questions and per-file approvals contradict Autonomy Level B and anti-loop goals | Ask only for real Human decisions; fix unambiguous in-scope defects autonomously | Every assignment | `Reject` as a universal protocol; `Adapt` decision ownership |
+| `.claude/settings.json` | Claude-specific permissions, hooks, status line, and command controls | Demonstrates defence-in-depth ideas | No direct Crime99 content value | Platform/tool-specific, duplicates Codex/sandbox controls, and would install a parallel execution architecture | Do not copy; keep existing Studio OS and Codex permission model | None under current scope | `Reject` |
+| Three-tier directors/leads/specialists and configurable review modes in `README.md` | Scalable hierarchy and optional gate intensity | Role activation by task type is useful | Enables lean Crime99 boards | Directors/leads would compete with Human Developer and ChatGPT Director; `solo` mode can skip needed review | One authority chain, mandatory roles by risk/task, optional specialists only when useful | Work-order scoping | `Adapt` |
+
+## Consolidated Decision
+
+Adopt the principles of domain separation, explicit inputs and exclusions, evidence-based specialist verdicts, asset inventory/specification, art-bible constraints, and staged cross-discipline review. Adapt them into task-activated roles that can run inside one Work assignment while producing independent assessments. Defer automation until the manual model proves stable. Reject the foreign standing hierarchy, Claude-specific configuration, universal question-first approval loop, and any review mode that can waive mandatory Studio OS checks.

@@ -12,6 +12,7 @@ It applies whenever an assigned task creates or changes visible game content, in
 - Internal visual review may reject visible work without changing the approved art direction.
 - A correction that changes art direction, scope, architecture, licence boundaries, external dependencies, or a protected asset requires Human Developer direction.
 - Up to two editorial or visual correction rounds that stay inside the existing assignment are authorised as part of the visual task. This does not authorise unrelated implementation.
+- Larger visual or level assignments must activate the applicable specialist roles and use the [Visual Level Review Board](../Roles/Boards/VISUAL_LEVEL_REVIEW_BOARD.md). Role outputs remain independent evidence inputs and do not replace this workflow or Human approval.
 
 ## Required Five-Phase Workflow
 
@@ -249,5 +250,7 @@ Human approval boundary:
 Scope, asset, licence, architecture, purchase, and download stop conditions:
 Allowed final internal status:
 ```
+
+For larger visual work, the assignment must also include the [Work Order Role and Review Block](../Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md), including the accountable builder, activated specialist roles, role-specific review questions, evidence, applicable review board, and correction-round limit.
 
 Omitting a field does not waive this workflow. The assignment must resolve the omission before claiming internal visual passage.

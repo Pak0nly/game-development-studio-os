@@ -63,10 +63,15 @@ Typical contents may include:
 * decision records
 * project backlog
 * project-specific visual QA, camera coverage, and occlusion standards
+* project role profile and applicable review boards
+* project art bible and level-design review standard
+* asset candidate, provenance, and integration standards
 
 Project documentation must not redefine project-independent Studio Operating System standards.
 
 Projects with visible game content must link to the Studio OS [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md) from their README and may define stricter project-specific visual, camera, and occlusion rules in `Docs/`.
+
+Projects must link their project role profile from the README when specialist review is used. The profile selects project-relevant roles and boards from the Studio OS [Role Operating Model](Roles/ROLE_OPERATING_MODEL.md); it must not redefine project-independent role authority or create implicit implementation permission.
 
 When a project reveals a potentially reusable governance need, it should be added to the Governance Backlog instead of being silently treated as a new Studio Operating System rule.
 
@@ -177,6 +182,12 @@ Reusable standards should be shared through the Studio Operating System, while p
 Every project template or work-order pattern for visible content must include the required work-assignment block from the [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md). It must require blind visual review, a camera-coverage matrix, continuous occlusion-path review, hard-fail checks, up to two bounded internal correction rounds, matched Before/After evidence, and an explicit Human approval boundary.
 
 The project README must identify the applicable project-local standards and the current internal visual status. A technical pass must never be presented as visual acceptance.
+
+## Role and Review Work Assignment Template
+
+Every larger, higher-risk, or cross-domain work order must include the [Work Order Role and Review Block](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md). It must name the accountable builder, activate only necessary roles, state role-specific review questions and evidence, identify the applicable board, limit correction rounds, and preserve the Human decision boundary.
+
+Project-local examples may specialize the block but may not weaken the [Role Operating Model](Roles/ROLE_OPERATING_MODEL.md), [Role Review Output Schema](Roles/ROLE_REVIEW_OUTPUT_SCHEMA.md), [Review Board Protocol](Roles/REVIEW_BOARD_PROTOCOL.md), or any domain Source of Truth.
 
 ## Project Independence
 
