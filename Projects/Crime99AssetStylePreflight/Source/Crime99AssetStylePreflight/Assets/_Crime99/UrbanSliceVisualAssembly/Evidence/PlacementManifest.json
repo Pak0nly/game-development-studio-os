@@ -1,0 +1,315 @@
+{
+    "requestedModel": "gpt-5.6-terra",
+    "attestation": "Requested model — not independently attested.",
+    "scenePath": "Assets/_Crime99/UrbanSliceVisualAssembly/Scenes/C99_UrbanSlice_VisualAssembly.unity",
+    "publicFrontConvention": "Prefab local -Z; west yaw -90 faces +X, east yaw +90 faces -X.",
+    "scope": "First bounded StylePreflight visual assembly; no gameplay or final dressing.",
+    "placements": [
+        {
+            "name": "West_SM5",
+            "prefabPath": "Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_5.prefab",
+            "position": {
+                "x": -8.505547523498536,
+                "y": 0.0002684593200683594,
+                "z": -13.647388458251954
+            },
+            "eulerAngles": {
+                "x": 0.0,
+                "y": -90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.8199999928474426,
+                "y": 0.8199999928474426,
+                "z": 0.8199999928474426
+            },
+            "boundsCenter": {
+                "x": -12.161252975463868,
+                "y": 4.347365856170654,
+                "z": -21.000003814697267
+            },
+            "boundsSize": {
+                "x": 7.722507476806641,
+                "y": 8.694732666015625,
+                "z": 15.161857604980469
+            },
+            "rendererCount": 4,
+            "materialSlotCount": 52
+        },
+        {
+            "name": "West_SM24",
+            "prefabPath": "Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_24.prefab",
+            "position": {
+                "x": -16.895618438720704,
+                "y": -9.5367431640625e-7,
+                "z": -12.055010795593262
+            },
+            "eulerAngles": {
+                "x": 0.0,
+                "y": -90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.8199999928474426,
+                "y": 0.8199999928474426,
+                "z": 0.8199999928474426
+            },
+            "boundsCenter": {
+                "x": -13.711172103881836,
+                "y": 8.0343656539917,
+                "z": -6.0
+            },
+            "boundsSize": {
+                "x": 10.822345733642579,
+                "y": 16.06873321533203,
+                "z": 13.28121566772461
+            },
+            "rendererCount": 4,
+            "materialSlotCount": 52
+        },
+        {
+            "name": "West_SM17",
+            "prefabPath": "Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_17.prefab",
+            "position": {
+                "x": -16.365358352661134,
+                "y": 0.0006761550903320313,
+                "z": 13.470115661621094
+            },
+            "eulerAngles": {
+                "x": 0.0,
+                "y": -90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.8199999928474426,
+                "y": 0.8199999928474426,
+                "z": 0.8199999928474426
+            },
+            "boundsCenter": {
+                "x": -12.556708335876465,
+                "y": 7.708398342132568,
+                "z": 8.30000114440918
+            },
+            "boundsSize": {
+                "x": 8.513418197631836,
+                "y": 15.41679573059082,
+                "z": 12.695878982543946
+            },
+            "rendererCount": 4,
+            "materialSlotCount": 78
+        },
+        {
+            "name": "West_Landmark_SM36",
+            "prefabPath": "Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_36.prefab",
+            "position": {
+                "x": -17.59613800048828,
+                "y": 0.00035953521728515625,
+                "z": 32.44396209716797
+            },
+            "eulerAngles": {
+                "x": 0.0,
+                "y": -90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "boundsCenter": {
+                "x": -13.039335250854493,
+                "y": 10.301680564880371,
+                "z": 27.999998092651368
+            },
+            "boundsSize": {
+                "x": 9.478668212890625,
+                "y": 20.603363037109376,
+                "z": 9.480571746826172
+            },
+            "rendererCount": 4,
+            "materialSlotCount": 48
+        },
+        {
+            "name": "East_SM2",
+            "prefabPath": "Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_2.prefab",
+            "position": {
+                "x": 9.754575729370118,
+                "y": 0.0073757171630859379,
+                "z": -15.713903427124024
+            },
+            "eulerAngles": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.8199999928474426,
+                "y": 0.8199999928474426,
+                "z": 0.8199999928474426
+            },
+            "boundsCenter": {
+                "x": 13.277153015136719,
+                "y": 7.507034778594971,
+                "z": -20.999998092651368
+            },
+            "boundsSize": {
+                "x": 9.954299926757813,
+                "y": 15.014066696166993,
+                "z": 12.973381042480469
+            },
+            "rendererCount": 5,
+            "materialSlotCount": 73
+        },
+        {
+            "name": "East_SM17",
+            "prefabPath": "Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_17.prefab",
+            "position": {
+                "x": 16.365358352661134,
+                "y": 0.0006761550903320313,
+                "z": -12.170116424560547
+            },
+            "eulerAngles": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.8199999928474426,
+                "y": 0.8199999928474426,
+                "z": 0.8199999928474426
+            },
+            "boundsCenter": {
+                "x": 12.556710243225098,
+                "y": 7.708398342132568,
+                "z": -7.0
+            },
+            "boundsSize": {
+                "x": 8.513418197631836,
+                "y": 15.41679573059082,
+                "z": 12.695877075195313
+            },
+            "rendererCount": 4,
+            "materialSlotCount": 78
+        },
+        {
+            "name": "East_SM25",
+            "prefabPath": "Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_25.prefab",
+            "position": {
+                "x": 16.075578689575197,
+                "y": 0.0013670921325683594,
+                "z": 3.5799827575683595
+            },
+            "eulerAngles": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.8199999928474426,
+                "y": 0.8199999928474426,
+                "z": 0.8199999928474426
+            },
+            "boundsCenter": {
+                "x": 13.034137725830079,
+                "y": 6.929683208465576,
+                "z": 8.5
+            },
+            "boundsSize": {
+                "x": 9.468276977539063,
+                "y": 13.859366416931153,
+                "z": 12.278501510620118
+            },
+            "rendererCount": 4,
+            "materialSlotCount": 48
+        },
+        {
+            "name": "East_Service_SM38",
+            "prefabPath": "Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_38.prefab",
+            "position": {
+                "x": 8.516103744506836,
+                "y": 7.152557373046875e-7,
+                "z": 32.085113525390628
+            },
+            "eulerAngles": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+            },
+            "scale": {
+                "x": 0.8199999928474426,
+                "y": 0.8199999928474426,
+                "z": 0.8199999928474426
+            },
+            "boundsCenter": {
+                "x": 13.354097366333008,
+                "y": 3.1358816623687746,
+                "z": 28.000001907348634
+            },
+            "boundsSize": {
+                "x": 10.108196258544922,
+                "y": 6.271761894226074,
+                "z": 9.06069564819336
+            },
+            "rendererCount": 4,
+            "materialSlotCount": 22
+        }
+    ],
+    "captures": [
+        {
+            "name": "overview",
+            "path": "Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_overview.png",
+            "sha256": "051AF9B998BC2EB4DC218AF599060FDEBFF0E729D3FBFFE6F776923F64C27240",
+            "magentaLikePixels": 0,
+            "uniqueColorCount": 30341,
+            "nonBackgroundPixels": 761009
+        },
+        {
+            "name": "west",
+            "path": "Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_west.png",
+            "sha256": "971B6D2FEF97D45272F6D73500F66D1B0DD59A848FC3A7A525ED608040B4BBB2",
+            "magentaLikePixels": 0,
+            "uniqueColorCount": 23077,
+            "nonBackgroundPixels": 737555
+        },
+        {
+            "name": "east",
+            "path": "Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_east.png",
+            "sha256": "AE3E6E27F4B049B8B3CBA32F70EDC2E067A3554C37C8C150FC2860CA54C5D47A",
+            "magentaLikePixels": 0,
+            "uniqueColorCount": 22056,
+            "nonBackgroundPixels": 754364
+        },
+        {
+            "name": "landmark",
+            "path": "Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_landmark.png",
+            "sha256": "286F30AF06416301683FEE062927AC5BEFD11EED2DB7B2FEE499628A137728EF",
+            "magentaLikePixels": 0,
+            "uniqueColorCount": 16615,
+            "nonBackgroundPixels": 874432
+        },
+        {
+            "name": "service",
+            "path": "Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_service.png",
+            "sha256": "D5B2E618E0CAB4F6459287AD40C55437C11C0AD942AE6C700E1D2BE6A3084EDA",
+            "magentaLikePixels": 0,
+            "uniqueColorCount": 10048,
+            "nonBackgroundPixels": 794816
+        },
+        {
+            "name": "street",
+            "path": "Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_street.png",
+            "sha256": "E2C6CE06A34703260114E21BFFAB8AC9238C01954966FE795BE1142825328CFD",
+            "magentaLikePixels": 0,
+            "uniqueColorCount": 25588,
+            "nonBackgroundPixels": 678540
+        }
+    ],
+    "validationFindings": [
+        "Missing scripts: 0",
+        "Missing material slots: 0",
+        "Error-shader material slots: 0",
+        "Building bounds overlaps: 0",
+        "Public-front footprint check: no building bounds cross X +/-8.15 toward the sidewalks.",
+        "Ground contact: all building bounds minY within 0.02m of zero."
+    ]
+}

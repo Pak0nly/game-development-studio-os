@@ -1,0 +1,534 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.19f1 (7689f4515d75) revision 7768564'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Channel LicenseClient-jarid doesn't exist
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'de' Physical Memory: 31849 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-07-22T08:30:23Z
+[Licensing::Module] Successfully launched the LicensingClient (PId: 2404)
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Unity.exe
+-batchmode
+-force-d3d11
+-projectPath
+C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight
+-executeMethod
+Crime99.UrbanSliceVisualAssembly.Editor.UrbanSliceVisualAssemblyBuilder.CaptureFinalEvidenceFromExistingScene
+-logFile
+C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Assets\_Crime99\UrbanSliceVisualAssembly\Evidence\Final\UnityFinalCapture.log
+Successfully changed project path to: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight
+C:/Users/jarid/Desktop/Game Development/Projects/Crime99AssetStylePreflight/Source/Crime99AssetStylePreflight
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [50104]  Target information:
+
+Player connection [50104]  * "[IP] 192.168.178.86 [Port] 55504 [Flags] 2 [Guid] 668116527 [EditorId] 668116527 [Version] 1048832 [Id] WindowsEditor(7,Jari) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [50104] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [50104] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-jarid" at "2026-07-22T08:30:24.2357569Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 2404, path: "C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Package Manager] Connected to IPC stream "Upm-23400" after 0.2 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              8755fdacb2eb4994b8d56f2c3575bdaf
+  Correlation Id:          781ac117a9454872a9d09abe0a2aa9f9
+  External correlation Id: 7775639263791923605
+  Machine Id:              LMrnIoelQF7507erW5Nh+O1tJb8=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-jarid" (connect: 0.25s, validation: 0.05s, handshake: 0.02s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-jarid-notifications" at "2026-07-22T08:30:24.3089549Z"
+[Licensing::Module] Connected to LicensingClient (PId: 2404, launch time: 0.01, total connection time: 0.32s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 93289-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.35s
+[Licensing::Module] Licensing is initialized (took 0.07s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.19f1 (7689f4515d75)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/jarid/Desktop/Game Development/Projects/Crime99AssetStylePreflight/Source/Crime99AssetStylePreflight/Assets
+Forcing GfxDevice: Direct3D 11
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon RX 6800 XT (ID=0x73bf)
+    Vendor:   ATI
+    VRAM:     16337 MB
+    Driver:   32.0.21043.19003
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56400
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001294 seconds.
+- Loaded All Assemblies, in  0.247 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.238 seconds
+Domain Reload Profiling: 484ms
+	BeginReloadAssembly (83ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (7ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (102ms)
+		LoadAssemblies (75ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (101ms)
+			TypeCache.Refresh (99ms)
+				TypeCache.ScanAssembly (91ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (239ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (216ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (29ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (49ms)
+			ProcessInitializeOnLoadAttributes (84ms)
+			ProcessInitializeOnLoadMethodAttributes (51ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 49 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.searcher@4.9.4 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.searcher@d45a78918735)
+    com.unity.burst@1.8.29 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.burst@6bb9aca3ef38)
+    com.unity.mathematics@1.3.3 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.mathematics@19a9377c4ffa)
+    com.unity.collections@2.6.6 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.collections@9796e5ee0d9e)
+    com.unity.nuget.mono-cecil@1.11.6 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.nuget.mono-cecil@ecb9724e46ff)
+    com.unity.test-framework.performance@3.5.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.test-framework.performance@8b56083ec0f0)
+  Built-in packages:
+    com.unity.render-pipelines.universal@17.3.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.render-pipelines.universal@8a9b4021522a)
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.render-pipelines.core@17.3.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.render-pipelines.core@c3bbbae46ff1)
+    com.unity.shadergraph@17.3.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.shadergraph@0a17040bdbb7)
+    com.unity.render-pipelines.universal-config@17.0.3 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.render-pipelines.universal-config@8dc1aab4af1d)
+    com.unity.ugui@2.0.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.ugui@b95364aab964)
+    com.unity.test-framework@1.6.0 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.test-framework@bd7f943e9647)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.ext.nunit@d8c07649098d)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.01 seconds
+'Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log' Amount of processed bytes '20375' does not match file size '547'
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.19f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/jarid/Desktop/Game Development/Projects/Crime99AssetStylePreflight/Source/Crime99AssetStylePreflight
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s998ms
+[464/574    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+[570/574    0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[571/574    0s] ILPostProcess Library/Bee/artifacts/1900b0aE.dag/post-processed/Assembly-CSharp-Editor.dll (+pdb)
+Processing assembly Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll, with 137 defines and 303 references
+
+processors: Unity.Jobs.CodeGen.JobsILPostProcessor, zzzUnity.Burst.CodeGen.BurstILPostProcessor
+
+running Unity.Jobs.CodeGen.JobsILPostProcessor
+
+running zzzUnity.Burst.CodeGen.BurstILPostProcessor
+[572/574    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[573/574    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (0.97 seconds), 5 items updated, 574 evaluated
+AssetDatabase: script compilation time: 1.291694s
+'Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log' Amount of processed bytes '21997' does not match file size '20521'
+Begin MonoManager ReloadAssembly
+DirectoryNotFoundException: Could not find a part of the path "C:\Users\jarid\Desktop\Game Development\Projects\Crime99AssetStylePreflight\Source\Crime99AssetStylePreflight\Library\PackageCache\com.unity.collections@9796e5ee0d9e\Unity.Collections.Tests\System.Runtime.CompilerServices.Unsafe\System.Runtime.CompilerServices.Unsafe.dll"
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <41d29b352f6a475ab1bf7c6628b82790>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share) [0x00000] in <41d29b352f6a475ab1bf7c6628b82790>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)
+  at Mono.Cecil.ModuleDefinition.GetFileStream (System.String fileName, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share) [0x00006] in <4e339395f8074c75847e518298d9c5fd>:0 
+  at Mono.Cecil.ModuleDefinition.ReadModule (System.String fileName, Mono.Cecil.ReaderParameters parameters) [0x00008] in <4e339395f8074c75847e518298d9c5fd>:0 
+  at Mono.Cecil.AssemblyDefinition.ReadAssembly (System.String fileName, Mono.Cecil.ReaderParameters parameters) [0x00000] in <4e339395f8074c75847e518298d9c5fd>:0 
+  at UnityEditor.AssemblyValidation.LoadAssemblyDefinitions (System.String[] assemblyPaths, System.String[] searchPaths) [0x00048] in <cf2607b209aa47de987ba5ed55932aa8>:0 
+  at UnityEditor.AssemblyValidation.ValidateAssemblies (System.String[] assemblyPaths, System.Boolean enableLogging) [0x00007] in <cf2607b209aa47de987ba5ed55932aa8>:0 
+
+- Loaded All Assemblies, in  0.657 seconds
+'Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log' Amount of processed bytes '24027' does not match file size '22145'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final using Guid(e7946eb6370a6ad42af18af3422e10b3) (DefaultImporter) -> (artifact id: 'a7cd6f52925e220baa27a3d785a3ca6a') in 0.0180463 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.838 seconds
+Domain Reload Profiling: 2492ms
+	BeginReloadAssembly (253ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (15ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (149ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (18ms)
+	LoadAllAssembliesAndSetupDomain (352ms)
+		LoadAssemblies (335ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (78ms)
+			TypeCache.Refresh (46ms)
+				TypeCache.ScanAssembly (42ms)
+			BuildScriptInfoCaches (25ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1838ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1722ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (91ms)
+			ProcessInitializeOnLoadAttributes (1493ms)
+			ProcessInitializeOnLoadMethodAttributes (116ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (18ms)
+'Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log' Amount of processed bytes '25820' does not match file size '24175'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/UnityBuild.log using Guid(414ed4d290e2dc14bae9aeac33424cc8) (DefaultImporter) -> (artifact id: '167f281ac71bc32ba45c9deaaf7545b4') in 0.027707 seconds
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Scenes/C99_UrbanSlice_VisualAssembly.unity using Guid(b513f3ea4ee08514bbc679ff33d342fd) (DefaultImporter) -> (artifact id: '98363f8ceeb08a15e398727d4a5cf41f') in 0.0006229 seconds
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log using Guid(9faab6152566041418f836778e6d424f) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0124989 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_crime99/urbanslicevisualassembly/evidence/final/unityfinalcapture.log in SourceAssetDB has modification time of '2026-07-22T08:30:29.2527283Z' while content on disk has modification time of '2026-07-22T08:30:29.3765375Z'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log using Guid(9faab6152566041418f836778e6d424f) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0127208 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_crime99/urbanslicevisualassembly/evidence/final/unityfinalcapture.log in SourceAssetDB has modification time of '2026-07-22T08:30:29.3900389Z' while content on disk has modification time of '2026-07-22T08:30:29.4490503Z'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log using Guid(9faab6152566041418f836778e6d424f) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0010541 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_crime99/urbanslicevisualassembly/evidence/final/unityfinalcapture.log in SourceAssetDB has modification time of '2026-07-22T08:30:29.4608451Z' while content on disk has modification time of '2026-07-22T08:30:29.5290806Z'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log using Guid(9faab6152566041418f836778e6d424f) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0011458 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_crime99/urbanslicevisualassembly/evidence/final/unityfinalcapture.log in SourceAssetDB has modification time of '2026-07-22T08:30:29.5305843Z' while content on disk has modification time of '2026-07-22T08:30:29.5837106Z'
+'Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log' Amount of processed bytes '28508' does not match file size '28143'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log using Guid(9faab6152566041418f836778e6d424f) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0007862 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_crime99/urbanslicevisualassembly/evidence/final/unityfinalcapture.log in SourceAssetDB has modification time of '2026-07-22T08:30:29.5305843Z' while content on disk has modification time of '2026-07-22T08:30:29.6187404Z'
+'Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log' Amount of processed bytes '29177' does not match file size '28812'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log using Guid(9faab6152566041418f836778e6d424f) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0007701 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_crime99/urbanslicevisualassembly/evidence/final/unityfinalcapture.log in SourceAssetDB has modification time of '2026-07-22T08:30:29.5305843Z' while content on disk has modification time of '2026-07-22T08:30:29.6586576Z'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log using Guid(9faab6152566041418f836778e6d424f) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0007949 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_crime99/urbanslicevisualassembly/evidence/final/unityfinalcapture.log in SourceAssetDB has modification time of '2026-07-22T08:30:29.6596667Z' while content on disk has modification time of '2026-07-22T08:30:29.7183427Z'
+Start importing Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log using Guid(9faab6152566041418f836778e6d424f) (DefaultImporter) -> (artifact id: '00000000000000000000000000000000') in 0.0009901 seconds
+Import Error Code:(4)
+Message: Build asset version error: assets/_crime99/urbanslicevisualassembly/evidence/final/unityfinalcapture.log in SourceAssetDB has modification time of '2026-07-22T08:30:29.7183427Z' while content on disk has modification time of '2026-07-22T08:30:29.7910388Z'
+An infinite import loop has been detected. The following Assets were imported multiple times, but no changes to them have been detected. Please check if any custom code is trying to import them:
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/RenderingLayerMask/TraceRenderingLayerMask.urtshader(modified date 2026-06-24T02:48:44Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Materials/C99_Sidewalk.mat(modified date 2026-07-22T08:25:12.7197737Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Materials/C99_Road.mat(modified date 2026-07-22T08:25:12.7257862Z)
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/VirtualOffset/TraceVirtualOffset.urtshader(modified date 2026-06-24T02:48:46Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/Final/UnityFinalCapture.log(modified date 2026-07-22T08:30:29.7910388Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_service.png(modified date 2026-07-22T08:25:12.274037Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceRaysAndFetchAttributes.urtshader(modified date 2026-06-24T02:50:14Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_street.png(modified date 2026-07-22T08:25:12.332257Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceRays.urtshader(modified date 2026-06-24T02:50:06Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/PlacementManifest.json(modified date 2026-07-22T08:25:12.3418031Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Materials/C99_Curb.mat(modified date 2026-07-22T08:25:12.7102103Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_west.png(modified date 2026-07-22T08:25:12.1029731Z)
+Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/DynamicGI/DynamicGISkyOcclusion.urtshader(modified date 2026-06-24T02:48:44Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_overview.png(modified date 2026-07-22T08:25:12.0311073Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_landmark.png(modified date 2026-07-22T08:25:12.2275614Z)
+Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/C99_VisualAssembly_east.png(modified date 2026-07-22T08:25:12.166829Z)
+Packages/com.unity.render-pipelines.core/Tests/Editor/UnifiedRayTracing/TraceTransparentRays.urtshader(modified date 2026-06-24T02:50:14Z)
+NullReferenceException: Object reference not set to an instance of an object
+  at UnityEditor.Rendering.BuiltIn.MaterialPostprocessor.OnPostprocessAllAssets (System.String[] importedAssets, System.String[] deletedAssets, System.String[] movedAssets, System.String[] movedFromAssetPaths) [0x00037] in .\Library\PackageCache\com.unity.shadergraph@0a17040bdbb7\Editor\Generation\Targets\BuiltIn\Editor\AssetPostProcessors\MaterialPostprocessor.cs:77 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <41d29b352f6a475ab1bf7c6628b82790>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <41d29b352f6a475ab1bf7c6628b82790>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <41d29b352f6a475ab1bf7c6628b82790>:0 
+  at UnityEditor.AssetPostprocessingInternal.InvokeMethod (System.Reflection.MethodInfo method, System.Object[] args) [0x00033] in <cf2607b209aa47de987ba5ed55932aa8>:0 
+  at UnityEditor.AssetPostprocessingInternal.PostprocessAllAssets (System.String[] importedAssets, System.String[] addedAssets, System.String[] deletedAssets, System.String[] movedAssets, System.String[] movedFromPathAssets, System.Boolean didDomainReload) [0x00116] in <cf2607b209aa47de987ba5ed55932aa8>:0 
+UnityEngine.DebugLogHandler:Internal_LogException_Injected(Exception, IntPtr)
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets(String[], String[], String[], String[], String[], Boolean)
+
+(Filename: ./Library/PackageCache/com.unity.shadergraph@0a17040bdbb7/Editor/Generation/Targets/BuiltIn/Editor/AssetPostProcessors/MaterialPostprocessor.cs Line: 77)
+
+Host type is not matching any asset type at Path Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/VirtualOffset/TraceVirtualOffset.urtshader.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.Rendering.RenderPipelineResourcesEditorUtils:TryReloadContainedNullFields (UnityEngine.Rendering.IRenderPipelineResources)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:UpdateRenderPipelineGlobalSettings (UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager/RenderPipelineGraphicsSettingsInfo,UnityEngine.Rendering.RenderPipelineGlobalSettings,bool&,UnityEngine.Rendering.IRenderPipelineGraphicsSettings&)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:PopulateRenderPipelineGraphicsSettings (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset (System.Type,UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset<UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool,System.Exception&) (at ./Library/PackageCache/com.unity.render-pipelines.core@c3bbbae46ff1/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:138)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool) (at ./Library/PackageCache/com.unity.render-pipelines.core@c3bbbae46ff1/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:90)
+UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings:Ensure (bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@8a9b4021522a/Runtime/UniversalRenderPipelineGlobalSettings.cs:284)
+UnityEditor.Rendering.Universal.UniversalRenderPipelineGlobalSettingsPostprocessor:OnPostprocessAllAssets (string[],string[],string[],string[],bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@8a9b4021522a/Editor/AssetPostProcessors/UniversalRenderPipelineGlobalSettingsPostprocessor.cs:14)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.AssetPostprocessingInternal:InvokeMethod (System.Reflection.MethodInfo,object[])
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets (string[],string[],string[],string[],string[],bool)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.core@c3bbbae46ff1/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs Line: 138)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at UnityEditor.Rendering.Universal.MaterialPostprocessor.OnPostprocessAllAssets (System.String[] importedAssets, System.String[] deletedAssets, System.String[] movedAssets, System.String[] movedFromAssetPaths) [0x00040] in .\Library\PackageCache\com.unity.render-pipelines.universal@8a9b4021522a\Editor\AssetPostProcessors\MaterialPostprocessor.cs:137 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <41d29b352f6a475ab1bf7c6628b82790>:0 
+Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <41d29b352f6a475ab1bf7c6628b82790>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <41d29b352f6a475ab1bf7c6628b82790>:0 
+  at UnityEditor.AssetPostprocessingInternal.InvokeMethod (System.Reflection.MethodInfo method, System.Object[] args) [0x00033] in <cf2607b209aa47de987ba5ed55932aa8>:0 
+  at UnityEditor.AssetPostprocessingInternal.PostprocessAllAssets (System.String[] importedAssets, System.String[] addedAssets, System.String[] deletedAssets, System.String[] movedAssets, System.String[] movedFromPathAssets, System.Boolean didDomainReload) [0x00116] in <cf2607b209aa47de987ba5ed55932aa8>:0 
+UnityEngine.DebugLogHandler:Internal_LogException_Injected(Exception, IntPtr)
+UnityEngine.DebugLogHandler:Internal_LogException(Exception, Object)
+UnityEngine.DebugLogHandler:LogException(Exception, Object)
+UnityEngine.Logger:LogException(Exception, Object)
+UnityEngine.Debug:LogException(Exception)
+UnityEditor.AssetPostprocessingInternal:PostprocessAllAssets(String[], String[], String[], String[], String[], Boolean)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.universal@8a9b4021522a/Editor/AssetPostProcessors/MaterialPostprocessor.cs Line: 137)
+
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2285cf6282203e44992206e877b5f43a): Total: 4.872 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=15 (actual=11, local cache=4, cache server=0)
+		Asset DB Process Time: managed=3 ms, native=2636 ms
+		Asset DB Callback time: managed=190 ms, native=65 ms
+		Scripting: domain reloads=1, domain reload time=657 ms, compile time=1298 ms, other=22 ms
+		Project Asset Count: scripts=964, non-scripts=5814
+		Asset File Changes: new=2, changed=10, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 18.185ms
+	ApplyChangesToAssetFolders: 0.868ms
+	Scan: 257.442ms
+	OnSourceAssetsModified: 1.586ms
+	CategorizeAssetsWithTransientArtifact: 13.482ms
+	ProcessAssetsWithTransientArtifactChanges: 23.049ms
+	CategorizeAssets: 184.352ms
+	ImportOutOfDateAssets: 1931.793ms (543.267ms without children)
+		ImportManagerImport: 83.145ms (3.903ms without children)
+			ImportInProcess: 78.912ms
+			UpdateCategorizedAssets: 0.331ms
+		CompileScripts: 1297.628ms
+		ReloadNativeAssets: 0.178ms
+		UnloadImportedAssets: 2.643ms
+		ReloadImportedAssets: 0.001ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 4.136ms
+		InitializingProgressBar: 0.050ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.002ms
+		OnDemandSchedulerStart: 0.742ms
+	PostProcessAllAssets: 238.137ms
+	Hotreload: 1.401ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 2.022ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 1.687ms
+	Untracked: 2200.146ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 25.152ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-Crime99AssetStylePreflight
+Unloading 23 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3161 unused Assets / (4.3 MB). Loaded Objects now: 4020.
+Memory consumption went from 192.5 MB to 188.2 MB.
+Total: 7.946700 ms (FindLiveObjects: 0.411400 ms CreateObjectMapping: 0.233700 ms MarkObjects: 5.701100 ms  DeleteObjects: 1.599900 ms)
+
+Opening scene 'Assets/_Crime99/UrbanSliceVisualAssembly/Scenes/C99_UrbanSlice_VisualAssembly.unity'
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/_Crime99/UrbanSliceVisualAssembly/Scenes/C99_UrbanSlice_VisualAssembly.unity'
+	Deserialize:            1.451 ms
+	Integration:            200.244 ms
+	Integration of assets:  0.003 ms
+	Thread Wait Time:       0.018 ms
+	Total Operation Time:   201.716 ms
+Unloading 1 unused Assets / (0.5 KB). Loaded Objects now: 4595.
+Memory consumption went from 256.6 MB to 256.6 MB.
+Total: 4.514500 ms (FindLiveObjects: 0.249500 ms CreateObjectMapping: 0.048700 ms MarkObjects: 4.202700 ms  DeleteObjects: 0.013100 ms)
+
+Host type is not matching any asset type at Path Packages/com.unity.render-pipelines.core/Editor/Lighting/ProbeVolume/VirtualOffset/TraceVirtualOffset.urtshader.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.Rendering.RenderPipelineResourcesEditorUtils:TryReloadContainedNullFields (UnityEngine.Rendering.IRenderPipelineResources)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:UpdateRenderPipelineGlobalSettings (UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager/RenderPipelineGraphicsSettingsInfo,UnityEngine.Rendering.RenderPipelineGlobalSettings,bool&,UnityEngine.Rendering.IRenderPipelineGraphicsSettings&)
+UnityEditor.Rendering.Settings.RenderPipelineGraphicsSettingsManager:PopulateRenderPipelineGraphicsSettings (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset (System.Type,UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEditor.Rendering.EditorGraphicsSettings:SetRenderPipelineGlobalSettingsAsset<UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.RenderPipelineGlobalSettings)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool,System.Exception&) (at ./Library/PackageCache/com.unity.render-pipelines.core@c3bbbae46ff1/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:138)
+UnityEngine.Rendering.RenderPipelineGlobalSettingsUtils:TryEnsure<UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings, UnityEngine.Rendering.Universal.UniversalRenderPipeline> (UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings&,string,bool) (at ./Library/PackageCache/com.unity.render-pipelines.core@c3bbbae46ff1/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs:90)
+UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings:Ensure (bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@8a9b4021522a/Runtime/UniversalRenderPipelineGlobalSettings.cs:284)
+UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset:EnsureGlobalSettings () (at ./Library/PackageCache/com.unity.render-pipelines.universal@8a9b4021522a/Runtime/Data/UniversalRenderPipelineAsset.cs:802)
+UnityEngine.Rendering.RenderPipelineAsset:InternalCreatePipeline ()
+UnityEngine.Rendering.RenderPipelineManager:TryPrepareRenderPipeline (UnityEngine.Rendering.RenderPipelineAsset)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,UnityEngine.Object,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle)
+UnityEngine.Camera:Render ()
+Crime99.UrbanSliceVisualAssembly.Editor.UrbanSliceVisualAssemblyBuilder:Capture (string,UnityEngine.Camera,string) (at Assets/_Crime99/UrbanSliceVisualAssembly/Editor/UrbanSliceVisualAssemblyBuilder.cs:451)
+Crime99.UrbanSliceVisualAssembly.Editor.UrbanSliceVisualAssemblyBuilder:CaptureFinalEvidenceFromExistingScene () (at Assets/_Crime99/UrbanSliceVisualAssembly/Editor/UrbanSliceVisualAssemblyBuilder.cs:118)
+
+(Filename: ./Library/PackageCache/com.unity.render-pipelines.core@c3bbbae46ff1/Runtime/RenderPipeline/RenderPipelineGlobalSettingsUtils.cs Line: 138)
+
+C99_FINAL_CAPTURE_ONLY_SUCCESS
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Crime99.UrbanSliceVisualAssembly.Editor.UrbanSliceVisualAssemblyBuilder:CaptureFinalEvidenceFromExistingScene () (at Assets/_Crime99/UrbanSliceVisualAssembly/Editor/UrbanSliceVisualAssemblyBuilder.cs:134)
+
+(Filename: Assets/_Crime99/UrbanSliceVisualAssembly/Editor/UrbanSliceVisualAssemblyBuilder.cs Line: 134)
+
+C99_FINAL_CAPTURE entrance A974FFD4621C5E3E55CB3D14B560242F0742C1C36F47D8289EDDEE67AC18876F unique=26973 foreground=912656 magenta=0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Crime99.UrbanSliceVisualAssembly.Editor.UrbanSliceVisualAssemblyBuilder:CaptureFinalEvidenceFromExistingScene () (at Assets/_Crime99/UrbanSliceVisualAssembly/Editor/UrbanSliceVisualAssemblyBuilder.cs:137)
+
+(Filename: Assets/_Crime99/UrbanSliceVisualAssembly/Editor/UrbanSliceVisualAssemblyBuilder.cs Line: 137)
+
+C99_FINAL_CAPTURE placement_map 4BED0CA7EF83885FFBB080556C2CBEF3D0A0885BDB7643D241868F9743CB7CED unique=4314 foreground=133591 magenta=0
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Crime99.UrbanSliceVisualAssembly.Editor.UrbanSliceVisualAssemblyBuilder:CaptureFinalEvidenceFromExistingScene () (at Assets/_Crime99/UrbanSliceVisualAssembly/Editor/UrbanSliceVisualAssemblyBuilder.cs:137)
+
+(Filename: Assets/_Crime99/UrbanSliceVisualAssembly/Editor/UrbanSliceVisualAssemblyBuilder.cs Line: 137)
+
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-jarid-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-jarid channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1784709031678,"processId":23400,"allocatedMemory":18843803,"memoryLabels":[{"Default":29313},{"Permanent":15236},{"NewDelete":67651},{"Thread":4230384},{"Manager":824125},{"VertexData":1400},{"Geometry":816},{"Texture":160},{"Shader":84501},{"Material":24},{"GfxDevice":56376},{"Animation":392},{"Audio":3040},{"FreeType":8},{"FontEngine":736},{"Physics":2146},{"Physics2D":16},{"Serialization":656},{"Input":14984},{"JobScheduler":33024},{"TextLib":216},{"Mono":32},{"MonoCode":64},{"ScriptingNativeRuntime":155060},{"BaseObject":1620208},{"Resource":1336},{"Renderer":3000},{"Transform":4685},{"File":3961},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":20726},{"DynamicArray":98667},{"HashMap":83025},{"Utility":2661910},{"Curl":2559},{"PoolAlloc":2248},{"AI":80},{"TypeTree":11341},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7792},{"Director":8240},{"CloudService":8064},{"WebRequest":845},{"VR":47994},{"SceneManager":504},{"Video":64},{"LazyScriptCache":32},{"Camera":17},{"Secure":2377},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":464},{"Hierarchy":608},{"CoreStats":13112},{"Identifiers":6480},{"Gui":96},{"EditorUtility":117272},{"VersionControl":4},{"Undo":947},{"AssetDatabase":8187759},{"EditorGi":328},{"UnityConnect":29208},{"Upm":1896},{"AssetCompliance":64},{"DrivenProperties":72},{"LocalIPC":211},{"ProfilerEditor":9746},{"CoreBusinessMetrics":2867},{"Licensing":1232},{"AssetReference":32},{"IPCStream":32}]}
+~StackAllocator(ALLOC_TEMP_MAIN) m_LastAlloc not NULL. Did you forget to call FreeAllStackAllocations()? To get more information, run app with -diag-temp-memory-leak-validation cmd line argument

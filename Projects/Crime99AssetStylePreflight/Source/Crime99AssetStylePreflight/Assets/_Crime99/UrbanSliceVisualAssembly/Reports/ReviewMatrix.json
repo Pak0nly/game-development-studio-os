@@ -1,0 +1,94 @@
+{
+  "packageId": "C99-UrbanSlice-StylePreflight-FormalEvidence-v1",
+  "evidenceImmutable": true,
+  "requestedModels": {
+    "terra": "gpt-5.6-terra",
+    "sol": "gpt-5.6-sol",
+    "attestation": "Requested model — not independently attested."
+  },
+  "reviewExecution": {
+    "wave1": {"sessions": [81, 82, 83], "mode": "parallel"},
+    "wave2": {"sessions": [84, 85, 86], "mode": "parallel"},
+    "producer": {"session": 87, "mode": "sequential_after_specialists"},
+    "synthesis": {"session": 10, "modelRoute": "Sol", "mode": "sequential_after_reviews"}
+  },
+  "reviews": [
+    {
+      "session": 81,
+      "role": "Blind Visual",
+      "verdict": "PASS WITH CONCERNS",
+      "normalizedRecommendation": "APPROVE FOR DRESSING AND PERIOD ADAPTATION",
+      "blocker": false,
+      "concerns": ["empty asphalt and horizon", "dark and repeated facades", "landmark weaker at street distance"]
+    },
+    {
+      "session": 82,
+      "role": "Art Director",
+      "verdict": "PASS WITH CONCERNS",
+      "normalizedRecommendation": "APPROVE FOR DRESSING AND PERIOD ADAPTATION",
+      "blocker": false,
+      "concerns": ["Vendor period, signage, and material language", "fire escapes and mirrored SM_NYCB_17 repetition", "open street ends", "service area remains reserved rather than dressed"]
+    },
+    {
+      "session": 83,
+      "role": "Technical Artist",
+      "verdict": "TECHNICALLY VIABLE",
+      "normalizedRecommendation": "APPROVE FOR DRESSING AND PERIOD ADAPTATION",
+      "blocker": false,
+      "verified": ["451 assigned material slots", "zero missing slots", "zero error shaders", "zero overlaps", "zero sidewalk intrusions"],
+      "concerns": ["nonfatal URP/ShaderGraph MaterialPostprocessor null-reference exceptions", "integrity aggregation reproducibility"]
+    },
+    {
+      "session": 84,
+      "role": "Camera/Occlusion",
+      "verdict": "PASS WITH CONCERNS",
+      "normalizedRecommendation": "APPROVE FOR DRESSING AND PERIOD ADAPTATION",
+      "blocker": false,
+      "concerns": ["only the street view is truly gameplay-near", "no runtime actors or runtime occlusion proof", "empty asphalt and horizon", "landmark weaker at distance"],
+      "coverageConclusion": "Sufficient for bounded visual assembly; runtime claims deferred."
+    },
+    {
+      "session": 85,
+      "role": "Level Designer",
+      "verdict": "PASS WITH CONCERNS",
+      "normalizedRecommendation": "APPROVE FOR DRESSING AND PERIOD ADAPTATION",
+      "blocker": false,
+      "verified": ["9.5 x 78 m road", "two 3.5 m sidewalks", "scale and fit pass"],
+      "concerns": ["future crossings", "loading function", "density", "landmark dressing"]
+    },
+    {
+      "session": 86,
+      "role": "Asset/Provenance Manager",
+      "verdict": "NO BLOCKERS",
+      "normalizedRecommendation": "APPROVE FOR DRESSING AND PERIOD ADAPTATION",
+      "blocker": false,
+      "verified": ["eight placements", "seven original prefabs", "451 Vendor material slots", "three project-owned materials", "Recovery-B references traced"],
+      "concerns": ["period adaptation", "manifest and integrity aggregation method reproducibility"]
+    },
+    {
+      "session": 87,
+      "role": "Producer/Scope Controller",
+      "verdict": "NO BLOCKERS",
+      "normalizedRecommendation": "APPROVE FOR DRESSING AND PERIOD ADAPTATION",
+      "blocker": false,
+      "verified": ["scope adhered", "one formative correction", "no external mutation", "no Assembly-B work"],
+      "concerns": ["Git-root and reproducibility clarity", "nonfatal material-postprocessor exceptions"]
+    }
+  ],
+  "sol10Synthesis": {
+    "verdict": "APPROVE FOR DRESSING AND PERIOD ADAPTATION",
+    "currentRevisionRequired": false,
+    "carryForward": [
+      "dress horizon and empty asphalt",
+      "period-adapt signage and materials",
+      "differentiate mirrored SM_NYCB_17 and repeated fire-escape language",
+      "strengthen landmark readability at street distance",
+      "dress service logistics",
+      "validate runtime and gameplay occlusion later",
+      "investigate nonfatal MaterialPostprocessor null-reference exceptions before production workflow use",
+      "keep Vendor immutable and adaptations project-owned",
+      "preserve frozen evidence hashes"
+    ]
+  },
+  "finalRecommendation": "APPROVE FOR DRESSING AND PERIOD ADAPTATION"
+}

@@ -1,0 +1,103 @@
+{
+  "packageId": "C99-UrbanSlice-StylePreflight-FormalEvidence-v1",
+  "status": "FORMATIVE_CANDIDATE_FROZEN_BY_HASH",
+  "requestedModel": "gpt-5.6-terra",
+  "modelAttestation": "Requested model — not independently attested.",
+  "candidate": {
+    "scenePath": "Assets/_Crime99/UrbanSliceVisualAssembly/Scenes/C99_UrbanSlice_VisualAssembly.unity",
+    "sceneSha256": "921FDE22A4CBCC2D05D2FD82208107E6FF8B3FA1CE6894C3E45E9256C3A8ACC8",
+    "placementManifestPath": "Assets/_Crime99/UrbanSliceVisualAssembly/Evidence/PlacementManifest.json",
+    "placementManifestSha256": "CC3B6CFFFCC04D593FC7496D9DA802074050FF1DCB90F399E661606D32D7E87B",
+    "builderSha256AtCandidateCreation": "DC03BFCB0F1EB08F1323B8542E1314680C0F506F753A0FE1D58E046AE644070D",
+    "captureOnlyBuilderSha256": "5DA6595C3C8A02666F4F245499773355221DC2CE6794974DFC50578F3ACF0C4A",
+    "freezeRule": "Candidate identity is the exact scene, source placement manifest, and six #79 images. The capture-only builder change did not save or rebuild the scene."
+  },
+  "captureOnlyExecution": {
+    "unityVersion": "6000.3.19f1",
+    "graphicsApi": "Direct3D 11",
+    "exitCode": 0,
+    "elapsedSeconds": 7.94,
+    "successMarker": "C99_FINAL_CAPTURE_ONLY_SUCCESS",
+    "sceneHashBeforeAndAfter": "921FDE22A4CBCC2D05D2FD82208107E6FF8B3FA1CE6894C3E45E9256C3A8ACC8",
+    "logPath": "UnityFinalCapture.log",
+    "logSha256": "515728570E4D4D11E585927D5A481B44AEDA2FA0C30495B19460B76A4343B1CF"
+  },
+  "placements": [
+    {"name":"West_SM5","prefab":"Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_5.prefab","rootPosition":[-8.505547523498536,0.0002684593200683594,-13.647388458251954],"yaw":-90.0,"scale":0.8199999928474426,"boundsCenter":[-12.161252975463868,4.347365856170654,-21.000003814697267],"boundsSize":[7.722507476806641,8.694732666015625,15.161857604980469],"roadFace":"maxX=-8.30","materialSlots":52},
+    {"name":"West_SM24","prefab":"Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_24.prefab","rootPosition":[-16.895618438720704,-9.5367431640625e-7,-12.055010795593262],"yaw":-90.0,"scale":0.8199999928474426,"boundsCenter":[-13.711172103881836,8.0343656539917,-6.0],"boundsSize":[10.822345733642579,16.06873321533203,13.28121566772461],"roadFace":"maxX=-8.30","materialSlots":52},
+    {"name":"West_SM17","prefab":"Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_17.prefab","rootPosition":[-16.365358352661134,0.0006761550903320313,13.470115661621094],"yaw":-90.0,"scale":0.8199999928474426,"boundsCenter":[-12.556708335876465,7.708398342132568,8.30000114440918],"boundsSize":[8.513418197631836,15.41679573059082,12.695878982543946],"roadFace":"maxX=-8.30","materialSlots":78},
+    {"name":"West_Landmark_SM36","prefab":"Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_36.prefab","rootPosition":[-17.59613800048828,0.00035953521728515625,32.44396209716797],"yaw":-90.0,"scale":1.0,"boundsCenter":[-13.039335250854493,10.301680564880371,27.999998092651368],"boundsSize":[9.478668212890625,20.603363037109376,9.480571746826172],"roadFace":"maxX=-8.30","materialSlots":48},
+    {"name":"East_SM2","prefab":"Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_2.prefab","rootPosition":[9.754575729370118,0.0073757171630859379,-15.713903427124024],"yaw":90.0,"scale":0.8199999928474426,"boundsCenter":[13.277153015136719,7.507034778594971,-20.999998092651368],"boundsSize":[9.954299926757813,15.014066696166993,12.973381042480469],"roadFace":"minX=8.30","materialSlots":73},
+    {"name":"East_SM17","prefab":"Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_17.prefab","rootPosition":[16.365358352661134,0.0006761550903320313,-12.170116424560547],"yaw":90.0,"scale":0.8199999928474426,"boundsCenter":[12.556710243225098,7.708398342132568,-7.0],"boundsSize":[8.513418197631836,15.41679573059082,12.695877075195313],"roadFace":"minX=8.30","materialSlots":78},
+    {"name":"East_SM25","prefab":"Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_25.prefab","rootPosition":[16.075578689575197,0.0013670921325683594,3.5799827575683595],"yaw":90.0,"scale":0.8199999928474426,"boundsCenter":[13.034137725830079,6.929683208465576,8.5],"boundsSize":[9.468276977539063,13.859366416931153,12.278501510620118],"roadFace":"minX=8.30","materialSlots":48},
+    {"name":"East_Service_SM38","prefab":"Assets/LeartesStudios/NYC1950s/HDRP/Prefabs/SM_NYCB_38.prefab","rootPosition":[8.516103744506836,7.152557373046875e-7,32.085113525390628],"yaw":90.0,"scale":0.8199999928474426,"boundsCenter":[13.354097366333008,3.1358816623687746,28.000001907348634],"boundsSize":[10.108196258544922,6.271761894226074,9.06069564819336],"roadFace":"minX=8.30","materialSlots":22}
+  ],
+  "validation": {
+    "frontConvention":"Prefab local -Z; west yaw -90 faces +X, east yaw +90 faces -X.",
+    "visualFrontCheck":"PASS: storefront, garage/service, and landmark public faces point toward the road.",
+    "prefabInstances":8,"uniquePrefabAssets":7,"materialSlots":451,"missingScripts":0,"missingMaterialSlots":0,"errorShaderSlots":0,"buildingBoundsOverlaps":0,"sidewalkIntrusions":0,"groundContactToleranceMeters":0.02,"magentaPixelsAllCandidateImages":0
+  },
+  "proxyInventory": [
+    {"name":"Road","position":[0,-0.16,3],"scale":[9.5,0.3,78],"material":"Assets/_Crime99/UrbanSliceVisualAssembly/Materials/C99_Road.mat"},
+    {"name":"Sidewalk_West","position":[-6.6,-0.06,3],"scale":[3.5,0.16,78],"material":"Assets/_Crime99/UrbanSliceVisualAssembly/Materials/C99_Sidewalk.mat"},
+    {"name":"Sidewalk_East","position":[6.6,-0.06,3],"scale":[3.5,0.16,78],"material":"Assets/_Crime99/UrbanSliceVisualAssembly/Materials/C99_Sidewalk.mat"},
+    {"name":"Curb_West","position":[-4.83,0.03,3],"scale":[0.18,0.22,78],"material":"Assets/_Crime99/UrbanSliceVisualAssembly/Materials/C99_Curb.mat"},
+    {"name":"Curb_East","position":[4.83,0.03,3],"scale":[0.18,0.22,78],"material":"Assets/_Crime99/UrbanSliceVisualAssembly/Materials/C99_Curb.mat"}
+  ],
+  "assetDecision": {
+    "selected":["SM_NYCB_5","SM_NYCB_24","SM_NYCB_17","SM_NYCB_36","SM_NYCB_2","SM_NYCB_25","SM_NYCB_38"],
+    "landmark":"SM_NYCB_36 selected over SM_NYCB_8 because its 9.48 m frontage preserves the north-slot hierarchy while retaining 20.60 m height.",
+    "rejected":["SM_NYCB_8 landmark: 18.93 m frontage consumes hierarchy.","SM_NYCB_25 service: too tall/mixed-use.","SM_NYCB_38 general frontage: retained for utility/service role.","SM_NYCB_2 and SM_NYCB_24 landmark: broader and less distinct."],
+    "repetition":"SM_NYCB_17 is mirrored across the two sides: one repeated asset among eight placements/seven unique prefabs. Acceptable for formative assembly; later substitution or dressing should reduce repeated dark-brick/fire-escape language.",
+    "periodRisk":"Blue awnings, red storefront bands/signage, bright rooftop details, and repeated fire escapes may dominate. They remain untouched Vendor content and are a later art-direction concern."
+  },
+  "cameras": [
+    {"capture":"overview","position":[0,12,-42],"target":[0,1.45,1.5],"projection":"perspective","fov":48},
+    {"capture":"west","position":[-2.3,7,-27],"target":[-8.2,1.8,-9],"projection":"perspective","fov":48},
+    {"capture":"east","position":[2.3,7,-27],"target":[8.2,1.8,-9],"projection":"perspective","fov":48},
+    {"capture":"landmark","position":[0,9,10],"target":[-12.5,8,28],"projection":"perspective","fov":48},
+    {"capture":"service","position":[3.5,8.5,16.5],"target":[12.5,1.4,28],"projection":"perspective","fov":51},
+    {"capture":"street","position":[0,2.1,-32],"target":[0,2,18],"projection":"perspective","fov":55},
+    {"capture":"entrance","position":[-1.8,4.6,-15.5],"target":[-8.3,2.1,-7],"projection":"perspective","fov":42},
+    {"capture":"placement_map","position":[0,70,3],"target":[0,0,3],"projection":"orthographic","orthographicSize":45}
+  ],
+  "images": [
+    {"path":"C99_VisualAssembly_overview.png","sha256":"051AF9B998BC2EB4DC218AF599060FDEBFF0E729D3FBFFE6F776923F64C27240"},
+    {"path":"C99_VisualAssembly_west.png","sha256":"971B6D2FEF97D45272F6D73500F66D1B0DD59A848FC3A7A525ED608040B4BBB2"},
+    {"path":"C99_VisualAssembly_east.png","sha256":"AE3E6E27F4B049B8B3CBA32F70EDC2E067A3554C37C8C150FC2860CA54C5D47A"},
+    {"path":"C99_VisualAssembly_landmark.png","sha256":"286F30AF06416301683FEE062927AC5BEFD11EED2DB7B2FEE499628A137728EF"},
+    {"path":"C99_VisualAssembly_service.png","sha256":"D5B2E618E0CAB4F6459287AD40C55437C11C0AD942AE6C700E1D2BE6A3084EDA"},
+    {"path":"C99_VisualAssembly_street.png","sha256":"E2C6CE06A34703260114E21BFFAB8AC9238C01954966FE795BE1142825328CFD"},
+    {"path":"C99_VisualAssembly_entrance.png","sha256":"A974FFD4621C5E3E55CB3D14B560242F0742C1C36F47D8289EDDEE67AC18876F"},
+    {"path":"C99_VisualAssembly_placement_map.png","sha256":"4BED0CA7EF83885FFBB080556C2CBEF3D0A0885BDB7643D241868F9743CB7CED"},
+    {"path":"References/C99_USS1_Recovery_B_E01_SouthGameplayLike_Unlabelled.png","sha256":"D61384544B42602C0060DFD2E5E87A3FA54574516EFC4A8B0F39CF5F668DFAE9"},
+    {"path":"References/C99_USS1_Recovery_B_E02_ServiceLoading_Unlabelled.png","sha256":"DE902E20952B2E28EE3B73F1A141C45F1B06B3AE30A0F2290BED3B7E66968290"},
+    {"path":"References/C99_USS1_Recovery_B_E03_FrontageRelationship_Unlabelled.png","sha256":"02720719FFAAD99260B091D3A1FBDAADCA464B1D61D36AC7E431D210748FADEF"}
+  ],
+  "comparisonIndex": [
+    {"candidate":"C99_VisualAssembly_overview.png","reference":"References/C99_USS1_Recovery_B_E01_SouthGameplayLike_Unlabelled.png","purpose":"street, sidewalks, hierarchy"},
+    {"candidate":"C99_VisualAssembly_service.png","reference":"References/C99_USS1_Recovery_B_E02_ServiceLoading_Unlabelled.png","purpose":"east service reservation/function"},
+    {"candidate":"C99_VisualAssembly_west.png","reference":"References/C99_USS1_Recovery_B_E03_FrontageRelationship_Unlabelled.png","purpose":"west frontage/public face"},
+    {"candidate":"C99_VisualAssembly_east.png","reference":"References/C99_USS1_Recovery_B_E03_FrontageRelationship_Unlabelled.png","purpose":"east frontage/sidewalk"},
+    {"candidate":"C99_VisualAssembly_entrance.png","reference":"References/C99_USS1_Recovery_B_E03_FrontageRelationship_Unlabelled.png","purpose":"real-prefab entrance readability"},
+    {"candidate":"C99_VisualAssembly_placement_map.png","reference":null,"purpose":"documentary footprint map"}
+  ],
+  "protectionHashes": {
+    "vendorFileHashManifest":"40F0C45322D2B81A941688B0910430FEE292BC7C9E7FB6D9155D26226C50DD11",
+    "selectedPrefabAndMetaAggregate":"B75043D1A3CD7F5972D85225574248E9C273298E958F1455B8D4DEA0808F6774",
+    "packageManifest":"112D95C666753439C7A728F9B73A726111E8BFC186064B8C9FFF3EFB7FCBE0CF",
+    "packageLock":"525C9F1343FB6A5359C7E23B2AD6BDAC73D62EE4217EFA03033218934DBEE3E5",
+    "projectSettingsAggregate":"3DC8AFBD68B0CD0011D2A983D40F33E65A66A1D4AA3ED5B8C13AED05834F21B1",
+    "catalogIndex":"42849C3509EC9DA1A2321D6A45468B9A4C79D124913B87F9F7C7265C8EA7AE22"
+  },
+  "packageImageAggregate": {
+    "algorithm":"SHA-256 over UTF-8 sorted relative/path|SHA256 lines joined with LF",
+    "scope":"the eleven PNG files listed in images",
+    "sha256":"60E3D4A53FDAA3EF8E1584A0F6DBB8029E2841364DC1912CE44C41A648C7C68F"
+  },
+  "documentaryPayloadAggregate": {
+    "algorithm":"SHA-256 over UTF-8 sorted relative/path|SHA256 lines joined with LF",
+    "scope":"all thirteen non-meta Final files except EvidenceManifest.json itself",
+    "sha256":"12ECC3DBB0043A9C7BE89EFE855CBFF26BCE661B728B00BD91F06DA036B9AD8B"
+  }
+}
