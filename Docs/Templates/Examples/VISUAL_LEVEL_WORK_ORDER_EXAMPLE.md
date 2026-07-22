@@ -1,8 +1,10 @@
-# Example — Visual Level Work Order
+# Example — Visual Level Task-Delta Work Order
+
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
 
 This complete abstract example is based on the type of work represented by the Crime99 Playable Presentation Block. It does not authorise or change Unity files.
 
-## Work Order
+## Task-Delta Work Order
 
 **Assignment:** Improve the readability and presentation foundation of one bounded elevated-camera urban block without expanding it into a full map.
 
@@ -37,7 +39,7 @@ Required evidence includes exact scene/build identity; matched gameplay captures
 
 Hard fails: magenta/missing/wrong required material; active target lost behind tested geometry; abstract emission where an installed source is required; indistinguishable profiles; unfinished boundary or placeholder; missing position/path/occlusion evidence; manufacturer edit; or mandatory role `FAIL`.
 
-Round 1 corrects the highest-impact hard fails, regenerates evidence, and reruns affected roles. Round 2 may correct remaining in-scope failures once. A third round, new asset, camera-policy change, or broader dressing stops for a new assignment.
+For this example's named visual stage, correction allowance is `2` under the [Execution Modes and Stage Review Standard](../../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md). Round 1 corrects the highest-impact valid-review findings and reruns affected roles; Round 2 may correct remaining in-scope failures once. Formative work and invalid evidence use the Core accounting rule. Work beyond the declared stage allowance, a new asset, camera-policy change, or broader dressing stops for a new assignment.
 
 ## Illustrative Separate Role Verdicts
 

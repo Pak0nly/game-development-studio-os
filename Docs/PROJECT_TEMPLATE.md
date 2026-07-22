@@ -1,5 +1,7 @@
 # Project Template
 
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+
 This document defines the standard high-level structure for game projects created under the Studio Operating System.
 
 It is project-independent and should be used as the starting point for new game projects.
@@ -179,13 +181,13 @@ Reusable standards should be shared through the Studio Operating System, while p
 
 ## Visual Work Assignment Template
 
-Every project template or work-order pattern for visible content must include the required work-assignment block from the [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md). It must require blind visual review, a camera-coverage matrix, continuous occlusion-path review, hard-fail checks, up to two bounded internal correction rounds, matched Before/After evidence, and an explicit Human approval boundary.
+Every project template or Task-Delta Work Order pattern for visible content uses the [Task-Delta Work Order Template](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md) and the applicable [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md) controls. It records only the stage-specific blind review, relevant camera/route/occlusion coverage, hard fails, matched evidence, stage-local correction allowance, and Human checkpoint; it does not copy the full workflow.
 
 The project README must identify the applicable project-local standards and the current internal visual status. A technical pass must never be presented as visual acceptance.
 
 ## Role and Review Work Assignment Template
 
-Every larger, higher-risk, or cross-domain work order must include the [Work Order Role and Review Block](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md). It must name the accountable builder, activate only necessary roles, state role-specific review questions and evidence, identify the applicable board, limit correction rounds, and preserve the Human decision boundary.
+Every larger, higher-risk, or cross-domain Task-Delta Work Order must include the [Task-Delta Work Order Role and Review Block](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md). It must name the accountable builder, activate only necessary roles, state role-specific review questions and evidence, identify the applicable board, limit correction rounds, and preserve the Human decision boundary.
 
 Project-local examples may specialize the block but may not weaken the [Role Operating Model](Roles/ROLE_OPERATING_MODEL.md), [Role Review Output Schema](Roles/ROLE_REVIEW_OUTPUT_SCHEMA.md), [Review Board Protocol](Roles/REVIEW_BOARD_PROTOCOL.md), or any domain Source of Truth.
 

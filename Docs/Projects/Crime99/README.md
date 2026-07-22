@@ -7,10 +7,14 @@
 **Validation State:** Not applicable
 **Approval Status:** Mixed; technical planning baseline confirmed, broader project documentation remains in review
 **Project Phase:** Definition
-**Implementation Status:** Not authorised
-**Last Reviewed:** 2026-07-16
+**Implementation Status:** Historical production evidence exists; current continuation requires an explicit Task-Delta Work Order
+**Last Reviewed:** 2026-07-22
 
 This directory contains the current project definition and design documentation for an original elevated-camera urban action game. `Crime99` is an internal working title only; no final public or commercial name is confirmed.
+
+Production baselines, canonical work environments, frozen systems, asset boundaries, accepted concerns, and contextual diagnostic lessons are indexed in the adopted [`Crime99 Production Profile`](PRODUCTION_PROFILE.md). The profile was adopted through LAIA-2026-07-22 on 2026-07-22. Operational authority and stop state remain in [`WORK_STATE.md`](../../WORK_STATE.md) and [`CURRENT_HANDOVER.md`](../../CURRENT_HANDOVER.md); this project-definition index must not be used as a production-continuation grant.
+
+The failed `New Map Slice — Process Validation` Pilot 1 is formally closed in [`PILOT_1_CLOSURE_AND_SEMANTIC_EVIDENCE_REVISION.md`](PILOT_1_CLOSURE_AND_SEMANTIC_EVIDENCE_REVISION.md). Its frozen candidate is process evidence only and is not a production or layout base.
 
 The product is framed through its own identity: a solo-testable Free-for-All experience, a vehicle and on-foot combat sandbox, a reactive city with civilians, traffic, police, and destruction, short-form chaotic action, and the stylised `Neon over Dirt` visual direction.
 
@@ -257,7 +261,7 @@ The current authority chain is:
 
 ## Current Implementation Boundary
 
-Technical architecture planning is confirmed as the planning baseline. No implementation is currently authorised. `Accepted for Planning` in the technical decision register is not an implementation status or permission.
+Technical architecture planning is the confirmed planning baseline, and later isolated production/pilot evidence exists. No current implementation continuation is authorised by this index or by the existence of that evidence. `Accepted for Planning`, a technical checkpoint, a formative visual checkpoint, or a passed historical gate is not present-tense implementation permission.
 
 The existing documentation does not authorise:
 
@@ -276,14 +280,13 @@ Implementation requires a separate explicit approval through the Studio Operatin
 
 ## Current Blocking Topics
 
-The current activity is final consistency validation and exact-scope staging of the confirmed technical planning baseline. Genuine unresolved, deferred, and validation-dependent items remain in [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md). The main blockers before implementation are exact project path, implementation authorisation, any candidate preflight/purchase authority, final fixed-camera tuning, Store-tool adoption after evidence, and binding performance targets.
+Use the [Production Profile](PRODUCTION_PROFILE.md), verified repository state, and current operational documents for active blockers. Genuine unresolved, deferred, and validation-dependent product items remain in [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md). Every new implementation, correction, Unity execution, setup, asset, purchase, download, licence, or Git action still requires its applicable authority.
 
 ## Current Recommended Next Steps
 
-1. Review the exact staged 18-file architecture documentation set and either approve or revise a later commit.
+1. Use the [Production Profile](PRODUCTION_PROFILE.md) to select an exact baseline and canonical environment for any future Task-Delta Work Order.
 2. Keep [`GDD/16_PROTOTYPE_SCOPE.md`](GDD/16_PROTOTYPE_SCOPE.md) and [`PROTOTYPE_ROADMAP.md`](PROTOTYPE_ROADMAP.md) `In Review` unless the Human Developer explicitly confirms them.
-3. Confirm the exact project path and a bounded first setup/Gate A work package only through a later explicit implementation approval.
-4. Treat every purchase, download, installation, import, Store preflight, commit, push, and implementation step as separately permissioned.
+3. Treat every Unity execution, production continuation, purchase, download, installation, import, Store preflight, stage, commit, push, and implementation step as separately permissioned where the Studio OS requires it.
 
 ## Maintenance Rules
 

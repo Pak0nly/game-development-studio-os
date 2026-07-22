@@ -38,15 +38,15 @@ Use this document when a new rule, process, role, or standard may need to become
 
 ### Visual/Visual_Quality_Assurance_Workflow.md
 
-Defines the adopted project-independent workflow for blind visual review, the reusable 0–5 quality matrix, camera coverage, runtime occlusion review, two bounded internal correction rounds, matched Before/After evidence, and the Human visual-approval boundary.
+Defines the project-independent workflow for blind visual review, the reusable 0–5 quality matrix, camera coverage, runtime occlusion review, stage-local formal corrections, matched Before/After evidence, and the Human visual-approval boundary.
 
-Use this document for every assignment that creates or changes visible game content. Technical validation never substitutes for this workflow.
+Use this document for the visible claims and risks of every assignment that creates or changes visible game content. Mode and stage determine the proportional scope; technical validation never substitutes for a required visual review.
 
 ### Roles/ROLE_OPERATING_MODEL.md
 
-Defines the adopted lightweight specialist-role model, authority boundaries, independent review outputs, consolidation, anti-loop rules, and activation discipline for larger or cross-domain work.
+Defines the adopted lightweight specialist-role model, authority boundaries, independent review outputs, consolidation, anti-loop rules, and decision-relevant activation discipline.
 
-Use it with the [Role Catalog](Roles/ROLE_CATALOG.md), [Role Activation Matrix](Roles/ROLE_ACTIVATION_MATRIX.md), [Role Review Output Schema](Roles/ROLE_REVIEW_OUTPUT_SCHEMA.md), and [Review Board Protocol](Roles/REVIEW_BOARD_PROTOCOL.md). The reusable work-order block is in [Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md).
+Use it with the [Role Catalog](Roles/ROLE_CATALOG.md), [Role Activation Matrix](Roles/ROLE_ACTIVATION_MATRIX.md), [Role Review Output Schema](Roles/ROLE_REVIEW_OUTPUT_SCHEMA.md), and [Review Board Protocol](Roles/REVIEW_BOARD_PROTOCOL.md). The reusable Task-Delta Work Order role/review block is in [Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md).
 
 ### Visual/ART_BIBLE_STANDARD.md
 
@@ -64,6 +64,16 @@ Defines project-independent level-design review criteria for routes, scale, game
 
 Defines a reference method for believable environment use, layering, wear, density, period coherence, and visible causality without imposing a universal style.
 
+### Level/LEVEL_DEVELOPMENT_LIFECYCLE.md
+
+Defines the mandatory ten-phase process and stop gates for new or structurally material AI-assisted level areas from Environmental Intent through Human Review. It keeps structural decisions ahead of asset integration and prevents later polish from hiding earlier failures. Ordinary production on an accepted baseline uses an applicable playbook and stage-exit review instead of restarting all ten phases.
+
+Use it with [the Environmental Intent Standard](Level/ENVIRONMENTAL_INTENT_STANDARD.md), [the Urban and Functional Reasoning Standard](Level/URBAN_AND_FUNCTIONAL_REASONING_STANDARD.md), [the Level Decision Record](Templates/LEVEL_DECISION_RECORD_TEMPLATE.md), and [the New Map Slice process-validation template](Templates/NEW_MAP_SLICE_PROCESS_VALIDATION_WORK_ORDER_TEMPLATE.md). The initial separate-role assessment is recorded in the [Lifecycle Review Record](Level/LEVEL_DEVELOPMENT_LIFECYCLE_REVIEW.md).
+
+### AI/AI_MODEL_ROUTING_AND_COMPUTE_EFFICIENCY_STANDARD.md
+
+Defines provider-independent Routine, Standard, and Critical routing based on task risk, reversibility, ambiguity, context, and failed attempts. It also defines context envelopes, token-efficiency rules, review levels, and the current model-routing role gap.
+
 ### Research/CLAUDE_CODE_GAME_STUDIOS_ADOPTION_MATRIX.md
 
 Records the source-based adoption, adaptation, and rejection decisions that informed this role and review framework. It is research evidence, not an independent authority over adopted Studio OS documents.
@@ -73,6 +83,20 @@ Records the source-based adoption, adaptation, and rejection decisions that info
 Stores governance ideas, engineering principles, roles, processes, risks, and open questions that may be useful but are not yet adopted standards.
 
 Use this document to track proposals and Parking Lot items without treating them as official rules.
+
+## Layered Agent Instruction Architecture
+
+### Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md
+
+Defines the Layered Agent Instruction Architecture, Discovery / Production / Diagnostic / Integration mode selection, formal-review Definition of Ready, decision-relevant role activation, formative work, stage-local correction accounting, invalid-evidence treatment, and Task-Delta Work Order boundary. Adopted through LAIA-2026-07-22 on 2026-07-22.
+
+Use it with the [Task-Delta Work Order Template](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md), a project Production Profile, and only the applicable playbook listed below.
+
+The proposal reviews, bounded corrections, validation results, context proxies, and Human disposition are preserved in the [Layered Agent Instruction Architecture Review and Adoption Record](Production/LAYERED_AGENT_INSTRUCTION_ARCHITECTURE_REVIEW_AND_ADOPTION_RECORD.md).
+
+### Playbooks/
+
+Defines the adopted on-demand, provider-independent instructions for [Visual Production](Playbooks/VISUAL_PRODUCTION.md), [Unity Asset Assembly and Diagnostic Safety](Playbooks/UNITY_ASSET_ASSEMBLY_AND_DIAGNOSTIC_SAFETY.md), and [Baseline Integration and Commit Preparation](Playbooks/BASELINE_INTEGRATION_AND_COMMIT_PREPARATION.md). They are repository playbooks, not an unsupported Skills runtime, and do not grant task execution authority by themselves.
 
 ## Confirmed Decision Register
 

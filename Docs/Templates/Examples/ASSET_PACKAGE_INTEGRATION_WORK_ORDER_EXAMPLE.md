@@ -1,6 +1,8 @@
-# Example — Asset Package Integration Work Order
+# Example — Asset Package Integration Task-Delta Work Order
 
-## Work Order
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+
+## Task-Delta Work Order
 
 **Assignment:** Evaluate and integrate a licensed modular urban environment package for a prototype candidate without editing manufacturer originals.
 
@@ -38,4 +40,4 @@ Use exactly one: `Rejected`, `Evaluation Only`, `Prototype Candidate`, or `Poten
 
 Hard fails: unknown licence/source, missing material/error shader, unexamined relevant family, edited original, incompatible focal style/period, no safe override strategy, no reproducible reimport, or unsupported release claim.
 
-Stop for Human direction before purchase, download, licence-risk acceptance, new dependency, package-version change, broad adaptation, or release classification. Work corrects clear in-scope import/documentation defects within at most two rounds.
+Stop for Human direction before purchase, download, licence-risk acceptance, new dependency, package-version change, broad adaptation, or release classification. For this example's named integration stage, correction allowance is `2` under the [Execution Modes and Stage Review Standard](../../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md); formative work and invalid evidence follow the Core accounting rule.

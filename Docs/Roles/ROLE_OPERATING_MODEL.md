@@ -1,5 +1,7 @@
 # Role Operating Model
 
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+
 ## Purpose
 
 This adopted model adds task-activated professional responsibility and review perspectives to the Studio Operating System. It supplements rather than replaces existing governance. Roles are not persistent autonomous people, a second management hierarchy, or permission to expand scope.
@@ -51,8 +53,9 @@ Not every role is active for every assignment. [The activation matrix](ROLE_ACTI
 6. Roles do not create questions when one clear compliant solution exists inside the authorised scope.
 7. All mandatory reviews occur before Producer consolidation and final handoff.
 8. If a mandatory role identifies a defect that Work can clearly correct inside scope, Work corrects it and reruns affected reviews instead of handing the defect to the Human Developer.
-9. Work may conduct at most two autonomous correction rounds. A third round or expanded solution requires a new assignment or Human direction.
-10. A role may be performed in the same Work run as implementation, but the review must be a distinct evidence-based assessment. When practical, use a separate context or reviewer; when not practical, explicitly separate Builder assumptions from reviewer findings.
+9. Correction authorisation, stage locality, and consumption are defined by the [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md). This role model applies that declared allowance; a correction beyond it or an expanded solution requires a new assignment or Human direction.
+10. Activate a role only when its distinct finding can change the current decision. Assignment labels and standing board membership are activation prompts, not reasons to request a redundant review.
+11. A role may be performed in the same Work run as implementation, but the review must be a distinct evidence-based assessment of one Definition-of-Ready candidate. When practical, use a separate context or reviewer and run independent reviews in parallel; when not practical, explicitly separate Builder assumptions from reviewer findings.
 
 ## Stop and Escalation Boundary
 
@@ -63,4 +66,4 @@ Stop and escalate when correction requires a new product or taste decision, mate
 - Visible work remains governed by [Visual Quality Assurance Workflow](../Visual/Visual_Quality_Assurance_Workflow.md).
 - Role review sequence and correction behaviour are governed by [Review Board Protocol](REVIEW_BOARD_PROTOCOL.md).
 - Role outputs use [Role Review Output Schema](ROLE_REVIEW_OUTPUT_SCHEMA.md).
-- Work orders use [Work Order Role and Review Block](../Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md).
+- Task-Delta Work Orders use the [Task-Delta Work Order Role and Review Block](../Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md).

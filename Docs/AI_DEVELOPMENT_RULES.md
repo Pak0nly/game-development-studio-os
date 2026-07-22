@@ -1,5 +1,7 @@
 # AI Development Rules
 
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+
 This document defines how AI systems are expected to participate in the development process.
 
 It establishes the responsibilities, limitations, expected behavior, communication style, and quality standards for every AI assistant working within this development environment.
@@ -149,19 +151,31 @@ AI should not treat generated assets as automatically game-ready unless their te
 
 ## Visual Quality Assurance
 
-Every assignment that creates or changes visible game content must follow the adopted [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md).
+Every assignment that creates or changes visible game content must apply the [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md) to the claims and risks of its authorised stage. The [Execution Modes and Stage Review Standard](Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md) selects whether the work is a complete lifecycle assignment, bounded production, diagnosis, or integration; it does not waive representative visual evidence or an applicable hard fail.
 
-The AI Agent must keep technical validation separate from visual review, perform a blind review from final gameplay-camera evidence, maintain required camera and path coverage, test runtime occlusion transitions, apply the hard-fail criteria and rating matrix, and run up to two bounded correction rounds inside the authorised scope before handoff.
+The AI Agent must keep technical validation separate from visual review. New or structurally material level work requires the lifecycle's complete applicable camera, path, occlusion, matrix, and gate evidence. Bounded production on an accepted baseline uses the applicable playbook, one Definition-of-Ready candidate, and a meaningful stage-exit review. Diagnostic and integration work must not claim visual passage from evidence that was not produced for that purpose.
 
 The AI Agent may reject its own technically valid result when visible quality fails. It must not claim final visual approval; creative direction and final visual acceptance remain with the Human Developer.
 
 ## Specialist Roles and Review
 
-Larger, higher-risk, or cross-domain assignments must use the adopted [Role Operating Model](Roles/ROLE_OPERATING_MODEL.md) and [Role Activation Matrix](Roles/ROLE_ACTIVATION_MATRIX.md). The work order must name one accountable builder, activate only roles whose checks materially reduce risk, and define their questions, evidence, hard errors, and decision boundary through the [Work Order Role and Review Block](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md).
+Larger, higher-risk, or cross-domain assignments must use the adopted [Role Operating Model](Roles/ROLE_OPERATING_MODEL.md) and [Role Activation Matrix](Roles/ROLE_ACTIVATION_MATRIX.md). The Task-Delta Work Order must name one accountable builder, activate only roles whose checks materially reduce risk, and define their questions, evidence, hard errors, and decision boundary through the [Task-Delta Work Order Role and Review Block](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md).
 
 Each activated specialist produces an independent result using the [Role Review Output Schema](Roles/ROLE_REVIEW_OUTPUT_SCHEMA.md). A role verdict is not a separate implementation stream, does not override the authority order, and does not grant new permission. The accountable builder or Producer consolidates findings through the applicable [Review Board Protocol](Roles/REVIEW_BOARD_PROTOCOL.md).
 
-Review must remain bounded. A board may run at most two correction rounds unless the Human Developer explicitly authorises more. Repeated review without new evidence, repeated reopening of an unchanged finding, or role activation that adds no distinct check is a process failure and must stop with a clear blocker or decision request.
+Review must remain bounded. Formal correction authorisation, stage locality, consumption, and the boundary for any additional assignment are defined by the [Execution Modes and Stage Review Standard](Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md). Repeated review without changed evidence, repeated reopening of an unchanged finding, or role activation that adds no distinct decision-relevant check is a process failure and must stop with a clear blocker or decision request.
+
+## AI Model Routing and Context
+
+Route bounded AI tasks through the adopted [AI Model Routing and Compute Efficiency Standard](AI/AI_MODEL_ROUTING_AND_COMPUTE_EFFICIENCY_STANDARD.md). Routing depends on risk, reversibility, ambiguity, context coupling, and prior failures rather than role name. Deterministic work begins at the least expensive reliable class; new standards, irreversible architecture or layout, Art Direction, complex root-cause analysis, conflicting mandatory verdicts, and exhausted lower-class attempts require Critical routing and the applicable review authority.
+
+## Semantic Evidence
+
+> Evidence must prove the claimed state or behaviour, not merely resemble it.
+
+Every gate evidence item must name the exact claim it supports, use a method that actually executes or observes that claim, and identify the reviewed candidate. Review distinguishes the existence of an artifact, its successful technical generation, its semantic fitness for the claim, and actual fulfilment of the pass condition. A filename, image count, object count, allowed-value assertion, absence of an exception, or completed checklist does not by itself prove behavioural or visual fulfilment.
+
+The accountable reviewer checks that method and artifact match the claim. Semantically unsuitable evidence is missing evidence. Static evidence cannot replace required continuous runtime behaviour. An automated behavioural test must trigger the relevant state change and verify the expected outcome.
 
 ## Documentation
 

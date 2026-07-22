@@ -1,8 +1,10 @@
 # Visual Quality Assurance Workflow
 
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+
 This document is the project-independent Source of Truth for visual quality assurance, camera coverage, occlusion review, and visual evidence in the Studio Operating System.
 
-It applies whenever an assigned task creates or changes visible game content, including scenes, levels, environments, characters, vehicles, effects, lighting, materials, animation, cameras, or user interface presentation. Project standards may make this workflow more specific, but may not weaken it.
+It applies to the visible claims and risks of any task that creates or changes visible game content, including scenes, levels, environments, characters, vehicles, effects, lighting, materials, animation, cameras, or user interface presentation. The [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md) determines whether that task is new or structurally material lifecycle work, bounded production on an accepted baseline, diagnosis, or integration. Project standards may make the applicable visual checks more specific, but may not weaken representative evidence, hard fails, or Human approval.
 
 ## Authority and Approval Boundary
 
@@ -11,14 +13,48 @@ It applies whenever an assigned task creates or changes visible game content, in
 - Technical validation is necessary but never constitutes visual approval.
 - Internal visual review may reject visible work without changing the approved art direction.
 - A correction that changes art direction, scope, architecture, licence boundaries, external dependencies, or a protected asset requires Human Developer direction.
-- Up to two editorial or visual correction rounds that stay inside the existing assignment are authorised as part of the visual task. This does not authorise unrelated implementation.
-- Larger visual or level assignments must activate the applicable specialist roles and use the [Visual Level Review Board](../Roles/Boards/VISUAL_LEVEL_REVIEW_BOARD.md). Role outputs remain independent evidence inputs and do not replace this workflow or Human approval.
+- Formal correction authorisation and accounting are defined by the [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md). This workflow applies the Task-Delta Work Order's declared visual-stage allowance and does not authorise unrelated implementation.
+- Larger visual or level assignments activate only the specialist roles whose distinct findings can change the current decision. Use the complete [Visual Level Review Board](../Roles/Boards/VISUAL_LEVEL_REVIEW_BOARD.md) only when the work is structurally material or every board domain is decision-relevant. Role outputs remain independent evidence inputs and do not replace this workflow or Human approval.
 
-## Required Five-Phase Workflow
+## Formative Work and Formal Review Readiness
+
+Builder previews, look development, diagnostic captures, evidence-path checks, and ordinary in-scope iterations are formative. They do not require an immutable final package, formal verdict, or correction count after every change.
+
+Formal visual review begins only after the candidate meets the [Definition of Ready](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md#definition-of-ready-for-formal-review). The formal evidence package identifies one exact candidate, the authorised baseline and delta, representative capture conditions, the primary player-facing claims, applicable hard fails, and the activated reviewers.
+
+## Formal Review Scope Selection
+
+Before evidence freeze, the Task-Delta Work Order and Producer / Scope Controller declare one of these review scopes. A narrower scope limits the passage claim; it does not weaken evidence validity, an observed hard fail, or Human approval.
+
+### Bounded Stage-Exit Review
+
+Use this scope for a bounded visible delta on an accepted baseline or a separately Human-authorised failed-stage candidate when the assignment does not claim complete visual passage.
+
+The review must:
+
+- assess every changed, newly claimed, or contradicted visual category;
+- inspect the primary view and direct regression surface affected by the delta;
+- apply applicable hard fails to the reviewed evidence and stop on any newly observed hard fail;
+- run proportional technical and visual regression checks for dependencies the delta can affect; and
+- cite unchanged valid baseline evidence by candidate/evidence ID and capture conditions instead of regenerating it, together with a current documented no-regression check.
+
+Current candidate evidence must prove every current stage claim. Reused evidence is labelled `baseline reference — not current candidate evidence`; it proves only the unchanged control it originally validated and never proves a new claim or Full Visual Passage.
+
+Full matrix scoring, complete camera matrices, full foot/vehicle routes, and complete occlusion sequences are not automatically required. They become required when the delta changes them, the Task-Delta Work Order claims them, current evidence contradicts the baseline, the baseline evidence is stale or semantically unsuitable, the work is structurally material, or the assignment requests Full Visual Passage.
+
+A Bounded Stage-Exit Review may pass only the named stage and claims. It cannot claim that the complete scene or product has passed visual QA.
+
+### Full Visual Passage
+
+Use this scope for a whole-candidate visual passage claim, final internal visual handoff, new or structurally material visible work, changed camera/path/occlusion architecture, invalidated baseline coverage, or an explicit Task-Delta Work Order requirement.
+
+Full Visual Passage requires the complete applicable quality matrix, all applicable camera position classes, required continuous foot/vehicle paths, required occlusion transitions, current candidate evidence, and every activated role needed by the complete decision surface.
+
+## Required Five-Phase Formal Workflow
 
 ### Phase 1 — Builder Pass
 
-Implement the authorised visual scope and preserve its technical, provenance, licence, and project boundaries. Record the reference target, intended gameplay camera, target resolution, comparison profiles, and review routes before producing final evidence.
+Implement the authorised visual scope formatively and preserve its technical, provenance, licence, and project boundaries. Record the reference target, intended gameplay camera, target resolution, comparison profiles, and review routes before producing final evidence.
 
 ### Phase 2 — Technical Validation
 
@@ -37,9 +73,9 @@ A technical result must be labelled technical. It must not claim visual identity
 
 ### Phase 3 — Blind Visual Review
 
-Review only the final rendered result: final screenshots, the built Player, matched comparisons, the target resolution, and the actual gameplay camera. Do not use code structure, test counts, file counts, renderer counts, or frame rate to excuse a visible defect.
+Review only the final rendered result within the declared review scope: final screenshots, the built Player when required, matched comparisons, the target resolution, and the actual gameplay camera. Do not use code structure, test counts, file counts, renderer counts, or frame rate to excuse a visible defect.
 
-Answer explicitly:
+For Full Visual Passage, answer every question explicitly. For a Bounded Stage-Exit Review, answer every question that can change the named stage decision and mark the rest outside the passage claim rather than inventing evidence:
 
 1. What looks visibly broken?
 2. What still looks like a graybox, test object, or placeholder?
@@ -52,25 +88,27 @@ Answer explicitly:
 9. What would an external reviewer criticise in the first ten seconds?
 10. What is the weakest visible area now?
 
-The reviewer must apply the hard-fail criteria, score the matrix below, inspect the full camera-coverage matrix, and review movement through critical occlusion transitions. A set of attractive showcase images does not replace gameplay-camera coverage.
+The reviewer must apply the hard-fail criteria and evidence scope defined above. Full Visual Passage scores the complete matrix and inspects full applicable camera/path/occlusion coverage. A Bounded Stage-Exit Review scores only changed, claimed, contradicted, or regression-relevant categories and cites still-valid baseline evidence for unchanged categories. A set of attractive showcase images does not replace gameplay-camera evidence when the passage claim requires it.
 
 ### Phase 4 — Internal Red-Team Correction
 
-Within the authorised scope, run no more than two autonomous correction rounds:
+Within the authorised scope and declared visual stage, apply only the formal correction allowance declared under the Core standard:
 
-1. complete the Builder Pass;
-2. perform a blind visual review;
-3. correct the highest-impact visible failures;
-4. regenerate matched evidence;
-5. perform a second blind review;
-6. make one further bounded correction when needed;
-7. regenerate evidence and determine the internal status.
+1. complete the formative Builder Pass and satisfy Definition of Ready;
+2. perform a valid blind visual review of the exact candidate;
+3. correct the highest-impact in-scope visible failures;
+4. regenerate matched affected evidence;
+5. rerun only affected reviews;
+6. make one further bounded correction when the stage allowance permits it; and
+7. regenerate affected evidence and determine the internal status.
 
-Every round must retain the same reference target, camera, position, resolution, and comparison profile unless the assignment explicitly authorises changing one of them. Stop instead of improvising when a correction needs new art direction, scope, assets, licensing, architecture, purchases, downloads, or protected-source changes.
+Evidence validity and correction consumption follow the Core standard. Diagnose and repair an invalid visual evidence path within the applicable attempt limit, preserve candidate identity, and do not issue a formal visual verdict until valid evidence exists.
+
+Every formal correction comparison must retain the same reference target, camera, position, resolution, and comparison profile unless the assignment explicitly authorises changing one of them. Stop instead of improvising when a correction needs new art direction, scope, assets, licensing, architecture, purchases, downloads, or protected-source changes.
 
 ### Phase 5 — Final Internal Status
 
-Use exactly one of these statuses:
+For Full Visual Passage, use exactly one of these statuses:
 
 - `Technically Valid — Visual Review Failed`
 - `Technically Valid — Visual Review Passed Internally, Human Approval Required`
@@ -78,6 +116,15 @@ Use exactly one of these statuses:
 - `Blocked by Scope, Asset, License or Technical Constraint`
 
 Do not use `objectively visually complete`, `Visual Identity passed`, `near-final`, `visually complete`, or equivalent wording. Only the Human Developer may give final visual approval.
+
+For a Bounded Stage-Exit Review, use exactly one of these statuses:
+
+- `Bounded Stage Exit — Failed`
+- `Bounded Stage Exit — Passed Internally, Full Visual Passage Not Claimed, Human Approval Required`
+- `Bounded Stage Exit — Blocked by Human Art-Direction Decision`
+- `Bounded Stage Exit — Blocked by Scope, Asset, License or Technical Constraint`
+
+The status names only the reviewed stage and must identify which categories and evidence were reviewed or referenced.
 
 ## Hard Visual Fail Criteria
 
@@ -97,6 +144,8 @@ Any item below blocks internal visual passage and therefore blocks a normal Huma
 - visible style or period breaks contrary to the project direction.
 
 When a hard fail cannot be corrected inside the authorised scope, use the appropriate blocked or failed status and provide evidence. Do not soften the result because technical validation passed.
+
+A visible hard fail is blocking in the phase where it is observed. It cannot be carried to a later visual phase under `PASS WITH CONCERNS` on the assumption that polish will fix it. This includes Error Pink or other broken materials, unintended primitives or placeholders, open voids or unfinished endings, badly erroneous signage, and comparable visible failures. Only an explicit Human decision may authorise a documented exception.
 
 ## Reusable 0–5 Rating Scale
 
@@ -126,18 +175,33 @@ Score every category with one short visible justification and an evidence refere
 | UI readability | Is required UI legible and subordinate to gameplay presentation? | No |
 | Presentation value | Does the result communicate the intended experience in the first ten seconds? | No |
 
-Internal passage requires:
+Full Visual Passage requires:
 
 - no hard fail;
 - no category below `3`;
 - Material response, Light and shadow readability, Stylistic coherence, Placeholder freedom, Camera coverage, and Occlusion at least `4`;
 - current matched evidence for every scored category.
 
+Bounded Stage-Exit passage requires:
+
+- no applicable hard fail in the changed or affected evidence and no unresolved contradiction with referenced baseline evidence;
+- every changed, claimed, contradicted, or regression-relevant category to meet the threshold applicable to the authorised stage;
+- no material regression in directly affected unchanged categories; and
+- current evidence for reviewed categories plus exact references to still-valid baseline evidence for unchanged categories.
+
+Bounded passage does not establish complete-scene Visual QA passage.
+
+## Camera, Path, and Occlusion Evidence Scope
+
+Full Visual Passage requires complete applicable current coverage under the sections below.
+
+A Bounded Stage-Exit Review regenerates or extends camera, path, or occlusion evidence only when that domain is changed, claimed, contradicted, structurally affected, invalidated by candidate drift, or explicitly required by the Task-Delta Work Order. Otherwise it may reference unchanged valid baseline rows, routes, and sequences by candidate ID, evidence ID, capture conditions, continued applicability, and a current documented no-regression check. Label every citation `baseline reference — not current candidate evidence`. A proportional regression view is still required wherever the visible delta could obstruct or devalue a previously passed route, actor, or camera relationship.
+
 ## Camera Coverage Standard
 
 ### Required Position Classes
 
-Include every applicable class:
+For Full Visual Passage, include every applicable class. For a Bounded Stage-Exit Review, include every class triggered by the evidence-scope rule above:
 
 - player on foot;
 - player in a vehicle;
@@ -155,7 +219,7 @@ Include every applicable class:
 
 ### Coverage Matrix
 
-Every reviewed scene must maintain a matrix with these fields:
+Full Visual Passage maintains a current matrix with these fields. A Bounded Stage-Exit Review updates affected rows and references unchanged valid baseline rows:
 
 | Field | Requirement |
 |---|---|
@@ -176,7 +240,7 @@ Every reviewed scene must maintain a matrix with these fields:
 
 ### Path Coverage
 
-Still images are insufficient. Test at minimum one defined foot route and one defined driving route when those modes exist. Observe continuously:
+When path evidence is required by the declared review scope, still images are insufficient. For Full Visual Passage, test at minimum one defined foot route and one defined driving route when those modes exist. For a Bounded Stage-Exit Review, rerun only the routes the delta can affect or whose baseline evidence is invalidated. Observe continuously:
 
 1. approach to a critical occluder;
 2. entry into occlusion;
@@ -188,7 +252,7 @@ If reliable video is unavailable, capture a tightly spaced timestamped or number
 
 ## Occlusion Review Standard
 
-Test every applicable case:
+For Full Visual Passage, test every applicable case. For a Bounded Stage-Exit Review, test every case triggered by the evidence-scope rule and reference unchanged valid baseline cases:
 
 - player behind a building;
 - opponent behind a building;
@@ -219,7 +283,7 @@ The review must cover continuous transitions, not only endpoints. If the project
 
 ## Before/After Evidence Contract
 
-Every visual correction round must provide:
+Every formal visual correction round must provide:
 
 - the approved reference target;
 - a Before image;
@@ -231,26 +295,14 @@ Every visual correction round must provide:
 
 Implementation quantities such as added light, prop, renderer, or file counts are not evidence of visual improvement.
 
-## Required Visual Work Assignment Block
+## Visual Task-Delta
 
-Every future visual work assignment or project-local equivalent must specify:
+Use the [Task-Delta Work Order Template](../Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md) with the [Visual Production Playbook](../Playbooks/VISUAL_PRODUCTION.md). Keep only task-specific visual controls in the Task-Delta Work Order:
 
-```text
-Reference target:
-Target scene/build:
-Target resolution and gameplay camera:
-Required comparison profiles:
-Required camera position classes and route coverage:
-Required occlusion cases:
-Hard-fail criteria:
-Blind Visual Review required: yes
-Autonomous correction rounds: up to two within assigned scope
-Before/After evidence location:
-Human approval boundary:
-Scope, asset, licence, architecture, purchase, and download stop conditions:
-Allowed final internal status:
-```
+- under `Authoritative baseline`: reference target, exact scene/build, gameplay camera, and comparison conditions;
+- under `Known current findings`: the visible symptoms and accepted concerns that actually affect this stage;
+- under `Done when`: primary visual claims, relevant camera/route/occlusion coverage, applicable hard fails, evidence IDs and location, and allowed internal status;
+- under `Required stage-exit reviews`: only decision-relevant roles and their distinct questions; and
+- under `Correction allowance` and `Human checkpoint`: the named stage-local allowance and applicable stop/approval boundary.
 
-For larger visual work, the assignment must also include the [Work Order Role and Review Block](../Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md), including the accountable builder, activated specialist roles, role-specific review questions, evidence, applicable review board, and correction-round limit.
-
-Omitting a field does not waive this workflow. The assignment must resolve the omission before claiming internal visual passage.
+Omitting a relevant control does not waive this workflow. It must be resolved before Definition of Ready or internal visual passage.

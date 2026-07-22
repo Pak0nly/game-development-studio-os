@@ -1,58 +1,32 @@
-# Work Order Role and Review Block
+# Task-Delta Work Order Template
 
-Every larger Work assignment must include this block. Small isolated tasks may shorten explanations but may not omit an applicable mandatory role, hard fail, permission boundary, or Human decision.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22. Use only within a separately Human-authorised Task-Delta Work Order; this template does not create execution authority.
+
+Use this template after loading the applicable Studio OS Core, project Production Profile, and on-demand playbooks. A Task-Delta Work Order records only the assignment-specific delta; it references unchanged authority, permissions, routing, evidence, role, review, asset, visual, Git, and correction rules.
 
 ```text
 Assignment:
-Primary success condition:
-Accepted baseline / must not rebuild:
-Explicit out-of-scope temptations:
-Authoritative sources:
-Authorised scope:
-Explicit exclusions:
-
-Builder Role:
-Mandatory Review Roles:
-Optional Review Roles and activation triggers:
-Review Board:
-
-Required role evidence:
-Technical validation evidence:
-Visual/gameplay/audio evidence as applicable:
-Gate-critical claims and evidence methods:
-Semantic or behavioural evidence contracts:
-Hard-fail criteria:
-
-Model routing standard:
-Bounded task ID and output:
-Task-level Routine / Standard / Critical classification and reason:
-Requested execution model:
-Context-fork scope:
-Sol exception (only when requested execution model is gpt-5.6-sol):
-Escalation conditions:
-Escalation occurred and reason:
-Result:
-Attestation limitation: Requested model — not independently attested.
-Final requested-model usage summary:
-Shared evidence manifest and context envelope:
-Manifest candidate, supersession, and missing-evidence rule:
-
-Autonomous correction rounds: 0, 1, or 2 (maximum 2)
-Correction priority rule:
-Evidence to regenerate after correction:
-
-Human Approval Boundary:
-Stop conditions:
-Allowed role verdicts: PASS / PASS WITH CONCERNS / FAIL / BLOCKED BY HUMAN DECISION / NOT APPLICABLE
-Allowed consolidated handoff status:
+Execution mode:
+Objective:
+Authoritative baseline:
+Allowed changes:
+Frozen / out of scope:
+Known current findings:
+Applicable playbooks or skills:
+Done when:
+Required stage-exit reviews:
+Correction allowance:
+Human checkpoint:
 ```
 
-## Required Behaviour
+## Completion Rules
 
-Before implementation, the Producer / Scope Controller confirms scope, roles, evidence, hard fails, correction count, and stop conditions. After implementation, every mandatory role produces a separate [role output](../Roles/ROLE_REVIEW_OUTPUT_SCHEMA.md). Work corrects every clear in-scope defect before handoff and reruns affected reviews. The Producer cannot override a `FAIL`.
+- Select the mode through the [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md).
+- Record model routing in the bounded task record defined by the [AI Model Routing and Compute Efficiency Standard](../AI/AI_MODEL_ROUTING_AND_COMPUTE_EFFICIENCY_STANDARD.md); do not copy its routing table into the Task-Delta Work Order.
+- Name one accountable builder when implementation is authorised.
+- Activate only roles whose distinct finding can change the stage decision. Larger or Critical work retains Producer / Scope Controller and QA Lead oversight.
+- Link task-specific claims, candidate identity, evidence IDs, and hard fails under `Done when`; do not copy full domain standards.
+- State the formal correction allowance as `0`, `1`, or `2` for the named stage. Formative work and invalid evidence follow the Core accounting rule and do not consume a creative correction.
+- A missing permission, applicable hard fail, Human-owned decision, or stop condition is not waived because the field is concise.
 
-Model routing follows the [AI Model Routing and Compute Efficiency Standard](../AI/AI_MODEL_ROUTING_AND_COMPUTE_EFFICIENCY_STANDARD.md). Work orders record task-level routing and link shared evidence instead of assigning one model class to an entire role or copying unchanged context.
-
-The requested execution model is explicit for every subagent. `gpt-5.6-terra` is the current Codex-profile default for Routine and Standard work. `gpt-5.6-sol` requires one allowed explicit `sol_exception`; named-model unavailability or failure is recorded and escalated without silent fallback. The final requested-model usage summary is a request audit and does not attest to the model actually resolved by the execution environment.
-
-For visible work, append the assignment block required by the [Visual Quality Assurance Workflow](../Visual/Visual_Quality_Assurance_Workflow.md). Linking that block is preferred to copying its full rules.
+For new or structurally material level work, use this delta with the [Level Development Lifecycle](../Level/LEVEL_DEVELOPMENT_LIFECYCLE.md) and its phase records. For bounded visible production, use the [Visual Production Playbook](../Playbooks/VISUAL_PRODUCTION.md). For Unity asset work or diagnosis, use the [Unity Asset Assembly and Diagnostic Safety Playbook](../Playbooks/UNITY_ASSET_ASSEMBLY_AND_DIAGNOSTIC_SAFETY.md). For integration and commit preparation, use the [Baseline Integration and Commit Preparation Playbook](../Playbooks/BASELINE_INTEGRATION_AND_COMMIT_PREPARATION.md).

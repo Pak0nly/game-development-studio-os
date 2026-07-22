@@ -1,5 +1,7 @@
 # AI Model Routing and Compute Efficiency Standard
 
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+
 ## Purpose
 
 This adopted standard routes AI work by task properties and risk while minimizing unnecessary compute, context, and repetition. It is provider-independent and assumes no particular model name or availability.
@@ -12,7 +14,7 @@ Cost reduction never authorises an unsuitable model to make a risky design, arch
 
 ## Routing Inputs
 
-Route each bounded task, not an entire role or work order, using the highest applicable signal:
+Route each bounded task, not an entire role or Task-Delta Work Order, using the highest applicable signal:
 
 - consequence of an incorrect result;
 - reversibility and cost of correction;
@@ -33,7 +35,7 @@ Role title alone is not a routing rule. The same role may use Routine classifica
 | Standard | Bounded implementation or documentation; known-pattern analysis; phase review against explicit criteria; reversible layout alternatives; ordinary defect diagnosis; evidence synthesis | Moderate to high; compare constraints and explain trade-offs | Bounded working set: authoritative excerpts/links, affected files, evidence manifest, relevant decisions and findings | 2 total attempts before reclassification or stop | Unresolved contradiction; architectural/product/taste decision; high-cost rework; broad hidden dependencies; repeated failure; mandatory reviewer disagreement | Independent applicable specialist for material output; QA Lead for evidence sufficiency; Producer for scope and consolidation |
 | Critical | New or materially changed standards; irreversible architecture or layout; Art Direction; complex root-cause analysis; security/licence/high-impact decisions; reconciliation of contradictory mandatory verdicts; failed lower-class work | Deep; explicit assumptions, alternatives, failure modes, and authority reconciliation | Broad but curated set: all relevant authoritative sources, decision history, dependency/evidence manifest, conflicting verdicts, and exact candidate state | 1 planned attempt followed by required review; corrections follow the authorised board limit, not repeated blind retries | Any unresolved authoritative contradiction; missing Human-owned decision; insufficient evidence; unsafe or irreversible action; failure after escalation | Applicable independent specialists, QA Lead, and Producer/Director consolidation; Human Developer decides product, taste, governance adoption, scope, budget, purchase, licence-risk acceptance, and final approval |
 
-`Autonomous attempts` count materially distinct solution attempts for the routed task. Repeating the same tool and method without a changed hypothesis or execution condition is not a new learning attempt. Failed captures, invocations, or other tool executions are recorded as execution errors even when they do not change the candidate. Attempt limits do not expand the maximum of two correction rounds defined by an applicable Review Board or Visual QA work order.
+`Autonomous attempts` count materially distinct solution attempts for the routed task. Repeating the same tool and method without a changed hypothesis or execution condition is not a new learning attempt. Failed captures, invocations, or other tool executions are recorded as execution errors even when they do not change the candidate. Attempt limits do not expand the stage-local correction allowance defined under the [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md).
 
 ## Mandatory Critical Routing
 
@@ -51,14 +53,14 @@ Critical routing does not grant authority. It still stops for a Human-owned deci
 
 ## Routing Procedure
 
-1. **Decompose:** split the work order into independently verifiable tasks.
-2. **Classify:** record class and one-line reason from the routing inputs.
+1. **Decompose:** split the Task-Delta Work Order into independently verifiable tasks.
+2. **Classify:** after the Task-Delta Work Order selects its execution mode, record class and one-line reason for each bounded task from the routing inputs. Execution mode does not determine model class by itself.
 3. **Curate context:** provide only authoritative and task-relevant sources plus manifest pointers.
 4. **Execute and verify:** use the class's attempt limit and evidence requirement.
 5. **Escalate or stop:** after the class attempt limit, move upward when permitted and justified; otherwise stop. Do not repeatedly retry the same approach at the same class.
 6. **Review and consolidate:** retain separate role verdicts and the exact class used for material decisions. Gate-critical evidence receives independent semantic review even when its generation was Routine or Standard.
 
-A Critical work order may still route its deterministic subchecks to Routine. A Routine result that changes the decision surface must be re-evaluated at Standard or Critical before adoption.
+A Critical Task-Delta Work Order may still route its deterministic subchecks to Routine. A Routine result that changes the decision surface must be re-evaluated at Standard or Critical before adoption.
 
 ## Token and Context Rules
 
@@ -69,7 +71,7 @@ A Critical work order may still route its deterministic subchecks to Routine. A 
 5. Give correction rounds only the triggering findings, affected files, relevant standards, replaced evidence, and regression surface.
 6. Expose large evidence sets through structured manifests with IDs, paths, version, conditions, and claims proved.
 7. Repeat a test only when a change can affect it, its prior evidence was incomplete/invalid, or a required regression gate says to repeat it.
-8. Read existing standards from the repository; work orders link them and add only project-specific constraints.
+8. Read existing standards from the repository; Task-Delta Work Orders link them and add only project-specific constraints.
 9. Avoid parallel role reviews that ask the same question. Activate a role only when it contributes a distinct risk-reducing check.
 10. Use summaries as navigation, not authority. A material decision must remain traceable to the underlying source and evidence.
 11. Preserve exact final-version identity so reviewers do not reload superseded context.
