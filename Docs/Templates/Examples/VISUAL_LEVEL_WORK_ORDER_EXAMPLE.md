@@ -1,6 +1,7 @@
 # Example — Visual Level Task-Delta Work Order
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-AAPEC-V1` on 2026-07-29.
 
 This complete abstract example is based on the type of work represented by the Crime99 Playable Presentation Block. It does not authorise or change Unity files.
 
@@ -22,6 +23,32 @@ This complete abstract example is based on the type of work represented by the C
 
 **Review Board:** [Visual Level Review Board](../../Roles/Boards/VISUAL_LEVEL_REVIEW_BOARD.md).
 
+## Environment Composition Declarations
+
+**Asset Awareness:** Inventory the applicable road, pavement, curb, frontage,
+boundary, practical-light, parking, service, utility and prop families.
+Qualify intended function, scale, pivot/orientation, host, material/collider
+state, camera use, repetition and modular limitations before visible
+replacement creation.
+
+**Spatial Purpose:** Define the bounded block's commercial frontage,
+pedestrian and vehicle circulation, entrances, courtyard, service alley,
+loading/waste/utility access, gameplay routes, maintenance clearance and
+elevated-camera hierarchy before dressing.
+
+**Host Validation:** Maintain one ledger row for every retained or new prop
+with exact host, gameplay/world/art/composition purpose, orientation,
+clearance, plausible resident/customer/worker/service/gameplay rationale and
+evidence. Remove or do not place any prop without a defensible row.
+
+**Modular Proof:** Before broad use, prove applicable straight, corner, ending,
+entrance/interruption, transition, closure, contact, collider, snapping and
+repetition cases under the gameplay camera. Unknown cases restrict use.
+
+**Placeholder Control:** Each visible placeholder must record why qualified
+assets and modular composition are insufficient, its bounded proof purpose,
+expiry, replacement owner/gate and visual-review consequence.
+
 ## Review Questions and Evidence
 
 - Art Director: Is the approved identity visible, with believable sources, coherent materials, and no test-scene look?
@@ -37,7 +64,13 @@ Required evidence includes exact scene/build identity; matched gameplay captures
 
 ## Hard Fails and Correction Loop
 
-Hard fails: magenta/missing/wrong required material; active target lost behind tested geometry; abstract emission where an installed source is required; indistinguishable profiles; unfinished boundary or placeholder; missing position/path/occlusion evidence; manufacturer edit; or mandatory role `FAIL`.
+Hard fails: magenta/missing/wrong required material; active target lost behind
+tested geometry; abstract emission where an installed source is required;
+indistinguishable profiles; hostless or obstructive prop; random dressing;
+unqualified or uncontrolled visible placeholder; broad unproven modular use;
+unsupported modular-completeness claim; visible overlap or z-fighting;
+unfinished boundary; missing position/path/occlusion evidence; manufacturer
+edit; technical PASS presented as visual PASS; or mandatory role `FAIL`.
 
 For this example's named visual stage, correction allowance is `2` under the [Execution Modes and Stage Review Standard](../../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md). Round 1 corrects the highest-impact valid-review findings and reruns affected roles; Round 2 may correct remaining in-scope failures once. Formative work and invalid evidence use the Core accounting rule. Work beyond the declared stage allowance, a new asset, camera-policy change, or broader dressing stops for a new assignment.
 
@@ -54,6 +87,7 @@ For this example's named visual stage, correction allowance is `2` under the [Ex
 - **Required Corrections:** None inside the authorised foundation scope.
 - **Optional Improvements:** Add bounded use-history dressing later.
 - **Open Human Decisions:** Profile preference.
+- **Earliest Invalid Production Gate or None:** None.
 - **Verdict:** `PASS WITH CONCERNS`.
 
 ### Level Designer
@@ -67,6 +101,7 @@ For this example's named visual stage, correction allowance is `2` under the [Ex
 - **Required Corrections:** None in this bounded block.
 - **Optional Improvements:** Review connected-block sightlines later.
 - **Open Human Decisions:** None.
+- **Earliest Invalid Production Gate or None:** None.
 - **Verdict:** `PASS WITH CONCERNS`.
 
 ### Technical Artist
@@ -80,6 +115,7 @@ For this example's named visual stage, correction allowance is `2` under the [Ex
 - **Required Corrections:** None.
 - **Optional Improvements:** Test representative multi-building load later.
 - **Open Human Decisions:** Accept or reject the visual fade character.
+- **Earliest Invalid Production Gate or None:** None.
 - **Verdict:** `PASS WITH CONCERNS`.
 
 ### Asset & Provenance Manager
@@ -93,6 +129,7 @@ For this example's named visual stage, correction allowance is `2` under the [Ex
 - **Required Corrections:** None for prototype evaluation.
 - **Optional Improvements:** Complete release audit before release planning.
 - **Open Human Decisions:** None.
+- **Earliest Invalid Production Gate or None:** None.
 - **Verdict:** `PASS WITH CONCERNS`.
 
 ### Camera & Occlusion Reviewer
@@ -106,6 +143,7 @@ For this example's named visual stage, correction allowance is `2` under the [Ex
 - **Required Corrections:** None.
 - **Optional Improvements:** Repeat with combatants later.
 - **Open Human Decisions:** None.
+- **Earliest Invalid Production Gate or None:** None.
 - **Verdict:** `PASS WITH CONCERNS`.
 
 ### Gameplay QA Reviewer
@@ -119,6 +157,7 @@ For this example's named visual stage, correction allowance is `2` under the [Ex
 - **Required Corrections:** None.
 - **Optional Improvements:** Later representative combat/population test.
 - **Open Human Decisions:** None.
+- **Earliest Invalid Production Gate or None:** None.
 - **Verdict:** `PASS WITH CONCERNS`.
 
 ### Producer Consolidation
@@ -128,6 +167,7 @@ For this example's named visual stage, correction allowance is `2` under the [Ex
 - **Open hard fails:** None in the authorised foundation scope.
 - **Conflicts:** Technical fade passes; final visual character remains Human-owned.
 - **Weakest area:** Environmental use history and presentation depth.
+- **Earliest invalid production gate:** None.
 - **Correction rounds used:** Two.
 - **Human decisions:** Preferred profile and whether this foundation is accepted as the base for later dressing.
 - **Handoff status:** Ready for bounded Human review; not final visual or full-map approval.

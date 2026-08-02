@@ -1,6 +1,9 @@
 # Visual Quality Assurance Workflow
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-AAPEC-V1` on 2026-07-29 and
+> `C99-STUDIO-UNITY-MCP-VISUAL-EVIDENCE-PLAYBOOK-AMENDMENT-ADOPTION-V1` on
+> 2026-07-31.
 
 This document is the project-independent Source of Truth for visual quality assurance, camera coverage, occlusion review, and visual evidence in the Studio Operating System.
 
@@ -15,6 +18,44 @@ It applies to the visible claims and risks of any task that creates or changes v
 - A correction that changes art direction, scope, architecture, licence boundaries, external dependencies, or a protected asset requires Human Developer direction.
 - Formal correction authorisation and accounting are defined by the [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md). This workflow applies the Task-Delta Work Order's declared visual-stage allowance and does not authorise unrelated implementation.
 - Larger visual or level assignments activate only the specialist roles whose distinct findings can change the current decision. Use the complete [Visual Level Review Board](../Roles/Boards/VISUAL_LEVEL_REVIEW_BOARD.md) only when the work is structurally material or every board domain is decision-relevant. Role outputs remain independent evidence inputs and do not replace this workflow or Human approval.
+
+## Capture Validity and Evidence Classification
+
+Capture artifacts progress through distinct states; later states include, but
+do not erase, the requirements of earlier states:
+
+1. **File exists:** bytes are present at a path. This proves no readability,
+   provenance, suitability, or acceptance.
+2. **Technically readable artifact:** the completed retained file passed the
+   approved full-decode and integrity transaction. This proves only technical
+   readability under the recorded conditions.
+3. **Provenance-linked evidence candidate:** the verified retained artifact is
+   manifest-bound to the exact candidate, Unity instance, project, version,
+   scene, camera, endpoint implementation, capture parameters, state records,
+   output identity, and named claim.
+4. **Semantically suitable evidence:** an applicable reviewer directly
+   inspected the exact candidate artifact and found that its content, framing,
+   coverage, and method can prove the named claim. Successful decoding alone
+   cannot establish this state.
+5. **Accepted evidence after required review:** every required review and Human
+   boundary for the named gate or claim is satisfied for the exact candidate.
+   Acceptance is claim- and gate-specific and does not generalise.
+
+A file may be retained after the technical transaction without being
+semantically suitable or accepted. The manifest records its current state and
+must not label a lower state as a higher one. A quarantined, temporary,
+partially written, partially promoted, undecodable, mismatched, or unverified
+file is never evidence.
+
+Technical readability does not prove correct content, suitable framing,
+visual quality, Art-Direction passage, scene or production acceptance,
+production readiness, runtime/gameplay/collision/performance/build behaviour,
+complete camera coverage, or universal Unity-MCP/capture safety. Required
+visual claims still need direct inspection of the exact original retained file
+by an actual separate eligible reviewer under the applicable independence,
+evidence, and no-training boundaries. Metadata, hashes, dimensions, file
+existence, capture success, or Producer interpretation cannot replace that
+inspection.
 
 ## Formative Work and Formal Review Readiness
 
@@ -87,6 +128,18 @@ For Full Visual Passage, answer every question explicitly. For a Bounded Stage-E
 8. Which areas are stylistically or historically incoherent?
 9. What would an external reviewer criticise in the first ten seconds?
 10. What is the weakest visible area now?
+11. Does every retained or new visible element have a defensible purpose, and
+    does every prop have a credible host, orientation, clearance, and usage
+    rationale?
+12. Do circulation, entrances, loading, service, maintenance, accessibility,
+    collection, parking, and practical use remain credible and unobstructed?
+13. Are modular assemblies coherent at corners, endings, entrances,
+    interruptions, transitions, closures, ground/wall contact and repeated
+    views?
+14. Are visible placeholders justified and controlled, and are duplicated,
+    coplanar, overlapping, or z-fighting surfaces absent?
+15. Does the composition remain credible from representative gameplay and
+    elevated-camera views rather than one favourable review angle?
 
 The reviewer must apply the hard-fail criteria and evidence scope defined above. Full Visual Passage scores the complete matrix and inspects full applicable camera/path/occlusion coverage. A Bounded Stage-Exit Review scores only changed, claimed, contradicted, or regression-relevant categories and cites still-valid baseline evidence for unchanged categories. A set of attractive showcase images does not replace gameplay-camera evidence when the passage claim requires it.
 
@@ -141,7 +194,20 @@ Any item below blocks internal visual passage and therefore blocks a normal Huma
 - a massively empty scene when the brief requires density;
 - an implausible asset mixture;
 - camera or occlusion states that hide the player or relevant gameplay space;
-- visible style or period breaks contrary to the project direction.
+- visible style or period breaks contrary to the project direction;
+- a visible prop without a credible host or defensible purpose;
+- a prop that blocks a door, route, entrance, exit, loading point, service or
+  maintenance access, accessibility clearance, or required circulation;
+- random prop distribution or decorative service/loading equipment without a
+  functional context;
+- visible replacement or placeholder content created without relevant
+  asset-vocabulary qualification and the required temporary-control record;
+- broad visible use of an unproven modular family;
+- a modular system claimed complete without applicable corner, entrance,
+  interruption, ending and closure proof;
+- visible duplicated, coplanar, overlapping, or z-fighting geometry; and
+- a technical PASS presented as visual PASS without purpose, host, usage,
+  circulation and composition review.
 
 When a hard fail cannot be corrected inside the authorised scope, use the appropriate blocked or failed status and provide evidence. Do not soften the result because technical validation passed.
 
@@ -168,6 +234,8 @@ Score every category with one short visible justification and an evidence refere
 | Believable light sources | Does emitted and reflected light have plausible visible sources? | No |
 | Visible usage history | Does wear, repair, dirt, and occupation show coherent causes? | No |
 | Prop and detail density | Is detail purposeful, balanced, and readable rather than empty or noisy? | No |
+| Purpose and host validity | Does every visible element have a defensible purpose and every prop a credible usable host with required clearance? | Yes |
+| Modular and transition coherence | Do modules, seams, entrances, corners, endings, closures and surface transitions form one credible composition? | Yes |
 | Stylistic coherence | Do assets, period, colour, and shape language belong together? | Yes |
 | Placeholder freedom | Is unintended graybox, test, and replacement content absent? | Yes |
 | Camera coverage | Do gameplay cameras cover all required positions and paths? | Yes |
@@ -179,7 +247,9 @@ Full Visual Passage requires:
 
 - no hard fail;
 - no category below `3`;
-- Material response, Light and shadow readability, Stylistic coherence, Placeholder freedom, Camera coverage, and Occlusion at least `4`;
+- Material response, Light and shadow readability, Purpose and host validity,
+  Modular and transition coherence, Stylistic coherence, Placeholder freedom,
+  Camera coverage, and Occlusion at least `4`;
 - current matched evidence for every scored category.
 
 Bounded Stage-Exit passage requires:
@@ -301,6 +371,10 @@ Use the [Task-Delta Work Order Template](../Templates/WORK_ORDER_ROLE_AND_REVIEW
 
 - under `Authoritative baseline`: reference target, exact scene/build, gameplay camera, and comparison conditions;
 - under `Known current findings`: the visible symptoms and accepted concerns that actually affect this stage;
+- under the environment-composition declarations: relevant asset families and
+  candidates, modular proof state, location function and usage story,
+  circulation and access, exact prop hosts, placeholder controls, and
+  Vendor/project-owned boundaries;
 - under `Done when`: primary visual claims, relevant camera/route/occlusion coverage, applicable hard fails, evidence IDs and location, and allowed internal status;
 - under `Required stage-exit reviews`: only decision-relevant roles and their distinct questions; and
 - under `Correction allowance` and `Human checkpoint`: the named stage-local allowance and applicable stop/approval boundary.

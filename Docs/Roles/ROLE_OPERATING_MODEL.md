@@ -1,6 +1,8 @@
 # Role Operating Model
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-AAPEC-V1` on 2026-07-29 and
+> `C99-STUDIO-REVIEW-IDENTITY-ART-DIRECTION-PRODUCER-STOP-GATE-V1` on 2026-07-30.
 
 ## Purpose
 
@@ -46,7 +48,7 @@ Not every role is active for every assignment. [The activation matrix](ROLE_ACTI
 ## Operating Rules
 
 1. A Builder may contribute implementation evidence but may not be the sole reviewer of that implementation.
-2. Each mandatory role produces a separate review using the [Role Review Output Schema](ROLE_REVIEW_OUTPUT_SCHEMA.md). A combined summary is not a substitute.
+2. Each activated mandatory stage-exit specialist produces a separate completed review using the [Role Review Output Schema](ROLE_REVIEW_OUTPUT_SCHEMA.md). Its record identifies the actual reviewer, whether that reviewer is separate from the Builder, the exact reviewed candidate, examined evidence, and one valid verdict. A role heading, Builder self-summary, Producer summary, or simulated perspective is not an independent review.
 3. A technical test cannot override a visual, gameplay, accessibility, audio, provenance, or Human-review failure.
 4. Roles evaluate against confirmed direction. They do not invent mechanics, art direction, architecture, budget, purchases, or release policy.
 5. Cross-domain conflict is made visible and escalated to the Director; only a genuine product, taste, scope, budget, purchase, or equivalent Human decision is escalated to the Human Developer.
@@ -55,11 +57,20 @@ Not every role is active for every assignment. [The activation matrix](ROLE_ACTI
 8. If a mandatory role identifies a defect that Work can clearly correct inside scope, Work corrects it and reruns affected reviews instead of handing the defect to the Human Developer.
 9. Correction authorisation, stage locality, and consumption are defined by the [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md). This role model applies that declared allowance; a correction beyond it or an expanded solution requires a new assignment or Human direction.
 10. Activate a role only when its distinct finding can change the current decision. Assignment labels and standing board membership are activation prompts, not reasons to request a redundant review.
-11. A role may be performed in the same Work run as implementation, but the review must be a distinct evidence-based assessment of one Definition-of-Ready candidate. When practical, use a separate context or reviewer and run independent reviews in parallel; when not practical, explicitly separate Builder assumptions from reviewer findings.
+11. A separate execution identity and context is mandatory for an activated stage-exit specialist when the Human requests independent reviewers, Art Direction or visual acceptance is active, the task is Critical, the verdict can change passage, or Builder assumptions could materially bias it. If this is technically unavailable, record `REVIEW NOT PERFORMED` as a blocking execution state; do not simulate independence. Routine deterministic Builder self-checks remain permitted when no independent specialist verdict is required.
+12. Technical correctness, scene validity, test passage, object counts, or
+    prefab instantiation cannot override a visual-purpose failure. Hostless or
+    obstructive props, random dressing, unjustified visible placeholders,
+    unproven broad modular use, unsupported modular-completeness claims, and
+    visible overlap or z-fighting remain blocking visual findings.
 
 ## Stop and Escalation Boundary
 
 Stop and escalate when correction requires a new product or taste decision, material scope expansion, budget or purchase, external download, new licence interpretation, protected-source change, architectural reversal, unsafe/destructive action, or a contradiction between authoritative sources. A role finding alone does not broaden permissions.
+
+## Prospective Evidence Interpretation
+
+This amendment applies only to new or materially revised Work Orders after its adoption. Historical evidence proves only that its documented attempt, observation, result, or decision record existed under its documented conditions; classification alone does not prove correctness, acceptance, authorisation, currency, reusability, production readiness, or a valid baseline. Reuse requires applicable current authority, explicit selection, and fresh validation. Historical packages are retained and are not rewritten to apply this model.
 
 ## Relationship to Existing Standards
 

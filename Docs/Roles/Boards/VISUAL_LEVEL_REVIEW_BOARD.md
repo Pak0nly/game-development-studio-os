@@ -1,6 +1,7 @@
 # Visual Level Review Board
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-AAPEC-V1` on 2026-07-29.
 
 ## Purpose and Activation
 
@@ -32,6 +33,12 @@ When the complete board is activated, mandatory roles are Art Director, Level De
 9. Is the current result presentation-ready for its authorised stage?
 10. What would an external viewer criticise in the first ten seconds?
 11. For every gate-critical claim, does the evidence method actually execute or observe the claimed behaviour on the current candidate, or is it only a proxy?
+12. Does every visible element have a defensible purpose and every prop a
+    qualified host, plausible use, orientation, and clearance?
+13. Were relevant asset families and modular combinations qualified before
+    visible replacements or broad production use?
+14. Do corners, entrances, endings, closures, seams, surface transitions and
+    repetition remain coherent from gameplay and elevated-camera views?
 
 ## Role Focus
 
@@ -48,4 +55,12 @@ When the complete board is activated, mandatory roles are Art Director, Level De
 
 ## Hard Fails and Passage
 
-All applicable Visual QA hard fails apply. In addition, missing or semantically unsuitable mandatory evidence, an unresolved in-scope defect, or evidence from a superseded build blocks handoff. A visible hard fail cannot be deferred to a later visual phase under `PASS WITH CONCERNS` without an explicit Human exception. Passage requires no mandatory `FAIL`, no open hard fail, all applicable roles at least `PASS WITH CONCERNS`, and explicit remaining concerns.
+All applicable Visual QA hard fails apply. In addition, missing or semantically
+unsuitable mandatory evidence, an unresolved in-scope defect, evidence from a
+superseded build, a hostless or obstructive visible prop, random dressing,
+unjustified visible placeholder, broad use of an unproven modular family,
+unsupported modular-completeness claim, or visible overlap/z-fighting blocks
+handoff. A visible hard fail cannot be deferred to a later visual phase under
+`PASS WITH CONCERNS` without an explicit Human exception. Passage requires no
+mandatory `FAIL`, no open hard fail, all applicable roles at least `PASS WITH
+CONCERNS`, and explicit remaining concerns.
