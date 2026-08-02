@@ -8,6 +8,32 @@ A Director or Work session must check the confirmed decisions relevant to its as
 
 For a larger or cross-domain work order, the Director or Work session must also apply the adopted [`Role Operating Model`](Docs/Roles/ROLE_OPERATING_MODEL.md), select only the roles justified by the work, and include the [`Work Order Role and Review Block`](Docs/Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md). Specialist findings are advisory inputs until the accountable builder or Producer consolidates them under the authority order below.
 
+## Cross-Chat Bootstrap and Task Closure
+
+This contract links existing owners; it does not replace or restate their substantive rules.
+
+### New-Chat Bootstrap
+
+Before planning or mutation:
+
+1. Identify the exact repository/project and Work Order.
+2. Read `AGENTS.md`, [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md), and [`Docs/CURRENT_HANDOVER.md`](Docs/CURRENT_HANDOVER.md).
+3. Read the exact confirmed decisions in [`Docs/CONFIRMED_DECISIONS.md`](Docs/CONFIRMED_DECISIONS.md), adopted standards indexed by [`Docs/README.md`](Docs/README.md), project profile, and evidence named by the task or operational state.
+4. Verify the repository/project, branch, HEAD, active task, status, stop boundary, protected paths, and allowed mutation paths.
+5. Compare operational projections with their cited canonical sources and verified repository state.
+6. If scope is cross-domain, relevance is uncertain, a source is missing, or live sources conflict, expand to the complete relevant authority set and stop mutation until the contradiction is recorded and resolved.
+
+### Task Closure
+
+Before final handoff:
+
+1. Classify durable findings and place them only in their authorised canonical owner identified through [`Docs/README.md`](Docs/README.md).
+2. Freeze exact task evidence, reviewer evidence, conflicts, correction trace, and Human checkpoint.
+3. Replace [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md) with one compact present state rather than appending chronology.
+4. Replace [`Docs/CURRENT_HANDOVER.md`](Docs/CURRENT_HANDOVER.md) with the smallest restart-critical context and one next action.
+5. Perform the applicable consistency checks.
+6. Stop at the named checkpoint without inferring authority for later work.
+
 ## Authority Order
 
 When information conflicts, use this order of authority:
