@@ -1,7 +1,10 @@
 # Crime99 Production Profile
 
 **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
-`SOS-GOV-WCM-NTB-V1` on 2026-07-25 and `SOS-GOV-AAPEC-V1` on 2026-07-29.
+`SOS-GOV-WCM-NTB-V1` on 2026-07-25 and `SOS-GOV-AAPEC-V1` on 2026-07-29;
+project-role projection reclassified through
+`C99-STUDIO-MASTERCITY-STATIC-LEARNING-EVIDENCE-RECLASSIFICATION-V1` on
+2026-08-02.
 
 This profile and its linked Layered Agent Instruction Architecture amendments form one adopted package. Adoption does not itself create current execution authority.
 
@@ -88,29 +91,36 @@ NOT PLACE`. Object-count or package-use targets cannot override this rule.
 | New Map Slice Pilot 1 and Pilot 2 candidates | Failed process evidence only; not layout, scene, or production baselines. |
 | Pilot 3 `C99-P3-P9-v1` | P1-P8 passage evidence is retained; P9 failed and the candidate is stopped. It does not authorise continuation. |
 | Urban Slice Sprint 1 Asset Assembly | Stopped with incomplete Vendor dependency closure and no authorised material/assembly continuation. Diagnostic evidence remains useful; no family-wide rejection or new production base is implied. |
-| Alley District Gate 1 V3 | `C99-ALLEY-DISTRICT-REBUILD-GATE1-V3` is the last formally authorised city production baseline. Its accepted status and provisional access limitations remain governed by DEC-028. |
-| Later Gate-2/B11 outputs | Protected historical technical, proof, and learning evidence only. They are not retroactively authorised or accepted production baselines. An individual finding or asset may be reused only after explicit selection and fresh validation under separate authority. |
+| Alley District Gate 1 V3 | `C99-ALLEY-DISTRICT-REBUILD-GATE1-V3` is the last formally authorised historical city-stage result. Its historical authority and provisional access limitations remain governed by DEC-028, but it is not an automatic future restart baseline or a quality endorsement. |
+| Later Gate-2/B11 outputs | Protected historical technical, proof, and learning evidence only. They are not retroactively authorised or accepted production baselines. Historical existence does not prove correctness, acceptance, currency, reusability, production readiness, or future suitability. An individual finding or asset may be reused only after explicit selection and fresh validation under separate authority. |
 
-## Canonical Working Environments
+## Canonical Repositories and Evidence Environments
 
 - `Projects/Crime99` is the canonical technical gameplay repository. It
   contains ignored local manufacturer dependencies, and its 188 deliberately
   excluded status paths are protected from cleanup, reset, deletion, staging,
   or commit without a separate instruction.
-- `Projects/Crime99MasterCityDiscovery` is the canonical Unity working
-  environment for Crime99 city, world, and level production. This role does not
-  mean that it is integrated with `Projects/Crime99`, that current production
-  is authorised, or that an existing Gate-2/B11 scene is accepted. Because its
-  URP/HDRP foundation choice is not globally resolved, every future authorised
-  Unity task must name and verify the exact project root, pipeline, baseline,
-  and allowed delta before execution.
+- `Projects/Crime99MasterCityDiscovery` is a static protected learning-evidence
+  project. It preserves attempted workflows, failure evidence, technical
+  proofs, and reusable lessons. It is not an accepted visual result, a current
+  production baseline, an active production environment, or a future-assumed
+  production environment.
+- No current canonical Crime99 city/world/level Unity production environment
+  is designated. Future city production must separately select or create its
+  working environment and explicitly select its pipeline, baseline, and
+  repository ownership before implementation.
 - `Projects/Crime99AssetStylePreflight` is the evidence environment for the Urban Slice Visual Assembly and Dressing records. A Task-Delta Work Order must still identify the exact valid scene and dependency state before Unity use.
 - Pilot worktrees are isolated evidence environments for their named pilots. They are not interchangeable production workspaces.
-- Prefer a verified working environment above reconstructing another Unity project or transferred cache. No new complete project, full Vendor copy, or cache repair is authorised without explicit setup scope.
+- Evidence-environment status does not create production, restart, quality, or
+  reuse authority. Historical evidence proves only that its documented event
+  existed under its documented conditions; current suitability requires
+  explicit selection and fresh validation.
 
-Changing the responsibility split between the canonical gameplay repository
-and canonical city/world/level environment, or integrating them, requires a
-separately authorised Human architecture or integration decision.
+`Projects/Crime99` remains the canonical technical gameplay repository. The
+dedicated Master City Git-repository proposal is deferred and not adopted.
+Selecting or creating a future city environment, choosing its repository
+owner, or integrating gameplay and city content requires a separately
+authorised Human architecture or integration decision.
 
 ## Frozen Systems and Asset Boundaries
 

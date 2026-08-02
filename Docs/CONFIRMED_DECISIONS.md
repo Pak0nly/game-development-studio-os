@@ -536,3 +536,61 @@ validation.
 2026-07-31
 
 **Supersedes:** None
+
+### DEC-031 — Crime99 Master City Static Learning-Evidence Reclassification
+
+**Status:** Confirmed
+
+**Scope:** Crime99 Master City project role, historical evidence authority, and
+future city-environment selection
+
+**Confirmed decision:**
+
+1. `Projects/Crime99MasterCityDiscovery` is a static protected
+   learning-evidence project. It preserves attempted workflows, failure
+   evidence, technical proofs, and reusable lessons.
+2. The project is not an accepted visual result, a current production
+   baseline, an active production environment, or a future-assumed production
+   environment.
+3. `C99-ALLEY-DISTRICT-REBUILD-GATE1-V3` remains the last formally authorised
+   historical city-stage result. That historical status does not make it an
+   automatic future restart baseline or a quality endorsement.
+4. Later Gate-2/B11 material remains protected historical learning evidence
+   only. It is not retroactively authorised or accepted.
+5. Historical evidence proves only that its documented attempt, observation,
+   result, or decision record existed under its documented conditions. It does
+   not by itself prove correctness, acceptance, currency, reusability,
+   production readiness, or future suitability.
+6. No current canonical Crime99 city/world/level Unity production environment
+   is designated.
+7. Future city production must separately select or create its working
+   environment and must explicitly select its pipeline, baseline, and
+   repository ownership before implementation.
+8. `Projects/Crime99` remains the canonical technical gameplay repository.
+   This decision does not claim that gameplay and city content are integrated.
+9. The proposal for a dedicated Master City Git repository is deferred and is
+   not adopted.
+10. This decision does not authorise production, Unity or Unity-MCP execution,
+    reuse, cleanup, deletion, movement, archival, repository creation or
+    migration, ignore changes, integration, staging, commit, push, or remote
+    contact.
+
+**Implications:** Current project documentation and operational state must
+classify `Projects/Crime99MasterCityDiscovery` only as static protected
+learning evidence. No future task may infer a production environment,
+pipeline, baseline, quality verdict, Git owner, or restart authority from its
+historical contents. Reuse of an individual finding or asset still requires
+explicit selection, current authority, and fresh validation.
+
+**Human confirmation source:** Human Developer Work Order
+`C99-STUDIO-MASTERCITY-STATIC-LEARNING-EVIDENCE-RECLASSIFICATION-V1`,
+2026-08-02.
+
+**Supersedes:** Only DEC-029's designation of
+`Projects/Crime99MasterCityDiscovery` as the canonical active
+city/world/level Unity working environment and the corresponding implication
+that it is the assumed home for future city production. DEC-029 remains the
+historical responsibility record. Its gameplay ownership, Gate-1 V3 historical
+authority, Gate-2/B11 protection, explicit-reuse validation requirement, and
+no-production/no-Git-authority boundaries remain in force. This decision does
+not supersede DEC-026, DEC-027, DEC-028, or DEC-030.
