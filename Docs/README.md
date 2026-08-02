@@ -94,6 +94,12 @@ Use it with the [Task-Delta Work Order Template](Templates/WORK_ORDER_ROLE_AND_R
 
 The proposal reviews, bounded corrections, validation results, context proxies, and Human disposition are preserved in the [Layered Agent Instruction Architecture Review and Adoption Record](Production/LAYERED_AGENT_INSTRUCTION_ARCHITECTURE_REVIEW_AND_ADOPTION_RECORD.md).
 
+The architecture impact, gap analysis, integration map, governance status,
+role reviews, Crime99 migration notes, validation results, and Human decision
+surface for the adopted asset-awareness and purposeful-environment-composition
+amendments are preserved in the
+[Asset Awareness and Purposeful Environment Composition Review and Adoption Record](Production/ASSET_AWARENESS_AND_PURPOSEFUL_ENVIRONMENT_COMPOSITION_REVIEW_AND_ADOPTION_RECORD.md).
+
 ### Playbooks/
 
 Defines the adopted on-demand, provider-independent instructions for [Visual Production](Playbooks/VISUAL_PRODUCTION.md), [Unity Asset Assembly and Diagnostic Safety](Playbooks/UNITY_ASSET_ASSEMBLY_AND_DIAGNOSTIC_SAFETY.md), and [Baseline Integration and Commit Preparation](Playbooks/BASELINE_INTEGRATION_AND_COMMIT_PREPARATION.md). They are repository playbooks, not an unsupported Skills runtime, and do not grant task execution authority by themselves.
