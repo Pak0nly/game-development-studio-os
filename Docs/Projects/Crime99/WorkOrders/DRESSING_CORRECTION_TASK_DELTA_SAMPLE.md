@@ -1,5 +1,7 @@
 # Sample Task-Delta Work Order — Urban Slice Dressing Correction
 
+**Template status:** Amended through `SOS-GOV-AAPEC-V1` on 2026-07-29.
+
 This is a documentation sample only. It does not authorise execution, Unity, asset mutation, evidence generation, Git action, or continuation of the stopped Dressing Pass. Copying or referencing it does not create authority; any future task must be separately instantiated and authorised by the Human Developer.
 
 **Assignment:** Crime99 Urban Slice — Dressing Pass correction sample.
@@ -25,3 +27,41 @@ This is a documentation sample only. It does not authorise execution, Unity, ass
 **Correction allowance:** One formal correction for this Dressing stage after a valid review. Formative iterations and invalid captures are technical evidence failures, not consumed creative corrections. Preflight capture health non-mutatively before mutation.
 
 **Human checkpoint:** Stop for Human review after stage-exit consolidation. Stop earlier for invalid evidence, candidate-identity loss, frozen-system regression, authority or scope conflict, or any need for lighting, gameplay, new assets, Vendor, licence, purchase, download, or Git authority.
+
+## Mandatory Environment Composition Declarations
+
+**Asset Awareness:** Identify and inspect the relevant existing curb,
+sidewalk, stopping-edge, service, waste, utility, frontage and east-identity
+families before creating any visible replacement. Record function, scale,
+pivot/orientation, host suitability, materials/colliders, camera readability,
+modular compatibility, repetition risk and Vendor/project-owned boundary.
+
+**Spatial Purpose:** Define the commercial/service usage story, primary
+gameplay view, pedestrian path, vehicle stopping and transfer route, frontage
+entrances, active staging, waste collection, utility access and maintenance
+clearance before placement.
+
+**Host Validation:** Add one ledger row for every retained or new dressing
+prop with exact host, purpose, orientation, clearance, actor rationale and
+evidence. `REMOVE` or `DO NOT PLACE` is mandatory when the row cannot be
+defended. Existing nearby geometry is not automatically a host.
+
+**Modular Proof:** Broad use of any curb, pavement, frontage or service
+modular family requires applicable corner, entrance/interruption, ending,
+transition, closure, collider, snapping, repetition and elevated-camera proof.
+An unproven case restricts use and cannot be hidden by dressing.
+
+**Placeholder Control:** A visible placeholder requires an explicit
+no-suitable-asset finding, failed modular-composition alternative, bounded
+purpose, permitted lifetime, replacement owner/gate and visual-review
+consequence.
+
+**Additional hard fails:** hostless or obstructive prop; random distribution;
+service or loading object without service/loading context; blocked circulation
+or entrance; unjustified visible placeholder; unproven broad modular use;
+unsupported completeness claim; visible overlap or z-fighting; or technical
+PASS presented as visual PASS.
+
+**Earliest invalid gate:** Reopen or block at asset qualification, spatial
+purpose, composition, host validation, modular proof or visual review,
+whichever first became invalid.

@@ -1,6 +1,7 @@
 # Execution Modes and Stage Review Standard
 
-**Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+**Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+`SOS-GOV-AAPEC-V1` on 2026-07-29.
 
 The mode, readiness, activation, correction, template, profile, and playbook amendments linked from this document form one adopted package. Adoption does not itself grant task, production, Unity, or Git authority.
 
@@ -48,6 +49,10 @@ Formal review begins only when all applicable conditions are satisfied:
 - required technical checks pass or are explicitly classified as a blocker;
 - evidence is current, belongs to the candidate, and is semantically suitable for each review claim;
 - the review questions, activated roles, hard fails, and correction allowance are recorded; and
+- for visible environment work, location function, usage story, circulation,
+  access, qualified asset vocabulary, modular proof state, prop hosts, and any
+  controlled visible placeholders are recorded in the Task-Delta Work Order;
+  and
 - no unresolved authority, scope, protected-source, or candidate-identity conflict prevents a verdict.
 
 Before this point, work is formative. Formative edits, previews, capture-health checks, and evidence repairs do not create immutable final packages, formal verdicts, or correction counts after every small change.

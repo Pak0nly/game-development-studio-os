@@ -1,6 +1,7 @@
 # Level Design Review Standard
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-AAPEC-V1` on 2026-07-29.
 
 ## Purpose
 
@@ -22,6 +23,12 @@ A bounded Production stage on an accepted baseline evaluates only level-design c
 - **Spatial sequence:** approach, threshold, activity, rest, escalation, reveal, and recovery spaces suit the approved experience.
 - **Gameplay:** combat/interaction spaces, cover/hazards, vehicle flow, foot flow, chaos/escape opportunity, spawn/respawn plausibility, and dominant-position control.
 - **Urban/function logic:** street profiles, parking, loading, deliveries, waste, utilities, yards, backs, crossings, and pedestrian/traffic behaviour.
+- **Purpose and hosts:** every retained or new visible prop has an exact
+  credible host, defensible purpose, suitable orientation, required clearance,
+  and plausible user or gameplay rationale; hostless elements are removed.
+- **Asset vocabulary and modular proof:** relevant families are qualified for
+  function, scale, orientation, neighbours, transitions, entrances, endings,
+  closure, colliders, camera use and repetition before broad production use.
 - **Camera and occlusion:** every applicable position class and continuous transition required by the Visual QA workflow.
 - **Boundaries:** finished map edges, authored connections, return routes, and no accidental void or trap.
 - **Environmental storytelling:** details have a cause, use, maintenance state, and relationship to gameplay rather than random decoration.
@@ -38,7 +45,14 @@ A bounded Production stage on an accepted baseline evaluates only level-design c
 
 ## Modular Map Contracts
 
-Document edge ownership, compatible technical sockets, grade and width, building/prop slots, variant rules, navigation/camera preservation, seam treatment, and repetition limits. Modules are authoring constraints, not permission for random runtime assembly. A visually obvious kit seam or arbitrary prefab row fails authored-place quality.
+Document edge ownership, compatible technical sockets, grade and width,
+building/prop slots, variant rules, navigation/camera preservation, seam
+treatment, repetition limits, corners, endings, entrances, interruptions,
+transitions, volume or roof closure, ground/wall contact, colliders and
+snapping. Modules are authoring constraints, not permission for random runtime
+assembly. Broad use is prohibited while an applicable contract remains
+unproven. A visually obvious kit seam, unsupported completeness claim, or
+arbitrary prefab row fails authored-place quality.
 
 ## Evidence and Review
 

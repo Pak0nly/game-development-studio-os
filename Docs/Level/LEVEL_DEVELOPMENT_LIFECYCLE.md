@@ -1,6 +1,7 @@
 # Level Development Lifecycle
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-AAPEC-V1` on 2026-07-29.
 
 ## Purpose and Applicability
 
@@ -22,6 +23,14 @@ Use this lifecycle with the [Role Operating Model](../Roles/ROLE_OPERATING_MODEL
 8. **Human attention stays selective.** Escalate product direction, taste, equivalent design alternatives, scope expansion, budget, purchases, licence risk, or final approval. Do not escalate a clear in-scope defect.
 9. **Correction is bounded and stage-local.** Correction authorisation and consumption follow the [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md). Each independent lifecycle gate records and applies its own declared allowance.
 10. **Evidence must prove its claim.** Each evidence item names its claim and candidate. Its method must execute or observe the claimed behaviour; a proxy, count, label, or static artifact cannot substitute for required semantic or continuous evidence.
+11. **Discover and compose before visible invention.** Relevant project content
+    and modular families must be qualified before new visible replacement or
+    placeholder geometry is created. Existing compatible content must be
+    considered for coherent, non-destructive composition first.
+12. **Props follow purpose, hosts, and circulation.** Every retained or new
+    visible prop requires a defensible purpose, credible host, orientation,
+    clearance, and real or gameplay usage rationale. No host means remove or
+    do not place.
 
 ## Gate Mechanics
 
@@ -145,10 +154,10 @@ The accountable phase owner owns the phase decision, not every implementation ac
 | Blocking verdict holders | Art Director and every activated reviewer for its applicable domain; Producer for scope/process/evidence. |
 | Required decisions | Visual hierarchy; dominant/supporting masses; landmark treatment; density zones; negative space; candidate asset families; camera-safe silhouettes. |
 | Human decisions | New or changed Art Direction, taste choice between equivalent compositions, purchase/download, licence-risk acceptance, or scope expansion. |
-| Evidence | Matched gameplay-camera blockout captures, composition annotations, value/palette study, asset-family coverage and provenance state, updated camera matrix. |
-| Pass criteria | Approved intent is visible at gameplay distance; spatial readability survives the composition; asset strategy is suitable and traceable; no unresolved structural defect is being covered. |
-| Fail criteria | Test-scene or arbitrary-kit appearance; focal hierarchy absent; required routes obscured; incompatible asset family; package use begins before required inventory. |
-| Stop conditions | New purchase/download, art-direction choice, protected-source edit, unknown provenance, or structural rework is required. |
+| Evidence | Matched gameplay-camera blockout captures, composition annotations, value/palette study, qualified asset-vocabulary record, modular proof matrix, asset-family coverage and provenance state, controlled placeholder declarations, updated camera matrix. |
+| Pass criteria | Approved intent is visible at gameplay distance; spatial readability survives the composition; asset strategy is suitable and traceable; relevant asset vocabulary and modular combinations are qualified; every visible placeholder is justified and controlled; no unresolved structural defect is being covered. |
+| Fail criteria | Test-scene or arbitrary-kit appearance; focal hierarchy absent; required routes obscured; incompatible asset family; visible replacement created before relevant asset qualification; broad modular use from a straight-only or otherwise incomplete proof; unsupported completeness claim; unjustified visible placeholder. |
+| Stop conditions | Required modular proof is absent; a visible placeholder cannot satisfy the control record; new purchase/download, art-direction choice, protected-source edit, unknown provenance, or structural rework is required. |
 | Allowed transition | Only passed composition zones and asset families may enter functional dressing. |
 
 ### 6. Functional Dressing
@@ -161,11 +170,11 @@ The accountable phase owner owns the phase decision, not every implementation ac
 | Decision owner | Level Designer for function and gameplay; Art Director owns visual exceptions. |
 | Reviewers | Environmental Storytelling / World Design responsibility, Technical Artist, Asset & Provenance Manager, Camera & Occlusion Reviewer, Gameplay QA Reviewer, Producer. |
 | Blocking verdict holders | Level Designer, Art Director for an applicable visual exception, and every activated reviewer for its domain; Producer for scope/process/evidence. |
-| Required decisions | Each major prop family purpose; density limits; access clearances; repetition limits; interaction/collision state; active/closed/abandoned signals. |
+| Required decisions | Each retained or new visible prop's exact host, purpose, orientation, required clearance, and real-user or gameplay rationale; family density and repetition limits; interaction/collision state; active/closed/abandoned signals. |
 | Human decisions | New asset direction, purchase/download, licence-risk acceptance, protected-source exception, taste choice, or material scope expansion. |
-| Evidence | Annotated use-to-prop map, asset/provenance manifest, gameplay captures, updated routes and camera/occlusion evidence, performance spot check when risk changes. |
-| Pass criteria | Major placements follow function or gameplay; traversal and readability remain intact; required infrastructure is present; repetition is controlled. |
-| Fail criteria | Decorative scatter; implausible access; route/camera obstruction; unknown asset source; edited protected original; density used to hide weak composition. |
+| Evidence | Annotated use-to-prop map and per-prop host-validation ledger, asset/provenance manifest, gameplay captures, updated routes and camera/occlusion evidence, performance spot check when risk changes. |
+| Pass criteria | Every retained or new visible prop has a qualified host and defensible purpose; traversal, access, service logic and readability remain intact; required infrastructure is present; repetition is controlled. |
+| Fail criteria | Hostless or purposeless prop; decorative or random scatter; blocked entrance, route, loading, service, maintenance, accessibility or required clearance; implausible access; route/camera obstruction; unknown asset source; edited protected original; density used to hide weak composition. |
 | Stop conditions | Required family is unavailable, purchase/download or licence decision is needed, or dressing exposes an earlier gate failure. |
 | Allowed transition | Environmental storytelling may refine only the passed functional layer; missing functional causes cannot be invented through decals or clutter. |
 
@@ -215,11 +224,11 @@ The accountable phase owner owns the phase decision, not every implementation ac
 | Decision owner | QA Lead owns evidence adequacy; each mandatory specialist owns its domain verdict; Producer consolidates without overrule. |
 | Reviewers | Full [Visual Level Review Board](../Roles/Boards/VISUAL_LEVEL_REVIEW_BOARD.md); Unity Specialist when Unity is used; other conditional roles when their domains changed. |
 | Blocking verdict holders | Every mandatory applicable specialist, QA Lead, and Producer within their defined authorities. No verdict may be averaged or overruled. |
-| Required decisions | Exact candidate identity; hard-fail state; matrix scores; regression scope; final role verdicts; correction need; weakest remaining area; Human-review readiness. |
+| Required decisions | Exact candidate identity; earliest invalid production gate; hard-fail state; purpose and host validity; real-world or project usage; circulation and clearance; modular coherence and proof; placeholder visibility; transition, overlap and z-fighting state; elevated-camera readability where applicable; matrix scores; regression scope; final role verdicts; correction need; weakest remaining area; Human-review readiness. |
 | Human decisions | Only an unresolved product/taste trade-off, exception, architecture/scope/budget/purchase/licence decision, or authority conflict. In-scope defects and missing evidence remain Work responsibilities. |
 | Evidence | Technical results; final gameplay-camera evidence; coverage matrix and continuous routes; provenance/integrity record; Visual QA matrix; correction trace; separate role outputs. |
-| Pass criteria | No hard fail; Visual QA thresholds pass; all mandatory applicable roles are at least `PASS WITH CONCERNS`; evidence matches the final candidate. |
-| Fail criteria | Any mandatory `FAIL`; missing or stale evidence; open hard fail; failed required route/camera/occlusion state; unresolved in-scope defect; correction beyond the declared stage allowance needed. |
+| Pass criteria | No hard fail; visual-purpose, host, usage, circulation, modular, placeholder, transition and overlap checks pass; Visual QA thresholds pass; all mandatory applicable roles are at least `PASS WITH CONCERNS`; evidence matches the final candidate. |
+| Fail criteria | Any mandatory `FAIL`; missing or stale evidence; technical PASS presented as visual PASS; hostless or obstructive visible prop; random dressing; unjustified visible placeholder; broad unproven modular use or unsupported closure claim; visible overlap or z-fighting; failed required route/camera/occlusion state; unresolved in-scope defect; correction beyond the declared stage allowance needed. |
 | Stop conditions | Correction needs new authority or exceeds the declared stage allowance; role verdicts conflict on a product/taste trade-off; protected source, licence, purchase, or architecture change is needed. |
 | Allowed transition | Human review is allowed only with the Visual QA internal-passage status or a clearly labelled blocked Human-decision package. |
 
