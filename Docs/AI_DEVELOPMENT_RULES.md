@@ -1,6 +1,7 @@
 # AI Development Rules
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-WCM-NTB-V1` on 2026-07-25.
 
 This document defines how AI systems are expected to participate in the development process.
 
@@ -168,6 +169,54 @@ Review must remain bounded. Formal correction authorisation, stage locality, con
 ## AI Model Routing and Context
 
 Route bounded AI tasks through the adopted [AI Model Routing and Compute Efficiency Standard](AI/AI_MODEL_ROUTING_AND_COMPUTE_EFFICIENCY_STANDARD.md). Routing depends on risk, reversibility, ambiguity, context coupling, and prior failures rather than role name. Deterministic work begins at the least expensive reliable class; new standards, irreversible architecture or layout, Art Direction, complex root-cause analysis, conflicting mandatory verdicts, and exhausted lower-class attempts require Critical routing and the applicable review authority.
+
+## Absolute No-Training and AI Service Boundary
+
+No Studio OS or project content may be used for model training, fine-tuning,
+reinforcement learning, model improvement, dataset or benchmark construction,
+evaluation- or embedding-corpus construction, persistent reference-library
+creation, style learning, imitation learning, reconstruction learning, or any
+comparable persistent AI-learning purpose.
+
+This prohibition applies to all content and metadata regardless of source,
+ownership, format, confidentiality, or whether it is Human-created,
+AI-generated, licensed, public, private, derived, or project-owned. It
+includes assets, screenshots, renders, video, audio, source code, shaders,
+configuration, documents, prompts, conversations, decisions, reviews, logs,
+telemetry, test results, filenames, GUIDs, hashes, inventories, Human notes,
+AI outputs, and intermediate artifacts.
+
+It applies to Work, ChatGPT, Claude, local models, external services, plugins,
+agents, contractors, and every other processing system.
+
+Authorised one-time inference, analysis, implementation, or review does not
+constitute training permission. Content may be submitted to an AI system only
+when all of these conditions hold:
+
+1. the current task explicitly authorises the content and purpose;
+2. processing is transient and task-bounded;
+3. the applicable provider plan, configuration, and terms do not use
+   submitted content for training or model improvement;
+4. no persistent training, reference, embedding, evaluation, or learning
+   corpus is created; and
+5. the content is not reused for unrelated users, projects, or models.
+
+If the required boundary cannot be supported or verified, do not submit the
+content. Record the uncertainty and require Human approval before any
+protected-content submission. An internal rule cannot override a provider's
+actual data practices, and no unsupported legal or provider-behaviour claim
+may be made.
+
+Integrated project-scene screenshots may be used for explicitly authorised
+one-time current-project visual quality analysis when every condition above
+passes. They may not be used for training, model improvement, style learning,
+imitation, reconstruction, dataset creation, or as generation references.
+Raw or isolated Vendor assets remain subject to stricter licence-specific
+restrictions. Derived textual findings may be retained as project feedback;
+the images may not become a cross-project AI reference library.
+
+A no-training violation, or submission to a service that may use the content
+for training or model improvement, is a Hard Fail.
 
 ## Semantic Evidence
 

@@ -1,6 +1,7 @@
 # Crime99 Production Profile
 
-**Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+**Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+`SOS-GOV-WCM-NTB-V1` on 2026-07-25 and `SOS-GOV-AAPEC-V1` on 2026-07-29.
 
 This profile and its linked Layered Agent Instruction Architecture amendments form one adopted package. Adoption does not itself create current execution authority.
 
@@ -16,6 +17,65 @@ Operational state remains in [`WORK_STATE.md`](../../WORK_STATE.md) and [`CURREN
 - The Urban Slice Visual Assembly and Dressing evidence uses a mixed late-1980s/1990s neighbourhood commercial-corridor context. That context applies to the slice; it is not a universal final branding or lore decision.
 - Human Developer approval remains required for final visual acceptance, new art direction, product/taste choices, brands, lore, scope, purchases, licence-risk acceptance, and production continuation.
 
+## Crime99 Environment Composition Rules
+
+Crime99 urban environments **MUST** derive visible composition from the
+location's usage story, circulation, commerce, service, maintenance,
+residential or industrial use, parking, loading, waste collection,
+public/private boundaries, district identity, gameplay readability, and the
+elevated camera. Props **MUST** follow qualified hosts and circulation; they
+**MUST NOT** precede them.
+
+Before visible environment creation or placement, the Task-Delta Work Order
+**MUST** identify the relevant local asset families, inspect qualified
+candidates, assess compatible modular combinations, distinguish Vendor
+working copies from project-owned variants and wrappers, and justify every
+visible placeholder. Research and inventory findings inform this decision but
+do not qualify every asset family automatically.
+
+Crime99 applies the following urban rules:
+
+- **Sidewalks and curb zones:** preserve clear pedestrian movement,
+  accessibility, storefront and residential entrances, crossings, vehicle
+  access, loading interruptions, drainage logic, curb returns, and coherent
+  road/pavement transitions. Curb geometry **MUST NOT** cross a valid entrance
+  or duplicate a coplanar surface.
+- **Storefronts:** awnings, signage structures, displays, seating, waste and
+  delivery traces require real openings, business function, visibility,
+  customer or staff use, and clear access. Decorative frontage props without
+  those hosts **MUST NOT** be placed.
+- **Alleys and service yards:** waste, pallets, loading equipment, utilities,
+  gates and vehicles require a connected service, collection, maintenance,
+  delivery, workshop, warehouse, transfer or access story. Public and service
+  movement **MUST** remain distinguishable and usable.
+- **Loading areas:** vehicle approach, stopping position, clearance, transfer
+  point, door or storage relationship, and conflict with public circulation
+  **MUST** be resolved before equipment is placed.
+- **Utility pockets:** boxes, meters, ducts, vents, cables and protective
+  elements **MUST** relate to a served building, wall, boundary or technical
+  system and remain reachable for maintenance.
+- **Parking and static vehicles:** each vehicle requires a credible parking,
+  ownership, loading, service or temporary-stopping host, correct orientation,
+  access and departure space. Vehicles **MUST NOT** be distributed as generic
+  street decoration.
+- **Gates and boundaries:** each gate requires a credible bounded access;
+  each fence, wall or barrier requires security, ownership, construction,
+  infrastructure, gameplay or continuation logic. Required entrances and
+  routes remain open.
+- **Elevated-camera readability:** hosts, routes, entrances, service/public
+  distinction, landmarks, silhouettes and prop clusters **MUST** read from the
+  representative elevated gameplay camera and relevant approach angles, not
+  only from a favourable ground-level review.
+- **Modular combinations:** compatible packages **MAY** be composed into
+  distinct project-owned arrangements after provenance, scale, material,
+  collider, camera and modular compatibility pass. Broad use requires
+  representative proof of applicable straights, corners, endings, entrances,
+  interruptions, transitions, closure and repetition.
+
+The default disposition for a prop without a defensible Crime99 host, purpose,
+orientation, clearance, and user/service/gameplay rationale is `REMOVE` or `DO
+NOT PLACE`. Object-count or package-use targets cannot override this rule.
+
 ## Accepted and Evidentiary Baselines
 
 | Baseline | Status and permitted interpretation |
@@ -28,20 +88,64 @@ Operational state remains in [`WORK_STATE.md`](../../WORK_STATE.md) and [`CURREN
 | New Map Slice Pilot 1 and Pilot 2 candidates | Failed process evidence only; not layout, scene, or production baselines. |
 | Pilot 3 `C99-P3-P9-v1` | P1-P8 passage evidence is retained; P9 failed and the candidate is stopped. It does not authorise continuation. |
 | Urban Slice Sprint 1 Asset Assembly | Stopped with incomplete Vendor dependency closure and no authorised material/assembly continuation. Diagnostic evidence remains useful; no family-wide rejection or new production base is implied. |
+| Alley District Gate 1 V3 | `C99-ALLEY-DISTRICT-REBUILD-GATE1-V3` is the last formally authorised city production baseline. Its accepted status and provisional access limitations remain governed by DEC-028. |
+| Later Gate-2/B11 outputs | Protected historical technical, proof, and learning evidence only. They are not retroactively authorised or accepted production baselines. An individual finding or asset may be reused only after explicit selection and fresh validation under separate authority. |
 
 ## Canonical Working Environments
 
-- `Projects/Crime99` is the original Crime99 Unity workspace containing ignored local manufacturer dependencies. Its 188 deliberately excluded status paths are protected from cleanup, reset, deletion, staging, or commit without a separate instruction.
+- `Projects/Crime99` is the canonical technical gameplay repository. It
+  contains ignored local manufacturer dependencies, and its 188 deliberately
+  excluded status paths are protected from cleanup, reset, deletion, staging,
+  or commit without a separate instruction.
+- `Projects/Crime99MasterCityDiscovery` is the canonical Unity working
+  environment for Crime99 city, world, and level production. This role does not
+  mean that it is integrated with `Projects/Crime99`, that current production
+  is authorised, or that an existing Gate-2/B11 scene is accepted. Because its
+  URP/HDRP foundation choice is not globally resolved, every future authorised
+  Unity task must name and verify the exact project root, pipeline, baseline,
+  and allowed delta before execution.
 - `Projects/Crime99AssetStylePreflight` is the evidence environment for the Urban Slice Visual Assembly and Dressing records. A Task-Delta Work Order must still identify the exact valid scene and dependency state before Unity use.
 - Pilot worktrees are isolated evidence environments for their named pilots. They are not interchangeable production workspaces.
 - Prefer a verified working environment above reconstructing another Unity project or transferred cache. No new complete project, full Vendor copy, or cache repair is authorised without explicit setup scope.
 
+Changing the responsibility split between the canonical gameplay repository
+and canonical city/world/level environment, or integrating them, requires a
+separately authorised Human architecture or integration decision.
+
 ## Frozen Systems and Asset Boundaries
 
 - Gate-D gameplay systems, camera policy, routes, vehicle/bot/combat systems, ProjectSettings, Packages, and manufacturer originals are frozen unless a Task-Delta Work Order explicitly includes them.
-- Manufacturer assets remain local, ignored, and immutable. Project-owned materials, variants, configuration, and adaptations must be traceable and stored in project-owned paths.
+- Original Vendor archives, verified Vendor source folders outside an active
+  Unity working project, and verified rollback sources remain local,
+  protected, immutable, and restorable.
+- Vendor files imported into an explicitly authorised Unity working project
+  are technical working copies. Unity may reserialize, upgrade, reimport, or
+  regenerate metadata for them when required by the authorised Unity version,
+  dependency, package, or render-pipeline task. Hash drift alone is not a Hard
+  Fail.
+- Intentional visual or gameplay-facing changes, reusable compatibility work,
+  and manual material/prefab tuning belong in traceable project-owned
+  variants or overrides unless a Task-Delta Work Order explicitly authorises
+  another reversible method.
 - No purchase, download, import, installation, Vendor repair, licence interpretation, or full-package transfer is implied by an asset or production task.
 - Evidence belongs outside Unity `Assets/` unless Unity import is required. Existing historical evidence under `Assets/` remains evidence; this rule does not authorise moving or deleting it.
+
+## AI and Screenshot Boundary
+
+- All Crime99 and Studio OS content is subject to the project-wide
+  [Absolute No-Training and AI Service Boundary](../../AI_DEVELOPMENT_RULES.md#absolute-no-training-and-ai-service-boundary).
+- Integrated Crime99-scene screenshots may be used for explicitly authorised,
+  one-time current-project visual quality analysis only when the applicable
+  provider plan, configuration, and terms support the required no-training
+  boundary.
+- Such screenshots may not be used for training, model improvement, dataset
+  creation, style learning, imitation, reconstruction, or as generation
+  references. They must not become a cross-project AI reference library.
+- Raw or isolated Vendor assets remain subject to any stricter
+  licence-specific restriction. Derived textual findings may be retained as
+  Crime99 project feedback.
+- Uncertain provider behaviour or licence scope stops submission for Human
+  direction; Studio governance cannot override actual provider practices.
 
 ## Production Boundaries and Accepted Concerns
 
@@ -210,8 +314,38 @@ Task-Delta Work Orders load only IDs whose tags and scope match the task. Fields
 - **Supersedes or successor:** Successor to the historical Dressing correction procedure for future separately authorised work.
 - **Authority and evidence:** Dressing final report sections 16 and 22 and Diagnostic Lessons; formal correction technical failure record.
 
+### C99-LSN-013 — Imported working-copy hash drift is not source corruption
+
+- **Tags:** `Integration`, `Unity`, `provenance`, `pipeline-migration`
+- **Trigger:** An authorised Unity/HDRP import reserialized imported Vendor
+  working-copy materials while original archives and verified rollback
+  sources remained exact and restorable.
+- **Verified cause:** Unity technically adapted serialized working copies
+  during pipeline activation/import; byte identity was used as the stop test
+  without first testing semantic or functional loss.
+- **Validated response:** Preserve original and rollback sources, inventory
+  the working-copy diff, then verify additions/removals, GUIDs, references,
+  material/shader usability, relevant scene opening/rendering, package roots,
+  and recovery. Treat explained reserialization as a Concern unless it causes
+  a functional, provenance, or recovery failure.
+- **Invalid shortcut:** Calling any working-copy hash drift a Hard Fail, or
+  accepting unexplained destructive drift merely because Unity performed it.
+- **Applies to:** Explicitly authorised Unity import, version, dependency, and
+  render-pipeline work on imported Vendor working copies.
+- **Does not apply to:** Original Vendor archives, protected source folders
+  outside the active project, verified rollback sources, unauthorised manual
+  edits, deletion, reference loss, or no-training violations.
+- **Current status:** Active.
+- **Supersedes or successor:** Supersedes the future-use byte-identity stop
+  rule in `C99-HDRP-WAREHOUSE-MIGRATION-V1`; historical evidence and rollback
+  outcome remain traceable.
+- **Authority and evidence:** DEC-024; governance revision
+  `SOS-GOV-WCM-NTB-V1`; `C99-HDRP-WAREHOUSE-MIGRATION-V1` execution evidence.
+
 ## Loading Guide
 
 - A bounded Dressing task normally loads `C99-LSN-008`, `009`, `010`, `011`, and `012`.
 - Asset-family diagnosis normally loads `C99-LSN-001` through `007` as applicable to the observed causal classes.
-- Integration and commit preparation normally loads `C99-LSN-001`, `007`, and `009` only when the relevant environment or rollback risk is present.
+- Integration and commit preparation normally loads `C99-LSN-001`, `007`,
+  `009`, and `013` only when the relevant environment, rollback, working-copy,
+  or pipeline-migration risk is present.
