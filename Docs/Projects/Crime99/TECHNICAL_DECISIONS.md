@@ -4,7 +4,7 @@
 
 **Document Maturity:** Confirmed Planning Baseline
 **Implementation Status:** Not authorised
-**Last Reviewed:** 2026-07-16
+**Last Reviewed:** 2026-08-03
 
 This register records the Human Developer-confirmed technical planning baseline for the first playable prototype. `Accepted for Planning` means only that a decision belongs to this confirmed plan and should guide a later separately authorised implementation. It is not an implementation status and does not authorise project creation, implementation, purchase, download, package installation, asset import, commit, or push. `Preflight Candidate` requires a separately authorised isolated evaluation before adoption. `Deferred` is deliberately outside the first-prototype architecture.
 
@@ -16,7 +16,7 @@ Design decisions remain in [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md) and the GDD.
 
 | ID | Decision | Status |
 |---|---|---|
-| TD-001 | Unity `6000.3.19f1`, Windows Standalone, URP | Accepted for Planning |
+| TD-001 | Gameplay / first prototype: Unity `6000.3.19f1`, Windows Standalone, URP | Accepted for Planning |
 | TD-002 | Small project-owned modular monolith | Accepted for Planning |
 | TD-003 | Variant A baseline with need-driven abstractions only | Accepted for Planning |
 | TD-004 | Separate project directory and Git repository | Accepted for Planning; exact path open |
@@ -43,13 +43,32 @@ Design decisions remain in [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md) and the GDD.
 
 ## Decisions
 
-### TD-001 — Engine, Platform, and Render Pipeline
+### TD-001 — Gameplay Prototype Engine, Platform, and Render Pipeline
 
 **Status:** Accepted for Planning
 
-Use Unity `6000.3.19f1`, Windows Standalone, and URP. URP is not an equally open pipeline alternative. A change requires a demonstrated blocker and a new Human Developer decision.
+For the existing gameplay / first-playable-prototype scope in
+`Projects/Crime99`, use Unity `6000.3.19f1`, Windows Standalone, and URP. Within
+that scope, URP is not an equally open pipeline alternative; a change requires
+a demonstrated blocker and a new Human Developer decision.
 
-**Evidence:** the isolated preflight compiled and rendered the three required bounded selections with Unity `6000.3.19f1` and resolved URP `17.3.0`; this is direct project evidence, not proof for every future package or shader.
+TD-001 does not select a render pipeline, working environment, baseline, or
+repository owner for future city/world/level production. That selection remains
+open and requires an explicit Human Developer decision before implementation,
+as established by [`DEC-031`](../../CONFIRMED_DECISIONS.md#dec-031--crime99-master-city-static-learning-evidence-reclassification)
+and the [`Crime99 Production Profile`](PRODUCTION_PROFILE.md#canonical-repositories-and-evidence-environments).
+
+**Evidence:** the isolated URP preflight compiled and rendered the three
+required bounded selections with Unity `6000.3.19f1` and resolved URP `17.3.0`;
+this is direct evidence for the bounded gameplay / first-prototype planning
+scope, not proof for every future package, shader, or city-production pipeline.
+The preserved city-discovery
+[`URP build`](../../../Projects/Crime99MasterCityDiscovery/Artifacts/Reports/build-urp.json)
+and [`URP scene audit`](../../../Projects/Crime99MasterCityDiscovery/Artifacts/Reports/scene-audit-urp.json),
+and the historical
+[`HDRP Warehouse migration retry`](../../../Projects/Crime99MasterCityDiscovery/Artifacts/Reports/C99-HDRP-WAREHOUSE-MIGRATION-RETRY-V1/HDRP_WAREHOUSE_MIGRATION_RETRY_REPORT.md)
+are equal-status historical inputs for a future separately authorised pipeline
+evaluation. None selects or approves a production pipeline.
 
 ### TD-002 — Architecture Shape
 

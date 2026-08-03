@@ -3,9 +3,19 @@
 ## Status and Boundary
 
 **Research date:** 2026-07-14
-**Account scope:** All 37 assets visible in the signed-in Unity Asset Store `My Assets` library (two pages)
+**Snapshot classification:** `HISTORICAL_SNAPSHOT`
+**Snapshot account scope:** 37 assets visible in the signed-in Unity Asset Store `My Assets` library on 2026-07-14 (two pages)
+**Current complete asset holdings:** `UNKNOWN_REFRESH_REQUIRED`
+**Current city-pipeline authority:** `NONE_OPEN_HUMAN_DECISION_REQUIRED`
+**Purchase-recommendation authority:** `NONE_REFRESH_REQUIRED`
 **Project phase:** Definition
 **Authority:** Research and decision support only
+
+This document is a point-in-time historical snapshot from 2026-07-14. The
+number `37` is not the current complete asset ownership count, and no current
+complete inventory has been established. The snapshot does not select a current
+or future render pipeline and cannot support a purchase recommendation without
+a fresh authorised inventory and provenance refresh.
 
 This inventory does not authorise purchase, key redemption, download, import, installation, Unity project work, technical integration, architecture, staging, commit, or push. No credentials, keys, invoice data, or payment data are stored here.
 
@@ -18,7 +28,7 @@ This inventory does not authorise purchase, key redemption, download, import, in
 - A store row such as `2021.3 Compatible` is not evidence of Unity 6.3 compatibility. Only an explicit Unity 6000 row or official publisher statement is treated as Unity 6 evidence.
 - Prices are the signed-in EUR prices shown on 2026-07-14, exclusive of checkout tax where the store states this. `Not shown` means the current product page no longer exposed a purchasable listing.
 
-## Inventory Summary
+## Historical Snapshot Summary
 
 | Origin group | Count | Basis |
 |---|---:|---|
@@ -76,7 +86,12 @@ All items in this section are shown as owned in the signed-in account and have p
 | [7006](https://assetstore.unity.com/packages/essentials/tutorial-projects/robot-lab-unity-4x-7006) | Robot Lab (Unity 4x) — Unity Technologies | 2013-04-10; Essentials > Tutorial Projects; price not shown | 1.1.1; 2016-07-06; current page unavailable | **Not Relevant** | Obsolete tutorial project; do not import into a modern project |
 | [7677](https://assetstore.unity.com/packages/essentials/tutorial-projects/stealth-unity-4x-7677) | Stealth (Unity 4x) — Unity Technologies | 2013-04-10; Essentials > Tutorial Projects; price not shown | 1.5.1; 2016-07-06; current page unavailable | **Not Relevant** | Obsolete tutorial project; do not import into a modern project |
 
-## Highest-Value Owned Assets for Crime99
+## Historical Research Priorities from the 2026-07-14 Snapshot
+
+The ordering below records the research assessment made on 2026-07-14. It is
+not a current ownership claim, pipeline selection, purchase recommendation, or
+production recommendation. Refresh the complete current inventory, provenance,
+compatibility, and project need before using it in a new decision.
 
 1. **1950s NYC Environment Megapack** — broadest likely city/building/street/interior/character base and a confirmed first-priority review target.
 2. **Cyberpunk Port City Environment** — strongest likely harbour, industry, warehouse, infrastructure and selective-neon source.

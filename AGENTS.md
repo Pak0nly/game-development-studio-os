@@ -23,6 +23,16 @@ Before planning or mutation:
 5. Compare operational projections with their cited canonical sources and verified repository state.
 6. If scope is cross-domain, relevance is uncertain, a source is missing, or live sources conflict, expand to the complete relevant authority set and stop mutation until the contradiction is recorded and resolved.
 
+### Task-Pivot Revalidation
+
+When a chat pivots from bootstrap or audit into architecture, render-pipeline,
+repository, asset, purchase, or production advice, reclassify the task before
+giving that advice or mutating files. Re-freeze the authority scope, applicable
+canonical sources and evidence, current data status, and required reviewers.
+A recommendation may not contradict the confirmed bootstrap without a new
+authoritative decision. If the sources conflict or the new scope is unclear,
+stop and report the conflict instead of interpreting it away.
+
 ### Task Closure
 
 Before final handoff:
