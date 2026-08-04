@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "authority_core_id": "C99-STUDIO-AUTHORITY-CORE-MVP-V2",
+  "authority_core_state": "MVP_V2_CANDIDATE_NOT_ADOPTED",
+  "output_policy": {
+    "path": "Artifacts/Reports/C99-STUDIO-AUTHORITY-CORE-AND-FAIL-CLOSED-VALIDATOR-MVP-V1/repository-authority-snapshot.json"
+  },
+  "sources": {
+    "agents": {
+      "path": "AGENTS.md",
+      "expected_sha256": "3f9e74a679b92c6b4913c6130c2995b7ed850869aebeb0bb7e8006b829c83fdc"
+    },
+    "decisions": {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "expected_sha256": "babd78871f539f97b7ed7af09028cd7e846cc05051642e300087c4bd200b4323"
+    },
+    "profile": {
+      "path": "Docs/Projects/Crime99/PRODUCTION_PROFILE.md",
+      "expected_sha256": "c1659ffeb1cf890a283380263b6587bc92b1fd72d0a1e679c658a3a20fb5c2fa"
+    },
+    "inventory": {
+      "path": "Docs/Projects/Crime99/ASSET_INVENTORY.md",
+      "expected_sha256": "4d183f18e6d95d805e10d6a6b9f7e94f310de974f2b5c3a9e9dea8596ce4a5a0"
+    },
+    "brief": {
+      "path": "Docs/Projects/Crime99/PROJECT_BRIEF.md",
+      "expected_sha256": "08f1f3e816d0005fefba144cdbeabc8a24965a3381f8dc77ca461142085c66be"
+    },
+    "work_state": {
+      "path": "Docs/WORK_STATE.md",
+      "expected_sha256": "ac9b42d84f0fc619b22db845e914163bcbce97bad1f95e6775a19dceb5869797"
+    },
+    "handover": {
+      "path": "Docs/CURRENT_HANDOVER.md",
+      "expected_sha256": "17977967e33db013313f27a53e3429f10e43c14a5906facdb58399904d947376"
+    }
+  },
+  "claims": [
+    {
+      "id": "task-pivot-authority",
+      "scope": "Studio OS task-pivot authority continuity",
+      "status": "ADOPTED/CURRENT",
+      "checks": [
+        {
+          "source": "agents",
+          "section_start": "### Task-Pivot Revalidation",
+          "section_end": "### Task Closure",
+          "required_all": [
+            "Re-freeze the authority scope",
+            "A recommendation may not contradict the confirmed bootstrap without a new authoritative decision",
+            "stop and report the conflict"
+          ],
+          "forbidden_any": [
+            "may bypass the confirmed bootstrap",
+            "chat context overrides the confirmed bootstrap"
+          ],
+          "failure_code": "E_TASK_PIVOT_AUTHORITY_VIOLATION"
+        }
+      ]
+    },
+    {
+      "id": "city-pipeline",
+      "scope": "Crime99 future city pipeline, baseline, environment, and repository ownership",
+      "status": "OPEN/HUMAN DECISION REQUIRED",
+      "checks": [
+        {
+          "source": "decisions",
+          "section_start": "### DEC-031",
+          "required_all": [
+            "No current canonical Crime99 city/world/level Unity production environment is designated",
+            "must explicitly select its pipeline, baseline, and repository ownership before implementation",
+            "**Supersedes:** Only DEC-029's designation"
+          ],
+          "forbidden_any": [
+            "The current canonical Crime99 city/world/level Unity production environment is designated"
+          ],
+          "failure_code": "E_CITY_PIPELINE_FALSELY_DECIDED"
+        },
+        {
+          "source": "profile",
+          "section_start": "## Canonical Repositories and Evidence Environments",
+          "section_end": "## Frozen Systems and Asset Boundaries",
+          "required_all": [
+            "No current canonical Crime99 city/world/level Unity production environment is designated",
+            "explicitly select its pipeline, baseline, and repository ownership before implementation"
+          ],
+          "forbidden_any": [
+            "MasterCityDiscovery is the current production environment"
+          ],
+          "failure_code": "E_CITY_PIPELINE_FALSELY_DECIDED"
+        }
+      ]
+    },
+    {
+      "id": "asset-holdings-currentness",
+      "scope": "Crime99 complete current asset holdings",
+      "status": "UNKNOWN/REFRESH REQUIRED",
+      "checks": [
+        {
+          "source": "inventory",
+          "section_start": "## Status and Boundary",
+          "section_end": "## Evidence Rules",
+          "required_all": [
+            "Snapshot classification:** `HISTORICAL_SNAPSHOT`",
+            "Current complete asset holdings:** `UNKNOWN_REFRESH_REQUIRED`",
+            "The number `37` is not the current complete asset ownership count"
+          ],
+          "forbidden_regex": [
+            "Current complete asset holdings:\\*\\* `(?:CURRENT|COMPLETE|CONFIRMED)`",
+            "37 assets (?:are|is) the current complete"
+          ],
+          "failure_code": "E_HISTORICAL_ASSET_CURRENTNESS_VIOLATION"
+        }
+      ]
+    },
+    {
+      "id": "mastercity-role",
+      "scope": "Projects/Crime99MasterCityDiscovery project role",
+      "status": "HISTORICAL ONLY",
+      "checks": [
+        {
+          "source": "decisions",
+          "section_start": "### DEC-031",
+          "required_all": [
+            "static protected learning-evidence project",
+            "not an accepted visual result, a current production baseline, an active production environment, or a future-assumed production environment",
+            "No future task may infer a production environment"
+          ],
+          "forbidden_any": [
+            "is the current production baseline",
+            "is the active production environment"
+          ],
+          "failure_code": "E_MASTERCITY_PRODUCTION_BASE_VIOLATION"
+        },
+        {
+          "source": "profile",
+          "section_start": "## Canonical Repositories and Evidence Environments",
+          "section_end": "## Frozen Systems and Asset Boundaries",
+          "required_all": [
+            "static protected learning-evidence project",
+            "not an accepted visual result, a current production baseline, an active production environment, or a future-assumed production environment"
+          ],
+          "forbidden_any": [
+            "MasterCityDiscovery is the current production baseline",
+            "MasterCityDiscovery is the active production environment"
+          ],
+          "failure_code": "E_MASTERCITY_PRODUCTION_BASE_VIOLATION"
+        }
+      ]
+    },
+    {
+      "id": "fuyoh-disposition",
+      "scope": "Fuyoh Cyberpunk Diner and every derived subasset",
+      "status": "TEMPORARILY EXCLUDED",
+      "checks": [
+        {
+          "source": "brief",
+          "section_start": "## Production Model",
+          "required_all": [
+            "Fuyoh Cyberpunk Diner",
+            "every derived subasset",
+            "TEMPORARILY EXCLUDED / DO NOT USE",
+            "grants no current planning, recommendation, Style Slice, or production authority"
+          ],
+          "forbidden_regex": [
+            "Fuyoh Cyberpunk Diner.{0,160}(?:recommended|selected|authorised for use|production base)"
+          ],
+          "failure_code": "E_EXCLUDED_ASSET_RECOMMENDATION"
+        }
+      ]
+    },
+    {
+      "id": "historical-evidence-authority",
+      "scope": "Crime99 historical evidence and reuse authority",
+      "status": "HISTORICAL ONLY",
+      "checks": [
+        {
+          "source": "decisions",
+          "section_start": "### DEC-031",
+          "required_all": [
+            "Historical evidence proves only that its documented attempt, observation, result, or decision record existed under its documented conditions",
+            "does not by itself prove correctness, acceptance, currency, reusability, production readiness, or future suitability",
+            "Reuse of an individual finding or asset still requires explicit selection, current authority, and fresh validation"
+          ],
+          "forbidden_any": [
+            "Historical evidence grants current use authority",
+            "Historical evidence creates reuse authority"
+          ],
+          "failure_code": "E_HISTORICAL_EVIDENCE_AUTHORITY_VIOLATION"
+        },
+        {
+          "source": "profile",
+          "section_start": "## Canonical Repositories and Evidence Environments",
+          "section_end": "## Frozen Systems and Asset Boundaries",
+          "required_all": [
+            "Evidence-environment status does not create production, restart, quality, or reuse authority",
+            "current suitability requires explicit selection and fresh validation"
+          ],
+          "forbidden_any": [
+            "Evidence-environment status creates production authority"
+          ],
+          "failure_code": "E_HISTORICAL_EVIDENCE_AUTHORITY_VIOLATION"
+        }
+      ]
+    }
+  ],
+  "operational_continuity": {
+    "sources": [
+      "work_state",
+      "handover"
+    ],
+    "work_order_id": "C99-STUDIO-AUTHORITY-VALIDATOR-PATH-SAFETY-CORRECTION-V2",
+    "max_age_days": 1,
+    "required_all": [
+      "OPEN / HUMAN DECISION REQUIRED",
+      "UNKNOWN / REFRESH REQUIRED",
+      "TEMPORARILY EXCLUDED / DO NOT USE",
+      "HISTORICAL ONLY",
+      "Human checkpoint"
+    ]
+  }
+}

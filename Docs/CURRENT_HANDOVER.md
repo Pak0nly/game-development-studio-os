@@ -1,19 +1,36 @@
 # Current Handover
 
-**Updated:** 2026-07-22
+**Updated:** 2026-08-04
 
-**Transition:** Human adoption is recorded. Mechanical LAIA activation passed both required reviews and is staged. Production use remains blocked until locally committed under separate Human approval.
+## Resume State
 
-## Resume Order
+`C99-STUDIO-AUTHORITY-VALIDATOR-PATH-SAFETY-CORRECTION-V2`
 
-1. Read repository-root [`AGENTS.md`](../AGENTS.md), [`CONFIRMED_DECISIONS.md`](CONFIRMED_DECISIONS.md), and [`WORK_STATE.md`](WORK_STATE.md).
-2. Read the [Layered Agent Instruction Architecture Review and Adoption Record](Production/LAYERED_AGENT_INSTRUCTION_ARCHITECTURE_REVIEW_AND_ADOPTION_RECORD.md) for the reviewed and effective manifests, Human rationale, hash mapping, activation reviews, and validation state.
-3. Reverify `main`, `origin/main`, the index, and the exact staged set. Preserve all unrelated working-tree content.
+Status: `COMPLETE — V2 CORRECTION CANDIDATE; HUMAN CHECKPOINT`
 
-## Current Transition Context
+## Restart-Critical Context
 
-The 25 reviewed architecture files received only adopted-status and directly required reference wording. The operational contract is unchanged. The logical adoption unit contains 28 paths; Git records 26 staged diff entries because two manifest files already match `HEAD`. The adoption companions do not broaden execution authority.
+- The V2 candidate is confined to `Tools/AuthorityContinuity/` and the existing
+  Authority Continuity snapshot path.
+- Its path preflight rejects unsafe configured sources and direct, hardlink,
+  symlink, or reparse aliases before any output write.
+- The deterministic suite passes 27/27 tests. The final mandatory
+  same-identity Producer, Technical Director, and QA Lead review records
+  control passage and are reported at handoff.
+- Canonical sources remain unchanged. The candidate is not adopted or
+  bootstrap-active and grants no continuation authority.
+- City pipeline status remains `OPEN / HUMAN DECISION REQUIRED`; complete
+  current asset holdings remain `UNKNOWN / REFRESH REQUIRED`.
+- Fuyoh remains `TEMPORARILY EXCLUDED / DO NOT USE`; MasterCity and authority
+  inferred only from historical evidence remain `HISTORICAL ONLY`.
+- Nothing is staged, committed, pushed, downloaded, installed, or sent to a
+  network by this work order.
+
+## Human Checkpoint
+
+Stop after final review consolidation. Adoption, bootstrap activation, Git
+closure, and follow-on correction remain separately Human-authorised actions.
 
 ## Exact Next Step
 
-Stop for Human approval of the proposed local commit `Adopt layered agent instruction architecture`. Do not commit, execute production, or push without that approval.
+Await the explicit Human disposition after the final review handoff.

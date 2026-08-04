@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "authority_core_id": "C99-STUDIO-AUTHORITY-CORE-MVP-V2",
+  "authority_core_state": "MVP_V2_CANDIDATE_NOT_ADOPTED",
+  "generated_at_utc": "2026-08-04T18:16:41.364505+00:00",
+  "as_of_date": "2026-08-04",
+  "result": "BLOCKED",
+  "continuation_authority_granted": false,
+  "tooling": {
+    "files": {
+      "README.md": "735e8bbe9573cefa4cfbba1ee4b916d5dcdc59f1b72638bcd77dd29d63a49e5e",
+      "authority-core.json": "99dd5c4c92beb9bf7bddc96f2a8a0122fbcaf9a0ffb3d2e22160f9dddc854d06",
+      "validate_authority.py": "ae3c2fbf1d7000b359814bb45b7285a02082babf3384d3c2585377d2e2ac980c",
+      "tests/test_validate_authority.py": "c0e360399f13462ad68691579cc7f0ce47c28d99c9e515e79793778cebae733b"
+    },
+    "authority_core_sha256": "edddc414d56bdbd8314b3caa25e460a881b1b000b55275bb2012bb26a82985d1",
+    "candidate_identity": "85f3c93794967bd7b82b4923d006856bf7fc2163a66030b4c563d7138ff5013a"
+  },
+  "repository": {
+    "available": true,
+    "top_level": "C:/Users/jarid/Desktop/Game Development",
+    "branch": "main",
+    "head": "6de728f8ca6eba5f5593231ee0c63f3087575b03",
+    "status_sha256": "b60ff0c34e853b88d8253987cd8a312ade128600c3281000aae43848597a957e",
+    "status_records": [
+      "# branch.oid 6de728f8ca6eba5f5593231ee0c63f3087575b03",
+      "# branch.head main",
+      "# branch.upstream origin/main",
+      "# branch.ab +0 -0",
+      "1 .M N... 100644 100644 100644 71be8bbd24a89256ee10d1224f9f182d3de80cbc 71be8bbd24a89256ee10d1224f9f182d3de80cbc AGENTS.md",
+      "1 .M N... 100644 100644 100644 10d405cca6acce76209f3b9fb8d7f78f80a3e351 10d405cca6acce76209f3b9fb8d7f78f80a3e351 Docs/CONFIRMED_DECISIONS.md",
+      "1 .M N... 100644 100644 100644 661257d76b5663fdb888405ac562ad7eed3a3901 661257d76b5663fdb888405ac562ad7eed3a3901 Docs/CURRENT_HANDOVER.md",
+      "1 .M N... 100644 100644 100644 e73de89849a82f171b1b1eab9c9371e11bcd1b47 e73de89849a82f171b1b1eab9c9371e11bcd1b47 Docs/Projects/Crime99/ASSET_INVENTORY.md",
+      "1 .M N... 100644 100644 100644 67af1f95265caecf57a044837588f933f6385aa4 67af1f95265caecf57a044837588f933f6385aa4 Docs/Projects/Crime99/GDD/12_ART_DIRECTION.md",
+      "1 .M N... 100644 100644 100644 66bc7b63941f0facc0536fff0adf1a495af5c194 66bc7b63941f0facc0536fff0adf1a495af5c194 Docs/Projects/Crime99/GDD/16_PROTOTYPE_SCOPE.md",
+      "1 .M N... 100644 100644 100644 f284b55c0a99fe19b0c1fb4ca2461baa794a3e9f f284b55c0a99fe19b0c1fb4ca2461baa794a3e9f Docs/Projects/Crime99/IMPLEMENTATION_SEQUENCE.md",
+      "1 .M N... 100644 100644 100644 e68579c7066d9bb07d9d166b06ca699389ae243b e68579c7066d9bb07d9d166b06ca699389ae243b Docs/Projects/Crime99/OPEN_DECISIONS.md",
+      "1 .M N... 100644 100644 100644 96ccac89b76afe965afb932e90a78e19e437a4d7 96ccac89b76afe965afb932e90a78e19e437a4d7 Docs/Projects/Crime99/PROJECT_BRIEF.md",
+      "1 .M N... 100644 100644 100644 49148ceaa17257fee67c5db657d6b5a1a381fb75 49148ceaa17257fee67c5db657d6b5a1a381fb75 Docs/Projects/Crime99/PROTOTYPE_ROADMAP.md",
+      "1 .M N... 100644 100644 100644 a2840b1cc7194a32707f89168a0d72c9257053f0 a2840b1cc7194a32707f89168a0d72c9257053f0 Docs/Projects/Crime99/TECHNICAL_ARCHITECTURE.md",
+      "1 .M N... 100644 100644 100644 28f10368faad179ec72b906b3243805684d4749b 28f10368faad179ec72b906b3243805684d4749b Docs/Projects/Crime99/TECHNICAL_DECISIONS.md",
+      "1 .M N... 100644 100644 100644 5373a602aa45f4c7de64de37279569657b23be18 5373a602aa45f4c7de64de37279569657b23be18 Docs/Projects/Crime99/TECHNICAL_RISK_REVIEW.md",
+      "1 .M N... 100644 100644 100644 468b3768953e3c8d7b2c414e693b85089835f502 468b3768953e3c8d7b2c414e693b85089835f502 Docs/WORK_STATE.md",
+      "? Artifacts/",
+      "? Docs/Projects/Crime99/PILOT_1_CLOSURE_AND_SEMANTIC_EVIDENCE_REVISION.md",
+      "? Docs/Projects/Crime99/PILOT_1_CLOSURE_ROLE_REVIEWS.md",
+      "? Projects/Crime99/",
+      "? Projects/Crime99AssetStylePreflight/.gitignore",
+      "? Projects/Crime99AssetStylePreflight/Docs/",
+      "? Projects/Crime99AssetStylePreflight/NYC_ASSET_COVERAGE_MATRIX.md",
+      "? Projects/Crime99AssetStylePreflight/NYC_DEMO_SCENE_REVIEW.md",
+      "? Projects/Crime99AssetStylePreflight/NYC_FULL_PACKAGE_INVENTORY.md",
+      "? Projects/Crime99AssetStylePreflight/NYC_ILLUSTRATED_CATALOG.md",
+      "? Projects/Crime99AssetStylePreflight/NYC_IMPORT_VALIDATION.md",
+      "? Projects/Crime99AssetStylePreflight/NYC_PREFLIGHT_COMPLETION_REPORT.md",
+      "? Projects/Crime99AssetStylePreflight/NYC_STYLE_SLICE_CANDIDATES.md",
+      "? Projects/Crime99AssetStylePreflight/README.md",
+      "? Projects/Crime99HDRPInstallationProof/",
+      "? Projects/Crime99MasterCityDiscovery/",
+      "? Projects/Crime99RCCPPreflight/",
+      "? Projects/Crime99RCCPTrafficIntegrationPreflight/",
+      "? Projects/Crime99TrafficPedestrianPreflight/",
+      "? Tools/AuthorityContinuity/",
+      "? Tools/HumanVisualDecisionTool/"
+    ],
+    "warnings": [],
+    "candidate_identity": "d32d5e771cc4e35854a045a2a19a9c12a1080eef5eeccb4ed78005866d01f8c5"
+  },
+  "snapshot_identity": "33607cebc1522993eef0eb6b41f723ba38aad498412675fc72515f7407ae71d8",
+  "findings": [
+    {
+      "id": "task-pivot-authority",
+      "scope": "Studio OS task-pivot authority continuity",
+      "status": "ADOPTED/CURRENT",
+      "canonical_source": [
+        "AGENTS.md"
+      ],
+      "source_hash": {
+        "AGENTS.md": "3f9e74a679b92c6b4913c6130c2995b7ed850869aebeb0bb7e8006b829c83fdc"
+      },
+      "freshness": "CURRENT",
+      "error_codes": []
+    },
+    {
+      "id": "city-pipeline",
+      "scope": "Crime99 future city pipeline, baseline, environment, and repository ownership",
+      "status": "OPEN/HUMAN DECISION REQUIRED",
+      "canonical_source": [
+        "Docs/CONFIRMED_DECISIONS.md",
+        "Docs/Projects/Crime99/PRODUCTION_PROFILE.md"
+      ],
+      "source_hash": {
+        "Docs/CONFIRMED_DECISIONS.md": "babd78871f539f97b7ed7af09028cd7e846cc05051642e300087c4bd200b4323",
+        "Docs/Projects/Crime99/PRODUCTION_PROFILE.md": "c1659ffeb1cf890a283380263b6587bc92b1fd72d0a1e679c658a3a20fb5c2fa"
+      },
+      "freshness": "CURRENT",
+      "error_codes": []
+    },
+    {
+      "id": "asset-holdings-currentness",
+      "scope": "Crime99 complete current asset holdings",
+      "status": "UNKNOWN/REFRESH REQUIRED",
+      "canonical_source": [
+        "Docs/Projects/Crime99/ASSET_INVENTORY.md"
+      ],
+      "source_hash": {
+        "Docs/Projects/Crime99/ASSET_INVENTORY.md": "4d183f18e6d95d805e10d6a6b9f7e94f310de974f2b5c3a9e9dea8596ce4a5a0"
+      },
+      "freshness": "CURRENT",
+      "error_codes": []
+    },
+    {
+      "id": "mastercity-role",
+      "scope": "Projects/Crime99MasterCityDiscovery project role",
+      "status": "HISTORICAL ONLY",
+      "canonical_source": [
+        "Docs/CONFIRMED_DECISIONS.md",
+        "Docs/Projects/Crime99/PRODUCTION_PROFILE.md"
+      ],
+      "source_hash": {
+        "Docs/CONFIRMED_DECISIONS.md": "babd78871f539f97b7ed7af09028cd7e846cc05051642e300087c4bd200b4323",
+        "Docs/Projects/Crime99/PRODUCTION_PROFILE.md": "c1659ffeb1cf890a283380263b6587bc92b1fd72d0a1e679c658a3a20fb5c2fa"
+      },
+      "freshness": "CURRENT",
+      "error_codes": []
+    },
+    {
+      "id": "fuyoh-disposition",
+      "scope": "Fuyoh Cyberpunk Diner and every derived subasset",
+      "status": "TEMPORARILY EXCLUDED",
+      "canonical_source": [
+        "Docs/Projects/Crime99/PROJECT_BRIEF.md"
+      ],
+      "source_hash": {
+        "Docs/Projects/Crime99/PROJECT_BRIEF.md": "08f1f3e816d0005fefba144cdbeabc8a24965a3381f8dc77ca461142085c66be"
+      },
+      "freshness": "CURRENT",
+      "error_codes": []
+    },
+    {
+      "id": "historical-evidence-authority",
+      "scope": "Crime99 historical evidence and reuse authority",
+      "status": "HISTORICAL ONLY",
+      "canonical_source": [
+        "Docs/CONFIRMED_DECISIONS.md",
+        "Docs/Projects/Crime99/PRODUCTION_PROFILE.md"
+      ],
+      "source_hash": {
+        "Docs/CONFIRMED_DECISIONS.md": "babd78871f539f97b7ed7af09028cd7e846cc05051642e300087c4bd200b4323",
+        "Docs/Projects/Crime99/PRODUCTION_PROFILE.md": "c1659ffeb1cf890a283380263b6587bc92b1fd72d0a1e679c658a3a20fb5c2fa"
+      },
+      "freshness": "CURRENT",
+      "error_codes": []
+    },
+    {
+      "id": "operational-continuity",
+      "scope": "Studio operational continuity projection",
+      "status": "ADOPTED/CURRENT",
+      "canonical_source": [
+        "Docs/WORK_STATE.md",
+        "Docs/CURRENT_HANDOVER.md"
+      ],
+      "source_hash": {
+        "Docs/WORK_STATE.md": "ac9b42d84f0fc619b22db845e914163bcbce97bad1f95e6775a19dceb5869797",
+        "Docs/CURRENT_HANDOVER.md": "17977967e33db013313f27a53e3429f10e43c14a5906facdb58399904d947376"
+      },
+      "freshness": "CURRENT",
+      "error_codes": []
+    }
+  ],
+  "errors": [
+    {
+      "code": "E_UNKNOWN_BLOCKING",
+      "scope": "authority snapshot",
+      "detail": "UNKNOWN is blocking for: ['asset-holdings-currentness']"
+    },
+    {
+      "code": "E_HUMAN_DECISION_REQUIRED",
+      "scope": "authority snapshot",
+      "detail": "open Human decisions block continuation for: ['city-pipeline']"
+    }
+  ]
+}

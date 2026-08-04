@@ -1,22 +1,42 @@
 # Current Work State
 
-**Updated:** 2026-07-22
+**Updated:** 2026-08-04
 
-**Status:** The Human Developer adopted the Layered Agent Instruction Architecture and Task-Delta Work Orders through `LAIA-2026-07-22` on 2026-07-22. Mechanical repository activation passed both required reviews and is staged. Production use remains stopped until the validated adoption unit is committed locally under separate Human commit approval.
+## Completed Work Order
 
-## Current Scope
+`C99-STUDIO-AUTHORITY-VALIDATOR-PATH-SAFETY-CORRECTION-V2`
 
-- Proposal-only notices were converted to adopted status without changing substantive semantics.
-- The [Layered Agent Instruction Architecture Review and Adoption Record](Production/LAYERED_AGENT_INSTRUCTION_ARCHITECTURE_REVIEW_AND_ADOPTION_RECORD.md) preserves the reviewed proposal manifest, Human disposition, proposal-to-effective hash mapping, and effective adopted manifest.
-- Execution modes, Definition of Ready, proportional review, stage-local corrections, routing, permissions, Human authority, Vendor/Git protection, playbook behaviour, Crime99 facts, and the Dressing objective remain unchanged.
+Status: `COMPLETE — V2 CORRECTION CANDIDATE; HUMAN CHECKPOINT`
 
-## Repository and Production Boundary
+## Verified Result
 
-- Verified baseline: `main` at `58003de1adb2c2eb74f1e0fcd7c1ca267169ac67`; `origin/main` at `74ce17b6799f27ca8e5f52d3c4804b9a75385376`; index empty before activation.
-- Existing unrelated tracked and untracked work remains protected and unstaged.
-- No Unity, Crime99 production, asset, scene, code, build, cleanup, package, commit, push, merge, or rebase work is authorised.
-- The logical adoption unit is 28 paths. Git stages 26 diff entries because two manifest files already match `HEAD`; no unrelated path is staged.
+- The V2 correction candidate changes only the Authority Continuity validator,
+  its authority core, its regression suite, and the existing machine-readable
+  snapshot. Canonical Markdown remains authoritative.
+- Repository-relative source paths now fail configuration preflight on
+  absolute paths, traversal, repository escape, duplicate identity, or a
+  reparse/symlink component.
+- The output is restricted to the existing configured report path and is
+  rejected before writing when it aliases a canonical source, configuration,
+  or tooling input by path, hardlink identity, symlink, or reparse point.
+- The deterministic suite passes 27/27 tests, including controlled exit `3`
+  without output for unsafe source configuration.
+- The final same-identity Producer, Technical Director, and QA Lead records
+  determine review passage and are reported at handoff; this operational
+  projection does not pre-approve their verdicts.
+- The future Crime99 city pipeline remains
+  `OPEN / HUMAN DECISION REQUIRED`; complete current asset holdings remain
+  `UNKNOWN / REFRESH REQUIRED`.
+- Fuyoh remains `TEMPORARILY EXCLUDED / DO NOT USE`; MasterCity and authority
+  inferred only from historical evidence remain `HISTORICAL ONLY`.
+- No Unity, MCP, asset, production, network, stage, commit, or push action is
+  authorised or performed.
 
-## Next Authority
+## Human Checkpoint
 
-Stop for Human commit approval. Proposed commit message: `Adopt layered agent instruction architecture`. Do not commit or push without that approval.
+Stop after same-identity review and consolidation. This correction grants no
+adoption, bootstrap activation, Git closure, or follow-on work.
+
+## Exact Next Step
+
+Await the explicit Human disposition after the final review handoff.
