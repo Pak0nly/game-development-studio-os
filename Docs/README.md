@@ -56,6 +56,22 @@ Defines the minimum structure, ownership, evidence, and approval boundary for pr
 
 Defines candidate classification, provenance, adaptation, package coverage, integration evidence, reimport safety, and release-readiness gates for external and internal assets.
 
+### Knowledge/TOOL_AND_ASSET_CAPABILITY_KNOWLEDGE_BASE_STANDARD.md
+
+Defines the adopted project-independent capability record, evidence states,
+short options check, failure scoping and lightweight maintenance rules for
+turning installed tools, owned assets and prior evidence into a searchable
+decision aid. Adopted as `SOS-GOV-TACKB-V1` on 2026-08-22.
+
+Use it with the
+[Capability Record Template](Templates/TOOL_AND_ASSET_CAPABILITY_RECORD_TEMPLATE.md),
+the current project's capability index, complete capability coverage register,
+native engine/editor capability atlas where applicable, and its asset
+inventory. The maintained register classifies every known holding and
+decision-relevant native capability cluster; an individual task queries only
+the relevant subset. It does not grant
+execution, purchase, package, download, licence, adoption or Git authority.
+
 ### Level/LEVEL_DESIGN_REVIEW_STANDARD.md
 
 Defines project-independent level-design review criteria for routes, scale, gameplay space, camera interaction, occlusion, boundaries, and evidence.
@@ -88,7 +104,7 @@ Use this document to track proposals and Parking Lot items without treating them
 
 ### Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md
 
-Defines the Layered Agent Instruction Architecture, Discovery / Production / Diagnostic / Integration mode selection, formal-review Definition of Ready, decision-relevant role activation, formative work, stage-local correction accounting, invalid-evidence treatment, and Task-Delta Work Order boundary. Adopted through LAIA-2026-07-22 on 2026-07-22.
+Defines the Layered Agent Instruction Architecture, Discovery / Production / Diagnostic / Integration mode selection, formal-review Definition of Ready, decision-relevant role activation, formative work, stage-local correction accounting, separate operational-recovery and candidate-attempt accounting, invalid-evidence treatment, and Task-Delta Work Order boundary. Adopted through LAIA-2026-07-22 on 2026-07-22 and amended through `SOS-GOV-OPERATIONAL-RECOVERY-AND-CANDIDATE-ATTEMPT-ACCOUNTING-V1` on 2026-08-22.
 
 Use it with the [Task-Delta Work Order Template](Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md), a project Production Profile, and only the applicable playbook listed below.
 
@@ -100,9 +116,14 @@ surface for the adopted asset-awareness and purposeful-environment-composition
 amendments are preserved in the
 [Asset Awareness and Purposeful Environment Composition Review and Adoption Record](Production/ASSET_AWARENESS_AND_PURPOSEFUL_ENVIRONMENT_COMPOSITION_REVIEW_AND_ADOPTION_RECORD.md).
 
+The recurring-failure evidence, alternatives, attempt-start contract, bounded
+recovery safeguards, review and Human decision for operational recovery are
+preserved in the [Operational Recovery and Candidate-Attempt Accounting Review
+and Adoption Record](Production/OPERATIONAL_RECOVERY_AND_CANDIDATE_ATTEMPT_ACCOUNTING_REVIEW_AND_ADOPTION_RECORD.md).
+
 ### Playbooks/
 
-Defines the adopted on-demand, provider-independent instructions for [Visual Production](Playbooks/VISUAL_PRODUCTION.md), [Unity Asset Assembly and Diagnostic Safety](Playbooks/UNITY_ASSET_ASSEMBLY_AND_DIAGNOSTIC_SAFETY.md), and [Baseline Integration and Commit Preparation](Playbooks/BASELINE_INTEGRATION_AND_COMMIT_PREPARATION.md). They are repository playbooks, not an unsupported Skills runtime, and do not grant task execution authority by themselves.
+Defines the adopted on-demand, provider-independent instructions for [Visual Production](Playbooks/VISUAL_PRODUCTION.md), [Unity Asset Assembly and Diagnostic Safety](Playbooks/UNITY_ASSET_ASSEMBLY_AND_DIAGNOSTIC_SAFETY.md), and [Baseline Integration and Commit Preparation](Playbooks/BASELINE_INTEGRATION_AND_COMMIT_PREPARATION.md). The Unity playbook includes compile/import warm-up, attempt-start, output-namespace and bounded operational-recovery rules. They are repository playbooks, not an unsupported Skills runtime, and do not grant task execution authority by themselves.
 
 ## Confirmed Decision Register
 

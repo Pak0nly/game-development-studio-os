@@ -4,7 +4,9 @@
 `SOS-GOV-WCM-NTB-V1` on 2026-07-25 and `SOS-GOV-AAPEC-V1` on 2026-07-29;
 project-role projection reclassified through
 `C99-STUDIO-MASTERCITY-STATIC-LEARNING-EVIDENCE-RECLASSIFICATION-V1` on
-2026-08-02.
+2026-08-02; capability-awareness projection added through
+`SOS-GOV-TACKB-V1` on 2026-08-22; integrated production environment selected
+through DEC-033 on 2026-08-23.
 
 This profile and its linked Layered Agent Instruction Architecture amendments form one adopted package. Adoption does not itself create current execution authority.
 
@@ -13,6 +15,14 @@ This profile and its linked Layered Agent Instruction Architecture amendments fo
 This profile is the Crime99-specific second layer of the Studio OS instruction architecture. It provides current production context and links to evidence; it does not override adopted Studio OS documents, approved Crime99 sources, confirmed decisions, verified repository state, or explicit Human authority.
 
 Operational state remains in [`WORK_STATE.md`](../../WORK_STATE.md) and [`CURRENT_HANDOVER.md`](../../CURRENT_HANDOVER.md). This profile must not be treated as permission to continue stopped work.
+
+Before a Crime99 task materially selects, replaces, adapts or rejects a tool,
+asset, package, workflow or bespoke implementation, it must query the
+[`Crime99 Capability Index`](Knowledge/CAPABILITY_INDEX.md) and the relevant
+[`Asset Inventory`](ASSET_INVENTORY.md) entries. Load only decision-relevant
+capability records and evidence. One failed candidate or method does not reject
+untested profiles or uses; one missing decision-critical fact calls for the
+smallest authorised refresh, not a broad retry or automatic terminal blocker.
 
 ## Product and Art Direction
 
@@ -105,10 +115,12 @@ NOT PLACE`. Object-count or package-use targets cannot override this rule.
   proofs, and reusable lessons. It is not an accepted visual result, a current
   production baseline, an active production environment, or a future-assumed
   production environment.
-- No current canonical Crime99 city/world/level Unity production environment
-  is designated. Future city production must separately select or create its
-  working environment and explicitly select its pipeline, baseline, and
-  repository ownership before implementation.
+- `Projects/Crime99/Source/Crime99` is the canonical integrated gameplay and
+  city/world/level Unity working environment under DEC-033. Its current
+  selected pipeline is Unity `6000.3.19f1` with URP `17.3.0`, and
+  `Projects/Crime99` remains its repository owner. This environment selection
+  does not adopt any scene, city candidate, asset placement, visual result, or
+  production baseline.
 - `Projects/Crime99AssetStylePreflight` is the evidence environment for the Urban Slice Visual Assembly and Dressing records. A Task-Delta Work Order must still identify the exact valid scene and dependency state before Unity use.
 - Pilot worktrees are isolated evidence environments for their named pilots. They are not interchangeable production workspaces.
 - Evidence-environment status does not create production, restart, quality, or
@@ -118,9 +130,8 @@ NOT PLACE`. Object-count or package-use targets cannot override this rule.
 
 `Projects/Crime99` remains the canonical technical gameplay repository. The
 dedicated Master City Git-repository proposal is deferred and not adopted.
-Selecting or creating a future city environment, choosing its repository
-owner, or integrating gameplay and city content requires a separately
-authorised Human architecture or integration decision.
+Changing the selected city environment, pipeline, or repository owner requires
+a separately authorised Human architecture or integration decision.
 
 ## Frozen Systems and Asset Boundaries
 

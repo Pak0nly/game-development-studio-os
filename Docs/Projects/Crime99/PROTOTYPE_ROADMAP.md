@@ -68,7 +68,7 @@ Before download, import, or Unity test work, the following documentation and sel
 
 1. **Bundle catalogue:** inventory the bundle contents and preserve source and licence references.
 2. **Licence and metadata review:** document the licence and all available metadata for Unity support, render-pipeline compatibility, shaders, materials, scale, textures, LODs, colliders, pivots, modularity, expected performance, and likely adaptation effort without downloading or importing assets.
-3. **Relevant-package prioritisation:** assess `1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` first.
+3. **Relevant-package prioritisation:** assess `1950s NYC` and `Cyberpunk Port City` first. `Fuyoh Cyberpunk Diner`, including the complete asset and every derived subasset, is `TEMPORARILY EXCLUDED / DO NOT USE` and may not enter current selection or testing. No replacement landmark is selected; the landmark, Composition Anchor, primary lighting focus, and their dependent sightlines and reveals remain `OPEN / HUMAN DECISION REQUIRED`.
 4. **Bounded test-selection decision:** identify the smallest representative asset selection that could answer the technical, camera-readability, and visual-cohesion questions. This decision does not authorise acquisition, download, import, or testing.
 
 A separately authorised Asset and Style Preflight may then perform:

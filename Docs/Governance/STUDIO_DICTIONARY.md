@@ -175,3 +175,21 @@ Innovation is acceptable when it provides a justified advantage. Unjustified exp
 The principle that ideas should be understood, discussed, and evaluated before they become permanent rules, standards, or processes.
 
 Clarify Before Codify helps prevent premature rules, governance debt, unnecessary complexity, and poorly understood standards.
+
+## Capability Knowledge Base
+
+The project-owned, evidence-linked operational decision layer that records
+what material tools, packages, asset families and reusable workflows can do,
+where they are useful, what has succeeded or failed, what remains unknown and
+when they are likely to be the best available option.
+
+It complements asset inventories and exact evidence owners. It is not an AI
+training, embedding, evaluation or cross-user reference corpus and grants no
+execution or adoption authority.
+
+## Capability Record
+
+One structured entry in a Capability Knowledge Base for a materially relevant
+tool, package, asset family or reusable workflow. It scopes every claim by
+evidence state, use context, transfer limit and refresh trigger so that one
+success or failure is not generalised beyond its proof.

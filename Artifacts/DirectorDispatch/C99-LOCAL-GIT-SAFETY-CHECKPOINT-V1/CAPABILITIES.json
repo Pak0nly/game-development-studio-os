@@ -1,0 +1,3 @@
+{
+  "available": ["exec_command", "write_stdin", "apply_patch", "view_image", "create_thread", "wait_threads", "read_thread", "send_message_to_thread"]
+}

@@ -1,0 +1,264 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "studio-os://human-visual-decision-tool/schemas/decision-result/1.0",
+  "title": "Studio OS Human Visual Decision Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "packageSchemaVersion",
+    "decisionSetId",
+    "sourcePackageHash",
+    "title",
+    "project",
+    "stage",
+    "sourceContext",
+    "human",
+    "categories",
+    "finalStatus",
+    "resultHash"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "packageSchemaVersion": {
+      "const": "1.0"
+    },
+    "decisionSetId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+    },
+    "sourcePackageHash": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceContext": {
+      "type": "object"
+    },
+    "human": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "decisionDateTime",
+        "attestation"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decisionDateTime": {
+          "type": "string",
+          "minLength": 1,
+          "format": "date-time"
+        },
+        "attestation": {
+          "const": true
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/categoryResult"
+      }
+    },
+    "finalStatus": {
+      "const": "FINAL"
+    },
+    "resultHash": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    }
+  },
+  "$defs": {
+    "categoryResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "categoryId",
+        "title",
+        "selectionMode",
+        "categoryStatus",
+        "selectedOptionIds",
+        "categoryComment",
+        "implementationNote",
+        "exceptionOrConcern",
+        "notApplicableReason",
+        "implementationFields",
+        "options"
+      ],
+      "properties": {
+        "categoryId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "selectionMode": {
+          "enum": [
+            "single",
+            "multiple",
+            "ordered",
+            "approveReject"
+          ]
+        },
+        "categoryStatus": {
+          "enum": [
+            "COMPLETED",
+            "DEFERRED",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "selectedOptionIds": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+          }
+        },
+        "categoryComment": {
+          "type": "string"
+        },
+        "implementationNote": {
+          "type": "string"
+        },
+        "exceptionOrConcern": {
+          "type": "string"
+        },
+        "notApplicableReason": {
+          "type": "string"
+        },
+        "implementationFields": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+          },
+          "additionalProperties": {
+            "type": [
+              "string",
+              "number"
+            ]
+          }
+        },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "optionId",
+              "label",
+              "decision",
+              "rank",
+              "humanComment",
+              "technicalMetadata",
+              "implementationMetadata"
+            ],
+            "properties": {
+              "optionId": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "decision": {
+                "enum": [
+                  "UNRESOLVED",
+                  "SELECT",
+                  "REJECT",
+                  "DEFER"
+                ]
+              },
+              "rank": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                ]
+              },
+              "humanComment": {
+                "type": "string"
+              },
+              "technicalMetadata": {
+                "type": "object"
+              },
+              "implementationMetadata": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "categoryStatus": {
+                "const": "NOT_APPLICABLE"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "notApplicableReason": {
+                "minLength": 1
+              },
+              "selectedOptionIds": {
+                "maxItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "notApplicableReason": {
+                "const": ""
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "categoryStatus": {
+                "const": "DEFERRED"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "selectedOptionIds": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -17,6 +17,53 @@ This adopted model adds task-activated professional responsibility and review pe
 
 The authority order in `AGENTS.md`, confirmed decisions, project standards, permission boundaries, and the Human approval boundary remain unchanged.
 
+## Director / Work Execution Boundary
+
+Director and Work are separate execution identities, not two labels that one
+task may switch between for convenience. Before the first mutation and after
+every task pivot, the active task must reclassify itself against the Director
+Non-Execution Gate in `AGENTS.md`.
+
+A Director may inspect read-only state, freeze scope, classify and route work,
+prepare and validate a dispatch, create a separate Worker task, monitor it
+cursor-based, activate the applicable separate Reviewer after reviewable
+evidence exists, and consolidate results. A Director may not implement,
+produce candidate-affecting test evidence, or correct the dispatched work.
+Human authorisation or `go` authorises the exact dispatched scope; it does not
+waive this boundary or authorise direct Director implementation. If separate
+task creation or cursor-based monitoring is unavailable, the Director stops.
+
+One separately created Worker owns implementation and freezes the exact
+candidate and evidence. When independent review is required, at most one
+decision-relevant Reviewer task is activated after that freeze. Its task
+identity must differ from both Director and Worker. Builder self-review,
+Director review of its own implementation, or a simulated role perspective is
+not independent evidence.
+
+For an independently reviewed passage, Producer consolidation requires the
+prospective closure receipt defined by `Tools/AuthorityContinuity`. The receipt
+must bind the exact Work Order, task identities, candidate, reviewed evidence
+and verdict before `PASS` wording enters operational state. Missing, stale or
+mismatched closure evidence is a blocking execution state, not a review result.
+
+## Director Accountability and Applied Context
+
+The Director owns per-task completeness without taking over implementation.
+For each routed task, it connects the project objective to its exact
+authoritative source, states the practical consequence of relevant rules,
+names the accountable Worker, justifies model and reasoning routing for each
+bounded subtask, supplies the minimum sufficient context, defines meaningful
+output and evidence, records the escalation boundary, and remains responsible
+for cursor-based monitoring and final consolidation. Listing or reading sources
+is not evidence that their consequences were applied.
+
+The Director reads every decision-relevant source far enough to support the
+claim it makes and retrieves any relevant portion lost to truncation or an
+incomplete read before declaring readiness. After a task pivot, it revalidates
+the sources, assumptions, and risks affected by that pivot. Routine questions
+and simple local changes do not require a repeated full bootstrap or unrelated
+review when the relevant authority and risk surface have not changed.
+
 ## Role Types
 
 ### Core Governance Roles

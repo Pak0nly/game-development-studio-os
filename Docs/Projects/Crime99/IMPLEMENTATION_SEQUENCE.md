@@ -256,13 +256,23 @@ Networking, teams, factions, economy, higher wanted levels, roadblocks, advanced
 
 ## Gate E — Visual Identity
 
+Gate E is blocked before implementation planning while the landmark,
+Composition Anchor, primary lighting focus, and their dependent sightlines and
+reveals remain `OPEN / HUMAN DECISION REQUIRED`. `Fuyoh Cyberpunk Diner`,
+including the complete asset and every derived subasset, is
+`TEMPORARILY EXCLUDED / DO NOT USE`. No replacement landmark is selected by
+this sequence.
+
 ### Package E1 — Controlled asset import
 
 In a dedicated import work package, register provenance and import only approved subsets. Preserve originals; create project-owned material/prefab variants. Do not mix import with core gameplay coding.
 
 ### Package E2 — World composition
 
-Replace greybox selectively: NYC as preferred base, Diner once as landmark, bounded Port subset only after further testing. Establish district palettes, unique-landmark registry, LOD/collider review, lighting, wet asphalt, dirt, soot, smoke, steam, and restrained neon.
+After the open Human decisions are resolved under separate authority, replace
+greybox selectively using only authorised assets. NYC remains the preferred
+base and a bounded Port subset still requires further testing. Do not place or
+derive any Fuyoh content.
 
 ### Package E3 — Occlusion and camera extensibility
 
@@ -278,15 +288,26 @@ Deliver Neon over Dirt in motion while retaining readability, light adaptation, 
 
 ### Dependencies
 
-Gate D accepted; separately approved asset import/download scope; package licences/provenance; current classifications: NYC and Diner `Suitable with Light Adaptation`, Port `Needs Further Testing`, none `Potential Release Asset`.
+Gate D accepted; separately approved asset import/download scope; package
+licences/provenance; current Fuyoh exclusion; resolved Human decisions for the
+landmark, Composition Anchor, primary lighting focus, sightlines, and reveals;
+Port remains `Needs Further Testing`; no package is a `Potential Release
+Asset`.
 
 ### Tests
 
-Missing scripts/materials; duplicate full Diner detection; provenance completeness; LOD/collider checks; fixed-camera constraints; absence of fixed-orientation assumptions in player control and world aiming; occlusion restoration; screenshot/capture matrix; scene load/restart; no regression in Gate A–D automated tests.
+Missing scripts/materials; zero complete or partial Fuyoh content; provenance
+completeness; LOD/collider checks; fixed-camera constraints; absence of
+fixed-orientation assumptions in player control and world aiming; occlusion
+restoration; screenshot/capture matrix; scene load/restart; no regression in
+Gate A–D automated tests.
 
 ### Human review criteria
 
-Style works during movement and chaos; NYC/Diner coexist with light adaptation; Port subset is accepted or excluded based on evidence; no conspicuous asset duplication; the full Diner appears once; action remains readable with the fixed camera; camera/control/aim boundaries preserve the later rotatable comparison.
+Style works during movement and chaos; only Human-authorised assets appear;
+the Port subset is accepted or excluded based on evidence; no Fuyoh content or
+conspicuous asset duplication appears; action remains readable with the fixed
+camera; camera/control/aim boundaries preserve the later rotatable comparison.
 
 ### Stop criteria
 
@@ -298,7 +319,9 @@ Limited districts, selected exterior subsets, baked/static lighting where suitab
 
 ### Explicitly excluded
 
-Release-asset promotion, broad package import, second full Diner, custom Blender pipeline, building interiors, final branding, pipeline replacement.
+Release-asset promotion, broad package import, all Fuyoh content, replacement
+landmark selection, custom Blender pipeline, building interiors, final
+branding, pipeline replacement.
 
 **Rough estimate:** 6–12 focused work packages plus human visual review.
 

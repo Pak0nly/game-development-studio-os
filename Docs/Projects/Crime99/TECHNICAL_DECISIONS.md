@@ -232,7 +232,11 @@ Build one small concrete URP-compatible occluder fade/material-swap component wi
 
 **Unity 6/URP evidence:** local research records version `1.9.1`, original Unity `2021.3.45`, Built-in/URP/HDRP compatibility for that version, and publisher Built-in/URP statements. Explicit Unity `6000.3.19f1` evidence is absent.
 
-**Adoption gate:** only if the project-owned fade fails representative NYC/Diner/Port materials or maintenance/performance thresholds. Test multiple simultaneous occluders, opaque/transparent materials, restoration, both cameras, and frame cost.
+**Adoption gate:** only if the project-owned fade fails representative
+Human-authorised materials or maintenance/performance thresholds. Fuyoh and
+all derived subassets remain excluded from this test. Test multiple
+simultaneous occluders, opaque/transparent materials, restoration, both
+cameras, and frame cost.
 
 ### TD-022 — Networking Boundary
 
@@ -250,7 +254,14 @@ Every gate requires automated correctness/stability evidence and a Human Develop
 
 **Status:** Accepted for Planning
 
-Third-party originals remain under `Assets/ThirdParty/<Publisher>/<Package>` and are not edited in place. Materials, prefab variants, configuration, and adaptations are project-owned derivatives with provenance. The full Fuyoh Diner appears once per map; subassets may repeat only without conspicuous duplication. No current package is a `Potential Release Asset`.
+Third-party originals remain under `Assets/ThirdParty/<Publisher>/<Package>`
+and are not edited in place. Materials, prefab variants, configuration, and
+adaptations are project-owned derivatives with provenance. The historical
+Fuyoh suitability and once-per-map findings remain evidence of their original
+planning context only. `Fuyoh Cyberpunk Diner`, including the complete asset
+and every derived subasset, is currently `TEMPORARILY EXCLUDED / DO NOT USE`.
+No replacement landmark is selected, and no current package is a
+`Potential Release Asset`.
 
 ## Tool and Package Decision Matrix
 

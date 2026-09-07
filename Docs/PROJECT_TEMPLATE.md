@@ -1,6 +1,7 @@
 # Project Template
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-TACKB-V1` on 2026-08-22.
 
 This document defines the standard high-level structure for game projects created under the Studio Operating System.
 
@@ -68,10 +69,18 @@ Typical contents may include:
 * project role profile and applicable review boards
 * project art bible and level-design review standard
 * asset candidate, provenance, and integration standards
+* a capability index and evidence-linked records for materially relevant
+  tools, assets, packages and reusable workflows
 
 Project documentation must not redefine project-independent Studio Operating System standards.
 
 Projects with visible game content must link to the Studio OS [Visual Quality Assurance Workflow](Visual/Visual_Quality_Assurance_Workflow.md) from their README and may define stricter project-specific visual, camera, and occlusion rules in `Docs/`.
+
+Projects with material tools or assets must link a project capability index
+that follows the Studio OS [Tool and Asset Capability Knowledge Base
+Standard](Knowledge/TOOL_AND_ASSET_CAPABILITY_KNOWLEDGE_BASE_STANDARD.md).
+The index complements rather than duplicates asset ownership/provenance
+inventories and exact task evidence.
 
 Projects must link their project role profile from the README when specialist review is used. The profile selects project-relevant roles and boards from the Studio OS [Role Operating Model](Roles/ROLE_OPERATING_MODEL.md); it must not redefine project-independent role authority or create implicit implementation permission.
 

@@ -1,0 +1,34 @@
+{
+  "schema_version": 2,
+  "kind": "director_dispatch_receipt",
+  "gate_state": "ADOPTED_ACTIVE",
+  "work_order_id": "C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1",
+  "work_order_sha256": "d800bd3cd915f0965d1bc9f6d5d17e5a15fa2f5b500487d085556d882317f6fb",
+  "manifest_sha256": "8bba607c4f45412cb850255e4d189caf7fd300850df1d4f424f8cc7fb808d14e",
+  "repository": {
+    "branch": "main",
+    "head": "66e0e8cda53fc88776088dad559e56fe486c2fcd"
+  },
+  "project_identity_sha256": "c744f6b1c9c77c8a0d897d114b459e5127bbb97b53a8e2ea9aa90bc11a7630a2",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Docs/Roles/ROLE_OPERATING_MODEL.md",
+      "Docs/Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md",
+      "Docs/Playbooks/VISUAL_PRODUCTION.md"
+    ],
+    "sha256": "9bb0a9a427d4c09aaabba1cde3b6f154db48cea286f9fea790c4765963def2a7"
+  },
+  "source_state_sha256": "cfc60e043a3af83cb26c1984962a2e2b8332ccd6dd7cb7af77f8067cef1ea46b",
+  "baseline_state_sha256": "17c7851662d5a92b23bd49eaccde3c6716c67a6b7e467e2f66e296386916bd42",
+  "required_live_task_tools": [
+    "apply_patch",
+    "create_thread",
+    "exec_command",
+    "read_thread",
+    "send_message_to_thread",
+    "view_image",
+    "wait_threads"
+  ],
+  "receipt_id": "a964caa16c49134315843cfb423bbde1d84ffee345ed0e1c16c1d2416da76089"
+}

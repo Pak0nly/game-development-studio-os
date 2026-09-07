@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "schema_id": "C99-STUDIO-DIRECTOR-DISPATCH-GATE-V1",
+  "state": "ADOPTED_ACTIVE",
+  "candidate_identity_files": [
+    "AGENTS.md",
+    "Docs/AI_DEVELOPMENT_RULES.md",
+    "Docs/Roles/ROLE_OPERATING_MODEL.md",
+    "Docs/Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md",
+    "Tools/AuthorityContinuity/director-dispatch-schema-v1.json",
+    "Tools/AuthorityContinuity/README.md",
+    "Tools/AuthorityContinuity/tests/test_validate_director_dispatch.py",
+    "Tools/AuthorityContinuity/validate_director_dispatch.py"
+  ],
+  "current_dispatch_manifest_version": 2,
+  "supported_dispatch_manifest_versions": [
+    1,
+    2
+  ],
+  "historical_dispatch_manifest_versions": [
+    1
+  ],
+  "prospective_dispatch_required_fields": [
+    "orchestration"
+  ],
+  "manifest_kind": "director_dispatch_manifest",
+  "receipt_kind": "director_dispatch_receipt",
+  "closure_schema_version": 1,
+  "closure_manifest_kind": "director_closure_manifest",
+  "closure_receipt_kind": "director_closure_receipt",
+  "closure_gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "independent_review_record_kind": "independent_review_record",
+  "declaration_classes": [
+    "VERIFIED",
+    "INFERENCE",
+    "UNKNOWN",
+    "HUMAN DECISION"
+  ],
+  "execution_modes": [
+    "Discovery",
+    "Production",
+    "Diagnostic",
+    "Integration"
+  ],
+  "model_classes": [
+    "Routine",
+    "Standard",
+    "Critical"
+  ],
+  "sol_model": "gpt-5.6-sol",
+  "sol_exceptions": [
+    "architecture",
+    "authority conflict",
+    "novel governance",
+    "complex root cause",
+    "contradictory evidence",
+    "high-level design",
+    "final accountable synthesis"
+  ],
+  "requested_model_attestation": "Requested model — not independently attested.",
+  "reasoning_efforts": [
+    "none",
+    "minimal",
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max",
+    "ultra"
+  ],
+  "critical_mandatory_roles": [
+    "Producer / Scope Controller",
+    "QA Lead"
+  ],
+  "required_manifest_fields": [
+    "schema_version",
+    "kind",
+    "work_order_id",
+    "assignment_type",
+    "classification",
+    "work_order",
+    "repository",
+    "dirty_state",
+    "human_authority",
+    "required_live_task_tools",
+    "authority_sources",
+    "project_sources",
+    "baselines",
+    "allowed_mutations",
+    "protected_paths",
+    "stop_boundary",
+    "execution_mode",
+    "model_routing",
+    "role_requirements",
+    "roles",
+    "visible_task_plan",
+    "correction_allowance",
+    "monitoring",
+    "human_checkpoint"
+  ],
+  "required_receipt_fields": [
+    "schema_version",
+    "kind",
+    "gate_state",
+    "work_order_id",
+    "work_order_sha256",
+    "manifest_sha256",
+    "repository",
+    "project_identity_sha256",
+    "dirty_state",
+    "source_state_sha256",
+    "baseline_state_sha256",
+    "required_live_task_tools",
+    "receipt_id"
+  ],
+  "required_closure_manifest_fields": [
+    "schema_version",
+    "kind",
+    "work_order",
+    "dispatch",
+    "tasks",
+    "candidate",
+    "evidence",
+    "independent_review",
+    "operational_state",
+    "declaration"
+  ],
+  "required_closure_receipt_fields": [
+    "schema_version",
+    "kind",
+    "gate_state",
+    "work_order_id",
+    "work_order_sha256",
+    "closure_manifest_sha256",
+    "dispatch_receipt_id",
+    "director_task_id",
+    "worker_task_id",
+    "reviewer_task_id",
+    "candidate_identity",
+    "evidence_state_sha256",
+    "review_record_sha256",
+    "verdict",
+    "receipt_id"
+  ]
+}

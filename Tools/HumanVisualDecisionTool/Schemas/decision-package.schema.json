@@ -1,0 +1,402 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "studio-os://human-visual-decision-tool/schemas/decision-package/1.0",
+  "title": "Studio OS Human Visual Decision Package",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "decisionSetId",
+    "title",
+    "description",
+    "project",
+    "stage",
+    "sourceContext",
+    "categories",
+    "outputConfiguration"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.0"
+    },
+    "decisionSetId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceContext": {
+      "type": "object"
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/category"
+      }
+    },
+    "validationRules": {
+      "$ref": "#/$defs/globalValidationRules"
+    },
+    "outputConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "resultDirectory"
+      ],
+      "properties": {
+        "resultDirectory": {
+          "type": "string",
+          "minLength": 1
+        },
+        "generateMarkdown": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "category": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "description",
+        "selectionMode",
+        "options"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "selectionMode": {
+          "enum": [
+            "single",
+            "multiple",
+            "ordered",
+            "approveReject"
+          ]
+        },
+        "options": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        },
+        "implementationFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/implementationField"
+          }
+        },
+        "validationRules": {
+          "$ref": "#/$defs/validationRules"
+        }
+      }
+    },
+    "option": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "technicalName": {
+          "type": "string"
+        },
+        "sourceLabel": {
+          "type": "string"
+        },
+        "technicalMetadata": {
+          "type": "object"
+        },
+        "implementationMetadata": {
+          "type": "object"
+        },
+        "exclusiveSelection": {
+          "type": "boolean"
+        },
+        "previewAssets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/preview"
+          }
+        }
+      }
+    },
+    "preview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "path",
+        "mode"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "allOf": [
+            {
+              "pattern": "^previews[\\\\/]"
+            },
+            {
+              "not": {
+                "pattern": "(^|[\\\\/])\\.\\.([\\\\/]|$)"
+              }
+            },
+            {
+              "not": {
+                "pattern": "^(?:[A-Za-z][A-Za-z0-9+.-]*:|//)"
+              }
+            }
+          ]
+        },
+        "mode": {
+          "enum": [
+            "isolatedMaterial",
+            "contextualScene",
+            "sideBySide",
+            "beforeAfter",
+            "staticImage",
+            "externalLocalImage"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "expectedSha256": {
+          "type": "string",
+          "pattern": "^[A-Fa-f0-9]{64}$"
+        }
+      }
+    },
+    "implementationField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "text",
+            "textarea",
+            "number",
+            "select"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "choices": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "minimum": {
+          "type": "number"
+        },
+        "maximum": {
+          "type": "number"
+        },
+        "pattern": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "select"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "choices"
+            ]
+          },
+          "else": {
+            "not": {
+              "required": [
+                "choices"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "number"
+              }
+            }
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "minimum"
+                  ]
+                },
+                {
+                  "required": [
+                    "maximum"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "text",
+                  "textarea"
+                ]
+              }
+            }
+          },
+          "else": {
+            "not": {
+              "required": [
+                "pattern"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "globalValidationRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowDeferred": {
+          "type": "boolean"
+        },
+        "allowNotApplicable": {
+          "type": "boolean"
+        },
+        "minimumSelections": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maximumSelections": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "validationRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allowDeferred": {
+          "type": "boolean"
+        },
+        "allowNotApplicable": {
+          "type": "boolean"
+        },
+        "minimumSelections": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maximumSelections": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "requireCategoryComment": {
+          "type": "boolean"
+        },
+        "requireImplementationNote": {
+          "type": "boolean"
+        },
+        "requireDeferredOptionComment": {
+          "type": "boolean"
+        },
+        "requireDerivedImplementationNote": {
+          "type": "boolean"
+        },
+        "requiredFields": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+          }
+        },
+        "requiredFieldsByOption": {
+          "type": "object",
+          "propertyNames": {
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

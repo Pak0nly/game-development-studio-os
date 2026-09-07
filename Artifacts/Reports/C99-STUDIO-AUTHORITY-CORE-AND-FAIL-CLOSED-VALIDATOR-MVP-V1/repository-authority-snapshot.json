@@ -1,35 +1,46 @@
 {
-  "schema_version": 1,
-  "authority_core_id": "C99-STUDIO-AUTHORITY-CORE-MVP-V2",
-  "authority_core_state": "MVP_V2_CANDIDATE_NOT_ADOPTED",
-  "generated_at_utc": "2026-08-04T18:16:41.364505+00:00",
+  "schema_version": 2,
+  "authority_core_id": "C99-STUDIO-AUTHORITY-CORE-MVP-V3",
+  "authority_core_state": "MVP_V3_ADOPTION_READINESS_CANDIDATE_NOT_ADOPTED",
+  "generated_at_utc": "2026-08-04T19:59:36.877568+00:00",
   "as_of_date": "2026-08-04",
+  "requested_scopes": [
+    "crime99-production"
+  ],
   "result": "BLOCKED",
   "continuation_authority_granted": false,
   "tooling": {
     "files": {
-      "README.md": "735e8bbe9573cefa4cfbba1ee4b916d5dcdc59f1b72638bcd77dd29d63a49e5e",
-      "authority-core.json": "99dd5c4c92beb9bf7bddc96f2a8a0122fbcaf9a0ffb3d2e22160f9dddc854d06",
-      "validate_authority.py": "ae3c2fbf1d7000b359814bb45b7285a02082babf3384d3c2585377d2e2ac980c",
-      "tests/test_validate_authority.py": "c0e360399f13462ad68691579cc7f0ce47c28d99c9e515e79793778cebae733b"
+      "README.md": "c654ad3351524d3d58385210d758607a58e27808589642cde74641ed8fff7a8a",
+      "authority-core.json": "65450d6c6e61000793e94663d2a02153c1b7a2fbe3eea04680429875d5408239",
+      "validate_authority.py": "bea53023f468832b789daadd9847090bac583ec2f30b44d195e8b0c97d71485a",
+      "tests/test_validate_authority.py": "bf8edf8f9dc240962a3a040d69b4b9399916f6e312a6c6d2f100c7792e0c554a"
     },
-    "authority_core_sha256": "edddc414d56bdbd8314b3caa25e460a881b1b000b55275bb2012bb26a82985d1",
-    "candidate_identity": "85f3c93794967bd7b82b4923d006856bf7fc2163a66030b4c563d7138ff5013a"
+    "authority_core_sha256": "28655940a5d711ed28adbeec4b6bd75b7f0698472166509542774f7ba7a205ac",
+    "candidate_identity": "58c1a1af52d631f9465e36c74590b7c15a95b211b9de1cf79dc6d39701ed9726"
+  },
+  "regression_evidence": {
+    "path": "Tools/AuthorityContinuity/tests/test_validate_authority.py",
+    "expected_test_methods": 34,
+    "actual_test_methods": 34,
+    "source_hash": "bf8edf8f9dc240962a3a040d69b4b9399916f6e312a6c6d2f100c7792e0c554a",
+    "freshness": "CURRENT"
   },
   "repository": {
     "available": true,
     "top_level": "C:/Users/jarid/Desktop/Game Development",
     "branch": "main",
-    "head": "6de728f8ca6eba5f5593231ee0c63f3087575b03",
-    "status_sha256": "b60ff0c34e853b88d8253987cd8a312ade128600c3281000aae43848597a957e",
+    "head": "66e0e8cda53fc88776088dad559e56fe486c2fcd",
+    "status_sha256": "23cc5a17fdb0c6f949e44fec761d980c9804ebfaed8e10560adb2cab109f6d3d",
     "status_records": [
-      "# branch.oid 6de728f8ca6eba5f5593231ee0c63f3087575b03",
+      "# branch.oid 66e0e8cda53fc88776088dad559e56fe486c2fcd",
       "# branch.head main",
       "# branch.upstream origin/main",
-      "# branch.ab +0 -0",
+      "# branch.ab +1 -0",
       "1 .M N... 100644 100644 100644 71be8bbd24a89256ee10d1224f9f182d3de80cbc 71be8bbd24a89256ee10d1224f9f182d3de80cbc AGENTS.md",
+      "1 .M N... 100644 100644 100644 b6d6d24e18d326d802306473e71957d4ce2b5589 b6d6d24e18d326d802306473e71957d4ce2b5589 Artifacts/Reports/C99-STUDIO-AUTHORITY-CORE-AND-FAIL-CLOSED-VALIDATOR-MVP-V1/repository-authority-snapshot.json",
       "1 .M N... 100644 100644 100644 10d405cca6acce76209f3b9fb8d7f78f80a3e351 10d405cca6acce76209f3b9fb8d7f78f80a3e351 Docs/CONFIRMED_DECISIONS.md",
-      "1 .M N... 100644 100644 100644 661257d76b5663fdb888405ac562ad7eed3a3901 661257d76b5663fdb888405ac562ad7eed3a3901 Docs/CURRENT_HANDOVER.md",
+      "1 .M N... 100644 100644 100644 ee2d596bdf418092f2a3d57a651cbd3d56e9bbb7 ee2d596bdf418092f2a3d57a651cbd3d56e9bbb7 Docs/CURRENT_HANDOVER.md",
       "1 .M N... 100644 100644 100644 e73de89849a82f171b1b1eab9c9371e11bcd1b47 e73de89849a82f171b1b1eab9c9371e11bcd1b47 Docs/Projects/Crime99/ASSET_INVENTORY.md",
       "1 .M N... 100644 100644 100644 67af1f95265caecf57a044837588f933f6385aa4 67af1f95265caecf57a044837588f933f6385aa4 Docs/Projects/Crime99/GDD/12_ART_DIRECTION.md",
       "1 .M N... 100644 100644 100644 66bc7b63941f0facc0536fff0adf1a495af5c194 66bc7b63941f0facc0536fff0adf1a495af5c194 Docs/Projects/Crime99/GDD/16_PROTOTYPE_SCOPE.md",
@@ -40,8 +51,24 @@
       "1 .M N... 100644 100644 100644 a2840b1cc7194a32707f89168a0d72c9257053f0 a2840b1cc7194a32707f89168a0d72c9257053f0 Docs/Projects/Crime99/TECHNICAL_ARCHITECTURE.md",
       "1 .M N... 100644 100644 100644 28f10368faad179ec72b906b3243805684d4749b 28f10368faad179ec72b906b3243805684d4749b Docs/Projects/Crime99/TECHNICAL_DECISIONS.md",
       "1 .M N... 100644 100644 100644 5373a602aa45f4c7de64de37279569657b23be18 5373a602aa45f4c7de64de37279569657b23be18 Docs/Projects/Crime99/TECHNICAL_RISK_REVIEW.md",
-      "1 .M N... 100644 100644 100644 468b3768953e3c8d7b2c414e693b85089835f502 468b3768953e3c8d7b2c414e693b85089835f502 Docs/WORK_STATE.md",
-      "? Artifacts/",
+      "1 .M N... 100644 100644 100644 4ff744be88701dae9204b6c83387591391399a18 4ff744be88701dae9204b6c83387591391399a18 Docs/WORK_STATE.md",
+      "1 .M N... 100644 100644 100644 927f10dc4f43e09d54a1603e5a3a83a50d042fb5 927f10dc4f43e09d54a1603e5a3a83a50d042fb5 Tools/AuthorityContinuity/README.md",
+      "1 .M N... 100644 100644 100644 59ff1dd06f27e158ca9f5dce402b1ae37dbca5ce 59ff1dd06f27e158ca9f5dce402b1ae37dbca5ce Tools/AuthorityContinuity/authority-core.json",
+      "1 .M N... 100644 100644 100644 e41b20a1e9b7e6d5433de6d0da15ef18a930d18b e41b20a1e9b7e6d5433de6d0da15ef18a930d18b Tools/AuthorityContinuity/tests/test_validate_authority.py",
+      "1 .M N... 100644 100644 100644 d4196ef472d739b023a29d16b3f43e3fcee4584f d4196ef472d739b023a29d16b3f43e3fcee4584f Tools/AuthorityContinuity/validate_authority.py",
+      "? Artifacts/Archives/",
+      "? Artifacts/Exports/",
+      "? Artifacts/GateIntegrityGuardValidation/",
+      "? Artifacts/Layered-Agent-Instruction-Architecture-Review-Package-20260722.zip",
+      "? Artifacts/Lean-Production-Work-Order-Architecture-Review-Package-20260722.zip",
+      "? Artifacts/Reports/C99-GAMEPLAY-REPOSITORY-AND-WORKTREE-FINAL-CLOSURE-AUDIT-V1/",
+      "? Artifacts/Reports/C99-GAMEPLAY-WORKTREE-FINAL-CLEANUP-AND-MAIN-ACTIVATION-V1/",
+      "? Artifacts/Reports/C99-GAMEPLAY-WORKTREE-FINAL-CLEANUP-V1-CO1-LONGPATH-REMEDIATION/",
+      "? Artifacts/Reports/C99-STUDIO-AUTHORITY-CORE-AND-FAIL-CLOSED-VALIDATOR-MVP-V1/PRODUCER_CONSOLIDATION_AND_ROLLBACK.md",
+      "? Artifacts/Reports/C99-STUDIO-AUTHORITY-CORE-AND-FAIL-CLOSED-VALIDATOR-MVP-V1/QA_LEAD_REVIEW.md",
+      "? Artifacts/Reports/C99-STUDIO-AUTHORITY-CORE-AND-FAIL-CLOSED-VALIDATOR-MVP-V1/TECHNICAL_DIRECTOR_REVIEW.md",
+      "? Artifacts/Reports/C99-STUDIO-CITY-PIPELINE-AUTHORITY-AND-CONTINUITY-REPAIR-V1-CO1-LIVE-REGRESSION-AND-DINER-DISPOSITION/",
+      "? Artifacts/Reports/C99-STUDIO-CITY-PIPELINE-AUTHORITY-AND-CONTINUITY-REPAIR-V1/",
       "? Docs/Projects/Crime99/PILOT_1_CLOSURE_AND_SEMANTIC_EVIDENCE_REVISION.md",
       "? Docs/Projects/Crime99/PILOT_1_CLOSURE_ROLE_REVIEWS.md",
       "? Projects/Crime99/",
@@ -60,18 +87,21 @@
       "? Projects/Crime99RCCPPreflight/",
       "? Projects/Crime99RCCPTrafficIntegrationPreflight/",
       "? Projects/Crime99TrafficPedestrianPreflight/",
-      "? Tools/AuthorityContinuity/",
       "? Tools/HumanVisualDecisionTool/"
     ],
     "warnings": [],
-    "candidate_identity": "d32d5e771cc4e35854a045a2a19a9c12a1080eef5eeccb4ed78005866d01f8c5"
+    "candidate_identity": "48c91666b9f4cbfff95416a4671d099323a7a1ea47cb356e3164360571758fa5"
   },
-  "snapshot_identity": "33607cebc1522993eef0eb6b41f723ba38aad498412675fc72515f7407ae71d8",
+  "snapshot_identity": "89015a6568d30b8b8c81f8ad24f53ccc8fd9e42aaa6e0324ecbffa0d51c0bcf3",
   "findings": [
     {
       "id": "task-pivot-authority",
       "scope": "Studio OS task-pivot authority continuity",
       "status": "ADOPTED/CURRENT",
+      "applies_to": [
+        "*"
+      ],
+      "applicable_to_request": true,
       "canonical_source": [
         "AGENTS.md"
       ],
@@ -85,6 +115,11 @@
       "id": "city-pipeline",
       "scope": "Crime99 future city pipeline, baseline, environment, and repository ownership",
       "status": "OPEN/HUMAN DECISION REQUIRED",
+      "applies_to": [
+        "crime99-city",
+        "crime99-production"
+      ],
+      "applicable_to_request": true,
       "canonical_source": [
         "Docs/CONFIRMED_DECISIONS.md",
         "Docs/Projects/Crime99/PRODUCTION_PROFILE.md"
@@ -100,6 +135,11 @@
       "id": "asset-holdings-currentness",
       "scope": "Crime99 complete current asset holdings",
       "status": "UNKNOWN/REFRESH REQUIRED",
+      "applies_to": [
+        "crime99-assets",
+        "crime99-production"
+      ],
+      "applicable_to_request": true,
       "canonical_source": [
         "Docs/Projects/Crime99/ASSET_INVENTORY.md"
       ],
@@ -113,6 +153,12 @@
       "id": "mastercity-role",
       "scope": "Projects/Crime99MasterCityDiscovery project role",
       "status": "HISTORICAL ONLY",
+      "applies_to": [
+        "crime99-city",
+        "crime99-assets",
+        "crime99-production"
+      ],
+      "applicable_to_request": true,
       "canonical_source": [
         "Docs/CONFIRMED_DECISIONS.md",
         "Docs/Projects/Crime99/PRODUCTION_PROFILE.md"
@@ -128,6 +174,12 @@
       "id": "fuyoh-disposition",
       "scope": "Fuyoh Cyberpunk Diner and every derived subasset",
       "status": "TEMPORARILY EXCLUDED",
+      "applies_to": [
+        "crime99-city",
+        "crime99-assets",
+        "crime99-production"
+      ],
+      "applicable_to_request": true,
       "canonical_source": [
         "Docs/Projects/Crime99/PROJECT_BRIEF.md"
       ],
@@ -141,6 +193,12 @@
       "id": "historical-evidence-authority",
       "scope": "Crime99 historical evidence and reuse authority",
       "status": "HISTORICAL ONLY",
+      "applies_to": [
+        "crime99-city",
+        "crime99-assets",
+        "crime99-production"
+      ],
+      "applicable_to_request": true,
       "canonical_source": [
         "Docs/CONFIRMED_DECISIONS.md",
         "Docs/Projects/Crime99/PRODUCTION_PROFILE.md"
@@ -156,13 +214,17 @@
       "id": "operational-continuity",
       "scope": "Studio operational continuity projection",
       "status": "ADOPTED/CURRENT",
+      "applies_to": [
+        "*"
+      ],
+      "applicable_to_request": true,
       "canonical_source": [
         "Docs/WORK_STATE.md",
         "Docs/CURRENT_HANDOVER.md"
       ],
       "source_hash": {
-        "Docs/WORK_STATE.md": "ac9b42d84f0fc619b22db845e914163bcbce97bad1f95e6775a19dceb5869797",
-        "Docs/CURRENT_HANDOVER.md": "17977967e33db013313f27a53e3429f10e43c14a5906facdb58399904d947376"
+        "Docs/WORK_STATE.md": "a73509aced2109c221553c16cd4a303ce6b6da85b3dea1dd69a97ee7841a2732",
+        "Docs/CURRENT_HANDOVER.md": "c11e8e1669a4d047321eba3e7ce7f80b433e797f0b842fce8acb8c9a0d11d201"
       },
       "freshness": "CURRENT",
       "error_codes": []

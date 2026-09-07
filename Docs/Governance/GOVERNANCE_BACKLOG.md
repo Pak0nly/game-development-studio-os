@@ -152,6 +152,55 @@ If too vague, AI agents may underinvest in important tasks. If too strict, the p
 **Current decision:**
 Keep in backlog until AI Development Rules are expanded.
 
+### Proportionate Unity Drift and Rollback
+
+**Status:** Ready for Evaluation
+
+**Type:** Engineering Principle / AI Behavior / Process / Operational Cost
+
+**Problem:**
+Unity routinely rewrites project files through harmless serialization,
+whitespace, ordering, cache, solution, and project-projection changes. Treating
+every byte difference as corruption can trigger repeated backup, restoration,
+reimport, recompilation, and approval cycles even when the change has no
+semantic or functional effect. This has delayed project work without reducing
+meaningful risk.
+
+**Proposal:**
+Apply rollback and stop controls according to demonstrated impact rather than
+byte difference alone. Record and retain reproducible, understood,
+non-semantic Unity drift when it does not affect project behaviour, references,
+compilation, runtime, source provenance, or recoverability. Examples include
+verified whitespace or serialization normalization and regenerated solution or
+project files.
+
+Continue to stop and require disposition for unexpected semantic changes,
+reference loss, compiler or runtime impact, unexplained Vendor mutation,
+destructive or irreversible drift, protected-source changes, or any difference
+whose effect cannot be established. Preserve proportionate before-state
+evidence for materially risky Unity operations. Roll back only when technically
+necessary or when a meaningful protected state has changed.
+
+**Why it may matter:**
+This could preserve real fail-closed protection while eliminating low-value
+restore loops, redundant Unity runs, unnecessary Human checkpoints, and delays
+caused by harmless generated drift. It would make Unity work more efficient and
+better aligned with semantic risk.
+
+**Risks or costs:**
+An agent could incorrectly classify meaningful drift as harmless. Evaluation
+must therefore define evidence required to demonstrate non-semantic impact,
+the protected files and operations that still require stricter handling, and
+how uncertain drift remains fail-closed.
+
+**Current decision:**
+The Human Developer requested this rule be retained for Studio OS adoption
+review after repeated Crime99 Unity tasks showed that byte-exact restoration of
+harmless drift created delay without project benefit. Keep as a cross-project
+candidate until it is reconciled with existing protection, rollback, evidence,
+and Unity working-copy rules and is explicitly adopted at a separate Human
+checkpoint.
+
 ### Governance Auditor
 
 **Status:** Proposed

@@ -25,7 +25,7 @@ from validate_authority import (  # noqa: E402
 )
 
 
-WORK_ORDER = "C99-STUDIO-AUTHORITY-VALIDATOR-PATH-SAFETY-CORRECTION-V2"
+WORK_ORDER = "C99-STUDIO-AUTHORITY-VALIDATOR-ADOPTION-READINESS-PREPARATION-V3"
 
 
 FIXTURE_TEXT = {
@@ -103,6 +103,7 @@ class ValidatorRegressionTests(unittest.TestCase):
         return validate_repository(
             self.root,
             self.config,
+            requested_scopes=["crime99-production"],
             include_git=False,
             as_of=dt.date(2026, 8, 4),
         )
@@ -226,6 +227,7 @@ class ValidatorRegressionTests(unittest.TestCase):
             snapshot = validate_repository(
                 self.root,
                 self.config,
+                requested_scopes=["crime99-production"],
                 include_git=True,
                 as_of=dt.date(2026, 8, 4),
             )
@@ -241,6 +243,8 @@ class ValidatorRegressionTests(unittest.TestCase):
             "id",
             "scope",
             "status",
+            "applies_to",
+            "applicable_to_request",
             "canonical_source",
             "source_hash",
             "freshness",
@@ -261,12 +265,14 @@ class ValidatorRegressionTests(unittest.TestCase):
         first = validate_repository(
             self.root,
             self.config,
+            requested_scopes=["crime99-production"],
             include_git=False,
             as_of=dt.date(2026, 8, 4),
         )
         second = validate_repository(
             self.root,
             self.config,
+            requested_scopes=["crime99-production"],
             include_git=False,
             as_of=dt.date(2026, 8, 10),
         )
@@ -274,6 +280,100 @@ class ValidatorRegressionTests(unittest.TestCase):
         self.assertIn(
             "E_OPERATIONAL_STALE", {error["code"] for error in second["errors"]}
         )
+
+    def test_studio_scope_does_not_block_nonapplicable_open_or_unknown(self) -> None:
+        snapshot = validate_repository(
+            self.root,
+            self.config,
+            requested_scopes=["studio"],
+            include_git=False,
+            as_of=dt.date(2026, 8, 4),
+        )
+        self.assertEqual("PASS", snapshot["result"])
+        self.assertFalse(snapshot["continuation_authority_granted"])
+        self.assertEqual(["studio"], snapshot["requested_scopes"])
+        findings = {item["id"]: item for item in snapshot["findings"]}
+        self.assertEqual(
+            "OPEN/HUMAN DECISION REQUIRED", findings["city-pipeline"]["status"]
+        )
+        self.assertEqual(
+            "UNKNOWN/REFRESH REQUIRED",
+            findings["asset-holdings-currentness"]["status"],
+        )
+        self.assertFalse(findings["city-pipeline"]["applicable_to_request"])
+        self.assertFalse(
+            findings["asset-holdings-currentness"]["applicable_to_request"]
+        )
+        self.assertNotIn(
+            "E_UNKNOWN_BLOCKING", {error["code"] for error in snapshot["errors"]}
+        )
+        self.assertNotIn(
+            "E_HUMAN_DECISION_REQUIRED",
+            {error["code"] for error in snapshot["errors"]},
+        )
+
+    def test_nonapplicable_missing_source_remains_unknown_without_blocking(self) -> None:
+        (self.root / "Docs/Projects/Crime99/ASSET_INVENTORY.md").unlink()
+        snapshot = validate_repository(
+            self.root,
+            self.config,
+            requested_scopes=["studio"],
+            include_git=False,
+            as_of=dt.date(2026, 8, 4),
+        )
+        self.assertEqual("PASS", snapshot["result"])
+        finding = next(
+            item
+            for item in snapshot["findings"]
+            if item["id"] == "asset-holdings-currentness"
+        )
+        self.assertEqual("UNKNOWN/REFRESH REQUIRED", finding["status"])
+        self.assertFalse(finding["applicable_to_request"])
+        self.assertIn("E_SOURCE_MISSING", finding["error_codes"])
+        self.assertNotIn(
+            "E_SOURCE_MISSING", {error["code"] for error in snapshot["errors"]}
+        )
+
+    def test_missing_requested_scope_is_a_config_error(self) -> None:
+        with self.assertRaises(ConfigError):
+            validate_repository(
+                self.root,
+                self.config,
+                requested_scopes=[],
+                include_git=False,
+                as_of=dt.date(2026, 8, 4),
+            )
+
+    def test_unknown_requested_scope_is_a_config_error(self) -> None:
+        with self.assertRaises(ConfigError):
+            validate_repository(
+                self.root,
+                self.config,
+                requested_scopes=["unconfigured-scope"],
+                include_git=False,
+                as_of=dt.date(2026, 8, 4),
+            )
+
+    def test_windows_ads_paths_are_config_errors(self) -> None:
+        for target, value in (
+            (("sources", "agents", "path"), "AGENTS.md:stream"),
+            (
+                ("output_policy", "path"),
+                "Artifacts/Reports/snapshot.json:stream",
+            ),
+        ):
+            with self.subTest(target=target):
+                unsafe = json.loads(json.dumps(self.config))
+                cursor = unsafe
+                for key in target[:-1]:
+                    cursor = cursor[key]
+                cursor[target[-1]] = value
+                with self.assertRaises(ConfigError):
+                    validate_config(unsafe)
+
+    def test_regression_contract_mismatch_blocks(self) -> None:
+        self.config["regression_contract"]["expected_test_methods"] += 1
+        self.assert_error("E_REGRESSION_CONTRACT")
 
     def test_output_path_is_exactly_allowlisted(self) -> None:
         expected = self.root / self.config["output_policy"]["path"]
@@ -304,6 +404,7 @@ class ValidatorRegressionTests(unittest.TestCase):
                     validate_repository(
                         self.root,
                         unsafe,
+                        requested_scopes=["crime99-production"],
                         include_git=False,
                         as_of=dt.date(2026, 8, 4),
                     )
@@ -376,6 +477,7 @@ class ValidatorRegressionTests(unittest.TestCase):
                     validate_repository(
                         self.root,
                         aliased,
+                        requested_scopes=["crime99-production"],
                         include_git=False,
                         as_of=dt.date(2026, 8, 4),
                     )
@@ -385,6 +487,7 @@ class ValidatorRegressionTests(unittest.TestCase):
                 validate_repository(
                     self.root,
                     aliased,
+                    requested_scopes=["crime99-production"],
                     include_git=False,
                     as_of=dt.date(2026, 8, 4),
                 )
@@ -411,6 +514,8 @@ class ValidatorRegressionTests(unittest.TestCase):
                 str(output),
                 "--as-of",
                 "2026-08-04",
+                "--scope",
+                "crime99-production",
             ]
         )
         self.assertEqual(2, result)
@@ -433,6 +538,8 @@ class ValidatorRegressionTests(unittest.TestCase):
                 str(output),
                 "--as-of",
                 "2026-08-04",
+                "--scope",
+                "crime99-production",
             ]
         )
         self.assertEqual(3, result)
@@ -444,6 +551,28 @@ class ValidatorRegressionTests(unittest.TestCase):
         config_path = self.root / "Tools/AuthorityContinuity/authority-core.json"
         config_path.parent.mkdir(parents=True, exist_ok=True)
         config_path.write_text(json.dumps(unsafe), encoding="utf-8")
+        output = self.root / self.config["output_policy"]["path"]
+        result = main(
+            [
+                "--root",
+                str(self.root),
+                "--config",
+                str(config_path),
+                "--output",
+                str(output),
+                "--as-of",
+                "2026-08-04",
+                "--scope",
+                "crime99-production",
+            ]
+        )
+        self.assertEqual(3, result)
+        self.assertFalse(output.exists())
+
+    def test_cli_returns_three_without_scope_and_without_output(self) -> None:
+        config_path = self.root / "Tools/AuthorityContinuity/authority-core.json"
+        config_path.parent.mkdir(parents=True, exist_ok=True)
+        config_path.write_text(json.dumps(self.config), encoding="utf-8")
         output = self.root / self.config["output_policy"]["path"]
         result = main(
             [

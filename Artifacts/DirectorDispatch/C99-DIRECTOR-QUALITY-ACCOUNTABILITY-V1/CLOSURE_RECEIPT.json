@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "kind": "director_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "work_order_id": "C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1",
+  "work_order_sha256": "d800bd3cd915f0965d1bc9f6d5d17e5a15fa2f5b500487d085556d882317f6fb",
+  "closure_manifest_sha256": "5cc9899b549f6734a02840be27394967af91b35def096552cd04471999e0745f",
+  "dispatch_receipt_id": "a964caa16c49134315843cfb423bbde1d84ffee345ed0e1c16c1d2416da76089",
+  "director_task_id": "01a07c84-4a59-71f2-8aef-10d014a697dd",
+  "worker_task_id": "01a07ca6-a845-70e0-8872-074a6e677d82",
+  "reviewer_task_id": "01a07cb3-b015-7f93-8cdc-4444d8a1d7be",
+  "candidate_identity": "8e9f582e8c41f555a353f6459bfee63975f69d8622a8bbb90bdb83d53e2459bf",
+  "evidence_state_sha256": "7643a9a3a02b5641f9cb15d0aff6066d0087dbc76cb6d6435bd6412f82019cbd",
+  "review_record_sha256": "e14338cb21a579326bc579ebb971f1ee30ccb7e877dc5692ca2c1250a8460901",
+  "verdict": "PASS",
+  "receipt_id": "b8f33f5189933d3e4dff831d974f22c3c99bc83f266524732c332ce35646625f"
+}

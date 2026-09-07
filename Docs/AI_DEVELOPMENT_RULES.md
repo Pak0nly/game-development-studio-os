@@ -1,7 +1,9 @@
 # AI Development Rules
 
 > **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
-> `SOS-GOV-WCM-NTB-V1` on 2026-07-25.
+> `SOS-GOV-WCM-NTB-V1` on 2026-07-25 and
+> `SOS-GOV-OPERATIONAL-RECOVERY-AND-CANDIDATE-ATTEMPT-ACCOUNTING-V1` on
+> 2026-08-22 and `SOS-GOV-TACKB-V1` on 2026-08-22.
 
 This document defines how AI systems are expected to participate in the development process.
 
@@ -34,6 +36,35 @@ AI should increase development efficiency, quality, maintainability, and clarity
 AI must not present guesses, assumptions, or speculative conclusions as facts.
 
 When information is missing and the missing information materially affects the outcome, AI should ask a focused question instead of inventing an answer.
+
+## Director / Worker Non-Execution Boundary
+
+When an AI task acts as Director, orchestration and execution are a hard task-
+identity boundary. Before the first mutation and after every task pivot, the
+task must apply the Director Non-Execution Gate in `AGENTS.md`. A Human `go` or
+other work authorisation approves the exact scope for a validated dispatch; it
+does not authorise the Director to implement that scope itself.
+
+The Director is limited to read-only inspection, scope freeze, task
+classification and routing, dispatch preparation and validation, separate
+Worker-task creation, cursor-based monitoring, result consolidation, and
+already authorised operational-state maintenance. All implementation,
+candidate-affecting validation and correction belongs to the separate Worker
+task. If that task cannot be created or monitored with the required tooling,
+the Director must stop rather than execute the work directly.
+
+New mutation-capable dispatches use the prospective orchestration manifest and
+receipt procedure in `Tools/AuthorityContinuity`. They must record the
+requested model, reasoning effort and specific routing reason, require a
+separate Worker, and declare the applicable independent-review route. Builder
+self-review never satisfies an independent-review requirement.
+
+Where independent review is required, one decision-relevant separate Reviewer
+task examines the frozen Worker candidate and evidence. An independently
+reviewed `PASS` may enter `WORK_STATE.md` or `CURRENT_HANDOVER.md` only after an
+immutable closure receipt binds the exact Work Order, Director, Worker and
+Reviewer task identities, candidate, evidence and verdict. Missing or
+mismatched closure proof fails closed.
 
 ## Decision Making
 
@@ -246,6 +277,21 @@ AI should not create new documents, roles, workflows, or rules unless their exis
 
 Every new document, role, process, or rule must justify its long-term value.
 
+Before choosing a material engine/editor capability, tool, asset, package,
+workflow or bespoke implementation, AI must consult the applicable project
+capability index, coverage register and native-capability atlas where
+applicable under
+the [Tool and Asset Capability Knowledge Base
+Standard](Knowledge/TOOL_AND_ASSET_CAPABILITY_KNOWLEDGE_BASE_STANDARD.md).
+It should prefer the strongest locally supported and visually appropriate
+option, account for scoped successes, failures, unknowns and technical debt,
+and justify bypassing a materially stronger existing option. The maintained
+coverage must be complete for known holdings; the per-task consultation remains
+proportional and ordinary work does not repeat the complete inventory audit.
+For Unity work, built-in Editor tools, engine APIs, official packages,
+installed modules and diagnostics must be checked before custom construction,
+new dependencies or purchases are proposed.
+
 ## Testing
 
 AI should consider how generated code, systems, assets, and workflows can be tested or validated.
@@ -269,6 +315,16 @@ Temporary workarounds are acceptable only when they are clearly documented, just
 When debugging, AI should avoid random trial-and-error changes unless the uncertainty is clearly stated and the test is intentionally exploratory.
 
 AI should preserve known working behavior while isolating the cause of the problem.
+
+AI must distinguish a domain or candidate failure from a pre-candidate
+operational error. Within the bounded recovery authority defined by the
+[Execution Modes and Stage Review Standard](Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md),
+AI should automatically repair a proven compile, import, launch, wrapper,
+tool, output-guard or evidence-path fault when protected state is exact, no
+candidate-affecting mutation occurred or it was exactly restored, and the
+repair changes one concrete execution condition. It must not escalate such a
+recoverable operational fault as an asset, visual, gameplay or candidate
+failure.
 
 AI should ask for logs, screenshots, file contents, reproduction steps, or engine state when they materially affect the diagnosis.
 

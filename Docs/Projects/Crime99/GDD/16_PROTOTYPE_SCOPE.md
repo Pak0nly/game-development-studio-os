@@ -453,7 +453,15 @@ The prototype must deliberately support both cleaner and more heavily worn or di
 
 The production principle through completion of the first prototype is `Buy, reuse, adapt lightly.` The planned primary source is the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot`, subject to separate purchase and download approval.
 
-`1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` are the first-priority packages for suitability review. Selected assets are treated as raw material and may receive a light shared style pass. The Style Slice and prototype must explicitly prove asset usability and visual cohesion.
+`1950s NYC` and `Cyberpunk Port City` are the current first-priority packages
+for suitability review. `Fuyoh Cyberpunk Diner`, including the complete asset
+and every derived subasset, is `TEMPORARILY EXCLUDED / DO NOT USE` and may not
+be selected for the Style Slice or prototype. No replacement landmark is
+selected; the landmark, Composition Anchor, primary lighting focus, and their
+dependent sightlines and reveals remain `OPEN / HUMAN DECISION REQUIRED`.
+Selected authorised assets are treated as raw material and may receive a light
+shared style pass. The Style Slice and prototype must explicitly prove asset
+usability and visual cohesion.
 
 Before import, the licence, Unity support, render-pipeline compatibility, shaders, materials, scale, textures, LODs, colliders, pivots, modularity, performance, and adaptation effort must be documented. No generative derivation, training, or use as a generative reference is permitted without a separate licence review.
 

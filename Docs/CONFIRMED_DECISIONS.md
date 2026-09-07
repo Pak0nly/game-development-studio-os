@@ -594,3 +594,142 @@ historical responsibility record. Its gameplay ownership, Gate-1 V3 historical
 authority, Gate-2/B11 protection, explicit-reuse validation requirement, and
 no-production/no-Git-authority boundaries remain in force. This decision does
 not supersede DEC-026, DEC-027, DEC-028, or DEC-030.
+
+### DEC-032 — Operational Recovery Before Candidate Attempt
+
+**Status:** Confirmed
+
+**Scope:** Studio Operating System; all projects and future AI-agent tasks
+
+**Confirmed decision:** The Human directs the Studio OS to apply the
+following adopted rule. A pre-candidate operational failure must not be
+treated as a candidate, asset, gameplay or visual failure merely because a
+process, tool, launch or capture was consumed. Work Orders must separately
+account for planned setup, bounded operational recovery, candidate attempts
+and formal creative corrections.
+
+Within existing authority, Work automatically repairs a proven compile,
+import, launch, wrapper, tool, output-guard or evidence-path fault when
+protected state remains exact, no candidate-affecting mutation occurred or it
+was exactly restored, output ownership is unambiguous, and the repair changes
+one concrete execution condition. This does not authorise blind retries,
+guard weakening, uncertain cleanup, scope or method changes, protected-source
+mutation, dependency changes, Git, network access, purchase, download,
+adoption or any other authority expansion.
+
+**Implications:** A candidate attempt begins only at the declared attempt-
+start condition after applicable preconditions pass. Planned compile/import
+warm-up is setup. Qualifying operational errors use a separate bounded
+recovery allowance and do not consume candidate-attempt or creative-
+correction budgets. Future Task-Delta Work Orders must declare the separate
+allowances and task-owned output namespaces. Stops remain mandatory for
+protected drift, uncertain ownership, failed restoration, repeated unchanged
+failure, scope/method change or exhausted operational recovery.
+
+**Human confirmation source:** Human Developer direction to make the rule
+generally valid and part of the Studio OS for future chats, 2026-08-22.
+
+**Supersedes:** None. This decision clarifies and strengthens the existing
+formative-work, failed-tool, invalid-evidence and no-candidate accounting
+rules.
+
+### DEC-033 — Crime99 Integrated Production Environment Selection
+
+**Status:** Confirmed
+
+**Scope:** Crime99 gameplay, city/world production environment, pipeline, and
+repository ownership
+
+**Confirmed decision:**
+
+1. `Projects/Crime99/Source/Crime99` is the canonical integrated Crime99 Unity
+   working environment for gameplay and city/world/level production.
+2. `Projects/Crime99` remains the canonical repository owner. No additional
+   repository, project migration, or Vendor working copy is selected.
+3. The selected environment currently uses Unity `6000.3.19f1` and URP
+   `17.3.0`; a later pipeline or version change requires separate authority.
+4. This environment selection does not adopt any scene, city candidate,
+   Industrial Harbour assembly, asset placement, visual result, or production
+   baseline. Each remains governed by its own evidence and Human checkpoint.
+5. `Projects/Crime99MasterCityDiscovery` remains static protected learning
+   evidence under DEC-031 and is not restored as a production environment.
+6. The failed absolute-position proxy/slab composition remains
+   `FAIL_NOT_ADOPTED`. Primitive proxy blocks or isolated hardscape islands
+   must not be reintroduced as city-production substitutes.
+7. This decision does not authorise Git, packages, downloads, purchases,
+   cleanup, deletion, migration, or candidate adoption.
+
+**Implications:** New authorised Crime99 gameplay and city work may use the
+same canonical Unity project without repeating environment selection. A Task-
+Delta Work Order must still name its exact scene source, protected paths,
+allowed mutation paths, evidence, attempt boundary, and Human checkpoint.
+
+**Human confirmation source:** Human Developer direction `wir bleiben in
+Crime99`, followed by authority to proceed with the next real industrial-
+parcel production task, 2026-08-23.
+
+**Supersedes:** DEC-031 clauses 6-8 only insofar as no current environment was
+then selected and gameplay/city integration was not yet claimed. All static-
+learning-evidence, protection, historical-authority, no-Git, and no-automatic-
+reuse boundaries in DEC-031 remain in force.
+
+### DEC-034 — Director Orchestration-Only Execution and Independent Closure
+
+**Status:** Confirmed
+
+**Scope:** Studio Operating System; all future Director-originated mutation-
+capable work
+
+**Confirmed decision:** A Director is orchestration-only. Human authorisation,
+including `go`, authorises the exact scope for validated dispatch and does not
+authorise direct Director implementation. Before the first mutation and after
+every task pivot, Director and Work remain separate execution identities.
+
+Every new mutation-capable Director dispatch requires one separately created
+Worker task, an explicit requested model, reasoning effort and specific routing
+reason, live separate-task and cursor-monitoring capabilities, and cursor-based
+monitoring by the Director. If separate task creation or monitoring is
+unavailable, the Director stops rather than executing the work itself.
+
+When independent review is required, at most one decision-relevant separate
+Reviewer task activates after the Worker freezes reviewable evidence. Builder
+self-review is not independent. An independently reviewed `PASS` may enter
+operational state only after an immutable closure receipt binds the exact Work
+Order, distinct Director/Worker/Reviewer task identities, candidate, evidence,
+review record and applicable verdict. Missing, stale, self-authored or
+mismatched closure evidence fails closed.
+
+The rule is prospective. Historical version-1 dispatch artifacts remain
+historical evidence and are not rewritten or retrofitted. This decision does
+not grant project, Unity, package, download, network, Git or follow-on
+authority.
+
+The exact adopted enforcement implementation is:
+
+Independent review verdict: PASS
+
+Worker task: 01a04cf1-ae5e-70d1-94fe-5d125d1bf0f4
+
+Reviewer task: 01a04d0c-9935-7441-a1e5-93c2ef82e5f3
+
+Candidate identity: e5e40b3cb7642e6de064b703c9704bd4fa7032cdad04e92c888478ce13973cb1
+
+Closure receipt: 2170c153b8a95c1d5f7a66536efeadfcd6f637da24f1608c7f91d8d28aa1292a
+
+**Implications:** Future Director chats must apply the Director Non-Execution
+Gate in `AGENTS.md`, the Role Operating Model, AI Development Rules, the
+prospective dispatch procedure and the operational closure gate. Technical or
+Builder evidence alone cannot produce an independently reviewed PASS claim.
+
+**Human confirmation source:** Human-authorised Work Order
+`C99-STUDIO-DIRECTOR-ORCHESTRATION-ENFORCEMENT-V1`, independently reviewed by
+task `01a04d0c-9935-7441-a1e5-93c2ef82e5f3` and closed through receipt
+`2170c153b8a95c1d5f7a66536efeadfcd6f637da24f1608c7f91d8d28aa1292a`,
+2026-08-29.
+
+**Supersedes:** Any workflow interpretation that allowed a Director to perform
+the implementation it dispatched, treated Human `go` as a self-execution
+waiver, treated Builder self-review as independent, or projected an
+independently reviewed PASS without exact closure evidence. It does not
+supersede narrower permission, Human checkpoint, correction, safety or
+authority boundaries.

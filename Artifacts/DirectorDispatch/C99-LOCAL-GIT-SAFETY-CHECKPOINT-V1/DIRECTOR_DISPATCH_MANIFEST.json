@@ -1,0 +1,269 @@
+{
+  "schema_version": 2,
+  "kind": "director_dispatch_manifest",
+  "work_order_id": "C99-LOCAL-GIT-SAFETY-CHECKPOINT-V1",
+  "assignment_type": {
+    "value": "Preserve existing authorised sources in local safety commits without changing game content",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Standard",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/DirectorDispatch/C99-LOCAL-GIT-SAFETY-CHECKPOINT-V1/WORK_ORDER.md",
+    "sha256": "87e0d3a04e572fa5ae90f4893f1e572c9ea192f0df18bf91f47a50bb0773c53b",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Crime99/Source/Crime99",
+    "project_id": "Crime99",
+    "project_identity": {
+      "source_path": "ProjectSettings/ProjectSettings.asset",
+      "source_sha256": "703402b26d25e36f607481dc77ab1782da7d7c56864698ecbb74927cfb79734b",
+      "method": "utf8_key_value",
+      "key": "productName",
+      "expected_value": "Crime99",
+      "indentation": 2,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "66e0e8cda53fc88776088dad559e56fe486c2fcd",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Docs/WORK_STATE.md",
+      "Docs/CURRENT_HANDOVER.md"
+    ],
+    "sha256": "f99ee22c64d561f44d64681e90d0f4946b4a830ee6d165f49dd76e26c544e951",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human go explicitly authorises one Terra Worker, exact-list staging and local safety commits for both repositories, without push deletion or reset.",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "exec_command",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "apply_patch",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "view_image",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "create_thread",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "wait_threads",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "read_thread",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "send_message_to_thread",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "00365cc1eb419e04a35bef0bf36e8c25f5bda7138960fcf1ac3e1f12101a85c0",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/AI_DEVELOPMENT_RULES.md",
+      "sha256": "539217416dc797ff559cee923c49c7becaa4fd6d709a432bc32dafbd4355763a",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "7a1e4fd4684751c7c829a5c67e3bbede1be7d9ab326aed04154588800f2749e4",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/WORK_STATE.md",
+      "sha256": "815feb7c993c0c4e6be976de06e0e0aeb9f7170bed84ba29671c40813820edba",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CURRENT_HANDOVER.md",
+      "sha256": "cdb860e179eaafa11988c1dc1dbcd4621bade2641a115596f79ec7673d8633f3",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/AI/AI_MODEL_ROUTING_AND_COMPUTE_EFFICIENCY_STANDARD.md",
+      "sha256": "28b041e005c5b7da7ac48800608e01e33b50b8ea4682dca2491249af6154a626",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md",
+      "sha256": "db3c8c9be162a6585cef52910b799c41a0b55021deabc65cd8bcfe80ae3c8d15",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/Roles/ROLE_OPERATING_MODEL.md",
+      "sha256": "85a1ee2825e0662d6c05ad9486a2f1cd8c9fe397beba9a34ffc40c20ef4e8d47",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Tools/AuthorityContinuity/README.md",
+      "sha256": "19b1e26d9a05d3965a99b817c729b18dfa5b735981262d27a6df492c53574375",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": ".gitignore",
+      "sha256": "77cdfac8ba5516e62ea5bd2b1be2ec9e43406e824d8d8871c1ecbbe58fc46044",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Crime99/.gitignore",
+      "sha256": "e8736decbdb7dbb823c90bf35ae6c130dabf75492e0bd971a17a0bd3c59fc7c5",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Crime99/Docs/ASSET_PROVENANCE.md",
+      "sha256": "f0a4c0fcb43834323c9f8c8656ff710ed6c1621fdbaf1d403ee1fb27de0b6870",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "protected-terrain",
+        "path": "Projects/Crime99/Source/Crime99/Assets/_Crime99/Phase5/ParkGravelAccessCurrentTerrainV1/Generated/Candidate01/Terrain/ParkGravelAccessCurrentTerrainV1_TerrainData.asset",
+        "method": "file_sha256",
+        "expected_sha256": "cb391980a07aea8b098eb87d69125896713c7d269ea4533ff89d8fbb7f5635b8",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "C99-LOCAL-GIT-SAFETY-CHECKPOINT-V1",
+        "statement": "Human go explicitly authorises one Terra Worker, exact-list staging and local safety commits for both repositories, without push deletion or reset.",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    ".git",
+    "Projects/Crime99/.git",
+    "Docs/WORK_STATE.md",
+    "Docs/CURRENT_HANDOVER.md",
+    "Artifacts/Reports/C99-LOCAL-GIT-SAFETY-CHECKPOINT-V1"
+  ],
+  "protected_paths": [
+    "Projects/Crime99/Source",
+    "Tools",
+    "AGENTS.md",
+    "Docs/CONFIRMED_DECISIONS.md",
+    "Docs/Roles",
+    "Docs/Playbooks"
+  ],
+  "stop_boundary": {
+    "statement": "Local checkpoints and exact exception summary; no game work push deletion reset or follow-on",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Integration",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Stage exact safe allowlists and create local checkpoint commits",
+      "class": "Standard",
+      "requested_model": "gpt-5.6-terra",
+      "reason": "Bounded local Git preservation with exact allowlists and deterministic scope verification; no content or policy decisions.",
+      "context_fork": "Task-relevant Git and authority excerpts only; no full project rebootstrap",
+      "attempts": "One planned checkpoint execution; scoped operational recovery only",
+      "escalate_stop": "Ambiguous items excluded; identity or unresolvable Git blocker stops affected commit",
+      "attestation": "Requested model \u2014 not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "QA Lead"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Scope and quality consistency; one independent post-freeze Reviewer",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "QA Lead",
+      "status": "ACTIVATED",
+      "reason": "Scope and quality consistency; one independent post-freeze Reviewer",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "Freeze safe per-repo file scope",
+      "status": "pending"
+    },
+    {
+      "step": "Verify staging and commit locally",
+      "status": "pending"
+    },
+    {
+      "step": "Report preservation and exclusions",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "C99-LOCAL-GIT-SAFETY-CHECKPOINT-V1",
+    "rounds": 0,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director 01a07c84-4a59-71f2-8aef-10d014a697dd",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "create_thread",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "gpt-5.6-terra",
+      "reasoning_effort": "medium",
+      "reason": "Bounded local Git preservation with exact allowlists and deterministic scope verification; no content or policy decisions."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "cursor_based",
+      "tool": "wait_threads"
+    },
+    "independent_review": {
+      "required": false,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": true,
+      "reviewer_separate_from_worker_and_director": true,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Report completed local preservation and exclusions; await next Human instruction.",
+    "declaration": "HUMAN DECISION"
+  }
+}

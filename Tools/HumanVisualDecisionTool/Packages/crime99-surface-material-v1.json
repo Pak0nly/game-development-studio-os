@@ -1,0 +1,1095 @@
+{
+  "schemaVersion": "1.0",
+  "decisionSetId": "crime99-surface-material-human-selection-v1",
+  "title": "Crime99 — Surface Material Human Selection",
+  "description": "Human-only local evaluation of the audited Crime99 road, pavement, curb, service, ground, repair, and geometry-disposition choices. No option is recommended. All categories begin unresolved.",
+  "project": "Crime99",
+  "stage": "Surface Material Human Selection",
+  "sourceContext": {
+    "historicalCandidateId": "C99-SMP1-P1-V1",
+    "historicalStatus": "HISTORICAL — NON-COMPLIANT FOR FUTURE AI VISUAL REVIEW",
+    "sourceCandidateId": "C99-DP1-CORRECTED-P1-V2",
+    "sourceSceneSha256": "155E632EEFDCCDCE90991EAF389105478A53510CE9DB0E6C76A64895D3467B94",
+    "historicalSceneSha256": "B40FC9198EACCD7AA569F671598B6A6DB2395489997225E9843B2EB569019EF0",
+    "placementSha256": "1CAA97BCBDC98E49F23427FA9A9577FEB46A01BC20506D3C1A070D9641444F20",
+    "materialRecordSha256": "2832275F0B014D332DA22EF38A640714184938B412310D70CEF2AEA3E2FABE50",
+    "vendorAuditSha256": "A6A9B66649E72E774BBA17B06E0E392EC72CFC482CA4CDD7B0173D7DC161A234",
+    "auditBlockerConsolidationSha256": "9B573118FD293666D621B61C31BCA8DB7A1A031A79D11EEE33C517EB0FEAB22D",
+    "formalSurfaceCorrectionsUsed": "0 of 1",
+    "humanOnlyBoundary": "Vendor visual inspection, comparison, Art Direction, and final visual acceptance belong exclusively to the Human. Return text metadata only.",
+    "compatibilityNotice": "Serialized metadata and local preview evidence do not prove render-pipeline compatibility. No AI visual assessment is authorised.",
+    "historicalAiAuthoredVariants": [
+      {
+        "name": "C99_SM_Road_Asphalt",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_Road_Asphalt.mat",
+        "guid": "df561d05a3590914f82b48aed48ed306",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      },
+      {
+        "name": "C99_SM_Road_AsphaltPatch",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_Road_AsphaltPatch.mat",
+        "guid": "0a0cff1a3c4d9b64bba96dd86ab36895",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      },
+      {
+        "name": "C99_SM_Sidewalk_Slab",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_Sidewalk_Slab.mat",
+        "guid": "31c44c3652b7a3f4bad9c3f3e2d5eef2",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      },
+      {
+        "name": "C99_SM_Curb_Concrete",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_Curb_Concrete.mat",
+        "guid": "5ea766804ef994848a942b59f3479f3e",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      },
+      {
+        "name": "C99_SM_GroundInfill_Concrete",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_GroundInfill_Concrete.mat",
+        "guid": "139819e16ae03f946a8a492d25cf40a3",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      },
+      {
+        "name": "C99_SM_Service_Concrete",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_Service_Concrete.mat",
+        "guid": "4462919d66e2c60429f98b9cf80ddb5d",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      },
+      {
+        "name": "C99_SM_Service_Wear",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_Service_Wear.mat",
+        "guid": "f31020a1cc253ac4b9273d47c500aace",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      },
+      {
+        "name": "C99_SM_Curb_Grime",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_Curb_Grime.mat",
+        "guid": "e30e2630d4176c344b9a11cdd6e861ce",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      },
+      {
+        "name": "C99_SM_Loading_Mark",
+        "path": "Assets/_Crime99/UrbanSliceVisualAssembly/SurfaceMaterialPass1/Materials/C99_SM_Loading_Mark.mat",
+        "guid": "e67572111da6b5c4fa29037f4fcec710",
+        "status": "NOT ELIGIBLE FOR RETENTION WITHOUT NEW HUMAN DECISION"
+      }
+    ]
+  },
+  "validationRules": {
+    "allowDeferred": false,
+    "allowNotApplicable": false
+  },
+  "categories": [
+    {
+      "id": "road",
+      "title": "1. Road",
+      "description": "Choose exactly one audited road material after local Human comparison. Serialized use is technical context, not a recommendation.",
+      "selectionMode": "single",
+      "options": [
+        {
+          "id": "road-m-new-asphalt01",
+          "label": "M_NewAsphalt01",
+          "description": "Assigned by the Vendor to all 17 inspected regular road prefabs.",
+          "technicalName": "M_NewAsphalt01",
+          "sourceLabel": "Vendor road-prefab assignment",
+          "previewAssets": [
+            {
+              "id": "road-new-asphalt-context",
+              "path": "previews/crime99/road-new-asphalt-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed contextual road preview",
+              "expectedSha256": "6F9C9E564175C287A5EF472646CAFB0AD43B04F532F5159AA07239939F881B50"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/ThirdParty/1950sNYC/LeartesStudios/NYC1950s/Art/Materials/M_NewAsphalt01.mat",
+            "guid": "75d32b5954ee5cd479b7baa03d8b5aeb",
+            "shader": "Universal Render Pipeline/Lit",
+            "shaderGuid": "933532a4fcc9baf4fa0491de14d08ed7",
+            "auditedValues": {
+              "baseMapTiling": "5,5",
+              "baseMapOffset": "0,0",
+              "smoothness": 0,
+              "normalScale": 1,
+              "bumpScale": 1,
+              "metallic": 0,
+              "baseColor": "0.38679248,0.2213071,0.016420428,1"
+            },
+            "compatibilityConcern": "Exact reduced-root dependency closure and renderer-slot use require deterministic verification after Human selection."
+          }
+        },
+        {
+          "id": "road-m-new-asphalt01-light",
+          "label": "M_NewAsphalt01_Light",
+          "description": "Referenced in the inspected full-city scenes; not assigned to the inspected regular road prefabs.",
+          "technicalName": "M_NewAsphalt01_Light",
+          "sourceLabel": "Vendor full-city scene reference",
+          "previewAssets": [
+            {
+              "id": "road-new-asphalt-light-context",
+              "path": "previews/crime99/road-new-asphalt-light-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed contextual road preview",
+              "expectedSha256": "CE85C502A1A33B3465CF35716A65BFA0EBD386412B40B7EFF57087AA63FF590D"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/M_NewAsphalt01_Light.mat",
+            "guid": "a076f4bd4123203409281edd4c2090c9",
+            "shader": "Universal Render Pipeline/Lit",
+            "shaderGuid": "933532a4fcc9baf4fa0491de14d08ed7",
+            "auditedValues": {
+              "baseMapTiling": "1,1",
+              "baseMapOffset": "0,0",
+              "smoothness": 0.184,
+              "normalScale": 1,
+              "bumpScale": 1,
+              "metallic": 0,
+              "baseColor": "0.764151,0.6450027,0.4577697,1"
+            },
+            "compatibilityConcern": "The HDRP-tree location and current URP shader reference require local technical verification."
+          }
+        }
+      ],
+      "implementationFields": [
+        {
+          "id": "targetRenderer",
+          "label": "Exact target object or renderer",
+          "type": "text"
+        },
+        {
+          "id": "materialSlot",
+          "label": "Zero-based material slot",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "id": "tilingX",
+          "label": "Tiling X",
+          "type": "number"
+        },
+        {
+          "id": "tilingY",
+          "label": "Tiling Y",
+          "type": "number"
+        },
+        {
+          "id": "offsetX",
+          "label": "Offset X",
+          "type": "number"
+        },
+        {
+          "id": "offsetY",
+          "label": "Offset Y",
+          "type": "number"
+        },
+        {
+          "id": "normalStrength",
+          "label": "Normal strength",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "id": "smoothness",
+          "label": "Smoothness",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorR",
+          "label": "Colour / tint R",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorG",
+          "label": "Colour / tint G",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorB",
+          "label": "Colour / tint B",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorA",
+          "label": "Colour / tint A",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "additionalInstructions",
+          "label": "Additional exact implementation instructions",
+          "type": "textarea"
+        }
+      ],
+      "validationRules": {
+        "requireDerivedImplementationNote": true
+      }
+    },
+    {
+      "id": "sidewalk",
+      "title": "2. Sidewalk / pavement",
+      "description": "Choose exactly one audited pavement material. Text does not determine which visible submesh uses each serialized slot.",
+      "selectionMode": "single",
+      "options": [
+        {
+          "id": "sidewalk-m-new-pavement01-inst",
+          "label": "M_NewPavement01_Inst",
+          "description": "Present in 16 of 19 inspected purpose-labelled pavement prefabs.",
+          "technicalName": "M_NewPavement01_Inst",
+          "sourceLabel": "Vendor pavement-prefab assignment",
+          "previewAssets": [
+            {
+              "id": "pavement-new-pavement-context",
+              "path": "previews/crime99/pavement-new-pavement-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed contextual pavement preview",
+              "expectedSha256": "D8C8B5643249DE7411BADFC0DB1B317DCA961AF9A4D7D214C5E37BE5505F4FDC"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/M_NewPavement01_Inst.mat",
+            "guid": "643c9c3b652a06e42a9cb79a07d20aaf",
+            "shader": "Vendor S_BrickMat Shader Graph",
+            "shaderGuid": "36faed88b9bc2e44cad70b00e38f56a5",
+            "auditedValues": {
+              "baseMapTiling": "3,2",
+              "baseMapOffset": "2,2",
+              "smoothness": 0.107,
+              "normalScale": 1,
+              "bumpScale": 1,
+              "metallic": 0.102,
+              "baseColor": "0.20754719,0.15761839,0.15761839,1"
+            },
+            "compatibilityConcern": "HDRP-tree material and reduced-root graph dependency require local technical validation."
+          }
+        },
+        {
+          "id": "sidewalk-m-pavemat01",
+          "label": "M_PaveMat01",
+          "description": "Present beside M_NewPavement01_Inst in 13 purpose-labelled pavement prefabs.",
+          "technicalName": "M_PaveMat01",
+          "sourceLabel": "Vendor pavement-prefab secondary slot",
+          "previewAssets": [
+            {
+              "id": "pavement-pavemat-context",
+              "path": "previews/crime99/pavement-pavemat-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed contextual pavement preview",
+              "expectedSha256": "638E52E48B681BDE37EE5E6E0878837A3B7B824EEC836F56399387A4C394CCDD"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/M_PaveMat01.mat",
+            "guid": "be0673fca3da8bb40bd7853ed78fe560",
+            "shader": "Universal Render Pipeline/Lit",
+            "shaderGuid": "933532a4fcc9baf4fa0491de14d08ed7",
+            "auditedValues": {
+              "baseMapTiling": "1,1",
+              "baseMapOffset": "0,0",
+              "smoothness": 0.164,
+              "normalScale": 1,
+              "bumpScale": 1,
+              "metallic": 0,
+              "baseColor": "0.4528302,0.4528302,0.4528302,1"
+            },
+            "compatibilityConcern": "Serialized text does not prove which visible pavement submesh or face uses this slot."
+          }
+        }
+      ],
+      "implementationFields": [
+        {
+          "id": "targetRenderer",
+          "label": "Exact target object or renderer",
+          "type": "text"
+        },
+        {
+          "id": "materialSlot",
+          "label": "Zero-based material slot",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "id": "tilingX",
+          "label": "Tiling X",
+          "type": "number"
+        },
+        {
+          "id": "tilingY",
+          "label": "Tiling Y",
+          "type": "number"
+        },
+        {
+          "id": "offsetX",
+          "label": "Offset X",
+          "type": "number"
+        },
+        {
+          "id": "offsetY",
+          "label": "Offset Y",
+          "type": "number"
+        },
+        {
+          "id": "normalStrength",
+          "label": "Normal strength",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "id": "smoothness",
+          "label": "Smoothness",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorR",
+          "label": "Colour / tint R",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorG",
+          "label": "Colour / tint G",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorB",
+          "label": "Colour / tint B",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorA",
+          "label": "Colour / tint A",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "additionalInstructions",
+          "label": "Additional exact implementation instructions",
+          "type": "textarea"
+        }
+      ],
+      "validationRules": {
+        "requireDerivedImplementationNote": true
+      }
+    },
+    {
+      "id": "curb",
+      "title": "3. Curb",
+      "description": "Choose one candidate only after inspection on the actual curb geometry. No candidate is preferred.",
+      "selectionMode": "single",
+      "options": [
+        {
+          "id": "curb-m-new-pavement01-inst",
+          "label": "M_NewPavement01_Inst",
+          "description": "Audited pavement-family candidate; visible curb-face role is not textually established.",
+          "technicalName": "M_NewPavement01_Inst",
+          "previewAssets": [
+            {
+              "id": "curb-new-pavement-context",
+              "path": "previews/crime99/curb-new-pavement-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed actual-curb preview",
+              "expectedSha256": "ACF799B6C9A4FF77C2F8DF4826BF0A941A41C8B32549CB2EC9BE01AF36F41AF0"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/M_NewPavement01_Inst.mat",
+            "guid": "643c9c3b652a06e42a9cb79a07d20aaf",
+            "compatibilityConcern": "The serialized slot does not prove suitability on project-owned curb geometry."
+          }
+        },
+        {
+          "id": "curb-m-pavemat01",
+          "label": "M_PaveMat01",
+          "description": "Audited pavement-family candidate; visible submesh role is not textually established.",
+          "technicalName": "M_PaveMat01",
+          "previewAssets": [
+            {
+              "id": "curb-pavemat-context",
+              "path": "previews/crime99/curb-pavemat-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed actual-curb preview",
+              "expectedSha256": "0B1F1BE7BF4ABE7D91CD812C96D80554C29F21E80D02C13AD5B235D048B4FB51"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/M_PaveMat01.mat",
+            "guid": "be0673fca3da8bb40bd7853ed78fe560",
+            "compatibilityConcern": "The serialized slot does not prove suitability on project-owned curb geometry."
+          }
+        },
+        {
+          "id": "curb-m-nycb9-concrete03",
+          "label": "M_NYCB9_Concrete_03",
+          "description": "Sole material in three purpose-labelled pavement prefabs; its name identifies a building concrete family, not a curb.",
+          "technicalName": "M_NYCB9_Concrete_03",
+          "previewAssets": [
+            {
+              "id": "curb-nycb9-concrete-context",
+              "path": "previews/crime99/curb-nycb9-concrete-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed actual-curb preview",
+              "expectedSha256": "1542103181F1097C2F4A8DA44D29404D632A0A830DA90073225A9C8420646597"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/Building/M_NYCB9_Concrete_03.mat",
+            "guid": "4635f3aa82136bb408cd95ffb5636bb4",
+            "shader": "Vendor S_MasterMaterialLeartesStudios03",
+            "auditedValues": {
+              "mainTexTiling": "1,1",
+              "mainTexOffset": "0,0",
+              "smoothness": 0.5,
+              "normalScale": 1,
+              "metallic": 0,
+              "baseColor": "1,1,1,1"
+            },
+            "compatibilityConcern": "This is a technical alternative evidenced by pavement-prefab assignment, not a recommendation."
+          }
+        }
+      ],
+      "implementationFields": [
+        {
+          "id": "targetRenderer",
+          "label": "Exact target curb object or renderer",
+          "type": "text"
+        },
+        {
+          "id": "materialSlot",
+          "label": "Zero-based material slot",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "id": "tilingX",
+          "label": "Tiling X",
+          "type": "number"
+        },
+        {
+          "id": "tilingY",
+          "label": "Tiling Y",
+          "type": "number"
+        },
+        {
+          "id": "offsetX",
+          "label": "Offset X",
+          "type": "number"
+        },
+        {
+          "id": "offsetY",
+          "label": "Offset Y",
+          "type": "number"
+        },
+        {
+          "id": "normalStrength",
+          "label": "Normal strength",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "id": "smoothness",
+          "label": "Smoothness",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorR",
+          "label": "Colour / tint R",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorG",
+          "label": "Colour / tint G",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorB",
+          "label": "Colour / tint B",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorA",
+          "label": "Colour / tint A",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "additionalInstructions",
+          "label": "Additional exact implementation instructions",
+          "type": "textarea"
+        }
+      ],
+      "validationRules": {
+        "requireDerivedImplementationNote": true
+      }
+    },
+    {
+      "id": "service-loading",
+      "title": "4. Service / loading surface",
+      "description": "No explicitly named Vendor service/loading material was found. Existing road and pavement materials are inspection candidates only.",
+      "selectionMode": "single",
+      "options": [
+        {
+          "id": "service-m-new-asphalt01",
+          "label": "M_NewAsphalt01",
+          "description": "Vendor-designated road material; no service/loading purpose is established.",
+          "technicalName": "M_NewAsphalt01",
+          "previewAssets": [
+            {
+              "id": "service-new-asphalt-context",
+              "path": "previews/crime99/service-new-asphalt-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed service-area preview",
+              "expectedSha256": "6796EDD347B6BD3D4A81E16E4A906E18167274F1A85F01899F458CAB478CB19A"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/ThirdParty/1950sNYC/LeartesStudios/NYC1950s/Art/Materials/M_NewAsphalt01.mat",
+            "guid": "75d32b5954ee5cd479b7baa03d8b5aeb",
+            "compatibilityConcern": "No Vendor service/loading purpose is established."
+          }
+        },
+        {
+          "id": "service-m-new-asphalt01-light",
+          "label": "M_NewAsphalt01_Light",
+          "description": "Vendor full-city scene reference; no service/loading purpose is established.",
+          "technicalName": "M_NewAsphalt01_Light",
+          "previewAssets": [
+            {
+              "id": "service-new-asphalt-light-context",
+              "path": "previews/crime99/service-new-asphalt-light-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed service-area preview",
+              "expectedSha256": "AEDAA8CDF5EEFBCC2A7F1DED4C2B5AC891FF3A2B6906152B68BDE33B904CB9DE"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/M_NewAsphalt01_Light.mat",
+            "guid": "a076f4bd4123203409281edd4c2090c9",
+            "compatibilityConcern": "Not a regular road-prefab assignment and no service/loading purpose is established."
+          }
+        },
+        {
+          "id": "service-m-new-pavement01-inst",
+          "label": "M_NewPavement01_Inst",
+          "description": "Vendor pavement-prefab material; no service/loading purpose is established.",
+          "technicalName": "M_NewPavement01_Inst",
+          "previewAssets": [
+            {
+              "id": "service-new-pavement-context",
+              "path": "previews/crime99/service-new-pavement-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed service-area preview",
+              "expectedSha256": "5E3E231D47216A45A23DA414843078EA21B6BC0470C10AA30855808D03E15987"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/M_NewPavement01_Inst.mat",
+            "guid": "643c9c3b652a06e42a9cb79a07d20aaf",
+            "compatibilityConcern": "No Vendor service/loading purpose is established."
+          }
+        },
+        {
+          "id": "service-m-pavemat01",
+          "label": "M_PaveMat01",
+          "description": "Vendor pavement-prefab secondary slot; visible submesh role and service suitability are not established.",
+          "technicalName": "M_PaveMat01",
+          "previewAssets": [
+            {
+              "id": "service-pavemat-context",
+              "path": "previews/crime99/service-pavemat-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed service-area preview",
+              "expectedSha256": "486BBD66B1AA76AE89EAD4363363541A7AA77C042B484A6AC292F873859A81F0"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/M_PaveMat01.mat",
+            "guid": "be0673fca3da8bb40bd7853ed78fe560",
+            "compatibilityConcern": "Visible submesh role and service/loading suitability are not established by text."
+          }
+        },
+        {
+          "id": "service-no-suitable-option",
+          "label": "No suitable option — requires separate Human direction",
+          "description": "Use only when the inspected audited candidates are unsuitable. Record exact separate direction below.",
+          "technicalName": "NO_SUITABLE_OPTION",
+          "exclusiveSelection": true,
+          "technicalMetadata": {
+            "materialPath": null,
+            "guid": null,
+            "requiresSeparateHumanDirection": true
+          }
+        }
+      ],
+      "implementationFields": [
+        {
+          "id": "targetRenderer",
+          "label": "Exact target object or renderer",
+          "type": "text"
+        },
+        {
+          "id": "materialSlot",
+          "label": "Zero-based material slot",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "id": "tilingX",
+          "label": "Tiling X",
+          "type": "number"
+        },
+        {
+          "id": "tilingY",
+          "label": "Tiling Y",
+          "type": "number"
+        },
+        {
+          "id": "offsetX",
+          "label": "Offset X",
+          "type": "number"
+        },
+        {
+          "id": "offsetY",
+          "label": "Offset Y",
+          "type": "number"
+        },
+        {
+          "id": "normalStrength",
+          "label": "Normal strength",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "id": "smoothness",
+          "label": "Smoothness",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorR",
+          "label": "Colour / tint R",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorG",
+          "label": "Colour / tint G",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorB",
+          "label": "Colour / tint B",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "colorA",
+          "label": "Colour / tint A",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "id": "separateDirection",
+          "label": "Exact separate Human direction",
+          "type": "textarea",
+          "description": "Required only when no audited option is suitable."
+        }
+      ],
+      "validationRules": {
+        "requireDerivedImplementationNote": true
+      }
+    },
+    {
+      "id": "ground-beneath-buildings",
+      "title": "5. Ground beneath buildings",
+      "description": "Choose one explicit action. Existing Ground-Infills remain unchanged until a later separately authorised implementation task.",
+      "selectionMode": "single",
+      "options": [
+        {
+          "id": "ground-retain-selected-material",
+          "label": "Retain existing geometry with selected material",
+          "description": "Preserve the existing geometry and assign the exact Human-selected material later.",
+          "technicalName": "RETAIN_WITH_SELECTED_MATERIAL",
+          "previewAssets": [
+            {
+              "id": "ground-infill-retain-context",
+              "path": "previews/crime99/ground-infill-retain-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed Ground-Infill preview",
+              "expectedSha256": "F99BF9171F62674B3832652A2BF0F856F0A02F40F0A7B8404977DEC2D173C547"
+            }
+          ],
+          "implementationMetadata": {
+            "geometryAction": "retained"
+          }
+        },
+        {
+          "id": "ground-remove",
+          "label": "Remove",
+          "description": "Remove only the exact Human-identified project-owned geometry under separate mutation authority.",
+          "technicalName": "REMOVE",
+          "previewAssets": [
+            {
+              "id": "ground-infill-remove-context",
+              "path": "previews/crime99/ground-infill-remove-context.png",
+              "mode": "beforeAfter",
+              "label": "Fixed Ground-Infill removed-state preview",
+              "expectedSha256": "905147B2CE5EB0295F0EC37545F8CC005B80FED19DD1DE4C4E4607BFB1BFE75E"
+            }
+          ],
+          "implementationMetadata": {
+            "geometryAction": "removed"
+          }
+        },
+        {
+          "id": "ground-replace-separate-scope",
+          "label": "Replace under separately authorised scope",
+          "description": "Record the replacement requirement; this V1 does not create or apply it.",
+          "technicalName": "REPLACE_SEPARATE_SCOPE",
+          "implementationMetadata": {
+            "geometryAction": "replaced",
+            "requiresSeparateScope": true
+          }
+        },
+        {
+          "id": "ground-defer",
+          "label": "Defer",
+          "description": "Explicit deferral option: choose SELECT, record the required Human reason or fields, then mark this category Complete. The current geometry remains untouched.",
+          "technicalName": "DEFER",
+          "implementationMetadata": {
+            "geometryAction": "deferred"
+          }
+        }
+      ],
+      "implementationFields": [
+        {
+          "id": "affectedObjects",
+          "label": "Exact affected object identities",
+          "type": "textarea",
+          "description": "Identify every Ground-Infill or other project-owned object affected."
+        },
+        {
+          "id": "materialOrReplacementDirection",
+          "label": "Exact material or replacement direction",
+          "type": "textarea",
+          "description": "Material path/GUID plus renderer slot and numeric values, or an exact removal/replacement/defer instruction."
+        }
+      ],
+      "validationRules": {
+        "requireDerivedImplementationNote": true
+      }
+    },
+    {
+      "id": "repairs-wear",
+      "title": "6. Repairs, wear, and surface details",
+      "description": "Record an explicit use, do-not-use, or defer disposition for every audited Vendor repair candidate. URP compatibility remains uncertain.",
+      "selectionMode": "approveReject",
+      "options": [
+        {
+          "id": "repair-m-asphalt03",
+          "label": "M_Asphalt03",
+          "description": "Vendor-demonstrated asphalt decal role in the HDRP full-city scene.",
+          "technicalName": "M_Asphalt03",
+          "previewAssets": [
+            {
+              "id": "repair-asphalt03-context",
+              "path": "previews/crime99/repair-asphalt03-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed repair/wear preview",
+              "expectedSha256": "C9D99FB95D66F8ABE0A0B2C983F364EBF70DEBA6F5EF8BE1654C73F8E66C1711"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/Decals/M_Asphalt03.mat",
+            "guid": "131d013cf96aa5642a4d36d0693ec53a",
+            "shader": "Vendor S_Decal01",
+            "compatibilityConcern": "URP suitability and intended local use are not established."
+          }
+        },
+        {
+          "id": "repair-m-concrete06",
+          "label": "M_Concrete06",
+          "description": "Vendor-demonstrated concrete decal role in the HDRP full-city scene.",
+          "technicalName": "M_Concrete06",
+          "previewAssets": [
+            {
+              "id": "repair-concrete06-context",
+              "path": "previews/crime99/repair-concrete06-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed repair/wear preview",
+              "expectedSha256": "900837A6C6C16643842AB3FF690DC63CE248BC32D3FF3D8A98BD888B975CF075"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/Decals/M_Concrete06.mat",
+            "guid": "c129171f70638e345ac9b63313af8350",
+            "shader": "Vendor S_Asphalt01",
+            "compatibilityConcern": "URP suitability and intended local use are not established."
+          }
+        },
+        {
+          "id": "repair-m-concrete07",
+          "label": "M_Concrete07",
+          "description": "Vendor-demonstrated concrete decal role in the HDRP full-city scene.",
+          "technicalName": "M_Concrete07",
+          "previewAssets": [
+            {
+              "id": "repair-concrete07-context",
+              "path": "previews/crime99/repair-concrete07-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed repair/wear preview",
+              "expectedSha256": "09C40B1DF1A697922FD7C6174441DD675855F149966DCF6A81E3D6B1E9C0E8AE"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/Decals/M_Concrete07.mat",
+            "guid": "69871f8ef3cd74f4b9aff303bc21f742",
+            "shader": "Vendor S_Asphalt01",
+            "compatibilityConcern": "URP suitability and intended local use are not established."
+          }
+        },
+        {
+          "id": "repair-m-concrete011",
+          "label": "M_Concrete011",
+          "description": "Vendor-demonstrated concrete decal role in the HDRP full-city scene.",
+          "technicalName": "M_Concrete011",
+          "previewAssets": [
+            {
+              "id": "repair-concrete011-context",
+              "path": "previews/crime99/repair-concrete011-context.png",
+              "mode": "contextualScene",
+              "label": "Fixed repair/wear preview",
+              "expectedSha256": "B33184D1A98A44D8D60D50E878707519372BC6CDAE2F934C2FD7388938D323DF"
+            }
+          ],
+          "technicalMetadata": {
+            "materialPath": "Assets/LeartesStudios/NYC1950s/HDRP/Art/Materials/Decals/M_Concrete011.mat",
+            "guid": "b2d16c5bd33ad124cad38a87a435b347",
+            "shader": "Vendor S_Decal01",
+            "compatibilityConcern": "URP suitability and intended local use are not established."
+          }
+        }
+      ],
+      "implementationFields": [
+        {
+          "id": "rendererSlotMappings",
+          "label": "Exact object, renderer, and zero-based slot mappings",
+          "type": "textarea",
+          "description": "One mapping per line: Object/Renderer | slot N | exact material path or 32-character GUID.",
+          "pattern": "^[\\s\\S]+\\|\\s*slot\\s+[0-9]+\\s*\\|\\s*(Assets/.+\\.mat|[0-9a-fA-F]{32})([\\s\\S]*)$"
+        },
+        {
+          "id": "approvedNumericValues",
+          "label": "Approved numeric values and placement instructions",
+          "type": "textarea",
+          "description": "Must explicitly name tiling, offset, normal strength, smoothness, and colour/tint values.",
+          "pattern": "^(?=[\\s\\S]*tiling)(?=[\\s\\S]*offset)(?=[\\s\\S]*normal)(?=[\\s\\S]*smoothness)(?=[\\s\\S]*(color|colour|tint))[\\s\\S]+$"
+        },
+        {
+          "id": "separateDirection",
+          "label": "Exact separate Human direction",
+          "type": "textarea",
+          "description": "Required only when no audited option is suitable."
+        }
+      ],
+      "validationRules": {
+        "allowDeferred": true,
+        "requireDeferredOptionComment": true,
+        "requireDerivedImplementationNote": true
+      }
+    },
+    {
+      "id": "rectangular-repair-geometry",
+      "title": "7. Existing rectangular repair geometry disposition",
+      "description": "Choose one explicit action for the existing project-owned rectangular repair geometry. No mutation occurs in this tool.",
+      "selectionMode": "single",
+      "options": [
+        {
+          "id": "rectangular-repair-retain",
+          "label": "Retain",
+          "technicalName": "RETAIN",
+          "previewAssets": [
+            {
+              "id": "rectangular-repair-existing-context",
+              "path": "previews/crime99/rectangular-repair-existing-context.png",
+              "mode": "beforeAfter",
+              "label": "Fixed existing-state preview",
+              "expectedSha256": "D3801D0B2A81360D8AAE4BC6C309F773C83D5E90B362AE2C03E7449741AD7AF4"
+            }
+          ],
+          "implementationMetadata": {
+            "geometryAction": "retained"
+          }
+        },
+        {
+          "id": "rectangular-repair-remove",
+          "label": "Remove",
+          "technicalName": "REMOVE",
+          "previewAssets": [
+            {
+              "id": "rectangular-repair-hidden-context",
+              "path": "previews/crime99/rectangular-repair-hidden-context.png",
+              "mode": "beforeAfter",
+              "label": "Fixed removed-state preview",
+              "expectedSha256": "C1F55FB30354CE10389685A2E07CDD0D8BDFB2D828C37926186BA45E9839D8F3"
+            }
+          ],
+          "implementationMetadata": {
+            "geometryAction": "removed"
+          }
+        },
+        {
+          "id": "rectangular-repair-replace",
+          "label": "Replace under separately authorised scope",
+          "technicalName": "REPLACE",
+          "implementationMetadata": {
+            "geometryAction": "replaced",
+            "requiresSeparateScope": true
+          }
+        },
+        {
+          "id": "rectangular-repair-defer",
+          "label": "Defer",
+          "description": "Explicit deferral option: choose SELECT, record the required Human reason or fields, then mark this category Complete. The current geometry remains untouched.",
+          "technicalName": "DEFER",
+          "implementationMetadata": {
+            "geometryAction": "deferred"
+          }
+        }
+      ],
+      "implementationFields": [
+        {
+          "id": "affectedObjects",
+          "label": "Exact affected object identities",
+          "type": "textarea",
+          "description": "List every project-owned rectangular repair object affected."
+        },
+        {
+          "id": "actionInstructions",
+          "label": "Exact deterministic action instructions",
+          "type": "textarea",
+          "description": "Record retain/remove/replace/defer instructions and any renderer/material changes."
+        }
+      ],
+      "validationRules": {
+        "requireDerivedImplementationNote": true
+      }
+    },
+    {
+      "id": "ground-infill-geometry",
+      "title": "8. Existing Ground-Infill geometry disposition",
+      "description": "Choose one explicit action for the two preserved Ground-Infills. They remain unchanged until separately authorised implementation.",
+      "selectionMode": "single",
+      "options": [
+        {
+          "id": "ground-infill-retain",
+          "label": "Retain",
+          "technicalName": "RETAIN",
+          "previewAssets": [
+            {
+              "id": "ground-infill-existing-context",
+              "path": "previews/crime99/ground-infill-existing-context.png",
+              "mode": "beforeAfter",
+              "label": "Fixed existing-state preview",
+              "expectedSha256": "F99BF9171F62674B3832652A2BF0F856F0A02F40F0A7B8404977DEC2D173C547"
+            }
+          ],
+          "implementationMetadata": {
+            "geometryAction": "retained",
+            "expectedObjectCount": 2
+          }
+        },
+        {
+          "id": "ground-infill-remove",
+          "label": "Remove",
+          "technicalName": "REMOVE",
+          "previewAssets": [
+            {
+              "id": "ground-infill-hidden-context",
+              "path": "previews/crime99/ground-infill-hidden-context.png",
+              "mode": "beforeAfter",
+              "label": "Fixed removed-state preview",
+              "expectedSha256": "905147B2CE5EB0295F0EC37545F8CC005B80FED19DD1DE4C4E4607BFB1BFE75E"
+            }
+          ],
+          "implementationMetadata": {
+            "geometryAction": "removed",
+            "expectedObjectCount": 2
+          }
+        },
+        {
+          "id": "ground-infill-replace",
+          "label": "Replace under separately authorised scope",
+          "technicalName": "REPLACE",
+          "implementationMetadata": {
+            "geometryAction": "replaced",
+            "expectedObjectCount": 2,
+            "requiresSeparateScope": true
+          }
+        },
+        {
+          "id": "ground-infill-defer",
+          "label": "Defer",
+          "description": "Explicit deferral option: choose SELECT, record the required Human reason or fields, then mark this category Complete. The current geometry remains untouched.",
+          "technicalName": "DEFER",
+          "implementationMetadata": {
+            "geometryAction": "deferred",
+            "expectedObjectCount": 2
+          }
+        }
+      ],
+      "implementationFields": [
+        {
+          "id": "affectedObjects",
+          "label": "Exact identities of both Ground-Infills",
+          "type": "textarea",
+          "description": "List both preserved Ground-Infill object identities."
+        },
+        {
+          "id": "actionInstructions",
+          "label": "Exact deterministic action instructions",
+          "type": "textarea",
+          "description": "Record retain/remove/replace/defer instructions and any renderer/material changes."
+        }
+      ],
+      "validationRules": {
+        "requireDerivedImplementationNote": true
+      }
+    }
+  ],
+  "outputConfiguration": {
+    "resultDirectory": "results/crime99-surface-material",
+    "generateMarkdown": true
+  }
+}

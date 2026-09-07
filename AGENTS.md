@@ -8,6 +8,102 @@ A Director or Work session must check the confirmed decisions relevant to its as
 
 For a larger or cross-domain work order, the Director or Work session must also apply the adopted [`Role Operating Model`](Docs/Roles/ROLE_OPERATING_MODEL.md), select only the roles justified by the work, and include the [`Work Order Role and Review Block`](Docs/Templates/WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md). Specialist findings are advisory inputs until the accountable builder or Producer consolidates them under the authority order below.
 
+## Tool and Asset Capability Awareness
+
+Before selecting, replacing, adapting or rejecting a material engine/editor
+capability, tool, package, asset family, workflow or bespoke implementation,
+consult the adopted
+[`Tool and Asset Capability Knowledge Base Standard`](Docs/Knowledge/TOOL_AND_ASSET_CAPABILITY_KNOWLEDGE_BASE_STANDARD.md),
+the current project's capability index, capability coverage register and its
+asset inventory. Search by the problem and intended use, not only by a
+remembered product name.
+
+For Unity work, this query includes the project's Unity Native Capability
+Atlas or equivalent. Built-in Editor windows, engine APIs, official packages,
+installed modules and diagnostic tools must be considered before concluding
+that custom code, an Asset Store product or a new dependency is necessary.
+
+Use the smallest decision-relevant shortlist. Compare local proof, scoped
+successes, scoped failures, untested variants, non-destructive adaptation and
+likely technical debt. Do not generalise one failed preset, candidate or method
+into a tool-wide rejection. When one missing fact controls the decision,
+refresh that fact through the smallest safe check instead of treating ordinary
+uncertainty or a banal tool hurdle as a terminal blocker.
+
+At task closure, consolidate only durable capability learning into the
+project Knowledge Base and link its exact evidence. The Knowledge Base is
+operational documentation, not execution authority or an AI training,
+embedding, evaluation or cross-user reference corpus.
+
+## Director Non-Execution Gate
+
+Before the first mutation and after every task pivot, classify whether the
+current task is acting as Director or Work. A Director is orchestration-only.
+Human authorisation, including `go`, authorises the exact scope for dispatch;
+it never authorises the Director to implement that scope directly.
+
+In Director mode, only read-only inspection, scope and routing preparation,
+dispatch validation, creation of a separate Worker task, cursor-based task
+monitoring, result consolidation, and already authorised operational-state
+maintenance are permitted. Every implementation, test-producing mutation and
+candidate-affecting correction must occur in the separately created Worker
+task. If separate-task tooling is unavailable, stop and report the missing
+capability; never fall back to Director self-execution.
+
+For each new mutation-capable dispatch, use the prospective orchestration
+manifest and immutable receipt procedure in `Tools/AuthorityContinuity`. The
+manifest must prove Director non-execution, one separate Worker task, justified
+model and reasoning routing, cursor-based monitoring, and the applicable
+independent-review requirement. A Builder self-review is not independent.
+
+After reviewable Worker evidence exists, activate at most one
+decision-relevant independent Reviewer task. An independently reviewed `PASS`
+must not enter `Docs/WORK_STATE.md` or `Docs/CURRENT_HANDOVER.md` until the
+closure validator binds the exact Work Order, Director/Worker/Reviewer task
+identities, candidate, evidence and verdict in an immutable closure receipt.
+Missing, stale, self-authored or mismatched closure evidence fails closed.
+
+## Director Task Monitoring
+
+When a Director creates a separate task and retains responsibility to analyse or report its result, the Director keeps the current planning turn active and uses task waiting or status tools until the task completes or needs Human attention. Relay only material progress, blockers, and completion; avoid noisy unchanged polling. On completion, inspect the result and report it in the planning chat. If monitoring cannot continue, state that explicitly; starting a task alone is not active monitoring.
+
+## Director Dispatch Gate
+
+A Director must not send a raw separate project-task dispatch that can mutate
+repository or project state. Before dispatch, the Director must validate one
+compact Work Order manifest with
+`Tools/AuthorityContinuity/validate_director_dispatch.py verify-director` and
+attach the resulting receipt to that exact Work Order. The manifest references
+and hashes current canonical sources; it does not copy their unchanged prose.
+
+Before any task mutation, the receiving Worker must run `verify-worker` against
+the exact manifest, receipt, Work Order bytes, live capabilities, repository
+and project identity, source hashes, and technical baseline proofs. Missing,
+stale, mismatched, or reused-for-another-task receipts fail closed. The gate
+does not extend permissions, replace Human
+authority, or claim security against a malicious danger-full-access agent. An
+exact Human waiver for one named dispatch must be explicit and creates no
+standing exception.
+
+## Operational Recovery Before Terminal Stop
+
+Do not treat a raw process, tool, launch or capture count as a candidate
+attempt or terminal domain failure when the task never reached its declared
+attempt-start condition. Future Task-Delta Work Orders and Workers must apply
+the separate setup, operational-recovery, candidate-attempt and formal-
+correction accounting defined by the adopted
+[`Execution Modes and Stage Review Standard`](Docs/Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md).
+
+Within the exact existing authority and recovery allowance, Work repairs a
+proven pre-candidate compile, import, launch, wrapper, tool, output-guard or
+evidence-path error automatically when protected state remains exact, no
+candidate-affecting mutation occurred or it was exactly restored, output
+ownership is unambiguous, and one concrete execution condition changes.
+Operational recovery never permits a blind retry, guard weakening, uncertain
+cleanup, scope or method change, protected-source mutation, or authority
+expansion. A repaired operational error is not an asset, gameplay, visual or
+candidate failure.
+
 ## Cross-Chat Bootstrap and Task Closure
 
 This contract links existing owners; it does not replace or restate their substantive rules.
@@ -18,7 +114,7 @@ Before planning or mutation:
 
 1. Identify the exact repository/project and Work Order.
 2. Read `AGENTS.md`, [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md), and [`Docs/CURRENT_HANDOVER.md`](Docs/CURRENT_HANDOVER.md).
-3. Read the exact confirmed decisions in [`Docs/CONFIRMED_DECISIONS.md`](Docs/CONFIRMED_DECISIONS.md), adopted standards indexed by [`Docs/README.md`](Docs/README.md), project profile, and evidence named by the task or operational state.
+3. Read the exact confirmed decisions in [`Docs/CONFIRMED_DECISIONS.md`](Docs/CONFIRMED_DECISIONS.md), adopted standards indexed by [`Docs/README.md`](Docs/README.md), project profile, and evidence named by the task or operational state. For a material engine/editor capability, tool, asset, workflow or implementation choice, also query the project capability index, capability coverage register, native-capability atlas where applicable, and asset inventory.
 4. Verify the repository/project, branch, HEAD, active task, status, stop boundary, protected paths, and allowed mutation paths.
 5. Compare operational projections with their cited canonical sources and verified repository state.
 6. If scope is cross-domain, relevance is uncertain, a source is missing, or live sources conflict, expand to the complete relevant authority set and stop mutation until the contradiction is recorded and resolved.

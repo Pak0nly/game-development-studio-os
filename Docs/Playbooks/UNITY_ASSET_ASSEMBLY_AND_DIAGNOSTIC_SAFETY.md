@@ -3,7 +3,9 @@
 > **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
 > `SOS-GOV-WCM-NTB-V1` on 2026-07-25 and
 > `C99-STUDIO-UNITY-MCP-VISUAL-EVIDENCE-PLAYBOOK-AMENDMENT-ADOPTION-V1` on
-> 2026-07-31. This playbook does not itself grant
+> 2026-07-31 and
+> `SOS-GOV-OPERATIONAL-RECOVERY-AND-CANDIDATE-ATTEMPT-ACCOUNTING-V1` on
+> 2026-08-22. This playbook does not itself grant
 > Unity, setup, asset, or mutation permission.
 
 ## Use
@@ -28,6 +30,47 @@ imported working copies.
   project-owned paths. Hash protected original/rollback sources before and
   after a Unity run; classify working-copy changes by technical meaning rather
   than hash drift alone.
+
+## Unity Operational Readiness and Recovery
+
+Apply the Core operational-recovery and candidate-attempt accounting rules
+before assigning a terminal meaning to a Unity process count.
+
+1. When a task adds or materially changes an Editor entry point, declare
+   whether Unity must first import and compile it. Use a separate, observable
+   warm-up operation when the entry point cannot reliably dispatch in the same
+   process. A warm-up that never reaches the task attempt-start event is setup,
+   not a candidate attempt.
+2. Record an unambiguous attempt-start event only after exact project, Unity
+   version, process/lock, authority, protected-source, output-ownership and
+   candidate-freshness checks pass, immediately before the first candidate-
+   relevant Unity operation.
+3. Separate task-owned namespaces for process logs, run state, quarantine,
+   candidate assets, retained evidence and preserved failed-attempt records.
+   A freshness guard checks only outputs whose pre-existence would make the
+   candidate ambiguous. It must not reject its own allowlisted log, receipt,
+   status, manifest, quarantine or recovery trace.
+4. Do not place a process log inside a namespace that must be empty at
+   attempt start unless that exact log is explicitly allowlisted by the
+   guard. Do not let manifest or terminal-record creation poison a later
+   otherwise-fresh attempt.
+5. On a pre-attempt operational error, verify protected hashes, candidate
+   absence or exact restoration, output ownership and process/lock cleanup.
+   Apply one cause-specific repair and record the changed condition before
+   continuing under the Work Order's operational-recovery allowance.
+6. Operational recovery may relocate or remove only exact task-owned
+   disposable output when the Work Order grants that cleanup authority.
+   Preserve failed-attempt facts in a sibling archive when they remain useful;
+   never overwrite or delete uncertain or pre-existing evidence.
+7. A recovered setup or evidence-path fault does not prove Unity, candidate,
+   visual or asset quality. It merely restores eligibility for the authorised
+   candidate attempt.
+
+Stop rather than recover when source or protected state drifts, output
+ownership is uncertain, a candidate-affecting mutation cannot be exactly
+restored, the fix changes the construction method or scope, the same
+unchanged failure repeats, or the operational-recovery allowance is
+exhausted.
 
 ## Bounded Integrated-Scene PNG Evidence Transaction
 

@@ -1,6 +1,8 @@
 # AI Model Routing and Compute Efficiency Standard
 
-> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22.
+> **Status:** Adopted through LAIA-2026-07-22 on 2026-07-22; amended through
+> `SOS-GOV-OPERATIONAL-RECOVERY-AND-CANDIDATE-ATTEMPT-ACCOUNTING-V1` on
+> 2026-08-22.
 
 ## Purpose
 
@@ -35,7 +37,20 @@ Role title alone is not a routing rule. The same role may use Routine classifica
 | Standard | Bounded implementation or documentation; known-pattern analysis; phase review against explicit criteria; reversible layout alternatives; ordinary defect diagnosis; evidence synthesis | Moderate to high; compare constraints and explain trade-offs | Bounded working set: authoritative excerpts/links, affected files, evidence manifest, relevant decisions and findings | 2 total attempts before reclassification or stop | Unresolved contradiction; architectural/product/taste decision; high-cost rework; broad hidden dependencies; repeated failure; mandatory reviewer disagreement | Independent applicable specialist for material output; QA Lead for evidence sufficiency; Producer for scope and consolidation |
 | Critical | New or materially changed standards; irreversible architecture or layout; Art Direction; complex root-cause analysis; security/licence/high-impact decisions; reconciliation of contradictory mandatory verdicts; failed lower-class work | Deep; explicit assumptions, alternatives, failure modes, and authority reconciliation | Broad but curated set: all relevant authoritative sources, decision history, dependency/evidence manifest, conflicting verdicts, and exact candidate state | 1 planned attempt followed by required review; corrections follow the authorised board limit, not repeated blind retries | Any unresolved authoritative contradiction; missing Human-owned decision; insufficient evidence; unsafe or irreversible action; failure after escalation | Applicable independent specialists, QA Lead, and Producer/Director consolidation; Human Developer decides product, taste, governance adoption, scope, budget, purchase, licence-risk acceptance, and final approval |
 
-`Autonomous attempts` count materially distinct solution attempts for the routed task. Repeating the same tool and method without a changed hypothesis or execution condition is not a new learning attempt. Failed captures, invocations, or other tool executions are recorded as execution errors even when they do not change the candidate. Attempt limits do not expand the stage-local correction allowance defined under the [Execution Modes and Stage Review Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md).
+`Autonomous attempts` count materially distinct domain or candidate solution
+attempts for the routed task. Candidate-attempt accounting begins only at the
+attempt-start condition defined by the [Execution Modes and Stage Review
+Standard](../Production/EXECUTION_MODES_AND_STAGE_REVIEW_STANDARD.md).
+Planned setup and pre-attempt compile, import, launch, wrapper, tool, output-
+guard or evidence failures are recorded separately as operational events.
+They do not consume a candidate attempt or creative correction when they
+produce no candidate-affecting mutation and qualify for bounded operational
+recovery under that standard.
+
+Repeating the same tool and method without a changed hypothesis or execution
+condition is not a new learning attempt and is prohibited as a blind retry.
+Operational recovery has its own Work-Order allowance and does not expand
+autonomous candidate attempts or the stage-local correction allowance.
 
 ## Mandatory Critical Routing
 

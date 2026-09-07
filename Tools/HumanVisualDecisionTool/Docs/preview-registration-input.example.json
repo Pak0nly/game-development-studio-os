@@ -1,0 +1,11 @@
+{
+  "decisionSetId": "crime99-surface-material-human-selection-v1",
+  "previews": [
+    {
+      "previewId": "road-new-asphalt-context",
+      "path": "C:\\LocalHumanReview\\Crime99\\road-new-asphalt-context.png",
+      "expectedSha256": "OPTIONAL_EXPECTED_SHA256"
+    }
+  ]
+}
+

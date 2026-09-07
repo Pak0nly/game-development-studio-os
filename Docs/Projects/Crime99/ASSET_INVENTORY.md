@@ -2,20 +2,27 @@
 
 ## Status and Boundary
 
-**Research date:** 2026-07-14
-**Snapshot classification:** `HISTORICAL_SNAPSHOT`
-**Snapshot account scope:** 37 assets visible in the signed-in Unity Asset Store `My Assets` library on 2026-07-14 (two pages)
-**Current complete asset holdings:** `UNKNOWN_REFRESH_REQUIRED`
+**Research dates:** 2026-07-14; current account refresh 2026-08-22
+**Inventory classification:** `CURRENT_ACCOUNT_SNAPSHOT WITH HISTORICAL RESEARCH DETAIL`
+**Current account scope:** 45 Assets across two pages; 0 UPM Packages in the signed-in Unity Asset Store account on 2026-08-22
+**Current complete asset holdings:** `VERIFIED_CURRENT_ACCOUNT_SNAPSHOT`
 **Current city-pipeline authority:** `NONE_OPEN_HUMAN_DECISION_REQUIRED`
-**Purchase-recommendation authority:** `NONE_REFRESH_REQUIRED`
+**Purchase-recommendation authority:** `NONE`
 **Project phase:** Definition
 **Authority:** Research and decision support only
 
-This document is a point-in-time historical snapshot from 2026-07-14. The
-number `37` is not the current complete asset ownership count, and no current
-complete inventory has been established. The snapshot does not select a current
-or future render pipeline and cannot support a purchase recommendation without
-a fresh authorised inventory and provenance refresh.
+This document combines a current account enumeration with the detailed
+historical research captured on 2026-07-14. The current count is `45` Assets
+and `0` UPM Packages. The original 37 rows remain below with their historical
+store research; eight later additions are recorded separately. Current
+ownership does not establish compatibility, local installation, adoption or a
+purchase recommendation.
+
+Current disposition override: `Fuyoh Cyberpunk Diner` and every Fuyoh-derived
+subasset are `TEMPORARILY EXCLUDED / DO NOT USE`. The dated catalogue,
+priority, suitability, and overlap findings below remain historical evidence
+only and grant no current planning or use authority. No replacement landmark
+or other creative substitute is selected.
 
 This inventory does not authorise purchase, key redemption, download, import, installation, Unity project work, technical integration, architecture, staging, commit, or push. No credentials, keys, invoice data, or payment data are stored here.
 
@@ -28,7 +35,33 @@ This inventory does not authorise purchase, key redemption, download, import, in
 - A store row such as `2021.3 Compatible` is not evidence of Unity 6.3 compatibility. Only an explicit Unity 6000 row or official publisher statement is treated as Unity 6 evidence.
 - Prices are the signed-in EUR prices shown on 2026-07-14, exclusive of checkout tax where the store states this. `Not shown` means the current product page no longer exposed a purchasable listing.
 
-## Historical Snapshot Summary
+## Current 2026-08-22 Account Refresh
+
+The signed-in Assets list was read on both pages (`25 + 20 = 45`) and the UPM
+Packages tab was read separately (`0`). The 37 products documented in the
+historical sections were still present. The following eight products were
+added after that snapshot. Account versions are not assumed to match the
+installed project versions.
+
+| Product and publisher | Purchase date | Account version / update | Current local state | Crime99 use and disposition |
+|---|---|---|---|---|
+| See-through Shader — Shadercrew | 2026-08-13 | 1.9.2 / 2026-08-13 | Not found as a distinct local root | Owned camera-obstruction/visibility option; [capability record](Knowledge/Capabilities/C99-OWNED-SEE-THROUGH-SHADER-001.md); no import authority |
+| Ethereal URP 2024 - Volumetric Lighting & Fog — ARTnGAME | 2026-08-13 | 2.8.4 / 2026-08-13 | Not found as a distinct local root | Owned atmosphere option with render/performance risk; [capability record](Knowledge/Capabilities/C99-OWNED-ETHEREAL-URP-001.md); no import authority |
+| Decalery — Mr F | 2026-08-11 | 1.2 / 2025-11-02 | Installed under `Assets/Decalery` | Sparse fitted surface storytelling after structural acceptance; [capability record](Knowledge/Capabilities/C99-CAP-DECALERY-001.md) |
+| Road Constructor — Pampel Games | 2026-08-11 | 1.9.3 / 2026-06-28 | Installed under `Assets/PampelGames` | Primary native-first connected-road option; [capability record](Knowledge/Capabilities/C99-CAP-ROAD-CONSTRUCTOR-001.md) |
+| 1970 s New York City Alley — Leartes Studios | 2026-07-24 | 2.0 / 2023-01-12 | Installed working copy reports 1.0 | Alley/service raw material; store/local version difference retained; [capability record](Knowledge/Capabilities/C99-ASSET-NYC-ALLEY-001.md) |
+| Complete City Traffic & Pedestrian System — Gley | 2026-07-15 | 1.5.9 / 2026-07-09 | Installed under `Assets/Gley`; local component versions are recorded separately | Traffic and pedestrian topology/runtime option; [capability record](Knowledge/Capabilities/C99-CAP-GLEY-TRAFFIC-PEDESTRIAN-001.md) |
+| Realistic Car Controller Pro — BoneCracker | 2026-07-15 | 3.1.0.LTS / 2026-08-11 | Accepted local basis is 2.57.0 | Vehicle framework; account update does not imply upgrade; [capability record](Knowledge/Capabilities/C99-CAP-RCCP-VEHICLES-001.md) |
+| ARCADE: FREE Racing Car — Mena | 2026-07-15 | 3.0 / 2022-04-19 | Not found as a distinct local root | Low-priority vehicle reference; RCCP remains stronger accepted basis; [capability record](Knowledge/Capabilities/C99-OWNED-ARCADE-RACING-CAR-001.md) |
+
+Current-account reconciliation: `37 historical rows + 8 additions = 45
+Assets`; no removal was observed. The UPM Packages list contains `0` entries.
+Two version changes were visible among the 37 previously documented products:
+MapMagic 2 is now `2.1.20` in the account instead of the historical `2.1.19`,
+and POLYGON Particle FX Pack is now `1.4.1` instead of `1.4.0`. Their detailed
+rows below deliberately retain the dated 2026-07-14 values.
+
+## Historical 2026-07-14 Snapshot Summary
 
 | Origin group | Count | Basis |
 |---|---:|---|
@@ -112,11 +145,12 @@ compatibility, and project need before using it in a new decision.
 
 ## Source Register
 
-Accessed 2026-07-14:
+Accessed 2026-07-14 and refreshed 2026-08-22:
 
-- Signed-in [Unity Asset Store — My Assets](https://assetstore.unity.com/account/assets) for ownership and account metadata.
+- Signed-in [Unity Asset Store — My Assets](https://assetstore.unity.com/account/assets) for the 2026-07-14 ownership snapshot and the complete 2026-08-22 Assets/UPM refresh.
 - Each official product link in the inventory tables for current price, category, licence label, version/date, original Unity version, and render-pipeline table.
 - [Unity Asset Store Terms and EULA](https://unity.com/legal/as-terms) as linked by the official product pages.
 - Crime99 project sources: [`PROJECT_BRIEF.md`](PROJECT_BRIEF.md), [`PROTOTYPE_ROADMAP.md`](PROTOTYPE_ROADMAP.md), [`GDD/12_ART_DIRECTION.md`](GDD/12_ART_DIRECTION.md), and [`GDD/16_PROTOTYPE_SCOPE.md`](GDD/16_PROTOTYPE_SCOPE.md).
 
-No asset files, package contents, licences, invoices, receipts, or keys were downloaded or opened.
+No account-hosted asset files, package downloads, licences, invoices, receipts,
+or keys were downloaded or opened during the 2026-08-22 refresh.

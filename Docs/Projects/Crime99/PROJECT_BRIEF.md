@@ -222,7 +222,16 @@ Until the first prototype is complete, the production principle is:
 
 The planned primary asset source for the first prototype is the Humble Bundle `Cosmos Eclipse Game Dev Assets & Tools Bundle — Unreal, Unity, Godot`. Acquisition and use require separate Human Developer approval for purchase and download.
 
-The bundle is treated as a raw-material library rather than a ready-made visual identity. `1950s NYC`, `Cyberpunk Port City`, and `Fuyoh Cyberpunk Diner` receive first-priority suitability review. Any selected assets may receive a light shared style pass where needed to support `Neon over Dirt`, including deliberately cleaner and dirtier areas within one coherent city.
+The bundle is treated as a raw-material library rather than a ready-made visual
+identity. `1950s NYC` and `Cyberpunk Port City` receive current first-priority
+suitability review. `Fuyoh Cyberpunk Diner`, including the complete asset and
+every derived subasset, is `TEMPORARILY EXCLUDED / DO NOT USE` and grants no
+current planning, recommendation, Style Slice, or production authority. No
+replacement landmark is selected; the landmark, Composition Anchor, primary
+lighting focus, and their dependent sightlines and reveals remain
+`OPEN / HUMAN DECISION REQUIRED`. Any selected authorised assets may receive a
+light shared style pass where needed to support `Neon over Dirt`, including
+deliberately cleaner and dirtier areas within one coherent city.
 
 Before any import, the licence, Unity support, render-pipeline compatibility, shaders, materials, scale, textures, LODs, colliders, pivots, modularity, performance, and adaptation effort must be documented. No generative derivation, training, or use as a generative reference is permitted without a separate licence review.
 

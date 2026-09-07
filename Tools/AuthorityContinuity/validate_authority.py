@@ -9,6 +9,7 @@ or operationally stale input makes the emitted state UNKNOWN and blocking.
 from __future__ import annotations
 
 import argparse
+import ast
 import datetime as dt
 import hashlib
 import json
@@ -54,6 +55,7 @@ def normalize_relative_path(relative: str) -> PurePosixPath:
         or pure.anchor
         or ".." in pure.parts
         or any(part in ("", ".") for part in pure.parts)
+        or any(":" in part for part in pure.parts)
         or re.match(r"^[A-Za-z]:", normalized)
     ):
         raise ConfigError(f"unsafe repository-relative path: {relative}")
@@ -136,9 +138,42 @@ def validate_config(config: Any) -> None:
     require(isinstance(config, dict), "root must be an object")
     if not isinstance(config, dict):
         raise ConfigError("; ".join(problems))
-    require(config.get("schema_version") == 1, "schema_version must equal 1")
+    require(config.get("schema_version") == 2, "schema_version must equal 2")
     require(isinstance(config.get("authority_core_id"), str), "authority_core_id must be a string")
     require(isinstance(config.get("authority_core_state"), str), "authority_core_state must be a string")
+
+    scope_policy = config.get("scope_policy")
+    require(isinstance(scope_policy, dict), "scope_policy must be an object")
+    allowed_scopes: set[str] = set()
+    if isinstance(scope_policy, dict):
+        configured_scopes = scope_policy.get("allowed_scopes")
+        require(
+            isinstance(configured_scopes, list)
+            and bool(configured_scopes)
+            and all(isinstance(item, str) and bool(item) for item in configured_scopes),
+            "scope_policy.allowed_scopes must be a non-empty array of strings",
+        )
+        if isinstance(configured_scopes, list):
+            allowed_scopes = {
+                item for item in configured_scopes if isinstance(item, str) and item
+            }
+            require(
+                len(allowed_scopes) == len(configured_scopes),
+                "scope_policy.allowed_scopes must be unique",
+            )
+
+    regression = config.get("regression_contract")
+    require(isinstance(regression, dict), "regression_contract must be an object")
+    if isinstance(regression, dict):
+        require(
+            regression.get("path") == "tests/test_validate_authority.py",
+            "regression_contract.path must reference the bundled regression suite",
+        )
+        require(
+            isinstance(regression.get("expected_test_methods"), int)
+            and regression.get("expected_test_methods", 0) > 0,
+            "regression_contract.expected_test_methods must be a positive integer",
+        )
 
     output_policy = config.get("output_policy")
     require(isinstance(output_policy, dict), "output_policy must be an object")
@@ -208,6 +243,17 @@ def validate_config(config: Any) -> None:
             require(isinstance(claim.get("id"), str), f"{prefix}.id must be a string")
             require(isinstance(claim.get("scope"), str), f"{prefix}.scope must be a string")
             require(claim.get("status") in VALID_STATUSES, f"{prefix}.status is invalid")
+            applies_to = claim.get("applies_to")
+            require(
+                isinstance(applies_to, list)
+                and bool(applies_to)
+                and all(
+                    isinstance(item, str)
+                    and (item == "*" or item in allowed_scopes)
+                    for item in applies_to
+                ),
+                f"{prefix}.applies_to must reference configured scopes or '*'",
+            )
             checks = claim.get("checks")
             require(isinstance(checks, list) and bool(checks), f"{prefix}.checks must be a non-empty array")
             if not isinstance(checks, list):
@@ -249,6 +295,10 @@ def validate_config(config: Any) -> None:
             "operational_continuity.sources must reference known sources",
         )
         require(isinstance(operational.get("work_order_id"), str), "operational work_order_id must be a string")
+        require(
+            operational.get("applies_to") == ["*"],
+            "operational_continuity.applies_to must equal ['*']",
+        )
         max_age = operational.get("max_age_days")
         require(isinstance(max_age, int) and max_age >= 0, "max_age_days must be a non-negative integer")
         required_all = operational.get("required_all")
@@ -259,6 +309,71 @@ def validate_config(config: Any) -> None:
 
     if problems:
         raise ConfigError("; ".join(problems))
+
+
+def validate_requested_scopes(
+    config: dict[str, Any], requested_scopes: Iterable[str] | None
+) -> list[str]:
+    scopes = sorted(set(requested_scopes or []))
+    if not scopes:
+        raise ConfigError("at least one explicit --scope is required")
+    allowed = set(config["scope_policy"]["allowed_scopes"])
+    unknown = sorted(set(scopes) - allowed)
+    if unknown:
+        raise ConfigError(f"unknown authority scope: {unknown}")
+    return scopes
+
+
+def applies_to_request(spec: dict[str, Any], requested_scopes: list[str]) -> bool:
+    applies_to = set(spec["applies_to"])
+    return "*" in applies_to or bool(applies_to.intersection(requested_scopes))
+
+
+def evaluate_regression_contract(
+    config: dict[str, Any], errors: list[dict[str, Any]]
+) -> dict[str, Any]:
+    spec = config["regression_contract"]
+    relative = spec["path"]
+    path = resolve_repo_path(Path(__file__).resolve().parent, relative)
+    expected = spec["expected_test_methods"]
+    actual: int | None = None
+    source_hash: str | None = None
+    status = "CURRENT"
+    try:
+        raw = path.read_bytes()
+        source_hash = sha256_bytes(raw)
+        tree = ast.parse(raw.decode("utf-8-sig"), filename=str(path))
+        actual = sum(
+            1
+            for node in ast.walk(tree)
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
+            and node.name.startswith("test_")
+        )
+        if actual != expected:
+            status = "MISMATCH"
+            append_error(
+                errors,
+                "E_REGRESSION_CONTRACT",
+                "validator regression evidence",
+                f"expected {expected} test methods, discovered {actual}",
+                f"Tools/AuthorityContinuity/{relative}",
+            )
+    except (OSError, UnicodeError, SyntaxError) as exc:
+        status = "INVALID"
+        append_error(
+            errors,
+            "E_REGRESSION_CONTRACT",
+            "validator regression evidence",
+            f"regression suite cannot be inspected: {exc}",
+            f"Tools/AuthorityContinuity/{relative}",
+        )
+    return {
+        "path": f"Tools/AuthorityContinuity/{relative}",
+        "expected_test_methods": expected,
+        "actual_test_methods": actual,
+        "source_hash": source_hash,
+        "freshness": status,
+    }
 
 
 def preflight_repository_paths(
@@ -345,7 +460,10 @@ def append_error(
 
 
 def load_sources(
-    root: Path, config: dict[str, Any], errors: list[dict[str, Any]]
+    root: Path,
+    config: dict[str, Any],
+    errors: list[dict[str, Any]],
+    blocking_source_ids: set[str],
 ) -> dict[str, dict[str, Any]]:
     loaded: dict[str, dict[str, Any]] = {}
     for source_id, spec in config["sources"].items():
@@ -353,7 +471,8 @@ def load_sources(
         try:
             path = resolve_repo_path(root, relative)
         except ValueError as exc:
-            append_error(errors, "E_CONFIG_INVALID", "authority core", str(exc), relative)
+            if source_id in blocking_source_ids:
+                append_error(errors, "E_CONFIG_INVALID", "authority core", str(exc), relative)
             loaded[source_id] = {
                 "path": relative,
                 "freshness": "INVALID",
@@ -362,13 +481,14 @@ def load_sources(
             }
             continue
         if not path.is_file():
-            append_error(
-                errors,
-                "E_SOURCE_MISSING",
-                "authority source",
-                "required canonical source is missing",
-                relative,
-            )
+            if source_id in blocking_source_ids:
+                append_error(
+                    errors,
+                    "E_SOURCE_MISSING",
+                    "authority source",
+                    "required canonical source is missing",
+                    relative,
+                )
             loaded[source_id] = {
                 "path": relative,
                 "freshness": "MISSING",
@@ -382,25 +502,27 @@ def load_sources(
         freshness = "CURRENT"
         if not expected_hash or actual_hash != expected_hash:
             freshness = "STALE"
-            append_error(
-                errors,
-                "E_SOURCE_STALE",
-                "authority source",
-                f"expected {expected_hash or 'NO_HASH'}, got {actual_hash}",
-                relative,
-            )
+            if source_id in blocking_source_ids:
+                append_error(
+                    errors,
+                    "E_SOURCE_STALE",
+                    "authority source",
+                    f"expected {expected_hash or 'NO_HASH'}, got {actual_hash}",
+                    relative,
+                )
         try:
             text = raw.decode("utf-8-sig")
         except UnicodeDecodeError as exc:
             text = None
             freshness = "INVALID"
-            append_error(
-                errors,
-                "E_SOURCE_ENCODING",
-                "authority source",
-                f"source is not valid UTF-8: {exc}",
-                relative,
-            )
+            if source_id in blocking_source_ids:
+                append_error(
+                    errors,
+                    "E_SOURCE_ENCODING",
+                    "authority source",
+                    f"source is not valid UTF-8: {exc}",
+                    relative,
+                )
         loaded[source_id] = {
             "path": relative,
             "freshness": freshness,
@@ -414,6 +536,7 @@ def evaluate_claim(
     claim: dict[str, Any],
     loaded: dict[str, dict[str, Any]],
     errors: list[dict[str, Any]],
+    applicable: bool,
 ) -> dict[str, Any]:
     scope = claim["scope"]
     expected_status = claim["status"]
@@ -421,6 +544,7 @@ def evaluate_claim(
     source_ids = list(dict.fromkeys(check["source"] for check in claim["checks"]))
     sources = [loaded[source_id] for source_id in source_ids]
 
+    finding_errors = errors if applicable else []
     unavailable = any(
         source["freshness"] != "CURRENT" or source["text"] is None
         for source in sources
@@ -436,7 +560,7 @@ def evaluate_claim(
                 if failure_code not in claim_codes:
                     claim_codes.append(failure_code)
                 append_error(
-                    errors,
+                    finding_errors,
                     failure_code,
                     scope,
                     f"canonical selector not found: {check.get('section_start')}",
@@ -471,7 +595,7 @@ def evaluate_claim(
                 if forbidden_regex:
                     detail_parts.append(f"contradictory patterns: {forbidden_regex}")
                 append_error(
-                    errors,
+                    finding_errors,
                     failure_code,
                     scope,
                     "; ".join(detail_parts),
@@ -486,9 +610,14 @@ def evaluate_claim(
         else "UNKNOWN/REFRESH REQUIRED"
     )
     if actual_status == "UNKNOWN/REFRESH REQUIRED" and not claim_codes:
+        freshness_codes = {
+            "MISSING": "E_SOURCE_MISSING",
+            "STALE": "E_SOURCE_STALE",
+            "INVALID": "E_SOURCE_ENCODING",
+        }
         claim_codes = sorted(
             {
-                "E_SOURCE_MISSING" if source["freshness"] == "MISSING" else "E_SOURCE_STALE"
+                freshness_codes.get(source["freshness"], "E_SOURCE_STALE")
                 for source in sources
                 if source["freshness"] != "CURRENT"
             }
@@ -497,6 +626,8 @@ def evaluate_claim(
         "id": claim["id"],
         "scope": scope,
         "status": actual_status,
+        "applies_to": claim["applies_to"],
+        "applicable_to_request": applicable,
         "canonical_source": [source["path"] for source in sources],
         "source_hash": {source["path"]: source["hash"] for source in sources},
         "freshness": freshness,
@@ -596,6 +727,8 @@ def evaluate_operational_state(
         "id": "operational-continuity",
         "scope": scope,
         "status": actual_status,
+        "applies_to": spec["applies_to"],
+        "applicable_to_request": True,
         "canonical_source": [source["path"] for source in sources],
         "source_hash": {source["path"]: source["hash"] for source in sources},
         "freshness": freshness,
@@ -604,13 +737,17 @@ def evaluate_operational_state(
 
 
 def run_git(root: Path, *args: str) -> tuple[int, bytes, bytes]:
-    completed = subprocess.run(
-        ["git", "-c", "core.quotepath=false", *args],
-        cwd=root,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        check=False,
-    )
+    try:
+        completed = subprocess.run(
+            ["git", "-c", "core.quotepath=false", *args],
+            cwd=root,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+            timeout=10,
+        )
+    except subprocess.TimeoutExpired as exc:
+        return 124, exc.stdout or b"", exc.stderr or b"git command timed out"
     return completed.returncode, completed.stdout, completed.stderr
 
 
@@ -669,21 +806,37 @@ def validate_repository(
     root: Path,
     config: dict[str, Any],
     *,
+    requested_scopes: Iterable[str] | None = None,
     include_git: bool = True,
     as_of: dt.date | None = None,
 ) -> dict[str, Any]:
     as_of = as_of or dt.date.today()
     validate_config(config)
+    scopes = validate_requested_scopes(config, requested_scopes)
     preflight_repository_paths(root, config)
     errors: list[dict[str, Any]] = []
-    loaded = load_sources(root, config, errors)
-    findings = [evaluate_claim(claim, loaded, errors) for claim in config["claims"]]
+    claim_applicability = [
+        applies_to_request(claim, scopes) for claim in config["claims"]
+    ]
+    blocking_source_ids = set(config["operational_continuity"]["sources"])
+    for claim, applicable in zip(config["claims"], claim_applicability):
+        if applicable:
+            blocking_source_ids.update(
+                check["source"] for check in claim["checks"]
+            )
+    loaded = load_sources(root, config, errors, blocking_source_ids)
+    regression = evaluate_regression_contract(config, errors)
+    findings = [
+        evaluate_claim(claim, loaded, errors, applicable)
+        for claim, applicable in zip(config["claims"], claim_applicability)
+    ]
     findings.append(evaluate_operational_state(config, loaded, errors, as_of))
     git_state = collect_git_state(root, errors) if include_git else {"available": False, "fixture_mode": True}
 
     unknown_ids = [
         finding["id"]
         for finding in findings
+        if finding["applicable_to_request"]
         if finding["status"] == "UNKNOWN/REFRESH REQUIRED"
     ]
     if unknown_ids:
@@ -696,6 +849,7 @@ def validate_repository(
     open_ids = [
         finding["id"]
         for finding in findings
+        if finding["applicable_to_request"]
         if finding["status"] == "OPEN/HUMAN DECISION REQUIRED"
     ]
     if open_ids:
@@ -723,7 +877,9 @@ def validate_repository(
         "authority_core_id": config["authority_core_id"],
         "authority_core_state": config["authority_core_state"],
         "as_of_date": as_of.isoformat(),
+        "requested_scopes": scopes,
         "tooling": tooling,
+        "regression_evidence": regression,
         "source_hashes": source_hashes,
         "repository": git_state,
         "findings": findings,
@@ -731,14 +887,16 @@ def validate_repository(
         "continuation_authority_granted": False,
     }
     snapshot = {
-        "schema_version": 1,
+        "schema_version": 2,
         "authority_core_id": config["authority_core_id"],
         "authority_core_state": config["authority_core_state"],
         "generated_at_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
         "as_of_date": as_of.isoformat(),
+        "requested_scopes": scopes,
         "result": "PASS" if not errors else "BLOCKED",
         "continuation_authority_granted": False,
         "tooling": tooling,
+        "regression_evidence": regression,
         "repository": git_state,
         "snapshot_identity": sha256_bytes(canonical_json(identity_input)),
         "findings": findings,
@@ -778,6 +936,12 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--config", type=Path, default=default_config)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--as-of", type=dt.date.fromisoformat, default=None)
+    parser.add_argument(
+        "--scope",
+        action="append",
+        default=[],
+        help="Explicit authority scope; repeat for multiple scopes",
+    )
     return parser.parse_args(argv)
 
 
@@ -792,7 +956,11 @@ def main(argv: Iterable[str] | None = None) -> int:
         validate_config(config)
         output = validate_output_path(root, config, args.output, expected_config)
         snapshot = validate_repository(
-            root, config, include_git=True, as_of=args.as_of
+            root,
+            config,
+            requested_scopes=args.scope,
+            include_git=True,
+            as_of=args.as_of,
         )
         write_snapshot(output, snapshot)
     except Exception as exc:

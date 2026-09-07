@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Human Visual Decision Tool</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Direkt zur Entscheidung</a>
+    <div id="loading-screen" class="loading-screen" aria-live="polite">
+      <div class="loading-mark" aria-hidden="true">HV</div>
+      <p>Lokales Entscheidungspaket wird geöffnet…</p>
+    </div>
+
+    <div id="app-shell" class="app-shell" hidden>
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">HV</div>
+          <div>
+            <p class="eyebrow">Studio OS</p>
+            <p class="brand-name">Geführte Human-Entscheidung</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <div class="privacy-badge" title="Diese Anwendung wird nur auf diesem Computer bereitgestellt.">
+            <span class="privacy-dot" aria-hidden="true"></span>
+            Nur lokal — kein Upload
+          </div>
+          <div id="save-state" class="save-state" aria-live="polite">Noch nicht gespeichert</div>
+          <button id="save-button" class="button button-secondary" type="button">Auswahl speichern</button>
+        </div>
+      </header>
+
+      <aside class="sidebar" aria-label="Entscheidungskategorien">
+        <section id="progress-panel" class="progress-panel" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-describedby="progress-detail">
+          <div class="progress-copy">
+            <span id="progress-number" class="progress-number">0%</span>
+            <span class="progress-label">abgeschlossen</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <p id="progress-detail" class="progress-detail">Alle Entscheidungen sind offen.</p>
+        </section>
+
+        <nav aria-label="Entscheidungsnavigation">
+          <button id="overview-nav" class="nav-item is-active" type="button">
+            <span class="nav-index">00</span>
+            <span>
+              <strong>Entscheidungen prüfen</strong>
+              <small>Zusammenfassung und Export</small>
+            </span>
+          </button>
+          <div id="category-nav"></div>
+        </nav>
+
+        <section class="sidebar-note">
+          <p class="eyebrow">Human-Entscheidung</p>
+          <p>Nur du beurteilst die visuelle Eignung. Das Tool bewertet oder empfiehlt keine Option und überträgt keine Bilder.</p>
+        </section>
+      </aside>
+
+      <main id="main-content" class="main-content" tabindex="-1">
+        <section id="overview-view"></section>
+        <section id="category-view" hidden></section>
+      </main>
+
+      <footer class="app-footer">
+        <span id="package-identity"></span>
+        <button id="jump-pending" class="text-button" type="button">Zur nächsten offenen Entscheidung</button>
+      </footer>
+    </div>
+
+    <div id="comparison-tray" class="comparison-tray" hidden>
+      <div>
+        <p class="eyebrow">A/B-Vergleich</p>
+        <p id="comparison-selection">Wähle zwei Vorschauen.</p>
+      </div>
+      <div class="comparison-actions">
+        <button id="clear-comparison" class="button button-quiet" type="button">Leeren</button>
+        <button id="open-comparison" class="button button-primary" type="button" disabled>Vergleichen</button>
+      </div>
+    </div>
+
+    <dialog id="preview-dialog" class="dialog preview-dialog" aria-labelledby="preview-dialog-title" aria-describedby="preview-dialog-description">
+      <p id="preview-dialog-description" class="sr-only">Vergrößerte lokale Vorschau oder Vergleich zweier vorbereiteter Optionen.</p>
+      <div class="dialog-header">
+        <div>
+          <p id="preview-dialog-kicker" class="eyebrow">Lokale Vorschau</p>
+          <h2 id="preview-dialog-title">Vorschau</h2>
+        </div>
+        <button class="icon-button dialog-close" type="button" aria-label="Vorschau schließen">×</button>
+      </div>
+      <div id="preview-dialog-body" class="preview-dialog-body"></div>
+    </dialog>
+
+    <dialog id="validation-dialog" class="dialog validation-dialog" aria-labelledby="validation-title" aria-describedby="validation-dialog-description">
+      <p id="validation-dialog-description" class="sr-only">Prüfergebnis für die Vollständigkeit und den lokalen Export.</p>
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow">Prüfung</p>
+          <h2 id="validation-title">Entscheidungen prüfen</h2>
+        </div>
+        <button class="icon-button dialog-close" type="button" aria-label="Prüfung schließen">×</button>
+      </div>
+      <div id="validation-body" class="validation-body"></div>
+    </dialog>
+
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

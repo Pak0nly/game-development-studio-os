@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "kind": "director_closure_manifest",
+  "work_order": {
+    "id": "C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1",
+    "path": "Artifacts/DirectorDispatch/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/WORK_ORDER.md",
+    "sha256": "d800bd3cd915f0965d1bc9f6d5d17e5a15fa2f5b500487d085556d882317f6fb",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/DirectorDispatch/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/DIRECTOR_DISPATCH_MANIFEST.json",
+    "manifest_sha256": "8bba607c4f45412cb850255e4d189caf7fd300850df1d4f424f8cc7fb808d14e",
+    "receipt_path": "Artifacts/DirectorDispatch/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/DIRECTOR_DISPATCH_RECEIPT.json",
+    "receipt_sha256": "cb759fa792e1cbefdca3131ecea61f239c54e24eec559b3ba0ac34c2818dd7c0",
+    "receipt_id": "a964caa16c49134315843cfb423bbde1d84ffee345ed0e1c16c1d2416da76089",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "01a07c84-4a59-71f2-8aef-10d014a697dd",
+    "worker_task_id": "01a07ca6-a845-70e0-8872-074a6e677d82",
+    "reviewer_task_id": "01a07cb3-b015-7f93-8cdc-4444d8a1d7be"
+  },
+  "candidate": {
+    "identity": "8e9f582e8c41f555a353f6459bfee63975f69d8622a8bbb90bdb83d53e2459bf",
+    "files": [
+      {
+        "path": "Docs/Playbooks/VISUAL_PRODUCTION.md",
+        "sha256": "5b59806d84a35d8e3e40189db6e637b57b6e7097e38d961f8da250fda3c0e883",
+        "size": 6679
+      },
+      {
+        "path": "Docs/Roles/ROLE_OPERATING_MODEL.md",
+        "sha256": "85a1ee2825e0662d6c05ad9486a2f1cd8c9fe397beba9a34ffc40c20ef4e8d47",
+        "size": 9120
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "evaluated-rationale",
+      "path": "Artifacts/Reports/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/Worker/EVALUATED_RATIONALE.md",
+      "sha256": "3456918297eeae6c59c53a7f6b6889c29dd8cc568431697afeb2a8cfbb743c73",
+      "size": 2350
+    },
+    {
+      "id": "exact-diff",
+      "path": "Artifacts/Reports/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/Worker/EXACT_DIFF.md",
+      "sha256": "0ee09747005fdee14a353bf86d0e14fc6c8e9039dbea00ff04fc3a395f6f99c7",
+      "size": 6179
+    },
+    {
+      "id": "focused-verification",
+      "path": "Artifacts/Reports/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/Worker/FOCUSED_VERIFICATION.md",
+      "sha256": "bc876844d6752c015416f7bc0de58e6886d01ad713eb4d0764658363699f9890",
+      "size": 2925
+    },
+    {
+      "id": "pre-edit-role-operating-model",
+      "path": "Artifacts/Reports/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/Worker/PRE_EDIT_ROLE_OPERATING_MODEL.md",
+      "sha256": "71a55c1de226b3fc9656458ef5c038dde8577fa20c45b17a637450d4d39034ce",
+      "size": 8028
+    },
+    {
+      "id": "pre-edit-visual-production",
+      "path": "Artifacts/Reports/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/Worker/PRE_EDIT_VISUAL_PRODUCTION.md",
+      "sha256": "96fd28335221194b09f90f911b01611a880204057f7d566379784e5cf8278cf6",
+      "size": 5593
+    },
+    {
+      "id": "pre-edit-work-order-template",
+      "path": "Artifacts/Reports/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/Worker/PRE_EDIT_WORK_ORDER_ROLE_AND_REVIEW_BLOCK.md",
+      "sha256": "60020702b8334b1a914178e6c9f9ba9ba44bea8cac95d895fa23868a4d611281",
+      "size": 15949
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Reports/C99-DIRECTOR-QUALITY-ACCOUNTABILITY-V1/Worker/INDEPENDENT_REVIEW.json",
+    "record_sha256": "e14338cb21a579326bc579ebb971f1ee30ccb7e877dc5692ca2c1250a8460901",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "8e9f582e8c41f555a353f6459bfee63975f69d8622a8bbb90bdb83d53e2459bf",
+    "reviewed_evidence_ids": [
+      "evaluated-rationale",
+      "exact-diff",
+      "focused-verification",
+      "pre-edit-role-operating-model",
+      "pre-edit-visual-production",
+      "pre-edit-work-order-template"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Docs/WORK_STATE.md",
+    "handover_path": "Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

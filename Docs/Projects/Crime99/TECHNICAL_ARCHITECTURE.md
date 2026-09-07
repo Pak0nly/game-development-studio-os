@@ -110,7 +110,12 @@ Maintain one machine-readable or Markdown register with:
 * render-pipeline and Unity evidence;
 * restore instructions.
 
-The current architecture input classifies `1950s NYC` and `Fuyoh Cyberpunk Diner` as `Suitable with Light Adaptation`, and `Cyberpunk Port City` as `Needs Further Testing`. No package is a `Potential Release Asset`.
+Historical preflight evidence classified `1950s NYC` and `Fuyoh Cyberpunk
+Diner` as `Suitable with Light Adaptation`, and `Cyberpunk Port City` as
+`Needs Further Testing`. That dated Fuyoh finding grants no current use
+authority: the complete asset and every derived subasset are
+`TEMPORARILY EXCLUDED / DO NOT USE`. No current package is a
+`Potential Release Asset`, and no replacement landmark is selected.
 
 ### Backup and Reset
 
@@ -292,7 +297,13 @@ Build the prototype map from authored city blocks and district prefabs around a 
 * `IntegrationBlock` for one intersection, clinic, traffic, bots, and representative buildings;
 * `PrototypeFFA` for the final multi-block match.
 
-Use `1950s NYC` as the preferred base-city source with light project-owned material and prefab adaptation. Use the complete `Fuyoh Cyberpunk Diner` once as a landmark; reusable subassets may recur only where repetition is not visually obvious. Use `Cyberpunk Port City` only in bounded selected subsets after further testing. Do not duplicate the complete diner.
+Use `1950s NYC` as the preferred base-city source with light project-owned
+material and prefab adaptation. `Fuyoh Cyberpunk Diner`, including the
+complete asset and every derived subasset, is `TEMPORARILY EXCLUDED / DO NOT
+USE`. Use `Cyberpunk Port City` only in bounded selected subsets after further
+testing. No replacement landmark is selected; the landmark, Composition
+Anchor, primary lighting focus, and their dependent sightlines and reveals
+remain `OPEN / HUMAN DECISION REQUIRED`.
 
 World rules:
 

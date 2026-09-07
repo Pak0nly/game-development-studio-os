@@ -14,6 +14,26 @@ This directory contains the current project definition and design documentation 
 
 Production baselines, canonical work environments, frozen systems, asset boundaries, accepted concerns, and contextual diagnostic lessons are indexed in the adopted [`Crime99 Production Profile`](PRODUCTION_PROFILE.md). The profile was adopted through LAIA-2026-07-22 on 2026-07-22. Operational authority and stop state remain in [`WORK_STATE.md`](../../WORK_STATE.md) and [`CURRENT_HANDOVER.md`](../../CURRENT_HANDOVER.md); this project-definition index must not be used as a production-continuation grant.
 
+Operational knowledge about installed tools, owned asset families, proven
+capabilities, scoped successes, scoped failures and current best-use guidance
+is indexed in the [`Crime99 Capability Knowledge Base`](Knowledge/README.md).
+Its [`Capability Coverage Register`](Knowledge/CAPABILITY_COVERAGE_REGISTER.md)
+classifies every known local and owned holding. It complements
+[`ASSET_INVENTORY.md`](ASSET_INVENTORY.md) and exact task evidence; it does not
+grant production or adoption authority.
+
+Unity work must also consult the
+[`Unity Native Capability Atlas`](Knowledge/Capabilities/C99-CAP-UNITY-NATIVE-ATLAS-001.md)
+before bespoke construction, new dependencies or Asset Store solutions are
+proposed. The atlas routes problems to built-in Editor tools, engine APIs,
+official packages, modules and diagnostics without claiming unproven fit.
+
+The current read-only road-network planning owner is the
+[`Whole-City Road Network Overhaul Blueprint`](WHOLE_CITY_ROAD_NETWORK_OVERHAUL_BLUEPRINT.md).
+It preserves the current connected macro graph while routing future road work
+through the full locally relevant capability palette. It is not Unity execution
+or adoption authority.
+
 The failed `New Map Slice — Process Validation` Pilot 1 is formally closed in [`PILOT_1_CLOSURE_AND_SEMANTIC_EVIDENCE_REVISION.md`](PILOT_1_CLOSURE_AND_SEMANTIC_EVIDENCE_REVISION.md). Its frozen candidate is process evidence only and is not a production or layout base.
 
 The product is framed through its own identity: a solo-testable Free-for-All experience, a vehicle and on-foot combat sandbox, a reactive city with civilians, traffic, police, and destruction, short-form chaotic action, and the stylised `Neon over Dirt` visual direction.
@@ -57,9 +77,10 @@ Read the project documents in this order:
 7. [`IMPLEMENTATION_SEQUENCE.md`](IMPLEMENTATION_SEQUENCE.md)
 8. [`TECHNICAL_RISK_REVIEW.md`](TECHNICAL_RISK_REVIEW.md)
 9. [`ASSET_STYLE_PREFLIGHT_PLAN.md`](ASSET_STYLE_PREFLIGHT_PLAN.md) when reviewing the completed first Asset and Style Preflight plan
-10. [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md)
-11. [`RISK_REGISTER.md`](RISK_REGISTER.md)
-12. the remaining GDD modules as required
+10. [`Knowledge/CAPABILITY_INDEX.md`](Knowledge/CAPABILITY_INDEX.md) and [`Knowledge/CAPABILITY_COVERAGE_REGISTER.md`](Knowledge/CAPABILITY_COVERAGE_REGISTER.md) when a task materially selects or rejects a tool, asset, package or reusable workflow
+11. [`OPEN_DECISIONS.md`](OPEN_DECISIONS.md)
+12. [`RISK_REGISTER.md`](RISK_REGISTER.md)
+13. the remaining GDD modules as required
 
 ## Document Roles
 

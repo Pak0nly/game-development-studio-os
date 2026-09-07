@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "kind": "director_dispatch_receipt",
+  "gate_state": "ADOPTED_ACTIVE",
+  "work_order_id": "C99-LOCAL-GIT-SAFETY-CHECKPOINT-V1",
+  "work_order_sha256": "87e0d3a04e572fa5ae90f4893f1e572c9ea192f0df18bf91f47a50bb0773c53b",
+  "manifest_sha256": "a21f3ebc6caba234f845e81f63d4e21324519f934ee1a1f1beeab0cae7c2576a",
+  "repository": {
+    "branch": "main",
+    "head": "66e0e8cda53fc88776088dad559e56fe486c2fcd"
+  },
+  "project_identity_sha256": "c744f6b1c9c77c8a0d897d114b459e5127bbb97b53a8e2ea9aa90bc11a7630a2",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Docs/WORK_STATE.md",
+      "Docs/CURRENT_HANDOVER.md"
+    ],
+    "sha256": "f99ee22c64d561f44d64681e90d0f4946b4a830ee6d165f49dd76e26c544e951"
+  },
+  "source_state_sha256": "37d9840b6c50771e532696a4e5a2f96f48a8345674f2250fa1d54498040cfe7d",
+  "baseline_state_sha256": "17c7851662d5a92b23bd49eaccde3c6716c67a6b7e467e2f66e296386916bd42",
+  "required_live_task_tools": [
+    "apply_patch",
+    "create_thread",
+    "exec_command",
+    "read_thread",
+    "send_message_to_thread",
+    "view_image",
+    "wait_threads"
+  ],
+  "receipt_id": "a14f4bfbc6d6564638ce70cbf7fb12a130e5b1f39b4c66ecbf85920d2f9f24c6"
+}

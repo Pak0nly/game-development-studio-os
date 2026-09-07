@@ -1,7 +1,19 @@
 {
-  "schema_version": 1,
-  "authority_core_id": "C99-STUDIO-AUTHORITY-CORE-MVP-V2",
-  "authority_core_state": "MVP_V2_CANDIDATE_NOT_ADOPTED",
+  "schema_version": 2,
+  "authority_core_id": "C99-STUDIO-AUTHORITY-CORE-MVP-V3",
+  "authority_core_state": "MVP_V3_ADOPTION_READINESS_CANDIDATE_NOT_ADOPTED",
+  "scope_policy": {
+    "allowed_scopes": [
+      "studio",
+      "crime99-city",
+      "crime99-assets",
+      "crime99-production"
+    ]
+  },
+  "regression_contract": {
+    "path": "tests/test_validate_authority.py",
+    "expected_test_methods": 34
+  },
   "output_policy": {
     "path": "Artifacts/Reports/C99-STUDIO-AUTHORITY-CORE-AND-FAIL-CLOSED-VALIDATOR-MVP-V1/repository-authority-snapshot.json"
   },
@@ -28,11 +40,11 @@
     },
     "work_state": {
       "path": "Docs/WORK_STATE.md",
-      "expected_sha256": "ac9b42d84f0fc619b22db845e914163bcbce97bad1f95e6775a19dceb5869797"
+      "expected_sha256": "a73509aced2109c221553c16cd4a303ce6b6da85b3dea1dd69a97ee7841a2732"
     },
     "handover": {
       "path": "Docs/CURRENT_HANDOVER.md",
-      "expected_sha256": "17977967e33db013313f27a53e3429f10e43c14a5906facdb58399904d947376"
+      "expected_sha256": "c11e8e1669a4d047321eba3e7ce7f80b433e797f0b842fce8acb8c9a0d11d201"
     }
   },
   "claims": [
@@ -40,6 +52,9 @@
       "id": "task-pivot-authority",
       "scope": "Studio OS task-pivot authority continuity",
       "status": "ADOPTED/CURRENT",
+      "applies_to": [
+        "*"
+      ],
       "checks": [
         {
           "source": "agents",
@@ -62,6 +77,10 @@
       "id": "city-pipeline",
       "scope": "Crime99 future city pipeline, baseline, environment, and repository ownership",
       "status": "OPEN/HUMAN DECISION REQUIRED",
+      "applies_to": [
+        "crime99-city",
+        "crime99-production"
+      ],
       "checks": [
         {
           "source": "decisions",
@@ -95,6 +114,10 @@
       "id": "asset-holdings-currentness",
       "scope": "Crime99 complete current asset holdings",
       "status": "UNKNOWN/REFRESH REQUIRED",
+      "applies_to": [
+        "crime99-assets",
+        "crime99-production"
+      ],
       "checks": [
         {
           "source": "inventory",
@@ -117,6 +140,11 @@
       "id": "mastercity-role",
       "scope": "Projects/Crime99MasterCityDiscovery project role",
       "status": "HISTORICAL ONLY",
+      "applies_to": [
+        "crime99-city",
+        "crime99-assets",
+        "crime99-production"
+      ],
       "checks": [
         {
           "source": "decisions",
@@ -152,6 +180,11 @@
       "id": "fuyoh-disposition",
       "scope": "Fuyoh Cyberpunk Diner and every derived subasset",
       "status": "TEMPORARILY EXCLUDED",
+      "applies_to": [
+        "crime99-city",
+        "crime99-assets",
+        "crime99-production"
+      ],
       "checks": [
         {
           "source": "brief",
@@ -173,6 +206,11 @@
       "id": "historical-evidence-authority",
       "scope": "Crime99 historical evidence and reuse authority",
       "status": "HISTORICAL ONLY",
+      "applies_to": [
+        "crime99-city",
+        "crime99-assets",
+        "crime99-production"
+      ],
       "checks": [
         {
           "source": "decisions",
@@ -209,7 +247,10 @@
       "work_state",
       "handover"
     ],
-    "work_order_id": "C99-STUDIO-AUTHORITY-VALIDATOR-PATH-SAFETY-CORRECTION-V2",
+    "work_order_id": "C99-STUDIO-AUTHORITY-VALIDATOR-ADOPTION-READINESS-PREPARATION-V3",
+    "applies_to": [
+      "*"
+    ],
     "max_age_days": 1,
     "required_all": [
       "OPEN / HUMAN DECISION REQUIRED",

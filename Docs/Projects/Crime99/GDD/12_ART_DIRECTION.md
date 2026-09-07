@@ -323,8 +323,13 @@ The planned primary source is the Humble Bundle `Cosmos Eclipse Game Dev Assets 
 The bundle is a raw-material library, not a ready-made project style. The first-priority packages for catalogue and suitability review are:
 
 - `1950s NYC`;
-- `Cyberpunk Port City`;
-- `Fuyoh Cyberpunk Diner`.
+- `Cyberpunk Port City`.
+
+`Fuyoh Cyberpunk Diner`, including the complete asset and every derived
+subasset, is `TEMPORARILY EXCLUDED / DO NOT USE` for current planning,
+recommendation, Style Slice, and production. No replacement landmark is
+selected; the landmark, Composition Anchor, primary lighting focus, and their
+dependent sightlines and reveals remain `OPEN / HUMAN DECISION REQUIRED`.
 
 Selection is determined by:
 

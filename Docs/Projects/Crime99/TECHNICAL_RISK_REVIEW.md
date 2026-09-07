@@ -23,7 +23,7 @@ The safest plan is Variant A through Gate A, then evidence-triggered selective p
 | TR-003 | Traffic/pedestrian implementation dominates schedule | High | High | D/F | One-intersection vertical slice; preflight combined system only on evidence |
 | TR-004 | Bot vehicle use becomes brittle | High | High | D | Shared intents; staged foot then vehicle behavior; inspectable states |
 | TR-005 | Camera/building occlusion harms readability | High | High | A/E | Fixed rig early; representative occlusion test; shader candidate seam |
-| TR-006 | Asset packages lack cohesion under light adaptation | High | High | E | NYC base, Diner once, bounded Port, explicit visual stop criteria |
+| TR-006 | Asset packages lack cohesion under light adaptation | High | High | E | Exclude all Fuyoh content; keep landmark/composition decisions open; bounded authorised inputs only; explicit visual stop criteria |
 | TR-007 | Combined performance collapses | Medium-high | Critical | F | Budgets, caps, staggering, profiling, complete stable runs |
 | TR-008 | Chain reactions create duplicate damage/score or physics spikes | Medium-high | High | C/F | One-time explosion guard, deduplication, pooled presentation |
 | TR-009 | Store tool captures project architecture | Medium | High | B/D/E | Project-owned rules/adapters; isolated preflight; rejection criteria |
@@ -71,11 +71,22 @@ The completed combined preflight establishes `Package Limitation`: the bounded r
 
 ### TR-005 — Camera and Occlusion
 
-Validate the fixed rig in a synthetic block at Gate A and with NYC/Diner/Port representatives at Gate E. Occlusion must restore reliably with multiple overlapping buildings and both camera policies. If material diversity makes project-owned fading fragile, preflight See-through Shader; do not replace URP or globally modify publisher shaders.
+Validate the fixed rig in a synthetic block at Gate A and only with
+Human-authorised representatives at Gate E. `Fuyoh Cyberpunk Diner` and every
+derived subasset are `TEMPORARILY EXCLUDED / DO NOT USE`. Occlusion must
+restore reliably with multiple overlapping buildings and both camera policies.
+If material diversity makes project-owned fading fragile, preflight
+See-through Shader; do not replace URP or globally modify publisher shaders.
 
 ### TR-006 — Asset Cohesion
 
-Use NYC as structural base and Diner as the single complete landmark. Reuse Diner subassets sparingly. Keep Port in a bounded optional district/prop role until further evidence. Record before/after material variants and reject adaptations that become full custom asset production. No package is assumed release-ready.
+Use only Human-authorised assets. Fuyoh, including the complete asset and every
+derived subasset, remains excluded. No replacement landmark is selected; the
+landmark, Composition Anchor, primary lighting focus, and dependent sightlines
+and reveals remain `OPEN / HUMAN DECISION REQUIRED`. Keep Port in a bounded
+optional district/prop role until further evidence. Record before/after
+material variants and reject adaptations that become full custom asset
+production. No package is assumed release-ready.
 
 ### TR-007 — Combined Performance
 
@@ -102,7 +113,13 @@ Evidence tiers:
 3. **Official nearby-version claim:** useful for shortlist only.
 4. **Marketing/community claim:** insufficient for adoption.
 
-Current direct evidence exists for the bounded NYC, Diner, and Port selections under Unity `6000.3.19f1`/URP, with visual/cohesion limitations. It does not transfer to the tool candidates. RCCP has nearby Unity 6000/URP store evidence; the traffic system has a publisher Unity 6 claim; A* Pro and See-through Shader lack exact Unity 6.3 proof in the local research record.
+Historical direct evidence exists for the bounded NYC, Diner, and Port
+selections under Unity `6000.3.19f1`/URP, with visual/cohesion limitations.
+That historical Diner evidence does not reactivate Fuyoh or grant current use
+authority. It does not transfer to the tool candidates. RCCP has nearby Unity
+6000/URP store evidence; the traffic system has a publisher Unity 6 claim; A*
+Pro and See-through Shader lack exact Unity 6.3 proof in the local research
+record.
 
 ### TR-011 and TR-012 — Asset Recovery and Provenance
 
