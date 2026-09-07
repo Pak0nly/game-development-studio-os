@@ -1,0 +1,33 @@
+{
+  "schema_version": 2,
+  "kind": "director_dispatch_receipt",
+  "gate_state": "ADOPTED_ACTIVE",
+  "work_order_id": "C99-CLEAN-CONTINUATION-V1",
+  "work_order_sha256": "709f03c1c4771a46049f4c7e46753d8974527880df04b25ceda03393cf976a80",
+  "manifest_sha256": "69a7b60ad683ca9bd12344dde47e4d08405c2501ea308ad8f15a1d3b9ad4ea71",
+  "repository": {
+    "branch": "main",
+    "head": "af4213404209ee84e59117d42811dec5df5997be"
+  },
+  "project_identity_sha256": "c744f6b1c9c77c8a0d897d114b459e5127bbb97b53a8e2ea9aa90bc11a7630a2",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Docs/WORK_STATE.md",
+      "Docs/CURRENT_HANDOVER.md"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "53eb6830d9d29e11d2cc77976a9d47e7f63851e512061a7cab0b7d51667ac6a1",
+  "baseline_state_sha256": "17c7851662d5a92b23bd49eaccde3c6716c67a6b7e467e2f66e296386916bd42",
+  "required_live_task_tools": [
+    "apply_patch",
+    "create_thread",
+    "exec_command",
+    "read_thread",
+    "send_message_to_thread",
+    "view_image",
+    "wait_threads"
+  ],
+  "receipt_id": "efb43f8a4316416fad1f390179533ca24b78792198f09ffcfaad12bbd8881598"
+}

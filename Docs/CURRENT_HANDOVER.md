@@ -73,10 +73,19 @@ allowlist and exception record are in
 hash is recorded there after its separate commit. Requested model — not
 independently attested.
 
+## Clean Local Continuation
+
+`C99-CLEAN-CONTINUATION-V1` passed its Worker receipt before mutation. Both
+normal Git statuses are now clean through narrow local `.git/info/exclude`
+patterns, with all excluded files preserved physically. The patterns retain
+historical workspaces, archives/evidence, outer-editor state, licensed vendor
+payloads, one local ProBuilder setting, and four historical comparison meshes;
+they do not claim a fully reproducible clone. No source bytes, Unity state,
+remote, history, or excluded content changed. See
+`Docs/Projects/Crime99/GIT_CONTINUATION_STATE.md`.
+
 ## Next Action
 
-Await the Human's next instruction here. No further implementation is authorised
-by this documentation closure. Apply the clarified owners, task-specific
-routing, fresh dispatch/verify-worker, cursor monitoring, independent review
-and closure where required. Maintain autonomous formative work with few
-meaningful checks, not micromanagement. Never reuse an old receipt for new work.
+Await the Human's next game task. No follow-on implementation is inferred.
+Apply task-specific routing, a fresh dispatch/verify-worker, monitoring and any
+required independent review/closure. Never reuse this receipt for a new task.

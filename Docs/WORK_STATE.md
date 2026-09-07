@@ -56,13 +56,23 @@ The Studio checkpoint hash and precise exclusions are recorded in
 `Artifacts/Reports/C99-LOCAL-GIT-SAFETY-CHECKPOINT-V1/REPORT.md`.
 Requested model — not independently attested.
 
+## Clean Local Continuation
+
+`C99-CLEAN-CONTINUATION-V1` verified Worker receipt
+`efb43f8a4316416fad1f390179533ca24b78792198f09ffcfaad12bbd8881598` before
+mutation. Named local `.git/info/exclude` patterns now retain historical
+workspaces, archives, evidence, outer-editor state, licensed vendor payloads,
+and one local ProBuilder setting while both normal Git statuses are clean.
+No files were deleted, moved, or source-edited; no Unity, test, dependency,
+reset, rewrite, or remote action occurred. The old large Crime99 history is
+preserved. `Docs/Projects/Crime99/GIT_CONTINUATION_STATE.md` records the
+local-only caveat and source-preservation scope.
+
 ## Exact Next Step
 
-Await the Human's next task in Director
-01a07c84-4a59-71f2-8aef-10d014a697dd. No game development or new dispatch is
-inferred. P2-P5 individual development remains unfinished. Before a relevant
-future method decision, reconcile the Park Reference's Road Constructor
-internal-footpath exclusion with the Human request. Asset Inventory's
-NONE_OPEN_HUMAN_DECISION_REQUIRED pipeline projection remains stale relative
-to DEC-033; integrated Crime99 URP remains selected. Do not reuse exhausted
-park receipts. Future revalidation is task-relevant, not a repeated bootstrap.
+Await the Human's next game task. P2-P5 individual development remains
+unfinished and visually failed, not adopted. Before a relevant method decision,
+reconcile the Park Reference's Road Constructor internal-footpath exclusion
+with the Human request. Asset Inventory's NONE projection remains stale versus
+DEC-033; integrated Crime99 URP remains selected. Do not reuse exhausted park
+receipts. Revalidate only what the next task requires.
