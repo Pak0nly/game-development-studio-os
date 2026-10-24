@@ -1,0 +1,60 @@
+[HL-ASSETCAP] start 1920x1080 buildings current dwarves current far 20 2026-10-24T21:44:28
+[HL-ASSETCAP] hall 40,47
+[HL-ASSETCAP] shot 01_hall_area 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 21.3, 6.7)
+[HL-ASSETCAP] shot 02_copse 1920x1080 models 2 placeholders 0 dwarves 6 heavy 4 female 2 far 0 camera (47.5, 22.4, 9.2)
+[HL-ASSETCAP] place woodcutter at 33,51 ok
+[HL-ASSETCAP] place forester at 35,51 ok
+[HL-ASSETCAP] place well at 37,51 ok
+[HL-ASSETCAP] place fisher at 39,51 ok
+[HL-ASSETCAP] place hunter at 41,51 ok
+[HL-ASSETCAP] place sawmill at 43,51 ok
+[HL-ASSETCAP] place quarry at 45,51 ok
+[HL-ASSETCAP] place store at 47,51 ok
+[HL-ASSETCAP] road 33,52 - 35,52 issued
+[HL-ASSETCAP] road 35,52 - 37,52 issued
+[HL-ASSETCAP] road 37,52 - 39,52 issued
+[HL-ASSETCAP] road 39,52 - 41,52 issued
+[HL-ASSETCAP] road 41,52 - 43,52 issued
+[HL-ASSETCAP] road 43,52 - 45,52 issued
+[HL-ASSETCAP] road 45,52 - 47,52 issued
+[HL-ASSETCAP] shot 03_row_all 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 8 camera (40.5, 25.5, -2.6)
+[HL-ASSETCAP] shot 04_woodcutter 1920x1080 models 10 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (33.5, 17.0, 5.4)
+[HL-ASSETCAP] shot 04_forester 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (35.5, 17.0, 5.4)
+[HL-ASSETCAP] shot 04_well 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (37.5, 17.0, 5.4)
+[HL-ASSETCAP] shot 04_fisher 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (39.5, 17.0, 5.4)
+[HL-ASSETCAP] shot 04_hunter 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (41.5, 17.0, 5.4)
+[HL-ASSETCAP] shot 04_sawmill 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (44.0, 17.1, 5.9)
+[HL-ASSETCAP] shot 04_quarry 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (46.0, 17.1, 5.9)
+[HL-ASSETCAP] shot 04_store 1920x1080 models 10 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (48.0, 17.1, 5.9)
+[HL-ASSETCAP] shot 05_road_walkers 1920x1080 models 10 placeholders 0 dwarves 32 heavy 15 female 17 far 0 camera (40.5, 19.8, 2.1)
+[HL-ASSETCAP] shot 05b_road_walkers_160 1920x1080 models 10 placeholders 0 dwarves 32 heavy 15 female 17 far 32 camera (40.5, 19.8, 2.1)
+[HL-ASSETCAP] shot 06_walkers_close_a 1920x1080 models 10 placeholders 0 dwarves 32 heavy 15 female 17 far 0 camera (37.5, 17.0, 4.7)
+[HL-ASSETCAP] shot 06_walkers_close_b 1920x1080 models 10 placeholders 0 dwarves 32 heavy 15 female 17 far 0 camera (37.5, 17.0, 4.7)
+[HL-ASSETCAP] gif 07_walkers_close.gif 9732065 bytes, 72 frames
+[HL-ASSETCAP] shot 08_hall_dwarves_close 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 17.1, 8.9)
+[HL-ASSETCAP] r2 carriers 0.820 tile/s, dwarf scale 0.78, own motion vectors False, axe True
+[HL-ASSETCAP] shot 10_walkers_game_camera 1920x1080 models 10 placeholders 0 dwarves 32 heavy 15 female 17 far 0 camera (40.5, 19.8, 2.1)
+[HL-ASSETCAP] shot 11_walkers_close_a 1920x1080 models 10 placeholders 0 dwarves 32 heavy 15 female 17 far 0 camera (37.5, 17.0, 4.7)
+[HL-ASSETCAP] shot 11_walkers_close_b 1920x1080 models 10 placeholders 0 dwarves 32 heavy 15 female 17 far 0 camera (37.5, 17.0, 4.7)
+[HL-ASSETCAP] gif 12_walk_1x.gif 7575086 bytes, 60 frames
+[HL-ASSETCAP] gif 12_walk_4x.gif 7622057 bytes, 60 frames
+[HL-ASSETCAP] colours player 1 #E69F00, player 2 #56B4E9
+[HL-ASSETCAP] shot 13_player_colours 1920x1080 models 10 placeholders 0 dwarves 10 heavy 5 female 5 far 0 camera (38.6, 16.8, 1.4)
+[HL-ASSETCAP] shot 13b_player_colours_close 1920x1080 models 10 placeholders 0 dwarves 10 heavy 5 female 5 far 0 camera (38.6, 16.9, 1.6)
+[HL-ASSETCAP] shot 14_tools_standing 1920x1080 models 10 placeholders 0 dwarves 16 heavy 8 female 8 far 0 camera (39.4, 16.9, 1.7)
+[HL-ASSETCAP] shot 14b_tools_standing_side 1920x1080 models 10 placeholders 0 dwarves 16 heavy 8 female 8 far 0 camera (39.4, 16.9, 1.7)
+[HL-ASSETCAP] shot 14c_tools_standing_back 1920x1080 models 10 placeholders 0 dwarves 16 heavy 8 female 8 far 0 camera (39.4, 16.9, 1.7)
+[HL-ASSETCAP] shot 14d_tools_walking 1920x1080 models 10 placeholders 0 dwarves 9 heavy 5 female 4 far 0 camera (39.4, 16.9, 1.7)
+[HL-ASSETCAP] gif 14e_tools_walking.gif 5310796 bytes, 50 frames
+[HL-ASSETCAP] door line-up at the game camera's pitch 35 (the player's lowest step; default 45)
+[HL-ASSETCAP] door woodcutter at 33.38,12.15 ground 9.902 sill +0.120 frame top +0.430 mirror False; heads on the sill: heavy +0.464, female +0.454
+[HL-ASSETCAP] shot 15_door_woodcutter 1920x1080 models 10 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (33.5, 15.6, 4.1)
+[HL-ASSETCAP] door forester at 35.29,12.32 ground 9.903 sill +0.090 frame top +0.410 mirror False; heads on the sill: heavy +0.434, female +0.424
+[HL-ASSETCAP] shot 15_door_forester 1920x1080 models 10 placeholders 0 dwarves 12 heavy 7 female 5 far 0 camera (35.5, 15.6, 4.1)
+[HL-ASSETCAP] door fisher at 39.22,12.30 ground 9.915 sill +0.090 frame top +0.410 mirror False; heads on the sill: heavy +0.434, female +0.424
+[HL-ASSETCAP] shot 15_door_fisher 1920x1080 models 10 placeholders 0 dwarves 12 heavy 7 female 5 far 0 camera (39.5, 15.7, 4.1)
+[HL-ASSETCAP] door hunter at 41.51,12.20 ground 9.943 sill +0.100 frame top +0.430 mirror False; heads on the sill: heavy +0.444, female +0.434
+[HL-ASSETCAP] shot 15_door_hunter 1920x1080 models 10 placeholders 0 dwarves 12 heavy 7 female 5 far 0 camera (41.5, 15.7, 4.1)
+[HL-ASSETCAP] door quarry at 45.57,12.36 ground 9.993 sill +0.100 frame top +0.430 mirror False; heads on the sill: heavy +0.444, female +0.434
+[HL-ASSETCAP] shot 15_door_quarry 1920x1080 models 10 placeholders 0 dwarves 12 heavy 7 female 5 far 0 camera (46.0, 15.7, 4.6)
+[HL-ASSETCAP] DONE exit 0
