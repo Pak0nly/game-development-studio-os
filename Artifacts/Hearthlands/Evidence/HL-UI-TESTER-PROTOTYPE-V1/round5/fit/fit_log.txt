@@ -1,0 +1,20 @@
+[HL-UICAP] start 1920x1080 fonts Cinzel-Variable / AlegreyaSans-Regular / AlegreyaSans-Bold 2026-10-25T18:20:02
+[HL-UIFIT] de 1280x720 90%: scale 0.950, smallest text 13.3 px, resting HUD 20.6 % (topbar, goal, tools-frame, tutorial), fullest screen 33.6 %, findings 0
+[HL-UIFIT] de 1280x720 100%: scale 0.950, smallest text 13.3 px, resting HUD 20.6 % (topbar, goal, tools-frame, tutorial), fullest screen 33.6 %, findings 0
+[HL-UIFIT] de 1280x720 125%: scale 0.950, smallest text 13.3 px, resting HUD 20.6 % (topbar, goal, tools-frame, tutorial), fullest screen 33.6 %, findings 0
+[HL-UIFIT] de 1920x1080 90%: scale 0.950, smallest text 13.3 px, resting HUD 10.7 % (topbar, goal, tools-frame, tutorial), fullest screen 16.5 %, findings 0
+[HL-UIFIT] de 1920x1080 100%: scale 1.000, smallest text 14.0 px, resting HUD 11.7 % (topbar, goal, tools-frame, tutorial), fullest screen 17.9 %, findings 0
+[HL-UIFIT] de 1920x1080 125%: scale 1.250, smallest text 17.5 px, resting HUD 16.6 % (topbar, goal, tools-frame, tutorial), fullest screen 26.4 %, findings 0
+[HL-UIFIT] de 2560x1440 90%: scale 1.200, smallest text 16.8 px, resting HUD 9.9 % (topbar, goal, tools-frame, tutorial), fullest screen 14.9 %, findings 0
+[HL-UIFIT] de 2560x1440 100%: scale 1.333, smallest text 18.7 px, resting HUD 11.7 % (topbar, goal, tools-frame, tutorial), fullest screen 17.9 %, findings 0
+[HL-UIFIT] de 2560x1440 125%: scale 1.667, smallest text 23.3 px, resting HUD 16.6 % (topbar, goal, tools-frame, tutorial), fullest screen 26.2 %, findings 0
+[HL-UIFIT] en 1280x720 90%: scale 0.950, smallest text 13.3 px, resting HUD 20.5 % (topbar, goal, tools-frame, tutorial), fullest screen 32.9 %, findings 0
+[HL-UIFIT] en 1280x720 100%: scale 0.950, smallest text 13.3 px, resting HUD 20.5 % (topbar, goal, tools-frame, tutorial), fullest screen 32.9 %, findings 0
+[HL-UIFIT] en 1280x720 125%: scale 0.950, smallest text 13.3 px, resting HUD 20.5 % (topbar, goal, tools-frame, tutorial), fullest screen 32.9 %, findings 0
+[HL-UIFIT] en 1920x1080 90%: scale 0.950, smallest text 13.3 px, resting HUD 10.6 % (topbar, goal, tools-frame, tutorial), fullest screen 16.1 %, findings 0
+[HL-UIFIT] en 1920x1080 100%: scale 1.000, smallest text 14.0 px, resting HUD 11.6 % (topbar, goal, tools-frame, tutorial), fullest screen 17.0 %, findings 0
+[HL-UIFIT] en 1920x1080 125%: scale 1.250, smallest text 17.5 px, resting HUD 16.6 % (topbar, goal, tools-frame, tutorial), fullest screen 26.0 %, findings 0
+[HL-UIFIT] en 2560x1440 90%: scale 1.200, smallest text 16.8 px, resting HUD 9.9 % (topbar, goal, tools-frame, tutorial), fullest screen 14.2 %, findings 0
+[HL-UIFIT] en 2560x1440 100%: scale 1.333, smallest text 18.7 px, resting HUD 11.6 % (topbar, goal, tools-frame, tutorial), fullest screen 17.0 %, findings 0
+[HL-UIFIT] en 2560x1440 125%: scale 1.667, smallest text 23.3 px, resting HUD 16.5 % (topbar, goal, tools-frame, tutorial), fullest screen 24.8 %, findings 0
+[HL-UICAP] DONE exit 0

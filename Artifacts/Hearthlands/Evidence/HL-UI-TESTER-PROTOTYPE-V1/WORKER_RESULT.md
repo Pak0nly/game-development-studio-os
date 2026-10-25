@@ -1,3 +1,99 @@
+# WORKER_RESULT: HL-UI-TESTER-PROTOTYPE-V1-R5 (round 5)
+
+Worker: Claude (Opus 5.5), direct continuation. External project `C:/GameDev/Hearthlands`, `main` fb592f3 -> **b9801de** (one local commit, not pushed). Round note in plain German: `round5/ROUND_5.md`.
+
+## R5.1 verify-worker
+
+`PASS worker receipt 16cca10d7bcf3595f4e0191dc401be6075ecbaead4d67f0fc48f71dfa6c40b82`, exit 0, before any mutation.
+
+## R5.2 What was built
+
+- `Runtime/Presentation/RiverKit/`: RcVox, RcLedge, RcGravel, RcSolidMap copied from `LookTest/RiverCliff/Runtime` at fb592f3 (namespace only); `RiverArt` builds the sample's voxel gravel (density by chessboard distance to water: bed 0.3, edge 0.55, 2 tiles 0.12, times the sample's patch noise) and bank stones (the sample's stone model, about 9 % of edge tiles) once at boot in `ArtWorld` (current assets and a dressed map only). Ledge banks, curved fall, cliff strata, water surfaces and the long ford were NOT integrated (built from the sample's analytic course; mapping them onto Testtal's tile river is a separate task). Editor/ untouched.
+- Border lanterns: cap and pennant in the owner's colour, turquoise (0x35D8E8) on detached parts.
+- Tablet: per set stone a core (deep red, 600 nits day / 900 night) and a halo (120 / 260) just in front of the stone, dark-red base colour; flame core and red shift to orange at night; all lights stay on.
+- Spots: the old flat butterfly model (LifeView 'life_butterfly_open'), found by switching scene groups off one at a time (`session/diag_spots_*`); left out with the current assets.
+- Stumps: already voxel catalogue stumps in the game (P2 stumps only without the voxel catalogue); shown in `close_stumps`.
+- Polish: the step-4 flag widening limited to step 4; sawmill sign hidden in step 6; card text 20, title 27, card 680 wide; stuck hint with a fixed 560 wrap width.
+- Capture route: overview day/night, river close-ups day/night, stumps, spots diagnosis, detached part by a chain of ten wooden hearths placed with the core's debug command (146 detached tiles, 54 turquoise lanterns).
+- Tests: 2 new in `TesterUiR3Tests`.
+
+Proposal: gravel densities, stone share, lantern cap/pennant sizes, turquoise, stone glow strengths, flame night colours, card text sizes.
+
+## R5.3 Iterations
+
+| Run | Finding | Change |
+|---|---|---|
+| 1 (build a, cap1) | tablet stones black by day (glow too weak, black base); spots came from the 'Views' group | stronger day glow, dark-red base; deeper diagnosis |
+| 2 (build b, cap2) | spots vanish without 'Life' (butterflies) | butterflies left out with current assets |
+| 3 (builds c-e) | fit: English stuck hint cut (9 findings) | fixed wrap width; fit 0 |
+
+3 self-directed iterations of 4. Operational recovery 0 of 3.
+
+## R5.4 Commands and exit codes
+
+| # | Command | Result |
+|---|---|---|
+| 1 | verify-worker | 0 |
+| 2 | `round5/logs/run-build.ps1 -Name a..e` (HDRP assets and Main.unity restored) | 0 each |
+| 3 | `run-player.ps1` cap1, cap2 (scratchpad), capfinal, capfinal2 (`round5/session`, build d) | 0 |
+| 4 | `run-player.ps1` fitfinal (build c, 9 findings, exit 3), fitfinal2 (build d, 9 findings, exit 3), fitfinal3 (build e) | **0 findings, exit 0** |
+| 5 | `run-tests.ps1 -Name final` (whole EditMode, tree = build-d sources; build e changed one GameUi line) | **2043 total, 2020 passed, 23 skipped, 0 failed** |
+| 6 | `dotnet test CoreBuild/Hearthlands.Core.Tests` | 1922/1922, exit 0 |
+| 7 | `dotnet test AssetGen/AssetGen.Tests` | 277/277, exit 0 |
+| 8 | benches r5 and r4 (`round5/perf/`), disturbed (see R5.5) | 0 |
+| 9 | `logs/make-sheets.ps1` | 0, 6 sheets |
+
+## R5.5 Golden, performance
+
+Core untouched; no pinned hash touched. Performance (1920x1080, no vsync, camera 20, Testtal one minute) **disturbed**: the other Worker's HL-AnimGallery player from C:/GameDev/Hearthlands-Zwerge ran during the benches (not stopped). r5: 0 dwarves 43.7 ms, 300 dwarves 87.5 ms; r4: 52.0 / 47.1 ms (earlier clean runs about 5.5 / 12.7 ms). No conclusion on the river art's cost (400 036 triangles); re-measure on a free machine.
+
+## R5.6 Captures
+
+`round5/session/` (DE/EN session, GIFs 6.4/5.9 MB, close-ups, diag), `sheets/` (6), `fit/`, `perf/`, `logs/`. Looked at: all 6 sheets and the review quads of each iteration; GIFs not viewed as animation. Missing: 'before' at night (only the round-4 day overview exists).
+
+## R5.7 Git verification
+
+- `git config --local`: Bastian Pakowski / bastian.pakowski@gmail.com. HEAD b9801de3f7047a9f177b4f9120cf0ffa9d1ec032 on main, parent fb592f3, not pushed, Co-Authored-By line.
+- Status: only the Human's `ProjectSettings.asset` (unchanged) and `Wiki/Katalog/Berufe.md`.
+- Builds: HL-Player-ui-r5 new, ui-r4 kept, ui-r3 deleted.
+
+## R5.8 Candidate files (= `git diff --name-only fb592f3 b9801de`)
+
+| path | sha256 | size |
+|---|---|---|
+| Unity/Assets/_Project/Runtime.Tests/Presentation/TesterUiR3Tests.cs | 755b8156ef07c8d0b59c6ff1af85d2b019db0b96fd3d4d8691b685bad184fce3 | 23496 |
+| Unity/Assets/_Project/Runtime/Presentation/ArtWorld.cs | 93f0f151d2f59f8ad9982f3804f2fcbfe675d40df62c8d6aac93ca738a3f897c | 4513 |
+| Unity/Assets/_Project/Runtime/Presentation/HallArt.cs | 1aa76eb2f2b733b3ae5e6c02fa00329464e79e5d9540bee5c4f125b0fede4df9 | 25144 |
+| Unity/Assets/_Project/Runtime/Presentation/LifeView.cs | 5c84b06458578a7e928859daaa8e3905cb55638bb805933f50dd5c5e46eef09a | 14337 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit.meta | ef69324fbcb30f2efeab1cd4208e28a595635a6a4cb8afdde524c040e715e8b0 | 172 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RcGravel.cs | a4aa7e9ba904f95d19d834647f609d3d2e95a9a8c1a39ffb793ab76f4936348b | 6514 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RcGravel.cs.meta | 67116db15ce01ca309877773e62b7a23dc4e745ffb82aebbdaf65494af980e3d | 59 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RcLedge.cs | 00b41e869759215a44678b183bbe29bbc646508ec8d870088ef561e933c3fefd | 13906 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RcLedge.cs.meta | 5a31a66892507083d934861c658b2b512e6ab0b59d3c42aa41140df97e12485a | 59 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RcSolidMap.cs | d56068f34063e4fd061a56c486750cf5de1a452dcdd000661242fd49343456fb | 4402 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RcSolidMap.cs.meta | 49a06aaf6270fc534f6fa84437c8731d8bd6b12dcf880bc09d572b995f3924b4 | 59 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RcVox.cs | 33e12b9a8cbc8610651f73e5f56f8693b6d096b6c70f9e648d5c9d42105b3f04 | 23413 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RcVox.cs.meta | f87fa6be7834fa89ce2bd7ea670570c9098645428e502ccabd6c908bbb18aa2d | 59 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RiverArt.cs | 96aaf0c4df4ce7597eaba2628cb866630f425940e2e9ee83111dd5241745b299 | 5918 |
+| Unity/Assets/_Project/Runtime/Presentation/RiverKit/RiverArt.cs.meta | 0adccf1aba91bd1eaaaa8f5570979b45cbbc7c7116bfddeec1e82b5b62ac2680 | 59 |
+| Unity/Assets/_Project/Runtime/Presentation/Ui/GameUi.cs | bbb9aaa8eb000152e382f1ba1688f2e673eb4d96f5e67030318c1d24138c5d9c | 131766 |
+| Unity/Assets/_Project/Runtime/Presentation/Ui/UiCapture.cs | 663f60df533348c5ee962e8a745381de55e6b82df6cbd00d0eb9e6855aa3dbb6 | 53836 |
+| Unity/Assets/_Project/Runtime/Presentation/WorldView.cs | a86fe408b9a65b0571d898d11c035856676fd68fbfca9f5539dbe2c0ffd4b525 | 128842 |
+
+## R5.9 Deviations
+
+1. River: only gravel and bank stones integrated; ledge banks, curved waterfall, cliffs, water outlines and the long ford not (reason R5.2).
+2. Performance not measurable cleanly (foreign GPU load).
+3. Session stills from build d; build e only widened the stuck hint (fit run on build e).
+4. Resting HUD at 1280x720 20.6 % (budget 20 %) due to the larger card.
+5. Knowledge Base not updated.
+
+## R5.10 Open items
+
+Questions in `round5/ROUND_5.md`: full river integration as its own order, lantern marking, ember glow, butterflies; re-run the bench.
+
+---
+
 # WORKER_RESULT: HL-UI-TESTER-PROTOTYPE-V1-R4 (round 4)
 
 Worker: Claude (Opus 5.5), direct continuation of round 3. External project `C:/GameDev/Hearthlands`, `main` cdbae84 -> **2b6bb79** (one local commit, not pushed). Round note in plain German: `round4/ROUND_4.md`.
