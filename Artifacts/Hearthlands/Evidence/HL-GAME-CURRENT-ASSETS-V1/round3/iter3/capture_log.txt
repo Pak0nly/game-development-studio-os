@@ -1,0 +1,91 @@
+[HL-ASSETCAP] start 1920x1080 buildings current dwarves current far 20 2026-10-25T13:41:41
+[HL-ASSETCAP] r3 hall 40,47, embers 1/3 -> 4 stones, lantern stage 1, dwarf scale 1.00, hall art prepared in 4137 ms
+[HL-ASSETCAP] hall model hall_r3, nodes 2, border lanterns 92
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] shot 01_hall_area_day 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 21.3, 6.7)
+[HL-ASSETCAP] shot 02_hall_close_day 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 14.6, 12.7)
+[HL-ASSETCAP] shot 03_tablet_close_day 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] light Abend
+[HL-ASSETCAP] shot 01_hall_area_dusk 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 21.3, 6.7)
+[HL-ASSETCAP] shot 02_hall_close_dusk 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 14.6, 12.7)
+[HL-ASSETCAP] shot 03_tablet_close_dusk 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] light Nacht
+[HL-ASSETCAP] shot 01_hall_area_night 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 21.3, 6.7)
+[HL-ASSETCAP] shot 02_hall_close_night 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 14.6, 12.7)
+[HL-ASSETCAP] shot 03_tablet_close_night 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] shot 04_tablet_2_stones_day 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] shot 04_tablet_6_stones_day 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] shot 04_tablet_12_stones_day 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] light Nacht
+[HL-ASSETCAP] shot 04_tablet_2_stones_night 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] shot 04_tablet_6_stones_night 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] shot 04_tablet_12_stones_night 1920x1080 models 2 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (40.5, 12.3, 16.3)
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] gif 05_hall_tablet_day.gif 8268417 bytes, 60 frames, 960x540, light Tag, stones 8
+[HL-ASSETCAP] gif 06_tablet_day.gif 4922074 bytes, 60 frames, 800x450, light Tag, stones 8
+[HL-ASSETCAP] light Nacht
+[HL-ASSETCAP] gif 05_hall_tablet_night.gif 8646659 bytes, 60 frames, 960x540, light Nacht, stones 12
+[HL-ASSETCAP] gif 06_tablet_night.gif 4893408 bytes, 60 frames, 800x450, light Nacht, stones 12
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] place woodcutter at 33,51 ok
+[HL-ASSETCAP] place forester at 35,51 ok
+[HL-ASSETCAP] place well at 37,51 ok
+[HL-ASSETCAP] place fisher at 39,51 ok
+[HL-ASSETCAP] place hunter at 41,51 ok
+[HL-ASSETCAP] place sawmill at 43,51 ok
+[HL-ASSETCAP] place quarry at 45,51 ok
+[HL-ASSETCAP] place store at 47,51 ok
+[HL-ASSETCAP] road 33,52 - 35,52 issued
+[HL-ASSETCAP] road 35,52 - 37,52 issued
+[HL-ASSETCAP] road 37,52 - 39,52 issued
+[HL-ASSETCAP] road 39,52 - 41,52 issued
+[HL-ASSETCAP] road 41,52 - 43,52 issued
+[HL-ASSETCAP] road 43,52 - 45,52 issued
+[HL-ASSETCAP] road 45,52 - 47,52 issued
+[HL-ASSETCAP] road to the hall issued
+[HL-ASSETCAP] site woodcutter at 49,48
+[HL-ASSETCAP] site store at 47,48
+[HL-ASSETCAP] nodes drawn 2
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] shot 07_road_network_day 1920x1080 models 12 placeholders 0 dwarves 8 heavy 4 female 4 far 8 camera (40.5, 25.5, -1.1)
+[HL-ASSETCAP] shot 08_nodes_close_day 1920x1080 models 12 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (39.5, 13.4, 8.2)
+[HL-ASSETCAP] light Nacht
+[HL-ASSETCAP] shot 07_road_network_night 1920x1080 models 12 placeholders 0 dwarves 8 heavy 4 female 4 far 8 camera (40.5, 25.5, -1.1)
+[HL-ASSETCAP] shot 08_nodes_close_night 1920x1080 models 12 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (39.5, 13.4, 8.2)
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] game site woodcutter model site_r3_timber_1
+[HL-ASSETCAP] game site store model site_r3_stone_1
+[HL-ASSETCAP] shot 09_game_sites_day 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (48.5, 14.8, 11.4)
+[HL-ASSETCAP] shot 10_sites_board_day 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 2 camera (40.7, 19.7, -2.2)
+[HL-ASSETCAP] shot 10b_sites_timber_close_day 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (37.7, 14.3, 3.1)
+[HL-ASSETCAP] shot 10c_sites_stone_close_day 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (42.5, 14.4, 3.1)
+[HL-ASSETCAP] border lanterns 92, nearest on land 46, on water 45
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] shot 11_border_day 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (51.9, 21.3, 5.2)
+[HL-ASSETCAP] shot 11b_border_close_day 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (51.9, 13.2, 13.3)
+[HL-ASSETCAP] shot 12_border_water_day 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (29.1, 18.9, 6.6)
+[HL-ASSETCAP] shot 12b_border_water_close_day 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (29.1, 12.2, 13.3)
+[HL-ASSETCAP] light Nacht
+[HL-ASSETCAP] shot 11_border_night 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (51.9, 21.3, 5.2)
+[HL-ASSETCAP] shot 11b_border_close_night 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (51.9, 13.2, 13.3)
+[HL-ASSETCAP] shot 12_border_water_night 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (29.1, 18.9, 6.6)
+[HL-ASSETCAP] shot 12b_border_water_close_night 1920x1080 models 12 placeholders 0 dwarves 2 heavy 1 female 1 far 0 camera (29.1, 12.2, 13.3)
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] door woodcutter: sill +0.120, frame top +0.430; heads on the sill at 1.00: heavy +0.561, female +0.548
+[HL-ASSETCAP] shot 13_door_woodcutter 1920x1080 models 12 placeholders 0 dwarves 8 heavy 4 female 4 far 0 camera (33.5, 12.5, 8.5)
+[HL-ASSETCAP] door forester: sill +0.090, frame top +0.410; heads on the sill at 1.00: heavy +0.531, female +0.518
+[HL-ASSETCAP] shot 13_door_forester 1920x1080 models 12 placeholders 0 dwarves 12 heavy 7 female 5 far 0 camera (35.5, 12.5, 8.5)
+[HL-ASSETCAP] door fisher: sill +0.090, frame top +0.410; heads on the sill at 1.00: heavy +0.531, female +0.518
+[HL-ASSETCAP] shot 13_door_fisher 1920x1080 models 12 placeholders 0 dwarves 12 heavy 7 female 5 far 0 camera (39.5, 12.6, 8.5)
+[HL-ASSETCAP] door hunter: sill +0.100, frame top +0.430; heads on the sill at 1.00: heavy +0.541, female +0.528
+[HL-ASSETCAP] shot 13_door_hunter 1920x1080 models 12 placeholders 0 dwarves 12 heavy 7 female 5 far 0 camera (41.5, 12.6, 8.5)
+[HL-ASSETCAP] door quarry: sill +0.100, frame top +0.430; heads on the sill at 1.00: heavy +0.541, female +0.528
+[HL-ASSETCAP] shot 13_door_quarry 1920x1080 models 12 placeholders 0 dwarves 12 heavy 7 female 5 far 0 camera (46.0, 12.6, 9.0)
+[HL-ASSETCAP] shot 14_hall_dwarves_close_day 1920x1080 models 12 placeholders 0 dwarves 11 heavy 6 female 5 far 0 camera (40.5, 14.3, 13.0)
+[HL-ASSETCAP] light Nacht
+[HL-ASSETCAP] shot 14_hall_dwarves_close_night 1920x1080 models 12 placeholders 0 dwarves 11 heavy 6 female 5 far 0 camera (40.5, 14.3, 13.0)
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] shot 15_hall_dwarves_game_camera 1920x1080 models 12 placeholders 0 dwarves 11 heavy 6 female 5 far 0 camera (40.5, 18.5, 8.5)
+[HL-ASSETCAP] light Tag
+[HL-ASSETCAP] DONE exit 0

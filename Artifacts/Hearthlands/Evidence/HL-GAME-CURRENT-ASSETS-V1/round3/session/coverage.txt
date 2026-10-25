@@ -1,0 +1,15 @@
+language	screen	covered	panels
+de	start screen	13.2 %	start
+de	resting HUD (step 1)	10.4 %	topbar, goal, tools-frame, tutorial
+de	info panel open (hall)	15.9 %	topbar, goal, tools-frame, tutorial, info
+de	build menu open	16.6 %	topbar, goal, tools-frame, build-panel, tutorial
+de	info panel open (hut)	16.1 %	topbar, goal, tools-frame, tutorial, info
+de	well done card	12.3 %	topbar, goal, tools-frame, tutorial
+de	resting HUD (free play)	6.5 %	topbar, goal, tools-frame
+en	start screen	13.2 %	start
+en	resting HUD (step 1)	10.3 %	topbar, goal, tools-frame, tutorial
+en	info panel open (hall)	15.6 %	topbar, goal, tools-frame, tutorial, info
+en	build menu open	16.5 %	topbar, goal, tools-frame, build-panel, tutorial
+en	info panel open (hut)	16.0 %	topbar, goal, tools-frame, tutorial, info
+en	well done card	11.6 %	topbar, goal, tools-frame, tutorial
+en	resting HUD (free play)	6.6 %	topbar, goal, tools-frame
