@@ -1,3 +1,97 @@
+# WORKER_RESULT: HL-UI-TESTER-PROTOTYPE-V1-R4 (round 4)
+
+Worker: Claude (Opus 5.5), direct continuation of round 3. External project `C:/GameDev/Hearthlands`, `main` cdbae84 -> **2b6bb79** (one local commit, not pushed). Round note in plain German: `round4/ROUND_4.md`.
+
+## R4.1 verify-worker
+
+`PASS worker receipt 67634b5b2b8eb4aa101be098ad39051efa9e023ff51a2066f13c6c0b3e7da014`, exit 0, before any mutation.
+
+## R4.2 What was built
+
+- Tutorial camera: `PlaytestGame.CameraLocked` hook; `GameUi` locks the free camera from step 2 (not while help/menu are open), tweens to a per-step focus (1.2 s), closes stale hints on step change (build menu, tool, info panel after 4 s in step 3, messages), dims 60 %, puts the forcing message on the card, puts pointers and the dim layer in a top layer, widens the step-4 frame over the waypoint fire; help always allowed (`TutorialGate`).
+- Tutorial end: "+1 plank" over the sawmill, the card shows the store count once the plank arrives, speed back to 1x, dwarf-click tip; help panel at the top.
+- Light (Human item 4): round-3 switch-offs undone (tablet stone lamps, hall workshop light, full hall fire share, marker glow); embers' emission x1.6 by day, x4 at night in deep red with a dark base colour at night.
+- Border (item 5): line removed; lanterns 1.25 x 1.55; detached-part lanterns turquoise (0x35D8E8).
+- Ground (items 1, 2): with the current assets no plinth pads (`HeightField.FootprintPad`); finished buildings keep a neutral meadow colour and meadow paint weights (plot kind kept, so no grass through floors; site state in the terrain signature).
+- QA: ghost as slab and posts; no-trees capture shows the ghost; suggestions need two tiles of own attached land around (`PlacementHints.InnerLand`); no Working tick sign; carrier road named by its buildings (`DwarfInfo.RoadName`); new non-Norse dwarf names (Proposal, 20 + 20).
+- Capture route R4 additions: focus waits and lock check, meadow-in-view search, plank-in-store shot, ground and overview shots with an inventory log line, heart fire at the game camera, a detached-territory attempt (hearth chain, logged).
+- Tests: 4 new in `TesterUiR3Tests`; the help-forcing assertion changed to the Human's decision.
+
+Proposal: focus points and distances, 4 s info close, names, ember strengths, lantern scale, turquoise, ghost shape, border margin, all texts.
+
+## R4.3 Iterations
+
+| Run | Finding | Change |
+|---|---|---|
+| 1 (build a, cap1) | tablet stones washed out with all lights on; no-trees ghost off screen; detached part not produced by one hearth | ember base dark at night and emission x4; meadow tile searched in view; hearth chain with demolition |
+| 2 (build b, cap2) | meadow tile chosen at the screen edge; detached still 0 | nearest to the centre, camera to the meadow for that shot |
+| 3 (builds c, d, capfinal) | carrier road wording 'von Sägewerk zu Große Halle' reads badly; full suite: grass test failed (meadow kind under buildings let grass grow in footprints) | 'Weg zwischen A und B'; neutral flag instead of kind change |
+| final (build e) | all suites green, 0 fit findings | none |
+
+3 self-directed iterations of 4. Operational recovery 0 of 3.
+
+## R4.4 Commands and exit codes
+
+| # | Command | Result |
+|---|---|---|
+| 1 | verify-worker | 0 |
+| 2 | `round4/logs/run-tests.ps1 -Name r4a` (TesterUi*, CurrentAssetsR3) | 32/32 |
+| 3 | `run-build.ps1 -Name a..e` (HDRP assets and Main.unity restored each time) | 0 each |
+| 4 | `run-player.ps1` cap1, cap2 (scratchpad), capfinal (`round4/session`), fitfinal (`round4/fit`) | 0, fit 0 findings |
+| 5 | `run-tests.ps1 -Name final` (before the grass fix) | 2037, 2013 passed, **1 failed** (GraphicsIntegration2Tests grass) |
+| 6 | `run-tests.ps1 -Name r4b` (GraphicsIntegration2, TesterUiR3, CurrentAssetsR3) | 34/34 |
+| 7 | `run-tests.ps1 -Name final` (tree = 2b6bb79) | **2037 total, 2014 passed, 23 skipped, 0 failed** |
+| 8 | `dotnet test CoreBuild/Hearthlands.Core.Tests` | 1918/1918, exit 0 |
+| 9 | `dotnet test AssetGen/AssetGen.Tests` | 277/277, exit 0 |
+| 10 | `logs/make-sheets.ps1` | 0, 6 sheets |
+
+## R4.5 Golden, performance
+
+Core untouched (diff only Runtime and Runtime.Tests); no pinned hash touched. No bench (no simulation change).
+
+## R4.6 Captures
+
+`round4/session/` (DE/EN stills, close-ups of tablet 2/6/12 day/night, heart fire day/night, hall court, border day/night, ground hall/store, sawmill, overview, GIFs 5.8/5.6 MB, coverage, log), `sheets/` (6), `fit/`, `logs/`. Looked at: all 6 sheets, the German fit sheet and the review quads of each iteration. GIFs not viewed as animation. No detached-part still (none could be produced).
+
+## R4.7 Git verification
+
+- `git config --local`: Bastian Pakowski / bastian.pakowski@gmail.com. HEAD 2b6bb79a8ecd5b270368176a5011fafc11cc9d24 on main, parent cdbae84, not pushed, Co-Authored-By line.
+- Status: only the Human's `ProjectSettings.asset` (sha256 a84d717c…, unchanged) and `Wiki/Katalog/Berufe.md`.
+- Builds: HL-Player-ui-r4 new; ui-r3 kept (newest plus one older).
+
+## R4.8 Candidate files (= `git diff --name-only cdbae84 2b6bb79`)
+
+| path | sha256 | size |
+|---|---|---|
+| Unity/Assets/_Project/Runtime.Tests/Presentation/TesterUiR3Tests.cs | 5069f55f4a6427fb35c820798bb21aa6134abe21ee4da968e8193a31f2b212af | 22606 |
+| Unity/Assets/_Project/Runtime/Presentation/BuildingFx.cs | 3b09ced418128b04b7f37bf0166facb1763a413571a6bd1fe83ddabd5cfbba9f | 16764 |
+| Unity/Assets/_Project/Runtime/Presentation/GhostView.cs | a2e97e4f3f5a6e1c7f6285bd7342dd57e2e5d7fb15eb999e5c4ac71511395a61 | 11177 |
+| Unity/Assets/_Project/Runtime/Presentation/HallArt.cs | 273ebd1faa88d352c3de63b3f47968168f5b03cb7b85ef59d2d1439ca1a6e751 | 23148 |
+| Unity/Assets/_Project/Runtime/Presentation/PlaytestGame.cs | 287be477c56f34bd0561301b265e8ad766167e8e428a2bda9285c72cce99f32b | 33633 |
+| Unity/Assets/_Project/Runtime/Presentation/Ui/DwarfInfo.cs | 2e74dad671e1dab684d4b79d0d65f9535a0b22b1ddd69afabb5d6fef9a57d0c6 | 9618 |
+| Unity/Assets/_Project/Runtime/Presentation/Ui/GameUi.cs | 6bdad631f9656c37931ac8a0ababdbc2a8151d5a3c32409367cb1aa334b5dd7d | 131199 |
+| Unity/Assets/_Project/Runtime/Presentation/Ui/PlacementHints.cs | 5f6b85dae1c63b21c7ff1aca435f793377ddd7a8423347a4fcdf2f2f9f0a6106 | 7388 |
+| Unity/Assets/_Project/Runtime/Presentation/Ui/TutorialGate.cs | 3da4a58af14ce9d11bfd5ad605ae27f570493385a86d6731b669e638d2260205 | 4438 |
+| Unity/Assets/_Project/Runtime/Presentation/Ui/UiCapture.cs | 223b3cf51cf5732ed7f2049f8ec356d3d3163902a86852f60f8ecc8d951a492c | 51293 |
+| Unity/Assets/_Project/Runtime/Presentation/Ui/UiStrings.cs | e5eeb1c79b224d74b8ff1546b599d133fe605c1bc2499dc8a67ca1f2791b9e0b | 31236 |
+| Unity/Assets/_Project/Runtime/Presentation/ViewMath.cs | 01916df26cefdbf9bda640cf7cdeafbf589cc05c4bf31bb947f5596032280eda | 13572 |
+| Unity/Assets/_Project/Runtime/Presentation/VoxelTerrain.Painted.cs | e91f30ad5059538275fc9705aed17af668d08b15a79a9c348a27689c4976779f | 24902 |
+| Unity/Assets/_Project/Runtime/Presentation/VoxelTerrain.cs | 44c06f45843676eaac45026ee18eb12cd407cac89a5092e998677812005079a3 | 92848 |
+| Unity/Assets/_Project/Runtime/Presentation/WorldView.cs | 29a4ecd17137d5fdc6617458ab74e442ca85a8161a1307e496e4c30dc82b5e84 | 126752 |
+
+## R4.9 Deviations
+
+1. Turquoise detached territory not proven in a capture: the Testtal hearth chain gave 0 detached tiles.
+2. The level art pass replaced nothing beyond the building ground and plinths; the inventory found no other old piece with an accepted replacement (stumps stay P2; light patches in the meadow unexplained, asked).
+3. With every light on, the tablet face stays pink-lit at night; the stones read red but not as bright as by day.
+4. Knowledge Base not updated (outside allowed paths).
+
+## R4.10 Open items
+
+Questions in `round4/ROUND_4.md`: ember readability, the 40 names, the meadow patches, a save with detached territory, camera tween speed.
+
+---
+
 # WORKER_RESULT: HL-UI-TESTER-PROTOTYPE-V1-R3 (round 3)
 
 Worker: Claude (Opus 5.5), separate Work task. External project `C:/GameDev/Hearthlands`, `main` 2c2b64d -> **cdbae84** (one local commit, not pushed). Unity 6000.6.4f1 HDRP. Mode: Discovery. Round note in plain German: `round3/ROUND_3.md`. Rounds 1 and 2 follow below the line.
