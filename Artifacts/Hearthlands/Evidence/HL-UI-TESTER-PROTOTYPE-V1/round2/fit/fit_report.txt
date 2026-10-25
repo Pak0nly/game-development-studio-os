@@ -1,0 +1,19 @@
+Text fit with the real fonts (Cinzel-Variable / AlegreyaSans-Regular / AlegreyaSans-Bold); findings in total: 0
+de 1280x720 90%: scale 0.950, smallest text 13.3 px, resting HUD 18.0 % (topbar, goal, tools-frame, tutorial), fullest screen 45.2 %, findings 0
+de 1280x720 100%: scale 0.950, smallest text 13.3 px, resting HUD 18.0 % (topbar, goal, tools-frame, tutorial), fullest screen 45.2 %, findings 0
+de 1280x720 125%: scale 0.950, smallest text 13.3 px, resting HUD 18.0 % (topbar, goal, tools-frame, tutorial), fullest screen 45.2 %, findings 0
+de 1920x1080 90%: scale 0.950, smallest text 13.3 px, resting HUD 9.6 % (topbar, goal, tools-frame, tutorial), fullest screen 21.7 %, findings 0
+de 1920x1080 100%: scale 1.000, smallest text 14.0 px, resting HUD 10.4 % (topbar, goal, tools-frame, tutorial), fullest screen 23.6 %, findings 0
+de 1920x1080 125%: scale 1.250, smallest text 17.5 px, resting HUD 14.6 % (topbar, goal, tools-frame, tutorial), fullest screen 36.6 %, findings 0
+de 2560x1440 90%: scale 1.200, smallest text 16.8 px, resting HUD 8.9 % (topbar, goal, tools-frame, tutorial), fullest screen 19.6 %, findings 0
+de 2560x1440 100%: scale 1.333, smallest text 18.7 px, resting HUD 10.4 % (topbar, goal, tools-frame, tutorial), fullest screen 23.5 %, findings 0
+de 2560x1440 125%: scale 1.667, smallest text 23.3 px, resting HUD 14.5 % (topbar, goal, tools-frame, tutorial), fullest screen 35.1 %, findings 0
+en 1280x720 90%: scale 0.950, smallest text 13.3 px, resting HUD 17.9 % (topbar, goal, tools-frame, tutorial), fullest screen 44.5 %, findings 0
+en 1280x720 100%: scale 0.950, smallest text 13.3 px, resting HUD 17.9 % (topbar, goal, tools-frame, tutorial), fullest screen 44.5 %, findings 0
+en 1280x720 125%: scale 0.950, smallest text 13.3 px, resting HUD 17.9 % (topbar, goal, tools-frame, tutorial), fullest screen 44.5 %, findings 0
+en 1920x1080 90%: scale 0.950, smallest text 13.3 px, resting HUD 9.6 % (topbar, goal, tools-frame, tutorial), fullest screen 21.4 %, findings 0
+en 1920x1080 100%: scale 1.000, smallest text 14.0 px, resting HUD 10.3 % (topbar, goal, tools-frame, tutorial), fullest screen 23.3 %, findings 0
+en 1920x1080 125%: scale 1.250, smallest text 17.5 px, resting HUD 14.5 % (topbar, goal, tools-frame, tutorial), fullest screen 35.1 %, findings 0
+en 2560x1440 90%: scale 1.200, smallest text 16.8 px, resting HUD 8.8 % (topbar, goal, tools-frame, tutorial), fullest screen 19.4 %, findings 0
+en 2560x1440 100%: scale 1.333, smallest text 18.7 px, resting HUD 10.3 % (topbar, goal, tools-frame, tutorial), fullest screen 23.2 %, findings 0
+en 2560x1440 125%: scale 1.667, smallest text 23.3 px, resting HUD 14.4 % (topbar, goal, tools-frame, tutorial), fullest screen 34.7 %, findings 0

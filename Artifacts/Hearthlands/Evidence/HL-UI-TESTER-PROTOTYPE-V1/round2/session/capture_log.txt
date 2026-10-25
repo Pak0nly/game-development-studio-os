@@ -1,0 +1,70 @@
+[HL-UICAP] start 1920x1080 fonts Cinzel-Variable / AlegreyaSans-Regular / AlegreyaSans-Bold 2026-10-24T17:06:26
+[HL-UICAP] shot de_00_start 1920x1080 step 0 coverage 13.2% panels: start
+[HL-UICAP] coverage de	start screen	13.2 %	start
+[HL-UICAP] shot de_01_step1_look_around 1920x1080 step 1 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] coverage de	resting HUD (step 1)	10.4 %	topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_01b_paused 1920x1080 step 1 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_02_step2_your_store 1920x1080 step 2 coverage 10.2% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_02b_hall_info_and_embers 1920x1080 step 3 coverage 15.9% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] coverage de	info panel open (hall)	15.9 %	topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] shot de_03_step3_wood_first 1920x1080 step 3 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_03b_stuck_hint 1920x1080 step 3 coverage 11.8% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_03c_build_menu 1920x1080 step 3 coverage 16.6% panels: topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] coverage de	build menu open	16.6 %	topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] shot de_03d_no_trees_warning 1920x1080 step 3 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] outside tile 51,41
+[HL-UICAP] shot de_03e_outside_territory 1920x1080 step 3 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_03f_trees_in_reach 1920x1080 step 3 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_04_step4_road 1920x1080 step 4 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_04b_hut_blocked_no_road 1920x1080 step 4 coverage 16.1% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] coverage de	info panel open (hut)	16.1 %	topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] connect True
+[HL-UICAP] shot de_05_step5_first_wood 1920x1080 step 5 coverage 15.0% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] shot de_05b_site_being_built 1920x1080 step 5 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_06_step6_planks 1920x1080 step 6 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_06b_sawmill_site 1920x1080 step 6 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_06c_sawmill_connect 1920x1080 step 6 coverage 16.4% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] connect sawmill True
+[HL-UICAP] shot de_07_done 1920x1080 step 7 coverage 11.6% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] coverage de	well done card	11.6 %	topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_08_help 1920x1080 step 7 coverage 22.0% panels: topbar, goal, tools-frame, tutorial, help
+[HL-UICAP] shot de_09_menu 1920x1080 step 7 coverage 19.2% panels: topbar, goal, tools-frame, tutorial, menu
+[HL-UICAP] shot de_10_settings 1920x1080 step 7 coverage 18.6% panels: topbar, goal, tools-frame, tutorial, settings
+[HL-UICAP] shot de_11_free_play_resting 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] coverage de	resting HUD (free play)	6.5 %	topbar, goal, tools-frame
+[HL-UICAP] gif C:\Users\jarid\AppData\Local\Temp\claude\C--Users-jarid-Desktop-Game-Development\9f0baf3b-f4d1-4ea9-a037-8de40ab1309d\scratchpad\r2capF\first_session_de.gif frames 34 bytes 4355342
+[HL-UICAP] shot en_00_start 1920x1080 step 0 coverage 13.2% panels: start
+[HL-UICAP] coverage en	start screen	13.2 %	start
+[HL-UICAP] shot en_01_step1_look_around 1920x1080 step 1 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] coverage en	resting HUD (step 1)	10.3 %	topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_01b_paused 1920x1080 step 1 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_02_step2_your_store 1920x1080 step 2 coverage 9.7% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_02b_hall_info_and_embers 1920x1080 step 3 coverage 15.6% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] coverage en	info panel open (hall)	15.6 %	topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] shot en_03_step3_wood_first 1920x1080 step 3 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_03b_stuck_hint 1920x1080 step 3 coverage 11.8% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_03c_build_menu 1920x1080 step 3 coverage 16.5% panels: topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] coverage en	build menu open	16.5 %	topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] shot en_03d_no_trees_warning 1920x1080 step 3 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] outside tile 51,41
+[HL-UICAP] shot en_03e_outside_territory 1920x1080 step 3 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_03f_trees_in_reach 1920x1080 step 3 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_04_step4_road 1920x1080 step 4 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_04b_hut_blocked_no_road 1920x1080 step 4 coverage 16.0% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] coverage en	info panel open (hut)	16.0 %	topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] connect True
+[HL-UICAP] shot en_05_step5_first_wood 1920x1080 step 5 coverage 14.4% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] shot en_05b_site_being_built 1920x1080 step 5 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_06_step6_planks 1920x1080 step 6 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_06b_sawmill_site 1920x1080 step 6 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_06c_sawmill_connect 1920x1080 step 6 coverage 15.6% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] connect sawmill True
+[HL-UICAP] shot en_07_done 1920x1080 step 7 coverage 11.6% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] coverage en	well done card	11.6 %	topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_08_help 1920x1080 step 7 coverage 22.0% panels: topbar, goal, tools-frame, tutorial, help
+[HL-UICAP] shot en_09_menu 1920x1080 step 7 coverage 19.3% panels: topbar, goal, tools-frame, tutorial, menu
+[HL-UICAP] shot en_10_settings 1920x1080 step 7 coverage 18.7% panels: topbar, goal, tools-frame, tutorial, settings
+[HL-UICAP] shot en_11_free_play_resting 1920x1080 step 0 coverage 6.6% panels: topbar, goal, tools-frame
+[HL-UICAP] coverage en	resting HUD (free play)	6.6 %	topbar, goal, tools-frame
+[HL-UICAP] gif C:\Users\jarid\AppData\Local\Temp\claude\C--Users-jarid-Desktop-Game-Development\9f0baf3b-f4d1-4ea9-a037-8de40ab1309d\scratchpad\r2capF\first_session_en.gif frames 34 bytes 4346835
+[HL-UICAP] DONE exit 0

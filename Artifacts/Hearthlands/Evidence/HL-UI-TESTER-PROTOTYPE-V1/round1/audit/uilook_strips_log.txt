@@ -1,0 +1,13 @@
+shot a01_menu_strip.jpg 1920x1080
+shot a02_start_strip.jpg 1920x1080
+shot a03_first_minute_strip.jpg 1920x1080
+shot a04_build_tool_strip.jpg 1920x1080
+shot a05_refused_strip.jpg 1920x1080
+shot a06_site_placed_strip.jpg 1920x1080
+shot a07_road_drawing_strip.jpg 1920x1080
+shot a08_road_built_strip.jpg 1920x1080
+shot a09_select_site_strip.jpg 1920x1080
+shot a10_select_hall_strip.jpg 1920x1080
+shot a11_pause_strip.jpg 1920x1080
+shot a12_fast_later_strip.jpg 1920x1080
+DONE

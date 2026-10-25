@@ -1,0 +1,63 @@
+## a01_menu | 1. Startbildschirm
+Was ein Tester hier nicht versteht oder nicht kann:
+- Alles ist Englisch, es gibt keine Sprachwahl.
+- "Testtal" und "blockout build for playtesting" sagen einem Freund nichts darüber, was ihn erwartet.
+- Es gibt keine Einstellungen: keine Interface-Größe, keine Auflösung, keine Lautstärke.
+- Kein Hinweis auf eine Anleitung oder ein Tutorial.
+- Gut: nur zwei Knöpfe, ruhig und klar.
+
+## a02_start | 2. Die ersten Sekunden im Spiel
+- Die Kamera schaut fast senkrecht auf die Halle; das Herzfeuer selbst ist nicht zu erkennen.
+- Oben stehen Entwicklerwerte: "Tick", "hash", "pending", "Goal first_playable: 1/3". Ein Tester weiß nicht, was das Ziel ist.
+- Links eine lange Liste von über 40 Gebäuden mit internen Namen (salt_pan, goat_fold, stone_delve); sie läuft unten aus dem Bild, zwei Namen sind abgeschnitten ("rth_stone", "rvers_workshop").
+- Rechts der Vorrat mit internen Namen (log, board, iron_tools ...), viele Nullen; Herzglut und Zwerge fehlen dort.
+- Unten rechts ein Hilfetext als Textblock; die orange Grenzlinie wird nirgends erklärt.
+
+## a03_first_minute | 3. Nach einer Minute ohne Eingriff
+- Es passiert sichtbar nichts; das Spiel sagt nicht, was man als Erstes tun soll.
+- Ein winziges "new settler" erscheint über der Halle und ist kaum lesbar.
+- Die Zahlen im Vorrat ändern sich kaum, ohne Erklärung.
+
+## a04_build_tool | 4. Holzfäller gewählt
+- Man muss "woodcutter" in der langen Liste finden; die Auswahl ist nur schwach grün markiert.
+- Der Bauplatz ist ein grüner Würfel; ob dort Bäume in Reichweite sind, zeigt das Spiel nicht.
+- Die ganze bebaubare Fläche wird grün: das ist hilfreich, aber unerklärt.
+- Das Schild unten rechts zeigt Koordinaten und Technik ("(37,44) h20 Land build:Large yours OK").
+
+## a05_refused | 5. Bauen außerhalb des eigenen Landes
+- Der rote Würfel ist gut, aber der Grund steht nur klein unten: "[608] Refused: outside your territory" (mit einer Zahl davor, auf Englisch).
+- Ein Tester versteht nicht, warum die orange Linie die Grenze ist und wie man mehr Land bekommt.
+
+## a06_site_placed | 6. Baustelle gesetzt
+- Die Baustelle entsteht sofort und kostenlos; es gibt keine Bestätigung, keinen Hinweis auf den nächsten Schritt (Weg bauen).
+- Der Tester weiß nicht, dass das Gebäude eine Fahne an der Tür hat und einen Weg braucht.
+
+## a07_road_drawing | 7. Weg ziehen
+- Der Weg-Vorschlag (grüner Streifen) ist klar und schön.
+- Aber: wie man einen Weg beginnt und beendet, steht nur im Hilfetext ("RMB ends chain"). Ohne Anleitung findet ein Tester das nicht.
+- Fahnen sind kleine Wimpel; dass man von Fahne zu Fahne baut, ist nicht sichtbar erklärt.
+
+## a08_road_built | 8. Weg gebaut
+- Der Weg wird sofort sichtbar; kein Lob, kein nächster Schritt.
+- Ein Tester sieht nicht, ob die Hütte jetzt angeschlossen ist.
+
+## a09_select_site | 9. Gebäude angeklickt (Holzfäller)
+- Die Hütte ist fertig, arbeitet aber nicht: "idle (waiting for input or a node)". Es stehen keine Bäume in der Nähe; das Spiel sagt das nicht verständlich.
+- Das Infofeld zeigt Technik ("Tile (37,44)", "phase Idle, cycles 0, staff 1/1, output 0/4").
+- Das Wort über der Hütte ist abgeschnitten ("r [idle (waiting for input or a node").
+- Der Knopf "Deactivate (release the worker)" ist der einzige; Abreißen geht nur über das Werkzeug links.
+
+## a10_select_hall | 10. Große Halle angeklickt
+- Wichtiges steht da (nächster Siedler in 53 s, Herzglut 3 von 3, Siedlergrenze), aber in einem langen Textblock mit Fachwörtern (radius, supply factor, component, buffer).
+- Der Text läuft unten aus dem Feld heraus und wird abgeschnitten.
+- "Embers in stock 3 / 3 (full: the fire stops kindling)" ist das Herzglut-Thema des Spiels, steht aber versteckt in Zeile 11.
+
+## a11_pause | 11. Pause
+- Pause und Tempo sind oben gut erreichbar; der aktive Knopf ist grün.
+- Hinter den Tempoknöpfen erscheint "Step" ohne Erklärung.
+- Das Spielbild zeigt nicht deutlich, dass das Spiel steht (kein "Pausiert").
+
+## a12_fast_later | 12. Zwei Minuten, 8-fach
+- Bei 8-fach steht "Speed 8x (real 8.0x)": Entwicklerangabe.
+- Nach über zwei Minuten arbeitet der Holzfäller immer noch nicht; die Stämme sinken von 11 auf 9, weil das Feuer brennt. Ein Tester merkt nicht, dass etwas falsch läuft.
+- Es gibt kein Ende, kein Ziel, keine Rückmeldung: der Tester ist allein gelassen.

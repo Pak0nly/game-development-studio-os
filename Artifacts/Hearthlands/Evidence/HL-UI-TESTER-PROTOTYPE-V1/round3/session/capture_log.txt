@@ -1,0 +1,160 @@
+[HL-UICAP] start 1920x1080 fonts Cinzel-Variable / AlegreyaSans-Regular / AlegreyaSans-Bold 2026-10-25T15:03:58
+[HL-UICAP] shot de_00_start 1920x1080 step 0 coverage 13.2% panels: start
+[HL-UICAP] coverage de	start screen	13.2 %	start
+[HL-UICAP] shot de_01_step1_look_around 1920x1080 step 1 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] coverage de	resting HUD (step 1)	11.1 %	topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_01b_paused 1920x1080 step 1 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_02_step2_your_store 1920x1080 step 2 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] step 2 spotlight True
+[HL-UICAP] press Select at 34,50 refused: Erst dieser Schritt: Dein Lager
+[HL-UICAP] shot de_02a_step2_forced 1920x1080 step 2 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] build allowed in step 2: False, menu allowed: True
+[HL-UICAP] press Select at 40,47 reached the world: Erst dieser Schritt: Dein Lager
+[HL-UICAP] shot de_02b_hall_info_and_embers 1920x1080 step 3 coverage 15.9% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] coverage de	info panel open (hall)	15.9 %	topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] shot de_03_step3_wood_first 1920x1080 step 3 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_03b_stuck_hint 1920x1080 step 3 coverage 11.8% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_03c_build_menu 1920x1080 step 3 coverage 20.2% panels: topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] coverage de	build menu open	20.2 %	topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] build menu: 13 offered, 32 later
+[HL-UICAP] shot de_03d_no_trees_warning 1920x1080 step 3 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] suggestions 3 best 51,43 reach 80
+[HL-UICAP] outside tile 51,41
+[HL-UICAP] shot de_03e_outside_territory 1920x1080 step 3 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_03f_trees_in_reach 1920x1080 step 3 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] press Build at 46,48 reached the world
+[HL-UICAP] shot de_04_step4_road 1920x1080 step 4 coverage 11.2% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] press Select at 46,48 reached the world
+[HL-UICAP] shot de_04b_hut_blocked_no_road 1920x1080 step 4 coverage 16.8% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] coverage de	info panel open (hut)	16.8 %	topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] connect True
+[HL-UICAP] shot de_05_step5_first_wood 1920x1080 step 5 coverage 15.0% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] shot de_05b_site_being_built 1920x1080 step 5 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_06_step6_planks 1920x1080 step 6 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_06a_workshop_tab 1920x1080 step 6 coverage 20.9% panels: topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] shot de_06a2_sawmill_entry 1920x1080 step 6 coverage 21.1% panels: topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] shot de_06b_sawmill_site 1920x1080 step 6 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] press Build at 37,42 reached the world
+[HL-UICAP] shot de_06b2_sawmill_spotlight 1920x1080 step 6 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] press Select at 37,42 reached the world
+[HL-UICAP] shot de_06c_sawmill_connect 1920x1080 step 6 coverage 16.4% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] connect sawmill True
+[HL-UICAP] shot close_site_progress 1920x1080 step 6 coverage 11.2% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] site progress 68 / 200 state Site
+[HL-UICAP] shot de_07_done 1920x1080 step 7 coverage 14.8% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] coverage de	well done card	14.8 %	topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot de_08_help 1920x1080 step 7 coverage 27.1% panels: topbar, goal, tools-frame, tutorial, help
+[HL-UICAP] shot de_09_menu 1920x1080 step 7 coverage 22.4% panels: topbar, goal, tools-frame, tutorial, menu
+[HL-UICAP] shot de_10_settings 1920x1080 step 7 coverage 21.8% panels: topbar, goal, tools-frame, tutorial, settings
+[HL-UICAP] shot de_11_free_play_resting 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] coverage de	resting HUD (free play)	6.5 %	topbar, goal, tools-frame
+[HL-UICAP] press Select at 37,42 reached the world
+[HL-UICAP] shot de_12_selection_outline 1920x1080 step 0 coverage 9.0% panels: topbar, goal, tools-frame, info
+[HL-UICAP] dwarf picked 16777219 at (966.72, 754.42)
+[HL-UICAP] shot de_13_dwarf_bio 1920x1080 step 0 coverage 10.8% panels: topbar, goal, tools-frame, info
+[HL-UICAP] coverage de	dwarf bio open	10.8 %	topbar, goal, tools-frame, info
+[HL-UICAP] bio Hrolf / kräftig / Träger / trägt Waren zum nächsten Wegfeuer / Bretter / ein Weg zwischen zwei Wegfeuern / Große Halle
+[HL-UICAP] dwarf re-picked while moving: True
+[HL-UICAP] shot de_13b_dwarf_bio_later 1920x1080 step 0 coverage 10.8% panels: topbar, goal, tools-frame, info
+[HL-UICAP] shot de_14_placement_woodcutter 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot de_14b_placement_forester 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] press Build at 38,48 reached the world
+[HL-UICAP] connect forester True
+[HL-UICAP] builder picked: True
+[HL-UICAP] bio Hrolf / kräftig / Baumeister / baut: Försterhütte / nichts / Försterhütte / Große Halle
+[HL-UICAP] shot de_13c_dwarf_workplace 1920x1080 step 0 coverage 10.8% panels: topbar, goal, tools-frame, info
+[HL-UICAP] shot de_15_build_teaser_gather 1920x1080 step 0 coverage 16.4% panels: topbar, goal, tools-frame, build-panel
+[HL-UICAP] shot de_15_build_teaser_make 1920x1080 step 0 coverage 16.6% panels: topbar, goal, tools-frame, build-panel
+[HL-UICAP] shot close_border_day 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_border_near_day 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_border_night 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_border_near_night 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_tablet_2_stones_night 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_tablet_6_stones_night 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_tablet_12_stones_night 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_tablet_2_stones_day 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_tablet_6_stones_day 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_tablet_12_stones_day 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] light near tablet: workshop light lm 260 range 1.8 dist 3.29 colour RGBA(1.000, 1.000, 1.000, 1.000)
+[HL-UICAP] light near tablet: fire light lm 270 range 4.5 dist 0.86 colour RGBA(1.000, 0.585, 0.200, 1.000)
+[HL-UICAP] light near tablet: warm lamp lm 25 range 0.6 dist 1.39 colour RGBA(1.000, 0.600, 0.300, 1.000)
+[HL-UICAP] light near tablet: workshop light lm 260 range 1.8 dist 3.85 colour RGBA(1.000, 1.000, 1.000, 1.000)
+[HL-UICAP] light near tablet: lamp lm 55 range 1.5 dist 3.32 colour RGBA(1.000, 0.380, 0.160, 1.000)
+[HL-UICAP] light near tablet: warm lamp lm 91 range 1.0 dist 1.16 colour RGBA(1.000, 0.600, 0.300, 1.000)
+[HL-UICAP] light near tablet: warm lamp lm 25 range 0.6 dist 1.39 colour RGBA(1.000, 0.600, 0.300, 1.000)
+[HL-UICAP] light near tablet: lamp lm 55 range 1.5 dist 2.65 colour RGBA(1.000, 0.380, 0.160, 1.000)
+[HL-UICAP] light near tablet: warm lamp lm 97 range 1.0 dist 1.16 colour RGBA(1.000, 0.600, 0.300, 1.000)
+[HL-UICAP] light near tablet: Heart Fire glow lm 0 range 11.0 dist 2.72 colour RGBA(1.000, 1.000, 1.000, 1.000)
+[HL-UICAP] light near tablet: lamp lm 55 range 1.5 dist 3.88 colour RGBA(1.000, 0.380, 0.160, 1.000)
+[HL-UICAP] shot diag_tablet_night_without_fire_light 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot diag_tablet_night_without_warm_lamp 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot diag_tablet_night_without_lamp 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_hall_court_night 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] shot close_hall_court_day 1920x1080 step 0 coverage 6.5% panels: topbar, goal, tools-frame
+[HL-UICAP] gif C:\Users\jarid\Desktop\Game Development\Artifacts\Hearthlands\Evidence\HL-UI-TESTER-PROTOTYPE-V1\round3\session\first_session_de.gif frames 48 bytes 5811737
+[HL-UICAP] shot en_00_start 1920x1080 step 0 coverage 13.2% panels: start
+[HL-UICAP] coverage en	start screen	13.2 %	start
+[HL-UICAP] shot en_01_step1_look_around 1920x1080 step 1 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] coverage en	resting HUD (step 1)	11.1 %	topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_01b_paused 1920x1080 step 1 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_02_step2_your_store 1920x1080 step 2 coverage 9.7% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] step 2 spotlight True
+[HL-UICAP] press Select at 34,50 refused: This step first: Your store
+[HL-UICAP] shot en_02a_step2_forced 1920x1080 step 2 coverage 9.7% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] build allowed in step 2: False, menu allowed: True
+[HL-UICAP] press Select at 40,47 reached the world: This step first: Your store
+[HL-UICAP] shot en_02b_hall_info_and_embers 1920x1080 step 3 coverage 15.0% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] coverage en	info panel open (hall)	15.0 %	topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] shot en_03_step3_wood_first 1920x1080 step 3 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_03b_stuck_hint 1920x1080 step 3 coverage 11.8% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_03c_build_menu 1920x1080 step 3 coverage 20.3% panels: topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] coverage en	build menu open	20.3 %	topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] build menu: 13 offered, 32 later
+[HL-UICAP] shot en_03d_no_trees_warning 1920x1080 step 3 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] suggestions 3 best 51,43 reach 80
+[HL-UICAP] outside tile 51,41
+[HL-UICAP] shot en_03e_outside_territory 1920x1080 step 3 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_03f_trees_in_reach 1920x1080 step 3 coverage 10.3% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] press Build at 46,48 reached the world
+[HL-UICAP] shot en_04_step4_road 1920x1080 step 4 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] press Select at 46,48 reached the world
+[HL-UICAP] shot en_04b_hut_blocked_no_road 1920x1080 step 4 coverage 16.8% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] coverage en	info panel open (hut)	16.8 %	topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] connect True
+[HL-UICAP] shot en_05_step5_first_wood 1920x1080 step 5 coverage 14.4% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] shot en_05b_site_being_built 1920x1080 step 5 coverage 10.4% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_06_step6_planks 1920x1080 step 6 coverage 11.0% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_06a_workshop_tab 1920x1080 step 6 coverage 21.0% panels: topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] shot en_06a2_sawmill_entry 1920x1080 step 6 coverage 21.0% panels: topbar, goal, tools-frame, build-panel, tutorial
+[HL-UICAP] shot en_06b_sawmill_site 1920x1080 step 6 coverage 11.0% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] press Build at 37,42 reached the world
+[HL-UICAP] shot en_06b2_sawmill_spotlight 1920x1080 step 6 coverage 11.1% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] press Select at 37,42 reached the world
+[HL-UICAP] shot en_06c_sawmill_connect 1920x1080 step 6 coverage 16.4% panels: topbar, goal, tools-frame, tutorial, info
+[HL-UICAP] connect sawmill True
+[HL-UICAP] shot en_07_done 1920x1080 step 7 coverage 14.7% panels: topbar, goal, tools-frame, tutorial
+[HL-UICAP] coverage en	well done card	14.7 %	topbar, goal, tools-frame, tutorial
+[HL-UICAP] shot en_08_help 1920x1080 step 7 coverage 27.1% panels: topbar, goal, tools-frame, tutorial, help
+[HL-UICAP] shot en_09_menu 1920x1080 step 7 coverage 22.3% panels: topbar, goal, tools-frame, tutorial, menu
+[HL-UICAP] shot en_10_settings 1920x1080 step 7 coverage 21.7% panels: topbar, goal, tools-frame, tutorial, settings
+[HL-UICAP] shot en_11_free_play_resting 1920x1080 step 0 coverage 6.4% panels: topbar, goal, tools-frame
+[HL-UICAP] coverage en	resting HUD (free play)	6.4 %	topbar, goal, tools-frame
+[HL-UICAP] press Select at 37,42 reached the world
+[HL-UICAP] shot en_12_selection_outline 1920x1080 step 0 coverage 8.9% panels: topbar, goal, tools-frame, info
+[HL-UICAP] dwarf picked 16777219 at (966.60, 755.14)
+[HL-UICAP] shot en_13_dwarf_bio 1920x1080 step 0 coverage 10.8% panels: topbar, goal, tools-frame, info
+[HL-UICAP] coverage en	dwarf bio open	10.8 %	topbar, goal, tools-frame, info
+[HL-UICAP] bio Hrolf / heavy / Carrier / carrying goods to the next waypoint fire / Planks / a road between two waypoint fires / Great Hall
+[HL-UICAP] dwarf re-picked while moving: True
+[HL-UICAP] shot en_13b_dwarf_bio_later 1920x1080 step 0 coverage 10.8% panels: topbar, goal, tools-frame, info
+[HL-UICAP] shot en_14_placement_woodcutter 1920x1080 step 0 coverage 6.4% panels: topbar, goal, tools-frame
+[HL-UICAP] shot en_14b_placement_forester 1920x1080 step 0 coverage 6.4% panels: topbar, goal, tools-frame
+[HL-UICAP] press Build at 38,48 reached the world
+[HL-UICAP] connect forester True
+[HL-UICAP] builder picked: True
+[HL-UICAP] bio Hrolf / heavy / Builder / building: Forester's hut / nothing / Forester's hut / Great Hall
+[HL-UICAP] shot en_13c_dwarf_workplace 1920x1080 step 0 coverage 10.9% panels: topbar, goal, tools-frame, info
+[HL-UICAP] shot en_15_build_teaser_gather 1920x1080 step 0 coverage 16.4% panels: topbar, goal, tools-frame, build-panel
+[HL-UICAP] shot en_15_build_teaser_make 1920x1080 step 0 coverage 16.6% panels: topbar, goal, tools-frame, build-panel
+[HL-UICAP] gif C:\Users\jarid\Desktop\Game Development\Artifacts\Hearthlands\Evidence\HL-UI-TESTER-PROTOTYPE-V1\round3\session\first_session_en.gif frames 47 bytes 5701151
+[HL-UICAP] DONE exit 0
