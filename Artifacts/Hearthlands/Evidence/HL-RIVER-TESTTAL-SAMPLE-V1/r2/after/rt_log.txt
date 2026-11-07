@@ -1,0 +1,93 @@
+start 2026-11-07T11:36:34, editor, GPU AMD Radeon RX 6800 XT
+game booted in 20.2 s; game camera pitch 45, fov 26, art ground True
+course: 66 points, length 74.9 tiles
+water view: surfaces 3, water tiles 199, fall pairs 2, waterfall runs 1, rapid runs 1, fall edges 7, foam emitters 15, soft ground True
+river cliff port: on, triangles 966708, voxels 1091275, lower water 9.35, upper 12.85
+river art: pebbles 10476, stones 15, triangles 362418
+bodies (connected water tiles of one ground height): 3
+surface 0: 52 tiles, ground 26, water level 12.85, tiles x 41-47 y 0-17, map edge True, mesh 674 vertices 1032 triangles, T-junction vertices 123, current at the water tiles: downstream 45, sideways 5, upstream 0, none 2
+surface 1: 108 tiles, ground 19, water level 9.35, tiles x 23-43 y 18-50, map edge False, mesh 1604 vertices 2404 triangles, T-junction vertices 323, current at the water tiles: downstream 0, sideways 0, upstream 0, none 108
+surface 2: 39 tiles, ground 18, water level 8.85, tiles x 20-26 y 51-63, map edge True, mesh 540 vertices 810 triangles, T-junction vertices 105, current at the water tiles: downstream 0, sideways 2, upstream 33, none 4
+current over all water tiles: 199 tiles; downstream 45, sideways 7, upstream 33, none (falls back to a fixed world direction) 114
+drop edge 41,17 -> 41,18 body 0 -> 1 (declared waterfall), levels 12.85 -> 9.35
+drop edge 42,17 -> 42,18 body 0 -> 1 (declared waterfall), levels 12.85 -> 9.35
+drop edge 43,17 -> 43,18 body 0 -> 1 (declared waterfall), levels 12.85 -> 9.35
+drop edge 23,50 -> 23,51 body 1 -> 2 (rapids), levels 9.35 -> 8.85
+drop edge 24,50 -> 24,51 body 1 -> 2 (rapids), levels 9.35 -> 8.85
+drop edge 25,50 -> 25,51 body 1 -> 2 (rapids), levels 9.35 -> 8.85
+drop edge 26,50 -> 26,51 body 1 -> 2 (rapids), levels 9.35 -> 8.85
+drop run body 0 -> 1 (declared waterfall): 3 edges
+drop run body 1 -> 2 (rapids): 4 edges
+sample body 0: level 12.85, 52 tiles, x 41-47, y 0-17
+sample body 1: level 9.35, 108 tiles, x 23-43, y 18-50
+sample body 2: level 8.85, 39 tiles, x 20-26, y 51-63
+sample drop: body 0 (12.85) -> body 1 (9.35), 3 edges, lip middle (42.50, 46.00), downstream (0.00, -1.00), declared waterfall
+sample drop: body 1 (9.35) -> body 2 (8.85), 4 edges, lip middle (25.00, 13.00), downstream (0.00, -1.00), rapids in the game
+sample water: 3 surfaces, 17368 cells, 69472 vertices, 34736 triangles, built in 0.2 s
+sample surface Sample water 0 (level 12.85): T-junction vertices 0
+sample surface Sample water 1 (level 9.35): T-junction vertices 0
+sample surface Sample water 2 (level 8.85): T-junction vertices 0
+main fall cheeks: 60455 voxels, 33942 triangles; ground beside the lip (u, back: ground / design / rock top): (-2.6,0.3: 9.81/9.80/NaN) (-2.6,1.5: 12.51/12.64/12.73) (-2.6,3.0: 12.94/13.00/13.00) (-1.8,0.3: 12.69/12.70/13.26) (-1.8,1.5: 12.81/12.81/13.35) (-1.8,3.0: 12.81/12.81/13.01) (-1.3,0.3: 12.69/12.69/13.19) (-1.3,1.5: 12.68/12.68/NaN) (-1.3,3.0: 12.69/12.69/NaN) (1.3,0.3: 11.81/11.85/NaN) (1.3,1.5: 12.74/12.75/NaN) (1.3,3.0: 12.75/12.75/NaN) (1.8,0.3: 11.83/11.85/13.32) (1.8,1.5: 12.82/12.82/13.29) (1.8,3.0: 12.82/12.82/13.07) (2.6,0.3: 9.85/9.84/NaN) (2.6,1.5: 9.93/9.90/NaN) (2.6,3.0: 13.01/13.01/12.94)
+main fall: new face 1099649 voxels, 256050 triangles; fringe 229672 triangles; curtain half width 0.95 (port 2.10), upper water 12.85, lower 9.35
+small fall: lip (25.00, 13.00), half width 2.00, upper water 9.35, lower 8.85, banks above 9.29, below 8.85; rock 46245 voxels, 30084 triangles
+banks: ledge banks 217957 voxels, 207676 triangles
+banks: fringe 813448 triangles, 66 of 176 blade tufts kept
+banks: pebbles 4563, 167990 triangles
+banks: bank stones 36, reed clumps 110, edge plants 650, pieces triangles 477350
+banks: static cat_pine_log_1 at 48.5,2.6
+banks: static cat_oak_stump_1 at 42.2,4.6
+banks: static rock_boulder_medium_3 at 40.6,11.1
+banks: static rock_boulder_medium_1 at 44.5,23.1
+banks: static rock_boulder_large_2 at 32.4,28.9
+banks: static cat_birch_stump_1 at 29.9,35.8
+banks: static cat_pine_stump_1 at 26.6,44.9
+banks: static cat_oak_log_1 at 30.6,47.7
+banks: static rock_boulder_medium_1 at 26.1,47.6
+banks: static cat_oak_log_1 at 19.5,54.0
+banks: static cat_pine_log_1 at 24.6,63.6
+banks: statics placed 11, missing models 0
+pool lining: stones 22, reed clumps 6, catalogue models 6, triangles 93800; side -1 ty 18.1 water line x 41.01 ground 9.19; rock_boulder_large_2 at 39.4,22.2; cat_oak_log_1 at 38.7,20.3; cat_pine_stump_1 at 38.8,18.9; side 1 ty 18.1 water line x 44.01 ground 9.27; side 1 ty 19.9 water line x 44.01 ground 9.03; rock_boulder_medium_3 at 44.5,22.2; cat_pine_log_1 at 45.2,20.3; cat_oak_stump_1 at 45.0,18.9;
+small fall step blend: 5540 raised cells, 31104 triangles; ground across the step (x: above / below): 18: 9.90/9.86 19: 9.91/9.83 20: 9.91/9.55 21: 9.77/9.09 22: 9.44/8.81 23: 9.31/8.56 24: 9.13/8.47 25: 8.95/8.49 26: 8.93/8.61 27: 8.98/8.79 28: 9.16/8.85 29: 9.31/9.08 30: 9.48/9.41 31: 9.79/9.82 32: 9.94/9.89
+jump fish: model 71 gets a material without shadow pass while the sample shows
+fish: 22 (models found)
+sample river built in 8.2 s; voxel triangles 2358470, particle systems 58
+perf game_perf_game_camera: frame median 6.42 ms (156 fps), p95 6.76 ms, GPU median 0.00 ms (0 = not reported), 1920x1080 render texture, editor batch mode
+perf game_perf_fall: frame median 5.97 ms (168 fps), p95 6.53 ms, GPU median 0.00 ms (0 = not reported), 1920x1080 render texture, editor batch mode
+still sample_wide (focus (34.0, 8.9, 28.0), distance 46.0, pitch 45, yaw 0, light Tag)
+still sample_fall_game (focus (42.5, 8.7, 45.0), distance 18.0, pitch 45, yaw 0, light Tag)
+still sample_fall_close (focus (42.5, 8.8, 45.2), distance 8.0, pitch 45, yaw 0, light Tag)
+still sample_fall_top (focus (42.5, 12.4, 47.5), distance 9.0, pitch 45, yaw 0, light Tag)
+still sample_pool (focus (40.0, 8.9, 40.0), distance 14.0, pitch 45, yaw 0, light Tag)
+still sample_middle (focus (34.0, 8.9, 32.0), distance 16.0, pitch 45, yaw 0, light Tag)
+still sample_ford (focus (28.0, 9.2, 22.0), distance 14.0, pitch 45, yaw 0, light Tag)
+still sample_small_fall_game (focus (25.0, 8.9, 13.5), distance 16.0, pitch 45, yaw 0, light Tag)
+still sample_small_fall_close (focus (25.0, 8.9, 13.0), distance 7.0, pitch 45, yaw 0, light Tag)
+still sample_lower (focus (22.0, 8.4, 7.0), distance 16.0, pitch 45, yaw 0, light Tag)
+still sample_lower_close (focus (22.0, 8.4, 6.0), distance 7.0, pitch 45, yaw 0, light Tag)
+still sample_bank_close (focus (34.5, 8.9, 34.0), distance 7.0, pitch 45, yaw 0, light Tag)
+still sample_plateau (focus (44.0, 12.4, 56.0), distance 14.0, pitch 45, yaw 0, light Tag)
+still sample_plateau_close (focus (44.5, 12.5, 58.0), distance 7.0, pitch 45, yaw 0, light Tag)
+still sample_night_middle (focus (34.0, 8.9, 32.0), distance 16.0, pitch 45, yaw 0, light Nacht)
+still sample_night_small_fall (focus (25.0, 8.9, 13.5), distance 16.0, pitch 45, yaw 0, light Nacht)
+still sample_current_upper (focus (42.0, 9.3, 38.0), distance 24.0, pitch 45, yaw 0, light Tag)
+still sample_current_middle (focus (32.0, 9.0, 27.0), distance 24.0, pitch 45, yaw 0, light Tag)
+still sample_current_lower (focus (24.0, 8.5, 11.0), distance 24.0, pitch 45, yaw 0, light Tag)
+still sample_current_plateau (focus (44.0, 12.4, 55.0), distance 24.0, pitch 45, yaw 0, light Tag)
+clip sample_clip_flow_middle 150 frames (focus (34.5, 8.9, 32.5), distance 6.0, light Tag)
+clip sample_clip_flow_lower 150 frames (focus (22.0, 8.4, 7.0), distance 6.0, light Tag)
+clip sample_clip_flow_game_camera 150 frames (focus (30.0, 9.1, 26.0), distance 16.0, light Tag)
+clip sample_clip_small_fall 120 frames (focus (25.0, 8.9, 13.0), distance 8.0, light Tag)
+clip sample_clip_main_fall 120 frames (focus (42.5, 8.8, 45.2), distance 10.0, light Tag)
+clip sample_clip_banks_fish 180 frames (focus (23.0, 8.7, 8.0), distance 7.0, light Tag)
+clip sample_clip_fall_game 90 frames (focus (42.5, 8.7, 45.0), distance 18.0, light Tag)
+clip sample_clip_fall_top 90 frames (focus (42.5, 12.4, 47.5), distance 9.0, light Tag)
+clip sample_clip_fall_close 90 frames (focus (42.5, 8.8, 45.2), distance 8.0, light Tag)
+clip sample_clip_small_fall_game 90 frames (focus (25.0, 8.9, 13.5), distance 16.0, light Tag)
+clip sample_clip_small_fall_close 90 frames (focus (25.0, 8.9, 13.0), distance 7.0, light Tag)
+clip sample_clip_bank_close 90 frames (focus (34.5, 8.9, 34.0), distance 7.0, light Tag)
+clip sample_clip_lower_close 90 frames (focus (22.0, 8.4, 6.0), distance 7.0, light Tag)
+clip sample_clip_night_small_fall 90 frames (focus (25.0, 8.9, 13.5), distance 16.0, light Nacht)
+clip sample_clip_night_fall_game 90 frames (focus (42.5, 8.7, 45.0), distance 18.0, light Nacht)
+perf sample_perf_game_camera: frame median 6.17 ms (162 fps), p95 7.03 ms, GPU median 0.00 ms (0 = not reported), 1920x1080 render texture, editor batch mode
+perf sample_perf_fall: frame median 5.95 ms (168 fps), p95 6.30 ms, GPU median 0.00 ms (0 = not reported), 1920x1080 render texture, editor batch mode
+done 2026-11-07T11:38:18

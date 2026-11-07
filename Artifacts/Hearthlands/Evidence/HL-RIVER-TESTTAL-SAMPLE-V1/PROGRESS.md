@@ -74,3 +74,38 @@ Folder `Unity/Assets/_Project/LookTest/RiverTesttal/` (allowed paths only):
 - Round finished and stopped at the Human checkpoint. Self-directed iterations 3 of 3 used; operational recoveries 1 of 3.
 - Game folder: commits `cc49f5a`, `b0adee5`, `fc9b724` on `main`, not pushed; only the sample folder committed.
 - Next (Human): decide which water; judge main fall, small fall, banks and fish from `r1/after/`. A successor would start from `WORKER_RESULT.md` "What still looks wrong".
+
+## Round 2 (HL-RIVER-TESTTAL-SAMPLE-V1-R2, 2026-11-07)
+
+- verify-worker: `PASS worker receipt f1f9a4acc3d7225b6d95ae1b39877dc1863c4c67918515e34a1a55a302757d7a`, exit 0.
+- Game folder HEAD at R2 start: `fc9b724` (as expected); status in `r2/logs/game-status-r2-start.txt` (only the known unrelated changes). No Unity process was running.
+- Evidence of this round lies in `r2/`. Launcher: `r2/logs/run-unity.ps1` (same as R1: one hidden batch-mode editor on `C:\GameDev\Hearthlands\Unity` only).
+- The sample water (`RtCourse`, `RtWater`) is kept as the Human accepted it; this round does not change it.
+
+### Step 1 (done, run 1; committed with step 2)
+
+- Main fall top: the raised turf blocks beside the curtain are gone (the face's top beside the fall now ends at the water). New `RtRocks.cs` `RtOutcrop`: grown rock cheeks from a height field, every stratum reads it at its own wandering offset (broken, stepped terraces, chipped edges), highest at the lip, sinking into the bank upstream and into the meadow outward, mossy tops with a grass edge towards the meadow. No hanging blade tufts on them.
+- Pool: `RtRiver.PoolLining`: broken chains of boulders of different sizes on both sides from the cliff to where the ledge banks begin (overlapping, taller at the cliff), lower stones behind, small stones in the water, reeds, and per side a catalogue boulder, log and stump. Gravel is allowed in the pool zone again.
+- Small fall: `RtSkin` grass skin raises the lower ground around the step (never steeper than 0.35 per tile from the higher ground) so the game's cut strip becomes a grassy slope; the bank stones beside the step stand clear of the ground (no flat mossy slab).
+- Banks: earth fill behind the ledge until the ground reaches the meadow (no dark trench), a longer ledge-to-beach transition where each stratum ends at its own place, fewer hanging blade tufts (plateau a quarter of round 1).
+- Fish: the game's jumping fishing-spot fish draw without shadow pass while the sample shows (material swapped in memory, swapped back when the sample hides); the sample's own fish are darker, smaller (0.72) and a little deeper.
+- Capture program: moving clips at round 1's still views (fall_game, fall_top, fall_close, small_fall_game, small_fall_close, bank_close, lower_close) and two night clips.
+
+### Runs and iterations (all hidden batch-mode editors on `C:\GameDev\Hearthlands\Unity`, rendered on the RX 6800 XT, exit 0)
+
+- Run 1 (iteration 1 of 3): compiled first time. Cheeks read as rock (no grass blocks), pool lined, brown strips covered; but the cheeks ended over bare earth upstream, the small fall's skin looked darker than the meadow, the step's east top still a flat green slab.
+- Run 2 (iteration 2 of 3): cheeks reach on into the bank (brown covered), darker mossier tops, finer strata wander; skin lighter and only where it rises clearly; small-fall gap in the banks smaller. The step's top beyond the water followed the ground but its dark turf now formed slabs on both sides.
+- Run 3 (iteration 3 of 3): the step has no turf top any more (mossy rock instead), its rock kept behind the lip, shorter (hw + 2.0); pool stones a little mossier. Green slabs gone. Final pictures from this run.
+- Operational recoveries used: 0 of 3. No player build. No process of another folder touched (no other Unity process was running during the runs).
+
+### Step 2 (done, game commit `4618d90`)
+
+- One local commit holds the final candidate (run 3's edits were written before the commit; run 3 then rendered exactly that state, `git status` of the sample folder clean after it).
+- Evidence: `r2/after/` (MP4 H.264 round 1 vs round 2, 0.8-4.6 MB each; JPG sheets; `rt_log.txt`), `r2/logs/` (launcher, run logs, start state, candidate list).
+- `ProjectSettings.asset` hash unchanged by the runs (same as at start); no file outside the sample folder changed.
+
+## Present state (R2 finished)
+
+- Round finished and stopped at the Human checkpoint. Self-directed iterations 3 of 3 used; operational recoveries 0 of 3.
+- Game folder: commit `4618d90` on `main` (on top of `fc9b724`), not pushed; only the sample folder committed.
+- Next (Human): judge main fall top, pool, small fall and banks from `r2/after/`; `SAMPLE.md` lists what still looks wrong.

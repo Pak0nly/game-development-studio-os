@@ -2,37 +2,37 @@
 
 Das Spiel selbst läuft mit der echten Testtal-Karte. Man kann zwischen „Spiel“ (so wie es jetzt aussieht) und „Probestück“ (das neue Aussehen) umschalten. Kamera, Licht und Welt sind gleich. Das Hauptspiel wurde nicht verändert.
 
-## Was du dir ansehen kannst
+## Runde 2: was du dir ansehen kannst
 
-Alle Bilder und Filme liegen in `r1/after/`. Links ist immer das Spiel, rechts das Probestück, mit derselben Kamera. Die Filme (MP4) laufen auch auf dem Handy.
+Alle Filme und Bilder liegen in `r2/after/`. Links ist immer Runde 1, rechts Runde 2, mit derselben Kamera. Wo es von Runde 1 keinen Film gab, steht links das Standbild aus Runde 1. Die Filme (MP4) laufen auch auf dem Handy.
 
-- `vergleich_flow_game_camera.mp4`: der Fluss aus der Spielkamera. Rechts treiben Schaumflocken flussabwärts.
-- `vergleich_stroemung_pfeile.jpg`: die Strömung als Pfeile. Im Spiel zeigen sie im mittleren Teil seitwärts nach Osten und im unteren Teil flussaufwärts. Im Probestück zeigen sie überall flussabwärts.
-- `vergleich_flow_middle.mp4` und `vergleich_flow_lower.mp4`: das Wasser von nah.
-- `vergleich_main_fall.mp4` und `vergleich_hauptwasserfall.jpg`: der große Wasserfall.
-- `vergleich_small_fall.mp4` und `vergleich_kleiner_wasserfall.jpg`: der kleine Wasserfall.
-- `vergleich_banks_fish.mp4` und `vergleich_ufer.jpg`: Ufer, Steine, Schilf und Fische.
-- `vergleich_uebersicht.jpg` und `vergleich_nacht.jpg`: Überblick und Nacht.
-- So sah es vorher aus: `r1/before/`.
+- `r1_r2_hauptfall_spielkamera.mp4`: der große Wasserfall und das Becken aus der Spielkamera.
+- `r1_r2_hauptfall_oben.mp4`: der große Wasserfall von oben, die Felsen neben dem Wasser.
+- `r1_r2_becken_nah.mp4` und `r1_r2_hauptfall_becken.mp4`: das Becken unter dem großen Wasserfall von nah.
+- `r1_r2_kleiner_fall_spielkamera.mp4` und `r1_r2_kleiner_fall_nah.mp4`: der kleine Wasserfall.
+- `r1_r2_ufer_nah.mp4`, `r1_r2_ufer_kiesbank.mp4` und `r1_r2_ufer_fische.mp4`: Ufer, Kiesbänke und Fische.
+- `r1_r2_nacht_kleiner_fall.mp4` und `r2_nacht_hauptfall.mp4`: bei Nacht.
+- Standbilder zum Vergleichen: `vergleich_hauptwasserfall.jpg`, `vergleich_kleiner_wasserfall.jpg`, `vergleich_ufer.jpg`, `vergleich_uebersicht.jpg`.
 
-## Was neu ist
+## Was in Runde 2 neu ist
 
-- **Wasser:** Das Wasser hat jetzt einen glatten Rand und keine Lücken mehr. Die Lücken im Spiel kamen von Stellen, an denen große und kleine Wasserstücke aneinanderstoßen. Wenn sich das Wasser bewegt, reißen sie dort auf. Das Probestück hat keine solchen Stellen. Farbe und Glanz sind dieselben wie im Spiel.
-- **Strömung:** Der Fluss fließt jetzt überall flussabwärts. Im Spiel stand der mittlere Teil still und floss deshalb seitwärts, der untere Teil floss flussaufwärts.
-- **Großer Wasserfall:** Er ist jetzt etwa 2 Felder breit statt etwa 4. Links und rechts schließt Fels ihn ab. Die dunklen Streifen und Spitzen an den Enden sind weg.
-- **Kleiner Wasserfall:** Statt des weißen Streifens gibt es jetzt eine Felsstufe quer durch den Fluss. Das Wasser fällt in drei Strängen zwischen zwei Steinen herunter, mit Gischt und Schaum darunter.
-- **Ufer:** Felsige Ufer mit Graskante gibt es jetzt am ganzen Fluss, auch oben auf der Hochebene und unten bis zum Kartenrand. Dazu kommen Kiesbänke, Ufersteine, Schilf und Blumen sowie Baumstümpfe, umgefallene Stämme und Felsbrocken.
-- **Fische:** Es gibt 22 Fische im ganzen Fluss. Sie stehen gegen die Strömung, schwimmen kurze Stücke, und ab und zu springt einer.
-- **Leistung:** Im Test ist kein Unterschied in der Bildrate zu messen. Das ist aber eine Messung im Editor, nicht im fertigen Spiel.
+- **Wasser:** Das Wasser ist genau so geblieben, wie du es angenommen hast. Es wurde in dieser Runde nicht verändert.
+- **Großer Wasserfall oben:** Die eckigen Grasblöcke neben dem Wasserfall sind weg. Dort steht jetzt gewachsener Fels: gebrochene, gestufte Felsschichten, oben mit Moos, zur Wiese hin mit Gras. Der Fels ist am Wasserfall am höchsten und sinkt bachaufwärts und zur Wiese hin flach in den Boden. Die Graskante, die wie eine Hecke herunterhing, gibt es dort nicht mehr.
+- **Becken:** Das Becken unter dem großen Wasserfall ist auf beiden Seiten mit Felsbrocken ausgekleidet. Sie sind verschieden groß und am Wasserfall am höchsten. Dahinter liegen kleinere Steine, im Wasser ein paar flache Steine, dazwischen Schilf. Auf jeder Seite liegen dazu ein großer Felsbrocken, ein umgefallener Stamm und ein Baumstumpf. Die braunen Erdstreifen neben dem Becken sind darunter verschwunden. Man sieht keinen Weg mehr zum Wasserfall.
+- **Kleiner Wasserfall:** Die flache grüne Platte rechts ist weg. Die Steine neben der Stufe stehen jetzt frei und sind weniger bemoost. Neben und unter der Stufe ist der Boden zu einem Grashang angehoben, damit die harte Kante im Boden verschwindet. Das Ufer reicht jetzt näher an den kleinen Wasserfall heran.
+- **Ufer:** Hinter den Uferfelsen ist kein dunkler Graben mehr, die Erde reicht bis zur Wiese. Wo eine Kiesbank beginnt, wird das Ufer jetzt Schicht für Schicht niedriger, statt eckig aufzuhören. Es hängen weniger Grasbüschel über die Kante, auf der Hochebene noch weniger.
+- **Fische:** Die Fische sind etwas kleiner und dunkler und schwimmen etwas tiefer. Die springenden Fische aus dem Spiel werfen auf dem neuen Wasser keinen schwarzen Schatten mehr.
+- **Leistung:** Auch in Runde 2 ist kein Unterschied in der Bildrate zu messen (Spielkamera: Spiel 6,4 ms, Probestück 6,2 ms pro Bild). Das ist eine Messung im Editor, nicht im fertigen Spiel.
 
 ## Was noch nicht gut aussieht
 
-- Neben dem großen Wasserfall wirken die Felswangen von oben wie hohe, eckige Grasblöcke.
-- Am kleinen Wasserfall liegt rechts ein großer bemooster Stein, der wie eine flache grüne Platte aussieht. Links ist noch der braune Erdstreifen aus dem Spiel zu sehen.
-- An manchen Stellen ist zwischen Ufer und Wiese noch eine dunkle Lücke. Einige Uferstücke enden eckig, wo eine Kiesbank beginnt.
-- Auf dem neuen Wasser liegt ein harter schwarzer Schatten, wenn ein Fisch aus dem Spiel springt.
-- Die Wellen selbst sind sehr ruhig. Die Strömung sieht man vor allem an den treibenden Flocken.
+- **Kleiner Wasserfall:** An beiden Enden der Stufe, direkt neben dem fallenden Wasser, ist noch ein kleines braunes Erdstück zu sehen. Links unterhalb der Stufe liegt noch ein brauner Uferstreifen aus dem Spiel. Der neue Grashang neben der Stufe sieht man als hellere, fein gestufte Fläche. Er passt in Farbe und Muster nicht ganz zur Wiese des Spiels.
+- **Großer Wasserfall oben:** Die Felsen sind von oben ziemlich glatt und hell. Weiter außen auf der Klippe stehen noch die eckigen Grasstufen der Klippe selbst. Die habe ich in dieser Runde nicht verändert.
+- **Becken:** Die Felsbrocken am Becken wirken von nah wie ein Haufen runder Steine. Rechts sind sie eine ziemlich gleichmäßige Reihe.
+- **Hochebene:** Das Gras an der Uferkante auf der Hochebene wirkt von nah noch etwas wie eine Hecke.
+- **Fische:** Die Fische an den Angelstellen des Spiels schwimmen an einer Stelle halb unter der neuen Uferkante.
+- Die Wege im Spiel selbst sind nicht geändert. Dass man nicht zum Wasserfall kommt, ist nur im Bild so. Das Spiel müsste das in seiner Karte festlegen.
 
 ## Deine Entscheidung
 
-Welches Wasser soll es sein? Mein Vorschlag: **das Wasser aus dem Probestück.** Es sieht genauso aus wie das Wasser im Spiel, hat aber keine Lücken und fließt in die richtige Richtung.
+Passen der Fels am großen Wasserfall und das Becken so? Und reicht der kleine Wasserfall jetzt, oder soll an den Enden der Stufe und am Grashang noch weiter gearbeitet werden?

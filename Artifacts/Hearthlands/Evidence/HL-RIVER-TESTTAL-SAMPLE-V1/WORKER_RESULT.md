@@ -69,3 +69,50 @@ Status: **round finished, Human checkpoint.** Discovery mode, one sample. Self-d
 - Frame times are editor batch-mode numbers, not a player measurement.
 
 Proposal which water: **the sample water** (same HDRP look settings as the game, but no cracks and the right flow). The Human decides.
+
+## Round 2 (HL-RIVER-TESTTAL-SAMPLE-V1-R2)
+
+Status: **round finished, Human checkpoint.** Discovery mode, one sample. Self-directed iterations used: 3 of 3 (runs 1, 2, 3). Operational recoveries used: 0 of 3.
+
+- verify-worker: `PASS worker receipt f1f9a4acc3d7225b6d95ae1b39877dc1863c4c67918515e34a1a55a302757d7a`, exit 0.
+- Game folder `C:/GameDev/Hearthlands`, branch `main`, start HEAD `fc9b724`. Local commit (no push): `4618d90`. Only `Unity/Assets/_Project/LookTest/RiverTesttal` was committed; the unrelated uncommitted changes were neither committed nor reverted; `ProjectSettings.asset` hash unchanged by the runs.
+- Unity launches: 3 hidden batch-mode editors on `C:\GameDev\Hearthlands\Unity` (`RtBuild.PlayBatch`, `-rtOnly sample_` plus `game_perf` in runs 1 and 3), all rendered on the RX 6800 XT, all exit 0. No player build. No process of the Wege folder touched. Logs `r2/logs/unity-run-1..3.log` (local only).
+- The water (`RtCourse`, `RtWater`) is unchanged; the Wege test's copy from `fc9b724` stays valid.
+
+### Candidate file list (`git diff --name-only fc9b724..4618d90`, sha256, bytes)
+
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtBanks.cs 556a2bf5029c46346932f37aa9fe729ad5e630429d1e124e37b64aa3353587c6 26352
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtFish.cs 5776d830444853e85f48cde06dfb0d4b2b859971a0e9797562b7e8f113ede424 6297
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtProgram.cs 144111c7b17a7549236ea54436f3b63e68580978aabe3a203f6b29aa3ca08130 5252
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtRiver.cs 2b1608288bfa9ca50f4ff4dd6a351abac0ae3ce2f08d094b7f8703929b17be7a 53532
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtRocks.cs 0ec1cd337218f348774cf98a9727bad91a291f1655409e21c328fdb0d3c2c013 12113
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtRocks.cs.meta c510351220dfd63ba5e3a63506344a5d94fb3826fbc999e0e663b4626f991a9c 59
+
+### What was built
+
+- Main fall top (`RtRiver.Cheeks`, new `RtRocks.RtOutcrop`): round 1's raised turf blocks are gone (the face's top beside the curtain ends at the water). Grown rock cheeks from a height field: each stratum (3-5 voxels) reads the field at its own wandering offset, so the terraces break and step; chipped edges, mossy tops, grass towards the meadow, wet stone at the water. Highest at the lip (about 0.45 above the brook), sinking into the bank over about 4.5 tiles upstream and into the meadow outward. No hanging blade tufts.
+- Pool (`RtRiver.PoolLining`): both sides from the cliff to where the ledge banks begin, 22 voxel boulders of different sizes (taller at the cliff, overlapping, no gap to walk through in the picture), lower stones behind, small stones in the water, reeds, and per side a catalogue boulder, log and stump. The earth strips are covered; gravel is allowed in the pool zone.
+- Small fall: the step's rock has no dark turf top any more and keeps its mossy rock behind the lip (round 1's flat green slab gone), its side stones stand clear of the ground with little moss; `RtRocks.RtSkin` raises the lower ground around the step to a slope of at most 0.35 per tile from the higher ground (grass voxels), and the banks' gap at the small fall is smaller.
+- Banks (`RtBanks`): earth fill behind the ledge until the ground reaches the meadow; the ledge sinks into a beach stratum by stratum over a longer way; hanging blade tufts halved (plateau a quarter).
+- Fish: the game's jumping fishing-spot fish draw with a material copy without shadow pass while the sample shows (in-memory swap of the catalogue entry's material, swapped back when the sample hides; nothing saved). Sample fish darker (material copy), scale 0.72 (was 0.9), a little deeper.
+
+### Numbers (run 3, `r2/after/rt_log.txt`)
+
+- Sample river 2.36 million voxel triangles (round 1: 1.70 million): cheeks 34k, pool lining 94k, step blend about 31k, small fall rock 30k, ledge banks 208k (149k), bank fringe 813k (382k; the fill behind the ledges carries turf, so the fringe grew most), pebbles 168k.
+- Frame times (editor batch mode, 1920x1080 render texture, not a player measurement): game camera distance 30: game 6.42 ms, sample 6.17 ms; at the fall: game 5.97 ms, sample 5.95 ms. No measurable cost. If a player measurement shows cost, the bank fringe is the first place for a LOD.
+
+### How to move it into the Wege test (updated)
+
+- The water is unchanged: the Wege copy from `fc9b724` (`RtCourse`, `RtWater`) stays as it is.
+- For the look of round 2 copy in addition `RtRocks.cs` (new) and the round 2 versions of `RtRiver.cs` (`Cheeks`, `PoolLining`, `StepSkin`, `PrepareJumpFish`/`SwapJumpFish`, the small fall changes), `RtBanks.cs` and `RtFish.cs`. Same entry point as round 1 (`new RtRiver(host)`, `Build()` after `PlaytestGame.Boot()`, `SetActive(true)`, per frame `ApplySun()` and `Tick`). `PoolLining` needs `RtBanks.Build` first (it uses its water line and its `VoxelForest`).
+- In the game the cleaner way: the cheeks replace `RiverCliffArt`'s cap rather than sit on a lowered face; the jumping fish's shadow is better switched off in `WorldView.DrawNodeAnimals` (the `Units.Model` call's `shadows` argument) than by a material swap; the pool's "no access" must also be set in the map's walkability (this sample only shows it).
+
+### What still looks wrong (looked at every picture and clip)
+
+- Small fall: at both ends of the step, right beside the curtain, a small brown earth patch remains (the upper bed beside the lip); below the step on the west a brown bank strip of the game remains; the new grass slope beside the step reads as a lighter, finely stepped patch that does not quite match the game's meadow in tone and texture.
+- Main fall top: the rock cheeks are fairly smooth and light from above; further out the cliff's own stepped grass terraces (the port's face top) are unchanged and still angular.
+- Pool: close up the lining reads as a heap of round boulders; on the east side the chain is rather even.
+- Plateau: the grass along the bank edge still reads a little like a hedge close up (the voxel fringe, not the blade tufts).
+- The game's circling fishing-spot fish swim partly under the new bank ledge at one spot (bank close-up clip).
+- Walkability in the game is not changed; the closed pool is only visual.
+- Frame times are editor batch-mode numbers.
