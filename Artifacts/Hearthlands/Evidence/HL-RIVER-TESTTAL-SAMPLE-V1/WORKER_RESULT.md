@@ -165,3 +165,70 @@ Testtal's ground is the P2 ground: one Unity Terrain (`PaintedGround`, 8 samples
 - Further east along the lower river the bank fringe still stands as a green wall (unchanged, outside this round's scope).
 - The ground change is shown at runtime only; the map's walkability and unit heights are not changed.
 - Frame times are editor batch-mode numbers.
+
+
+## Round 4 (HL-RIVER-TESTTAL-SAMPLE-V1-R4)
+
+Status: **round finished, Human checkpoint.** Discovery mode, one sample. Self-directed iterations used: 3 of 3 (runs 1, 2, 3). Operational recoveries used: 0 of 3.
+
+- verify-worker: `PASS worker receipt 48b5fa7f07ae390916abb3761b5b12b6463922187156b0e8239fce7858e3f04f`, exit 0.
+- Game folder `C:/GameDev/Hearthlands`, branch `main`, start HEAD `d7ea9d0`. Local commit (no push): `be3db5d` (steps 1-2; run 3 rendered exactly this state). Only `Unity/Assets/_Project/LookTest/RiverTesttal` was committed; the unrelated uncommitted changes were neither committed nor reverted; `ProjectSettings.asset` hash unchanged (`A84D717C...0B08B`); the scene file was not rewritten.
+- Unity launches: 3 hidden batch-mode editors on `C:\GameDev\Hearthlands\Unity` (`RtBuild.PlayBatch -rtOnly sample_r4[,perf]`), all rendered on the RX 6800 XT, all exit 0. No player build. No process of the Wege folder touched. Logs `r4/logs/unity-run-1..3.log` (local only).
+- Ground (`RtGround`), strands, gap banks, water, main fall and pool unchanged.
+
+### Candidate file list (`git diff --name-only d7ea9d0..be3db5d`, sha256, bytes)
+
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtBanks.cs 7d9076e8d223bb31416f77ba7aa81c70a69bade3188dfde71ba8e4a5b055cd98 27360
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtProgram.cs 67bbab23230185eb220b3239712b1d276f7440884b9d15365a9091f31ff4be9b 8539
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtRiver.cs 24305bafefbd176a90ca419c19da288df9cb699842101ff063406d6ab2c75a6b 83509
+
+### Faces found and what covers them (run 3, `r4/after/rt_log.txt`; tile coordinates x east, y south; lip middle 25.0,51.0, curtain half width 2.0)
+
+Ground faces (1/16-tile scan of the shown ground for slopes steeper than 1.4 whose top stands above the water of its side; the step under the curtain excluded):
+
+| Face | Centre (tile) | Length | Ground height | Covered by |
+|---|---|---|---|---|
+| West, grass-streaked wall left of the curtain | 22.06, 51.06 | 2.04 | 8.76-9.66 | 17 stones |
+| East, earth wall behind the curtain's right end | 28.48, 51.06 | 3.12 | 8.77-9.55 | 26 stones |
+| West low, the game's short dark bank wall | 22.69, 51.71 | 0.89 | 8.70-8.97 | 11 stones |
+| West lower, second small bank wall | 21.96, 52.46 | 0.85 | 8.69-8.99 | 9 stones |
+
+One further patch (3 points) was too small to count. Ledge bank cut ends (the ledge banks stop at the tiles of their gap at the step; run 2 found them in the side view as a brown earth wall; only borders where a ledge voxel really stands above the ground in front count):
+
+| End | Border | Ledge top / ground in front | Covered by |
+|---|---|---|---|
+| Upper, west | y 49.00, x 24.03-24.97, facing downstream | 9.50 / 9.31 | 9 stones |
+| Upper, east | y 49.00, x 25.03-25.09 | 9.50 / 9.31 | 5 stones |
+| East | x 28.00, y 51.16-51.59, facing west | 9.45 / 9.07 | 5 stones |
+| Lower, east | y 53.00, x 25.84-26.09, facing upstream (two tiles) | 8.95-9.05 / 8.82-8.92 | 8 stones |
+
+Lip line beside the curtain (the thin brown strip, east; west for symmetry): u 2.20-2.72 on each side, 6 stones east, 5 west.
+Total 101 stones (big boulders at each face's foot reaching 0.06-0.18 above its top, lower stones in front, small stones on top behind, moss 0.55-0.75) and 19 reed clumps; 241k triangles.
+
+### What was built
+
+- `RtRiver.CoverFaces` (called at the end of `SmallFall`): the ground scan, the ledge-end scan, the lip-end rows and one shared `Station` placer; all rocks in one object `Small fall face cover (R4)`. `ShowFaceCover(bool)` hides it (used only by the captures).
+- `RtBanks.InGap` and `RtBanks.LedgeTop` (the highest ledge voxel that really stands; the column span alone reached above the water across the river in run 2 and put rocks there).
+- `RtProgram` block `r4`: round 3's small-fall cameras (game, close, top, low, night) plus a west and an east side view; every view first with the cover hidden (round 3's look, "r3look_") and then shown, same camera, same run.
+
+### Numbers (run 3)
+
+- Sample river 2.59 million voxel triangles (cover 241k), 80 particle systems, built in 8.9 s.
+- Frame times (editor batch mode, 1920x1080 render texture): game camera distance 30: game 6.32 ms, sample 6.20 ms; at the main fall: game 6.03 ms, sample 5.98 ms. No measurable cost.
+
+### Pictures (`r4/after/`, MP4 H.264, round 3 left, round 4 right, 2.4-4.2 MB each)
+
+`r3_r4_kleiner_fall_spielkamera.mp4`, `r3_r4_kleiner_fall_nah.mp4`, `r3_r4_kleiner_fall_flach.mp4`, `r3_r4_kleiner_fall_von_oben.mp4`, `r3_r4_kleiner_fall_westseite.mp4`, `r3_r4_kleiner_fall_ostseite.mp4`, `r3_r4_kleiner_fall_nacht.mp4`; sheets `vergleich_r3_r4_kleiner_fall_1.jpg`, `vergleich_r3_r4_kleiner_fall_2.jpg`; `rt_log.txt`.
+
+### How to move it into the Wege test (updated)
+
+- As round 3, plus the round 4 `RtRiver.cs` (`CoverFaces`, `ShowFaceCover`) and `RtBanks.cs` (`InGap`, `LedgeTop`). `CoverFaces` runs inside `SmallFall`, so after `StepGround` (it scans the reshaped ground) and before `_banks.Build` (it only reads the ledge's voxel function). `RtProgram.cs` is capture-only.
+- In the game the cleaner way: the cover stones belong in the map's dressing of the step, placed once by a designer or tool against the final ground, not scanned at runtime.
+
+### What still looks wrong (looked at every sheet and the clips)
+
+- West of the curtain the cover is a dense, tall heap of boulders; it hides every face but reads more like a scree pile than a natural bank.
+- Above the step a short row of stones stands partly in the upper water in front of the ledge's cut end.
+- Lower right in the pool a flat, wide stone mound covers the lower ledge end; close up it looks large.
+- Unchanged from round 3: the even white foam band at the foot, foam flecks as small ovals close up, the green grass wall further downstream.
+- Runtime only; walkability and unit heights are not changed. Frame times are editor batch-mode numbers.

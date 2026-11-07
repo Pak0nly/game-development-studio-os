@@ -146,3 +146,22 @@ Folder `Unity/Assets/_Project/LookTest/RiverTesttal/` (allowed paths only):
 - Round finished and stopped at the Human checkpoint. Self-directed iterations 3 of 3 used; operational recoveries 0 of 3.
 - Game folder: commits `e11f5d8`, `d7ea9d0` on `main` (on top of `4618d90`), not pushed; only the sample folder committed.
 - Next (Human): judge the small fall from `r3/after/`; `SAMPLE.md` lists what still looks wrong.
+
+## Round 4 (HL-RIVER-TESTTAL-SAMPLE-V1-R4, 2026-11-07)
+
+- verify-worker: `PASS worker receipt 48b5fa7f07ae390916abb3761b5b12b6463922187156b0e8239fce7858e3f04f`, exit 0.
+- Game folder HEAD at R4 start: `d7ea9d0` (as expected); status in `r4/logs/game-status-r4-start.txt` (only the known unrelated changes); `ProjectSettings.asset` hash recorded. No Unity process was running on the folder.
+- Evidence of this round lies in `r4/`. Launcher: `r4/logs/run-unity.ps1` (same as R1 to R3).
+- Scope: rocks in front of every flat vertical exposed ground face on both sides of the small fall. Ground (`RtGround`), strands, gap banks, water, main fall and pool unchanged.
+- Faces seen in round 3's pictures (projected from the close camera): east, the thin brown strip on the lip line between the curtain and the big rock (about x 26.9-27.5, y 51.1); west, a vertical grass-streaked wall left of the curtain (about x 22.6-23.0, y 51.1); west low, the short dark bank wall (about x 22.5-22.7, y 51.7-51.9).
+- Step 1 (done; run 1, iteration 1 of 3): `RtRiver.CoverFaces` scans the shown ground around the step at 1/16 tile for steep exposed faces, logs each and puts overlapping boulders, front stones, moss and reeds in front; capture block `r4` (round 3's cameras plus a west and an east side view). Run 1: exit 0; 4 ground faces covered (63 stones). The cover-off half did not hide (RcPieces names its parts "<name> 0"), so both halves showed round 4. Still open: the brown strip on the lip line right of the curtain, and in the east side view a flat brown earth wall: the ledge banks' cut end at their gap (x 28).
+- Step 2 (run 2, iteration 2 of 3): cover toggle fixed; the ledge banks' gap borders scanned (`RtBanks.InGap`, `LedgeTop`), boulder rows on the lip line beside the curtain. Run 2: exit 0; faces gone, but `LedgeTop` used the column span and found "ledge" above the water across the river: rock rows across the upper river and the pool (wrong).
+- Run 3 (iteration 3 of 3, renders exactly game commit `be3db5d`): `LedgeTop` uses the highest voxel that really stands. Exit 0; 4 ground faces, 5 ledge ends, 2 lip ends covered, 101 stones, 19 reed clumps. No flat face visible from the game camera, close, low, top, both sides or at night. Frame times: game camera game 6.32 ms, sample 6.20 ms; at the main fall 6.03 / 5.98 ms.
+- Step 3 (done): evidence in `r4/after/` (7 MP4 round 3 left / round 4 right, same camera and run, 2.4-4.2 MB; 2 sheets; `rt_log.txt`), `SAMPLE.md` Round 4 (German), `WORKER_RESULT.md` Round 4 (face table, candidate list, how to move it, what still looks wrong).
+- Launches: 3 hidden batch-mode editors on `C:\GameDev\Hearthlands\Unity`, all rendered on the RX 6800 XT, all exit 0. No player build. No process of the Wege folder touched. `ProjectSettings.asset` hash unchanged. Operational recoveries 0 of 3.
+
+## Present state (R4 finished)
+
+- Round finished and stopped at the Human checkpoint. Self-directed iterations 3 of 3 used; operational recoveries 0 of 3.
+- Game folder: commit `be3db5d` on `main` (on top of `d7ea9d0`), not pushed; only the sample folder committed.
+- Next (Human): judge the covered faces and the amount of stone from `r4/after/`; `SAMPLE.md` lists what still looks wrong.

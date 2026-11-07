@@ -2,6 +2,43 @@
 
 Das Spiel selbst läuft mit der echten Testtal-Karte. Man kann zwischen „Spiel“ (so wie es jetzt aussieht) und „Probestück“ (das neue Aussehen) umschalten. Kamera, Licht und Welt sind gleich. Das Hauptspiel wurde nicht verändert.
 
+## Runde 4: Steine vor die offenen Erdwände am kleinen Wasserfall
+
+Deine Rückmeldung: An beiden Seiten des kleinen Wasserfalls lagen noch flache, senkrechte, offene Bodenflächen. Davor sollten Steine, damit man sie nicht mehr sieht. Sonst wurde nichts verändert: Wasser, großer Wasserfall, Becken, Hang und fallendes Wasser sind wie in Runde 3.
+
+### Was du dir ansehen kannst
+
+Alle Filme und Bilder liegen in `r4/after/`. Links ist immer Runde 3, rechts Runde 4. Beide Seiten stammen aus demselben Lauf mit genau derselben Kamera; links sind nur die neuen Steine ausgeblendet. Die Filme (MP4) laufen auch auf dem Handy.
+
+- `r3_r4_kleiner_fall_spielkamera.mp4`: aus der Spielkamera.
+- `r3_r4_kleiner_fall_nah.mp4`: von nah.
+- `r3_r4_kleiner_fall_flach.mp4`: ganz nah und flach von vorne.
+- `r3_r4_kleiner_fall_von_oben.mp4`: fast senkrecht von oben.
+- `r3_r4_kleiner_fall_westseite.mp4` und `r3_r4_kleiner_fall_ostseite.mp4`: neu, die linke und die rechte Seite schräg von vorne.
+- `r3_r4_kleiner_fall_nacht.mp4`: bei Nacht.
+- Standbilder: `vergleich_r3_r4_kleiner_fall_1.jpg` und `vergleich_r3_r4_kleiner_fall_2.jpg`.
+
+### Welche Wände es gab und was jetzt davor liegt
+
+- **Links neben dem Wasserfall:** eine senkrechte Wand mit gestreiftem Gras, gut 2 Felder lang und etwa so hoch wie die Stufe. Davor liegt jetzt eine Reihe großer und kleiner Steine mit etwas Moos und Schilf.
+- **Links unten am Becken:** das kurze dunkle Uferstück aus dem Spiel (knapp 1 Feld lang) und ein zweites kleines Stück weiter unten. Beide sind mit Steinen zugestellt.
+- **Rechts neben dem Wasserfall:** der schmale braune Streifen auf der Kante zwischen Wasser und großem Felsen und eine gut 3 Felder lange Erdwand dahinter. Auf der Kante liegen jetzt drei Steine, vor der Wand eine Steinreihe.
+- **Die abgeschnittenen Enden der Uferkanten:** Rund um den Wasserfall hören die gestuften Uferkanten plötzlich auf. Dort stand eine flache braune Erdwand (gut zu sehen von der Seite rechts). Vor jedem dieser Enden liegen jetzt Steine, oben am Fluss, rechts und unten am Becken.
+- Insgesamt sind es 101 Steine und 19 Schilfbüschel, große und kleine, ineinander gelegt. Auf den Bildern sehe ich aus keiner Kamera mehr eine flache Erdwand.
+- **Leistung:** kein Unterschied (Spielkamera: Spiel 6,3 ms, Probestück 6,2 ms pro Bild, im Editor gemessen).
+
+### Was noch nicht gut aussieht
+
+- **Links ist es jetzt sehr viel Stein:** Auf der linken Seite liegt ein dichter, hoher Steinhaufen. Er deckt alles zu, wirkt aber eher wie ein Geröllhaufen als wie ein natürliches Ufer.
+- **Oben am Fluss:** Vor dem Ende der Uferkante oberhalb des Wasserfalls liegt jetzt eine kleine Steinreihe teilweise im Wasser.
+- **Unten rechts im Becken:** Dort liegt ein flacher Steinbuckel am Ufer, der von nah recht groß wirkt.
+- Was schon in Runde 3 offen war, ist geblieben: das helle, gleichmäßige Schaumband am Fuß, die Schaumflocken als kleine Ovale von nah und die grüne Graswand weiter flussabwärts.
+- Die Steine sind nur im Bild. Wege und Höhen im Spiel selbst sind nicht geändert.
+
+### Deine Entscheidung
+
+Sind die offenen Erdwände jetzt für dich weg? Und ist dir die Menge an Steinen recht, besonders links, oder sollen es dort weniger und flachere Steine sein?
+
 ## Runde 3: der kleine Wasserfall
 
 In dieser Runde wurde nur der kleine Wasserfall verändert. Das Wasser, der große Wasserfall, das Becken und die Ufer weiter weg sind genau so geblieben.
