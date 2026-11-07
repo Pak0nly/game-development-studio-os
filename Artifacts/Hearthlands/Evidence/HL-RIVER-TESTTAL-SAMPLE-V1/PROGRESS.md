@@ -53,7 +53,24 @@ Folder `Unity/Assets/_Project/LookTest/RiverTesttal/` (allowed paths only):
 - Fix found for the facts: the bodies must be read from the art terrain's data (`ArtGround.Terrain.Data`), not the session's terrain (that gave 54 bodies). Fixed for step 2.
 - HDRP fact (read in `WaterCurrentUtilities.hlsl`): the current map's blue channel multiplies the flow ANGLE, not the speed. The accepted sample wrote a blue below 1 (speed 0.55-1), which turns the flow partly towards east; the R1 sample writes blue = 1.
 
-### Step 2 (in progress): the sample's water on the whole river and the small fall
+### Step 2 (done, game commit `b0adee5`): the sample's water and a first small fall
 
-Written: `RtWater.cs` (smooth-outline surfaces, current along the course, blue = 1), `RtRiver.cs` (bodies by water level, drops, one surface per body, bank foam flecks, small fall: strata step with notch, curved curtain, backdrop, crests, pool foam, stones), "Spiel"/"Probestueck" switch in `RtSample`, program with game_ and sample_ views from the same cameras.
-Next: run 2, look, commit.
+- Run 2: corrected facts: the game's middle reach (108 tiles) has NO current at all (no source on a map edge), the lower reach (39 tiles) flows upstream on 33 tiles; the game meshes have 123 / 323 / 105 T-junction vertices (cracks when the water moves). The sample's three surfaces have 0.
+- Sample current proven with the HDRP current arrows (all along the course, downstream). Water look settings are the game's own (`ApplyDemoRiver`); only geometry and current differ.
+- Small fall first version: still read as a straight strip; water spread sideways over the game's low cut strip.
+
+### Step 3 (run 3 done, committed with step 4): narrow main fall, small fall in strands
+
+- Main fall: the port's face rebuilt with the same seed (foot, top, front read from the port by reflection), wet recess and curtain half width 0.95 (port 2.1), rock cheeks, own narrow backdrop, crests, pool foam; the port's face, fringe, falling water and backdrop hidden in the sample. First look: narrow and closed, but the cheeks stood as tall square grass blocks -> lowered to low rock shoulders just above the water.
+- Small fall: three strands split by two lip stones; first try had wide green step tops -> step now flush with the meadow, shallower.
+
+### Step 4 (done, game commit `fc9b724`, together with step 3)
+
+- Run 4: compile error (operational recovery 1 of 3, parameter renamed). Run 5: banks, fish, frame times. Run 6 (iteration 3 of 3): ledge earth filled down to the ground, water ends under the ledge, no banks on the cliff top at the main fall, upper water ends on the small fall's lip line, small step's top under the meadow.
+- Evidence: `r1/after/` (side-by-side MP4 clips and JPG sheets, `rt_log.txt`), `SAMPLE.md` (German), `WORKER_RESULT.md` (candidate list, numbers, how to move it, what still looks wrong).
+
+## Present state (R1 finished)
+
+- Round finished and stopped at the Human checkpoint. Self-directed iterations 3 of 3 used; operational recoveries 1 of 3.
+- Game folder: commits `cc49f5a`, `b0adee5`, `fc9b724` on `main`, not pushed; only the sample folder committed.
+- Next (Human): decide which water; judge main fall, small fall, banks and fish from `r1/after/`. A successor would start from `WORKER_RESULT.md` "What still looks wrong".
