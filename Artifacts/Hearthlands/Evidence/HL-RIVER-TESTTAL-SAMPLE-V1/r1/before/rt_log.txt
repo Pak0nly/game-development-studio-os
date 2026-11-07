@@ -1,0 +1,42 @@
+start 2026-11-07T10:33:10, editor, GPU AMD Radeon RX 6800 XT
+game booted in 23.9 s; game camera pitch 45, fov 26, art ground True
+course: 66 points, length 74.9 tiles
+water view: surfaces 3, water tiles 199, fall pairs 2, waterfall runs 1, rapid runs 1, fall edges 7, foam emitters 15, soft ground True
+river cliff port: on, triangles 966708, voxels 1091275, lower water 9.35, upper 12.85
+river art: pebbles 10476, stones 15, triangles 362418
+bodies (connected water tiles of one ground height): 54 (MISMATCH with surfaces 3)
+surface 0: 1 tiles, ground 25, water level 12.85, tiles x 46-46 y 0-0, map edge True, mesh 674 vertices 1032 triangles, T-junction vertices 123, current at the water tiles: downstream 1, sideways 0, upstream 0, none 0
+surface 1: 1 tiles, ground 24, water level 12.85, tiles x 47-47 y 0-0, map edge True, mesh 1604 vertices 2404 triangles, T-junction vertices 323, current at the water tiles: downstream 0, sideways 0, upstream 0, none 1
+surface 2: 24 tiles, ground 24, water level 12.85, tiles x 42-46 y 1-17, map edge False, mesh 540 vertices 810 triangles, T-junction vertices 105, current at the water tiles: downstream 0, sideways 0, upstream 0, none 24
+current over all water tiles: 26 tiles; downstream 1, sideways 0, upstream 0, none (falls back to a fixed world direction) 25
+drop edge 41,17 -> 41,18 body 11 -> 13 (declared waterfall), levels 12.85 -> 9.35
+drop edge 42,17 -> 42,18 body 2 -> 13 (declared waterfall), levels 12.85 -> 9.35
+drop edge 43,17 -> 43,18 body 12 -> 13 (declared waterfall), levels 12.85 -> 9.35
+drop edge 23,50 -> 23,51 body 44 -> 37 (rapids), levels 9.35 -> 8.85
+drop edge 24,50 -> 24,51 body 37 -> 37 (rapids), levels 9.35 -> 8.85
+drop edge 25,50 -> 25,51 body 37 -> 37 (rapids), levels 9.35 -> 8.85
+drop edge 26,50 -> 26,51 body 37 -> 37 (rapids), levels 9.35 -> 8.85
+drop run body 11 -> 13 (declared waterfall): 1 edges
+drop run body 2 -> 13 (declared waterfall): 1 edges
+drop run body 12 -> 13 (declared waterfall): 1 edges
+drop run body 44 -> 37 (rapids): 1 edges
+drop run body 37 -> 37 (rapids): 3 edges
+still game_wide (focus (34.0, 8.9, 28.0), distance 46.0, pitch 45, yaw 0, light Tag)
+still game_fall_game (focus (42.5, 8.5, 43.5), distance 18.0, pitch 45, yaw 0, light Tag)
+still game_fall_close (focus (42.5, 8.7, 44.5), distance 7.0, pitch 45, yaw 0, light Tag)
+still game_pool (focus (40.0, 8.9, 40.0), distance 14.0, pitch 45, yaw 0, light Tag)
+still game_middle (focus (34.0, 8.9, 32.0), distance 16.0, pitch 45, yaw 0, light Tag)
+still game_ford (focus (28.0, 9.2, 22.0), distance 14.0, pitch 45, yaw 0, light Tag)
+still game_small_fall_game (focus (25.0, 8.9, 13.5), distance 16.0, pitch 45, yaw 0, light Tag)
+still game_small_fall_close (focus (25.0, 8.9, 13.5), distance 7.0, pitch 45, yaw 0, light Tag)
+still game_lower (focus (22.0, 8.4, 7.0), distance 16.0, pitch 45, yaw 0, light Tag)
+still game_night_middle (focus (34.0, 8.9, 32.0), distance 16.0, pitch 45, yaw 0, light Nacht)
+still game_night_fall (focus (42.5, 8.5, 43.5), distance 18.0, pitch 45, yaw 0, light Nacht)
+still game_current_upper (focus (42.0, 9.3, 38.0), distance 24.0, pitch 45, yaw 0, light Tag)
+still game_current_middle (focus (32.0, 9.0, 27.0), distance 24.0, pitch 45, yaw 0, light Tag)
+still game_current_lower (focus (24.0, 8.5, 11.0), distance 24.0, pitch 45, yaw 0, light Tag)
+clip clip_game_flow_middle 120 frames (focus (34.5, 8.9, 32.5), distance 6.0, light Tag)
+clip clip_game_flow_lower 120 frames (focus (22.0, 8.4, 7.0), distance 6.0, light Tag)
+clip clip_game_small_fall 90 frames (focus (25.0, 8.9, 13.5), distance 8.0, light Tag)
+clip clip_game_main_fall 90 frames (focus (42.5, 8.7, 44.5), distance 9.0, light Tag)
+done 2026-11-07T10:33:56
