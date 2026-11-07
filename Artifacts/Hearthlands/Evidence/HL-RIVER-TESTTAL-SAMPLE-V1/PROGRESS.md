@@ -109,3 +109,40 @@ Folder `Unity/Assets/_Project/LookTest/RiverTesttal/` (allowed paths only):
 - Round finished and stopped at the Human checkpoint. Self-directed iterations 3 of 3 used; operational recoveries 0 of 3.
 - Game folder: commit `4618d90` on `main` (on top of `fc9b724`), not pushed; only the sample folder committed.
 - Next (Human): judge main fall top, pool, small fall and banks from `r2/after/`; `SAMPLE.md` lists what still looks wrong.
+## Round 3 (HL-RIVER-TESTTAL-SAMPLE-V1-R3, 2026-11-07)
+
+- verify-worker: `PASS worker receipt 1349c4b317b734246bad60ebbe7bb4c2514a29e2926a5306a508078272227645`, exit 0.
+- Game folder HEAD at R3 start: `4618d90` (as expected); status in `r3/logs/game-status-r3-start.txt` (only the known unrelated changes). No Unity process was running on the folder.
+- Evidence of this round lies in `r3/`. Launcher: `r3/logs/run-unity.ps1` (same as R2: one hidden batch-mode editor on `C:\GameDev\Hearthlands\Unity` only).
+- Scope: only the small fall (ground around the step, falling water). `RtCourse`/`RtWater`, the main fall, the pool and the banks elsewhere stay as they are.
+
+### Cause found (reading, before the first run)
+
+- Testtal's ground is the P2 ground: one Unity Terrain (`PaintedGround`, 8 samples per tile, eight painted layers, smooth normals) with the game's lush grass blades on top (`LushGrass`, fed from the painted heights and meadow weights).
+- Round 2's `RtSkin` was a separate voxel body (20 voxels per tile) laid over that terrain: its slope is a stair of 0.05 steps (the fine stripes), its colours come from the river palette and it carries no grass blades (the lighter panels). It covered the cut instead of changing it.
+- The brown patches at both ends of the step and the brown strip below on the west are the terrain's own painted earth: the upper river's bed tiles beside the step (dry beyond the sample's lip line) and the game's bank paint where the sample's ledge banks leave a gap at the fall.
+- Plan: drop `RtSkin`; while the sample shows, reshape and repaint the game's own terrain grid around the step through `PaintedGround`'s public height and weight API (saved and restored when switching back to "Spiel"), and refill the game's grass blades there. Then the slope is the game's meadow itself (same texture, shading and grass).
+
+### Step 1 (done, game commit `e11f5d8`): run 1 (iteration 1 of 3)
+
+- New `RtGround.cs` (`RtStepGround`): reshapes and repaints the game's terrain grid around the step while the sample shows (saved and written back for "Spiel"), refills the game's grass blades of the 12 touched chunks. `RtSkin` removed from `RtRocks.cs`. Falling water: denser strands with particle noise that grows towards the foot, spills over the two lip stones, white water piling against them, a boil, mist, spray and foam rafts at the foot. Bank stones and reeds in the ledge banks' gap at the step. Capture block `r3` (round 2's small-fall cameras plus a top and a low view).
+- Run 1: hidden batch editor, rendered on the RX 6800 XT, exit 0. 1592 grid points raised (max 0.51), 2727 texels repainted. Frame times: game camera game 6.29 ms, sample 6.10 ms; at the fall 5.98 / 5.98 ms.
+- Look: the striped lighter panels are gone (the slope is the game's meadow with its grass); the west cut is a meadow slope. Still wrong: a thin brown strip on the lip line right of the curtain, a flat grey patch (rock paint) left of the curtain, brown bed at the far lower west, foam flecks too large (white petals), the strands smeared into one white sheet.
+
+### Step 2 (run 2, iteration 2 of 3; game commit `d7ea9d0` together with the run 3 edit)
+
+- Edits: rock paint only on the steepest new slope and at most 55 % (run 1's grey slab), the bare-ground test downstream of the lip line against the lower water, bed repaint reaches further downstream, smaller foam flecks and rafts, weaker strand noise.
+- Run 2: exit 0. Grey slab gone, west end of the step reads as meadow and stones. Still: the brown strip on the lip line right of the curtain (the game's lower bed beside the curtain, where the sample's lower water is clipped to the curtain width: bare at any height).
+- Run 3 edit: that clipped zone counts as bare ground (raised and repainted).
+- Run 3 (iteration 3 of 3, renders exactly `d7ea9d0`): exit 0. The lower west bed is repainted; the thin brown strip right of the curtain on the lip line is still there (so it is not the bare lower bed; most likely the step rock's own end or the upper bed's edge; not solved within the three iterations). Frame times: game camera game 6.35 ms, sample 6.19 ms; at the fall 6.03 / 5.98 ms.
+
+### Step 3 (done): evidence
+
+- `r3/after/`: MP4 (H.264), round 2 left and round 3 right with the same cameras: `r2_r3_kleiner_fall_spielkamera.mp4`, `r2_r3_kleiner_fall_nah.mp4`, `r2_r3_kleiner_fall_wasser.mp4`, `r2_r3_nacht_kleiner_fall.mp4` (2.3-4.5 MB); `r3_kleiner_fall_flach_nah.mp4` (new low close view, round 3 only); sheets `vergleich_kleiner_wasserfall.jpg`, `r3_kleiner_fall_oben_und_flach.jpg`; `rt_log.txt`.
+- Launches: 3 hidden batch-mode editors on `C:\GameDev\Hearthlands\Unity`, all rendered on the RX 6800 XT, all exit 0. No player build. No process of the Wege folder touched. `ProjectSettings.asset` hash unchanged. Operational recoveries 0 of 3.
+
+## Present state (R3 finished)
+
+- Round finished and stopped at the Human checkpoint. Self-directed iterations 3 of 3 used; operational recoveries 0 of 3.
+- Game folder: commits `e11f5d8`, `d7ea9d0` on `main` (on top of `4618d90`), not pushed; only the sample folder committed.
+- Next (Human): judge the small fall from `r3/after/`; `SAMPLE.md` lists what still looks wrong.

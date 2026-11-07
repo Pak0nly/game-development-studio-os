@@ -116,3 +116,52 @@ Status: **round finished, Human checkpoint.** Discovery mode, one sample. Self-d
 - The game's circling fishing-spot fish swim partly under the new bank ledge at one spot (bank close-up clip).
 - Walkability in the game is not changed; the closed pool is only visual.
 - Frame times are editor batch-mode numbers.
+
+## Round 3 (HL-RIVER-TESTTAL-SAMPLE-V1-R3)
+
+Status: **round finished, Human checkpoint.** Discovery mode, one sample. Self-directed iterations used: 3 of 3 (runs 1, 2, 3). Operational recoveries used: 0 of 3.
+
+- verify-worker: `PASS worker receipt 1349c4b317b734246bad60ebbe7bb4c2514a29e2926a5306a508078272227645`, exit 0.
+- Game folder `C:/GameDev/Hearthlands`, branch `main`, start HEAD `4618d90`. Local commits (no push): `e11f5d8` (step 1), `d7ea9d0` (steps 2 and 3; run 3 rendered exactly this state). Only `Unity/Assets/_Project/LookTest/RiverTesttal` was committed; the unrelated uncommitted changes were neither committed nor reverted; `ProjectSettings.asset` hash unchanged by the runs.
+- Unity launches: 3 hidden batch-mode editors on `C:\GameDev\Hearthlands\Unity` (`RtBuild.PlayBatch`, `-rtOnly` with the new `r3` block, plus `perf` in runs 1 and 3), all rendered on the RX 6800 XT, all exit 0. No player build. No process of the Wege folder touched. Logs `r3/logs/unity-run-1..3.log` (local only).
+- `RtCourse`, `RtWater`, the main fall, the pool and the banks away from the small fall are unchanged.
+
+### Candidate file list (`git diff --name-only 4618d90..d7ea9d0`, sha256, bytes)
+
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtGround.cs 20b554ed92498117148c052198e693cd9b619ee0aa30f8fe6af79c42e2e91749 16040
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtGround.cs.meta cd57d97a3b35709241d4d95570ad281d556f7d43e80de8e6625b58ea09d0dd2c 59
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtProgram.cs 8ed3c2ec179cf469c2b2cf36b4987e2f998bc00a7d4ccb82d8a41961ce9103c2 6781
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtRiver.cs 68e931d3010f9bbb7a1e0cfb0dcb189db7352ac994d72cc0242c14465b2dc2a0 67252
+- ext:Unity/Assets/_Project/LookTest/RiverTesttal/Runtime/RtRocks.cs 3fb5f2054675a38062f98b7c5d4da28dc48994a86bcdc8a3b90f34667ea38d42 7810
+
+### Cause of the striped panels
+
+Testtal's ground is the P2 ground: one Unity Terrain (`PaintedGround`, 8 samples per tile, eight painted layers, smooth normals) with the game's grass blades (`LushGrass`) on top. Round 2's `RtSkin` was a separate voxel body over it: a stair of 0.05 steps (the fine stripes), river-palette colours and no grass blades (the lighter panels). It covered the cut instead of changing it.
+
+### What was built
+
+- Ground (`RtGround.cs`, `RtStepGround`; `RtRiver.StepGround`): while the sample shows, the game's own terrain grid around the step is reshaped and repainted through `PaintedGround`'s public height and weight API: raised to a slope of at most 0.3 per tile from the higher ground on land across the valley at the step and on the bare bed beside and below the curtain (never under the sample's water); bare earth, mud and path paint near the step becomes the meadow mix of the clean meadow around it (meadow 0.61, lush 0.21, flowers 0.18), rock paint only on the steepest new slope; the game's grass blades of the 12 touched chunks are rebuilt (private `VoxelTerrain.PaintedLushTexels` by reflection). Saved and written back when the sample hides. 1626 grid points raised (max 0.52), 2763 texels repainted. `RtSkin` is removed.
+- Falling water (`RtRiver.SmallFall`, `RicherStrands`): denser strands (2.0, was 1.6) with particle noise that grows from the lip to the foot (strands curve and break up), the outer strands lean outward, white water piles against the two lip stones and thin streams spill over their shoulders; at the foot a boil of white water, a mist over the whole width, spray, foam rafts, and more pool foam.
+- Banks in the gap (`RtRiver.GapBanks`): 39 stones (half in the water, lower ones behind, small ones in front) and 15 reed clumps along the real water line on the new ground, about a tile up and down from the step.
+
+### Numbers (run 3, `r3/after/rt_log.txt`)
+
+- Sample river 2.35 million voxel triangles (gap banks 60k; round 2's skin 31k removed), 80 particle systems (round 2: 58), built in 8.1 s.
+- Frame times (editor batch mode, 1920x1080 render texture, not a player measurement): game camera distance 30: game 6.35 ms, sample 6.19 ms; at the main fall: game 6.03 ms, sample 5.98 ms. No measurable cost.
+
+### How to move it into the Wege test (updated)
+
+- The water is unchanged: the Wege copy from `fc9b724` (`RtCourse`, `RtWater`) stays as it is.
+- For the round 3 look copy in addition `RtGround.cs` (new) and the round 3 `RtRiver.cs` (`StepGround`, `RicherStrands`, `GapBanks`, the small fall changes) and `RtRocks.cs` (now without `RtSkin`). Same entry point as before (`new RtRiver(host)`, `Build()` after `PlaytestGame.Boot()`, `SetActive(true)`, per frame `ApplySun()` and `Tick`). `StepGround` must run after `BuildWater` and before the falls and banks (they stand on the new ground); `SetActive` writes the ground in and out.
+- Needs the P2 ground (`VoxelTerrain.Painted`); on another ground style `RtStepGround` does nothing and logs it. It refreshes the grass through the private `PaintedLushTexels` by reflection.
+- In the game the cleaner way: the step's ground change belongs in the map (the sculpted heights and paint of the designer's ground file) rather than a runtime edit; then walkability and unit heights follow too. The richer fall belongs in `BuildFallsAndRapids`.
+
+### What still looks wrong (looked at every picture and clip)
+
+- Right (east) end of the step: a thin brown strip remains on the lip line between the curtain and the big rock. Run 3 showed it is not the bare lower bed; its source (most likely the step rock's end or the upper bed's edge) was not found within the three iterations.
+- At the foot the white water is now a bright, fairly even band across the whole width; close up the strands partly merge into one white sheet, only the two lip stones split it.
+- Foam flecks on the pool still read as small white ovals close up.
+- West of the step, low in the close view, a short dark bank wall of the game remains below the new slope.
+- Further east along the lower river the bank fringe still stands as a green wall (unchanged, outside this round's scope).
+- The ground change is shown at runtime only; the map's walkability and unit heights are not changed.
+- Frame times are editor batch-mode numbers.
