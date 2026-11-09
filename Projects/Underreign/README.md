@@ -11,8 +11,9 @@ approval (DEC-041). No Unity project, no build, no assets yet.
 
 An original game in the dungeon-management genre: dig, build rooms, attract and
 keep creatures, defend against intruders. Extended by wired trap systems, play
-on several stacked layers (vertical as well as horizontal) and several playable
-peoples instead of only demons. Only genre mechanics are used; no names,
+on several stacked layers (vertical as well as horizontal) and five playable
+peoples at release (Ashen Pact, Mycelid Choir, Drowned Court, Gearbound Kin, Deep
+Dwarves; Crystal Brood later) instead of only demons. Only genre mechanics are used; no names,
 creatures, characters, room names, levels, art, music, UI look or text of any
 existing game are copied. Details: [`Docs/GAME_CONCEPT.md`](Docs/GAME_CONCEPT.md).
 
@@ -67,18 +68,19 @@ in Underreign overlaps with or is connected to Hearthlands.
 - [`Docs/GAME_CONCEPT.md`](Docs/GAME_CONCEPT.md)
 - [`Docs/DISCOVERY_DECISIONS.md`](Docs/DISCOVERY_DECISIONS.md)
 - [`Docs/OPEN_DECISIONS.md`](Docs/OPEN_DECISIONS.md)
+- [`Docs/PRODUCTION_PROFILE.md`](Docs/PRODUCTION_PROFILE.md)
 - [`Docs/WORK_STATE.md`](Docs/WORK_STATE.md) and [`Docs/CURRENT_HANDOVER.md`](Docs/CURRENT_HANDOVER.md)
 - Studio OS [Visual Quality Assurance Workflow](../../Docs/Visual/Visual_Quality_Assurance_Workflow.md)
 
 ## Risks
 
 - Title not yet checked.
-- Large feature set (four peoples, layers, wiring, physics); the prototype must
+- Large feature set (five peoples, layers, wiring, physics); the prototype must
   prove the fun of layers plus wiring before scope grows.
-- Role of the dwarves is open (OD-10); they must not overlap with Hearthlands.
+- The Deep Dwarves (UD-32) must stay clearly different from, and unconnected to,
+  the surface dwarves of Hearthlands.
 - Gate and Unity project folder are new and untested on a real Work Order.
 
 ## Next Step
 
-Human decision on the role of the dwarves (OD-10); then a prototype planning
-Work Order (heat rises, Ashen Pact, three layers).
+A prototype planning Work Order (heat rises, Ashen Pact, three layers).

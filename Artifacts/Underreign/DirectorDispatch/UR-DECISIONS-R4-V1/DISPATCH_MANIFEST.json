@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-DECISIONS-R4-V1",
+  "assignment_type": {
+    "value": "Record catalogue round 4 (dwarves, Crystal Brood) and a minimal production profile",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Routine",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R4-V1/WORK_ORDER.md",
+    "sha256": "23914279928d995424cd46ca3b3433fd65a54aa85e19983d6681d16657f9f7d2",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Underreign",
+    "project_id": "Underreign",
+    "project_identity": {
+      "source_path": "Docs/WORK_STATE.md",
+      "source_sha256": "798d8c90eaaca0914763b67ed703058f64c3681bdbd4fcdcf882b86ba5b59824",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Underreign",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "aff7610369c6d0d4a4d0babc447a08d3a31ab386",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/GAME_CONCEPT.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "Projects/Underreign/README.md",
+      "Artifacts/Underreign/Evidence/UR-DECISIONS-R4-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-09, Underreign chat): catalogue round 4 answers R4-1 'A: Spielbares Volk, auch als Gegner (Empfehlung)' and R4-2 'Ja, Empfehlung' (Crystal Brood later); earlier 'Einchecken' and dwarves required.",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a442ee7714ad051d361978b715b2dd0fd157325aa043cce9edd652f2fbed7eeb",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "b2eb81d4a757afe0897910042d6d022b07b93f07aacb96d02055cd6b27ef4e7c",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "b3c50fc77bb1d7b7fec505546d6f28ff73dd4fa30a36586105e782ea6cb3737d",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/GAME_CONCEPT.md",
+      "sha256": "87c76f0e9c034e0880540fc3f9446dfd88b8894e75f7811b6ec19b529a2f94aa",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "sha256": "3056c019a912324f4c300692299a75076e47be6ceccc1e8ac4988aac50a458ed",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-schema",
+        "path": "Tools/UnderreignDispatchGate/underreign-dispatch-schema-v1.json",
+        "method": "file_sha256",
+        "expected_sha256": "306a42138ed449fa3dd8d3e4c72b999189a54bfb6459a393f733bee463fb252c",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-09, Underreign chat): catalogue round 4 answers R4-1 'A: Spielbares Volk, auch als Gegner (Empfehlung)' and R4-2 'Ja, Empfehlung' (Crystal Brood later); earlier 'Einchecken' and dwarves required.",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+    "Projects/Underreign/Docs/GAME_CONCEPT.md",
+    "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+    "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+    "Projects/Underreign/README.md",
+    "Artifacts/Underreign/Evidence/UR-DECISIONS-R4-V1"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs",
+    "Tools",
+    "Projects/Underreign/Docs/WORK_STATE.md",
+    "Projects/Underreign/Docs/CURRENT_HANDOVER.md",
+    "Projects/Underreign/References",
+    "Artifacts/Underreign/DirectorDispatch",
+    "Artifacts/Underreign/Evidence/UR-SETUP-INFRA-V1"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, or any need outside the allowed paths.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Discovery",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Record round 4 decisions",
+      "class": "Routine",
+      "reason": "Bounded documentation recording of two Human answers with exact quotes; routine.",
+      "requested_model": "sonnet",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Game Designer"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Director owns scope and Human checkpoint.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Game Designer",
+      "status": "ACTIVATED",
+      "reason": "Worker writes the Deep Dwarves concept entry.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Record UD-32, UD-33 and update concept, open decisions, README",
+      "status": "pending"
+    },
+    {
+      "step": "Production profile and WORKER_RESULT.md",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "UR-DECISIONS-R4-V1",
+    "rounds": 1,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Underreign Director session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "sonnet",
+      "reasoning_effort": "medium",
+      "reason": "Bounded documentation recording of two Human answers with exact quotes; routine."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": false,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": false,
+      "reviewer_separate_from_worker_and_director": false,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Human reads the recorded round; next is the prototype planning Work Order.",
+    "declaration": "HUMAN DECISION"
+  }
+}

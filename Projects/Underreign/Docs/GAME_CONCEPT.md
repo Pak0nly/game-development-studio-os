@@ -2,7 +2,7 @@
 
 > **Status:** Concept v1, approved by the Human Developer on 2026-11-09 with the
 > answers recorded in [`DISCOVERY_DECISIONS.md`](DISCOVERY_DECISIONS.md)
-> (UD-01 to UD-23). Numbers, names of creatures and tuning remain proposals
+> (UD-01 to UD-33). Numbers, names of creatures and tuning remain proposals
 > until a later Bible or Work Order fixes them. This document authorises no
 > implementation by itself.
 
@@ -37,7 +37,7 @@ narrating voice smirks. No parody.
 
 ## 2. Playable peoples
 
-Four peoples at release, the Crystal Brood later (UD-07). Each people has its
+Five peoples at release, the Crystal Brood later (UD-07, UD-32, UD-33). Each people has its
 own Heart, workers, creatures, rooms (same functions, own look), trap family
 and one vertical strength. Peoples also meet each other as rivals in campaign
 and free play later; the prototype has expeditions only (UD-09).
@@ -107,11 +107,27 @@ and free play later; the prototype has expeditions only (UD-09).
   brass and oak, warning stripes.
 - **Palette:** copper, oak brown, soot black, warning yellow.
 
-### Dwarves — role open (UD-31)
+### Deep Dwarves — stone and weight
 
-The Human requires dwarves in the game. Their role is not decided (OD-10).
-They must look clearly different from the surface dwarves of Hearthlands; no
-shared look, model or asset. See `Docs/OPEN_DECISIONS.md`.
+- **Play:** a people that has lived under the earth for centuries and never
+  saw the surface (UD-32). They dig fastest and build the strongest floors,
+  ceilings and walls, so they are the people for the player's goal of making
+  the realm breach-proof from above and below (UD-11). As rivals they dig in
+  from the side in campaign and free play.
+- **Traps (proposal):** stone and weight: collapsing vaults, sealing walls,
+  crushing blocks, rolling boulders. **Vertical strength:** the strongest
+  structure; reinforced floors and ceilings that hold, and controlled collapses
+  that bury what is above or below.
+- **Look:** pale, almost colourless skin and large, light-sensitive eyes
+  (they squint or wear stone visors in bright light). Beards braided with stone
+  beads and ore rings. Armour of rock that has grown fast to them, with crystal
+  and ore veins showing at the seams. They must stay clearly different from the
+  surface dwarves of Hearthlands: no shared look, model or asset.
+- **Workers (proposal, name open):** stocky diggers with stone-plated backs and
+  oversized hands, working in pairs.
+- **Architecture:** carved straight out of the rock: massive pillars, heavy
+  stone doors, low vaulted halls, ore veins lit by dim lanterns.
+- **Palette (proposal):** slate grey, pale bone, ore bronze, dim lantern amber.
 
 ### Crystal Brood — later
 

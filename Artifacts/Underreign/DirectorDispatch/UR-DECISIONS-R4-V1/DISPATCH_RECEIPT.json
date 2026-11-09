@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-DECISIONS-R4-V1",
+  "work_order_sha256": "23914279928d995424cd46ca3b3433fd65a54aa85e19983d6681d16657f9f7d2",
+  "manifest_sha256": "5fe1e404519e17cf361bf9ba871bb2f495eba7624f9272a9f7096d789d83bde4",
+  "repository": {
+    "branch": "main",
+    "head": "aff7610369c6d0d4a4d0babc447a08d3a31ab386"
+  },
+  "project_identity_sha256": "cdb9fc784f5bfa78792382f96713479573a50d99b7d5146c84b70ee201b3e219",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/GAME_CONCEPT.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "Projects/Underreign/README.md",
+      "Artifacts/Underreign/Evidence/UR-DECISIONS-R4-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "fcd7bbcfd78ad1534ef4cd36c13cef1cdd77df72ac2f342cf51cabdb856e1360",
+  "baseline_state_sha256": "2cb8225c47330365668bb5dd843e8e1455a9f6208a9f5b75cf860172be76f702",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "receipt_id": "0d7b1b88b853e373288de26cafa41d3f25c5f8d4946558cdc9fb25ca29355b46"
+}
