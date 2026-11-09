@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-NIGHT-PREP-V1",
+  "work_order_sha256": "8aeb6fb1e715dc15aba1727dca127b8d5becf9bddf7c784cdf401b3b767480ae",
+  "manifest_sha256": "80c81d10d3fe6ffb7913a568f467c4c1e8c2e8e994b950350d49930e452d3637",
+  "repository": {
+    "branch": "main",
+    "head": "d7ec49d0fa448f7c1535d77cafafefcc9ab91283"
+  },
+  "project_identity_sha256": "dce56f34ccf58e1d1f2f3bf40e3157f74d89f37dcde6cb30c56e33f9e0ff189d",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/References/ArtDirection",
+      "Artifacts/Underreign/Evidence/UR-NIGHT-PREP-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "3820ba78e998d80a3faca77961d443e1455ca49c164222b4c9fa707708e44ef6",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "24f69ad65c2feb8294d780c6d19e4bb17e5b2243"
+    },
+    "allowed_mutations": [
+      "Design/Snapshot",
+      "Evidence/UR-NIGHT-PREP-V1",
+      "Night"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "README.md"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Design/Snapshot",
+        "Evidence/UR-NIGHT-PREP-V1",
+        "Night"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "9aae6b47a70f7eb860b74a14db7ae3e4369343d9856dea57ca2c4f690b904b47"
+  },
+  "execution_location": "local",
+  "receipt_id": "c862dde42ac69523500ca2fc4b21c4c7baffc3d165b6b403436b33053c21a34a"
+}

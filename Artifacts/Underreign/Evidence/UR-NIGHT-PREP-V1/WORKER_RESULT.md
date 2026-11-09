@@ -1,0 +1,40 @@
+# UR-NIGHT-PREP-V1 Worker Result
+
+verify-worker: PASS worker receipt c862dde42ac69523500ca2fc4b21c4c7baffc3d165b6b403436b33053c21a34a
+
+Image mapping confirmed by viewing each image: 1 Gearbound Kin (rat engineers, steampunk), 2 Crystal Brood (crystal insectoids), 3 Deep Dwarves (stone dwarves, mole beasts), 4 Drowned Court (angler/coral/shell), 5 Mycelid Choir (fungal), 6 Ashen Pact (horned lava contract devils).
+
+External commit (C:/GameDev/Underreign, main, not pushed): d653a1672f9ba4594d8bb41c99da326ef1ddee01 (parent 24f69ad).
+Note: git warns LF will be replaced by CRLF (autocrlf); working-copy bytes verified identical before commit.
+
+Studio files (SHA-256) in Projects/Underreign/References/ArtDirection:
+```text
+dc28a44f05c44e54d89916960d7f91dbc5f5bd4a40b0f5315ccf65b215b0213d *Projects/Underreign/References/ArtDirection/IMAGE_PROMPTS.md
+f1a04ea26ced60d2f480e4461611c179e34aabfce50a79db7d284b25f575b8b8 *Projects/Underreign/References/ArtDirection/PROVENANCE.md
+ef57895d4ef816796fb12ee8779deded27023f73256281f29607fc397316f5ec *Projects/Underreign/References/ArtDirection/peoples_ashen_pact_v1.webp
+459a96876a2c6617d372f3c0338421c33622f076a7a4fbfffffb74c3fa604036 *Projects/Underreign/References/ArtDirection/peoples_crystal_brood_v1.webp
+3337ad272851ea7df6688a27f2961f8c92cbee0bde9f7f517d843e2a9d79f266 *Projects/Underreign/References/ArtDirection/peoples_deep_dwarves_v1.webp
+0298840d8dadeb2e2037edeeada8a17905415b4843c7ce55a75255f8c43f5554 *Projects/Underreign/References/ArtDirection/peoples_drowned_court_v1.webp
+c92955fbd0e7356b6ab5eac164656e46aba12655e1527accd280648508b360c4 *Projects/Underreign/References/ArtDirection/peoples_gearbound_kin_v1.webp
+9382953f7e6215ad8bf0ea2435e574449d96450a2f416cadb429657cca24603a *Projects/Underreign/References/ArtDirection/peoples_mycelid_choir_v1.webp
+```
+
+External files (SHA-256), identical to Studio sources:
+```text
+22e62aef3cadd347db48ca9e2edeb653a710a69097a14dace50728536d4f4220 *Design/Snapshot/DISCOVERY_DECISIONS.md
+ae34897d11f36686eb793ec78746f3b8a99b8f11d373af34c7ae1c3958c12f13 *Design/Snapshot/GAME_CONCEPT.md
+0e3b050f170ffee426ed492e54bb7c9a89e12352ba0645faa76e6ad80f5b9d18 *Design/Snapshot/OPEN_DECISIONS.md
+e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a *Design/Snapshot/PRODUCTION_PROFILE.md
+b0771d760cc38fa67a4a744cc6a3b2b0ac9958f0d9278f6b6a8a0f2bccac7bdf *Design/Snapshot/README.md
+39476e33a83c7b33c91404a2bedd8b34f6e4c59cff4dfb084ff2e08bfb453feb *Design/Snapshot/SNAPSHOT.md
+dc28a44f05c44e54d89916960d7f91dbc5f5bd4a40b0f5315ccf65b215b0213d *Design/Snapshot/ArtDirection/IMAGE_PROMPTS.md
+f1a04ea26ced60d2f480e4461611c179e34aabfce50a79db7d284b25f575b8b8 *Design/Snapshot/ArtDirection/PROVENANCE.md
+ef57895d4ef816796fb12ee8779deded27023f73256281f29607fc397316f5ec *Design/Snapshot/ArtDirection/peoples_ashen_pact_v1.webp
+459a96876a2c6617d372f3c0338421c33622f076a7a4fbfffffb74c3fa604036 *Design/Snapshot/ArtDirection/peoples_crystal_brood_v1.webp
+3337ad272851ea7df6688a27f2961f8c92cbee0bde9f7f517d843e2a9d79f266 *Design/Snapshot/ArtDirection/peoples_deep_dwarves_v1.webp
+0298840d8dadeb2e2037edeeada8a17905415b4843c7ce55a75255f8c43f5554 *Design/Snapshot/ArtDirection/peoples_drowned_court_v1.webp
+c92955fbd0e7356b6ab5eac164656e46aba12655e1527accd280648508b360c4 *Design/Snapshot/ArtDirection/peoples_gearbound_kin_v1.webp
+9382953f7e6215ad8bf0ea2435e574449d96450a2f416cadb429657cca24603a *Design/Snapshot/ArtDirection/peoples_mycelid_choir_v1.webp
+b8e3191ab4439a5e819f9445f1f64109336e3a0341450627b08baeb956d5b58e *Night/UR-NIGHT-01-V1/WORK_ORDER.md
+```
+External Evidence/UR-NIGHT-PREP-V1/WORKER_RESULT.md sha256: 058422d53a145be4783794a4d8f8c92fb767f230155813a90eedf7e5db657cc6

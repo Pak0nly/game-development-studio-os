@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-NIGHT-PREP-V1",
+  "assignment_type": {
+    "value": "Design snapshot, reference images and night order into the Underreign repository",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Routine",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-PREP-V1/WORK_ORDER.md",
+    "sha256": "8aeb6fb1e715dc15aba1727dca127b8d5becf9bddf7c784cdf401b3b767480ae",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Underreign",
+    "project_id": "Underreign",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Underreign",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "d7ec49d0fa448f7c1535d77cafafefcc9ab91283",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/References/ArtDirection",
+      "Artifacts/Underreign/Evidence/UR-NIGHT-PREP-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-09, Underreign chat): 'Kannst du die Planung und auch gerne weiteres in einer Nachtschicht umsetzen?'; private GitHub repository Pak0nly/underreign approved ('Ja, leg du es an'); night until 08:00 local; rough reference images of the peoples shared as orientation.",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a442ee7714ad051d361978b715b2dd0fd157325aa043cce9edd652f2fbed7eeb",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "b2eb81d4a757afe0897910042d6d022b07b93f07aacb96d02055cd6b27ef4e7c",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Underreign/Docs/GAME_CONCEPT.md",
+      "sha256": "ae34897d11f36686eb793ec78746f3b8a99b8f11d373af34c7ae1c3958c12f13",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "22e62aef3cadd347db48ca9e2edeb653a710a69097a14dace50728536d4f4220",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-validator",
+        "path": "Tools/UnderreignDispatchGate/validate_underreign_dispatch.py",
+        "method": "file_sha256",
+        "expected_sha256": "bc9d24a1e4a0aa6cf9a08cabe6be1c92cf06f04e23e62747c0457386d119c5f3",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-09, Underreign chat): 'Kannst du die Planung und auch gerne weiteres in einer Nachtschicht umsetzen?'; private GitHub repository Pak0nly/underreign approved ('Ja, leg du es an'); night until 08:00 local; rough reference images of the peoples shared as orientation.",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Projects/Underreign/References/ArtDirection",
+    "Artifacts/Underreign/Evidence/UR-NIGHT-PREP-V1"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs",
+    "Tools",
+    "Projects/Underreign/Docs",
+    "Artifacts/Underreign/DirectorDispatch"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, a need outside the allowed paths, or existing tests that cannot be kept green.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Production",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Snapshot and reference images",
+      "class": "Routine",
+      "reason": "Byte copies with hashes and one local commit; routine.",
+      "requested_model": "sonnet",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Director owns scope and Human checkpoint.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Reference images and provenance",
+      "status": "pending"
+    },
+    {
+      "step": "Snapshot, night order copy, local commit",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "UR-NIGHT-PREP-V1",
+    "rounds": 1,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Underreign Director session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "sonnet",
+      "reasoning_effort": "medium",
+      "reason": "Byte copies with hashes and one local commit; routine."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": false,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": false,
+      "reviewer_separate_from_worker_and_director": false,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Director validates the night manifest, pushes and starts the cloud night.",
+    "declaration": "HUMAN DECISION"
+  },
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "24f69ad65c2feb8294d780c6d19e4bb17e5b2243"
+    },
+    "allowed_mutations": [
+      "Design/Snapshot",
+      "Night",
+      "Evidence/UR-NIGHT-PREP-V1"
+    ],
+    "protected_paths": [
+      "README.md",
+      ".gitignore",
+      ".gitattributes"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Design/Snapshot",
+        "Night",
+        "Evidence/UR-NIGHT-PREP-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "declaration": "VERIFIED"
+  }
+}
