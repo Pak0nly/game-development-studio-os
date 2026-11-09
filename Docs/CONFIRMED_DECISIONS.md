@@ -733,3 +733,23 @@ waiver, treated Builder self-review as independent, or projected an
 independently reviewed PASS without exact closure evidence. It does not
 supersede narrower permission, Human checkpoint, correction, safety or
 authority boundaries.
+
+### DEC-041 — Underreign Project and Claude Director
+
+**Status:** Confirmed
+
+**Scope:** Project Underreign (working title); Studio Operating System pointers only
+
+**Confirmed decision:**
+
+- The Human Developer started a new project with the working title Underreign: an original game in the dungeon-management genre (dig, build rooms, attract and keep creatures, defend against intruders), extended by new trap systems, play on several stacked layers (vertical as well as horizontal) and several playable peoples instead of only demons. Only genre mechanics may be used; names, creatures, characters, room names, levels, art, music, UI look and text of any existing game must not be copied, and no existing game is recreated.
+- Claude acts as the Director for Underreign, orchestration only under the Director Non-Execution Gate in `AGENTS.md`. DEC-007 remains in force outside MobileArc, Hearthlands and Underreign.
+- Platform: PC (Windows, Steam) first. Engine: Unity 6000.6.4f1, the same version as Hearthlands (narrows DEC-002 for Underreign; DEC-003 is satisfied by this explicit Human choice for Underreign scope only). Render pipeline, project location and Git repository are open.
+- Underreign keeps its own operational state in `Projects/Underreign/Docs/WORK_STATE.md` and `Projects/Underreign/Docs/CURRENT_HANDOVER.md`. The standing maintenance permission in `AGENTS.md` covers these two files for Underreign work. The root operational state files are not used for Underreign.
+- Hearthlands, MobileArc, Crime99 and all other projects, `Tools/ClaudeDispatchGate` and `Tools/HearthlandsDispatchGate` are out of Underreign scope and are not changed. Until an Underreign dispatch gate is decided (Underreign OD-01), no mutation-capable Underreign dispatch is issued. The initial project skeleton and concept documents were written on the Human's direct setup approval; this creates no standing exception.
+
+**Implications:** Downloads, installations, purchases, Git operations and Steam fees still need their own Human approval (DEC-013, DEC-014, DEC-023). Generative-AI content follows DEC-025. Shared documents are changed only additively. Project design decisions are recorded in `Projects/Underreign/Docs/DISCOVERY_DECISIONS.md`.
+
+**Human confirmation source:** Human Developer answers to the Underreign concept question catalogue (setup question answered "Ja, so anlegen wie Hearthlands und MobileArc."; platform and engine from the answers "Zuerst PC über Steam" and "Unity wie Hearthlands"; full record in `Projects/Underreign/Docs/DISCOVERY_DECISIONS.md`), Underreign concept chat, 2026-11-09.
+
+**Supersedes:** None

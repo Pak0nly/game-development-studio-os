@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "schema_id": "UNDERREIGN-CLAUDE-DISPATCH-GATE-V1",
+  "state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "project_path": "Projects/Underreign",
+  "dispatch_root": "Artifacts/Underreign/DirectorDispatch",
+  "evidence_root": "Artifacts/Underreign/Evidence",
+  "operational_state_paths": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "forbidden_mutation_roots": [
+    "Tools/AuthorityContinuity",
+    "Docs/WORK_STATE.md",
+    "Docs/CURRENT_HANDOVER.md",
+    "Projects/Crime99",
+    "Projects/Hearthlands",
+    "Projects/MobileArc",
+    "Artifacts/Hearthlands",
+    "Artifacts/MobileArc",
+    "Tools/HearthlandsDispatchGate",
+    "Tools/ClaudeDispatchGate",
+    "Artifacts/DirectorDispatch",
+    "Artifacts/Evidence"
+  ],
+  "candidate_identity_files": [
+    "Tools/UnderreignDispatchGate/underreign-dispatch-schema-v1.json",
+    "Tools/UnderreignDispatchGate/README.md",
+    "Tools/UnderreignDispatchGate/validate_underreign_dispatch.py",
+    "Tools/UnderreignDispatchGate/tests/test_validate_underreign_dispatch.py"
+  ],
+  "current_dispatch_manifest_version": 1,
+  "supported_dispatch_manifest_versions": [
+    1
+  ],
+  "manifest_kind": "claude_dispatch_manifest",
+  "receipt_kind": "claude_dispatch_receipt",
+  "closure_schema_version": 1,
+  "closure_manifest_kind": "claude_closure_manifest",
+  "closure_receipt_kind": "claude_closure_receipt",
+  "closure_gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "independent_review_record_kind": "independent_review_record",
+  "worker_creation_tool": "Agent",
+  "worker_monitoring_mode": "agent_completion",
+  "optional_resume_tool": "SendMessage",
+  "forbidden_codex_tool_names": [
+    "create_thread",
+    "wait_threads",
+    "send_input"
+  ],
+  "claude_models": [
+    "haiku",
+    "claude-haiku-4-5-20251001",
+    "sonnet",
+    "claude-sonnet-5-5",
+    "opus",
+    "claude-opus-5-5",
+    "fable",
+    "claude-fable-5-1"
+  ],
+  "declaration_classes": [
+    "VERIFIED",
+    "INFERENCE",
+    "UNKNOWN",
+    "HUMAN DECISION"
+  ],
+  "execution_modes": [
+    "Discovery",
+    "Production",
+    "Diagnostic",
+    "Integration"
+  ],
+  "model_classes": [
+    "Routine",
+    "Standard",
+    "Critical"
+  ],
+  "requested_model_attestation": "Requested model — not independently attested.",
+  "reasoning_efforts": [
+    "low",
+    "medium",
+    "high",
+    "xhigh",
+    "max"
+  ],
+  "critical_mandatory_roles": [
+    "Producer / Scope Controller",
+    "QA Lead"
+  ],
+  "required_manifest_fields": [
+    "schema_version",
+    "kind",
+    "project_scope",
+    "work_order_id",
+    "assignment_type",
+    "classification",
+    "work_order",
+    "repository",
+    "dirty_state",
+    "human_authority",
+    "required_live_task_tools",
+    "authority_sources",
+    "project_sources",
+    "baselines",
+    "allowed_mutations",
+    "protected_paths",
+    "stop_boundary",
+    "execution_mode",
+    "model_routing",
+    "role_requirements",
+    "roles",
+    "visible_task_plan",
+    "correction_allowance",
+    "monitoring",
+    "human_checkpoint",
+    "orchestration"
+  ],
+  "required_receipt_fields": [
+    "schema_version",
+    "kind",
+    "gate_state",
+    "project_scope",
+    "work_order_id",
+    "work_order_sha256",
+    "manifest_sha256",
+    "repository",
+    "project_identity_sha256",
+    "dirty_state",
+    "source_state_sha256",
+    "baseline_state_sha256",
+    "required_live_task_tools",
+    "receipt_id"
+  ],
+  "required_closure_manifest_fields": [
+    "schema_version",
+    "kind",
+    "project_scope",
+    "work_order",
+    "dispatch",
+    "tasks",
+    "candidate",
+    "evidence",
+    "independent_review",
+    "operational_state",
+    "declaration"
+  ],
+  "required_closure_receipt_fields": [
+    "schema_version",
+    "kind",
+    "gate_state",
+    "project_scope",
+    "work_order_id",
+    "work_order_sha256",
+    "closure_manifest_sha256",
+    "dispatch_receipt_id",
+    "director_task_id",
+    "worker_task_id",
+    "reviewer_task_id",
+    "candidate_identity",
+    "evidence_state_sha256",
+    "review_record_sha256",
+    "verdict",
+    "receipt_id"
+  ]
+}

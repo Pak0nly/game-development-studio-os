@@ -181,3 +181,13 @@ Do not treat backlog or Parking Lot items as adopted standards.
 When a governance-related idea appears, either add it to the Governance Backlog, add it to the Parking Lot, or explicitly discard it.
 
 When uncertain about a decision that affects architecture, security, governance, maintainability, scope, or long-term direction, ask before assuming.
+
+## Underreign
+
+### Projects/Underreign
+
+Project README at [`Projects/Underreign/README.md`](../Projects/Underreign/README.md) (DEC-041). Underreign keeps its own operational state ([`WORK_STATE.md`](../Projects/Underreign/Docs/WORK_STATE.md), [`CURRENT_HANDOVER.md`](../Projects/Underreign/Docs/CURRENT_HANDOVER.md)), [`GAME_CONCEPT.md`](../Projects/Underreign/Docs/GAME_CONCEPT.md), [`DISCOVERY_DECISIONS.md`](../Projects/Underreign/Docs/DISCOVERY_DECISIONS.md) and [`OPEN_DECISIONS.md`](../Projects/Underreign/Docs/OPEN_DECISIONS.md).
+
+### Tools/UnderreignDispatchGate
+
+An independent, cooperative dispatch and closure gate for Claude Code directed Underreign work (DEC-041, UD-25), copied from the Claude-directed gate design and sharing nothing with other projects. See [`Tools/UnderreignDispatchGate/README.md`](../Tools/UnderreignDispatchGate/README.md).
