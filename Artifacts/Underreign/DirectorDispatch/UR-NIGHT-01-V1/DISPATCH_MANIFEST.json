@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-NIGHT-01-V1",
+  "assignment_type": {
+    "value": "Night shift 1: prototype plan, technical design, engine-free simulation core with tests, game bible, art brief",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Standard",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-01-V1/WORK_ORDER.md",
+    "sha256": "b8e3191ab4439a5e819f9445f1f64109336e3a0341450627b08baeb956d5b58e",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Underreign",
+    "project_id": "Underreign",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Underreign",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "57d0e3bc010f7ad934e0e9d16fa5e7493c460247",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-NIGHT-01-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-09, Underreign chat): 'Kannst du die Planung und auch gerne weiteres in einer Nachtschicht umsetzen?'; private GitHub repository Pak0nly/underreign approved ('Ja, leg du es an'); night until 08:00 local; rough reference images of the peoples shared as orientation.",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a442ee7714ad051d361978b715b2dd0fd157325aa043cce9edd652f2fbed7eeb",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "b2eb81d4a757afe0897910042d6d022b07b93f07aacb96d02055cd6b27ef4e7c",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Underreign/Docs/GAME_CONCEPT.md",
+      "sha256": "ae34897d11f36686eb793ec78746f3b8a99b8f11d373af34c7ae1c3958c12f13",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "22e62aef3cadd347db48ca9e2edeb653a710a69097a14dace50728536d4f4220",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-validator",
+        "path": "Tools/UnderreignDispatchGate/validate_underreign_dispatch.py",
+        "method": "file_sha256",
+        "expected_sha256": "bc9d24a1e4a0aa6cf9a08cabe6be1c92cf06f04e23e62747c0457386d119c5f3",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-09, Underreign chat): 'Kannst du die Planung und auch gerne weiteres in einer Nachtschicht umsetzen?'; private GitHub repository Pak0nly/underreign approved ('Ja, leg du es an'); night until 08:00 local; rough reference images of the peoples shared as orientation.",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Artifacts/Underreign/Evidence/UR-NIGHT-01-V1"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs",
+    "Tools",
+    "Projects",
+    "Artifacts/Underreign/DirectorDispatch"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, a need outside the allowed paths, or existing tests that cannot be kept green.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Discovery",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Night shift 1",
+      "class": "Standard",
+      "reason": "Long autonomous night: planning, engine-free simulation code with tests, large game bible; needs strongest design and engineering judgment.",
+      "requested_model": "opus",
+      "context_fork": "Fresh cloud session with the night Work Order only.",
+      "attempts": "Backlog plus open-ended passes until the clock gate.",
+      "escalate_stop": "Stop only if pushing fails three times or the base is missing.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Game Designer",
+    "Gameplay Engineer",
+    "QA Lead"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Director owns scope and Human checkpoint.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Game Designer",
+      "status": "ACTIVATED",
+      "reason": "Night writes prototype plan and game bible.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Gameplay Engineer",
+      "status": "ACTIVATED",
+      "reason": "Night writes the simulation core.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "QA Lead",
+      "status": "ACTIVATED",
+      "reason": "Morning independent review.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "Prototype plan and technical design",
+      "status": "pending"
+    },
+    {
+      "step": "Simulation core A-D with tests",
+      "status": "pending"
+    },
+    {
+      "step": "Prototype map, headless runner, simulation report",
+      "status": "pending"
+    },
+    {
+      "step": "Unity work breakdown, game bible, art brief, questions",
+      "status": "pending"
+    },
+    {
+      "step": "Open-ended passes until 06:30 UTC, then NIGHT_RESULT",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "UR-NIGHT-01-V1",
+    "rounds": 1,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Underreign Director session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "opus",
+      "reasoning_effort": "high",
+      "reason": "Long autonomous night: planning, engine-free simulation code with tests, large game bible; needs strongest design and engineering judgment."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": true,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": true,
+      "reviewer_separate_from_worker_and_director": true,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Morning: verify-night-return, independent review, Director report to the Human with the night's questions.",
+    "declaration": "HUMAN DECISION"
+  },
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "d653a1672f9ba4594d8bb41c99da326ef1ddee01"
+    },
+    "allowed_mutations": [
+      "Design/Planning",
+      "Design/Bible",
+      "Design/Art",
+      "Simulation",
+      "Evidence/UR-NIGHT-01-V1"
+    ],
+    "protected_paths": [
+      "Design/Snapshot",
+      "Night",
+      "README.md",
+      ".gitignore",
+      ".gitattributes"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Design/Planning",
+        "Design/Bible",
+        "Design/Art",
+        "Simulation",
+        "Evidence/UR-NIGHT-01-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "declaration": "VERIFIED"
+  },
+  "execution_location": "cloud_night",
+  "night_branch": "night/2026-11-09",
+  "night_evidence_dir": "Evidence/UR-NIGHT-01-V1"
+}

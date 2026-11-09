@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-NIGHT-01-V1",
+  "work_order_sha256": "b8e3191ab4439a5e819f9445f1f64109336e3a0341450627b08baeb956d5b58e",
+  "manifest_sha256": "bd67eb744bc2017df80911d5dd46f8098a2ee98a6f343b93d460bb49a4d66da8",
+  "repository": {
+    "branch": "main",
+    "head": "57d0e3bc010f7ad934e0e9d16fa5e7493c460247"
+  },
+  "project_identity_sha256": "dce56f34ccf58e1d1f2f3bf40e3157f74d89f37dcde6cb30c56e33f9e0ff189d",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-NIGHT-01-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "3820ba78e998d80a3faca77961d443e1455ca49c164222b4c9fa707708e44ef6",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "d653a1672f9ba4594d8bb41c99da326ef1ddee01"
+    },
+    "allowed_mutations": [
+      "Design/Art",
+      "Design/Bible",
+      "Design/Planning",
+      "Evidence/UR-NIGHT-01-V1",
+      "Simulation"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design/Snapshot",
+      "Night",
+      "README.md"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Design/Art",
+        "Design/Bible",
+        "Design/Planning",
+        "Evidence/UR-NIGHT-01-V1",
+        "Simulation"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "19f3b45d8cb3a8760d9005ea8f39d508a10ecd592e1251837befc735488660a6"
+  },
+  "execution_location": "cloud_night",
+  "night_shift": {
+    "branch": "night/2026-11-09",
+    "evidence_dir": "Evidence/UR-NIGHT-01-V1"
+  },
+  "receipt_id": "eb8c82f60e9c9b90dd8adc2055c2d0e662aa6e7114ff84e599699c9b2919a44f"
+}
