@@ -1,0 +1,184 @@
+  Bestanden CostPerTick_30And200Dwarves [1 s]
+ dwarves 32: whole tick 0,0775 ms (incl. state hash), ways system 0,0109 ms; searches per tick 0,08, expansions per search 143, budget-hit ticks 0, max queue 11, snapshot 260108 bytes
+ dwarves 206: whole tick 0,1655 ms (incl. state hash), ways system 0,1067 ms; searches per tick 0,62, expansions per search 1034, budget-hit ticks 0, max queue 46, snapshot 276006 bytes
+ 
+  Bestanden PathVisibilityTimesAt1x_96Minutes(6) [4 s]
+ small fires 6
+ Steinfeuer -> Steinbruch: visible 8,0 min, worn 15,5 min
+ Holzfeuer -> Holzfäller Nord: visible 3,5 min, worn 12,5 min
+ Holzfeuer -> Holzfäller Süd: visible 3,5 min, worn 4,0 min
+ Holzfeuer -> Förster: visible 11,0 min, worn 11,5 min
+ Herzfeuer -> Jäger: visible 3,0 min, worn 9,5 min
+ Herzfeuer -> Holzfeuer: visible 4,5 min, worn 9,5 min
+ 
+  Bestanden PathVisibilityTimesAt1x_96Minutes(4) [4 s]
+ small fires 4
+ Steinfeuer -> Steinbruch: visible 17,0 min, worn 25,5 min
+ Holzfeuer -> Holzfäller Nord: visible 5,0 min, worn 20,0 min
+ Holzfeuer -> Holzfäller Süd: visible 5,0 min, worn 15,5 min
+ Holzfeuer -> Förster: visible 11,5 min, worn never
+ Herzfeuer -> Jäger: visible 2,0 min, worn 11,0 min
+ Herzfeuer -> Holzfeuer: visible 5,0 min, worn 8,5 min
+ 
+  Bestanden BenchReport_32Minutes(6) [1 s]
+ layout Holzfeuer: Ok
+ layout Steinfeuer: Ok
+ layout Holzfäller Nord: Unreachable
+ layout Holzfäller Süd: Ok
+ layout Förster: Ok
+ layout Jäger: Ok
+ layout Steinbruch: QuarryNoRockNear
+ small fires 6; at 390 s (the test's day part): delivered 33/10/6, sites done 2 of the list, dwarves 22
+ violation: none
+ ms total 1174, dwarves 26, own tiles 940
+ delivered log/stone/game 162/85/22; produced 127/81/27
+ sites done 15, jobs 274/269/0, way failures 5, replans 6, budget-hit ticks 0
+ detour by length 435 permille
+ detour by time 209 permille over 550 carry walks
+ sub-cells bent/visible/firm 193/135/399
+ layout Holzfäller Nord at 51,34 (the test: 53,36)
+ layout Steinbruch at 36,15 (the test: 46,25)
+ 0 site Neues Feuer ordered
+ 0 site Sägewerk ordered
+ site Lager am Holzfeuer at 43,42 (the test: 43,41)
+ 2761 site Lager am Holzfeuer ordered
+ 3651 site Brunnen ordered
+ 4981 site Wachhaus ordered
+ 6251 site Mühle ordered
+ 7851 site Räucherhaus ordered
+ 8981 site Brauerei ordered
+ Neues Feuer: ordered 0 s, started 0 s, finished 230 s
+ Sägewerk: ordered 0 s, started 82 s, finished 319 s
+ Lager am Holzfeuer: ordered 276 s, started 286 s, finished 452 s
+ Brunnen: ordered 365 s, started 374 s, finished 579 s
+ Wachhaus: ordered 498 s, started 499 s, finished 739 s
+ Mühle: ordered 625 s, started 647 s, finished 852 s
+ Räucherhaus: ordered 785 s, started 786 s, finished 951 s
+ Brauerei: ordered 898 s, started 899 s, finished 1100 s
+ fire 0: residents 8, burned 21, hungry 0 s, store 6,5,4
+ fire 1: residents 6, burned 12, hungry 0 s, store 10,0,20
+ fire 2: residents 6, burned 12, hungry 0 s, store 20,18,0
+ fire 3: residents 6, burned 11, hungry 0 s, store 2,0,0
+ building 0 heart_fire at 40,47 site False worker -1 home -1 made 0 spot 0,0 drop 40,5,48,5
+ building 1 store at 42,47 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,48,5
+ building 2 hearth_wooden at 49,40 site False worker -1 home -1 made 0 spot 0,0 drop 49,5,41,5
+ building 3 hearth_wooden at 46,31 site False worker -1 home -1 made 0 spot 0,0 drop 46,5,32,5
+ building 4 woodcutter at 51,34 site False worker 17 home 2 made 61 spot 0,0 drop 51,5,35,5 store 5,0,0 in 0,0,0
+ building 5 woodcutter at 53,43 site False worker 12 home 1 made 66 spot 0,0 drop 53,5,44,5 store 1,0,0 in 0,0,0
+ building 6 forester at 47,36 site False worker 13 home 1 made 28 spot 0,0 drop 47,5,37,5 store 0,0,0 in 0,0,0
+ building 7 hunter at 52,47 site False worker 11 home 1 made 27 spot 47,5,44,5 drop 52,5,48,5 store 0,0,5 in 0,0,0
+ building 8 quarry at 36,15 site False worker 16 home 2 made 81 spot 33,5,18,5 drop 36,5,16,5 store 0,5,0 in 0,0,0
+ building 9 hearth_wooden at 30,44 site False worker -1 home -1 made 0 spot 0,0 drop 30,5,45,5 store 0,0,0 in 0,0,0
+ building 10 sawmill at 44,52 site False worker -1 home -1 made 0 spot 0,0 drop 44,5,53,5 store 0,0,0 in 0,0,0
+ building 11 store at 43,42 site False worker -1 home -1 made 0 spot 0,0 drop 43,5,43,5 store 0,0,0 in 0,0,0
+ building 12 well at 36,51 site False worker -1 home -1 made 0 spot 0,0 drop 36,5,52,5 store 0,0,0 in 0,0,0
+ building 13 guardhouse at 42,30 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,31,5 store 0,0,0 in 0,0,0
+ building 14 mill at 48,51 site False worker -1 home -1 made 0 spot 0,0 drop 48,5,52,5 store 0,0,0 in 0,0,0
+ building 15 smokehouse at 38,41 site False worker -1 home -1 made 0 spot 0,0 drop 38,5,42,5 store 0,0,0 in 0,0,0
+ building 16 brewery at 33,49 site False worker -1 home -1 made 0 spot 0,0 drop 33,5,50,5 store 0,0,0 in 0,0,0
+ dwarf 0 home 0 role Watch at 39,5,48,5 plan - walk None carry -1 delivered 0
+ dwarf 1 home 0 role Carrier at 50,76953125,46,5478515625 plan Walk walk Walking carry -1 delivered 30
+ dwarf 2 home 0 role Free at 39,5,49,5 plan Wait walk None carry -1 delivered 12
+ dwarf 3 home 0 role Free at 40,5,49,5 plan Wait walk None carry -1 delivered 18
+ dwarf 4 home 0 role Free at 41,5,49,5 plan Wait walk None carry -1 delivered 22
+ dwarf 5 home 0 role Free at 38,5,46,5 plan Wait walk None carry -1 delivered 17
+ dwarf 6 home 0 role Free at 38,5,47,5 plan Wait walk None carry -1 delivered 7
+ dwarf 7 home 0 role Free at 38,5,48,5 plan - walk None carry -1 delivered 12
+ dwarf 8 home 1 role Watch at 48,5,40,5 plan - walk None carry -1 delivered 0
+ dwarf 9 home 1 role Carrier at 27,613525390625,35,788818359375 plan Walk walk Walking carry 1 delivered 29
+ dwarf 10 home 1 role Free at 46,2939453125,45,356689453125 plan Walk walk Walking carry -1 delivered 34
+ dwarf 11 home 1 role Worker at 52,5,48,5 plan Wait walk None carry -1 delivered 0
+ dwarf 12 home 1 role Worker at 58,781494140625,47,0322265625 plan Walk walk Walking carry -1 delivered 0
+ dwarf 13 home 1 role Worker at 53,086181640625,38,431640625 plan Walk walk Walking carry -1 delivered 0
+ dwarf 14 home 2 role Watch at 45,5,31,5 plan - walk None carry -1 delivered 0
+ dwarf 15 home 2 role Carrier at 38,7958984375,45,174560546875 plan Walk walk Walking carry 1 delivered 20
+ dwarf 16 home 2 role Worker at 36,5,16,5 plan Wait walk None carry -1 delivered 0
+ dwarf 17 home 2 role Worker at 51,5,35,5 plan Wait walk None carry -1 delivered 0
+ dwarf 18 home 2 role Carrier at 33,10546875,42,5 plan Walk walk Walking carry -1 delivered 18
+ dwarf 19 home 2 role Carrier at 31,663330078125,44,529541015625 plan Walk walk Walking carry 0 delivered 21
+ dwarf 20 home 3 role Watch at 31,5,44,5 plan Wait walk None carry -1 delivered 0
+ dwarf 21 home 3 role Free at 31,5,45,5 plan Wait walk None carry -1 delivered 2
+ dwarf 22 home 3 role Free at 31,5,46,5 plan Wait walk None carry -1 delivered 2
+ dwarf 23 home 3 role Free at 29,5,43,5 plan Wait walk None carry -1 delivered 7
+ dwarf 24 home 3 role Free at 30,5,43,5 plan Wait walk None carry -1 delivered 10
+ dwarf 25 home 3 role Free at 31,5,43,5 plan Wait walk None carry -1 delivered 8
+ 
+  Bestanden BenchReport_32Minutes(4) [1 s]
+ layout Holzfeuer: Ok
+ layout Steinfeuer: Ok
+ layout Holzfäller Nord: Unreachable
+ layout Holzfäller Süd: Ok
+ layout Förster: Ok
+ layout Jäger: Ok
+ layout Steinbruch: QuarryNoRockNear
+ small fires 4; at 390 s (the test's day part): delivered 25/7/2, sites done 2 of the list, dwarves 18
+ violation: none
+ ms total 1379, dwarves 20, own tiles 940
+ delivered log/stone/game 146/82/22; produced 128/79/27
+ sites done 15, jobs 256/250/0, way failures 4, replans 1, budget-hit ticks 0
+ detour by length 365 permille
+ detour by time 160 permille over 512 carry walks
+ sub-cells bent/visible/firm 285/139/389
+ layout Holzfäller Nord at 51,34 (the test: 53,36)
+ layout Steinbruch at 36,15 (the test: 46,25)
+ 0 site Neues Feuer ordered
+ 0 site Sägewerk ordered
+ site Lager am Holzfeuer at 43,42 (the test: 43,41)
+ 2831 site Lager am Holzfeuer ordered
+ 3911 site Brunnen ordered
+ 5931 site Wachhaus ordered
+ 6601 site Mühle ordered
+ 9221 site Räucherhaus ordered
+ 9851 site Brauerei ordered
+ Neues Feuer: ordered 0 s, started 0 s, finished 237 s
+ Sägewerk: ordered 0 s, started 100 s, finished 345 s
+ Lager am Holzfeuer: ordered 283 s, started 296 s, finished 547 s
+ Brunnen: ordered 391 s, started 397 s, finished 614 s
+ Wachhaus: ordered 593 s, started 609 s, finished 876 s
+ Mühle: ordered 660 s, started 662 s, finished 939 s
+ Räucherhaus: ordered 922 s, started 928 s, finished 1093 s
+ Brauerei: ordered 985 s, started 988 s, finished 1202 s
+ fire 0: residents 8, burned 21, hungry 0 s, store 5,5,4
+ fire 1: residents 4, burned 12, hungry 0 s, store 12,0,20
+ fire 2: residents 4, burned 12, hungry 0 s, store 20,18,0
+ fire 3: residents 4, burned 11, hungry 0 s, store 2,0,0
+ building 0 heart_fire at 40,47 site False worker -1 home -1 made 0 spot 0,0 drop 40,5,48,5
+ building 1 store at 42,47 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,48,5
+ building 2 hearth_wooden at 49,40 site False worker -1 home -1 made 0 spot 0,0 drop 49,5,41,5
+ building 3 hearth_wooden at 46,31 site False worker -1 home -1 made 0 spot 0,0 drop 46,5,32,5
+ building 4 woodcutter at 51,34 site False worker 15 home 2 made 64 spot 0,0 drop 51,5,35,5 store 4,0,0 in 0,0,0
+ building 5 woodcutter at 53,43 site False worker 11 home 1 made 64 spot 0,0 drop 53,5,44,5 store 0,0,0 in 0,0,0
+ building 6 forester at 47,36 site False worker 9 home 1 made 30 spot 0,0 drop 47,5,37,5 store 0,0,0 in 0,0,0
+ building 7 hunter at 52,47 site False worker 10 home 1 made 27 spot 47,5,44,5 drop 52,5,48,5 store 0,0,5 in 0,0,0
+ building 8 quarry at 36,15 site False worker 14 home 2 made 78 spot 33,5,18,5 drop 36,5,16,5 store 0,4,0 in 0,0,0
+ building 9 hearth_wooden at 30,44 site False worker -1 home -1 made 0 spot 0,0 drop 30,5,45,5 store 0,0,0 in 0,0,0
+ building 10 sawmill at 44,52 site False worker -1 home -1 made 0 spot 0,0 drop 44,5,53,5 store 0,0,0 in 0,0,0
+ building 11 store at 43,42 site False worker -1 home -1 made 0 spot 0,0 drop 43,5,43,5 store 0,0,0 in 0,0,0
+ building 12 well at 36,51 site False worker -1 home -1 made 0 spot 0,0 drop 36,5,52,5 store 0,0,0 in 0,0,0
+ building 13 guardhouse at 42,30 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,31,5 store 0,0,0 in 0,0,0
+ building 14 mill at 48,51 site False worker -1 home -1 made 0 spot 0,0 drop 48,5,52,5 store 0,0,0 in 0,0,0
+ building 15 smokehouse at 38,41 site False worker -1 home -1 made 0 spot 0,0 drop 38,5,42,5 store 0,0,0 in 0,0,0
+ building 16 brewery at 33,49 site False worker -1 home -1 made 0 spot 0,0 drop 33,5,50,5 store 0,0,0 in 0,0,0
+ dwarf 0 home 0 role Watch at 39,5,48,5 plan - walk None carry -1 delivered 0
+ dwarf 1 home 0 role Carrier at 50,63818359375,42,354248046875 plan Walk walk Walking carry 0 delivered 24
+ dwarf 2 home 0 role Free at 39,5,49,5 plan Wait walk None carry -1 delivered 17
+ dwarf 3 home 0 role Free at 40,5,49,5 plan Wait walk None carry -1 delivered 25
+ dwarf 4 home 0 role Carrier at 38,5,48,345458984375 plan Walk walk Walking carry 1 delivered 23
+ dwarf 5 home 0 role Carrier at 51,5,40,7841796875 plan Walk walk Walking carry 0 delivered 21
+ dwarf 6 home 0 role Carrier at 39,966796875,41,587646484375 plan Walk walk Walking carry 0 delivered 26
+ dwarf 7 home 0 role Free at 38,5,48,5 plan Wait walk None carry -1 delivered 24
+ dwarf 8 home 1 role Watch at 48,5,40,5 plan - walk None carry -1 delivered 0
+ dwarf 9 home 1 role Worker at 47,5,37,5 plan Wait walk None carry -1 delivered 0
+ dwarf 10 home 1 role Worker at 52,5,48,5 plan Wait walk None carry -1 delivered 0
+ dwarf 11 home 1 role Worker at 59,75,47,5 plan Wait walk None carry -1 delivered 0
+ dwarf 12 home 2 role Watch at 45,5,31,5 plan - walk None carry -1 delivered 0
+ dwarf 13 home 2 role Free at 47,5,32,0791015625 plan Walk walk Walking carry -1 delivered 28
+ dwarf 14 home 2 role Worker at 35,37353515625,17,251220703125 plan Walk walk Walking carry 1 delivered 0
+ dwarf 15 home 2 role Worker at 54,895751953125,32,351318359375 plan Walk walk Walking carry -1 delivered 0
+ dwarf 16 home 3 role Watch at 31,5,44,5 plan Wait walk None carry -1 delivered 0
+ dwarf 17 home 3 role Carrier at 26,893310546875,38,189697265625 plan Walk walk Walking carry 1 delivered 22
+ dwarf 18 home 3 role Free at 31,5,46,5 plan Wait walk None carry -1 delivered 20
+ dwarf 19 home 3 role Carrier at 29,824951171875,28,68212890625 plan Walk walk Walking carry -1 delivered 20
+ 
+     Bestanden: 5
+ Gesamtzeit: 12,8234 Sekunden

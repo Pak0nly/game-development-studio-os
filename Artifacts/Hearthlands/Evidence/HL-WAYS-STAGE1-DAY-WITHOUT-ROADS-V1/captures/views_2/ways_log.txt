@@ -1,0 +1,17 @@
+0.0 ways game on Testtal: 8 dwarves, own land 441 tiles, bench True, small fires 6 dwarves, arrival EveryFireWithRoom, path to road True, look look on: day 6.0 min, night 4.0 min, start 8.0 h; lights 7 (fires 1, lamps 4, waypoint fires 2, lanterns 0); river True; fog High; yards on 2 foundations (325 ring cells); seat logs 0; built in 9.4 s
+0.1 fire hearth_wooden at 49,40 finished; own land 784 tiles
+0.1 fire hearth_wooden at 46,31 finished; own land 784 tiles
+0.1 building woodcutter at 51,34 finished; own land 784 tiles
+0.1 building woodcutter at 53,43 finished; own land 784 tiles
+0.1 building forester at 47,36 finished; own land 784 tiles
+0.1 building hunter at 52,47 finished; own land 784 tiles
+0.1 host refused the finished model quarry at 36,15
+0.1 shot ways_start_tag 1600x900 dwarves drawn 20 tick 1
+240.1 fire hearth_wooden at 30,44 finished; own land 940 tiles
+240.1 shot ways_4min_tag 1600x900 dwarves drawn 11 tick 2401
+240.1 shot ways_herzfeuer_tuerfackel 1600x900 dwarves drawn 3 tick 2401
+240.1 preview hearth_wooden at (30.50, 44.50): Blocked (0 % outside)
+240.1 shot ways_vorschau_feuer_furt 1600x900 dwarves drawn 6 tick 2401
+240.1 preview hearth_wooden at (20.50, 40.50): FireTileNotOwn (0 % outside)
+240.1 shot ways_vorschau_feuer_zu_weit 1600x900 dwarves drawn 6 tick 2401
+240.1 capture done
