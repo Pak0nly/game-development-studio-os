@@ -1,0 +1,28 @@
+0.0 ways game on Testtal: 8 dwarves, own land 441 tiles, bench False, small fires 6 dwarves, arrival EveryFireWithRoom, path to road True, look look on: day 6.0 min, night 4.0 min, start 8.0 h; lights 7 (fires 1, lamps 4, waypoint fires 2, lanterns 0); river True; fog High; yards on 2 foundations (380 ring cells); seat logs 0; built in 9.7 s
+0.1 player site woodcutter at 42,42
+0.1 player site forester at 46,44
+0.1 player site sawmill at 43,49
+0.1 shot orte_vorher 1600x900 dwarves drawn 8 tick 1
+2.1 shot orte_baustellen 1600x900 dwarves drawn 8 tick 21
+2.1 pads sites: [39,45 side 3 level 10.01] [42,42 side 1 level 9.99] [43,48 side 2 level 9.99]
+27.1 building woodcutter at 42,42 finished; own land 441 tiles
+32.1 building forester at 46,44 finished; own land 441 tiles
+52.1 building sawmill at 43,49 finished; own land 441 tiles
+602.1 shot orte_fertig_10min 1600x900 dwarves drawn 8 tick 6021
+602.1 pads finished: [39,45 side 3 level 10.01] [42,42 side 1 level 9.99] [43,48 side 2 level 9.99]
+602.1 shot orte_nah_woodcutter 1600x900 dwarves drawn 2 tick 6021
+602.1 shot orte_nah_forester 1600x900 dwarves drawn 2 tick 6021
+602.1 shot orte_nah_sawmill 1600x900 dwarves drawn 6 tick 6021
+602.1 shot herzfeuer_hof 1600x900 dwarves drawn 7 tick 6021
+602.1 ways building heart_fire at 40,47 finished started -1 finished -1
+602.1 ways building store at 42,47 finished started -1 finished -1
+602.1 ways building woodcutter at 42,42 finished started 5 finished 235
+602.1 ways building forester at 46,44 finished started 10 finished 305
+602.1 ways building sawmill at 43,49 finished started 90 finished 485
+602.1 quarry views: farthest walk 28.0 tiles at (34.50, 40.50), nearest 24.4 at (30.50, 41.50), refused at (40.50, 50.50)
+602.1 preview quarry at (34.50, 40.50): Ok (0 % outside) face 32,22; note: Steinbruch: Erlaubt. Der Steinhauer geht 28 Felder zu Fuß zum Fels (höchstens 28).
+602.1 shot orte_steinbruch_vorschau 1600x900 dwarves drawn 6 tick 6021
+637.1 building quarry at 34,40 finished; own land 441 tiles
+1202.1 shot orte_steinbruch_10min 1600x900 dwarves drawn 6 tick 12021
+1202.1 quarry finished made 5 stones; delivered stones 5
+1202.1 capture done

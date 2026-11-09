@@ -1,0 +1,718 @@
+  Wiederherzustellende Projekte werden ermittelt...
+  Alle Projekte sind für die Wiederherstellung auf dem neuesten Stand.
+  Hearthlands.Core -> C:\GameDev\Hearthlands\CoreBuild\Hearthlands.Core\bin\Debug\netstandard2.1\Hearthlands.Core.dll
+  Hearthlands.Core.Runner -> C:\GameDev\Hearthlands\CoreBuild\Hearthlands.Core.Runner\bin\Debug\net8.0\Hearthlands.Core.Runner.dll
+  Hearthlands.Core.Tests -> C:\GameDev\Hearthlands\CoreBuild\Hearthlands.Core.Tests\bin\Debug\net8.0\Hearthlands.Core.Tests.dll
+Testlauf für "C:\GameDev\Hearthlands\CoreBuild\Hearthlands.Core.Tests\bin\Debug\net8.0\Hearthlands.Core.Tests.dll" (.NETCoreApp,Version=v8.0)
+VSTest-Version 17.11.1 (x64)
+
+Die Testausführung wird gestartet, bitte warten...
+Insgesamt 1 Testdateien stimmten mit dem angegebenen Muster überein.
+C:\GameDev\Hearthlands\CoreBuild\Hearthlands.Core.Tests\bin\Debug\net8.0\Hearthlands.Core.Tests.dll
+NUnit Adapter 4.6.0.0: Test execution started
+Running selected tests in C:\GameDev\Hearthlands\CoreBuild\Hearthlands.Core.Tests\bin\Debug\net8.0\Hearthlands.Core.Tests.dll
+   NUnit3TestExecutor discovered 8 of 8 NUnit test cases using Current Discovery mode, Explicit run
+layout Holzfeuer: Ok
+layout Steinfeuer: Ok
+layout Holzfäller Nord: Unreachable
+layout Holzfäller Süd: Ok
+layout Förster: Ok
+layout Jäger: Ok
+layout Steinbruch: QuarryNoRockInReach
+small fires 6; at 390 s (the test's day part): delivered 36/10/7, sites done 4 of the list, dwarves 25
+violation: none
+ms total 3182, dwarves 26, own tiles 940
+delivered log/stone/game 156/78/22; produced 120/64/27
+sites done 15, jobs 260/256/0, way failures 5, replans 2, budget-hit ticks 0
+detour by length 565 permille
+detour by time 274 permille over 490 carry walks
+sub-cells bent/visible/firm 230/101/331
+layout Holzfäller Nord at 51,34 (the test: 53,36)
+layout Steinbruch at 39,16 (the test: 46,25)
+0 site Neues Feuer ordered
+0 site Sägewerk ordered
+site Lager am Holzfeuer at 44,40 (the test: 43,41)
+1181 site Lager am Holzfeuer ordered
+1731 site Brunnen ordered
+2981 site Wachhaus ordered
+3911 site Mühle ordered
+5691 site Räucherhaus ordered
+5701 site Brauerei ordered
+Neues Feuer: ordered 0 s, started 0 s, finished 72 s
+Sägewerk: ordered 0 s, started 40 s, finished 127 s
+Lager am Holzfeuer: ordered 118 s, started 119 s, finished 252 s
+Brunnen: ordered 173 s, started 175 s, finished 345 s
+Wachhaus: ordered 298 s, started 299 s, finished 485 s
+Mühle: ordered 391 s, started 392 s, finished 523 s
+Räucherhaus: ordered 569 s, started 570 s, finished 600 s
+Brauerei: ordered 570 s, started 574 s, finished 724 s
+fire 0: residents 8, burned 21, hungry 0 s, store 5,6,4
+fire 1: residents 6, burned 12, hungry 0 s, store 12,0,20
+fire 2: residents 6, burned 12, hungry 0 s, store 20,18,0
+fire 3: residents 6, burned 12, hungry 0 s, store 3,0,0
+building 0 heart_fire at 40,47 site False worker -1 home -1 made 0 spot 0,0 drop 40,5,48,5
+building 1 store at 42,47 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,48,5
+building 2 hearth_wooden at 49,40 site False worker -1 home -1 made 0 spot 0,0 drop 49,5,41,5
+building 3 hearth_wooden at 46,31 site False worker -1 home -1 made 0 spot 0,0 drop 46,5,32,5
+building 4 woodcutter at 51,34 site False worker 17 home 2 made 54 spot 0,0 drop 51,5,35,5 store 5,0,0 in 0,0,0
+building 5 woodcutter at 53,43 site False worker 12 home 1 made 66 spot 0,0 drop 53,5,44,5 store 0,0,0 in 0,0,0
+building 6 forester at 47,36 site False worker 13 home 1 made 30 spot 0,0 drop 47,5,37,5 store 0,0,0 in 0,0,0
+building 7 hunter at 52,47 site False worker 11 home 1 made 27 spot 47,5,44,5 drop 52,5,48,5 store 0,0,5 in 0,0,0
+building 8 quarry at 39,16 site False worker 15 home 2 made 63 spot 33,5,18,5 drop 39,5,17,5 store 0,4,0 in 0,0,0
+building 9 hearth_wooden at 30,44 site False worker -1 home -1 made 0 spot 0,0 drop 30,5,45,5 store 0,0,0 in 0,0,0
+building 10 sawmill at 44,52 site False worker -1 home -1 made 0 spot 0,0 drop 44,5,53,5 store 0,0,0 in 0,0,0
+building 11 store at 44,40 site False worker -1 home -1 made 0 spot 0,0 drop 44,5,41,5 store 0,0,0 in 0,0,0
+building 12 well at 36,51 site False worker -1 home -1 made 0 spot 0,0 drop 36,5,52,5 store 0,0,0 in 0,0,0
+building 13 guardhouse at 42,30 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,31,5 store 0,0,0 in 0,0,0
+building 14 mill at 48,51 site False worker -1 home -1 made 0 spot 0,0 drop 48,5,52,5 store 0,0,0 in 0,0,0
+building 15 smokehouse at 38,41 site False worker -1 home -1 made 0 spot 0,0 drop 38,5,42,5 store 0,0,0 in 0,0,0
+building 16 brewery at 33,49 site False worker -1 home -1 made 0 spot 0,0 drop 33,5,50,5 store 0,0,0 in 0,0,0
+dwarf 0 home 0 role Watch at 40,25,46,2998046875 plan - walk None carry -1 delivered 0
+dwarf 1 home 0 role Carrier at 28,7939453125,31,0419921875 plan Walk walk Walking carry 1 delivered 28
+dwarf 2 home 0 role Carrier at 53,5,44,5 plan Wait walk None carry 0 delivered 18
+dwarf 3 home 0 role Carrier at 45,10986328125,47,64697265625 plan Walk walk Walking carry 0 delivered 18
+dwarf 4 home 0 role Free at 40,5,48,5 plan - walk None carry -1 delivered 21
+dwarf 5 home 0 role Free at 30,5,45,5 plan Wait walk None carry -1 delivered 21
+dwarf 6 home 0 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 7
+dwarf 7 home 0 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 20
+dwarf 8 home 1 role Watch at 48,5,40,5 plan - walk None carry -1 delivered 0
+dwarf 9 home 1 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 22
+dwarf 10 home 1 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 12
+dwarf 11 home 1 role Worker at 52,5,48,5 plan Wait walk None carry -1 delivered 0
+dwarf 12 home 1 role Worker at 55,902587890625,43,349609375 plan Walk walk Walking carry -1 delivered 0
+dwarf 13 home 1 role Worker at 47,5,37,5 plan Wait walk None carry -1 delivered 0
+dwarf 14 home 2 role Watch at 45,5,31,5 plan - walk None carry -1 delivered 0
+dwarf 15 home 2 role Worker at 37,8505859375,17,77490234375 plan Walk walk Walking carry 1 delivered 0
+dwarf 16 home 2 role Carrier at 35,74853515625,19,446044921875 plan Walk walk Walking carry -1 delivered 20
+dwarf 17 home 2 role Worker at 51,5,35,5 plan Wait walk None carry -1 delivered 0
+dwarf 18 home 2 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 4
+dwarf 19 home 2 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 11
+dwarf 20 home 3 role Watch at 31,5,44,5 plan Wait walk None carry -1 delivered 0
+dwarf 21 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 16
+dwarf 22 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 18
+dwarf 23 home 3 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 2
+dwarf 24 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 10
+dwarf 25 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 8
+
+
+  Bestanden BenchReport_32Minutes(6) [3 s]
+  Standardausgabemeldungen:
+ layout Holzfeuer: Ok
+ layout Steinfeuer: Ok
+ layout Holzfäller Nord: Unreachable
+ layout Holzfäller Süd: Ok
+ layout Förster: Ok
+ layout Jäger: Ok
+ layout Steinbruch: QuarryNoRockInReach
+ small fires 6; at 390 s (the test's day part): delivered 36/10/7, sites done 4 of the list, dwarves 25
+ violation: none
+ ms total 3182, dwarves 26, own tiles 940
+ delivered log/stone/game 156/78/22; produced 120/64/27
+ sites done 15, jobs 260/256/0, way failures 5, replans 2, budget-hit ticks 0
+ detour by length 565 permille
+ detour by time 274 permille over 490 carry walks
+ sub-cells bent/visible/firm 230/101/331
+ layout Holzfäller Nord at 51,34 (the test: 53,36)
+ layout Steinbruch at 39,16 (the test: 46,25)
+ 0 site Neues Feuer ordered
+ 0 site Sägewerk ordered
+ site Lager am Holzfeuer at 44,40 (the test: 43,41)
+ 1181 site Lager am Holzfeuer ordered
+ 1731 site Brunnen ordered
+ 2981 site Wachhaus ordered
+ 3911 site Mühle ordered
+ 5691 site Räucherhaus ordered
+ 5701 site Brauerei ordered
+ Neues Feuer: ordered 0 s, started 0 s, finished 72 s
+ Sägewerk: ordered 0 s, started 40 s, finished 127 s
+ Lager am Holzfeuer: ordered 118 s, started 119 s, finished 252 s
+ Brunnen: ordered 173 s, started 175 s, finished 345 s
+ Wachhaus: ordered 298 s, started 299 s, finished 485 s
+ Mühle: ordered 391 s, started 392 s, finished 523 s
+ Räucherhaus: ordered 569 s, started 570 s, finished 600 s
+ Brauerei: ordered 570 s, started 574 s, finished 724 s
+ fire 0: residents 8, burned 21, hungry 0 s, store 5,6,4
+ fire 1: residents 6, burned 12, hungry 0 s, store 12,0,20
+ fire 2: residents 6, burned 12, hungry 0 s, store 20,18,0
+ fire 3: residents 6, burned 12, hungry 0 s, store 3,0,0
+ building 0 heart_fire at 40,47 site False worker -1 home -1 made 0 spot 0,0 drop 40,5,48,5
+ building 1 store at 42,47 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,48,5
+ building 2 hearth_wooden at 49,40 site False worker -1 home -1 made 0 spot 0,0 drop 49,5,41,5
+ building 3 hearth_wooden at 46,31 site False worker -1 home -1 made 0 spot 0,0 drop 46,5,32,5
+ building 4 woodcutter at 51,34 site False worker 17 home 2 made 54 spot 0,0 drop 51,5,35,5 store 5,0,0 in 0,0,0
+ building 5 woodcutter at 53,43 site False worker 12 home 1 made 66 spot 0,0 drop 53,5,44,5 store 0,0,0 in 0,0,0
+ building 6 forester at 47,36 site False worker 13 home 1 made 30 spot 0,0 drop 47,5,37,5 store 0,0,0 in 0,0,0
+ building 7 hunter at 52,47 site False worker 11 home 1 made 27 spot 47,5,44,5 drop 52,5,48,5 store 0,0,5 in 0,0,0
+ building 8 quarry at 39,16 site False worker 15 home 2 made 63 spot 33,5,18,5 drop 39,5,17,5 store 0,4,0 in 0,0,0
+ building 9 hearth_wooden at 30,44 site False worker -1 home -1 made 0 spot 0,0 drop 30,5,45,5 store 0,0,0 in 0,0,0
+ building 10 sawmill at 44,52 site False worker -1 home -1 made 0 spot 0,0 drop 44,5,53,5 store 0,0,0 in 0,0,0
+ building 11 store at 44,40 site False worker -1 home -1 made 0 spot 0,0 drop 44,5,41,5 store 0,0,0 in 0,0,0
+ building 12 well at 36,51 site False worker -1 home -1 made 0 spot 0,0 drop 36,5,52,5 store 0,0,0 in 0,0,0
+ building 13 guardhouse at 42,30 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,31,5 store 0,0,0 in 0,0,0
+ building 14 mill at 48,51 site False worker -1 home -1 made 0 spot 0,0 drop 48,5,52,5 store 0,0,0 in 0,0,0
+ building 15 smokehouse at 38,41 site False worker -1 home -1 made 0 spot 0,0 drop 38,5,42,5 store 0,0,0 in 0,0,0
+ building 16 brewery at 33,49 site False worker -1 home -1 made 0 spot 0,0 drop 33,5,50,5 store 0,0,0 in 0,0,0
+ dwarf 0 home 0 role Watch at 40,25,46,2998046875 plan - walk None carry -1 delivered 0
+ dwarf 1 home 0 role Carrier at 28,7939453125,31,0419921875 plan Walk walk Walking carry 1 delivered 28
+ dwarf 2 home 0 role Carrier at 53,5,44,5 plan Wait walk None carry 0 delivered 18
+ dwarf 3 home 0 role Carrier at 45,10986328125,47,64697265625 plan Walk walk Walking carry 0 delivered 18
+ dwarf 4 home 0 role Free at 40,5,48,5 plan - walk None carry -1 delivered 21
+ dwarf 5 home 0 role Free at 30,5,45,5 plan Wait walk None carry -1 delivered 21
+ dwarf 6 home 0 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 7
+ dwarf 7 home 0 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 20
+ dwarf 8 home 1 role Watch at 48,5,40,5 plan - walk None carry -1 delivered 0
+ dwarf 9 home 1 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 22
+ dwarf 10 home 1 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 12
+ dwarf 11 home 1 role Worker at 52,5,48,5 plan Wait walk None carry -1 delivered 0
+ dwarf 12 home 1 role Worker at 55,902587890625,43,349609375 plan Walk walk Walking carry -1 delivered 0
+ dwarf 13 home 1 role Worker at 47,5,37,5 plan Wait walk None carry -1 delivered 0
+ dwarf 14 home 2 role Watch at 45,5,31,5 plan - walk None carry -1 delivered 0
+ dwarf 15 home 2 role Worker at 37,8505859375,17,77490234375 plan Walk walk Walking carry 1 delivered 0
+ dwarf 16 home 2 role Carrier at 35,74853515625,19,446044921875 plan Walk walk Walking carry -1 delivered 20
+ dwarf 17 home 2 role Worker at 51,5,35,5 plan Wait walk None carry -1 delivered 0
+ dwarf 18 home 2 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 4
+ dwarf 19 home 2 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 11
+ dwarf 20 home 3 role Watch at 31,5,44,5 plan Wait walk None carry -1 delivered 0
+ dwarf 21 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 16
+ dwarf 22 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 18
+ dwarf 23 home 3 role Free at 33,5,50,5 plan Wait walk None carry -1 delivered 2
+ dwarf 24 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 10
+ dwarf 25 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 8
+ 
+
+
+layout Holzfeuer: Ok
+layout Steinfeuer: Ok
+layout Holzfäller Nord: Unreachable
+layout Holzfäller Süd: Ok
+layout Förster: Ok
+layout Jäger: Ok
+layout Steinbruch: QuarryNoRockInReach
+small fires 4; at 390 s (the test's day part): delivered 32/6/3, sites done 2 of the list, dwarves 20
+violation: none
+ms total 3103, dwarves 20, own tiles 940
+delivered log/stone/game 158/79/22; produced 122/65/27
+sites done 15, jobs 263/259/0, way failures 1, replans 7, budget-hit ticks 0
+detour by length 502 permille
+detour by time 238 permille over 505 carry walks
+sub-cells bent/visible/firm 165/131/345
+layout Holzfäller Nord at 51,34 (the test: 53,36)
+layout Steinbruch at 39,16 (the test: 46,25)
+0 site Neues Feuer ordered
+0 site Sägewerk ordered
+1811 site Lager am Holzfeuer ordered
+1821 site Brunnen ordered
+4731 site Wachhaus ordered
+4741 site Mühle ordered
+7081 site Räucherhaus ordered
+7091 site Brauerei ordered
+Neues Feuer: ordered 0 s, started 0 s, finished 100 s
+Sägewerk: ordered 0 s, started 45 s, finished 135 s
+Lager am Holzfeuer: ordered 181 s, started 190 s, finished 399 s
+Brunnen: ordered 182 s, started 210 s, finished 427 s
+Wachhaus: ordered 473 s, started 475 s, finished 663 s
+Mühle: ordered 474 s, started 477 s, finished 658 s
+Räucherhaus: ordered 708 s, started 710 s, finished 873 s
+Brauerei: ordered 709 s, started 712 s, finished 812 s
+fire 0: residents 8, burned 21, hungry 0 s, store 6,5,4
+fire 1: residents 4, burned 12, hungry 0 s, store 14,0,20
+fire 2: residents 4, burned 12, hungry 0 s, store 20,18,0
+fire 3: residents 4, burned 12, hungry 0 s, store 2,0,0
+building 0 heart_fire at 40,47 site False worker -1 home -1 made 0 spot 0,0 drop 40,5,48,5
+building 1 store at 42,47 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,48,5
+building 2 hearth_wooden at 49,40 site False worker -1 home -1 made 0 spot 0,0 drop 49,5,41,5
+building 3 hearth_wooden at 46,31 site False worker -1 home -1 made 0 spot 0,0 drop 46,5,32,5
+building 4 woodcutter at 51,34 site False worker 15 home 2 made 56 spot 0,0 drop 51,5,35,5 store 5,0,0 in 0,0,0
+building 5 woodcutter at 53,43 site False worker 11 home 1 made 65 spot 0,0 drop 53,5,44,5 store 0,0,0 in 0,0,0
+building 6 forester at 47,36 site False worker 9 home 1 made 29 spot 0,0 drop 47,5,37,5 store 0,0,0 in 0,0,0
+building 7 hunter at 52,47 site False worker 10 home 1 made 27 spot 47,5,44,5 drop 52,5,48,5 store 0,0,5 in 0,0,0
+building 8 quarry at 39,16 site False worker 13 home 2 made 64 spot 33,5,18,5 drop 39,5,17,5 store 0,4,0 in 0,0,0
+building 9 hearth_wooden at 30,44 site False worker -1 home -1 made 0 spot 0,0 drop 30,5,45,5 store 0,0,0 in 0,0,0
+building 10 sawmill at 44,52 site False worker -1 home -1 made 0 spot 0,0 drop 44,5,53,5 store 0,0,0 in 0,0,0
+building 11 store at 43,41 site False worker -1 home -1 made 0 spot 0,0 drop 43,5,42,5 store 0,0,0 in 0,0,0
+building 12 well at 36,51 site False worker -1 home -1 made 0 spot 0,0 drop 36,5,52,5 store 0,0,0 in 0,0,0
+building 13 guardhouse at 42,30 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,31,5 store 0,0,0 in 0,0,0
+building 14 mill at 48,51 site False worker -1 home -1 made 0 spot 0,0 drop 48,5,52,5 store 0,0,0 in 0,0,0
+building 15 smokehouse at 38,41 site False worker -1 home -1 made 0 spot 0,0 drop 38,5,42,5 store 0,0,0 in 0,0,0
+building 16 brewery at 33,49 site False worker -1 home -1 made 0 spot 0,0 drop 33,5,50,5 store 0,0,0 in 0,0,0
+dwarf 0 home 0 role Watch at 40,25,46,2998046875 plan - walk None carry -1 delivered 0
+dwarf 1 home 0 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 30
+dwarf 2 home 0 role Carrier at 27,84130859375,36,669921875 plan Walk walk Walking carry -1 delivered 23
+dwarf 3 home 0 role Free at 30,5,45,5 plan Wait walk None carry -1 delivered 24
+dwarf 4 home 0 role Free at 49,5,41,5 plan Wait walk None carry -1 delivered 29
+dwarf 5 home 0 role Carrier at 49,424072265625,41,4697265625 plan Walk walk Walking carry 0 delivered 20
+dwarf 6 home 0 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 27
+dwarf 7 home 0 role Carrier at 39,22509765625,44,487060546875 plan Walk walk Walking carry 1 delivered 30
+dwarf 8 home 1 role Watch at 48,5,40,5 plan - walk None carry -1 delivered 0
+dwarf 9 home 1 role Worker at 53,5,39,5 plan Wait walk None carry -1 delivered 0
+dwarf 10 home 1 role Worker at 52,5,48,5 plan Wait walk None carry -1 delivered 0
+dwarf 11 home 1 role Worker at 48,412353515625,41,5 plan Walk walk Walking carry 0 delivered 0
+dwarf 12 home 2 role Watch at 45,5,31,5 plan - walk None carry -1 delivered 0
+dwarf 13 home 2 role Worker at 38,96240234375,17,5908203125 plan Walk walk Walking carry 1 delivered 0
+dwarf 14 home 2 role Carrier at 28,34423828125,33,072021484375 plan Walk walk Walking carry 1 delivered 21
+dwarf 15 home 2 role Worker at 51,5,35,5 plan Wait walk None carry -1 delivered 0
+dwarf 16 home 3 role Watch at 31,5,44,5 plan Wait walk None carry -1 delivered 0
+dwarf 17 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 16
+dwarf 18 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 15
+dwarf 19 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 24
+
+
+  Bestanden BenchReport_32Minutes(4) [3 s]
+  Standardausgabemeldungen:
+ layout Holzfeuer: Ok
+ layout Steinfeuer: Ok
+ layout Holzfäller Nord: Unreachable
+ layout Holzfäller Süd: Ok
+ layout Förster: Ok
+ layout Jäger: Ok
+ layout Steinbruch: QuarryNoRockInReach
+ small fires 4; at 390 s (the test's day part): delivered 32/6/3, sites done 2 of the list, dwarves 20
+ violation: none
+ ms total 3103, dwarves 20, own tiles 940
+ delivered log/stone/game 158/79/22; produced 122/65/27
+ sites done 15, jobs 263/259/0, way failures 1, replans 7, budget-hit ticks 0
+ detour by length 502 permille
+ detour by time 238 permille over 505 carry walks
+ sub-cells bent/visible/firm 165/131/345
+ layout Holzfäller Nord at 51,34 (the test: 53,36)
+ layout Steinbruch at 39,16 (the test: 46,25)
+ 0 site Neues Feuer ordered
+ 0 site Sägewerk ordered
+ 1811 site Lager am Holzfeuer ordered
+ 1821 site Brunnen ordered
+ 4731 site Wachhaus ordered
+ 4741 site Mühle ordered
+ 7081 site Räucherhaus ordered
+ 7091 site Brauerei ordered
+ Neues Feuer: ordered 0 s, started 0 s, finished 100 s
+ Sägewerk: ordered 0 s, started 45 s, finished 135 s
+ Lager am Holzfeuer: ordered 181 s, started 190 s, finished 399 s
+ Brunnen: ordered 182 s, started 210 s, finished 427 s
+ Wachhaus: ordered 473 s, started 475 s, finished 663 s
+ Mühle: ordered 474 s, started 477 s, finished 658 s
+ Räucherhaus: ordered 708 s, started 710 s, finished 873 s
+ Brauerei: ordered 709 s, started 712 s, finished 812 s
+ fire 0: residents 8, burned 21, hungry 0 s, store 6,5,4
+ fire 1: residents 4, burned 12, hungry 0 s, store 14,0,20
+ fire 2: residents 4, burned 12, hungry 0 s, store 20,18,0
+ fire 3: residents 4, burned 12, hungry 0 s, store 2,0,0
+ building 0 heart_fire at 40,47 site False worker -1 home -1 made 0 spot 0,0 drop 40,5,48,5
+ building 1 store at 42,47 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,48,5
+ building 2 hearth_wooden at 49,40 site False worker -1 home -1 made 0 spot 0,0 drop 49,5,41,5
+ building 3 hearth_wooden at 46,31 site False worker -1 home -1 made 0 spot 0,0 drop 46,5,32,5
+ building 4 woodcutter at 51,34 site False worker 15 home 2 made 56 spot 0,0 drop 51,5,35,5 store 5,0,0 in 0,0,0
+ building 5 woodcutter at 53,43 site False worker 11 home 1 made 65 spot 0,0 drop 53,5,44,5 store 0,0,0 in 0,0,0
+ building 6 forester at 47,36 site False worker 9 home 1 made 29 spot 0,0 drop 47,5,37,5 store 0,0,0 in 0,0,0
+ building 7 hunter at 52,47 site False worker 10 home 1 made 27 spot 47,5,44,5 drop 52,5,48,5 store 0,0,5 in 0,0,0
+ building 8 quarry at 39,16 site False worker 13 home 2 made 64 spot 33,5,18,5 drop 39,5,17,5 store 0,4,0 in 0,0,0
+ building 9 hearth_wooden at 30,44 site False worker -1 home -1 made 0 spot 0,0 drop 30,5,45,5 store 0,0,0 in 0,0,0
+ building 10 sawmill at 44,52 site False worker -1 home -1 made 0 spot 0,0 drop 44,5,53,5 store 0,0,0 in 0,0,0
+ building 11 store at 43,41 site False worker -1 home -1 made 0 spot 0,0 drop 43,5,42,5 store 0,0,0 in 0,0,0
+ building 12 well at 36,51 site False worker -1 home -1 made 0 spot 0,0 drop 36,5,52,5 store 0,0,0 in 0,0,0
+ building 13 guardhouse at 42,30 site False worker -1 home -1 made 0 spot 0,0 drop 42,5,31,5 store 0,0,0 in 0,0,0
+ building 14 mill at 48,51 site False worker -1 home -1 made 0 spot 0,0 drop 48,5,52,5 store 0,0,0 in 0,0,0
+ building 15 smokehouse at 38,41 site False worker -1 home -1 made 0 spot 0,0 drop 38,5,42,5 store 0,0,0 in 0,0,0
+ building 16 brewery at 33,49 site False worker -1 home -1 made 0 spot 0,0 drop 33,5,50,5 store 0,0,0 in 0,0,0
+ dwarf 0 home 0 role Watch at 40,25,46,2998046875 plan - walk None carry -1 delivered 0
+ dwarf 1 home 0 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 30
+ dwarf 2 home 0 role Carrier at 27,84130859375,36,669921875 plan Walk walk Walking carry -1 delivered 23
+ dwarf 3 home 0 role Free at 30,5,45,5 plan Wait walk None carry -1 delivered 24
+ dwarf 4 home 0 role Free at 49,5,41,5 plan Wait walk None carry -1 delivered 29
+ dwarf 5 home 0 role Carrier at 49,424072265625,41,4697265625 plan Walk walk Walking carry 0 delivered 20
+ dwarf 6 home 0 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 27
+ dwarf 7 home 0 role Carrier at 39,22509765625,44,487060546875 plan Walk walk Walking carry 1 delivered 30
+ dwarf 8 home 1 role Watch at 48,5,40,5 plan - walk None carry -1 delivered 0
+ dwarf 9 home 1 role Worker at 53,5,39,5 plan Wait walk None carry -1 delivered 0
+ dwarf 10 home 1 role Worker at 52,5,48,5 plan Wait walk None carry -1 delivered 0
+ dwarf 11 home 1 role Worker at 48,412353515625,41,5 plan Walk walk Walking carry 0 delivered 0
+ dwarf 12 home 2 role Watch at 45,5,31,5 plan - walk None carry -1 delivered 0
+ dwarf 13 home 2 role Worker at 38,96240234375,17,5908203125 plan Walk walk Walking carry 1 delivered 0
+ dwarf 14 home 2 role Carrier at 28,34423828125,33,072021484375 plan Walk walk Walking carry 1 delivered 21
+ dwarf 15 home 2 role Worker at 51,5,35,5 plan Wait walk None carry -1 delivered 0
+ dwarf 16 home 3 role Watch at 31,5,44,5 plan Wait walk None carry -1 delivered 0
+ dwarf 17 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 16
+ dwarf 18 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 15
+ dwarf 19 home 3 role Free at 40,5,48,5 plan Wait walk None carry -1 delivered 24
+ 
+
+
+building hearth_wooden: log:4 ember:1 (hearth tier wooden: log:4 ember:1)
+building woodcutter: (none)
+building forester: board:2
+building hunter: board:2
+building fisher: board:2
+building quarry: board:3
+building sawmill: log:4
+building store: board:4 stone:2
+building well: board:1 stone:2
+building guardhouse: board:3 stone:2
+building mill: board:3 stone:2
+building smokehouse: board:2 stone:2
+building brewery: board:3 stone:2
+tier wooden: log:4 ember:1
+tier stone: board:2 stone:5 ember:1
+tier heart: (none)
+tier iron: ashlar:4 iron_bar:3 ember:1
+tier rune: ashlar:6 iron_bar:2 sky_stone:2 ember:1
+
+
+  Bestanden PrintGameDataBuildCosts [< 1 ms]
+  Standardausgabemeldungen:
+ building hearth_wooden: log:4 ember:1 (hearth tier wooden: log:4 ember:1)
+ building woodcutter: (none)
+ building forester: board:2
+ building hunter: board:2
+ building fisher: board:2
+ building quarry: board:3
+ building sawmill: log:4
+ building store: board:4 stone:2
+ building well: board:1 stone:2
+ building guardhouse: board:3 stone:2
+ building mill: board:3 stone:2
+ building smokehouse: board:2 stone:2
+ building brewery: board:3 stone:2
+ tier wooden: log:4 ember:1
+ tier stone: board:2 stone:5 ember:1
+ tier heart: (none)
+ tier iron: ashlar:4 iron_bar:3 ember:1
+ tier rune: ashlar:6 iron_bar:2 sky_stone:2 ember:1
+ 
+
+
+game,idle_rule,idle_walk_tiles,carry_jobs_done,mean_wait_for_carrier_s,mean_carry_walk_per_job_s,mean_delivery_s,sites_done,delivered_log_stone_game,last_site_finished_s
+bench,wait_in_place,0,256,0,0,54,9,54,9,15,156/78/22,724
+bench,back_to_fire,2023,261,0,1,54,0,54,0,15,158/81/22,775
+free,wait_in_place,0,94,0,3,23,2,23,6,5,54/20/20,86
+free,back_to_fire,122,94,0,3,23,9,24,2,5,54/20/20,84
+
+
+  Bestanden PrintIdleEffect [10 s]
+  Standardausgabemeldungen:
+ game,idle_rule,idle_walk_tiles,carry_jobs_done,mean_wait_for_carrier_s,mean_carry_walk_per_job_s,mean_delivery_s,sites_done,delivered_log_stone_game,last_site_finished_s
+ bench,wait_in_place,0,256,0,0,54,9,54,9,15,156/78/22,724
+ bench,back_to_fire,2023,261,0,1,54,0,54,0,15,158/81/22,775
+ free,wait_in_place,0,94,0,3,23,2,23,6,5,54/20/20,86
+ free,back_to_fire,122,94,0,3,23,9,24,2,5,54/20/20,84
+ 
+
+
+start: allowed quarry places 300, shortest walk 24,4 at 30,41; walks at 10/25/50 %: 29,8 / 32,6 / 36,8
+radius 12: 0 places at the start
+radius 16: 0 places at the start
+radius 18: 0 places at the start
+radius 20: 0 places at the start
+radius 22: 0 places at the start
+radius 24: 0 places at the start
+radius 28: 14 places at the start
+
+
+placed woodcutter at 42,42
+placed forester at 46,44
+placed sawmill at 43,49
+40 s: made 7 cancelled 0 wayfail 0 done 5 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 6,8,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill site builder 5 have 0,0,0 in 1,0,0 want 1,0,0 | roles Watch Worker Free Worker Free Builder Carrier Carrier
+70 s: made 8 cancelled 0 wayfail 0 done 6 d1 44,6484375,42,54541015625 Walking plan Walk next 240 gives True buildFirst True heart 6,8,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 2,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Carrier
+100 s: made 9 cancelled 0 wayfail 0 done 8 d1 44,75,44,5 None plan Wait next 240 gives True buildFirst True heart 7,7,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Carrier Free Free Free
+130 s: made 10 cancelled 0 wayfail 0 done 9 d1 44,92822265625,43,5 Walking plan Walk next 240 gives True buildFirst True heart 8,7,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+160 s: made 11 cancelled 0 wayfail 0 done 10 d1 42,778564453125,43,327880859375 Walking plan Walk next 240 gives True buildFirst True heart 9,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Carrier Free Free Free
+190 s: made 13 cancelled 0 wayfail 0 done 12 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 10,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+220 s: made 14 cancelled 0 wayfail 0 done 13 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 11,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+250 s: made 15 cancelled 0 wayfail 0 done 14 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 12,5,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+280 s: made 16 cancelled 0 wayfail 0 done 15 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 12,5,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+310 s: made 17 cancelled 0 wayfail 0 done 16 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 13,4,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+340 s: made 17 cancelled 0 wayfail 0 done 17 d1 43,746337890625,43,5 Walking plan Walk next 240 gives True buildFirst True heart 14,4,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Free Free Free Free
+370 s: made 18 cancelled 0 wayfail 0 done 18 d1 44,5185546875,42,727294921875 Walking plan Walk next 240 gives True buildFirst True heart 14,4,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Free Free Free Free
+400 s: made 19 cancelled 0 wayfail 0 done 19 d1 45,721435546875,45,34130859375 Walking plan Walk next 240 gives True buildFirst True heart 15,3,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Free Free Free Free
+430 s: made 20 cancelled 0 wayfail 0 done 19 d1 48,400634765625,43,5 Walking plan Walk next 240 gives True buildFirst True heart 15,3,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+460 s: made 21 cancelled 0 wayfail 0 done 20 d1 48,75,45,5 None plan Wait next 240 gives True buildFirst True heart 15,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+490 s: made 22 cancelled 0 wayfail 0 done 21 d1 49,75,43,5 None plan Wait next 240 gives True buildFirst True heart 16,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+520 s: made 23 cancelled 0 wayfail 0 done 22 d1 45,5,40,25 Walking plan Walk next 240 gives True buildFirst True heart 17,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+550 s: made 24 cancelled 0 wayfail 0 done 23 d1 47,9423828125,42 Walking plan Walk next 240 gives True buildFirst True heart 17,1,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+580 s: made 25 cancelled 0 wayfail 0 done 24 d1 42,818603515625,43,755126953125 Walking plan Walk next 240 gives True buildFirst True heart 18,1,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+610 s: made 25 cancelled 0 wayfail 0 done 25 d1 44,220458984375,45,220458984375 Walking plan Walk next 240 gives True buildFirst True heart 19,0,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Free Free Free Free
+
+
+  Bestanden PrintQuarryWalkFromTheStart [214 ms]
+  Standardausgabemeldungen:
+ start: allowed quarry places 300, shortest walk 24,4 at 30,41; walks at 10/25/50 %: 29,8 / 32,6 / 36,8
+ radius 12: 0 places at the start
+ radius 16: 0 places at the start
+ radius 18: 0 places at the start
+ radius 20: 0 places at the start
+ radius 22: 0 places at the start
+ radius 24: 0 places at the start
+ radius 28: 14 places at the start
+ 
+
+
+  Bestanden PrintSawmillGame(True) [662 ms]
+  Standardausgabemeldungen:
+ placed woodcutter at 42,42
+ placed forester at 46,44
+ placed sawmill at 43,49
+ 40 s: made 7 cancelled 0 wayfail 0 done 5 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 6,8,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill site builder 5 have 0,0,0 in 1,0,0 want 1,0,0 | roles Watch Worker Free Worker Free Builder Carrier Carrier
+ 70 s: made 8 cancelled 0 wayfail 0 done 6 d1 44,6484375,42,54541015625 Walking plan Walk next 240 gives True buildFirst True heart 6,8,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 2,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Carrier
+ 100 s: made 9 cancelled 0 wayfail 0 done 8 d1 44,75,44,5 None plan Wait next 240 gives True buildFirst True heart 7,7,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Carrier Free Free Free
+ 130 s: made 10 cancelled 0 wayfail 0 done 9 d1 44,92822265625,43,5 Walking plan Walk next 240 gives True buildFirst True heart 8,7,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 160 s: made 11 cancelled 0 wayfail 0 done 10 d1 42,778564453125,43,327880859375 Walking plan Walk next 240 gives True buildFirst True heart 9,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Carrier Free Free Free
+ 190 s: made 13 cancelled 0 wayfail 0 done 12 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 10,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 220 s: made 14 cancelled 0 wayfail 0 done 13 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 11,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 250 s: made 15 cancelled 0 wayfail 0 done 14 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 12,5,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 280 s: made 16 cancelled 0 wayfail 0 done 15 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 12,5,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 310 s: made 17 cancelled 0 wayfail 0 done 16 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 13,4,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 340 s: made 17 cancelled 0 wayfail 0 done 17 d1 43,746337890625,43,5 Walking plan Walk next 240 gives True buildFirst True heart 14,4,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Free Free Free Free
+ 370 s: made 18 cancelled 0 wayfail 0 done 18 d1 44,5185546875,42,727294921875 Walking plan Walk next 240 gives True buildFirst True heart 14,4,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Free Free Free Free
+ 400 s: made 19 cancelled 0 wayfail 0 done 19 d1 45,721435546875,45,34130859375 Walking plan Walk next 240 gives True buildFirst True heart 15,3,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Free Free Free Free
+ 430 s: made 20 cancelled 0 wayfail 0 done 19 d1 48,400634765625,43,5 Walking plan Walk next 240 gives True buildFirst True heart 15,3,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 460 s: made 21 cancelled 0 wayfail 0 done 20 d1 48,75,45,5 None plan Wait next 240 gives True buildFirst True heart 15,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 490 s: made 22 cancelled 0 wayfail 0 done 21 d1 49,75,43,5 None plan Wait next 240 gives True buildFirst True heart 16,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 520 s: made 23 cancelled 0 wayfail 0 done 22 d1 45,5,40,25 Walking plan Walk next 240 gives True buildFirst True heart 17,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 550 s: made 24 cancelled 0 wayfail 0 done 23 d1 47,9423828125,42 Walking plan Walk next 240 gives True buildFirst True heart 17,1,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 580 s: made 25 cancelled 0 wayfail 0 done 24 d1 42,818603515625,43,755126953125 Walking plan Walk next 240 gives True buildFirst True heart 18,1,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Carrier Worker Free Free Free Free
+ 610 s: made 25 cancelled 0 wayfail 0 done 25 d1 44,220458984375,45,220458984375 Walking plan Walk next 240 gives True buildFirst True heart 19,0,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Worker Free Worker Free Free Free Free
+ 
+
+
+placed woodcutter at 42,42
+placed forester at 46,44
+placed sawmill at 43,49
+40 s: made 7 cancelled 0 wayfail 0 done 5 d1 41,576416015625,49,21728515625 Walking plan Walk next 240 gives True buildFirst True heart 6,8,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill site builder 7 have 0,0,0 in 1,0,0 want 1,0,0 | roles Watch Carrier Free Worker Carrier Worker Free Builder
+70 s: made 8 cancelled 0 wayfail 0 done 6 d1 42,01171875,43,6220703125 Walking plan Walk next 240 gives True buildFirst True heart 6,8,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Carrier Worker Free Free
+100 s: made 10 cancelled 0 wayfail 0 done 8 d1 40,13330078125,48,5 Walking plan Walk next 240 gives True buildFirst True heart 7,7,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Carrier Worker Free Worker Free Free
+130 s: made 11 cancelled 0 wayfail 0 done 10 d1 40,5,48,5 None plan Wait next 240 gives True buildFirst True heart 9,7,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Free Carrier Worker Free Worker Free Free
+160 s: made 12 cancelled 0 wayfail 0 done 11 d1 38,631591796875,44,46728515625 Walking plan Walk next 240 gives True buildFirst True heart 10,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+190 s: made 13 cancelled 0 wayfail 0 done 12 d1 39,951171875,44,138671875 Walking plan Walk next 240 gives True buildFirst True heart 10,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+220 s: made 14 cancelled 0 wayfail 0 done 13 d1 41,29833984375,43,800537109375 Walking plan Walk next 240 gives True buildFirst True heart 11,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+250 s: made 15 cancelled 0 wayfail 0 done 14 d1 42,1923828125,43,57763671875 Walking plan Walk next 240 gives True buildFirst True heart 12,5,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+280 s: made 16 cancelled 0 wayfail 0 done 15 d1 41,796875,43,6767578125 Walking plan Walk next 240 gives True buildFirst True heart 12,5,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+310 s: made 17 cancelled 0 wayfail 0 done 16 d1 40,6103515625,43,973388671875 Walking plan Walk next 240 gives True buildFirst True heart 13,4,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+340 s: made 18 cancelled 0 wayfail 0 done 17 d1 38,5,45,183837890625 Walking plan Walk next 240 gives True buildFirst True heart 14,4,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+370 s: made 19 cancelled 0 wayfail 0 done 18 d1 38,5,46,41064453125 Walking plan Walk next 240 gives True buildFirst True heart 14,4,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+400 s: made 20 cancelled 0 wayfail 0 done 19 d1 38,5,48,04638671875 Walking plan Walk next 240 gives True buildFirst True heart 15,3,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+430 s: made 20 cancelled 0 wayfail 0 done 20 d1 40,5,48,5 None plan Wait next 240 gives True buildFirst True heart 16,3,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Free Free Worker Free Worker Free Free
+460 s: made 21 cancelled 0 wayfail 0 done 21 d1 40,5,48,5 None plan - next 240 gives True buildFirst True heart 16,2,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Free Free Worker Free Worker Free Free
+490 s: made 22 cancelled 0 wayfail 0 done 21 d1 40,5,48,5 Walking plan Walk next 240 gives True buildFirst True heart 16,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+520 s: made 23 cancelled 0 wayfail 0 done 22 d1 38,5,45,603515625 Walking plan Walk next 240 gives True buildFirst True heart 17,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+550 s: made 24 cancelled 0 wayfail 0 done 23 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 17,1,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+580 s: made 25 cancelled 0 wayfail 0 done 24 d1 42,1826171875,43,5791015625 Walking plan Walk next 240 gives True buildFirst True heart 18,1,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+610 s: made 26 cancelled 0 wayfail 0 done 25 d1 38,5,46,001708984375 Walking plan Walk next 240 gives True buildFirst True heart 19,0,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+
+
+woodcutter workRadius 8,00
+forester workRadius 8,00
+hunter workRadius 28,00
+quarry workRadius 6,00
+fisher workRadius 8,00
+building 0 heart_fire anchor 40,47 min 39,45 side 3 drop 40,5,48,5
+building 1 store anchor 42,47 min 42,46 side 2 drop 42,5,48,5
+dwarf 0 at 40,25,46,2998046875
+dwarf 1 at 40,75,46,2998046875
+dwarf 2 at 40,25,46,7998046875
+dwarf 3 at 40,75,46,7998046875
+dwarf 4 at 40,25,47,2998046875
+dwarf 5 at 40,75,47,2998046875
+dwarf 6 at 40,25,47,7998046875
+dwarf 7 at 40,75,47,7998046875
+heights y 43: 20 20 20 20 20 20 20 21x
+heights y 44: 20 20 20 20 20 20 20 21
+heights y 45: 20 20 20x 20x 20x 20 20 21x
+heights y 46: 20 20 20x 20 20x 20x 20x 21
+heights y 47: 20 20 20x 20 20x 20x 20x 20
+heights y 48: 20 20 20 20 20 20 20 20
+heights y 49: 20 20 20 20 20 20 20 20
+heights y 50: 20 20 20 20 20 20 20 20
+search 40,46 -> 40,48: 3 cost 1515,1515 slope 1000
+legend: ~ water, = ford, # rock, P pool, B bank, . land; columns x 0..63, rows y 0..63
+00 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx~~xxxxxxxxxxxxxxxx
+01 x.............................................~~...............x
+02 x............................................~~~...............x
+03 x............................................~~................x
+04 x............................................~~................x
+05 x...........................................~~~................x
+06 x..........................................~~~~................x
+07 x..........................................~~~.................x
+08 x.........................................~~~~.................x
+09 x.........................................~~~..................x
+10 x.........................................~~~..................x
+11 x.........................................~~~..................x
+12 x........................................~~~...................x
+13 x........................................~~~...................x
+14 x........................................~~~...................x
+15 x........................................~~~...................x
+16 x........................................~~~...................x
+17 x.......................................P~~~P..................x
+18 x.............................#.#.....PPP~~~PP.................x
+19 x.....................................PP~~~~PP.................x
+20 x.............................#.......PP~~~~PP.................x
+21 x...............................#.....PP~~~~P..................x
+22 x.....................................P~~~~~P..................x
+23 x.....................................PP~~~PP..................x
+24 x...................................BBB~~~BB...................x
+25 x..................................BB~~~~~B....................x
+26 x...................................~~~~~......................x
+27 x..................................~~~~........................x
+28 x..................................~~..........................x
+29 x.................................~~...........................x
+30 x................................~~~...........................x
+31 x................................~~~...........................x
+32 x................................~~~...........................x
+33 x.................................~~...........................x
+34 x................................~~~...........................x
+35 x...............................~~~............................x
+36 x...............................~~~............................x
+37 x.............................~~~~.............................x
+38 x............................~~~~~.............................x
+39 x...........................~~~~...............................x
+40 x...........................~~.................................x
+41 x..........................===.................................x
+42 x..........................==..................................x
+43 x..........................=~=.................................x
+44 x...........................~~.................................x
+45 x...........................~~.................................x
+46 x..........................~~~.................................x
+47 x..........................~~~.................................x
+48 x..........................~~..................................x
+49 x........................~~~~..................................x
+50 x......................~~~~~...................................x
+51 x......................~~~~....................................x
+52 x.....................~~~~.....................................x
+53 x....................~~~~......................................x
+54 x...................~~~~.......................................x
+55 x...................~~~........................................x
+56 x...................~~~........................................x
+57 x....................~~........................................x
+58 x....................~~........................................x
+59 x....................~~........................................x
+60 x....................~~........................................x
+61 x...................~~~........................................x
+62 x...................~~~........................................x
+63 xxxxxxxxxxxxxxxxxxxx~~~xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+NUnit Adapter 4.6.0.0: Test execution complete
+  Bestanden PrintSawmillGame(False) [681 ms]
+  Standardausgabemeldungen:
+ placed woodcutter at 42,42
+ placed forester at 46,44
+ placed sawmill at 43,49
+ 40 s: made 7 cancelled 0 wayfail 0 done 5 d1 41,576416015625,49,21728515625 Walking plan Walk next 240 gives True buildFirst True heart 6,8,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill site builder 7 have 0,0,0 in 1,0,0 want 1,0,0 | roles Watch Carrier Free Worker Carrier Worker Free Builder
+ 70 s: made 8 cancelled 0 wayfail 0 done 6 d1 42,01171875,43,6220703125 Walking plan Walk next 240 gives True buildFirst True heart 6,8,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Carrier Worker Free Free
+ 100 s: made 10 cancelled 0 wayfail 0 done 8 d1 40,13330078125,48,5 Walking plan Walk next 240 gives True buildFirst True heart 7,7,4 res 0,0,0 | jobs 2 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Carrier Worker Free Worker Free Free
+ 130 s: made 11 cancelled 0 wayfail 0 done 10 d1 40,5,48,5 None plan Wait next 240 gives True buildFirst True heart 9,7,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Free Carrier Worker Free Worker Free Free
+ 160 s: made 12 cancelled 0 wayfail 0 done 11 d1 38,631591796875,44,46728515625 Walking plan Walk next 240 gives True buildFirst True heart 10,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 190 s: made 13 cancelled 0 wayfail 0 done 12 d1 39,951171875,44,138671875 Walking plan Walk next 240 gives True buildFirst True heart 10,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 220 s: made 14 cancelled 0 wayfail 0 done 13 d1 41,29833984375,43,800537109375 Walking plan Walk next 240 gives True buildFirst True heart 11,6,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 250 s: made 15 cancelled 0 wayfail 0 done 14 d1 42,1923828125,43,57763671875 Walking plan Walk next 240 gives True buildFirst True heart 12,5,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 280 s: made 16 cancelled 0 wayfail 0 done 15 d1 41,796875,43,6767578125 Walking plan Walk next 240 gives True buildFirst True heart 12,5,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 310 s: made 17 cancelled 0 wayfail 0 done 16 d1 40,6103515625,43,973388671875 Walking plan Walk next 240 gives True buildFirst True heart 13,4,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 340 s: made 18 cancelled 0 wayfail 0 done 17 d1 38,5,45,183837890625 Walking plan Walk next 240 gives True buildFirst True heart 14,4,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 370 s: made 19 cancelled 0 wayfail 0 done 18 d1 38,5,46,41064453125 Walking plan Walk next 240 gives True buildFirst True heart 14,4,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 400 s: made 20 cancelled 0 wayfail 0 done 19 d1 38,5,48,04638671875 Walking plan Walk next 240 gives True buildFirst True heart 15,3,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 430 s: made 20 cancelled 0 wayfail 0 done 20 d1 40,5,48,5 None plan Wait next 240 gives True buildFirst True heart 16,3,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Free Free Worker Free Worker Free Free
+ 460 s: made 21 cancelled 0 wayfail 0 done 21 d1 40,5,48,5 None plan - next 240 gives True buildFirst True heart 16,2,4 res 0,0,0 | jobs 0 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Free Free Worker Free Worker Free Free
+ 490 s: made 22 cancelled 0 wayfail 0 done 21 d1 40,5,48,5 Walking plan Walk next 240 gives True buildFirst True heart 16,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 520 s: made 23 cancelled 0 wayfail 0 done 22 d1 38,5,45,603515625 Walking plan Walk next 240 gives True buildFirst True heart 17,2,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 550 s: made 24 cancelled 0 wayfail 0 done 23 d1 42,5,43,5 None plan Wait next 240 gives True buildFirst True heart 17,1,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 580 s: made 25 cancelled 0 wayfail 0 done 24 d1 42,1826171875,43,5791015625 Walking plan Walk next 240 gives True buildFirst True heart 18,1,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 610 s: made 26 cancelled 0 wayfail 0 done 25 d1 38,5,46,001708984375 Walking plan Walk next 240 gives True buildFirst True heart 19,0,4 res 0,0,0 | jobs 1 | woodcutter done builder -1 have 1,0,0 in 0,0,0 want 0,0,0 | forester done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | sawmill done builder -1 have 0,0,0 in 0,0,0 want 0,0,0 | roles Watch Carrier Free Worker Free Worker Free Free
+ 
+
+
+  Bestanden PrintTesttalWalkMap [2 ms]
+  Standardausgabemeldungen:
+ woodcutter workRadius 8,00
+ forester workRadius 8,00
+ hunter workRadius 28,00
+ quarry workRadius 6,00
+ fisher workRadius 8,00
+ building 0 heart_fire anchor 40,47 min 39,45 side 3 drop 40,5,48,5
+ building 1 store anchor 42,47 min 42,46 side 2 drop 42,5,48,5
+ dwarf 0 at 40,25,46,2998046875
+ dwarf 1 at 40,75,46,2998046875
+ dwarf 2 at 40,25,46,7998046875
+ dwarf 3 at 40,75,46,7998046875
+ dwarf 4 at 40,25,47,2998046875
+ dwarf 5 at 40,75,47,2998046875
+ dwarf 6 at 40,25,47,7998046875
+ dwarf 7 at 40,75,47,7998046875
+ heights y 43: 20 20 20 20 20 20 20 21x
+ heights y 44: 20 20 20 20 20 20 20 21
+ heights y 45: 20 20 20x 20x 20x 20 20 21x
+ heights y 46: 20 20 20x 20 20x 20x 20x 21
+ heights y 47: 20 20 20x 20 20x 20x 20x 20
+ heights y 48: 20 20 20 20 20 20 20 20
+ heights y 49: 20 20 20 20 20 20 20 20
+ heights y 50: 20 20 20 20 20 20 20 20
+ search 40,46 -> 40,48: 3 cost 1515,1515 slope 1000
+ legend: ~ water, = ford, # rock, P pool, B bank, . land; columns x 0..63, rows y 0..63
+ 00 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx~~xxxxxxxxxxxxxxxx
+ 01 x.............................................~~...............x
+ 02 x............................................~~~...............x
+ 03 x............................................~~................x
+ 04 x............................................~~................x
+ 05 x...........................................~~~................x
+ 06 x..........................................~~~~................x
+ 07 x..........................................~~~.................x
+ 08 x.........................................~~~~.................x
+ 09 x.........................................~~~..................x
+ 10 x.........................................~~~..................x
+ 11 x.........................................~~~..................x
+ 12 x........................................~~~...................x
+ 13 x........................................~~~...................x
+ 14 x........................................~~~...................x
+ 15 x........................................~~~...................x
+ 16 x........................................~~~...................x
+ 17 x.......................................P~~~P..................x
+ 18 x.............................#.#.....PPP~~~PP.................x
+ 19 x.....................................PP~~~~PP.................x
+ 20 x.............................#.......PP~~~~PP.................x
+ 21 x...............................#.....PP~~~~P..................x
+ 22 x.....................................P~~~~~P..................x
+ 23 x.....................................PP~~~PP..................x
+ 24 x...................................BBB~~~BB...................x
+ 25 x..................................BB~~~~~B....................x
+ 26 x...................................~~~~~......................x
+ 27 x..................................~~~~........................x
+ 28 x..................................~~..........................x
+ 29 x.................................~~...........................x
+ 30 x................................~~~...........................x
+ 31 x................................~~~...........................x
+ 32 x................................~~~...........................x
+ 33 x.................................~~...........................x
+ 34 x................................~~~...........................x
+ 35 x...............................~~~............................x
+ 36 x...............................~~~............................x
+ 37 x.............................~~~~.............................x
+ 38 x............................~~~~~.............................x
+ 39 x...........................~~~~...............................x
+ 40 x...........................~~.................................x
+ 41 x..........................===.................................x
+ 42 x..........................==..................................x
+ 43 x..........................=~=.................................x
+ 44 x...........................~~.................................x
+ 45 x...........................~~.................................x
+ 46 x..........................~~~.................................x
+ 47 x..........................~~~.................................x
+ 48 x..........................~~..................................x
+ 49 x........................~~~~..................................x
+ 50 x......................~~~~~...................................x
+ 51 x......................~~~~....................................x
+ 52 x.....................~~~~.....................................x
+ 53 x....................~~~~......................................x
+ 54 x...................~~~~.......................................x
+ 55 x...................~~~........................................x
+ 56 x...................~~~........................................x
+ 57 x....................~~........................................x
+ 58 x....................~~........................................x
+ 59 x....................~~........................................x
+ 60 x....................~~........................................x
+ 61 x...................~~~........................................x
+ 62 x...................~~~........................................x
+ 63 xxxxxxxxxxxxxxxxxxxx~~~xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
+
+
+
+Der Testlauf war erfolgreich.
+Gesamtzahl Tests: 8
+     Bestanden: 8
+ Gesamtzeit: 19,4391 Sekunden

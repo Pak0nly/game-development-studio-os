@@ -1,0 +1,30 @@
+0.0 ways game on Testtal: 8 dwarves, own land 441 tiles, bench True, small fires 6 dwarves, arrival EveryFireWithRoom, path to road True, look look on: day 6.0 min, night 4.0 min, start 8.0 h; lights 7 (fires 1, lamps 4, waypoint fires 2, lanterns 0); river True; fog High; yards on 2 foundations (380 ring cells); seat logs 0; built in 9.7 s
+0.1 fire hearth_wooden at 49,40 finished; own land 784 tiles
+0.1 fire hearth_wooden at 46,31 finished; own land 784 tiles
+0.1 building woodcutter at 51,34 finished; own land 784 tiles
+0.1 building woodcutter at 53,43 finished; own land 784 tiles
+0.1 building forester at 47,36 finished; own land 784 tiles
+0.1 building hunter at 52,47 finished; own land 784 tiles
+0.1 host refused the finished model quarry at 39,16 (it is drawn as its outline)
+0.1 shot ways_start_tag 1600x900 dwarves drawn 20 tick 1
+240.1 fire hearth_wooden at 30,44 finished; own land 940 tiles
+240.1 building sawmill at 44,52 finished; own land 940 tiles
+240.1 shot ways_4min_tag 1600x900 dwarves drawn 12 tick 2401
+240.1 shot ways_herzfeuer_tuerfackel 1600x900 dwarves drawn 3 tick 2401
+240.1 preview hearth_wooden at (30.50, 44.50): Blocked (0 % outside); note: Kleines Feuer: Hier steht schon etwas (ein Baum, ein Gebäude oder eine Baustelle).
+240.1 shot ways_vorschau_feuer_furt 1600x900 dwarves drawn 8 tick 2401
+240.1 preview hearth_wooden at (20.50, 40.50): FireTileNotOwn (0 % outside); note: Kleines Feuer: Zu weit draußen: die Feuerstelle muss auf deinem Gebiet stehen.
+240.1 shot ways_vorschau_feuer_zu_weit 1600x900 dwarves drawn 8 tick 2401
+240.1 quarry views: farthest walk 28.0 tiles at (34.50, 40.50), nearest 17.6 at (29.50, 36.50), refused at (40.50, 50.50)
+240.1 preview quarry at (29.50, 36.50): Ok (0 % outside) face 32,22; note: Steinbruch: Erlaubt. Der Steinhauer geht 18 Felder zu Fuß zum Fels (höchstens 28).
+240.1 shot ways_vorschau_steinbruch_weit 1600x900 dwarves drawn 6 tick 2401
+240.1 preview quarry at (34.50, 40.50): Ok (0 % outside) face 32,22; note: Steinbruch: Erlaubt. Der Steinhauer geht 28 Felder zu Fuß zum Fels (höchstens 28).
+240.1 shot ways_vorschau_steinbruch_nah 1600x900 dwarves drawn 11 tick 2401
+240.1 preview quarry at (40.50, 50.50): QuarryNoRockInReach (0 % outside); note: Steinbruch: Kein Fels in Reichweite: der Steinhauer geht von der Türfackel höchstens 28 Felder zu Fuß (der Ring zeigt die Luftlinie; um Fluss und Felsen herum zählt der Umweg).
+240.1 shot ways_vorschau_steinbruch_kein_fels 1600x900 dwarves drawn 15 tick 2401
+240.1 open bank view: (30.50, 48.50)
+240.1 preview well at (30.50, 48.50): Ok (0 % outside); note: Brunnen: Erlaubt.
+240.1 shot ways_vorschau_brunnen_ufer_offen 1600x900 dwarves drawn 7 tick 2401
+240.1 preview well at (36.50, 24.50): PoolOrBank (0 % outside); note: Brunnen: Ufer und Becken sind gesperrt.
+240.1 shot ways_vorschau_brunnen_ufer_unter_dem_fall 1600x900 dwarves drawn 2 tick 2401
+240.1 capture done
