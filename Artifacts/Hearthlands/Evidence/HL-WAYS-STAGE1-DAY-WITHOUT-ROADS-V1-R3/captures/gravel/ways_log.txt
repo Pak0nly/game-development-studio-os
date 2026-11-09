@@ -1,0 +1,32 @@
+0.0 R3 switches: quarry radius 28, spread 450, store surplus True, base cut with plinth, clock interpolated, log length 1,5, refused models drawn, draw separation True
+0.0 ways game on Testtal: 8 dwarves, own land 441 tiles, bench True, small fires 6 dwarves, arrival EveryFireWithRoom, path to road True, look look on: day 6.0 min, night 4.0 min, start 8.0 h; lights 7 (fires 1, lamps 4, waypoint fires 2, lanterns 0); river True; fog High; yards on 2 foundations (380 ring cells); seat logs 0; built in 9.8 s
+0.1 fire hearth_wooden at 49,40 finished; own land 784 tiles
+0.1 fire hearth_wooden at 46,31 finished; own land 784 tiles
+0.1 building woodcutter at 51,34 finished; own land 784 tiles
+0.1 building woodcutter at 53,43 finished; own land 784 tiles
+0.1 building forester at 47,36 finished; own land 784 tiles
+0.1 building hunter at 52,47 finished; own land 784 tiles
+0.1 host refused the finished model quarry at 39,16 (it is drawn as its outline)
+90.1 fire hearth_wooden at 30,44 finished; own land 940 tiles
+150.1 building sawmill at 44,52 finished; own land 940 tiles
+270.1 building store at 43,41 finished; own land 940 tiles
+300.1 host refused the site's model guardhouse at 42,30 (it is drawn without a model)
+360.1 building well at 36,51 finished; own land 940 tiles
+390.1 host refused the site's model mill at 48,51 (it is drawn without a model)
+510.1 building guardhouse at 42,30 finished; own land 940 tiles
+540.1 host refused the site's model smokehouse at 38,41 (it is drawn without a model)
+570.1 building mill at 48,51 finished; own land 940 tiles
+600.1 host refused the site's model brewery at 33,49 (it is drawn without a model)
+690.1 building smokehouse at 38,41 finished; own land 940 tiles
+750.1 building brewery at 33,49 finished; own land 940 tiles
+1500.1 shot kiesel_aus_film 1600x900 dwarves drawn 17 tick 15001
+1500.1 shot kiesel_an_film 1600x900 dwarves drawn 17 tick 15001
+1500.1 shot kiesel_aus_holzfaeller_sued 1600x900 dwarves drawn 5 tick 15001
+1500.1 shot kiesel_an_holzfaeller_sued 1600x900 dwarves drawn 5 tick 15001
+1500.1 shot kiesel_aus_nah 1600x900 dwarves drawn 5 tick 15001
+1500.1 shot kiesel_an_nah 1600x900 dwarves drawn 5 tick 15001
+1500.1 shot kiesel_aus_herzfeuer_jaeger 1600x900 dwarves drawn 9 tick 15001
+1500.1 shot kiesel_an_herzfeuer_jaeger 1600x900 dwarves drawn 9 tick 15001
+1500.1 gravel: pebbles 342, triangles 0, rebuilds 4, last rebuild 53.4 ms
+1512.1 gravel clip done: pebbles 2671
+1512.1 capture done

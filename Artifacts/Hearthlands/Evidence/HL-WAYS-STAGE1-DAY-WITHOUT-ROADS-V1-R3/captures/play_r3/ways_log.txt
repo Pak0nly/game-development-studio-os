@@ -1,0 +1,30 @@
+0.0 R3 switches: quarry radius 48, spread 450, store surplus True, base cut with plinth, clock interpolated, log length 1,5, refused models drawn, draw separation True
+0.0 ways game on Testtal: 8 dwarves, own land 441 tiles, bench False, small fires 6 dwarves, arrival EveryFireWithRoom, path to road True, look look on: day 6.0 min, night 4.0 min, start 8.0 h; lights 7 (fires 1, lamps 4, waypoint fires 2, lanterns 0); river True; fog High; yards on 2 foundations (380 ring cells); seat logs 0; built in 9.4 s
+0.1 player site woodcutter at 47,43
+0.1 player site woodcutter at 46,44
+0.1 player site forester at 49,46
+0.1 player site forester at 51,46
+0.1 player site hunter at 43,50
+25.1 host refused the finished model woodcutter at 46,44 (it is drawn as its outline)
+30.1 building forester at 49,46 finished; own land 441 tiles
+45.1 building woodcutter at 47,43 finished; own land 441 tiles
+55.1 building forester at 51,46 finished; own land 441 tiles
+70.1 building hunter at 43,50 finished; own land 441 tiles
+360.1 ways building heart_fire at 40,47 finished, model drawn by the host or as an outline
+360.1 ways building store at 42,47 finished, model drawn by the host or as an outline
+360.1 ways building woodcutter at 47,43 finished, model drawn by the host or as an outline
+360.1 ways building woodcutter at 46,44 finished, model drawn by the ways game
+360.1 ways building forester at 49,46 finished, model drawn by the host or as an outline
+360.1 ways building forester at 51,46 finished, model drawn by the host or as an outline
+360.1 ways building hunter at 43,50 finished, model drawn by the host or as an outline
+360.1 shot zweite_gebaeude 1600x900 dwarves drawn 5 tick 3601
+360.1 own models drawn 1
+360.1 shot lager_mit_bericht 1600x900 dwarves drawn 3 tick 3601
+360.1 stores after 6 min: [Fire heart_fire 5/4/4] [Store store 19/0/5] delivered 33/0/5, produced 24/0/5, jobs done 38
+375.1 yard clip: drawn pairs closer than 0.3 tiles over 150 frames: 13 by the core's positions, 12 drawn
+379.1 shot stamm_getragen_nah 1600x900 dwarves drawn 4 tick 3791
+379.1 log carrier 4 drawn with the log 1,5 times as long
+384.4 chop clip of dwarf 7: 120 frames at 30 per second, the clock interpolated
+624.4 stores after 11 min: [Fire heart_fire 6/0/4] [Store store 32/0/10] delivered 51/0/10, produced 40/0/10, jobs done 61
+624.4 shot lager_mit_bericht_11min 1600x900 dwarves drawn 5 tick 6244
+624.4 capture done

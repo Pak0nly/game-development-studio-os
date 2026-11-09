@@ -1,0 +1,15 @@
+0.0 R3 switches: quarry radius 48, spread 450, store surplus True, base cut with plinth, clock interpolated, log length 1,5, refused models drawn, draw separation True
+0.0 ways game on Testtal: 8 dwarves, own land 441 tiles, bench False, small fires 6 dwarves, arrival EveryFireWithRoom, path to road True, look look on: day 6.0 min, night 4.0 min, start 8.0 h; lights 7 (fires 1, lamps 4, waypoint fires 2, lanterns 0); river True; fog High; yards on 2 foundations (380 ring cells); seat logs 0; built in 9.6 s
+0.1 shot steinbruch_0_startkamera 1600x900 dwarves drawn 8 tick 1
+0.1 quarry menu sweep: 1218 screen points on the ground; Ok 714; Blocked 252; DoorBlocked 20; QuarryNoRockInReach 4; NotLand 59; NotOwnLand 82; NotSeen 87;
+0.1 quarry at the screen's middle (41.04, 45.29): Blocked; note: Steinbruch, Türfackel Süd (R): Hier steht schon etwas (ein Baum, ein Gebäude oder eine Baustelle).
+0.1 shot steinbruch_1_vorschau_bildmitte 1600x900 dwarves drawn 8 tick 1
+0.1 quarry at the nearest allowed point (650.00, 530.00) tile (41.05, 43.32): Ok; note: Steinbruch, Türfackel Süd (R): Erlaubt. Der Steinhauer geht 36 Felder zu Fuß zum Fels (höchstens 48).
+0.1 shot steinbruch_2_vorschau_erlaubt 1600x900 dwarves drawn 8 tick 1
+0.1 site quarry at 41,43 side South
+0.1 quarry: clicked at (650.00, 530.00) (placed, the tool put away)
+40.1 building quarry at 41,43 finished; own land 441 tiles
+290.1 quarry finished at 35 s after the click, made 2 stones, delivered stones 3, face 32,22, game time 290 s
+290.1 shot steinbruch_3_gebaut 1600x900 dwarves drawn 4 tick 2901
+290.1 shot steinbruch_4_steinhauer 1600x900 dwarves drawn 1 tick 2901
+290.1 capture done

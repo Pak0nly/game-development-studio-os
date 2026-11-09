@@ -1,0 +1,19 @@
+0.0 R3 switches: quarry radius 48, spread 450, store surplus True, base natural (round 2), clock interpolated, log length 1,5, refused models drawn, draw separation True
+0.0 ways game on Testtal: 8 dwarves, own land 441 tiles, bench False, small fires 6 dwarves, arrival EveryFireWithRoom, path to road True, look look on: day 6.0 min, night 4.0 min, start 8.0 h; lights 7 (fires 1, lamps 4, waypoint fires 2, lanterns 0); river True; fog High; yards on 2 foundations (380 ring cells); seat logs 0; built in 10.7 s
+0.1 slope case 1: woodcutter at 34,41 corner spread 0.16 (world units; one height step 0.5)
+0.1 slope case 2: hunter at 43,44 corner spread 0.26 (world units; one height step 0.5)
+0.1 slope case 3: forester at 46,47 corner spread 0.42 (world units; one height step 0.5)
+25.1 building woodcutter at 34,41 finished; own land 441 tiles
+30.1 building forester at 46,47 finished; own land 441 tiles
+40.1 building hunter at 43,44 finished; own land 441 tiles
+300.1 slope building woodcutter at 34,41 finished
+300.1 slope building hunter at 43,44 finished
+300.1 slope building forester at 46,47 finished
+300.1 pads slopes: [39,45 side 3 level 10.01]
+300.1 shot hang_1_nah 1600x900 dwarves drawn 1 tick 3001
+300.1 shot hang_1_weit 1600x900 dwarves drawn 1 tick 3001
+300.1 shot hang_2_nah 1600x900 dwarves drawn 1 tick 3001
+300.1 shot hang_2_weit 1600x900 dwarves drawn 5 tick 3001
+300.1 shot hang_3_nah 1600x900 dwarves drawn 4 tick 3001
+300.1 shot hang_3_weit 1600x900 dwarves drawn 4 tick 3001
+300.1 capture done
