@@ -33,6 +33,23 @@ See the section "Suites" below (filled from logs/dotnet-test-after-full.txt and 
 save/load, replay, invariants and fuzz in the suites; pinned hash after 3000 bench ticks 1385786388383732086 (settings version 3).
 Parity rerun: tables/dotnet-bench-report-r3.txt.
 
+## Suites
+
+| Suite | Round 2 (7a45f6b) | Round 3 (42a4be0) |
+|---|---|---|
+| dotnet CoreBuild | 2205 / 2203 / 2 failed | 2214 / 2212 / 2 failed (logs/dotnet-test-after-full.txt, local log, ignored by git) |
+| Unity EditMode | 2516 / 2480 / 0 / 36 | 2527 / 2489 / 0 failed / 38 skipped (logs/editmode-after.xml) |
+
+The 2 dotnet failures are the pre-existing pinned hashes TheDefaultProfilesPlayExactlyAsBeforeTheLevers and TheBoomRunStaysBitIdentical
+(unchanged since before round 1). New tests: WaysR3Tests (quarry from every start-land place, quarry next to the Heart Fire built and
+delivering, origin store a store and the Heart Fire's surplus there, store off = round 2, producers' wares to the store and a site fed from
+it, a built store becomes a store, idle dwarves spread (and round 2 overlaps without), settings version 3 round trip).
+
+Parity rerun (tables/dotnet-bench-report-r3.txt): bench (paths test layout, 6 dwarves per small fire, 32 min) with store off 256 jobs,
+15 sites, delivered 156/78/22; with the store rule (within 24 tiles) 345 jobs, 15 sites, last site 732 s (739 s off), delivered
+188/116/41, stores hold 41/21/39. Free game (woodcutter, forester, sawmill, hunter, quarry, store): off 98 jobs, store 0; on 138 jobs, store
+24 logs / 36 game, the Heart Fire keeps its wants. The bench keeps the round 2 quarry radius 28 so its quarry stays by the rock.
+
 ## Build and starters
 
 C:/GameDev/Hearthlands/Unity/Builds/HL-Game-ways-r3/ (build b3) with "Wegesystem Tag ohne Strassen spielen.cmd" and
@@ -50,7 +67,7 @@ zweite_gebaeude_*, lager_*, stamm_runde2_gegen_runde3, kies_aus_gegen_an_*.
 Hidden batch editors on the main folder only: builds b1 (compile error, fixed), b2, b3; EditMode suite. Minimised players of
 HL-Game-ways-r3: quarry_r3, quarry_r2, play_r3, slopes_r3, slopes_r2, gravel, play_r2; all exit 0, none left running. No Unity in the
 Wege or Zwerge folders. HDRP settings and Main.unity restored after every build. Untouched: ProjectSettings.asset, Wiki, Kevin Iglesias,
-Source folders.
+Source folders. Series builds kept: HL-Game-ways-r2, HL-Game-ways-r3; HL-Game-ways-r1 deleted. The raw capture frame folders (film_*) and logs/ stay local (logs/ is ignored by git; the clips are made from the frames).
 
 ## Candidate file list (git diff --name-only 7a45f6b..42a4be0)
 

@@ -33,6 +33,12 @@ Starten: `C:\GameDev\Hearthlands\Unity\Builds\HL-Game-ways-r3\Wegesystem Tag ohn
    Die braunen Klötze sind weg. Beim Start ist es aus. Bilder: `vergleich/kies_aus_gegen_an_*.jpg`.
 9. Fortschrittsbalken: kommen im nächsten Auftrag mit der Spieloberfläche.
 
+## Prüfungen
+
+Spielkern-Tests (dotnet): 2214, davon 2212 bestanden. Die 2 Fehler sind dieselben alten wie vor Runde 1. Unity-Tests: 2527, keiner fehlgeschlagen.
+Neue Tests für Steinbruch, Lager und Ausweichen. Wiederholbarkeit (Doppellauf, Speichern und Laden) ist geprüft.
+Vergleichslauf mit den Baustellen des Wegetests: mit Lager 345 statt 256 Tragegänge in 32 Minuten, gleich viele Baustellen fertig.
+
 ## Fragen an dich
 
 - Steinbruch: Passen 48 Felder Laufweg (bis etwa 2,5 Minuten hin und zurück), oder soll lieber Fels näher an das Startgebiet?
