@@ -1,0 +1,9 @@
+{
+ "label": "gehen_spiel_schlecht",
+ "mean_px_all": 1.2657235860824585,
+ "mean_px_visible": 0.9750074744224548,
+ "mean_px_hidden": 1.5254369974136353,
+ "median_px_visible": 0.745322048664093,
+ "p90_px_visible": 2.0146870613098145,
+ "n": 26880
+}

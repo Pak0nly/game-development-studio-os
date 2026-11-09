@@ -1,0 +1,22 @@
+{
+ "prefix": "r2c_s101",
+ "layout": "c",
+ "frames": 121,
+ "floor_line": 607,
+ "front": {
+  "sideways_drift_px_per_s": -0.7,
+  "sideways_drift_over_clip_px": -3.4,
+  "centre_x_min_max": [
+   307.5,
+   327.5
+  ],
+  "height_change_over_clip_pct": -8.1,
+  "height_px_min_max": [
+   346.0,
+   420.0
+  ],
+  "swing_foot_frames_counted": 52,
+  "swing_foot_sideways_mean_abs_px_per_frame": 0.67,
+  "swing_foot_sideways_net_px_per_frame": 0.1
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "label": "gehen_schlecht",
+ "mean_px_all": 1.7261862754821777,
+ "mean_px_visible": 1.2107148170471191,
+ "mean_px_hidden": 2.1631393432617188,
+ "median_px_visible": 0.8712736368179321,
+ "p90_px_visible": 2.5363032817840576,
+ "n": 26880
+}

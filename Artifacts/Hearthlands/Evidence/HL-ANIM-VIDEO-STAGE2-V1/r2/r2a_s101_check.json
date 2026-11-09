@@ -1,0 +1,44 @@
+{
+ "prefix": "r2a_s101",
+ "layout": "a",
+ "frames": 121,
+ "size": [
+  1280,
+  704
+ ],
+ "seconds_at_24": 5.04,
+ "mean_change_per_frame": 8.939,
+ "median_change": 7.59,
+ "doubled_frames": [],
+ "jump_frames": [],
+ "true_motion_fps_at_24": 24.0,
+ "floor_line_min_max": [
+  604,
+  606
+ ],
+ "single_view_window_x0": null,
+ "figure_height_px_front_min_max": [
+  415.0,
+  422.0
+ ],
+ "figure_centre_x_front_min_max": [
+  284.5,
+  326.5
+ ],
+ "feet_row_front_min_max": [
+  604.0,
+  606.0
+ ],
+ "figure_height_px_side_min_max": [
+  407.0,
+  429.0
+ ],
+ "figure_centre_x_side_min_max": [
+  272.0,
+  365.0
+ ],
+ "feet_row_side_min_max": [
+  604.0,
+  606.0
+ ]
+}

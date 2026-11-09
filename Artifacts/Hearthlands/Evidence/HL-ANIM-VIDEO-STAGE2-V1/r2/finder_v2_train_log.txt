@@ -1,0 +1,32 @@
+train 10:36:45: 5400 view crops, 112 landmarks, 30 epochs, batch 24, hold-out 300 poses
+epoch 1/30 loss 30.825 crop px, 66 s
+epoch 2/30 loss 11.965 crop px, 131 s
+epoch 3/30 loss 8.425 crop px, 195 s
+epoch 4/30 loss 6.780 crop px, 259 s
+epoch 5/30 loss 6.109 crop px, 323 s; held-out panel px: visible mean 5.76 median 3.93 p90 12.16, hidden mean 10.33
+epoch 6/30 loss 5.595 crop px, 390 s
+epoch 7/30 loss 5.226 crop px, 454 s
+epoch 8/30 loss 4.941 crop px, 518 s
+epoch 9/30 loss 4.715 crop px, 582 s
+epoch 10/30 loss 4.495 crop px, 646 s; held-out panel px: visible mean 4.32 median 2.88 p90 9.15, hidden mean 8.68
+epoch 11/30 loss 4.311 crop px, 713 s
+epoch 12/30 loss 4.143 crop px, 777 s
+epoch 13/30 loss 3.979 crop px, 841 s
+epoch 14/30 loss 3.834 crop px, 905 s
+epoch 15/30 loss 3.687 crop px, 969 s; held-out panel px: visible mean 3.77 median 2.51 p90 7.94, hidden mean 8.23
+epoch 16/30 loss 3.542 crop px, 1035 s
+epoch 17/30 loss 3.395 crop px, 1100 s
+epoch 18/30 loss 3.266 crop px, 1164 s
+epoch 19/30 loss 3.140 crop px, 1228 s
+epoch 20/30 loss 3.026 crop px, 1292 s; held-out panel px: visible mean 3.25 median 2.06 p90 6.94, hidden mean 7.32
+epoch 21/30 loss 2.886 crop px, 1359 s
+epoch 22/30 loss 2.761 crop px, 1423 s
+epoch 23/30 loss 2.638 crop px, 1487 s
+epoch 24/30 loss 2.538 crop px, 1551 s
+epoch 25/30 loss 2.438 crop px, 1615 s; held-out panel px: visible mean 2.91 median 1.75 p90 6.31, hidden mean 6.90
+epoch 26/30 loss 2.351 crop px, 1682 s
+epoch 27/30 loss 2.285 crop px, 1746 s
+epoch 28/30 loss 2.231 crop px, 1810 s
+epoch 29/30 loss 2.197 crop px, 1874 s
+epoch 30/30 loss 2.176 crop px, 1938 s; held-out panel px: visible mean 2.82 median 1.68 p90 6.17, hidden mean 6.74
+FINAL {"label": "held-out", "mean_px_all": 5.026258945465088, "mean_px_visible": 2.8210692405700684, "mean_px_hidden": 6.741509437561035, "median_px_visible": 1.6765462160110474, "p90_px_visible": 6.167412281036377, "n": 67200, "train_seconds": 1943.9, "epochs": 30}

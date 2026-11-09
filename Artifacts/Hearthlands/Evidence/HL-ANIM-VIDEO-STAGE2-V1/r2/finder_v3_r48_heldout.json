@@ -1,0 +1,11 @@
+{
+ "label": "held-out",
+ "mean_px_all": 5.340071201324463,
+ "mean_px_visible": 2.985691547393799,
+ "mean_px_hidden": 7.171366214752197,
+ "median_px_visible": 1.785079002380371,
+ "p90_px_visible": 6.612008571624756,
+ "n": 67200,
+ "train_seconds": 3737.3,
+ "epochs": 15
+}

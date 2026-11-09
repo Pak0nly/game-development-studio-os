@@ -1,0 +1,9 @@
+{
+ "label": "gehen_sauber",
+ "mean_px_all": 1.5140488147735596,
+ "mean_px_visible": 1.1372312307357788,
+ "mean_px_hidden": 1.8514366149902344,
+ "median_px_visible": 0.8564413785934448,
+ "p90_px_visible": 2.289551019668579,
+ "n": 26880
+}

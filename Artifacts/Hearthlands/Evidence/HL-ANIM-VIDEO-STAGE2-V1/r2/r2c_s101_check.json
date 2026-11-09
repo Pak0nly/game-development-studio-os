@@ -1,0 +1,33 @@
+{
+ "prefix": "r2c_s101",
+ "layout": "c",
+ "frames": 121,
+ "size": [
+  1280,
+  704
+ ],
+ "seconds_at_24": 5.04,
+ "mean_change_per_frame": 6.954,
+ "median_change": 5.628,
+ "doubled_frames": [],
+ "jump_frames": [],
+ "true_motion_fps_at_24": 24.0,
+ "floor_line_min_max": [
+  605,
+  607
+ ],
+ "single_view_window_x0": 327,
+ "figure_height_px_front_min_max": [
+  406.0,
+  420.0
+ ],
+ "figure_centre_x_front_min_max": [
+  315.0,
+  326.0
+ ],
+ "feet_row_front_min_max": [
+  605.0,
+  607.0
+ ],
+ "figure_height_px_side_min_max": null
+}

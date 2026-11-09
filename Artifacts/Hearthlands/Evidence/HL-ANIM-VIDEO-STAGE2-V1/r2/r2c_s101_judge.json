@@ -1,0 +1,27 @@
+{
+ "name": "r2c_s101",
+ "frames": 121,
+ "doubled_frames": 0,
+ "jump_frames": 0,
+ "start_shoulder_width_px": 112.5,
+ "front": {
+  "shoulder_sep_pct_min_median_max": [
+   98.4,
+   100.0,
+   101.2
+  ],
+  "figure_height_px_min_max": [
+   406.0,
+   420.0
+  ],
+  "frames_turned_away": 0,
+  "feet_wrong_side_frames": 0,
+  "figure_height_spread_pct": 3.4
+ },
+ "rules_measured": {
+  "no_doubled_frames": true,
+  "front_steady_angle": true,
+  "front_legs_not_swapped": true,
+  "front_same_size": true
+ }
+}

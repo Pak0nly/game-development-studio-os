@@ -1,0 +1,34 @@
+20:02:34 tiny test start
+20:14:44 try seed 101 start
+21:11:09 tries 202 and 303 cancelled (Human: first video only)
+21:30:08 try 1 again (seed 101) start, after recovery 1
+21:58:25 decode of the saved try-1 latent, tiles 256, 12 frames (recovery 2)
+22:03:21 finder training start
+22:18:50 finder training v1 stopped by the Worker (no epoch finished after 15 min)
+22:18:50 finder training end
+22:19:19 finder training v1 start again (recovery 3)
+22:31:04 finder training end
+22:31:06 finder training stopped after epoch 10 (PC shutdown); checkpoint finder_v1_epoch10.pt
+10:36:36 R2 finder_v2 train start
+10:41:09 unity r2_compile start
+11:09:10 R2 finder_v2 train end
+11:10:01 r2a_s101 sample start
+11:33:13 r2a_s101 sample end
+11:36:55 r2a_s101 decode end
+11:37:14 r2a_s101 copied to clips/video_versuch2a_zwei_ansichten.mp4
+11:37:14 r2b_s101 sample start
+12:00:21 r2b_s101 sample end
+12:04:01 r2b_s101 decode end
+12:04:29 r2b_s101 copied to clips/video_versuch2b_seite.mp4
+12:04:29 r2c_s101 sample start
+12:27:36 r2c_s101 sample end
+12:31:19 r2c_s101 decode end
+12:31:48 r2c_s101 copied to clips/video_versuch2c_vorn.mp4
+12:36:01 R2 finder_v3 (res 48) train start
+12:36:16 unity r2_fit_v2 start
+12:59:36 R2 finder_v3 train end
+13:00:46 R2 finder_v3 (res 48, batch 12) train start
+13:12:07 unity r2_fit_v2b start
+14:03:11 R2 finder_v3 train end
+14:07:23 unity r2_meta start
+14:08:05 unity r2_fit_final start (the empty run had overwritten the tables)

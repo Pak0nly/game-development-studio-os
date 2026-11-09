@@ -1,0 +1,40 @@
+{
+ "prefix": "v1_s101",
+ "layout": "v1",
+ "frames": 121,
+ "floor_line": 605,
+ "front": {
+  "sideways_drift_px_per_s": -3.4,
+  "sideways_drift_over_clip_px": -17.2,
+  "centre_x_min_max": [
+   277.5,
+   326.5
+  ],
+  "height_change_over_clip_pct": 0.3,
+  "height_px_min_max": [
+   407.0,
+   426.0
+  ],
+  "swing_foot_frames_counted": 108,
+  "swing_foot_sideways_mean_abs_px_per_frame": 4.93,
+  "swing_foot_sideways_net_px_per_frame": 0.59
+ },
+ "side": {
+  "sideways_drift_px_per_s": 6.5,
+  "sideways_drift_over_clip_px": 32.5,
+  "centre_x_min_max": [
+   283.0,
+   359.0
+  ],
+  "height_change_over_clip_pct": -1.3,
+  "height_px_min_max": [
+   400.0,
+   423.0
+  ],
+  "swing_foot_frames_counted": 103,
+  "swing_foot_forward_pct": 40.8,
+  "swing_foot_mean_px_per_frame_towards_face": -2.67,
+  "planted_foot_mean_px_per_frame_towards_face": -0.2,
+  "walks_forwards": false
+ }
+}

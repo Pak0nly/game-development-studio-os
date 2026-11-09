@@ -1,0 +1,9 @@
+{
+ "label": "gehen_spiel_sauber",
+ "mean_px_all": 1.339468240737915,
+ "mean_px_visible": 1.0318022966384888,
+ "mean_px_hidden": 1.6311689615249634,
+ "median_px_visible": 0.7967640161514282,
+ "p90_px_visible": 2.088104248046875,
+ "n": 26880
+}

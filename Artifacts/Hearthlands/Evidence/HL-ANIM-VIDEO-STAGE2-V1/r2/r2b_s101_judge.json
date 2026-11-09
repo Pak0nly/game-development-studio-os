@@ -1,0 +1,25 @@
+{
+ "name": "r2b_s101",
+ "frames": 121,
+ "doubled_frames": 0,
+ "jump_frames": 0,
+ "start_shoulder_width_px": 112.5,
+ "side": {
+  "shoulder_sep_pct_min_median_max": [
+   0.1,
+   3.9,
+   13.1
+  ],
+  "figure_height_px_min_max": [
+   409.0,
+   420.0
+  ],
+  "frames_turned_away": 0,
+  "figure_height_spread_pct": 2.7
+ },
+ "rules_measured": {
+  "no_doubled_frames": true,
+  "side_steady_angle": true,
+  "side_same_size": true
+ }
+}

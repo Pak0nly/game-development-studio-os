@@ -1,0 +1,17 @@
+train 13:00:53: 5400 view crops, 112 landmarks, 15 epochs, batch 12, hold-out 300 poses
+epoch 1/15 loss 35.697 crop px, 237 s
+epoch 2/15 loss 14.401 crop px, 472 s
+epoch 3/15 loss 11.676 crop px, 716 s
+epoch 4/15 loss 9.515 crop px, 952 s
+epoch 5/15 loss 8.687 crop px, 1186 s; held-out panel px: visible mean 5.43 median 3.61 p90 11.64, hidden mean 10.43
+epoch 6/15 loss 8.093 crop px, 1438 s
+epoch 7/15 loss 7.405 crop px, 1672 s
+epoch 8/15 loss 6.843 crop px, 1907 s
+epoch 9/15 loss 6.320 crop px, 2141 s
+epoch 10/15 loss 5.907 crop px, 2375 s; held-out panel px: visible mean 3.56 median 2.23 p90 7.79, hidden mean 8.01
+epoch 11/15 loss 5.480 crop px, 2673 s
+epoch 12/15 loss 5.073 crop px, 2907 s
+epoch 13/15 loss 4.760 crop px, 3142 s
+epoch 14/15 loss 4.500 crop px, 3376 s
+epoch 15/15 loss 4.372 crop px, 3611 s; held-out panel px: visible mean 2.99 median 1.79 p90 6.61, hidden mean 7.17
+FINAL {"label": "held-out", "mean_px_all": 5.340071201324463, "mean_px_visible": 2.985691547393799, "mean_px_hidden": 7.171366214752197, "median_px_visible": 1.785079002380371, "p90_px_visible": 6.612008571624756, "n": 67200, "train_seconds": 3737.3, "epochs": 15}

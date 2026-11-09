@@ -1,0 +1,24 @@
+{
+ "prefix": "r2b_s101",
+ "layout": "b",
+ "frames": 121,
+ "floor_line": 605,
+ "side": {
+  "sideways_drift_px_per_s": -3.8,
+  "sideways_drift_over_clip_px": -18.8,
+  "centre_x_min_max": [
+   289.0,
+   349.5
+  ],
+  "height_change_over_clip_pct": -0.1,
+  "height_px_min_max": [
+   410.0,
+   420.0
+  ],
+  "swing_foot_frames_counted": 120,
+  "swing_foot_forward_pct": 50.8,
+  "swing_foot_mean_px_per_frame_towards_face": -2.29,
+  "planted_foot_mean_px_per_frame_towards_face": 2.55,
+  "walks_forwards": false
+ }
+}

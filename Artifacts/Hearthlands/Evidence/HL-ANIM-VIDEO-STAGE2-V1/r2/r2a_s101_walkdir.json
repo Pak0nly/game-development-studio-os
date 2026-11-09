@@ -1,0 +1,40 @@
+{
+ "prefix": "r2a_s101",
+ "layout": "a",
+ "frames": 121,
+ "floor_line": 605,
+ "front": {
+  "sideways_drift_px_per_s": -0.5,
+  "sideways_drift_over_clip_px": -2.6,
+  "centre_x_min_max": [
+   281.0,
+   326.5
+  ],
+  "height_change_over_clip_pct": 0.4,
+  "height_px_min_max": [
+   415.0,
+   422.0
+  ],
+  "swing_foot_frames_counted": 120,
+  "swing_foot_sideways_mean_abs_px_per_frame": 11.68,
+  "swing_foot_sideways_net_px_per_frame": 1.75
+ },
+ "side": {
+  "sideways_drift_px_per_s": 1.4,
+  "sideways_drift_over_clip_px": 7.1,
+  "centre_x_min_max": [
+   256.0,
+   347.0
+  ],
+  "height_change_over_clip_pct": 2.3,
+  "height_px_min_max": [
+   406.0,
+   428.0
+  ],
+  "swing_foot_frames_counted": 120,
+  "swing_foot_forward_pct": 54.2,
+  "swing_foot_mean_px_per_frame_towards_face": 2.11,
+  "planted_foot_mean_px_per_frame_towards_face": -2.35,
+  "walks_forwards": true
+ }
+}

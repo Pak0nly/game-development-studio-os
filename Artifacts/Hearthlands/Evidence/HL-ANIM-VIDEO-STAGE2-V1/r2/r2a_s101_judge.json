@@ -1,0 +1,42 @@
+{
+ "name": "r2a_s101",
+ "frames": 121,
+ "doubled_frames": 0,
+ "jump_frames": 0,
+ "start_shoulder_width_px": 112.5,
+ "front": {
+  "shoulder_sep_pct_min_median_max": [
+   74.7,
+   94.5,
+   105.4
+  ],
+  "figure_height_px_min_max": [
+   415.0,
+   422.0
+  ],
+  "frames_turned_away": 0,
+  "feet_wrong_side_frames": 0,
+  "figure_height_spread_pct": 1.7
+ },
+ "side": {
+  "shoulder_sep_pct_min_median_max": [
+   0.2,
+   8.7,
+   20.5
+  ],
+  "figure_height_px_min_max": [
+   407.0,
+   429.0
+  ],
+  "frames_turned_away": 0,
+  "figure_height_spread_pct": 5.3
+ },
+ "rules_measured": {
+  "no_doubled_frames": true,
+  "front_steady_angle": true,
+  "front_legs_not_swapped": true,
+  "front_same_size": true,
+  "side_steady_angle": true,
+  "side_same_size": true
+ }
+}
