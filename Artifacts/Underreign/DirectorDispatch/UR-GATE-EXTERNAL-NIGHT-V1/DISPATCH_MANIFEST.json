@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-GATE-EXTERNAL-NIGHT-V1",
+  "assignment_type": {
+    "value": "Add external Unity root and cloud night mode to the Underreign gate (copied logic, no budget)",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Standard",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-GATE-EXTERNAL-NIGHT-V1/WORK_ORDER.md",
+    "sha256": "c33f0be0694b38f53f5d5f449ad4508097f98d60283f34b9821ad4d74b47dea0",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Underreign",
+    "project_id": "Underreign",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Underreign",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "fad07355d9fddbc9a04b88f268cca11767d5a83d",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Tools/UnderreignDispatchGate",
+      "Artifacts/Underreign/Evidence/UR-GATE-EXTERNAL-NIGHT-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-09, Underreign chat): 'Kannst du die Planung und auch gerne weiteres in einer Nachtschicht umsetzen?'; UD-25 own gate, copy when helpful, nothing connected to Hearthlands; UD-26 Unity project in C:/GameDev/Underreign; no cost cap (Human 2026-10-24).",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a442ee7714ad051d361978b715b2dd0fd157325aa043cce9edd652f2fbed7eeb",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "b2eb81d4a757afe0897910042d6d022b07b93f07aacb96d02055cd6b27ef4e7c",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "22e62aef3cadd347db48ca9e2edeb653a710a69097a14dace50728536d4f4220",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Tools/HearthlandsDispatchGate/README.md",
+      "sha256": "87e596e484511ef0e40eda6caee4fa1a86427af355d59141739cf39761922371",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-validator",
+        "path": "Tools/UnderreignDispatchGate/validate_underreign_dispatch.py",
+        "method": "file_sha256",
+        "expected_sha256": "a79c8894cdc34d5c540cab8ebf16144f1603cabb97cbd5ad8eda02e4a7d4816b",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-09, Underreign chat): 'Kannst du die Planung und auch gerne weiteres in einer Nachtschicht umsetzen?'; UD-25 own gate, copy when helpful, nothing connected to Hearthlands; UD-26 Unity project in C:/GameDev/Underreign; no cost cap (Human 2026-10-24).",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Tools/UnderreignDispatchGate",
+    "Artifacts/Underreign/Evidence/UR-GATE-EXTERNAL-NIGHT-V1"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs",
+    "Projects",
+    "Artifacts/Underreign/DirectorDispatch",
+    "Artifacts/Underreign/Evidence/UR-SETUP-INFRA-V1",
+    "Artifacts/Underreign/Evidence/UR-DECISIONS-R4-V1"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, a need outside the allowed paths, or existing tests that cannot be kept green.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Production",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Port external root and night mode into the Underreign gate",
+      "class": "Standard",
+      "reason": "Porting proven gate logic with tests across two features; careful engineering, not open design.",
+      "requested_model": "opus",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Tools Engineer",
+    "QA Lead"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Director owns scope and Human checkpoint.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Tools Engineer",
+      "status": "ACTIVATED",
+      "reason": "Worker ports gate logic.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "QA Lead",
+      "status": "ACTIVATED",
+      "reason": "Independent Reviewer checks gate behaviour and tests.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Port external_project section and tests",
+      "status": "pending"
+    },
+    {
+      "step": "Port cloud_night mode, verify-night-return, closure support and tests",
+      "status": "pending"
+    },
+    {
+      "step": "README and WORKER_RESULT.md",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "UR-GATE-EXTERNAL-NIGHT-V1",
+    "rounds": 2,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Underreign Director session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "opus",
+      "reasoning_effort": "high",
+      "reason": "Porting proven gate logic with tests across two features; careful engineering, not open design."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": true,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": true,
+      "reviewer_separate_from_worker_and_director": true,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Independent review, Director commit, then the first night order.",
+    "declaration": "HUMAN DECISION"
+  }
+}

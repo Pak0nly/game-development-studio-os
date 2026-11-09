@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-GATE-EXTERNAL-NIGHT-V1",
+  "work_order_sha256": "c33f0be0694b38f53f5d5f449ad4508097f98d60283f34b9821ad4d74b47dea0",
+  "manifest_sha256": "eb32797f18f6a8703bc8ad9fdbb4bb08b44c971c38f51d7fd9abe3a10a2d197b",
+  "repository": {
+    "branch": "main",
+    "head": "fad07355d9fddbc9a04b88f268cca11767d5a83d"
+  },
+  "project_identity_sha256": "dce56f34ccf58e1d1f2f3bf40e3157f74d89f37dcde6cb30c56e33f9e0ff189d",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Tools/UnderreignDispatchGate",
+      "Artifacts/Underreign/Evidence/UR-GATE-EXTERNAL-NIGHT-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "e2c36d492c610257c115fa16b386069e726ed6ff42c90cc6a3dc101d8ad6f412",
+  "baseline_state_sha256": "a570b05f7d9a289392c0a42b3c4c65b137aea8d481037a23eaa77438706b871f",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "receipt_id": "9b3a1f82c19a9945a721cb0f1feea9bf306ade4d774000d0f598a7befb972ffc"
+}

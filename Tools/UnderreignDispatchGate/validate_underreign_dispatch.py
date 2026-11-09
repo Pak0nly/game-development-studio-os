@@ -10,11 +10,16 @@ enforces Director non-execution declarations (one separate Claude Code ``Agent``
 subagent Worker). The closure path binds distinct task identities, candidate
 and evidence bytes, and independent review before an operational PASS
 projection. Every manifest must declare ``project_scope: "Underreign"``.
+
+Optional per manifest: an ``external_project`` root (allow-listed in the schema) and a
+``cloud_night`` night-shift mode with a local ``verify-night-return`` command
+(independent copy of proven logic, UR-GATE-EXTERNAL-NIGHT-V1; no night budget).
 """
 
 from __future__ import annotations
 
 import argparse
+import datetime
 import hashlib
 import json
 import os
@@ -778,13 +783,306 @@ def validate_roles(
         fail("E_MANDATORY_ROLE_NOT_APPLICABLE", f"mandatory roles must be activated: {invalid_na}")
 
 
+# --------------------------------------------------------------------------
+# External project root and night-shift mode (UR-GATE-EXTERNAL-NIGHT-V1)
+#
+# Both features are strictly opt-in per manifest.  A manifest without
+# ``external_project`` and without ``execution_location: "cloud_night"`` takes
+# none of the code paths below.
+# --------------------------------------------------------------------------
+
+HEX_COMMIT = re.compile(r"^[0-9a-f]{40}(?:[0-9a-f]{24})?$")
+EXTERNAL_DRIVE_ROOT = re.compile(r"^([A-Za-z]):/((?:[^/:*?\"<>|]+/)*[^/:*?\"<>|]+)$")
+EXTERNAL_POSIX_ROOT = re.compile(r"^/((?:[^/:*?\"<>|]+/)*[^/:*?\"<>|]+)$")
+NIGHT_MANIFEST_FIELDS = ("night_branch", "night_evidence_dir")
+# Underreign has no night cost cap (Human, 2026-10-24).  A ``budget`` field is
+# rejected on every manifest so that no one mistakes it for an enforced limit.
+UNSUPPORTED_MANIFEST_FIELDS = ("budget",)
+EXT_PREFIX = "ext:"
+
+
+def normalize_external_root(value: Any) -> str:
+    """Return a forward-slash absolute root with an upper-case drive letter."""
+    if not isinstance(value, str) or not value.strip():
+        fail("E_EXTERNAL_ROOT_INVALID", "external root must be a non-empty string")
+    normalized = value.replace("\\", "/").rstrip("/")
+    match = EXTERNAL_DRIVE_ROOT.fullmatch(normalized)
+    if match is not None:
+        parts = match.group(2).split("/")
+        prefix = f"{match.group(1).upper()}:/"
+    else:
+        match = EXTERNAL_POSIX_ROOT.fullmatch(normalized)
+        if match is None:
+            fail(
+                "E_EXTERNAL_ROOT_INVALID",
+                f"external root must be an absolute drive-letter path: {value!r}",
+            )
+        parts = match.group(1).split("/")
+        prefix = "/"
+    if any(part in (".", "..") for part in parts):
+        fail("E_EXTERNAL_ROOT_INVALID", f"external root must not contain . or ..: {value!r}")
+    return prefix + "/".join(parts)
+
+
+def external_schema(schema: dict[str, Any]) -> dict[str, Any]:
+    config = schema.get("external_project")
+    if not isinstance(config, dict):
+        fail("E_SCHEMA_EXTERNAL_MISSING", "schema has no external_project configuration")
+    return config
+
+
+def external_root_path(normalized_root: str) -> Path:
+    path = Path(normalized_root)
+    if path.exists() or path.is_symlink():
+        reject_reparse_component(path, normalized_root)
+    return path
+
+
+def external_relative_list(value: Any, label: str, *, allow_root: bool = False) -> list[str]:
+    if not isinstance(value, list) or not value or not all(isinstance(i, str) for i in value):
+        fail("E_EXTERNAL_PATHS_INVALID", f"{label} must be a non-empty array of paths")
+    normalized = [normalize_relative(item, allow_root=allow_root) for item in value]
+    if len(normalized) != len(set(normalized)):
+        fail("E_EXTERNAL_PATHS_INVALID", f"{label} contains duplicate paths")
+    return normalized
+
+
+def listing_projection(root: Path, paths: list[str]) -> str:
+    """Sorted file-listing digest (path, sha256, size) used for an uninitialised root."""
+    rows: dict[str, str] = {}
+    if root.exists():
+        for relative in paths:
+            start = repo_path(root, relative, allow_root=True)
+            if not start.exists():
+                continue
+            if start.is_file():
+                candidates = [start]
+            else:
+                candidates = []
+                for directory, _dirs, files in os.walk(start, followlinks=False):
+                    reject_reparse_component(Path(directory), relative)
+                    candidates.extend(Path(directory) / name for name in files)
+            for item in candidates:
+                reject_reparse_component(item, relative)
+                key = item.relative_to(root).as_posix()
+                raw = item.read_bytes()
+                rows[key] = f"{key}\t{sha256_bytes(raw)}\t{len(raw)}"
+    payload = "\n".join(rows[key] for key in sorted(rows)).encode("utf-8")
+    return sha256_bytes(payload)
+
+
+def validate_external_project(
+    section: Any,
+    schema: dict[str, Any],
+    declarations: set[str],
+    *,
+    live: bool,
+) -> dict[str, Any]:
+    """Validate the optional ``external_project`` section; return its bound state.
+
+    The allowed-root check happens before any filesystem access so that a root
+    outside the schema list is never touched.
+    """
+    if not isinstance(section, dict):
+        fail("E_EXTERNAL_SECTION", "external_project must be an object")
+    require_declaration(section, declarations, "external_project", expected="VERIFIED")
+    require_fields(
+        section,
+        ("root", "git", "allowed_mutations", "protected_paths", "dirty_state", "declaration"),
+        "E_EXTERNAL_FIELD_MISSING",
+    )
+    root_text = normalize_external_root(section["root"])
+    allowed_roots = {
+        normalize_external_root(item) for item in external_schema(schema).get("allowed_roots", [])
+    }
+    if root_text not in allowed_roots:
+        fail(
+            "E_EXTERNAL_ROOT_NOT_ALLOWED",
+            f"external root is not in the schema allow-list: {root_text}",
+        )
+
+    allowed = external_relative_list(
+        section["allowed_mutations"], "external_project.allowed_mutations"
+    )
+    protected = external_relative_list(
+        section["protected_paths"], "external_project.protected_paths"
+    )
+    for mutation in allowed:
+        for frozen in protected:
+            if (
+                mutation == frozen
+                or mutation.startswith(frozen + "/")
+                or frozen.startswith(mutation + "/")
+            ):
+                fail(
+                    "E_EXTERNAL_MUTATION_PROTECTED_OVERLAP",
+                    f"external allowed mutation {mutation} overlaps protected path {frozen}",
+                )
+
+    git = section["git"]
+    if git == "uninitialised":
+        git_state: Any = "uninitialised"
+    elif isinstance(git, dict):
+        require_fields(git, ("branch", "head"), "E_EXTERNAL_GIT_INVALID")
+        branch = require_string(git["branch"], "E_EXTERNAL_GIT_INVALID", "external git.branch")
+        head = git["head"]
+        if not isinstance(head, str) or HEX_COMMIT.fullmatch(head) is None:
+            fail("E_EXTERNAL_GIT_INVALID", "external git.head must be a lowercase commit id")
+        git_state = {"branch": branch, "head": head}
+    else:
+        fail(
+            "E_EXTERNAL_GIT_INVALID",
+            'external git must be "uninitialised" or an object with branch and head',
+        )
+
+    dirty = section["dirty_state"]
+    if not isinstance(dirty, dict):
+        fail("E_EXTERNAL_DIRTY_STATE", "external dirty_state must be an object")
+    require_fields(dirty, ("mode", "paths", "sha256"), "E_EXTERNAL_DIRTY_STATE")
+    if dirty["mode"] != "bounded_projection":
+        fail("E_EXTERNAL_DIRTY_STATE", "only bounded_projection is supported")
+    dirty_paths = external_relative_list(
+        dirty["paths"], "external_project.dirty_state.paths", allow_root=True
+    )
+    expected_dirty = validate_sha(
+        dirty["sha256"], "E_EXTERNAL_DIRTY_STATE", "external_project.dirty_state.sha256"
+    )
+
+    dirty_sha = expected_dirty
+    if live:
+        root = external_root_path(root_text)
+        if git_state == "uninitialised":
+            if root.exists() and (not root.is_dir() or any(root.iterdir())):
+                fail(
+                    "E_EXTERNAL_NOT_UNINITIALISED",
+                    "uninitialised external root must be absent or an empty directory",
+                )
+            actual_dirty = listing_projection(root, dirty_paths)
+        else:
+            if not root.is_dir():
+                fail("E_EXTERNAL_ROOT_MISSING", f"external root is missing: {root_text}")
+            live_git = live_repository(root)
+            if live_git["branch"] != git_state["branch"]:
+                fail("E_EXTERNAL_BRANCH", f"external branch mismatch: {live_git['branch']}")
+            if live_git["head"] != git_state["head"]:
+                fail("E_EXTERNAL_HEAD", f"external HEAD mismatch: {live_git['head']}")
+            actual_dirty = dirty_projection(root, dirty_paths)
+        if actual_dirty != expected_dirty:
+            fail(
+                "E_EXTERNAL_DIRTY_DRIFT",
+                f"external dirty projection drift: expected {expected_dirty}, got {actual_dirty}",
+            )
+        dirty_sha = actual_dirty
+
+    return {
+        "root": root_text,
+        "git": git_state,
+        "allowed_mutations": sorted(allowed),
+        "protected_paths": sorted(protected),
+        "dirty_state": {
+            "mode": "bounded_projection",
+            "paths": sorted(dirty_paths),
+            "sha256": dirty_sha,
+        },
+    }
+
+
+def validate_night_shift(
+    manifest: dict[str, Any], schema: dict[str, Any], external: dict[str, Any] | None
+) -> dict[str, Any]:
+    config = external_schema(schema)
+    if external is None:
+        fail("E_NIGHT_EXTERNAL_REQUIRED", "cloud_night requires an external_project section")
+    if not isinstance(external["git"], dict):
+        fail(
+            "E_NIGHT_GIT_REQUIRED",
+            "cloud_night requires the external git branch and head (the evening base)",
+        )
+    for field in NIGHT_MANIFEST_FIELDS:
+        if field not in manifest:
+            fail("E_NIGHT_FIELD_MISSING", f"cloud_night requires manifest field: {field}")
+    branch = manifest["night_branch"]
+    pattern = re.compile(config["night_branch_pattern"])
+    if not isinstance(branch, str) or pattern.fullmatch(branch) is None:
+        fail("E_NIGHT_BRANCH", "night_branch must match night/<YYYY-MM-DD>")
+    try:
+        datetime.datetime.strptime(branch.split("/", 1)[1], "%Y-%m-%d")
+    except ValueError:
+        fail("E_NIGHT_BRANCH", f"night_branch is not a calendar date: {branch}")
+    evidence_dir = manifest["night_evidence_dir"]
+    if not isinstance(evidence_dir, str):
+        fail("E_NIGHT_EVIDENCE_DIR", "night_evidence_dir must be a relative path string")
+    evidence_dir = normalize_relative(evidence_dir)
+    if not path_is_within(evidence_dir, external["allowed_mutations"]) or path_is_within(
+        evidence_dir, external["protected_paths"]
+    ):
+        fail(
+            "E_NIGHT_EVIDENCE_DIR",
+            "night_evidence_dir must be inside external allowed_mutations and outside protected paths",
+        )
+    return {
+        "branch": branch,
+        "evidence_dir": evidence_dir,
+    }
+
+
+def validate_external_and_night(
+    manifest: dict[str, Any],
+    schema: dict[str, Any],
+    declarations: set[str],
+    *,
+    live: bool,
+) -> dict[str, Any]:
+    """Return the receipt extras for the optional features; ``{}`` when neither is used."""
+    location = manifest.get("execution_location", "local")
+    if location not in schema.get("execution_locations", ["local"]):
+        fail("E_EXECUTION_LOCATION", f"execution_location is invalid: {location!r}")
+    unsupported = [field for field in UNSUPPORTED_MANIFEST_FIELDS if field in manifest]
+    if unsupported:
+        fail(
+            "E_NIGHT_FIELDS_UNEXPECTED",
+            f"fields not supported by the Underreign gate (no night budget): {unsupported}",
+        )
+    external = None
+    if "external_project" in manifest:
+        external = validate_external_project(
+            manifest["external_project"], schema, declarations, live=live
+        )
+    night = None
+    if location == "local":
+        stray = [field for field in NIGHT_MANIFEST_FIELDS if field in manifest]
+        if stray:
+            fail("E_NIGHT_FIELDS_UNEXPECTED", f"night fields without cloud_night: {stray}")
+    else:
+        night = validate_night_shift(manifest, schema, external)
+    extras: dict[str, Any] = {}
+    if external is not None:
+        state = dict(external)
+        state["state_sha256"] = sha256_bytes(canonical_json(external))
+        extras["external_project"] = state
+        extras["execution_location"] = location
+    if night is not None:
+        extras["night_shift"] = night
+    return extras
+
+
 def validate_manifest(
     root: Path,
     manifest_path: Path,
     work_order_path: Path,
-    capabilities_path: Path,
+    capabilities_path: Path | None,
     schema: dict[str, Any],
+    *,
+    live: bool = True,
 ) -> dict[str, Any]:
+    """Validate a dispatch manifest.
+
+    ``live=False`` is the static pass used by ``verify-night-return``: it keeps
+    every structural, Work Order and external-section check but skips the
+    comparisons against live Studio repository state (HEAD, dirty projection,
+    sources, baselines, project identity, capabilities), which legitimately
+    change between the evening dispatch and the morning return.
+    """
     manifest, manifest_raw = load_json(manifest_path, "E_MANIFEST_MISSING")
     require_fields(manifest, schema["required_manifest_fields"], "E_MANIFEST_FIELD_MISSING")
     if manifest["schema_version"] not in schema["supported_dispatch_manifest_versions"]:
@@ -857,12 +1155,15 @@ def validate_manifest(
     require_string(repository["repository_id"], "E_REPOSITORY_IDENTITY", "repository_id")
     if normalize_relative(repository["project_path"]) != schema["project_path"]:
         fail("E_PROJECT_SCOPE", f"repository.project_path must be {schema['project_path']}")
-    project_identity_digest = validate_project_identity(root, repository, declarations)
-    live = live_repository(root)
-    if repository["branch"] != live["branch"]:
-        fail("E_REPOSITORY_BRANCH", f"branch mismatch: {live['branch']}")
-    if repository["head"] != live["head"]:
-        fail("E_REPOSITORY_HEAD", f"HEAD mismatch: {live['head']}")
+    project_identity_digest = None
+    live_repo = None
+    if live:
+        project_identity_digest = validate_project_identity(root, repository, declarations)
+        live_repo = live_repository(root)
+        if repository["branch"] != live_repo["branch"]:
+            fail("E_REPOSITORY_BRANCH", f"branch mismatch: {live_repo['branch']}")
+        if repository["head"] != live_repo["head"]:
+            fail("E_REPOSITORY_HEAD", f"HEAD mismatch: {live_repo['head']}")
 
     dirty = manifest["dirty_state"]
     require_declaration(dirty, declarations, "dirty_state", expected="VERIFIED")
@@ -872,9 +1173,11 @@ def validate_manifest(
     if not isinstance(dirty["paths"], list):
         fail("E_DIRTY_STATE_MISSING", "dirty_state.paths must be an array")
     expected_dirty = validate_sha(dirty["sha256"], "E_DIRTY_STATE_HASH_INVALID", "dirty_state.sha256")
-    actual_dirty = dirty_projection(root, dirty["paths"])
-    if actual_dirty != expected_dirty:
-        fail("E_DIRTY_STATE_DRIFT", f"dirty projection drift: expected {expected_dirty}, got {actual_dirty}")
+    actual_dirty = expected_dirty
+    if live:
+        actual_dirty = dirty_projection(root, dirty["paths"])
+        if actual_dirty != expected_dirty:
+            fail("E_DIRTY_STATE_DRIFT", f"dirty projection drift: expected {expected_dirty}, got {actual_dirty}")
 
     authority = manifest["human_authority"]
     require_declaration(authority, declarations, "human_authority", expected="HUMAN DECISION")
@@ -909,21 +1212,28 @@ def validate_manifest(
         if step.get("status") not in ("pending", "in_progress", "completed"):
             fail("E_VISIBLE_PLAN_MISSING", f"visible_task_plan[{index}].status is invalid")
 
-    baseline_digest = validate_baselines(root, manifest["baselines"], declarations)
+    baseline_digest = None
+    if live:
+        baseline_digest = validate_baselines(root, manifest["baselines"], declarations)
 
     validate_path_boundaries(manifest)
     validate_mutation_scope(manifest, schema)
     validate_routing(manifest, schema, declarations)
     validate_orchestration(manifest, schema)
     validate_roles(manifest, schema, declarations)
-    required_tools = validate_capabilities(manifest, capabilities_path, declarations, schema)
-    source_digest = source_state(root, manifest, declarations)
+    receipt_extras = validate_external_and_night(manifest, schema, declarations, live=live)
+    required_tools = None
+    source_digest = None
+    if live:
+        required_tools = validate_capabilities(manifest, capabilities_path, declarations, schema)
+        source_digest = source_state(root, manifest, declarations)
     return {
         "manifest": manifest,
         "schema_version": manifest["schema_version"],
         "manifest_sha256": sha256_bytes(manifest_raw),
         "work_order_sha256": actual_work_order_hash,
-        "repository": live,
+        "receipt_extras": receipt_extras,
+        "repository": live_repo,
         "project_identity_sha256": project_identity_digest,
         "dirty_state": {
             "mode": "bounded_projection",
@@ -953,6 +1263,7 @@ def build_receipt(validated: dict[str, Any], schema: dict[str, Any]) -> dict[str
         "baseline_state_sha256": validated["baseline_state_sha256"],
         "required_live_task_tools": validated["required_live_task_tools"],
     }
+    receipt.update(validated.get("receipt_extras", {}))
     receipt["receipt_id"] = sha256_bytes(canonical_json(receipt))
     return receipt
 
@@ -961,6 +1272,8 @@ def verify_receipt(
     receipt_path: Path,
     validated: dict[str, Any],
     schema: dict[str, Any],
+    *,
+    live: bool = True,
 ) -> dict[str, Any]:
     receipt, _ = load_json(receipt_path, "E_RECEIPT_MISSING")
     require_fields(receipt, schema["required_receipt_fields"], "E_RECEIPT_FIELD_MISSING")
@@ -989,19 +1302,31 @@ def verify_receipt(
     mismatched = [key for key, expected in bound_fields.items() if receipt.get(key) != expected]
     if mismatched:
         fail("E_RECEIPT_REUSE", f"receipt is bound to another manifest or Work Order: {mismatched}")
-    if receipt["repository"] != validated["repository"]:
-        fail("E_RECEIPT_STALE_REPOSITORY", "live repository identity differs from receipt")
-    if receipt["project_identity_sha256"] != validated["project_identity_sha256"]:
-        fail("E_RECEIPT_STALE_PROJECT", "live project identity differs from receipt")
-    if receipt["dirty_state"] != validated["dirty_state"]:
-        fail("E_RECEIPT_STALE_DIRTY_STATE", "live dirty projection differs from receipt")
-    if receipt["source_state_sha256"] != validated["source_state_sha256"]:
-        fail("E_RECEIPT_STALE_SOURCE", "live canonical source state differs from receipt")
-    if receipt["baseline_state_sha256"] != validated["baseline_state_sha256"]:
-        fail("E_RECEIPT_STALE_BASELINE", "live technical baseline state differs from receipt")
-    if receipt["required_live_task_tools"] != validated["required_live_task_tools"]:
-        fail("E_RECEIPT_CAPABILITIES", "required capability set differs from receipt")
+    if live:
+        if receipt["repository"] != validated["repository"]:
+            fail("E_RECEIPT_STALE_REPOSITORY", "live repository identity differs from receipt")
+        if receipt["project_identity_sha256"] != validated["project_identity_sha256"]:
+            fail("E_RECEIPT_STALE_PROJECT", "live project identity differs from receipt")
+        if receipt["dirty_state"] != validated["dirty_state"]:
+            fail("E_RECEIPT_STALE_DIRTY_STATE", "live dirty projection differs from receipt")
+        if receipt["source_state_sha256"] != validated["source_state_sha256"]:
+            fail("E_RECEIPT_STALE_SOURCE", "live canonical source state differs from receipt")
+        if receipt["baseline_state_sha256"] != validated["baseline_state_sha256"]:
+            fail("E_RECEIPT_STALE_BASELINE", "live technical baseline state differs from receipt")
+        if receipt["required_live_task_tools"] != validated["required_live_task_tools"]:
+            fail("E_RECEIPT_CAPABILITIES", "required capability set differs from receipt")
+    check_receipt_extras(receipt, validated.get("receipt_extras", {}))
     return receipt
+
+
+def check_receipt_extras(receipt: dict[str, Any], extras: dict[str, Any]) -> None:
+    """External-root and night-shift state bound by the receipt (absent for old manifests)."""
+    for key in ("external_project", "execution_location", "night_shift"):
+        if receipt.get(key) != extras.get(key):
+            fail(
+                "E_RECEIPT_STALE_EXTERNAL",
+                f"receipt {key} differs from the manifest/live external state",
+            )
 
 
 def write_new_json(
@@ -1059,6 +1384,7 @@ def validate_file_identity_entries(
     allowed_roots: list[str],
     *,
     label: str,
+    external: dict[str, Any] | None = None,
 ) -> tuple[str, list[dict[str, Any]]]:
     stale_code = (
         "E_CLOSURE_CANDIDATE_STALE" if label == "candidate.files" else "E_CLOSURE_FILE_STALE"
@@ -1074,19 +1400,47 @@ def validate_file_identity_entries(
         if not isinstance(entry, dict):
             fail("E_CLOSURE_FILE_SET", f"{item_label} must be an object")
         require_fields(entry, ("path", "sha256", "size"), "E_CLOSURE_FILE_SET")
-        relative = normalize_relative(entry["path"])
-        if relative in seen_paths:
-            fail("E_CLOSURE_FILE_SET", f"duplicate closure file path: {relative}")
-        seen_paths.add(relative)
-        if not path_is_within(relative, normalized_allowed):
-            fail("E_CLOSURE_SCOPE", f"closure file is outside dispatch mutations: {relative}")
+        is_external = (
+            label == "candidate.files"
+            and isinstance(entry["path"], str)
+            and entry["path"].startswith(EXT_PREFIX)
+        )
+        if is_external:
+            if external is None:
+                fail(
+                    "E_CLOSURE_EXTERNAL_UNDECLARED",
+                    "ext: candidate file but the dispatch declares no external_project",
+                )
+            relative = normalize_relative(entry["path"][len(EXT_PREFIX):])
+            display = EXT_PREFIX + relative
+            if display in seen_paths:
+                fail("E_CLOSURE_FILE_SET", f"duplicate closure file path: {display}")
+            seen_paths.add(display)
+            if _under(relative, external["protected_paths"], fold=True) or not _under(
+                relative, external["allowed_mutations"], fold=False
+            ):
+                fail(
+                    "E_CLOSURE_SCOPE",
+                    f"closure file is outside external dispatch mutations: {display}",
+                )
+            file_root = external_root_path(external["root"])
+            path = repo_path(file_root, relative)
+            relative = display
+        else:
+            relative = normalize_relative(entry["path"])
+            if relative in seen_paths:
+                fail("E_CLOSURE_FILE_SET", f"duplicate closure file path: {relative}")
+            seen_paths.add(relative)
+            if not path_is_within(relative, normalized_allowed):
+                fail("E_CLOSURE_SCOPE", f"closure file is outside dispatch mutations: {relative}")
         item_id = entry.get("id")
         if item_id is not None:
             item_id = require_string(item_id, "E_CLOSURE_FILE_SET", f"{item_label}.id")
             if item_id in seen_ids:
                 fail("E_CLOSURE_FILE_SET", f"duplicate closure evidence id: {item_id}")
             seen_ids.add(item_id)
-        path = repo_path(root, relative)
+        if not is_external:
+            path = repo_path(root, relative)
         if not path.is_file():
             fail("E_CLOSURE_FILE_MISSING", f"closure file is missing: {relative}")
         raw = path.read_bytes()
@@ -1132,7 +1486,7 @@ def validate_dispatch_closure_binding(
     closure: dict[str, Any],
     work_order_path: Path,
     schema: dict[str, Any],
-) -> tuple[dict[str, Any], dict[str, Any]]:
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
     dispatch = closure["dispatch"]
     if not isinstance(dispatch, dict):
         fail("E_CLOSURE_DISPATCH", "dispatch must be an object")
@@ -1217,7 +1571,66 @@ def validate_dispatch_closure_binding(
         != work_order_path.resolve()
     ):
         fail("E_CLOSURE_WORK_ORDER", "dispatch and closure Work Order identity mismatch")
-    return dispatch_manifest, dispatch_receipt
+    # External root / night shift (opt-in).  Static pass only: the live state is
+    # intentionally not re-compared at closure; the receipt must still bind it.
+    extras = validate_external_and_night(dispatch_manifest, schema, declarations, live=False)
+    try:
+        check_receipt_extras(dispatch_receipt, extras)
+    except GateError as exc:
+        fail("E_CLOSURE_DISPATCH_RECEIPT", exc.detail)
+    return dispatch_manifest, dispatch_receipt, extras
+
+
+def validate_closure_night_return(
+    root: Path,
+    closure: dict[str, Any],
+    dispatch_manifest: dict[str, Any],
+    dispatch_receipt: dict[str, Any],
+    work_order_hash: str,
+    extras: dict[str, Any],
+    schema: dict[str, Any],
+    declarations: set[str],
+) -> str:
+    """A cloud_night closure needs the verified night return receipt; returns its id."""
+    night_return = closure.get("night_return")
+    if not isinstance(night_return, dict):
+        fail("E_CLOSURE_NIGHT_RETURN_MISSING", "cloud_night closure requires night_return")
+    require_declaration(night_return, declarations, "night_return", expected="VERIFIED")
+    require_fields(
+        night_return,
+        ("receipt_path", "receipt_sha256", "receipt_id", "declaration"),
+        "E_CLOSURE_NIGHT_RETURN_MISSING",
+    )
+    dispatch = closure["dispatch"]
+    manifest_path = repo_path(root, normalize_relative(dispatch["manifest_path"]))
+    receipt_path = repo_path(root, normalize_relative(night_return["receipt_path"]))
+    if receipt_path.parent.resolve() != manifest_path.parent.resolve():
+        fail("E_CLOSURE_NIGHT_RETURN_MISSING", "night return receipt must be a dispatch manifest sibling")
+    receipt, raw = load_json(receipt_path, "E_CLOSURE_NIGHT_RETURN_MISSING")
+    if sha256_bytes(raw) != validate_sha(
+        night_return["receipt_sha256"], "E_CLOSURE_NIGHT_RETURN_STALE", "night_return.receipt_sha256"
+    ):
+        fail("E_CLOSURE_NIGHT_RETURN_STALE", "night return receipt hash mismatch")
+    verify_night_return_receipt(
+        receipt,
+        work_order_id=dispatch_manifest["work_order_id"],
+        work_order_sha256=work_order_hash,
+        manifest_sha256=sha256_bytes(manifest_path.read_bytes()),
+        dispatch_receipt_id=dispatch_receipt["receipt_id"],
+        extras=extras,
+        schema=schema,
+    )
+    if receipt["receipt_id"] != night_return["receipt_id"]:
+        fail("E_NIGHT_RETURN_REUSE", "night return receipt id differs from the closure manifest")
+    ext_root = external_root_path(extras["external_project"]["root"])
+    if not ext_root.is_dir() or git_try(
+        ext_root, "cat-file", "-e", f"{receipt['branch_head']}^{{commit}}"
+    ) is None:
+        fail(
+            "E_CLOSURE_NIGHT_RETURN_HEAD",
+            "recorded night branch head is not a commit in the external repository",
+        )
+    return receipt["receipt_id"]
 
 
 def validate_closure_manifest(
@@ -1269,9 +1682,10 @@ def validate_closure_manifest(
     if work_order_id.encode("utf-8") not in work_order_raw:
         fail("E_CLOSURE_WORK_ORDER", "Work Order bytes do not contain closure id")
 
-    dispatch_manifest, dispatch_receipt = validate_dispatch_closure_binding(
+    dispatch_manifest, dispatch_receipt, extras = validate_dispatch_closure_binding(
         root, closure, work_order_path, schema
     )
+    external_state = extras.get("external_project")
     if not isinstance(dispatch_manifest["allowed_mutations"], list) or not all(
         isinstance(path, str) for path in dispatch_manifest["allowed_mutations"]
     ):
@@ -1302,7 +1716,7 @@ def validate_closure_manifest(
     require_declaration(candidate, declarations, "candidate", expected="VERIFIED")
     require_fields(candidate, ("identity", "files", "declaration"), "E_CLOSURE_CANDIDATE")
     candidate_identity_actual, candidate_rows = validate_file_identity_entries(
-        root, candidate["files"], allowed_roots, label="candidate.files"
+        root, candidate["files"], allowed_roots, label="candidate.files", external=external_state
     )
     if any("id" in item for item in candidate_rows):
         fail("E_CLOSURE_CANDIDATE", "candidate file entries must not declare evidence ids")
@@ -1407,6 +1821,15 @@ def validate_closure_manifest(
             f"independent review record mismatch: {mismatched_review}",
         )
 
+    night_return_id = None
+    if "night_shift" in extras:
+        night_return_id = validate_closure_night_return(
+            root, closure, dispatch_manifest, dispatch_receipt, work_order_hash,
+            extras, schema, declarations,
+        )
+    elif "night_return" in closure:
+        fail("E_CLOSURE_NIGHT_UNEXPECTED", "night_return given for an order that is not cloud_night")
+
     operational = closure["operational_state"]
     if not isinstance(operational, dict):
         fail("E_CLOSURE_OPERATIONAL_STATE", "operational_state must be an object")
@@ -1440,6 +1863,7 @@ def validate_closure_manifest(
         "review_record_sha256": record_hash,
         "reviewer_role": reviewer_role,
         "verdict": "PASS",
+        "night_return_receipt_id": night_return_id,
     }
 
 
@@ -1461,6 +1885,8 @@ def build_closure_receipt(validated: dict[str, Any], schema: dict[str, Any]) -> 
         "review_record_sha256": validated["review_record_sha256"],
         "verdict": validated["verdict"],
     }
+    if validated.get("night_return_receipt_id") is not None:
+        receipt["night_return_receipt_id"] = validated["night_return_receipt_id"]
     receipt["receipt_id"] = sha256_bytes(canonical_json(receipt))
     return receipt
 
@@ -1517,6 +1943,8 @@ def verify_operational_pass_claims(
         f"Candidate identity: {validated['candidate_identity']}",
         f"Closure receipt: {receipt['receipt_id']}",
     )
+    if validated.get("night_return_receipt_id") is not None:
+        markers += (f"Night return receipt: {validated['night_return_receipt_id']}",)
     for label, path in expected_paths.items():
         if not path.is_file():
             fail("E_CLOSURE_OPERATIONAL_STATE", f"{label} is missing: {path}")
@@ -1530,6 +1958,220 @@ def verify_operational_pass_claims(
                 "E_CLOSURE_PASS_CLAIM_BLOCKED",
                 f"{label} lacks exact independently reviewed PASS markers: {missing}",
             )
+
+
+# --------------------------------------------------------------------------
+# Night-shift return verification (UR-GATE-EXTERNAL-NIGHT-V1)
+# --------------------------------------------------------------------------
+
+
+def git_try(root: Path, *args: str) -> bytes | None:
+    """Run git; return None on any failure (used for existence probes)."""
+    try:
+        return run_git(root, *args)
+    except GateError:
+        return None
+
+
+def resolve_night_branch(root: Path, branch: str) -> str:
+    """Return the night branch head; local and origin refs must agree when both exist."""
+    heads: dict[str, str] = {}
+    for ref in (f"refs/heads/{branch}", f"refs/remotes/origin/{branch}"):
+        out = git_try(root, "rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}")
+        if out is not None and out.strip():
+            heads[ref] = out.decode("ascii").strip()
+    if not heads:
+        fail("E_NIGHT_BRANCH_MISSING", f"night branch does not exist in the external repository: {branch}")
+    if len(set(heads.values())) != 1:
+        fail("E_NIGHT_BRANCH_AMBIGUOUS", f"local and origin night branch differ: {heads}")
+    return next(iter(heads.values()))
+
+
+def _under(path: str, roots: list[str], *, fold: bool) -> bool:
+    candidate = path.casefold() if fold else path
+    for entry in roots:
+        base = entry.casefold() if fold else entry
+        if candidate == base or candidate.startswith(base + "/"):
+            return True
+    return False
+
+
+def parse_raw_diff_tree(raw: bytes) -> list[tuple[str, str, str]]:
+    """Parse ``git diff-tree -r -z --raw --no-renames`` into (old_mode, new_mode, path)."""
+    tokens = raw.split(b"\0")
+    rows: list[tuple[str, str, str]] = []
+    index = 0
+    while index < len(tokens) and tokens[index]:
+        meta = tokens[index].decode("ascii", errors="replace")
+        if index + 1 >= len(tokens) or not meta.startswith(":"):
+            fail("E_NIGHT_DIFF_PARSE", "cannot parse git diff-tree output")
+        fields = meta[1:].split(" ")
+        if len(fields) < 5:
+            fail("E_NIGHT_DIFF_PARSE", "cannot parse git diff-tree metadata")
+        rows.append((fields[0], fields[1], tokens[index + 1].decode("utf-8")))
+        index += 2
+    return rows
+
+
+def night_return_state(
+    root: Path, validated: dict[str, Any], schema: dict[str, Any]
+) -> dict[str, Any]:
+    """Check the night branch in the external repository; return the facts to bind."""
+    extras = validated["receipt_extras"]
+    external = extras["external_project"]
+    night = extras["night_shift"]
+    ext_root = external_root_path(external["root"])
+    if not ext_root.is_dir():
+        fail("E_EXTERNAL_ROOT_MISSING", f"external root is missing: {external['root']}")
+    live_repository(ext_root)  # raises unless the root is the Git top level
+    base = external["git"]["head"]
+    if git_try(ext_root, "cat-file", "-e", f"{base}^{{commit}}") is None:
+        fail("E_NIGHT_BASE_MISSING", f"declared base commit is not in the external repository: {base}")
+    head = resolve_night_branch(ext_root, night["branch"])
+    merge_base = git_try(ext_root, "merge-base", base, head)
+    if merge_base is None or merge_base.decode("ascii").strip() != base:
+        fail(
+            "E_NIGHT_MERGE_BASE",
+            f"night branch merge-base is not the declared base {base}",
+        )
+    span = f"{base}..{head}"
+    if run_git(ext_root, "rev-list", "--min-parents=2", span).strip():
+        fail("E_NIGHT_MERGE_COMMIT", "night branch contains a merge commit")
+    commits = run_git(ext_root, "rev-list", "--reverse", span).decode("ascii").split()
+    if not commits:
+        fail("E_NIGHT_EMPTY", "night branch has no commits beyond the declared base")
+    allowed = external["allowed_mutations"]
+    protected = external["protected_paths"]
+    for commit in commits:
+        raw = run_git(
+            ext_root, "diff-tree", "-r", "-z", "--raw", "--no-renames", "--no-commit-id", commit
+        )
+        for old_mode, new_mode, path in parse_raw_diff_tree(raw):
+            if _under(path, protected, fold=True):
+                fail("E_NIGHT_PROTECTED_PATH", f"commit {commit} touches protected path: {path}")
+            if not _under(path, allowed, fold=False):
+                fail("E_NIGHT_PATH_NOT_ALLOWED", f"commit {commit} touches a non-allowed path: {path}")
+            if {old_mode, new_mode} & {"120000", "160000"}:
+                fail("E_NIGHT_PATH_KIND", f"commit {commit} adds or changes a symlink/submodule: {path}")
+    listing = run_git(
+        ext_root, "ls-tree", "-r", "--name-only", "-z", head, "--", night["evidence_dir"] + "/"
+    )
+    if not listing.strip(b"\0"):
+        fail(
+            "E_NIGHT_EVIDENCE_MISSING",
+            f"evidence directory is absent or empty on the night branch: {night['evidence_dir']}",
+        )
+    return {
+        "external_root": external["root"],
+        "night_branch": night["branch"],
+        "base_head": base,
+        "branch_head": head,
+        "commits": commits,
+        "evidence_dir": night["evidence_dir"],
+    }
+
+
+def build_night_return_receipt(
+    validated: dict[str, Any],
+    state: dict[str, Any],
+    dispatch_receipt_id: str,
+    schema: dict[str, Any],
+) -> dict[str, Any]:
+    config = external_schema(schema)
+    receipt: dict[str, Any] = {
+        "schema_version": validated["schema_version"],
+        "kind": config["return_receipt_kind"],
+        "gate_state": config["return_gate_state"],
+        "project_scope": schema["project_scope"],
+        "work_order_id": validated["manifest"]["work_order_id"],
+        "work_order_sha256": validated["work_order_sha256"],
+        "manifest_sha256": validated["manifest_sha256"],
+        "dispatch_receipt_id": dispatch_receipt_id,
+        **state,
+    }
+    receipt["receipt_id"] = sha256_bytes(canonical_json(receipt))
+    return receipt
+
+
+def verify_night_return_receipt(
+    receipt: dict[str, Any],
+    *,
+    work_order_id: str,
+    work_order_sha256: str,
+    manifest_sha256: str,
+    dispatch_receipt_id: str,
+    extras: dict[str, Any],
+    schema: dict[str, Any],
+) -> None:
+    """Integrity and binding checks for a night return receipt (no live Git state)."""
+    config = external_schema(schema)
+    require_fields(
+        receipt,
+        schema["required_night_return_receipt_fields"],
+        "E_NIGHT_RETURN_FIELD_MISSING",
+    )
+    if (
+        receipt["kind"] != config["return_receipt_kind"]
+        or receipt["gate_state"] != config["return_gate_state"]
+        or receipt["project_scope"] != schema["project_scope"]
+    ):
+        fail("E_NIGHT_RETURN_INVALID", "night return receipt kind, state or scope mismatch")
+    unsigned = dict(receipt)
+    supplied = unsigned.pop("receipt_id", None)
+    if supplied != sha256_bytes(canonical_json(unsigned)):
+        fail("E_NIGHT_RETURN_TAMPERED", "night return receipt identity is invalid")
+    night = extras["night_shift"]
+    external = extras["external_project"]
+    bound = {
+        "work_order_id": work_order_id,
+        "work_order_sha256": work_order_sha256,
+        "manifest_sha256": manifest_sha256,
+        "dispatch_receipt_id": dispatch_receipt_id,
+        "external_root": external["root"],
+        "night_branch": night["branch"],
+        "base_head": external["git"]["head"],
+        "evidence_dir": night["evidence_dir"],
+    }
+    mismatched = [key for key, value in bound.items() if receipt.get(key) != value]
+    if mismatched:
+        fail(
+            "E_NIGHT_RETURN_REUSE",
+            f"night return receipt is bound to another order, manifest or dispatch: {mismatched}",
+        )
+    commits = receipt["commits"]
+    if (
+        not isinstance(commits, list)
+        or not commits
+        or not all(isinstance(item, str) and HEX_COMMIT.fullmatch(item) for item in commits)
+        or commits[-1] != receipt["branch_head"]
+    ):
+        fail("E_NIGHT_RETURN_INVALID", "night return commits must end at branch_head")
+
+
+def verify_night_return_command(
+    root: Path,
+    manifest_path: Path,
+    work_order_path: Path,
+    receipt_path: Path,
+    return_receipt_path: Path,
+    schema: dict[str, Any],
+) -> dict[str, Any]:
+    validated = validate_manifest(
+        root, manifest_path, work_order_path, None, schema, live=False
+    )
+    extras = validated["receipt_extras"]
+    if extras.get("execution_location") != external_schema(schema)["night_location"]:
+        fail("E_NIGHT_NOT_NIGHT_ORDER", "verify-night-return requires an execution_location of cloud_night")
+    dispatch_receipt = verify_receipt(receipt_path, validated, schema, live=False)
+    validate_receipt_location(root, manifest_path, return_receipt_path, must_exist=False)
+    if return_receipt_path.exists():
+        fail("E_RECEIPT_EXISTS", f"night return receipt already exists: {return_receipt_path}")
+    state = night_return_state(root, validated, schema)
+    receipt = build_night_return_receipt(
+        validated, state, dispatch_receipt["receipt_id"], schema
+    )
+    write_new_json(root, manifest_path, return_receipt_path, receipt)
+    return receipt
 
 
 SCHEMA_FILE = Path(__file__).with_name("underreign-dispatch-schema-v1.json")
@@ -1555,6 +2197,15 @@ def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
             sub.add_argument("--dry-run", action="store_true")
         if command == "verify-worker":
             sub.add_argument("--receipt", type=Path, required=True)
+    night = subparsers.add_parser(
+        "verify-night-return",
+        help="verify the cloud night branch locally and write a once-only return receipt",
+    )
+    night.add_argument("--root", type=Path, required=True)
+    night.add_argument("--manifest", type=Path, required=True)
+    night.add_argument("--work-order", type=Path, required=True)
+    night.add_argument("--receipt", type=Path, required=True, help="the dispatch receipt")
+    night.add_argument("--return-receipt", type=Path, required=True, help="output, written once")
     for command in ("issue-closure", "verify-closure"):
         sub = subparsers.add_parser(command)
         sub.add_argument("--root", type=Path, required=True)
@@ -1628,6 +2279,27 @@ def main(argv: Iterable[str] | None = None) -> int:
                     args.handover.resolve(strict=False),
                 )
                 print(f"PASS operational closure {verified_closure['receipt_id']}")
+            return 0
+        if args.command == "verify-night-return":
+            for label, supplied in (
+                ("manifest", args.manifest),
+                ("Work Order", args.work_order),
+                ("dispatch receipt", args.receipt),
+                ("return receipt", args.return_receipt),
+            ):
+                require_inside(root, supplied, label)
+            validate_receipt_location(
+                root, args.manifest.resolve(), args.receipt.resolve(strict=False), must_exist=True
+            )
+            returned = verify_night_return_command(
+                root,
+                args.manifest.resolve(),
+                args.work_order.resolve(),
+                args.receipt.resolve(),
+                args.return_receipt.resolve(strict=False),
+                schema,
+            )
+            print(f"PASS night return {returned['receipt_id']} -> {args.return_receipt}")
             return 0
         for label, supplied in (
             ("manifest", args.manifest),

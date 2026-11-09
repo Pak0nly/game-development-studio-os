@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-GATE-EXTERNAL-NIGHT-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-GATE-EXTERNAL-NIGHT-V1/WORK_ORDER.md",
+    "sha256": "c33f0be0694b38f53f5d5f449ad4508097f98d60283f34b9821ad4d74b47dea0",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-GATE-EXTERNAL-NIGHT-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "eb32797f18f6a8703bc8ad9fdbb4bb08b44c971c38f51d7fd9abe3a10a2d197b",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-GATE-EXTERNAL-NIGHT-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "445cccc5b0f58433dec20f5eb43e4bcd5c3bb672e7592282e8f7f86bdcb512a2",
+    "receipt_id": "9b3a1f82c19a9945a721cb0f1feea9bf306ade4d774000d0f598a7befb972ffc",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a577e0a890a4cb7e9",
+    "reviewer_task_id": "a71ee8999657bf6b9"
+  },
+  "candidate": {
+    "identity": "3c5f4850bd0cd679eb3e996c42182c4f94f6ac0f5c97fd19a048f9d748364a20",
+    "files": [
+      {
+        "path": "Tools/UnderreignDispatchGate/README.md",
+        "sha256": "fc84c594d99c4e3d2add8b74cd30630c5eb50fcab3da27b972bf897f520fbba8",
+        "size": 17812
+      },
+      {
+        "path": "Tools/UnderreignDispatchGate/underreign-dispatch-schema-v1.json",
+        "sha256": "b66b8e84b166dec78fbf1a8f751d06dda67c5de12231928a3257e7c6fa251f6e",
+        "size": 4893
+      },
+      {
+        "path": "Tools/UnderreignDispatchGate/validate_underreign_dispatch.py",
+        "sha256": "bc9d24a1e4a0aa6cf9a08cabe6be1c92cf06f04e23e62747c0457386d119c5f3",
+        "size": 103000
+      },
+      {
+        "path": "Tools/UnderreignDispatchGate/tests/test_validate_underreign_dispatch.py",
+        "sha256": "387d4b2158185b6072ebdd485e502bbe9e3a283371c875e565794cac2caefc99",
+        "size": 61082
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "worker-result",
+      "path": "Artifacts/Underreign/Evidence/UR-GATE-EXTERNAL-NIGHT-V1/WORKER_RESULT.md",
+      "sha256": "0feed69eb9de9ff761975b5872397e2ecfdfc038e11c66858fc99aec463f30e6",
+      "size": 7602
+    },
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-GATE-EXTERNAL-NIGHT-V1/REVIEW.md",
+      "sha256": "f3361fcef7b424fec2d353d5f6695b42d909633d6b06d6c22a18f4a32385900a",
+      "size": 1041
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-GATE-EXTERNAL-NIGHT-V1/review.json",
+    "record_sha256": "2817ede3c45223b38793444e0d801a51961e96b52cb83f14b295fbb305c7ea32",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "3c5f4850bd0cd679eb3e996c42182c4f94f6ac0f5c97fd19a048f9d748364a20",
+    "reviewed_evidence_ids": [
+      "review-report",
+      "worker-result"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

@@ -35,8 +35,21 @@ records the project.
 
 Nothing in Hearthlands, MobileArc or Crime99 was changed.
 
+## Closed: UR-GATE-EXTERNAL-NIGHT-V1
+
+UR-GATE-EXTERNAL-NIGHT-V1 (gate gains external root `C:/GameDev/Underreign`
+and cloud night mode; no budget field; 75/75 tests).
+Independent review verdict: PASS
+Worker task: a577e0a890a4cb7e9
+Reviewer task: a71ee8999657bf6b9
+Candidate identity: 3c5f4850bd0cd679eb3e996c42182c4f94f6ac0f5c97fd19a048f9d748364a20
+Closure receipt: 4a7487c363271a1a9952c8ff2d9351b8a8a1e3702a6395b0bd2ae726645bb235
+
 ## Human checkpoint
 
-Waiting for the Human's own
-rough images. Then a prototype planning Work Order (Ashen Pact, three layers,
-heat rises, greybox).
+Night shift 1 in preparation (Human, 2026-11-09): private GitHub repository
+`Pak0nly/underreign` created and set as `origin` of `C:/GameDev/Underreign`;
+night order UR-NIGHT-01-V1 (prototype plan, simulation core, game bible) runs in
+the cloud on `night/2026-11-09` until 07:00 UTC; snapshot order
+UR-NIGHT-PREP-V1 prepared. Morning: fetch, `verify-night-return`, review,
+sync results into the Studio repository.

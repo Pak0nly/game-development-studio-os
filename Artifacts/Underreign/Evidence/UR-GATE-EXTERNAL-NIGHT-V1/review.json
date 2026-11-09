@@ -1,0 +1,14 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-GATE-EXTERNAL-NIGHT-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a577e0a890a4cb7e9",
+  "reviewer_task_id": "a71ee8999657bf6b9",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "3c5f4850bd0cd679eb3e996c42182c4f94f6ac0f5c97fd19a048f9d748364a20",
+  "evidence_ids": [
+    "review-report",
+    "worker-result"
+  ],
+  "verdict": "PASS"
+}

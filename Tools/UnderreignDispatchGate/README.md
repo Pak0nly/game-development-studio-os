@@ -36,6 +36,7 @@ python Tools/UnderreignDispatchGate/validate_underreign_dispatch.py verify-direc
 python Tools/UnderreignDispatchGate/validate_underreign_dispatch.py verify-worker    --root . --manifest M --work-order W --capabilities C --receipt R
 python Tools/UnderreignDispatchGate/validate_underreign_dispatch.py issue-closure    --root . --closure-manifest X --work-order W --receipt CR
 python Tools/UnderreignDispatchGate/validate_underreign_dispatch.py verify-closure   --root . --closure-manifest X --work-order W --receipt CR --work-state S --handover H
+python Tools/UnderreignDispatchGate/validate_underreign_dispatch.py verify-night-return --root . --manifest M --work-order W --receipt R --return-receipt NR   (cloud_night orders only)
 python Tools/UnderreignDispatchGate/validate_underreign_dispatch.py candidate-identity --root .
 ```
 
@@ -83,6 +84,67 @@ A compact, annotated excerpt of a real, receipt-validated manifest (`Artifacts/U
 
 Tip: run `check-manifest` first; it reports each mismatch (hash, HEAD, dirty projection, baseline) as an `E_*` code with the expected and actual value, so you can correct the manifest before issuing a receipt.
 
+## External project root (optional)
+
+Added by `UR-GATE-EXTERNAL-NIGHT-V1` (UD-26: the Unity project lives in `C:\GameDev\Underreign`, its own Git repository, outside the Studio repository). The logic is an independent copy of the proven external-root design of the Studio's other Claude-directed gate; it imports nothing from it and shares no state or paths with it. A manifest may carry an optional `external_project` section. Manifests without it behave exactly as before and their receipts gain no new keys.
+
+```text
+"external_project": {
+  "root": "C:/GameDev/Underreign",                   // must equal the schema allowed root
+  "git": { "branch": "main", "head": "<40-hex>" },   // or the string "uninitialised"
+  "allowed_mutations": ["Assets/Game", "Evidence"],  // relative to the external root
+  "protected_paths": ["ProjectSettings", "Packages"],
+  "dirty_state": { "mode": "bounded_projection", "paths": ["Assets", "ProjectSettings"],
+                   "sha256": "<see below>" },
+  "declaration": "VERIFIED"
+}
+```
+
+- Allowed roots live in the schema (`external_project.allowed_roots`): exactly `C:/GameDev/Underreign`, nothing else. The root is normalised (backslashes to `/`, trailing slash removed, drive letter upper-cased; the rest is case-sensitive). `..`, relative or UNC roots fail with `E_EXTERNAL_ROOT_INVALID`; any other root, including near misses (`C:/GameDev/Underreign2`, `C:/GameDev/underreign`, subfolders, other drives) and every Hearthlands root, fails with `E_EXTERNAL_ROOT_NOT_ALLOWED` before the filesystem is touched. The gate never creates the root.
+- `git` initialised: `verify-director` / `verify-worker` check that the root is the Git top level and that branch and HEAD match (`E_EXTERNAL_BRANCH`, `E_EXTERNAL_HEAD`). `dirty_state.sha256` is the SHA-256 of `git status --porcelain=v1 -z --untracked-files=all -- <paths>` run in the external repository.
+- `git: "uninitialised"`: the root must be absent or an empty directory (`E_EXTERNAL_NOT_UNINITIALISED`). `dirty_state.sha256` is then the digest of the sorted file listing (`path<TAB>sha256<TAB>size` per file) under the given paths (use `["."]`).
+- Allowed and protected path lists are validated like the Studio ones (non-empty, unique, no overlap: `E_EXTERNAL_MUTATION_PROTECTED_OVERLAP`).
+- The director receipt binds the normalised section under `external_project` (with its own `state_sha256`) and `execution_location`; `verify-worker` recomputes it live and any difference fails (`E_EXTERNAL_DIRTY_DRIFT`, `E_RECEIPT_STALE_EXTERNAL`, ...).
+- Closure: candidate files may be written `ext:<relative path>`. They are hashed from the external root, must lie inside the external `allowed_mutations` and outside its `protected_paths`, and enter the aggregate candidate identity under the `ext:` name. `ext:` is only valid in `candidate.files` and only when the dispatch declared `external_project` (`E_CLOSURE_EXTERNAL_UNDECLARED`). Operational PASS markers stay in the Underreign `WORK_STATE` / `CURRENT_HANDOVER`.
+
+## Night-shift mode (optional)
+
+Added by `UR-GATE-EXTERNAL-NIGHT-V1` (Human, 2026-11-09: night shift for Underreign; in this Studio a night shift is always a cloud run while the Human's PC is off: evening push, overnight cloud work without Unity on a pre-approved night Work Order, morning pull and local check). Manifest flag `"execution_location": "cloud_night"` (the default and only other value is `"local"`).
+
+```text
+"execution_location": "cloud_night",
+"external_project": { ... "git": { "branch": "main", "head": "<evening base>" } ... },
+"night_branch": "night/2026-11-10",                      // night/<YYYY-MM-DD>, a real date
+"night_evidence_dir": "Evidence/UR-EXAMPLE-WO-V1"        // relative to the external root,
+                                                          // inside external allowed_mutations
+```
+
+- Requires `external_project` with an initialised `git` (the evening base): `E_NIGHT_EXTERNAL_REQUIRED`, `E_NIGHT_GIT_REQUIRED`, `E_NIGHT_FIELD_MISSING`, `E_NIGHT_BRANCH`, `E_NIGHT_EVIDENCE_DIR`. The night fields are rejected on a `local` manifest (`E_NIGHT_FIELDS_UNEXPECTED`). The receipt additionally binds `night_shift` (branch and evidence dir).
+- No budget. There is no cost cap for night shifts (Human, 2026-10-24), so this gate has no `budget` field, no cap in the schema and no `E_NIGHT_BUDGET` check. Choice: a supplied `budget` field is rejected on every manifest, night or local, with `E_NIGHT_FIELDS_UNEXPECTED`, rather than silently ignored, so that nobody mistakes a declared number for a limit the gate enforces.
+- The cloud Worker cannot run `verify-worker` (no Studio repository there). All existing manifest checks still apply to the manifest itself.
+- `verify-night-return` runs locally the next morning, after the night branch has been fetched or pulled into the external repository:
+
+```text
+python -B Tools/UnderreignDispatchGate/validate_underreign_dispatch.py verify-night-return --root . --manifest M --work-order W --receipt R --return-receipt NR
+```
+
+  It validates the manifest statically (all structural, Work Order and external-section checks, but not the live Studio HEAD, dirty projection, sources or baselines, which legitimately change overnight), checks the director receipt integrity and its binding to the exact manifest, Work Order and external/night state, then inspects the Git objects of the external repository only (the working tree and the checked-out branch are irrelevant). The night branch must exist (local `refs/heads/<branch>` and/or `refs/remotes/origin/<branch>`; if both exist they must agree), the declared base commit must exist and be the merge-base, there must be at least one commit and no merge commit, every commit may touch only paths inside the external `allowed_mutations` and none inside `protected_paths` (deletions included; the protected comparison is case-insensitive), no commit may add or change a symlink or submodule, and the evidence directory must exist and be non-empty on the branch head. Only then it writes `NR` (a sibling of the manifest) once and never overwrites it (`E_RECEIPT_EXISTS`). `NR` (kind `underreign_night_return_receipt`) records work order, manifest, dispatch receipt id, base head, branch head and the commit list, signed by `receipt_id`.
+- Closure for a night order additionally requires `"night_return": {"receipt_path", "receipt_sha256", "receipt_id", "declaration": "VERIFIED"}` in the closure manifest (`E_CLOSURE_NIGHT_RETURN_MISSING`). The receipt is re-verified for integrity and binding to this order (`E_NIGHT_RETURN_TAMPERED`, `E_NIGHT_RETURN_REUSE`) and its branch head must be a commit in the external repository. The Underreign operational files must also contain `Night return receipt: <id>`. A non-night closure that supplies `night_return` fails (`E_CLOSURE_NIGHT_UNEXPECTED`). The normal independent review is still required.
+
+### Evening and morning steps
+
+1. Evening (PC on): `C:\GameDev\Underreign` clean on the base branch; write the night manifest and Work Order; run `verify-director` (writes the receipt); push the base branch and the Studio repository so the cloud session can see both.
+2. Overnight (cloud, no Unity): the cloud Worker commits only to `night/<date>` inside the external allowed paths and writes its evidence under `night_evidence_dir`; it never merges.
+3. Morning (PC on): fetch or pull the night branch into `C:\GameDev\Underreign`; run `verify-night-return`; check out the night branch there if `ext:` candidates are to be hashed; do the local Unity check; build the closure manifest with `night_return`; run the independent review, then `issue-closure` / `verify-closure`.
+
+### Honest limits of both features
+
+- Still a cooperative gate. It cannot attest what ran in the cloud, which model served it, or that the night branch was produced by the declared Worker; it only checks the resulting Git history and the recorded declarations. It records no spend.
+- `verify-night-return` trusts the local Git object store. Commits are judged by their diffs against their parents; a rewritten history that still matches the declared base is indistinguishable from an honest one.
+- Evidence content is not validated beyond existence on the branch; the independent review remains the content check.
+- `ext:` candidate hashing binds working-tree bytes, not their Git provenance; for a night order, check out the verified branch head first.
+- The external root allow-list is changed in the schema only by a gate-maintenance Work Order.
+
 ## Checks (all fail closed)
 
 Manifest: required fields and schema; Work Order path, bytes, hash and id; Git branch and HEAD; project identity proof; bounded dirty projection hash; authority and project source hashes; technical baselines; allowed/protected path overlap and forbidden mutations; model routing and attestation; orchestration (Director non-execution, separate `Agent` Worker, `agent_completion` monitoring, independent review contract, one Reviewer); roles; declared tools present in the capability evidence.
@@ -97,4 +159,4 @@ Closure: dispatch manifest and receipt hashes and binding; distinct task identit
 python -B -m unittest discover -s Tools/UnderreignDispatchGate/tests -v
 ```
 
-The tests build temporary Git repositories and do not read the live repository state.
+The tests build temporary Git repositories and do not read the live repository state. The external-root and night tests use a temporary external repository and a temporary schema copy; they never create, read or write the live `C:/GameDev/Underreign`.

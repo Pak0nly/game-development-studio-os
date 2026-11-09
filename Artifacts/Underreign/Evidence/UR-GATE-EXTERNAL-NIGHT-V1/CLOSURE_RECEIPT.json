@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-GATE-EXTERNAL-NIGHT-V1",
+  "work_order_sha256": "c33f0be0694b38f53f5d5f449ad4508097f98d60283f34b9821ad4d74b47dea0",
+  "closure_manifest_sha256": "9f0ac866416118b939bd7e01be1404b65d721ebb745c267b77f68511e38a1401",
+  "dispatch_receipt_id": "9b3a1f82c19a9945a721cb0f1feea9bf306ade4d774000d0f598a7befb972ffc",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a577e0a890a4cb7e9",
+  "reviewer_task_id": "a71ee8999657bf6b9",
+  "candidate_identity": "3c5f4850bd0cd679eb3e996c42182c4f94f6ac0f5c97fd19a048f9d748364a20",
+  "evidence_state_sha256": "402da50cba21c6487dae71fc267c74be5ee9f9fba91815213bbd9bc9b9f2a7d7",
+  "review_record_sha256": "2817ede3c45223b38793444e0d801a51961e96b52cb83f14b295fbb305c7ea32",
+  "verdict": "PASS",
+  "receipt_id": "4a7487c363271a1a9952c8ff2d9351b8a8a1e3702a6395b0bd2ae726645bb235"
+}
