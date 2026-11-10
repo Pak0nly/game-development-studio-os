@@ -23,6 +23,6 @@ Candidate identity: f98d497babee7b394ffe4e75907eaa17ad22f47f810364c5ce9a5b406be2
 Closure receipt: d0aba6ce02136b682a7863690ad918f5451f7233b3e277b124702e964f58719a
 Night return receipt: d9fc8767bccf9936492a119aaa3dc659465cdac1703a2cce7a8a28ce9f57d4da
 
-Next action: wait for catalogue round 6 (localStorage key `underreign-r6-v6`):
-engine comparison (OD-11), layer connections (OD-12), win goals (OD-13); then
-record them and plan the engine comparison sample or the Unity start.
+Next action: on the Human's go, dispatch the engine comparison sample
+(Blender-made Ashen Pact kit, same scene in Unity and Unreal 5.8, same camera,
+stills and clips side by side, including a dig moment for dynamic light).

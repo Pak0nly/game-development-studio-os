@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-DECISIONS-R6-V1",
+  "assignment_type": {
+    "value": "Record catalogue round 6 answers (engine comparison, layer connections, win goals)",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Routine",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R6-V1/WORK_ORDER.md",
+    "sha256": "06810b6231e984ba7b67f8c39e7f559a717fb5187b89c78d88759cf6171e3741",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Underreign",
+    "project_id": "Underreign",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Underreign",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "15278c41c10757e55779eb9d3d2ed6cc20de9182",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Projects/Underreign/README.md",
+      "Artifacts/Underreign/Evidence/UR-DECISIONS-R6-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-10, Underreign chat): royalty remark and catalogue round 6 answers D-1 to D-3 as quoted in the Work Order.",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a442ee7714ad051d361978b715b2dd0fd157325aa043cce9edd652f2fbed7eeb",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "b2eb81d4a757afe0897910042d6d022b07b93f07aacb96d02055cd6b27ef4e7c",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "7a14d82c5ce9ade628a0c250548ddb7aa61aa380f3d7f516b342647f8ca0a301",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "sha256": "48716658f555a9e807c159659ee03843f3e14d45266c329f69e723a63d97cf8a",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/README.md",
+      "sha256": "bb6273003e9f044f53ea15ceb9bf67573b3e8ac258c5d773f1171cd8932f3aab",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-schema",
+        "path": "Tools/UnderreignDispatchGate/underreign-dispatch-schema-v1.json",
+        "method": "file_sha256",
+        "expected_sha256": "b66b8e84b166dec78fbf1a8f751d06dda67c5de12231928a3257e7c6fa251f6e",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-10, Underreign chat): royalty remark and catalogue round 6 answers D-1 to D-3 as quoted in the Work Order.",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+    "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+    "Projects/Underreign/README.md",
+    "Artifacts/Underreign/Evidence/UR-DECISIONS-R6-V1"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs",
+    "Tools",
+    "Projects/Underreign/Docs/WORK_STATE.md",
+    "Projects/Underreign/Docs/CURRENT_HANDOVER.md",
+    "Projects/Underreign/Docs/GAME_CONCEPT.md",
+    "Projects/Underreign/References",
+    "Artifacts/Underreign/DirectorDispatch"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, or any need outside the allowed paths.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Discovery",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Record round 6 decisions",
+      "class": "Routine",
+      "reason": "Bounded documentation recording of two Human answers with exact quotes; routine.",
+      "requested_model": "sonnet",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Game Designer"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Director owns scope and Human checkpoint.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Game Designer",
+      "status": "ACTIVATED",
+      "reason": "Worker writes the Deep Dwarves concept entry.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Record UD rows and open decisions",
+      "status": "pending"
+    },
+    {
+      "step": "README and WORKER_RESULT.md",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "UR-DECISIONS-R6-V1",
+    "rounds": 1,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Underreign Director session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "sonnet",
+      "reasoning_effort": "medium",
+      "reason": "Bounded documentation recording of two Human answers with exact quotes; routine."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": false,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": false,
+      "reviewer_separate_from_worker_and_director": false,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Human reads the recorded round; next is the prototype planning Work Order.",
+    "declaration": "HUMAN DECISION"
+  }
+}

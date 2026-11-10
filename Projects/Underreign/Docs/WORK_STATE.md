@@ -46,6 +46,10 @@ Round 5 recorded by UR-DECISIONS-R5-V1 (UD-34 to UD-45; gate receipt
 Plan approved, standing Unity-start approvals given, URP for now. Before any
 engine work the Human wants to discuss: Unity or Unreal (OD-11), layer
 connections at fixed points (OD-12), winning needs more than defending (OD-13).
-Catalogue round 6 asks these with recommendations (engine comparison sample
-first; fixed breakthrough points with Deep Dwarves drilling new ones; active
-win goals). Waiting for the Human's round-6 answers. No engine work before.
+Round 6 recorded by UR-DECISIONS-R6-V1 (UD-46 to UD-48; receipt `982a1995…`,
+verify-worker PASS): engine comparison sample before the engine decision (free,
+owned or Blender-made graphics; Unreal's 5 % royalty acceptable); layers connect
+only at fixed breakthrough points for all peoples; destroying the enemy Heart
+wins, alternative objectives welcome, the prototype gains a small attack goal.
+Installed: Unreal Engine 5.8, Blender 5.2, Unity 6000.6.4f1. Waiting for the
+Human's go on the engine comparison order. No engine work before.

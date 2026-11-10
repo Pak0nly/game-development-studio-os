@@ -25,7 +25,7 @@ PC (Windows, Steam) first (UD-03). Other platforms later.
 
 Unity 6000.6.4f1, the same version as Hearthlands (UD-04). Render pipeline: URP
 for now, re-check after the first look sample (UD-36, OD-04). Engine choice
-under discussion: Unity or Unreal Engine (OD-11).
+open: comparison sample Unity vs. Unreal first (OD-11, UD-46).
 
 ## Unity Project Location
 
@@ -86,6 +86,7 @@ in Underreign overlaps with or is connected to Hearthlands.
 
 ## Next Step
 
-Engine discussion with the Human (OD-11) before the Unity start. The prototype
-plan is approved (UD-34); the Unity start follows once the engine question is
-settled.
+Engine comparison sample (OD-11, UD-46): the same Ashen Pact scene in Unity and
+Unreal, same camera, side by side; the Human decides by looking. Assets and
+Blender availability are open (OD-15). The prototype plan is approved (UD-34,
+with the attack goal added by UD-48); the engine start follows the decision.
