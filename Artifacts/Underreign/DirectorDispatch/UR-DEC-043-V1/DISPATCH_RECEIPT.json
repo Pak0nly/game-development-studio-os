@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-DEC-043-V1",
+  "work_order_sha256": "9796cdd54ca4692421c8a84980c8b0f864498e8cc78d7c6385f4a399178ed717",
+  "manifest_sha256": "3bb76f8901cc1b862570dccd5f6c35ba9f1062cae59f6d813aeed15c0ad25f66",
+  "repository": {
+    "branch": "main",
+    "head": "e4219ecff818cc23baed3f7144d637e0bb33982a"
+  },
+  "project_identity_sha256": "dce56f34ccf58e1d1f2f3bf40e3157f74d89f37dcde6cb30c56e33f9e0ff189d",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Docs/CONFIRMED_DECISIONS.md",
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Projects/Underreign/README.md",
+      "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "Artifacts/Underreign/Evidence/UR-DEC-043-V1"
+    ],
+    "sha256": "cf48992fe8a7daeb34d7ada00afa8f22021e3b61b498ada372c9cbdcf1f80c93"
+  },
+  "source_state_sha256": "26cda550cf9155aae1febb1d3ac50e2df8499d594ec3cfb8797c231b6a83b414",
+  "baseline_state_sha256": "b4aa37b42db16866950116cd59b14e5d98b03e733da07b799b6c11187ce0a21e",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "receipt_id": "9b3616c2426ad88695f4143c5691bd62d3d3fd1710df07b46c61f044624ebcf4"
+}

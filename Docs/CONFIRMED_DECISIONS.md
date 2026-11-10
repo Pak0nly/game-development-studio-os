@@ -771,3 +771,23 @@ authority boundaries.
 **Human confirmation source:** Human Developer, Underreign chat, 2026-11-10: "Die Lernsperre gilt für third party assets. Eigen erstelle Assets sind in Eigenverantwortung. Das auf Steam Angaben gemacht werden müssen ist klar." On the Director's question "Soll ich das so eintragen? A: Ja, nur für Underreign (meine Empfehlung). B: Ja, für das ganze Studio. C: Nein, die Regel bleibt, wie sie ist." the Human answered: "Ja." (option A, the recommendation as written: "die Ausnahme nur für Underreign festlegen. Eigene Underreign-Inhalte dürfen dann auf deine Verantwortung an Dienste wie Meshy gehen. Fremdassets bleiben unter der Sperre. Für Hearthlands und die anderen Projekte bleibt alles, wie es ist.").
 
 **Supersedes:** Only DEC-025's application to Underreign's own content; the text of DEC-025 is not changed.
+
+### DEC-043 — Underreign Engine: Unreal Engine 5
+
+**Status:** Confirmed
+
+**Scope:** Project Underreign only
+
+**Confirmed decision:**
+
+- Underreign uses Unreal Engine 5 (installed 5.8.3 at `C:\Program Files\Epic Games\UE_5.8`), chosen after the side-by-side comparison (UR-ENGINE-KIT-V1, UR-ENGINE-UNITY-V1, UR-ENGINE-UNREAL-V1) for its higher visual ceiling (Lumen dynamic global illumination, Nanite, virtual shadow maps) at equal or better performance.
+- Epic's royalty (5 % above USD 1 million gross per product) is accepted by the Human.
+- Project code is C++ and Python editor scripting where possible; binary Blueprint assets are kept to a minimum so AI Workers can read, write and review the work as text.
+- The engine-free simulation is ported from C# to C++ with its tests.
+- The Unity project location rule (UD-26) applies to the Unreal project: `C:\GameDev\Underreign`, own Git repository with Git LFS, remote `Pak0nly/underreign`.
+
+**Implications:** DEC-002/DEC-003 (Unity studio default) do not apply to Underreign; other projects are unaffected. Engine upgrades during production need a Human decision. Downloads, installations, Fab content and accounts still follow DEC-013/DEC-014 and DEC-042.
+
+**Human confirmation source:** Human Developer, Underreign chat, 2026-11-10. After the comparison: "Für mein Verständnis: Es wurde jetzt nur die Blender Scene in beide Engines eingebaut und Standard Einstellungen verwendet richtig? Also keine Grafik Optimierungen in irgend einer Form? Ich gehe gerade davon aus, dass wir eine weit höhere Grafikqualität in Unreal erreichen als in Unity und das bei gleicher, wenn nicht besserer Performance. Das wäre für mich ausschlaggebend." Asked "Which engine do you want?" the Human answered: "Unreal". Royalty: "Wenn ich es schaffen sollte, damit über 1m $ zu verdienen bin ich glücklich. 5% ist dann ok."
+
+**Supersedes:** Only DEC-041's engine clause ("Engine: Unity 6000.6.4f1 ...") and UD-04/UD-36 for Underreign; DEC-041's text is not changed.

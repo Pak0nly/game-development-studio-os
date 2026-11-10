@@ -62,6 +62,7 @@ UR-GATE-EXTERNAL-NIGHT-V1 closed 2026-11-09 (closure receipt
 
 ## Human checkpoint
 
-Engine choice after the comparison (OD-11): Director recommends Unity HDRP
-(nearly Unreal's look here, keeps the C# simulation and text-based tooling);
-Unreal is the alternative. Waiting for the Human's choice.
+Engine decided: Unreal Engine 5.8 (DEC-043, UD-51; recorded by UR-DEC-043-V1,
+receipt `9b3616c2…`). Waiting for the Human: does the standing commit approval
+cover Unreal jobs (OD-16), and may the broken Unity cache entry be deleted.
+Next work: simulation port C# to C++ (night) and the Unreal project setup (OD-17).

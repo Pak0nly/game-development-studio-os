@@ -23,15 +23,15 @@ PC (Windows, Steam) first (UD-03). Other platforms later.
 
 ## Engine
 
-Unity 6000.6.4f1, the same version as Hearthlands (UD-04). Render pipeline: URP
-for now, re-check after the first look sample (UD-36, OD-04). Engine choice
-open: comparison sample Unity vs. Unreal first (OD-11, UD-46).
+Unreal Engine 5.8 (installed 5.8.3), chosen after the side-by-side comparison
+(DEC-043, UD-51, OD-11). Render approach: Unreal with Lumen (OD-04). Earlier
+Unity decisions (UD-04, UD-36) are superseded.
 
-## Unity Project Location
+## Project Location
 
 `C:\GameDev\Underreign`, own local Git repository with Git LFS, no remote
 (UD-26). Created empty (README, .gitignore, .gitattributes); the Unity project
-is created by a later Work Order.
+is replaced by the Unreal project (DEC-043), created by a later Work Order.
 
 ## Phase
 
@@ -76,17 +76,16 @@ in Underreign overlaps with or is connected to Hearthlands.
 ## Risks
 
 - Title not yet checked.
-- Engine question open: Unity (DEC-041, UD-04) vs. Unreal Engine (OD-11); the
-  Unity start waits for it.
+- Engine decided: Unreal Engine 5 (DEC-043); the simulation port to C++ and the
+  project setup are open (OD-17).
 - Large feature set (five peoples, layers, wiring, physics); the prototype must
   prove the fun of layers plus wiring before scope grows.
 - The Deep Dwarves (UD-32) must stay clearly different from, and unconnected to,
   the surface dwarves of Hearthlands.
-- Gate and Unity project folder are new and untested on a real Work Order.
+- Gate and project folder are new and untested on a real Work Order.
 
 ## Next Step
 
-Engine comparison sample (OD-11, UD-46): the same Ashen Pact scene in Unity and
-Unreal, same camera, side by side; the Human decides by looking. Assets and
-Blender availability are open (OD-15). The prototype plan is approved (UD-34,
-with the attack goal added by UD-48); the engine start follows the decision.
+Simulation port from C# to C++ and Unreal project setup (OD-17); whether the
+standing commit approval covers Unreal jobs is open (OD-16). The prototype plan is
+approved (UD-34, with the attack goal added by UD-48).

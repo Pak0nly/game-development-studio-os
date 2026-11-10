@@ -46,6 +46,6 @@ Night return receipt: d9fc8767bccf9936492a119aaa3dc659465cdac1703a2cce7a8a28ce9f
 
 Recorded: DEC-042 (Underreign-only no-training scope for own content), UD-49 (Meshy for main modelling, Blender for adjustments, rigging, animation), UD-50; OD-06 direction decided.
 
-Next action: record the Human's engine choice (OD-11), then plan the
-prototype's engine work from `Design/Planning/UNITY_WORK_BREAKDOWN.md` (or a
-port plan if Unreal).
+Next action: engine is Unreal 5.8 (DEC-043). Get answers on OD-16 (commit
+approval for Unreal jobs) and the Unity cache entry; then plan the C++ port
+night and the Unreal project setup (OD-17); rewrite the work breakdown for Unreal.

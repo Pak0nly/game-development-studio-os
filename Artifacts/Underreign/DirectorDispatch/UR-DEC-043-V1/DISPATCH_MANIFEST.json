@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-DEC-043-V1",
+  "assignment_type": {
+    "value": "Record DEC-043 (Unreal Engine 5 for Underreign) and UD-51",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Standard",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-DEC-043-V1/WORK_ORDER.md",
+    "sha256": "9796cdd54ca4692421c8a84980c8b0f864498e8cc78d7c6385f4a399178ed717",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Underreign",
+    "project_id": "Underreign",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Underreign",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "e4219ecff818cc23baed3f7144d637e0bb33982a",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Docs/CONFIRMED_DECISIONS.md",
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Projects/Underreign/README.md",
+      "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "Artifacts/Underreign/Evidence/UR-DEC-043-V1"
+    ],
+    "sha256": "cf48992fe8a7daeb34d7ada00afa8f22021e3b61b498ada372c9cbdcf1f80c93",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-10, Underreign chat): 'Unreal' after the engine comparison; royalty remark '5% ist dann ok'.",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a442ee7714ad051d361978b715b2dd0fd157325aa043cce9edd652f2fbed7eeb",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "1c1ac1706234a935a6e5d230a3e67c300862dcb854c07c2c5ca7a53bf25b7c4b",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "b2d6e306519348e4bdfe4ec510e65c664ee5abd675806ad98793f12d3fade12f",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "sha256": "2dd37646a4bde932a66f2f3ba0179dd586d775f1d812b250aa7808f4621afc46",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/README.md",
+      "sha256": "be63d96430d6870244d2321b2d9b91ffd8d51aa4490373d7ef71dec5d007b5b5",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-schema",
+        "path": "Tools/UnderreignDispatchGate/underreign-dispatch-schema-v1.json",
+        "method": "file_sha256",
+        "expected_sha256": "b66b8e84b166dec78fbf1a8f751d06dda67c5de12231928a3257e7c6fa251f6e",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-10, Underreign chat): 'Unreal' after the engine comparison; royalty remark '5% ist dann ok'.",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Docs/CONFIRMED_DECISIONS.md",
+    "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+    "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+    "Projects/Underreign/README.md",
+    "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+    "Artifacts/Underreign/Evidence/UR-DEC-043-V1"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs/README.md",
+    "Docs/WORK_STATE.md",
+    "Tools",
+    "Projects/Underreign/Docs/WORK_STATE.md",
+    "Projects/Underreign/Docs/CURRENT_HANDOVER.md",
+    "Artifacts/Underreign/DirectorDispatch"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, or any need outside the allowed paths.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Discovery",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Record DEC-043 and UD-51",
+      "class": "Routine",
+      "reason": "Bounded documentation recording of two Human answers with exact quotes; routine.",
+      "requested_model": "sonnet",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Game Designer"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Director owns scope and Human checkpoint.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Game Designer",
+      "status": "ACTIVATED",
+      "reason": "Worker writes the Deep Dwarves concept entry.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Record UD rows and open decisions",
+      "status": "pending"
+    },
+    {
+      "step": "README and WORKER_RESULT.md",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "UR-DEC-043-V1",
+    "rounds": 1,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Underreign Director session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "sonnet",
+      "reasoning_effort": "medium",
+      "reason": "Bounded documentation recording of two Human answers with exact quotes; routine."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": false,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": false,
+      "reviewer_separate_from_worker_and_director": false,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Human reads the recorded round; next is the prototype planning Work Order.",
+    "declaration": "HUMAN DECISION"
+  }
+}
