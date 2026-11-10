@@ -1,0 +1,875 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-COMMANDS-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-COMMANDS-V1/WORK_ORDER.md",
+    "sha256": "faf8bdebf81ad21e13381b298fcdcf641300ad8737d3e8d6b851ceb7e7291976",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-COMMANDS-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "0497d2f8b9457aa55a50f23d7d18567de21f742823b9ff863812fb0814fa75f2",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-COMMANDS-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "f0e86f28b9212c593cdb511a83f0b0fe875234b81885daaddcfc48347a04d2d1",
+    "receipt_id": "9f6b6f8405e2ec875755363968a844172a557564880d93126619d7114bd987fb",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a99625ac9ecd1301b",
+    "reviewer_task_id": "a5a27cad2165772b8"
+  },
+  "candidate": {
+    "identity": "b15cb060cec2bb73525ff7a4196fec459e41b1a3d1d5525cc925a8bcb5a14213",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/WORKER_RESULT.md",
+        "sha256": "89dba4ba761c837eae7f0cbc574adf503e1b851cc16f4990b43ebb0db60727ab",
+        "size": 17115
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/after/batch_reasonable-varied.csv",
+        "sha256": "42a2259c652bb33668b951fdb036c226817802e58b8b6dc517854f06292b7837",
+        "size": 83710
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/after/batch_reasonable-varied.md",
+        "sha256": "547a0c745972d48e910fbe0a4c15757acae7ff573af966ce747239bac462d620",
+        "size": 3871
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/after/batch_reasonable-varied_flow.csv",
+        "sha256": "393a09dccdd1727e52303d3ba72f7a2c196d0ba214f6b6bcc85edd0bee1dcc48",
+        "size": 58910
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/after/batch_reasonable.csv",
+        "sha256": "ee77825592af9a87c975101e394bb4325a57acde7a0fcb330dd9da3d7536fdfa",
+        "size": 83099
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/after/batch_reasonable.md",
+        "sha256": "29739179100a1ed7a89ea1b41c4c1365056567a48a83f0904069c0c749815b0f",
+        "size": 3824
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/after/batch_reasonable_flow.csv",
+        "sha256": "19d4c04d9d1cf973d99a493de5ee27cdc7a68b33d436c967b7a9fbc9f8090455",
+        "size": 58625
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/alarm_off.tuning.txt",
+        "sha256": "5c0ec0249618f499790ef0ef073c31d92ffe57d1357883b0572c92b31c3f0396",
+        "size": 4241
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/alarm_off_reasonable-varied.csv",
+        "sha256": "f607f32a3d627f7d8def0bd0808a23f24cf775897974750543cfdec34473954a",
+        "size": 83087
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/alarm_off_reasonable-varied.md",
+        "sha256": "7004e95100f06c4d581c1830bb039a61e2510cd09005f924b635d16eafeddbfb",
+        "size": 3894
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/alarm_off_reasonable-varied_flow.csv",
+        "sha256": "af67b6d2e1c837aa5439f5ccc9428ff27be8669ed3910566d04cfa2a9446fb5b",
+        "size": 58580
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/alarm_off_reasonable.csv",
+        "sha256": "e67035295de38466cc7a11febb6cccc6e3e04f60e2a68f949b382d66f4c210f1",
+        "size": 82511
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/alarm_off_reasonable.md",
+        "sha256": "e9157e9a0f6ddccd0fafa72d42d0efcadcdb8e6e1b5c7d0d873e36f65fa5e7c9",
+        "size": 3875
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/alarm_off_reasonable_flow.csv",
+        "sha256": "e5f558dcdf5bb8d61d0576f17d0fdd583336ca8f8d1606b3395c3bdc445c15e4",
+        "size": 58477
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/balance_table.md",
+        "sha256": "36e515e85e99f0560981e4b61bf51c82cc8049096f3074cf96bb11873849eafa",
+        "size": 1099
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/balance_table.py",
+        "sha256": "2b7aac81981f999fd507da0b281d407ba319441f7b2ed0536d9a13142a1534be",
+        "size": 2353
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/build_full.txt",
+        "sha256": "b5c317228e977900e6994db1c2a5f15c3b06ba1610a605af764dfb801aa9ec8c",
+        "size": 3812
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/game_diff.patch",
+        "sha256": "0ca7ccb58b39423c34a1494dc4270f35b019e78dbed3cc193a08545455e00e4a",
+        "size": 101330
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/golden_replays.txt",
+        "sha256": "73390f7d9a0d81f8591587ee58130067de41a57381dcca3c139fde5d11152d99",
+        "size": 839
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/source_diff.patch",
+        "sha256": "31ff79048a057bdbd5276d374630171781a2b7c55f4c04e6a5436fc762651821",
+        "size": 127532
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/checks/tests.txt",
+        "sha256": "d68c34a0a15d5eb0dbd44ab3b1accf3073b4dfecfa3fdb6eea69e8344dc5ce1a",
+        "size": 494
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/experiments/banner_at_first_alarm_reasonable.md",
+        "sha256": "06a13b0bbd16bde5aa500d0e00b94364342f6da12d4fcb770472377b6287dcc0",
+        "size": 3683
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/experiments/banner_at_first_alarm_varied.md",
+        "sha256": "c978ae3b48e2568dd33686abeb671269561fc0ea42e337de82d089a459e7bddb",
+        "size": 3717
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/experiments/batch_reasonable-banner.csv",
+        "sha256": "64dcf4e0c3b3fce1293307b5cd836cbf8b08154b6eabde4e73bf1b790da231b7",
+        "size": 84078
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/experiments/batch_reasonable-banner.md",
+        "sha256": "4bfeff6c92bb0772a2c398f030e1f44a60fb3caea87642552a92a336a912e17e",
+        "size": 3873
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/experiments/batch_reasonable-banner_flow.csv",
+        "sha256": "5ac5cce99d2e31286f9d7ffc43e4333eeec9fd9d22c79ceec1162404e4774737",
+        "size": 60259
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/experiments/batch_reasonable-varied-banner.csv",
+        "sha256": "d965d9fe351565f91d04bc8630ed741ca7f192287e1175675d2926b81cbf6d3f",
+        "size": 84690
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/experiments/batch_reasonable-varied-banner.md",
+        "sha256": "30e60b3e32b1c1163ed5482853a45a608f73579aa38677e721803edf38d661ee",
+        "size": 3871
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/experiments/batch_reasonable-varied-banner_flow.csv",
+        "sha256": "579c337cc1d2bf89c96bce50e8ed7637f96eebe6c6e3e354201aa4b1f7fb6d0d",
+        "size": 57952
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/game/capture_banner.log",
+        "sha256": "9047bb61d0484e6bce4b32b13220e8211d03da862dceeff17f450aada5119eb4",
+        "size": 217908
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/game/capture_playround.log",
+        "sha256": "bb265b677624633eb09f73e48d4bfdd51f73299859285fc524f12e6c27b4480f",
+        "size": 271074
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/game/capture_playround_seed1_gold_short.log",
+        "sha256": "9692c8f4581c5e7878552cc29ad785f6382128454a8929e8f7db7ebfad39fd66",
+        "size": 275146
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/game/capture_playstills_parity.log",
+        "sha256": "2c4fb02622f5b1811ad64e621a8fe181bda12d48ac6329bd729a6248177fe2b6",
+        "size": 212548
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/game/capture_summon.log",
+        "sha256": "745f1d7786faf1c376c581acab82680ad2d6e00070e7ba35f9d1f1b64abd6dfe",
+        "size": 224213
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/game/startcheck_schonmodus.log",
+        "sha256": "ed37e3136642bdb05d063d781c624939fdd8c015c5db6304907b6cab735ab2e2",
+        "size": 224323
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/game/test_sim.log",
+        "sha256": "1d19daba0e092cbbd18dfa4444e40e182b6c8808657a0d94ff8b40e3b233887a",
+        "size": 282977
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/game/test_sim_post_commit.log",
+        "sha256": "a04c76d652171df477026d16ac5ecbaea3fe376667ddf5fe27754dcdd86e5173",
+        "size": 283020
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/headless/reasonable_seed19_t11840.save.txt",
+        "sha256": "b9dccdd9071c8910dfd9a45878703349dd3941ceaf0d65660852f99105c56c00",
+        "size": 6786
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/headless/reasonable_seed1_t11358.save.txt",
+        "sha256": "4235aad70d8659531ed188ab35443d970d19feeab6209ad42afd11a8d7d01835",
+        "size": 6827
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/headless/reasonable_seed1_t2400.save.txt",
+        "sha256": "5dbcbc1a4c4e3ffb491296c9215ff2cee71e74ee2a297204d11ced8b0fa4b11f",
+        "size": 2198
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/banner/alarm_creature.png",
+        "sha256": "b36e2cd6a26931c75915f4cfb46f9b3e3c31195f9dd2c55933063e7338142108",
+        "size": 944547
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/banner/banner_gathered.png",
+        "sha256": "96bfa47f7f3d9e7dfd95c65439b06eb80c4cc56508eb02bd81e53c69c5cde351",
+        "size": 918520
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/banner/banner_help.png",
+        "sha256": "378ebef2b8b5f325c4215de63189ec022c7806b585dbc9b398ee08350b4119a0",
+        "size": 828700
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/banner/banner_hover_rallied.png",
+        "sha256": "cd2966c5316e7fc079f25d5131fd86f5c3f88441c4511366803cfc2632b68033",
+        "size": 892294
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/banner/banner_moved.png",
+        "sha256": "288377d501ae92bc5d11ecda69a4dfda8766482531283b67587618293a411ca8",
+        "size": 962896
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/banner/banner_planted.png",
+        "sha256": "717ab8345e85261c7aa9a5c82972403f325b031b1126d7c19f57ac33f6a6cb51",
+        "size": 912491
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/banner/banner_summon_price.png",
+        "sha256": "dc39eac3d54768d0df2bb3c891d205af9358effb760f25bbc894cb497e16f026",
+        "size": 865270
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/banner/summon_price_refused.png",
+        "sha256": "772d8f8bad6b2ab775598fa310bead7cc6d458aec126196450c872e6d53c36af",
+        "size": 1879087
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/parity/play_rooms_layer2.png",
+        "sha256": "e2fcbe13ff0c409f81daff5bace4eab9a18ac392e1f19ff8412dccfd4debc7a6",
+        "size": 1890200
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/playround/round_attack_sent.png",
+        "sha256": "fe970761bf75bc7da648baa934a8eb743daf9c1fdb86f0e45d3d0528e2f45447",
+        "size": 1937425
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/playround/round_camp_open.png",
+        "sha256": "67fb8df4165ceed756fea0403aea5b7409c8b627606ab5ab2ca61d96f2288ab6",
+        "size": 1939067
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/playround/round_end_screen.png",
+        "sha256": "110cab7a3a9059500cbf78575387e5dd1e6e36db7342efca4a81321692668eb5",
+        "size": 1263553
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/playround/round_machine.png",
+        "sha256": "47cdfc4e116d9416b6748b97372c6d27cccc3484edbfaf8371c34f013a528e41",
+        "size": 1786146
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/startcheck/start_intro.png",
+        "sha256": "e8849ca780581488e8feb09973e111db61c748740985c24293d863198c0b66dd",
+        "size": 608543
+      },
+      {
+        "path": "ext:Evidence/UR-COMMANDS-V1/stills/startcheck/start_running.png",
+        "sha256": "a189a6ae5b1d7c386abf86ead31a27ff8800fc67cc95a62e54e38e5872d1631b",
+        "size": 1152338
+      },
+      {
+        "path": "ext:Game/README.md",
+        "sha256": "4c8057f027f978913d86d37455830d3919ea7e565cb804ac112a42563ca5e81b",
+        "size": 34828
+      },
+      {
+        "path": "ext:Game/SPIELANLEITUNG.md",
+        "sha256": "9c92205e135c65b531a1f01748658fe6bf1f41300f45c4e39482b92d4f306f61",
+        "size": 8328
+      },
+      {
+        "path": "ext:Game/Scripts/capture.sh",
+        "sha256": "d3bb65b9b3cf89d710678ec0d76e6dc198f350874581c05f30804ff69b479d9d",
+        "size": 3299
+      },
+      {
+        "path": "ext:Game/Scripts/sync_sim.py",
+        "sha256": "09ff84bf13deedd30a3dc2d5f0e5e6e14c575354f2c0c4d62a27cebf5ca89c0c",
+        "size": 15295
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URCaptureDirector.cpp",
+        "sha256": "53110ed16bddb7ff87aa20faf976a5f99e56ae59b8ae7866f77f277593a6d870",
+        "size": 70326
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URHUD.cpp",
+        "sha256": "f9a698660046b42cac605c9890486f4647e7dccbc022dca610501e55cd3dc999",
+        "size": 42835
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayView.cpp",
+        "sha256": "f5526f17218fdf1c06c9537be2d21c3aeef9e4a0e92e1b030357744cbc97916c",
+        "size": 26027
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayerController.cpp",
+        "sha256": "3dc5bae24453ff78bf2af1fc50a7d7eba941d1abec061b598ca1db50465f5a97",
+        "size": 58401
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URSimSubsystem.cpp",
+        "sha256": "ac772cd743b0467f5e3e3f4337b48bacab2d06773b5a4254a10720be83160120",
+        "size": 30291
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URCaptureDirector.h",
+        "sha256": "e3efb8bd505f9c84d863097bd33b80641256a5078a731edbd839268c4a95a6e2",
+        "size": 6993
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URHUD.h",
+        "sha256": "02c4306b43c5f50d8acf1a8705e8202cfe7af310b3b367dcb597826ce9a2ddfc",
+        "size": 3093
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayView.h",
+        "sha256": "a0422569c0a097aaa66d8c71564076c36c22b9184ef39ce001cf9030c5ba0eb1",
+        "size": 5759
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayerController.h",
+        "sha256": "98ddf1da7c025dd8fb51a413ec7bcffc6dcf25e74c70a5a3b92f2c73d666d93f",
+        "size": 12540
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URSimSubsystem.h",
+        "sha256": "162b6e7b2ce128fcae176eef481c7672ffdd7a93c802d768b1bcb69db1d2a615",
+        "size": 9393
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/prototype.tuning.txt",
+        "sha256": "18d9b1e7b2c3c87b77cfc819d885d3274cbe7b9a6c6fe9eb7d9d85cd981269c8",
+        "size": 4678
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden.tuning.txt",
+        "sha256": "4e4480537c686c084433cc690f19396a34e82cca823eab0202d126888f796036",
+        "size": 2941
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_banner_seed4_lost.save.txt",
+        "sha256": "e158853d9deb0c47ea38749cb0b6ab65e3c8feb5c00ac886c0639b63d945042a",
+        "size": 6369
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "dd2dd05587707a35101485eb3ce3962608f7112c144605af586841f5eed0bc6f",
+        "size": 749
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "278787f53608231b18f331c78a6d3a6c44b6e3e4716ea514100845d2c2ea55c0",
+        "size": 6797
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_reasonable_seed4_won.save.txt",
+        "sha256": "59d8646dc396b2137adc3100012dc88ebe20e93fc20f04fb6ce4d0258e2f6f0d",
+        "size": 7054
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/BotFactory.cpp",
+        "sha256": "c7995b564838dfc27c4642769af619e2baa35f8f5ab9a56962c06fce30163546",
+        "size": 2088
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/ReasonablePlayerBot.cpp",
+        "sha256": "0de0816ffb140baea965c64ea038db235e51d29aa2fa420fca23a8972ff767d2",
+        "size": 25897
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/StyleBotBase.cpp",
+        "sha256": "133b8d9fbfb818dea3638fc49d96c99e66866b3fe11a73b01696509fbf51b9dc",
+        "size": 18202
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Commands/LiftBannerCommand.cpp",
+        "sha256": "a90b738fe3e2575f908bdc00fa9ac92a608c298f5a7a8cfe596ce0f59527ec62",
+        "size": 250
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Commands/PlaceBannerCommand.cpp",
+        "sha256": "bc4655dce95742a525318cf04df553c5033999e8012e37525eed2bb69ac1e0d7",
+        "size": 424
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Commands/SummonCinderlingCommand.cpp",
+        "sha256": "c1fc7eef1d2806912e65feee963d8b015b7db039d811927bbcffac74cd2b814c",
+        "size": 918
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Creatures/CreatureBrain.cpp",
+        "sha256": "9e0bdcd79e17a868f3f41fdfb0b19eb43e86018e72e4206bde7d5648f6044ffd",
+        "size": 16760
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Creatures/RallySystem.cpp",
+        "sha256": "0973b571f94b2381fc5595701c6a4c98d390ebc27c33f0c48ee881acb36e38ec",
+        "size": 4926
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Data/TuningParser.cpp",
+        "sha256": "289379c4bbe7ad4cfb2833cd4c1eeccaf365e9fc33d8e0be50e02b1f37a4f103",
+        "size": 40800
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Jobs/WorkerSystem.cpp",
+        "sha256": "ae32df1f9ab6d3ccf1b563e5018bfc3de3d7b35a6721ea6d52ced75a2ea1f340",
+        "size": 9876
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Metrics/MetricsCollector.cpp",
+        "sha256": "5a889ebd0f0ac15662fc7b0939e3260a706c5d2b9b830ded4dd0a8c998d6b148",
+        "size": 16663
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Metrics/MetricsFormat.cpp",
+        "sha256": "b1ea3d4d6e693f9cfc1dac29ad22181bd93da6712fdde7bc7a26928fa8bd34c2",
+        "size": 9574
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Save/CommandFactory.cpp",
+        "sha256": "df6bfd9f9066a160d4b4ac8a8ea02e24511d1b52dde062661633a896f8d54873",
+        "size": 7881
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/SimGame.cpp",
+        "sha256": "e563e2b17e6b6c86550b84e076be45ce195e241bb0370d1b317823486268ac9b",
+        "size": 35766
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Bots/ReasonablePlayerBot.h",
+        "sha256": "429233d14e6f6cd31a9dcb193e4b44ac502a8629e08e2aad737f960e52edf3e5",
+        "size": 9562
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Commands/LiftBannerCommand.h",
+        "sha256": "e77b0d7524d1a40ca639e53a1211abea2445117d7434579887e41b22dc9aa78f",
+        "size": 528
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Commands/PlaceBannerCommand.h",
+        "sha256": "7db0cf4bd8fdbc5df547c9d714f716037e9cc4ae93abd4ca3e6b422c4aa00691",
+        "size": 767
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Commands/SummonCinderlingCommand.h",
+        "sha256": "31e96d464af9025a94652f07bf77703f1666a183d82fc6e22b08216ba5d14ab9",
+        "size": 777
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/Creature.h",
+        "sha256": "a684dfbf5ff05663e4b629e10ac5497a0c1afc62104756776c7f30bfe4f17383",
+        "size": 3933
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/CreatureBrain.h",
+        "sha256": "8e5381fce0b2fec7592def69c526289cf58af50f83e7fafdd3cfb61945eae6e5",
+        "size": 2998
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/CreatureGoal.h",
+        "sha256": "4621262f798578ca83046d23dbef9cd5766c9ef582834f731f26ac58bcb995fb",
+        "size": 2350
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/RallySystem.h",
+        "sha256": "8b7cf816045d49bc30195305bc96cff793b2f989a83832950e7189e2b40a3021",
+        "size": 4827
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "1a9c3f67339b1a25703ddcb7a0fb6a116c0abb3b63bc09e359387751c2546fdf",
+        "size": 14540
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Economy/SpendReason.h",
+        "sha256": "2b235e45413ab6b41f8ae33e075b1b9648b37a19f108d178aaa3d7d2c2e8f080",
+        "size": 1478
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Events/SimEventType.h",
+        "sha256": "ebaf627e01b68714d6dbf841cf911504ac61aaeac95348e3145b3f177c2c5112",
+        "size": 15339
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Fwd.h",
+        "sha256": "8afb9c86848c3405194aed9e9ba6c554f2fd93047304ebf43c539cdbb41c120d",
+        "size": 6419
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/ISimView.h",
+        "sha256": "c8e4255abc1c875e76bceb4704ef968b806672488c7bfec92ef8797bf7f9726c",
+        "size": 6627
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Jobs/WorkerSystem.h",
+        "sha256": "4df3a2f62cd8abed5ae6c66522eacafb82d7c63376263c51b92e25dd71fccfe6",
+        "size": 2988
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Metrics/RunMetrics.h",
+        "sha256": "d3615e6b84188a19dc41df19b900bda2b2d4601011ebe1a16c95ee0b118b0891",
+        "size": 6226
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "93f5d67efd060da5c5ba84a3d45087b43dc0ca69d7fcc363fba672bd4c97fa7f",
+        "size": 1990
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/SimGame.h",
+        "sha256": "f786a7b46aea2ae8d05cbca89b667bbd3519d8ac5233d4636d2b78969406eb50",
+        "size": 11917
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/UnderreignSim.h",
+        "sha256": "531c070b5500b961d84f692ac04e7de30f3fcdb6dce1f5a7a4387efd8359971e",
+        "size": 10982
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/View/RallyView.h",
+        "sha256": "2b1d070cf927e7b2af2d981ed9825f47910fc516e2caeafa52d91d0c51e4a3bd",
+        "size": 1269
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/SYNC_MANIFEST.txt",
+        "sha256": "483c43feb50d00213af7ebc7c669eaecae36903c5ad7dfc79ddc6873cdcfc4ae",
+        "size": 71800
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/Tests/URLinkPrecheckTests.cpp",
+        "sha256": "09f8097b55c41338e6b5c6eb9b3fa9397c3d535a31fdbac0f04ad56cf8de0cb1",
+        "size": 14574
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/Tests/URSimTests.cpp",
+        "sha256": "77e1020602805c5a279a921006adf1be6240a6976fbb9442fa3a0afe54fa600f",
+        "size": 29548
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/URSimGame.cpp",
+        "sha256": "b83a5f72f39f981a09e2c9e09e7c7dd1cd2c13ff24520522094cc9a3d42eb316",
+        "size": 38128
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Public/URSimGame.h",
+        "sha256": "f2f33766c68100d90d48874f4a9c0d5d48ff9484cffda2251429a645535028e6",
+        "size": 19660
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/prototype.tuning.txt",
+        "sha256": "23dc95bc8a44225a0525bc8f3200dbc4988b36aba0060ae67573f6b2a7174ec2",
+        "size": 4735
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden.tuning.txt",
+        "sha256": "767219ff352f7e465676e06231f4d526a45f168efd554cc0efdd5d67bf8a07f8",
+        "size": 2974
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_banner_seed4_lost.save.txt",
+        "sha256": "e158853d9deb0c47ea38749cb0b6ab65e3c8feb5c00ac886c0639b63d945042a",
+        "size": 6369
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "dd2dd05587707a35101485eb3ce3962608f7112c144605af586841f5eed0bc6f",
+        "size": 749
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "278787f53608231b18f331c78a6d3a6c44b6e3e4716ea514100845d2c2ea55c0",
+        "size": 6797
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed4_won.save.txt",
+        "sha256": "59d8646dc396b2137adc3100012dc88ebe20e93fc20f04fb6ce4d0258e2f6f0d",
+        "size": 7054
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/README.md",
+        "sha256": "2c0da0a9a874d652e88c1f21b243c464ec5d6368706e251cfb06fca471bd92ff",
+        "size": 1587
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules6/golden.tuning.txt",
+        "sha256": "2cf278923ea721b7eee98e41e598bc9dfff98065435f28c1246382d5532e0616",
+        "size": 2463
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules6/golden_idle_seed1_lost.save.txt",
+        "sha256": "1fb533dcbd4ebde4c7f7b25c5beb795327449f1e52ba90a75400b8f893a823ea",
+        "size": 749
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules6/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "43f46d26f1058f3d39f8d922c595eaaf52711878015e3d814e5e066606a7c9ce",
+        "size": 5697
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules6/golden_reasonable_seed2_lost.save.txt",
+        "sha256": "464f5a9044b3751151f420089bdedc8ff42988a5dc82fd89d537aca7d5e73d7b",
+        "size": 5221
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules6/golden_reasonable_seed4_won.save.txt",
+        "sha256": "e6e61e7557bcfd7f5b5c0c40c4a18ee60218702ee553b514b45bb5c8a8fca51f",
+        "size": 7059
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/Program.cpp",
+        "sha256": "39266098c596f8b8d1a498350b1cb9f311052a431cac867bbc6fee8be0878587",
+        "size": 8071
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/ReportWriter.cpp",
+        "sha256": "2993a8b4d2c77a9ef641488d3031ad0fe58495d038f7f6b00ca693c695476569",
+        "size": 13002
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/BotFactory.cpp",
+        "sha256": "c7995b564838dfc27c4642769af619e2baa35f8f5ab9a56962c06fce30163546",
+        "size": 2088
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/ReasonablePlayerBot.cpp",
+        "sha256": "0de0816ffb140baea965c64ea038db235e51d29aa2fa420fca23a8972ff767d2",
+        "size": 25897
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/LiftBannerCommand.cpp",
+        "sha256": "a90b738fe3e2575f908bdc00fa9ac92a608c298f5a7a8cfe596ce0f59527ec62",
+        "size": 250
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/PlaceBannerCommand.cpp",
+        "sha256": "bc4655dce95742a525318cf04df553c5033999e8012e37525eed2bb69ac1e0d7",
+        "size": 424
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/CreatureBrain.cpp",
+        "sha256": "9e0bdcd79e17a868f3f41fdfb0b19eb43e86018e72e4206bde7d5648f6044ffd",
+        "size": 16760
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/RallySystem.cpp",
+        "sha256": "0973b571f94b2381fc5595701c6a4c98d390ebc27c33f0c48ee881acb36e38ec",
+        "size": 4926
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/TuningParser.cpp",
+        "sha256": "289379c4bbe7ad4cfb2833cd4c1eeccaf365e9fc33d8e0be50e02b1f37a4f103",
+        "size": 40800
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Metrics/MetricsCollector.cpp",
+        "sha256": "5a889ebd0f0ac15662fc7b0939e3260a706c5d2b9b830ded4dd0a8c998d6b148",
+        "size": 16663
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Metrics/MetricsFormat.cpp",
+        "sha256": "b1ea3d4d6e693f9cfc1dac29ad22181bd93da6712fdde7bc7a26928fa8bd34c2",
+        "size": 9574
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Save/CommandFactory.cpp",
+        "sha256": "df6bfd9f9066a160d4b4ac8a8ea02e24511d1b52dde062661633a896f8d54873",
+        "size": 7881
+      },
+      {
+        "path": "ext:SimulationCpp/Private/SimGame.cpp",
+        "sha256": "e563e2b17e6b6c86550b84e076be45ce195e241bb0370d1b317823486268ac9b",
+        "size": 35766
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/ReasonablePlayerBot.h",
+        "sha256": "429233d14e6f6cd31a9dcb193e4b44ac502a8629e08e2aad737f960e52edf3e5",
+        "size": 9562
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/LiftBannerCommand.h",
+        "sha256": "e77b0d7524d1a40ca639e53a1211abea2445117d7434579887e41b22dc9aa78f",
+        "size": 528
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/PlaceBannerCommand.h",
+        "sha256": "7db0cf4bd8fdbc5df547c9d714f716037e9cc4ae93abd4ca3e6b422c4aa00691",
+        "size": 767
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/Creature.h",
+        "sha256": "a684dfbf5ff05663e4b629e10ac5497a0c1afc62104756776c7f30bfe4f17383",
+        "size": 3933
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/CreatureBrain.h",
+        "sha256": "8e5381fce0b2fec7592def69c526289cf58af50f83e7fafdd3cfb61945eae6e5",
+        "size": 2998
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/CreatureGoal.h",
+        "sha256": "4621262f798578ca83046d23dbef9cd5766c9ef582834f731f26ac58bcb995fb",
+        "size": 2350
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/RallySystem.h",
+        "sha256": "8b7cf816045d49bc30195305bc96cff793b2f989a83832950e7189e2b40a3021",
+        "size": 4827
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "1a9c3f67339b1a25703ddcb7a0fb6a116c0abb3b63bc09e359387751c2546fdf",
+        "size": 14540
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Economy/SpendReason.h",
+        "sha256": "2b235e45413ab6b41f8ae33e075b1b9648b37a19f108d178aaa3d7d2c2e8f080",
+        "size": 1478
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Events/SimEventType.h",
+        "sha256": "ebaf627e01b68714d6dbf841cf911504ac61aaeac95348e3145b3f177c2c5112",
+        "size": 15339
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Fwd.h",
+        "sha256": "8afb9c86848c3405194aed9e9ba6c554f2fd93047304ebf43c539cdbb41c120d",
+        "size": 6419
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/ISimView.h",
+        "sha256": "c8e4255abc1c875e76bceb4704ef968b806672488c7bfec92ef8797bf7f9726c",
+        "size": 6627
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Metrics/RunMetrics.h",
+        "sha256": "d3615e6b84188a19dc41df19b900bda2b2d4601011ebe1a16c95ee0b118b0891",
+        "size": 6226
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "93f5d67efd060da5c5ba84a3d45087b43dc0ca69d7fcc363fba672bd4c97fa7f",
+        "size": 1990
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/SimGame.h",
+        "sha256": "f786a7b46aea2ae8d05cbca89b667bbd3519d8ac5233d4636d2b78969406eb50",
+        "size": 11917
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/UnderreignSim.h",
+        "sha256": "531c070b5500b961d84f692ac04e7de30f3fcdb6dce1f5a7a4387efd8359971e",
+        "size": 10982
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/RallyView.h",
+        "sha256": "2b1d070cf927e7b2af2d981ed9825f47910fc516e2caeafa52d91d0c51e4a3bd",
+        "size": 1269
+      },
+      {
+        "path": "ext:SimulationCpp/README.md",
+        "sha256": "2e0dc8ba4bda25bd991fc7cc801c9cb34b142ff23589663a9543934fee32f27b",
+        "size": 34248
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/CombatTests.cpp",
+        "sha256": "d5716f655c1d27eac256844b1a37095d9a7f5de6c31c2fecc3be38738af374ec",
+        "size": 11809
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeadlessTests.cpp",
+        "sha256": "1c103c9ae24a7f46317455d1a390e33f02354b6455e07a52568032909feb5d60",
+        "size": 23541
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/OpeningVariationTests.cpp",
+        "sha256": "bd5ca8fc50067428cfa959665094479055bf835690a9bf45ae5d6fe21d12ddc4",
+        "size": 7771
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/RallyTests.cpp",
+        "sha256": "80ae725fc4329637c1278449360cfe8acbb0e2d48ac4f8db48bc5b5a5b74e938",
+        "size": 20526
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/SaveTests.cpp",
+        "sha256": "a9a8b881f2d78e8881e55215431ceeb975a38964851a18457cc548b365374459",
+        "size": 9657
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-COMMANDS-V1/WORKER_RESULT.md",
+        "sha256": "b50e72216985f17ed269e4cfab4e60566e9ddf1852fec77a1fae25ab7bbc7df2",
+        "size": 17688
+      },
+      {
+        "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+        "sha256": "9e0f4d4c649e68ae9ae975fde460b3e7a930ad285d7d6190d5bec8f6ee715bfa",
+        "size": 25554
+      },
+      {
+        "path": "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+        "sha256": "a1df0e8fa95308aabaaf17126b21c555d1bc759be894a22922cef6630959577e",
+        "size": 5399
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-COMMANDS-V1/REVIEW.md",
+      "sha256": "db2f68b9fa6649918a8bcaae82bd09ca495170303f8d8508db2ca9e94375e55f",
+      "size": 5303
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-COMMANDS-V1/review.json",
+    "record_sha256": "b61250800a637c9c5d24ca1535855d769bc57def131976fba0d4f15b435a4da8",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "b15cb060cec2bb73525ff7a4196fec459e41b1a3d1d5525cc925a8bcb5a14213",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-COMMANDS-V1
+
+UR-COMMANDS-V1 (rules 7: rally banner (G place/move, L lift; free, proposal) and alarm (creatures with nothing to do attack intruders on claimed ground within 20 steps); game resynced to rules 7 with parity; summon button shows the rising price; UD-54, UD-55, OD-18 recorded; reasonable bot 41 % (alarm), wave 3 unchanged; external commits f304732 and 2ddc6f0)
+Independent review verdict: PASS
+Worker task: a99625ac9ecd1301b
+Reviewer task: a5a27cad2165772b8
+Candidate identity: b15cb060cec2bb73525ff7a4196fec459e41b1a3d1d5525cc925a8bcb5a14213
+Closure receipt: 78eafceeaa69d4c1421d49e4a9a04a4dcdf911a5a12a2a8f603112957ba4bc80
+
+Next: night shift 2 (UR-NIGHT-02-V1, cloud, until 08:00 UTC: creatures, intruders, maps, gold carrying, fleeing, question catalogue); PC off during the night. The Human can play the current version before.
+
 ## Closed: UR-SIM-SUMMON-COST-V1
 
 UR-SIM-SUMMON-COST-V1 (rules 6: summon price 75 + 25 per living cinderling above 4, floor 75, proposal values; ISimView exposes the price; bots check it; 750 tests; new golden replays; reasonable bot 26 %, wave 3 unchanged; external commit 6427850)
@@ -42,8 +53,6 @@ Worker task: a26850be3a33ddc75
 Reviewer task: ae87bb9c8879ce51b
 Candidate identity: 92a88c8060394402413048b24c763c327150376ac2473ae4b3dc4f259e43c3d1
 Closure receipt: e5a252a420cd6a0cded7c971ab8837a5cd4cc600bc0bdc90663666bb1e7b072c
-
-Next: UR-COMMANDS-V1 (rally banner and alarm in rules and game, resync the game to the new rules, summon button shows the rising price, UD-54/UD-55); then the Human plays.
 
 ## Closed: UR-UNREAL-STATS-V1
 
