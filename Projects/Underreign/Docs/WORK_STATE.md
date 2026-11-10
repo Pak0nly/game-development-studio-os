@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-UNREAL-STAIRREACH-V1
+
+UR-UNREAL-STAIRREACH-V1 (game layer shows when no cinderling can reach a ring, stair, shaft, trap install or dig mark, before and after ordering, with one event line per wait; tool-bar message attribution fixed; cause of the Human's stair report confirmed: cinderlings start sealed in the Heart pocket; independent review FAIL then PASS after correction round 1; external commit 2e32dd6)
+Independent review verdict: PASS
+Worker task: a064356d44e95db69
+Reviewer task: a0498e18dfd1ecb56
+Candidate identity: aafcf8eebacc000e8b733ae84533786e393ad4ddff23ea9501a0d3a6532c3dbd
+Closure receipt: 543ddeb3c9f22675fe17bb9ab7cf6d9f78baf583ffec403cd04ac9c6a22beb11
+
+Human's first own round (2026-11-10): won 18:49 without traps; wants more cinderlings (the rules have summoning, 75 gold, cap 10, but the game has no button yet) and cinderlings that take nearby work. Running: UR-SIM-WORKER-JOBS-V1 (SimulationCpp). Next: UR-UNREAL-SUMMON-V1 (summon button, resync to the new rules). Open question to the Human: keep wave 3 unchanged (recommended).
+
 ## Closed: UR-UNREAL-STAIRFIX-V1
 
 UR-UNREAL-STAIRFIX-V1 (stair/shaft pre-check mirrors the rules with plain reasons; rings the rules would refuse drawn amber; success text for all tools only after the rules accept; likely cause of the Human's report found: ring 0 20 7 is accepted at start but cinderlings cannot reach it; external commit 4a7ca3a)
@@ -42,8 +53,6 @@ Worker task: a0fb491b897cdaad7
 Reviewer task: a88093f0f5e450339
 Candidate identity: 6106ecc7c40478a204436f67151e0069e65d38107d6699c63383397b0f22076c
 Closure receipt: 42a0d156601256906692eddf36f87edcd1995965baa00b16e4650dc6d2bc7fc7
-
-Next: UR-UNREAL-STAIRREACH-V1 (tell the player when no cinderling can reach a ring or job); then the Human plays.
 
 ## Closed: UR-UNREAL-SAFESTART-V1
 

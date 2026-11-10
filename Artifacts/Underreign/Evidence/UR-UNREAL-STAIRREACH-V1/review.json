@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-UNREAL-STAIRREACH-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a064356d44e95db69",
+  "reviewer_task_id": "a0498e18dfd1ecb56",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "aafcf8eebacc000e8b733ae84533786e393ad4ddff23ea9501a0d3a6532c3dbd",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}
