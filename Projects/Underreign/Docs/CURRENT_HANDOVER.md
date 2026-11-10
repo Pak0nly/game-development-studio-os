@@ -13,6 +13,15 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-DECISIONS-R7-V1
+
+UR-DECISIONS-R7-V1 (UD-53: wave 3 stays unchanged, Human: "Welle 3 bleibt auf jeden Fall so wie sie ist."; first own round feedback recorded as observations)
+Independent review verdict: PASS
+Worker task: a10f13aac702db64d
+Reviewer task: acaa0689bf76b0f1d
+Candidate identity: efc0269b5f952761a49d796f14e38c104eb3a46df69e82fad11ce95c44f32e82
+Closure receipt: ab456a7aea21100046f2754dc8cd7b97c50125e74c8b3139ebebea9b0144a0f7
+
 ## Closed: UR-UNREAL-STAIRREACH-V1
 
 UR-UNREAL-STAIRREACH-V1 (game layer shows when no cinderling can reach a ring, stair, shaft, trap install or dig mark, before and after ordering, with one event line per wait; tool-bar message attribution fixed; cause of the Human's stair report confirmed: cinderlings start sealed in the Heart pocket; independent review FAIL then PASS after correction round 1; external commit 2e32dd6)
@@ -22,7 +31,7 @@ Reviewer task: a0498e18dfd1ecb56
 Candidate identity: aafcf8eebacc000e8b733ae84533786e393ad4ddff23ea9501a0d3a6532c3dbd
 Closure receipt: 543ddeb3c9f22675fe17bb9ab7cf6d9f78baf583ffec403cd04ac9c6a22beb11
 
-Human's first own round (2026-11-10): won 18:49 without traps; wants more cinderlings (the rules have summoning, 75 gold, cap 10, but the game has no button yet) and cinderlings that take nearby work. Running: UR-SIM-WORKER-JOBS-V1 (SimulationCpp). Next: UR-UNREAL-SUMMON-V1 (summon button, resync to the new rules). Open question to the Human: keep wave 3 unchanged (recommended).
+Human's first own round (2026-11-10): won 18:49 without traps; wants more cinderlings (the rules have summoning, 75 gold, cap 10, but the game has no button yet) and cinderlings that take nearby work. Running: UR-SIM-WORKER-JOBS-V1 (SimulationCpp). Next: UR-UNREAL-SUMMON-V1 (summon button, resync to the new rules).
 
 ## Closed: UR-UNREAL-STAIRFIX-V1
 

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-DECISIONS-R7-V1",
+  "work_order_sha256": "039a07e84ed241625847c754c6034b8d9bec6384a144fcd1cb4d0e3878344e14",
+  "manifest_sha256": "8c130a59e91df3717889163893a7b1720cdfdf2e74e0c8cd3104871c38bf0671",
+  "repository": {
+    "branch": "main",
+    "head": "b2441188ea684b1dadd5b2b36bc16bb2e3ea6b79"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Artifacts/Underreign/Evidence/UR-DECISIONS-R7-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "4af11ef3db4c56e3ba08406eb3de70e6e71fccac29704f3a8de941e832a8741f",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "2e32dd649636b1bca000b1e89bda06e9c403e639"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-DECISIONS-R7-V1"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation",
+      "SimulationCpp"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-DECISIONS-R7-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "35282c155e73b68848cf2c770c6cf0663904ec98eb19ed50661a8ac7fdb8aa83"
+  },
+  "execution_location": "local",
+  "receipt_id": "46b62dc6612808277d9906159fe1eeb403a52fa8d2f2ddef09c1b16c84ef7e4e"
+}
