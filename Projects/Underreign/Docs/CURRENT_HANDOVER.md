@@ -13,6 +13,15 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-SIM-RULES-V1
+
+UR-SIM-RULES-V1 (rules 4 in SimulationCpp: layers connect only at fixed breakthrough points, floors/ceilings unbreakable, walls breakable, attack goal after wave 3; 728 tests; new golden replays; reasonable bot win rate fell from 69 % to 23 % (Brutes now arrive bunched at the open hatch) - balance decision with the Human; external commit 69a1bea; the Unreal module still runs rules 3 and needs a resync)
+Independent review verdict: PASS
+Worker task: aaf7b1362bcc19483
+Reviewer task: ae9c3b68fc529dabb
+Candidate identity: 5e27fb39a4a03a53e3c30a9a2a07de59f92b6905313b8f76b3df1cba84703305
+Closure receipt: d7bbd40411ec4481b5ecfa3da56fdde2d7c5746d417c1bcfc441645cc042d09f
+
 ## Closed: UR-UNREAL-03-V1
 
 UR-UNREAL-03-V1 (C++ rules as Unreal module synced from 2179b10, 10-tick game clock with pause and speeds, commands, greybox following the rules, dig and room tools, HUD from the state; parity with the headless runner at ticks 600-2400; external commit 75b3254)

@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-SIM-RULES-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "aaf7b1362bcc19483",
+  "reviewer_task_id": "ae9c3b68fc529dabb",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "5e27fb39a4a03a53e3c30a9a2a07de59f92b6905313b8f76b3df1cba84703305",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

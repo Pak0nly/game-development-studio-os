@@ -1,0 +1,530 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-SIM-RULES-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-RULES-V1/WORK_ORDER.md",
+    "sha256": "6da3504fb1fe267da300d8b7ddbb4b30d6d44655a0d44c2d4412a84598e3414c",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-RULES-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "c23e4280ae097521d36311652d334a6d21d6f145d9b3b1a9115964ffaa6db62b",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-RULES-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "d818f6f2e69297564c1ff6109143b8fb691389c7d691cc744f0a33b037f9fa67",
+    "receipt_id": "2d02029a29daa4a6d08d0d3c8603daa593e28aaaf741378244b80e2b115b37e4",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "aaf7b1362bcc19483",
+    "reviewer_task_id": "ae9c3b68fc529dabb"
+  },
+  "candidate": {
+    "identity": "5e27fb39a4a03a53e3c30a9a2a07de59f92b6905313b8f76b3df1cba84703305",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/WORKER_RESULT.md",
+        "sha256": "95cc35ce496684e884496ccda69fe07d7bfcb12cbf3f5a542fbff192b3b27bea",
+        "size": 15671
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/after/reasonable_200.csv",
+        "sha256": "06340e54cb151cf6a37f607867f9324adc028c93aafe61e9f15d71d9ab059382",
+        "size": 80492
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/after/reasonable_200.md",
+        "sha256": "a1dfd91d33675cf30353bbba4f96325902f9dbb698ce90ca528f8bcb74735ec5",
+        "size": 3700
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/after/reasonable_200_flow.csv",
+        "sha256": "5c0039ba9191ae11581d882517acfae6ba52251e959fd45ebf09b616872f69ae",
+        "size": 58171
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/after/varied_200.csv",
+        "sha256": "3ab9c07c45abf64b28e8340f91709efb45400214c1cc71a81c48de5b64da1afa",
+        "size": 81418
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/after/varied_200.md",
+        "sha256": "bc347789dd66823846eb9b94952abb31b177ac9b126763a350acaef542d17fa9",
+        "size": 3707
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/after/varied_200_flow.csv",
+        "sha256": "10407514eeddcadff07869fb78d475029c188c4d02935164bdd322fea571826b",
+        "size": 58127
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/before/reasonable_200.csv",
+        "sha256": "e3751cdac867e217b68dae77218b1b859a5b8015b6c159d90a3b9b8993fcd2e6",
+        "size": 76577
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/before/reasonable_200.md",
+        "sha256": "756306a17929ef489c4f9659f606428989df4585956c0c45118dd19d840f277d",
+        "size": 3404
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/before/reasonable_200_flow.csv",
+        "sha256": "24623c58af8d2e8e78a5bdf54828c9fe9171f14402e62ae62d55142566770f05",
+        "size": 53854
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/before/varied_200.csv",
+        "sha256": "457d55d940afebb613777135215f3dd197f045eb98a7b33c5c9cc5c3539829e9",
+        "size": 77547
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/before/varied_200.md",
+        "sha256": "b4e1154b66761375f628f7db83cda8905b9ca7750b922c6926dc3819f0cff410",
+        "size": 3405
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/before/varied_200_flow.csv",
+        "sha256": "27404d395eae48963de13d7a7d6a395decd46fbb15e7803d41dd49c480992344",
+        "size": 54010
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/checks/build_rebuild.txt",
+        "sha256": "c0248885eeab27f012600fc1c73c1e65af9397b82fe9d8065db0b7e51ff7d36f",
+        "size": 231
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/checks/golden_replays.txt",
+        "sha256": "9aaac031b280f206c299a09b065b688dc86db297cff414151cf148d6d17e15a7",
+        "size": 389
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/checks/tests.txt",
+        "sha256": "cd2d014fe9c7186c14d04c451b33fc436cbcdf3bcc389d7280fc0ee0574e3f39",
+        "size": 494
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/diagnostics/old_tunnelling_reasonable_200.md",
+        "sha256": "c9e693a9a450854f8dbfffcf12ae421bce723e0ce4a0b9c9c1d51ce49685adc5",
+        "size": 3417
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-RULES-V1/diagnostics/wait_at_open_hatch_reasonable_200.md",
+        "sha256": "ec6b0f3ee6c3f3b287d462bfbc57abeba547a62a685fb1f942c05a3af8ca58c4",
+        "size": 3433
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/campaign/ashen_m1_terms_of_arrival.map.txt",
+        "sha256": "076aa69eb50dc327abe497afb27e5eb8782c855cf5a9b43c67fe56c82c9f7631",
+        "size": 9939
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/campaign/ashen_m2_an_audit_of_thieves.map.txt",
+        "sha256": "08bb26ef80b8d66640f8f65e5671475bb1292a5fde354a25c5eb51ad9b82ce17",
+        "size": 10759
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/campaign/ashen_m3_two_doors_one_bill.map.txt",
+        "sha256": "d942df52b10549091db57580bfae1ff72d75d05504a8d9278604c22478e8edf1",
+        "size": 12773
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/cinder_hollow.map.txt",
+        "sha256": "b89c216d44e7faa1787428055514a5f0559f4e3532d45ba92675b770f085d7f4",
+        "size": 11196
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/prototype.tuning.txt",
+        "sha256": "de221545782553ddff739bffae5ce7a9768c728858b8d1b09d075b4f05622c6c",
+        "size": 3669
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/cinder_hollow_heat.map.txt",
+        "sha256": "825b1b6b117ca82a4b3e3273776e3b7c554e091a680136206944280ad84f9c5f",
+        "size": 12794
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/cinder_hollow_traps.map.txt",
+        "sha256": "f05bf677ce66336984d36c149615d98a2c4eb83c0347510314aafd07403c1186",
+        "size": 12917
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/creatures_tough.tuning.txt",
+        "sha256": "e024e80fbbccc7f92e2b95f3f9e461a423c7ead864652190e0c0b1a330706882",
+        "size": 5234
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/heat_chimneys.tuning.txt",
+        "sha256": "860d8f0324cf86a760464632c9d15640f572afea6a283126d6c6e018995ce025",
+        "size": 5336
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/traps_matter.tuning.txt",
+        "sha256": "676d8360f9f8e2ace1eac6e4ee11f2b8e5bab9293ae4774ebcd389fe2acd2414",
+        "size": 5556
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden.tuning.txt",
+        "sha256": "6e27de7c808331e125306fbfb2497e55fc34ba29800a3118f64e91d4ab4899e3",
+        "size": 1908
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "b0995bc69ec2baa7dbd5b05fdecfde6a21d24532e946ef4046763b109936f62b",
+        "size": 749
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "50cb5c0af5e3bdb1fe9d599fa98d3aaaa63552804704b1a8d12b0474011e4c86",
+        "size": 6872
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed4_lost.save.txt",
+        "sha256": "587d4b2a7fae14932baca2d9b1b0e508a9590b1b51b5a2977b0136c06f9c5b40",
+        "size": 5400
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed8_won.save.txt",
+        "sha256": "b2f568206f62f2e1f9f2e86852fb9cd563cb6687ab3a7bf11e7b60461a6c54a4",
+        "size": 7210
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/golden.tuning.txt",
+        "sha256": "6e27de7c808331e125306fbfb2497e55fc34ba29800a3118f64e91d4ab4899e3",
+        "size": 1908
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/golden_idle_seed1_lost.save.txt",
+        "sha256": "3dd43368dda116b543c5fec112b299f5002a46afe0abd66510a040753ebd2449",
+        "size": 631
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/golden_reasonable_seed1_won.save.txt",
+        "sha256": "05e6656f203ae7d97b57874f46569d36f5780c8787b54ef8cd5f85df50dbc606",
+        "size": 6975
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/golden_reasonable_seed4_lost.save.txt",
+        "sha256": "d75674bcc97ca38f02f43b73dd072e31ff2d92f23f19fd6abe7e18dd357bb9e5",
+        "size": 5564
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/Program.cpp",
+        "sha256": "eae3754782e09c3b5aa04889efbf71dc5eab922006fcb40f7c3103421c27e5a8",
+        "size": 7265
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/ReportWriter.cpp",
+        "sha256": "823e670514dad1d85719730ad9d49bfd6e133e5c554d506aa6004bfe809025b6",
+        "size": 12614
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/ReasonablePlayerBot.cpp",
+        "sha256": "b259c3b1298732cd6e5184e4fa9f99b22fb06dbb19a1bb7b3ba48d3c12ee07a0",
+        "size": 24533
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/StyleBotBase.cpp",
+        "sha256": "a7350d2d24d479374d9aba073edf21d981c3c4db360a6f8b1f85317692941ed2",
+        "size": 18169
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/AttackCampCommand.cpp",
+        "sha256": "6ad246a4b0f2ea9ca4ab848998ac4d9f149e1193c815893160a2bbac1a6cd07e",
+        "size": 436
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/BuildLinkRules.cpp",
+        "sha256": "db9fbaabfa92e74fde369778231e2d6ae9b5cd734e8b46923a4bdb0abb6ca6d5",
+        "size": 2624
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/CreatureBrain.cpp",
+        "sha256": "eaecc9327cc878b604ae2ecee1b20491d475cd36eca51e20f167d26eb450936b",
+        "size": 12276
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/MapData.cpp",
+        "sha256": "38d023b6bf5e2c5a8afb911a9015dd5200eb499ae79a1ff2da0915f4b482317a",
+        "size": 4891
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/MapParser.cpp",
+        "sha256": "509ac0439daba3aa6fca3bbbe8d535eb1efae01e74f281b68241baf008a079a9",
+        "size": 23599
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/TuningParser.cpp",
+        "sha256": "a4183dbac992575d40ea8e83fa53dea6492d2ecaf21873b5271931abd7a75109",
+        "size": 40015
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/CampSystem.cpp",
+        "sha256": "9d548a5911a29ed8512306b5dd69af8fc7c8c5692731993d7df4f59149300327",
+        "size": 5452
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/Intruder.cpp",
+        "sha256": "df8b6464ce208061802291b7354320c9bd39099f53af677b5462171adec5fe7a",
+        "size": 2290
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/IntruderBrain.cpp",
+        "sha256": "c0faf55f6fe0aacd319215ff27be67099f3edc69d7a456bc934ed12383907ee7",
+        "size": 15088
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/IntruderSystem.cpp",
+        "sha256": "f4825d78f8603d4027540fd3c4994374c164a51a189c9cbbcb61df6a2a891037",
+        "size": 14485
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/TunnelField.cpp",
+        "sha256": "a218f660a2ca818748ded075ee1242ec917432b0c4e03f68ab3266c1fbb9f92d",
+        "size": 6360
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/LinkJobHandler.cpp",
+        "sha256": "284b6127b997310a0523115722e16658a83e292e5fda09e23987d3807cca2dfa",
+        "size": 2475
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Metrics/MetricsCollector.cpp",
+        "sha256": "7581c563977c9e183d0cdbd39e4d438db82cac1e0eef01ec410f08ca3ef66d78",
+        "size": 16128
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Metrics/MetricsFormat.cpp",
+        "sha256": "7e46a7cf6a3628f141cd00b90f0539eb89c3b0142eb5d46881258754e0f4729e",
+        "size": 9288
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Save/CommandFactory.cpp",
+        "sha256": "91030de0a6f065ec422718bf4719e3b929b371d36566692167a99d3eb8fb31ae",
+        "size": 7446
+      },
+      {
+        "path": "ext:SimulationCpp/Private/SimGame.cpp",
+        "sha256": "7ff95588d52b9fc747228779460a1fd0280d198c8b0aef60ad9e4e14cc7f2226",
+        "size": 34213
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Traps/TrapSystem.cpp",
+        "sha256": "b5dda0e029ce09659dbd3a2f378eba2fbd939e336dce04e45c27e197ee0e79c0",
+        "size": 18076
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/ReasonablePlayerBot.h",
+        "sha256": "c8fb4486e62be4a52bd0aaea7bddce8433108beae047f766a887ec027a3f21b9",
+        "size": 8780
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/StyleBotBase.h",
+        "sha256": "12150c8f093cb45ab4d6bc942fe2da648f9138c8f1e05438231855c197a62c6d",
+        "size": 7116
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/AttackCampCommand.h",
+        "sha256": "a50c3260d0eb389c135e0483149a6379e151f2221661b5de51eaa6009f513529",
+        "size": 811
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/BuildLinkRules.h",
+        "sha256": "865641f82edf8dc670b6c1afd01a06b52cdc72f3e563b3a3fa06c1ca148e950a",
+        "size": 585
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/RejectReason.h",
+        "sha256": "fc86e0d7cd52c0b38edfa2d7a03e4800796439164781ca7306a825205a6475ce",
+        "size": 3865
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/Creature.h",
+        "sha256": "2d4bd3180951accb02e95246b67678dc0faac6693cecb83ff3f2f4ee0851d39c",
+        "size": 3933
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/CreatureGoal.h",
+        "sha256": "086c54ee12118c5514bc9f9fe061ebc1fe02661bed8873c2d43ca434f65b7a85",
+        "size": 1730
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/MapCamp.h",
+        "sha256": "e78951737d5ec59eb5615a80ecb6029f1b14f2a7c45784a46a1aef16f970e4ed",
+        "size": 1432
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/MapData.h",
+        "sha256": "53be943356f3a76a6963d92bfb70a3eca1e1625935de74f874e614ab3905eb70",
+        "size": 1947
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/MapParser.h",
+        "sha256": "6eab616941c7aa5a7cb19824c12527a95f55af873a14064c8809e4edd68e641c",
+        "size": 3062
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "bdefd5698b04039ca39d8b755bebcb508c3fd4716d5945353d0a1f2e9fb3d604",
+        "size": 13510
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Events/SimEventType.h",
+        "sha256": "995c53aea4ef2311fa18657d8762de417f643021c831bb5d28cbae662fd00ae5",
+        "size": 14240
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Fwd.h",
+        "sha256": "c1dc9676cbe009be002dc83ab169a8ecd8be1dfcec8fc6aeb86d2cc91f978b10",
+        "size": 6315
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/ISimView.h",
+        "sha256": "a6415020116a1f8cff416072f0dd4e8c84bb203dda215c054fbc93a206f7e442",
+        "size": 6060
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/CampSystem.h",
+        "sha256": "b3b6b5aaff3ab1d29612b8a433d59554048ac0d738a0a08cd6bd1ffc6e9255ba",
+        "size": 3569
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/Intruder.h",
+        "sha256": "eae9f633f629057bea370c7eea9cb877188b7c77f92076b1f7cebf57cdee36b4",
+        "size": 4705
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/IntruderBrain.h",
+        "sha256": "099b9e1915dfe4a06c2749a53ddc46dc7556b715257ba55ea3fc6ddd735dfabf",
+        "size": 3175
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/IntruderGoal.h",
+        "sha256": "c33bc39378c5fe6809a9709bd5b11814a82095907c09592530aa078e141fb3b9",
+        "size": 1237
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/TunnelField.h",
+        "sha256": "dedc1fafdbf83fced2804221ee227be4182104e792df836bc6a7bf3465f16917",
+        "size": 3150
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Metrics/RunMetrics.h",
+        "sha256": "0a73ba6b57dccfac7ded9276e0d66b6f3d4e94a0928c8d40bc77ce5aa6dce4f8",
+        "size": 5876
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "30412b0d160dedcfbc239bd887147456ca4b953831109b32993b32a96e1154e5",
+        "size": 1536
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/SimGame.h",
+        "sha256": "c9d79b46879bc27d20cd23a778fd18976c2c414193a1a9f3475bd71d11591b63",
+        "size": 11655
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/UnderreignSim.h",
+        "sha256": "5114c9718ffc56ac20da5e04f4054ed8194a46a78f3895ea160d0142daad758a",
+        "size": 10782
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/AttackGoalView.h",
+        "sha256": "9063f09cca6dc897daffcf803a34bef2f73e6237ea1d3557cfdecd9054de29a8",
+        "size": 1055
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/IntruderView.h",
+        "sha256": "86f905c91fe09a2cb180284bdd792902fa42a3bf4eb9476e945553ba0e23846a",
+        "size": 1886
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/World/CellFlags.h",
+        "sha256": "4b8301b3d2049150109863a02957dceeb18ffe3d7b71cacab720899fddbd1bad",
+        "size": 1636
+      },
+      {
+        "path": "ext:SimulationCpp/README.md",
+        "sha256": "406dc3677774cf51cec2cdd3c6b7f196fe0ae51fb8965ad871b723b06204f656",
+        "size": 15669
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/AttackGoalTests.cpp",
+        "sha256": "596cebe81449a6767842835898ccf5dd55f3f709bdad3333f84404b6001bdb11",
+        "size": 14221
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/BotHintTests.cpp",
+        "sha256": "370e6b067af82e1b6268605b827af603ec084c55500b9de4fb8a34e71aebbe55",
+        "size": 12962
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/BreakthroughTests.cpp",
+        "sha256": "63dff74cde537dc9ff7eb4fac69c051a0d42b3e102131f47039cff0e3b9b138a",
+        "size": 13491
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeadlessTests.cpp",
+        "sha256": "e87b4fa01994edcbea87e5239fd2d14b79451d729c2c8828774f5f4fd3fbdedf",
+        "size": 22665
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeadlessTests.h",
+        "sha256": "a3006e0819ce56ad2fed58763282997d84bb32eacb068622a64e75787b810d4e",
+        "size": 1828
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/OpeningVariationTests.cpp",
+        "sha256": "3b677e83655ae5d43e6fffe1a42643e10a33418a593687d4543f35fed117a1c9",
+        "size": 7498
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/SaveTests.cpp",
+        "sha256": "02af8d0587c1230662f4930d5a30b24c8ad54f3cdf8e5f50db73a0c0b4470abd",
+        "size": 9170
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/TestMaps.cpp",
+        "sha256": "43dfe60dbe925ca6396b92e4eb98dc5181cb6c2d2e9bfe3ae85fe840e749a28c",
+        "size": 6138
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/TestMaps.h",
+        "sha256": "cda4510acf3491a01c1cb769359d1b14cddfe7d9e685efb8c7af5e50fcc76de6",
+        "size": 5814
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-SIM-RULES-V1/WORKER_RESULT.md",
+        "sha256": "7a307f4e46df56f1d01583a0f6742aaac0e41c04d0c7c060f135327e989bd67f",
+        "size": 15911
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-SIM-RULES-V1/REVIEW.md",
+      "sha256": "24bf81c4931702a23504f0db94e8614094e1747ca907f35fa719947b8fcbb47c",
+      "size": 1051
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-SIM-RULES-V1/review.json",
+    "record_sha256": "55e08748a016762db827b705bc99380b03fe0cc83d441b8427c92eb214a3a305",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "5e27fb39a4a03a53e3c30a9a2a07de59f92b6905313b8f76b3df1cba84703305",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
