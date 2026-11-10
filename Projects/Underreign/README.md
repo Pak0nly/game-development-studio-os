@@ -23,8 +23,9 @@ PC (Windows, Steam) first (UD-03). Other platforms later.
 
 ## Engine
 
-Unity 6000.6.4f1, the same version as Hearthlands (UD-04). Render pipeline open
-(OD-04).
+Unity 6000.6.4f1, the same version as Hearthlands (UD-04). Render pipeline: URP
+for now, re-check after the first look sample (UD-36, OD-04). Engine choice
+under discussion: Unity or Unreal Engine (OD-11).
 
 ## Unity Project Location
 
@@ -75,6 +76,8 @@ in Underreign overlaps with or is connected to Hearthlands.
 ## Risks
 
 - Title not yet checked.
+- Engine question open: Unity (DEC-041, UD-04) vs. Unreal Engine (OD-11); the
+  Unity start waits for it.
 - Large feature set (five peoples, layers, wiring, physics); the prototype must
   prove the fun of layers plus wiring before scope grows.
 - The Deep Dwarves (UD-32) must stay clearly different from, and unconnected to,
@@ -83,4 +86,6 @@ in Underreign overlaps with or is connected to Hearthlands.
 
 ## Next Step
 
-A prototype planning Work Order (heat rises, Ashen Pact, three layers).
+Engine discussion with the Human (OD-11) before the Unity start. The prototype
+plan is approved (UD-34); the Unity start follows once the engine question is
+settled.

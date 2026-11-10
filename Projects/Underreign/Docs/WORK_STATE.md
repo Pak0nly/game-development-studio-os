@@ -41,7 +41,11 @@ UR-GATE-EXTERNAL-NIGHT-V1 closed 2026-11-09 (closure receipt
 
 ## Human checkpoint
 
-Waiting for the Human's answers to the night's questions (catalogue round 5,
-https://claude.ai/artifact/TfyGXsaWnvENLpK3cY5dxq): plan approval, Unity start
-approvals, render pipeline, walled-in Heart rule, then balance, names and
-full-game direction. No Unity work before that.
+Round 5 recorded by UR-DECISIONS-R5-V1 (UD-34 to UD-45; gate receipt
+`987e2171…`, verify-worker PASS; routine recording without independent review).
+Plan approved, standing Unity-start approvals given, URP for now. Before any
+engine work the Human wants to discuss: Unity or Unreal (OD-11), layer
+connections at fixed points (OD-12), winning needs more than defending (OD-13).
+Catalogue round 6 asks these with recommendations (engine comparison sample
+first; fixed breakthrough points with Deep Dwarves drilling new ones; active
+win goals). Waiting for the Human's round-6 answers. No engine work before.
