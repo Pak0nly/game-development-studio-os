@@ -1,0 +1,6 @@
+overview_layer1.png      1920x1080 centre black 0% OK
+overview_layer2.png      1920x1080 centre black 0% OK
+overview_layer3.png      1920x1080 centre black 0% OK
+side_view_y21.png        1920x1080 centre black 1% OK
+sequence: 150 frames, 0 bad []
+RESULT PASS

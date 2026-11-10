@@ -13,6 +13,15 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-UNREAL-SETUP-V1
+
+UR-UNREAL-SETUP-V1 (Unreal 5.8 C++ project in Game/, greybox layers from the map file, layer camera, Slate HUD; about 217 fps; external commit 394af1d)
+Independent review verdict: PASS
+Worker task: a8cb32d8de387dbd9
+Reviewer task: a84f293c91735180d
+Candidate identity: d102067f59922f4cafc1c991c8ef17cb0495fe2cca084d5baa0c12d76af53d89
+Closure receipt: 7c05866415245a61706616475b0cc0878c932e3216f9a281fb133e5839540683
+
 ## Closed: engine comparison (UD-46)
 
 UR-ENGINE-UNREAL-V1 (same scene in Unreal 5.8 with Lumen; about 94 fps at 1080p; external commit 96ad7fe)
