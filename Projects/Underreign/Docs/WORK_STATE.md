@@ -34,6 +34,19 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-UNREAL-PLAYABLE-V1
+
+UR-UNREAL-PLAYABLE-V1 (first playable version for the Human: Unreal rules module resynced to rules 4 (69a1bea) with parity at ticks 600-2400; stair/shaft tool at fixed breakthrough points, six trap parts, chain wiring across layers, show machines, remove; attack order and call back, camp and guards drawn, win/lose screen with play again; hover labels, key help, heat overlay; `Game/Play Underreign.bat` and German `Game/SPIELANLEITUNG.md`; rules and tuning unchanged; external commit 07f2f66)
+Independent review verdict: PASS
+Worker task: ad8e06eb4e45c1d5e
+Reviewer task: a241ec2f917dc80e1
+Candidate identity: 0e0f4175e8f09fd89ff0faa8f3ce826493bfaa2f29841e5846e506c27945310c
+Closure receipt: 2b836531998138f14bb74d223b09c7f4bbde90eb59f58ef5e8142edfcb9aad8d
+
+Next: the Human plays (answer to the wave-3 question was "Erst selbst spielen");
+then the balance decision. Low review notes: layer buttons show map characters
+"@" and "(H)" instead of names; in-game text English.
+
 ## Closed: UR-SIM-RULES-V1
 
 UR-SIM-RULES-V1 (rules 4 in SimulationCpp: layers connect only at fixed breakthrough points, floors/ceilings unbreakable, walls breakable, attack goal after wave 3; 728 tests; new golden replays; reasonable bot win rate fell from 69 % to 23 % (Brutes now arrive bunched at the open hatch) - balance decision with the Human; external commit 69a1bea; the Unreal module still runs rules 3 and needs a resync)

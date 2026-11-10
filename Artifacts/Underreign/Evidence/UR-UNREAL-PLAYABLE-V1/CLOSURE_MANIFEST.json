@@ -1,0 +1,2240 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-UNREAL-PLAYABLE-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-PLAYABLE-V1/WORK_ORDER.md",
+    "sha256": "0907a22dcb35f48a2e263ec334f623d0413f21b485cde39bd80b907c1e01ca38",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-PLAYABLE-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "c088cb713e802f2ad5a8cd7b829d7cc75bd67ec380aab41890789ff56c6b3798",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-PLAYABLE-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "cd9d5e3076b903256b6abfadb7f78b66ec8fec04937f018e145eeb797aa31ddf",
+    "receipt_id": "bc49d18e7e32710a79237a748d7a22868e23e2bc74adb36f56438686bd449199",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "ad8e06eb4e45c1d5e",
+    "reviewer_task_id": "a241ec2f917dc80e1"
+  },
+  "candidate": {
+    "identity": "0e0f4175e8f09fd89ff0faa8f3ce826493bfaa2f29841e5846e506c27945310c",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-UNREAL-PLAYABLE-V1/WORKER_RESULT.md",
+        "sha256": "7f00b7fc2f65117928b48d6f6e6a73c362597bbeed09654713588008db89c14f",
+        "size": 11428
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-PLAYABLE-V1/headless/reasonable_seed1_t11988.save.txt",
+        "sha256": "bfa3fc69835c4df5d8846bf510b100c71fb6d1e7e0a67cc7a7684741da55af27",
+        "size": 6815
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-PLAYABLE-V1/headless/reasonable_seed1_t2400.save.txt",
+        "sha256": "506163dc4847b6a56eb17da75056f1acd23ab625792e6f75320141c9b0e0f1b2",
+        "size": 1722
+      },
+      {
+        "path": "ext:Game/Captures/help_panel.png",
+        "sha256": "bd36d44363194e8bb7b2454ba5d0f95736b909fd242891a6cd20f7eea2420b98",
+        "size": 1558490
+      },
+      {
+        "path": "ext:Game/Captures/play_heart_vein_layer3.png",
+        "sha256": "1766a3d6357acf1b8a724791b5791abc7c9747bb93b503687ad43202b5128890",
+        "size": 1671702
+      },
+      {
+        "path": "ext:Game/Captures/play_overview_layer1.png",
+        "sha256": "dc6b8744a8349f4bc6428427e49541d5247e35767b569b9f89c711f7bc30318a",
+        "size": 1138433
+      },
+      {
+        "path": "ext:Game/Captures/play_overview_layer2.png",
+        "sha256": "99d5eca7b7b860cd72d205be5c28c8557a93d8d7eb06abb516bd0e5795f548ba",
+        "size": 1075153
+      },
+      {
+        "path": "ext:Game/Captures/play_overview_layer3.png",
+        "sha256": "7a837dc7c9c8eac9005de273e277f1d630b63be5980b606898524196480e1f25",
+        "size": 1077379
+      },
+      {
+        "path": "ext:Game/Captures/play_rooms_layer2.png",
+        "sha256": "b852cca09b9358f5e94d88fb61e28cd8e085aed8071bae4afa2c52f2668aea6b",
+        "size": 1682995
+      },
+      {
+        "path": "ext:Game/Captures/play_side_view_y21.png",
+        "sha256": "e9531b6d851c01b23a4beaf88769b71cafecaf0b9480b9143368472e4f3d89e1",
+        "size": 856028
+      },
+      {
+        "path": "ext:Game/Captures/round_all_machines.png",
+        "sha256": "1af130831ed27b1e64434370efcd8bfa4de4349010597ed9246fb6c631e7405c",
+        "size": 1672038
+      },
+      {
+        "path": "ext:Game/Captures/round_attack_sent.png",
+        "sha256": "fe6132832840e2ebc4076225098386e357eeb7b279fee744774ffef4c12fbb6a",
+        "size": 1840572
+      },
+      {
+        "path": "ext:Game/Captures/round_camp_open.png",
+        "sha256": "4d3bb0cd08f95da896e22cfeaf98e524b066a26c8544ab88d9008bccd0f773e9",
+        "size": 1823712
+      },
+      {
+        "path": "ext:Game/Captures/round_chain_cross_layer.png",
+        "sha256": "f5bac4366950788a6c9327708055890b98442f69b880190189267de8b9957718",
+        "size": 1524002
+      },
+      {
+        "path": "ext:Game/Captures/round_chain_trigger.png",
+        "sha256": "fcc726ec499bf2155a4cec1c05b4e51cc441b7c840c49ab3af81beb7b8ae4523",
+        "size": 1639654
+      },
+      {
+        "path": "ext:Game/Captures/round_end_screen.png",
+        "sha256": "77ec74d6b77aeec6eda0eeebac57a875768352838b19601fe232e39a9588669a",
+        "size": 1085895
+      },
+      {
+        "path": "ext:Game/Captures/round_hover_guard.png",
+        "sha256": "6bfd1b2979346df240c76358edce90563bac6789c20e0cafb4e5451af403ef06",
+        "size": 1818672
+      },
+      {
+        "path": "ext:Game/Captures/round_hover_vent.png",
+        "sha256": "c5bea39fab0f2c669113eb53a6b95776d5f7f58dac343de4ffeeaef53ec9bd2d",
+        "size": 1651172
+      },
+      {
+        "path": "ext:Game/Captures/round_machine.png",
+        "sha256": "0abf48792351c587a5b21043496ea13bfd375771e36f3f4c0dec348106cd0a1c",
+        "size": 1671626
+      },
+      {
+        "path": "ext:Game/Captures/round_seq.gif",
+        "sha256": "e758aae5622050bf91afe3ecc98d812a2f1e4af5394a8352b500dee657fd2d70",
+        "size": 12645146
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0000.png",
+        "sha256": "f0af4278c54df1160472948bd11dea5d6fb076a3a544250dcff3e83672a6a98c",
+        "size": 298762
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0001.png",
+        "sha256": "b7d2abbf4707af182390ca9ba30c46abc446f1d67262e155b03b731ce6472481",
+        "size": 285179
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0002.png",
+        "sha256": "ea56c398434062bd3b29d0bb24c199ae63b1b733fa9e4eaf23ff25553583844e",
+        "size": 290199
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0003.png",
+        "sha256": "41496af6be3ba38e67e3433e2a7b26dde6a8aa08d6c6c2bdaba13cc80b0be63e",
+        "size": 294369
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0004.png",
+        "sha256": "88125c1b0cbb0f2a31c109f2241779d4ac33aac28ac98099f2037d691699bef2",
+        "size": 293558
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0005.png",
+        "sha256": "3f08027cdcf53d40c687df4cbd22bdcfc1066c0e2835c605ef599c7e9b26e71d",
+        "size": 297589
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0006.png",
+        "sha256": "443301b20974aaa15115d2599d88a38f6d8121e585578ab7bcb3e59fe33dd96b",
+        "size": 294655
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0007.png",
+        "sha256": "ffbcf64778963cabf3f483351a2f6b2b978aa363f526dbf2b8aa3c54901645d1",
+        "size": 299524
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0008.png",
+        "sha256": "305f929b799ea94f85a677db1ea8585f58b366b4c8db5f9f35c388ab2576c2c9",
+        "size": 299610
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0009.png",
+        "sha256": "1feea505dcaba9cf383e0dbdf9498d38ed38e8e70cc72bcf21e7d11ac7bd3167",
+        "size": 298193
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0010.png",
+        "sha256": "c2a3a7fd7a5d3fb354266a2dde0ece64f741175d2b8c09a6eb8462b4e348fe74",
+        "size": 298394
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0011.png",
+        "sha256": "206b646698500f2b79c00f194fcf8f5fdad7e2071aad7cbb64864a76f897bad2",
+        "size": 300036
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0012.png",
+        "sha256": "2e31284e5efafea7e107a12f55fb50a91bef121226fe95dc5eba79d785fb9855",
+        "size": 301936
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0013.png",
+        "sha256": "831ba24c05c201f53287b0b338982c6ea12a0de83bada1577b6e4d670481be83",
+        "size": 297105
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0014.png",
+        "sha256": "226f85d11601599f0e4d83a29dc3b4c26fb11092baee3c6b15280e81e7372b45",
+        "size": 299999
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0015.png",
+        "sha256": "2f55c3a7d9284f18bda30f2e593b45ff3c83ee9d127172a5b121d9185254fd24",
+        "size": 299433
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0016.png",
+        "sha256": "11d85ef2349806643696bff0fbbf43a831af94dc9feb9a06eb33a0bbde827b6c",
+        "size": 298741
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0017.png",
+        "sha256": "3733ee138d56393ca94ac5bcd243491e5a54935bd41a138a563b97e9dc38371b",
+        "size": 304652
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0018.png",
+        "sha256": "8147cd6957c3889ea7b96b10e42aee80cc082143e768e615160b72474ba4c567",
+        "size": 312948
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0019.png",
+        "sha256": "8d5753800ddbcc33af8fedc55a37f300fc58d7c7c98c7292e597f51f839aa89e",
+        "size": 309466
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0020.png",
+        "sha256": "4c834d0b89a8b8f7222224f08542cb676450360431605650c39f87e1ee9aec1d",
+        "size": 311280
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0021.png",
+        "sha256": "b996c18e1daefef4c271ec7e2d705361872362dc3e529804436382bd69f6813f",
+        "size": 303858
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0022.png",
+        "sha256": "664942c3d98f6fb4faf8b7558be882096e770f5f017b775104dbb2a7a898104b",
+        "size": 306677
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0023.png",
+        "sha256": "9b8ec9028039242c85f61992a20cde7374daf9ee7004c8dc59fb7779002a3dc2",
+        "size": 302621
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0024.png",
+        "sha256": "4c2221ff8ff8ac88c5db68692b03276803849055fcee3e53d57a730edf429b5e",
+        "size": 305657
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0025.png",
+        "sha256": "3ec4861ee33db636853be174195e222813bc896e007b909be2161d3b579840dc",
+        "size": 304109
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0026.png",
+        "sha256": "178feae3b93a02884cb6e4277876492d789ea2ebe5b0ea0775fe3484c987ab66",
+        "size": 306100
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0027.png",
+        "sha256": "f46c8f96d4abfb01682593b02ce18f76a3fd7ce866a5bf6111f793ec096a214d",
+        "size": 304372
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0028.png",
+        "sha256": "bcbf4ebcc558e302f30f91e395fa3a1f0a0628c76fb4d08b70b92abff0d1a59d",
+        "size": 306495
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0029.png",
+        "sha256": "e10d1b5ac351c8681cdf7d1499b28309dc7b4fac9d6b410decaf98a6b9c12aa8",
+        "size": 305655
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0030.png",
+        "sha256": "829a0eaee44519daeaab7e4678242f1ef60a36ebddb7991c5c8175a41b3e057d",
+        "size": 303797
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0031.png",
+        "sha256": "118b2149760a3f52be57e23624039c4e7fed8f32e608fe88b5b0121883818a59",
+        "size": 304338
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0032.png",
+        "sha256": "590c3f5af32d6dbf48280e103326def4707e6eb3b2f7075b5900152d4afdbf99",
+        "size": 304255
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0033.png",
+        "sha256": "71cd2c4c338e3f0a8ad3e71dfa56fdc06e1177fa2c5c4a9eb22b33962da0aabc",
+        "size": 306850
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0034.png",
+        "sha256": "058238cfd15c567f4984b988b8482b0fb252c666d6f2187552bb595ae460c015",
+        "size": 302408
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0035.png",
+        "sha256": "363fb52854a787c7d3499a413720b00c5d65935cb1d14c8695752472da1ee14f",
+        "size": 305370
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0036.png",
+        "sha256": "bae374f404406bd32c756128e9fd1a76deae3b4c8fc0f9a905d095087081b2a8",
+        "size": 304507
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0037.png",
+        "sha256": "25fdfa88e78fbad2a4599e74649422cdf32f1c8803ce057e74aae73a37f66ec8",
+        "size": 305586
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0038.png",
+        "sha256": "3da0b8e930b31f1868c6bcfa20706159b964bc489b3937e0488e272f7bde09e0",
+        "size": 309531
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0039.png",
+        "sha256": "c7f3c04fe1cd5f6590c2761ebc3793338e5a046e519ec878f0e4172acfe48039",
+        "size": 311460
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0040.png",
+        "sha256": "5f480b75a3bfc9c150c4c603f3ef1129a2bf69a827f5ee371fa8add16ca478a3",
+        "size": 309528
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0041.png",
+        "sha256": "fb39124f538a2fddc65dc0fdaa969f9f9b80cc450deabef73d2ad4a6fe4cef02",
+        "size": 286582
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0042.png",
+        "sha256": "3f16938f4c70ed8f505f57c5656757d4f83ee7459d1dc22b260c1c8dd75b2948",
+        "size": 312112
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0043.png",
+        "sha256": "24b0c8b9525dffe6ba896e49a5358c2d93b743aa4b92f3de019882bd172b8f67",
+        "size": 333471
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0044.png",
+        "sha256": "da5a2674845da4229ec2ec1b01d31e6f2c3ad4c46d9ecb2657a43a8f458e3163",
+        "size": 364979
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0045.png",
+        "sha256": "06f2744bb7544b791e79002af106f839d690f041504dca3791fdc8920ab0a4d9",
+        "size": 364760
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0046.png",
+        "sha256": "a87f21146c97727cd041982637b14815ae092a6be62043aefd17ec288040d1b8",
+        "size": 356656
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0047.png",
+        "sha256": "a2f084111523032f6b471107a55c47fb20fe38f69b4bf23a790c8d220ac517b8",
+        "size": 350962
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0048.png",
+        "sha256": "068abcc72959e5b28c285e4ce975110d03a53c7cb8be4e63d8214a38398f3ddd",
+        "size": 346845
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0049.png",
+        "sha256": "74c15d4d44b0867e6f774ff135a589dcd2efbb5baf4a50e9128252c6a89c3d0a",
+        "size": 337829
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0050.png",
+        "sha256": "e9268772c82ffde6bc95db318350e8c18ec0ef8fd0ee411bd1ebd42fcc830cb4",
+        "size": 334131
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0051.png",
+        "sha256": "87e1fdb85749fca9eb5a828925a4b747556a6395a80e434e997ce57981c27572",
+        "size": 330746
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0052.png",
+        "sha256": "18d486dc1b0cba97a1bb3a54548d273f206ccbaa9dbc4b20b5d807a7e09fd904",
+        "size": 329736
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0053.png",
+        "sha256": "a3c291b5d610aed27ed7a714549383150457d1d5648e33ca6337056e6b496691",
+        "size": 326156
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0054.png",
+        "sha256": "28dbc99fbd31e596c55072f4be728d60355152f1377e7fdadf82bdef09507371",
+        "size": 328080
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0055.png",
+        "sha256": "e763ad129ecaf9a3c7cd103f65385373f88134a2b717647be98900837cb67124",
+        "size": 327410
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0056.png",
+        "sha256": "9f9df8b6471c8a139e204d153950b8a2dde993a00a0b70f343e3a50686831c10",
+        "size": 324799
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0057.png",
+        "sha256": "c05468897d1e124541993208885329fd561dbfb87689ed1321184adf9300e389",
+        "size": 324992
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0058.png",
+        "sha256": "3b389cae0aa7ec48917b5ccf9d05dd0f98e6154d5fc0cd1c42ce4b35cd015c00",
+        "size": 326094
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0059.png",
+        "sha256": "45a4b028e155d9b090b0d9d8af6960ef25d7ae3813d689d00e5defd1458d0052",
+        "size": 329096
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0060.png",
+        "sha256": "dce7e6b20851a8da4b9e22307934366a203097fcb76828aea3344c39c40b9098",
+        "size": 323454
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0061.png",
+        "sha256": "8b367625201091a821619042ef094cda62182d50de732ad71e070c39fbe516c5",
+        "size": 326079
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0062.png",
+        "sha256": "2d4929339512dcbf550d4237ff7236490bc351c4775cc60328af4d6238a8d46d",
+        "size": 325159
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0063.png",
+        "sha256": "b26ff03d104113c6ba19f67f8177d3e82269b7b8fb7d8a4d2260f10b2d9ffd26",
+        "size": 276047
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0064.png",
+        "sha256": "ca739ee05699ebc7ad5cd2dddb61bac3bc19cd77a5cfd21886356ea2703cf508",
+        "size": 295932
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0065.png",
+        "sha256": "a491903ef2e87c45a1e36310bf86b63d587331ec80abe2e6387d133dd564ae61",
+        "size": 317246
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0066.png",
+        "sha256": "e59e59beecce0a25a3c329e2a9934b2e69c1fe2ab2e8d7c1875a8f6fe947ec14",
+        "size": 312106
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0067.png",
+        "sha256": "cf2767fb48f56f0bdfcf91e24cf2b25696cbb8b9daed73a832d23cd30d87842f",
+        "size": 303156
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0068.png",
+        "sha256": "bc2b892f156e8edce5ca144a44ee6780b1208372c69070050b1d69bea5e66a73",
+        "size": 297081
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0069.png",
+        "sha256": "7c7837f7102ab1c4a7e705ec2df19f84d6ec7df3c2d75c830c459ce2b94b349d",
+        "size": 293105
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0070.png",
+        "sha256": "531fbc01fdcf66e4070d6a5fba1b914dd741cd8f3a5ef8ae72151cacf38202e5",
+        "size": 291203
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0071.png",
+        "sha256": "afe0ca6adab4082e56a9bc8da60aa89f8c2f748b4ff8bbd0f8fa17d63d87e426",
+        "size": 291967
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0072.png",
+        "sha256": "47b6dfc90f3b2013f6c78c11c1e938480cc1d57da7a515d7ea1427ac9f774776",
+        "size": 292797
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0073.png",
+        "sha256": "70568f121927964f43ec109ded72e10bd8fa7ebf8ca1118a2cd1811658bb2462",
+        "size": 289893
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0074.png",
+        "sha256": "4dae4443f5df211b14a41a591f25f0869e1a020555553d8b7429b6919295a2d2",
+        "size": 290658
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0075.png",
+        "sha256": "dbec2999a806052b49333b64cb6bfe65a863f9f817647bf7690a5f00c60cee87",
+        "size": 291421
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0076.png",
+        "sha256": "b11fe6cb49f33d5e7953cc06607b92ef7dba667e3be8be1120364d25c9868b9f",
+        "size": 290610
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0077.png",
+        "sha256": "4d2542f02749c3527a610c9b9e9c59ad6cbc7489b30b98f6cc7b1ed40945a271",
+        "size": 289198
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0078.png",
+        "sha256": "762b3dee5762fc1823f616444d80c1436dded615648f915425ee5ce3291446e3",
+        "size": 290933
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0079.png",
+        "sha256": "18cf032524cea0f6ffc8b4198a6944a908bb8eb5346a37a77feedebcd04cdcd8",
+        "size": 289698
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0080.png",
+        "sha256": "d7e95020aeaa121d7849f22be94dee477f3f27897949de955e970c325ca494fe",
+        "size": 348183
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0081.png",
+        "sha256": "d1ed49d2cd69cb1a502931638166e8ddec69cda0f9f9b25aad55b29828f6260a",
+        "size": 359088
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0082.png",
+        "sha256": "ae71f181512ac20f44370ec1de37576ab09e5c27cb6d61fecce3f7da0b11bc28",
+        "size": 350118
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0083.png",
+        "sha256": "d2702dac1936a41e60513094199bb74b811e5abd877c7553c32850378796b2c7",
+        "size": 346324
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0084.png",
+        "sha256": "39ac545bdc5b6fa9eb226b614b794db73ce8289036834708d9d8afcf6ea29b06",
+        "size": 341940
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0085.png",
+        "sha256": "825cb94687b5b28b46bdd156f7b551289f614551e26d38ac1708d88a19fd905d",
+        "size": 337240
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0086.png",
+        "sha256": "997eeebe90204103d913d5096a0e8371100e1807ec7ec5fbc2d940846d703440",
+        "size": 327741
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0087.png",
+        "sha256": "2a0f2a8489380dddce9686b7722a6b43ce4f8d450e152a9178ca6db821ae41c5",
+        "size": 325762
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0088.png",
+        "sha256": "fffdc154eb98d53c752fb8299e08672fdb2a990baf44c2c813d94ae79f3ca67c",
+        "size": 322287
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0089.png",
+        "sha256": "b07d66b12f9debeb5a6cae713f49c1785ebee3e11e2e73022d34ff5cdae6d867",
+        "size": 318834
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0090.png",
+        "sha256": "c131f01dc2c0460463eb57a9ed80f46f28409e9c1c7711b0df0dfdc06b224300",
+        "size": 317457
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0091.png",
+        "sha256": "0ae0e6a5def0d49dd5fe90e4e5563beb630b0f146ca0aa2f4af7d9b55250bcb8",
+        "size": 318570
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0092.png",
+        "sha256": "cc3057b81c15cc3482b3f0207e12c75f3e20286f56ff1b031b5ec9e5e26718ab",
+        "size": 321471
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0093.png",
+        "sha256": "83bc57665a97aaac8a49f1a4a545d9279877f28f5d6497708e5422358f470017",
+        "size": 317251
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0094.png",
+        "sha256": "b7b521a839afb9e28e3e1a79116ef92089c2fd708ea14e6965859a7de6057700",
+        "size": 318283
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0095.png",
+        "sha256": "ba32f7a86528467b1413374c8aced33f617aaee7d495a9c58b287d24a118d633",
+        "size": 320793
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0096.png",
+        "sha256": "d7d477172195a38db76a7d8dca8cde94a8937c67b55990fbf06a4eb2f6d23ab4",
+        "size": 325147
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0097.png",
+        "sha256": "ff9baf23b0639263231ef4071919b2f7dfdd0181d7468cc20101d11d0a657d5c",
+        "size": 327330
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0098.png",
+        "sha256": "f997c48a0bf57ccf1d0d042b75f115d8ba72b5ebcbeecca331d360c410a511fc",
+        "size": 319526
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0099.png",
+        "sha256": "6039802ca64f8358c946313caec26463831bb75cd9d3dd1a9620bf043ed7acfa",
+        "size": 316077
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0100.png",
+        "sha256": "8f371216d99993b038223d4797bc36979ccd44fa071446458aea0d4f16af774b",
+        "size": 315756
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0101.png",
+        "sha256": "065bc1d1c06bb6009346fe657228a8e775c2b58d5bcc063794e6d335a306615e",
+        "size": 316971
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0102.png",
+        "sha256": "cd1f57e4ba8020dbe71c97f2ff2fc1f0ac15bcb38ddc7dbf95f0046b49f31ec4",
+        "size": 310445
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0103.png",
+        "sha256": "82ec00d21804c0644aa4467c3f6799eb30a4f7f4a8ff19081275209d968222f0",
+        "size": 299462
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0104.png",
+        "sha256": "61dc2318749f8cc3df4e23bdd4ad1932c659a710578c6318cb25ab3112b1b7e8",
+        "size": 302568
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0105.png",
+        "sha256": "8eef133c6db0b6a4b82f34478ff119bc5e061eb20dcced0026a0dc0a2db11c57",
+        "size": 301643
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0106.png",
+        "sha256": "cf4f2be06a599d608b35600020c47fc4af9047208118d63b3090802747ac0978",
+        "size": 304769
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0107.png",
+        "sha256": "a69188a52f4281d6410218b1814f419b900f5a3739a2368b259de2b4b2db8996",
+        "size": 301376
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0108.png",
+        "sha256": "556d1b5e4982a4210797ddbaedce8acc7ebe06635984a632ea1025819726993c",
+        "size": 305096
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0109.png",
+        "sha256": "4d775abfb4e6e543edd5433bf4302252d520313475654b5a411080b0defb1d32",
+        "size": 303993
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0110.png",
+        "sha256": "e5aae37d7ae6d061eb738772a4db5ec586bfc6c18c6510f089e28758d98bb595",
+        "size": 301481
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0111.png",
+        "sha256": "94710829f07cbf02ad6d7039be7037cbe64a5428d2db795cc34c320536bbd5af",
+        "size": 301006
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0112.png",
+        "sha256": "e81d2f4110eb772367acd6c91f28f07cf8556ea33552f4633be50b222c3f9297",
+        "size": 301138
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0113.png",
+        "sha256": "28d62b330dccb62d08b5c4a3c7d9ea2297ba585d6c22fe89c531dcd19494855c",
+        "size": 304350
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0114.png",
+        "sha256": "6e4c6956a28f171a579a8e75f0d846c1bfa86a2c340d81d2e7b268115753e4dc",
+        "size": 299889
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0115.png",
+        "sha256": "194b3f3755166173ba6f731b220b584ba6b7309471d62cc93a74e5992d52a483",
+        "size": 302000
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0116.png",
+        "sha256": "5feb25f7030a4dbf59a06988913a19af487860248d5427bda4166fa9b526a034",
+        "size": 300496
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0117.png",
+        "sha256": "e980db6c2db81762d5d9585436182022bdabf2211fe257f9c687315ad8b64480",
+        "size": 299704
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0118.png",
+        "sha256": "88907683260a48a715c84e029f4ab43d07c23bfc1a5599c4553e96aecf514eb8",
+        "size": 302794
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0119.png",
+        "sha256": "dec673e9cf9520a0b6937f09c89dd2653f090261577af202e75c007544d8869e",
+        "size": 297047
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0120.png",
+        "sha256": "388b18df77ae2d0bf8b1d332dfb7e352e7fee6b8fbd39c180497a995ee86d1e7",
+        "size": 285852
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0121.png",
+        "sha256": "4681a0126199a17f773eb34d5d663ab136a01dc7a4cb7af3d4c027d24038d3eb",
+        "size": 285416
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0122.png",
+        "sha256": "e053e9ceccbc6252dcc40a376e4b9283a8831f779409c971f29d7f5f9c65ae5a",
+        "size": 295575
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0123.png",
+        "sha256": "e8bfa2ffae1a8198328a0177e5e8376ab4ed241ec918e4b3f65df566d49f6bce",
+        "size": 298755
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0124.png",
+        "sha256": "428d7aae9b2117dfddfe220507599c95e1e0e283f04ee5d3ccc3beb203313d99",
+        "size": 298355
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0125.png",
+        "sha256": "53a149e631f6f6ce14f8f70857439dd3d77ec0155a803dd6f80817e0812439b8",
+        "size": 300526
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0126.png",
+        "sha256": "969d22b087d99981c7fd117935ff4429a5cbd3a21ce9a1a20e6b1c9d3a2c2586",
+        "size": 299908
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0127.png",
+        "sha256": "1772e2a1b8f6f076c8e4a51fe2266ee3c803ff802ade155407c3d18ccff6cc5e",
+        "size": 302294
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0128.png",
+        "sha256": "1acf31963d313f01aa49c0f4364088ec67ace96bf0ab9caa4c82b0886169e74d",
+        "size": 299177
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0129.png",
+        "sha256": "d485015135bfce76bcb43ed2f0e24039e2d598b60a882c7f0347924ea524b0eb",
+        "size": 302870
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0130.png",
+        "sha256": "ff49330b1432887f9ac81f7acdacc6583a44e07fc1b1d6b70f5c018d4051f5e7",
+        "size": 301136
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0131.png",
+        "sha256": "ee441df1e3fde64e98409a4eeab95ebeb41e074862e85db252bed6c08ec1371b",
+        "size": 299338
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0132.png",
+        "sha256": "8c30e8d419edcc65ff8dc119279ccf0c77fd7f6d8b567b3a1f5e5f9cfa951f84",
+        "size": 296344
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0133.png",
+        "sha256": "51e35ba842480cd00f101ddc98f74418e8259ddb39d0d4e364fb6ff376b28a5d",
+        "size": 296494
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0134.png",
+        "sha256": "90a79ce3198fafa5b267ca0ad6e6f4348de6911318a51628b1ca2936f687afaf",
+        "size": 300024
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0135.png",
+        "sha256": "35d2628cabbba1cd09e8abafe4110c38a5a721399f1d680859dbb9368351db43",
+        "size": 294943
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0136.png",
+        "sha256": "f403e30e76d6855958eb7aaf50b23f8633f0deabff8ce6c35aa18122250d27e6",
+        "size": 297326
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0137.png",
+        "sha256": "601ed2257dfdb2964fefd52b0d2151e1b08f2c1895b12fc262140878ab50f211",
+        "size": 296144
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0138.png",
+        "sha256": "423b5aa1d1c4638933e5f9ad3fcb5358bf713b9e5b22f28d061c07e1879a1144",
+        "size": 298462
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0139.png",
+        "sha256": "03b53a056260e1903eacd1caba7d2a14e07aa7a5f82f4e8bd97dead9d2e1710f",
+        "size": 342084
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0140.png",
+        "sha256": "436f514124b60b3acd2e74e46e7ed001c691018a1b3b59c0a705e6b08c9dd1fd",
+        "size": 343919
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0141.png",
+        "sha256": "9fb194c9d4b75785e8ef27c2e40cc69e053a88a4b912634794a2fc6fd7d49d82",
+        "size": 326211
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0142.png",
+        "sha256": "5b193b1844a761ab60fc35910aebc3bbef4e024dcb7819d10c0e4c0178b926a3",
+        "size": 319006
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0143.png",
+        "sha256": "856e80cdbe13b640ea32b45c19beee55155c0adafb2827a789d3d10c3c9847d6",
+        "size": 317488
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0144.png",
+        "sha256": "207de2b9d46a75e8a0aa05c919f56fb1e6ea2e522991f9c835b202f04f5b2734",
+        "size": 319996
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0145.png",
+        "sha256": "e44931c8fa049e9521ee0e3cf5bc0bdf4862831173b17d9f3d96cc19bb91c8b8",
+        "size": 315707
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0146.png",
+        "sha256": "aff380a90489c4c624e9f44a75fa3995b9191317dfe3db70624afece4f302aff",
+        "size": 320625
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0147.png",
+        "sha256": "49ba9fcbea508c86fbdf508a7b5c537bb56f66902adcd0dce1ec9916a295e070",
+        "size": 322528
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0148.png",
+        "sha256": "c108376e39b8da6f4d6c7680320af07ed33ffbfc1788b8b00b1eee9214cef980",
+        "size": 324591
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0149.png",
+        "sha256": "b73b2c9243aff10c6f0d7df82c5d62f4bc62df240907fa8ad5ace41d24144a5f",
+        "size": 322374
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0150.png",
+        "sha256": "cad1a7f9bc75e71bda9582f5d7ddad97e5844b746d925c1eb294221425daf7a9",
+        "size": 325901
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0151.png",
+        "sha256": "6182532a174b5421b1d3f5b81a295cde02f8b92cfdd9c24000fe0baa93a7a35c",
+        "size": 325910
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0152.png",
+        "sha256": "4a7cca0fca99cf05434fc00f1ff544002b9cb7e0f1c708081affa3c23143c451",
+        "size": 324155
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0153.png",
+        "sha256": "ce167ba3d4a6261010fb64ad8d8abea6801e8a0bcf2cd088a84ffc44cd7ad606",
+        "size": 324385
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0154.png",
+        "sha256": "854761936eb406608ecc3a001499cd41a1869e3d9cd91f561752596c0427b7c8",
+        "size": 326764
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0155.png",
+        "sha256": "abf01c257017823a5af177de4bcba6a136f54062697560070b0004c2b8a757a2",
+        "size": 328296
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0156.png",
+        "sha256": "d4829c15bc793fae495077ebbe6c1d78bfb483ea2334af6f8848ffb9ce26576e",
+        "size": 335048
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0157.png",
+        "sha256": "597f76efd21b6d0a4dd97fb715c2763253c12374a31ee7c72682e777a7a5bc28",
+        "size": 336610
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0158.png",
+        "sha256": "1df7ab66666c679cf20451e9626a6085c3dfa07c68e8ad61e23acaa92ea061be",
+        "size": 337952
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0159.png",
+        "sha256": "3c6d3fcf7c6410ee7471a9f6c2c5699e04a03775604d60304dc420c2c4792258",
+        "size": 338772
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0160.png",
+        "sha256": "3045ff8ac183ec2fcc8d811d95e7a1fe6daa71b2fbed4b12c9a39a6ca8c52ff5",
+        "size": 336356
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0161.png",
+        "sha256": "1e7c5fd078392af5fdab9bf026d15214f30a18eab266396303716fad73ef65b8",
+        "size": 338863
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0162.png",
+        "sha256": "906bd1a58219247401cf9f96649bafacd7fe093bc75a9f6cc6ab4a60191db545",
+        "size": 338538
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0163.png",
+        "sha256": "8971451db79f1279f27869ec1573b80480c4deb0114235ae3118a5424e0b39f1",
+        "size": 335523
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0164.png",
+        "sha256": "93b95a7084d7c06121da50fbcdad88ba9e12aec182b200e587119b629f097f8f",
+        "size": 337474
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0165.png",
+        "sha256": "50c2befdefbd67634043569f937ea362c33caf40cadb9b9b581f5d088b9967c8",
+        "size": 337900
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0166.png",
+        "sha256": "87647ac501a2afcbf53a6bffaaeaa798f36f4e546532f465fe5e639a9c94ba0d",
+        "size": 339549
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0167.png",
+        "sha256": "c94c698e3f7619c6c2f49ebe9c345255d7804ae48428f1e3666f0923e06cab94",
+        "size": 335093
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0168.png",
+        "sha256": "9d169c08396f6c6f154d73f0f857bb7c968ed670e200a129185022c0df4760c4",
+        "size": 336916
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0169.png",
+        "sha256": "bcd3b24d469626e559ee5478dc8a3d3c3d55d1d37522130d588d1f09f4974521",
+        "size": 337906
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0170.png",
+        "sha256": "d39499fa0b31e5e91bf9425dac3c77125f4ab02f8bfb28c2ff168be07d21d4b5",
+        "size": 339334
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0171.png",
+        "sha256": "eeb3437689f1f2175f6922efced106b0c8fd25753765924c74d83215466d053e",
+        "size": 336231
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0172.png",
+        "sha256": "c4020b07abf4b14211b125a415fe54ed3d0e058e7ddc5aaa57807b86623d20de",
+        "size": 338797
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0173.png",
+        "sha256": "7afb58eb01c83bb4a745c40fe8a97e262ef14f582af676d6a073bb5a52ad9a32",
+        "size": 331793
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0174.png",
+        "sha256": "b6b5a3da7579807259d623a5b652692f72c90f01fb17061b1a3dcfd1b4d7f0cf",
+        "size": 329245
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0175.png",
+        "sha256": "b214fe9edeec7501c97f7400e29a1c84064fd72100351a96c6983dc73de74726",
+        "size": 330981
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0176.png",
+        "sha256": "4f7a7afde6d8fb2a3e5937c3d15cf9eec1667093c6c50f25254459fcff881783",
+        "size": 332634
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0177.png",
+        "sha256": "7f98b452aa83af68dff3c67e60f83ae2bdea8717a4735b4deeba438ff61147aa",
+        "size": 336187
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0178.png",
+        "sha256": "b46408c95599bd74eaf7cd18956d47710ea5b21675412aa1c701340a2cadf5b1",
+        "size": 332015
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0179.png",
+        "sha256": "a0bc49a7b7cbc8ce5f131d82450bf3f44c464569505c93b5528461aa78c631c8",
+        "size": 332810
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0180.png",
+        "sha256": "068fa19ae684880d774400d2968b0882ccc463b353eb4bb8ae9df58c0bfe42b8",
+        "size": 333843
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0181.png",
+        "sha256": "8c80ac671bd500abbb4a8be8573db188088d112fca756e237a560109fd4918d0",
+        "size": 334311
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0182.png",
+        "sha256": "0a02feee102571eaf0a6157e89f84acf4eebb2ba9542a77ee9fc84060bb37152",
+        "size": 332968
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0183.png",
+        "sha256": "6a5d39e12f259dfa1f1014bf6558c0ca6a527dd26a37416fd688809b1185e23f",
+        "size": 335798
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0184.png",
+        "sha256": "f46c11e07789fbbb478071e72eb0cb5131d4c7ccefd31cc6e1176385b63218a6",
+        "size": 335051
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0185.png",
+        "sha256": "6a8586127d95f7919811e155bcf61918a116d27e123eca4306d92afa2a721731",
+        "size": 333091
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0186.png",
+        "sha256": "1b3fe17550064c356efdfe3fd6cdfe4e2fdc0bf9d3df4c925a4a845000d6d6d2",
+        "size": 334032
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0187.png",
+        "sha256": "bfde9b60fbb47ca592b99186c9a77a59989abf362a96a892f85c5c23442808a2",
+        "size": 334871
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0188.png",
+        "sha256": "790ce03d585384473b02c9f4bb00fa8004a4742d452e7870c76a4d0ea6dbc7b0",
+        "size": 335669
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0189.png",
+        "sha256": "2295db73df6603cb2ba5ec33dd5fc21f9f4c676f4d599fe11248d4deab06de5e",
+        "size": 331331
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0190.png",
+        "sha256": "7ca5c64b4cce6e059d7cf692ee21b5d877c220fe4a701759f9ff20938cb20a4f",
+        "size": 333073
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0191.png",
+        "sha256": "cdf8d096fdde62b56297aa0aaac7da148faef3a8350064ff660be4bc8436a4d8",
+        "size": 333788
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0192.png",
+        "sha256": "846265e8231e80db3630d088fcc4e2d0c894fa896ab1d62c6c493a96e5637f6b",
+        "size": 334547
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0193.png",
+        "sha256": "4cae195d3ca9cc19d3a98c6f4f49ddd18ed505153a45a284c918c236a1b41a2a",
+        "size": 332458
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0194.png",
+        "sha256": "20ac4d68fcac1cfc8815ea7653cddb0b1e03e4bde3e4f3bbfb9c3d433e8d7e14",
+        "size": 335641
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0195.png",
+        "sha256": "4dc3d4ddfe73bfe8ef3c0a0b583a4ac878fde1955dea1fcf4343e6195c25ef74",
+        "size": 335334
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0196.png",
+        "sha256": "a2975bc66b2549f6763966898b5517a9a851f0634fcd6b609e39493c68b6abdb",
+        "size": 333197
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0197.png",
+        "sha256": "3f1e007a2528b3b344a676e3f74dad3f28994b3e4b1fbe52310860e704205f77",
+        "size": 334173
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0198.png",
+        "sha256": "48e49a7aad2897e2dd41668ec4b9d0b6575dbb3e2b5a147813d22166dfc61e64",
+        "size": 336681
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0199.png",
+        "sha256": "620692b978d8e55ba94d47deb02f6a59b35eaa6cf85facc9f3a4dc881aa06aab",
+        "size": 337087
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0200.png",
+        "sha256": "9e9d845ebfd794420b42261397d7aa3d9744a36b44e063a1dbb2881d4ad3c27d",
+        "size": 333089
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0201.png",
+        "sha256": "4b4bb79abaaee227a238953e8cfefa09f6bd024852aeebebf711b474b1497860",
+        "size": 334044
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0202.png",
+        "sha256": "afc9e236db92e6d29fac2954b347469bb67dc71e0c5362a199ea879f4a293402",
+        "size": 334952
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0203.png",
+        "sha256": "a38d3ef1d71186a66bec909a8a8a22d6b9cdce2e634da5cbdc15b6a1f28bbd8b",
+        "size": 335068
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0204.png",
+        "sha256": "afef7c72f0a7b34959573b0df6b0e46d561b5a8ed1534037e5944b1445769a5b",
+        "size": 333225
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0205.png",
+        "sha256": "af7c5524693241ba72614d931a20f39f34f2fbe44f7972943efab639db4c6be3",
+        "size": 335369
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0206.png",
+        "sha256": "39be3a0eab8d8c007161287b785888d5e2621b9acfb5c8f8d85b1898086252cf",
+        "size": 335385
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0207.png",
+        "sha256": "0ebd7887da9186e5ba9bde30f851a38a08702f825cbbdc4a50dc99b9ae45abdf",
+        "size": 333320
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0208.png",
+        "sha256": "c4bd8240d13b22acf06fca51498fe6106bf85e134db7fdf6e36036a6d2be31d7",
+        "size": 333877
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0209.png",
+        "sha256": "2c27f7318f44710c85ef48e41f4e231bffad393fc3af8d00294d1d82213773a0",
+        "size": 335576
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0210.png",
+        "sha256": "867a0d7c64074c03751f7f2b00c926d4eb8d03aa4666100f1537b773e8ff0b6d",
+        "size": 335978
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0211.png",
+        "sha256": "86cd0e5ee2d02fb8b7cdba5e5be1b9567064d367b60d3279d4b942c72a96a435",
+        "size": 331355
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0212.png",
+        "sha256": "f9abf7b37de34526f7d2926b5532f0355dd5f4d11359e9105ef83736f0dbcfa7",
+        "size": 333813
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0213.png",
+        "sha256": "31fcf332c5438fe754757f84124554c0c162994e093e5bc758e3f73431a6a6b7",
+        "size": 334623
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0214.png",
+        "sha256": "448886d9a01da252b52db882ea2c51f39511ad93d55c9411a1fa4aaef7762dea",
+        "size": 336426
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0215.png",
+        "sha256": "fdcca1eb2bf22b5fc9f1650b535612876e51c9e1ceb0b161d64ecf20a408ebea",
+        "size": 334231
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0216.png",
+        "sha256": "8b83dee3865cf2a93bb24afb38659fe638b5f49559f4d699324c5662104f8086",
+        "size": 337150
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0217.png",
+        "sha256": "3a7109b59908587b18641065aec7726df7cbbfd3ae6f5d43ecc8f2f1bb967c96",
+        "size": 336427
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0218.png",
+        "sha256": "f77ec92aa16b05b78cbfd51edfd0dd5926d37f733e703339de1a244c7a0182de",
+        "size": 334434
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0219.png",
+        "sha256": "6975a69e8b2d9786fbc782b3908123fa88de3462545ee844d47651b1e895c9e6",
+        "size": 335712
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0220.png",
+        "sha256": "dd3c52cf12d9cb1d1fde63a7de61739321dcd36bfff70cc2ffad356af54f3f60",
+        "size": 337696
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0221.png",
+        "sha256": "aa97bf7b9c12b4f4226dad876ba822c250f566448b428f1c7407e628ffd96ae9",
+        "size": 337337
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0222.png",
+        "sha256": "2af4eb11fa3b8dc20144bb446d053282f8aa00bcd0c73b1dfdd4d47262d5d956",
+        "size": 333219
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0223.png",
+        "sha256": "e51621a4fc390220a3a152c5652346d4ca05830ec135d7462f2f74d228864f09",
+        "size": 334605
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0224.png",
+        "sha256": "1e612989741bed685921b47f21fc0d310cb47b81ec04adbb8751df2ab3f6d214",
+        "size": 335781
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0225.png",
+        "sha256": "98c27625d7630de2cad94f10644fe262d52555a7b1bfb1ae7baceecb8e1f53f2",
+        "size": 336647
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0226.png",
+        "sha256": "241ce7bba40fab1848baf031c036501282c476809079758650a3b9c662967806",
+        "size": 334620
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0227.png",
+        "sha256": "4c752a5e5acc82bf1332368a9601201efcb908978fee4be4eeb2a3aae2033dfd",
+        "size": 337185
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0228.png",
+        "sha256": "b554e47cb089d54dcee5b55d7b76146ca5606f400dcb718f95b8a82485458d91",
+        "size": 336133
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0229.png",
+        "sha256": "e719930469441d78d8aababeda4566380ba63be93510eca6340c0a2da71e6a5d",
+        "size": 333833
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0230.png",
+        "sha256": "8a63ff436ed05bf96893372355e7d11cb91c09d85dd734b4516a12ed4faa4a24",
+        "size": 335185
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0231.png",
+        "sha256": "a4fff3be1ba951b424990238aa4756d378b637022c01cf971a13924fbbe0ae58",
+        "size": 337328
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0232.png",
+        "sha256": "7a4d24cb841ce055d754c62be5d2fc5676a124c5390eb137aac4278cd7c3ea33",
+        "size": 336795
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0233.png",
+        "sha256": "1b01e7befbf8ca8147702e35775f37310c168b8b638781c28af3e15ebd9dc11e",
+        "size": 332922
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0234.png",
+        "sha256": "4221090c107c853807bdf53606d263a2c63099168ffabc2f440ed8cf8839d90d",
+        "size": 334918
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0235.png",
+        "sha256": "a47ba0cbc749e7382b3384e8df4cd958563aa9521fb14b353fa7de3752325004",
+        "size": 335081
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0236.png",
+        "sha256": "588f05cee3643da3d21a8e11bdd7602d5824416c4745de0c169b6e165df98b9e",
+        "size": 337034
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0237.png",
+        "sha256": "8d49976c39add733c62f860a9981df34404788574bb4a83fdb541b89eb90e303",
+        "size": 335411
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0238.png",
+        "sha256": "c7ae505365a09a90556858f25a3650e34d02803c1a355c785d82552e83468552",
+        "size": 339074
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0239.png",
+        "sha256": "34d232c9f30d475dac887fcda50c8c77d28fc8d110c23df1e5094c9f7fef0d34",
+        "size": 339305
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0240.png",
+        "sha256": "eab321dba49b35b20e9d47330caf49d40cf344ed84dcd082cfd418768f146295",
+        "size": 338916
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0241.png",
+        "sha256": "98342a8dfcc8357d2b9a6f7216451ad19a358b1913193b69246b481c62170bba",
+        "size": 340213
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0242.png",
+        "sha256": "2c4f695522b85f7fafb5b8b6063042d7ed387331888ec1e24062144d532c5ca9",
+        "size": 340391
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0243.png",
+        "sha256": "ceab5d352f888cffad9a11c07578485b3a93cb21f4d7b2b59b27afc350f1fba1",
+        "size": 338750
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0244.png",
+        "sha256": "cac20ce1e671a1eaaad69a593bd3e337c62cc41bfa7071206769ceb104785190",
+        "size": 333142
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0245.png",
+        "sha256": "668f18f973c17b5a45ff0dcbfdf8895561da0a70e242b6c52bcb7ac66be9b69f",
+        "size": 333893
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0246.png",
+        "sha256": "50afedbc77534af3a97ab97e837b7a83c270f8b0823097c5a19ba1e676dcd3ab",
+        "size": 334287
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0247.png",
+        "sha256": "4a0d54b3ec6e090bd31144f01dc68ab7d099cbe0f9653c1a315c957af134a0b9",
+        "size": 335319
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0248.png",
+        "sha256": "dd6bba1f2a2a94d665f229a1de831bf3a30d9db5b2158b0375da8c6e040f23e8",
+        "size": 333269
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0249.png",
+        "sha256": "d28478f97ba913a619c73731b963fb41bf01735bc07f15970a6b546f67760899",
+        "size": 335591
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0250.png",
+        "sha256": "18a64bcc5802d37a5f1c11990f5b1abf0be5bce41d35fee3cc3eae21ad6bbafa",
+        "size": 335147
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0251.png",
+        "sha256": "724426b38c1ad240264f985ec222be1e7a8be45b7a628c2f78b80a8c7a2ca2f9",
+        "size": 334428
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0252.png",
+        "sha256": "e2763bb18b02f632b91c0a604e04919b59f34f7579298da309645f35fe92fc8d",
+        "size": 335265
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0253.png",
+        "sha256": "ef80ae4f2aba5f2cb783c5cad9b5add9e654fb64a3c1d38d045459e9cb66b59f",
+        "size": 337094
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0254.png",
+        "sha256": "483e1af89a3c4194b226db42f5c957cc1c87917afd7d9b2ea74424c3c21347f1",
+        "size": 338882
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0255.png",
+        "sha256": "16081027bc2f4e8ec755a91e5c7a79b5eccd51fab9fc17fdfa1cdc07a0f52d0b",
+        "size": 332171
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0256.png",
+        "sha256": "8c44bc9125da9182c147723ed96b79ba135dd7744932e75b071bc55e963635b1",
+        "size": 333970
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0257.png",
+        "sha256": "6988e8ba7484404d1dd40e4408e8e18f556f2e6532641f5cb79785aa36a6213a",
+        "size": 334418
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0258.png",
+        "sha256": "0393decd2c72affe38f6e415e96e64e5019b01cb0f5833dc91a3a46254ef0e45",
+        "size": 333986
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0259.png",
+        "sha256": "7a4fa8e0e4ff3cdc45d079a5fc164873d10d1cbb49d316b5917af18553b62d4c",
+        "size": 331737
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0260.png",
+        "sha256": "a1df52a8acf1a3303395ba1bcd6935b013175fbd70acf033c35d4a7e85b5d1dc",
+        "size": 334243
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0261.png",
+        "sha256": "040eb5d37bd5df284880f08b391e4542ce7d239e0afe04ae8849d5d39f73c4da",
+        "size": 332642
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0262.png",
+        "sha256": "c9fdd92956eb30a66c61307f816f0b3619dbc93d3f6dfee686a913918e0b65fe",
+        "size": 331319
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0263.png",
+        "sha256": "4582d1218cd82cfe5c6474aaa55f8773c7b98ae02ee45ef3eae7231defd20db8",
+        "size": 331864
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0264.png",
+        "sha256": "8a3a5cf30f608a56e89326e73fce2945a59601eff536aaab8d9282eb2eb93964",
+        "size": 333023
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0265.png",
+        "sha256": "bb652b7b66d8dbf1d2566a05d30139f09097f3d02bde781019e5b753111a46c8",
+        "size": 333395
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0266.png",
+        "sha256": "dce842bd87619852e5dbb07f50aff6f6c7000082b0d386d9cc7b0d3d9be4bc56",
+        "size": 328718
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0267.png",
+        "sha256": "bc319a6f5577dc1a47670e7e03d0af5b0093124a40457442888e1be38bd10dc4",
+        "size": 330052
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0268.png",
+        "sha256": "16fc65e7a58cc574b6b178f1476ec9def60c9b13934e3f1f516bac104625a891",
+        "size": 331127
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0269.png",
+        "sha256": "6171765f0b2471f53b69248d4e1e81b448e7eb9b4818e598fbf5a051ef16b60a",
+        "size": 332687
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0270.png",
+        "sha256": "2cfdd7df7baa804b85a588ce99cf039472410cb08d8865ff6b9b342be5247f50",
+        "size": 331355
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0271.png",
+        "sha256": "687470f70952e616cd73bf32115c33578ba570c1dc7263fabf417fcaf8666bd9",
+        "size": 333167
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0272.png",
+        "sha256": "9f010a2c05aed42eed353daeacd8a113c1822056b516d18ca72413211dc790ef",
+        "size": 332788
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0273.png",
+        "sha256": "54a8bfbc58eb7cb765c56d417defca51582d6e8aa0ae14a795c10de1282f46d0",
+        "size": 331206
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0274.png",
+        "sha256": "55afcc087a9014d19cbdd6e1e123f1393620a81f2b0b635803a55e576ab31f07",
+        "size": 331376
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0275.png",
+        "sha256": "6956a7f91f28456ed67771892b8475be01428f4da9a65c4d6851f00606046f24",
+        "size": 333513
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0276.png",
+        "sha256": "9a98837c16b850a4b54f6b69da96b00799c5ee45720ce386016ca7aca3be21aa",
+        "size": 333629
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0277.png",
+        "sha256": "51712c39e4a24307519d0d86ccdad8ee32c8e5d749e398abc21a155e0383860f",
+        "size": 329475
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0278.png",
+        "sha256": "ff8febcf70e44e4dcfcaa679d075c7a0a4fe95df05dd40fa2b8f5d299a614110",
+        "size": 330736
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0279.png",
+        "sha256": "3ca0d42dd890fa7023770c24503107fa669ad3f8eb8777b90ff4eedab783556d",
+        "size": 331567
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0280.png",
+        "sha256": "fe50cc64fd4a741c76239d874c492b207795b134f09560395b737955617368b1",
+        "size": 331908
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0281.png",
+        "sha256": "63707139d4749b1f6c51a37bd6f9d0644c0aba5d3c971a050a147cde8c331e13",
+        "size": 330725
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0282.png",
+        "sha256": "f9cf80d72f08114a637dc7efeaec9da4ea370da831dceafbe1707f006e989d28",
+        "size": 333664
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0283.png",
+        "sha256": "711bfcfbba386b2d63f900e369f91ca010bdf59d5054b4e9fec1d46da2d1f08c",
+        "size": 333066
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0284.png",
+        "sha256": "f7164527303e8a0e4651e7a3733cbad6d7b1329796603a098e27e13f3c7077e8",
+        "size": 330836
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0285.png",
+        "sha256": "ca0eafc9a1250f89cacc614345c8a89cf6f5b6909b5b98a9f82958a2a06d85d6",
+        "size": 331282
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0286.png",
+        "sha256": "85a69615ae234dcc080f44be7f620cf598e332620efd8bd3f6af6553afceee58",
+        "size": 333607
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0287.png",
+        "sha256": "08d63d8bc108eac35af8afe70dc9c41c68375f2c3d3327e25a11cba2f8e907af",
+        "size": 333941
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0288.png",
+        "sha256": "eaadbd02c5ef718452723fd6f50fe2024a00bf80f8656d8f2a8f935fe2b7bd18",
+        "size": 329126
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0289.png",
+        "sha256": "578a5a657b82fcd0bb21ad631e591d5843a435f3847c22212e7ddd3bf04e4f4e",
+        "size": 330419
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0290.png",
+        "sha256": "7b1333e26f3d881237c27f0b2f2d30468760e9c4c89f44cc1092659a45560880",
+        "size": 332423
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0291.png",
+        "sha256": "42e5b609976656bd6d041ef2747988e55b947132d6021e90a17a2205e4f37f32",
+        "size": 332867
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0292.png",
+        "sha256": "2b92e411c4ac2d47e7c453746f306a9d71ff2b4e7657597d50e873bdeeea0e23",
+        "size": 331231
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0293.png",
+        "sha256": "7fb14d51e1373a9ba08768e2e20d19586a3250a5b48ce014ec0e8c838fede8a2",
+        "size": 333082
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0294.png",
+        "sha256": "5d8290ccbbe8af3ae53156faed8d5f72be90fad857e9b7c8b636427acdae76b0",
+        "size": 332891
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0295.png",
+        "sha256": "062576b2052e65ea7f269309e2ed7e3fc9664a736c0d84697814fe667089f129",
+        "size": 331136
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0296.png",
+        "sha256": "c72cc9d8ea434595538590f06d4401039880968c39efb64f1a38f6c4290a5295",
+        "size": 331784
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0297.png",
+        "sha256": "09bc17c1c868fb23a87ca0179bf0c1740fd70804626b91747898232d464bfd0b",
+        "size": 330386
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0298.png",
+        "sha256": "506a022e936e5cfa94f63b71b82c0e7fd591ff27d092f29e5f6c86aa2e787cef",
+        "size": 331127
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0299.png",
+        "sha256": "5cc27e5b39251d34a3536d219c72f9bb86a346abdff1fe4acca29be0ee960d58",
+        "size": 326341
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0300.png",
+        "sha256": "a00d34bffc89d391edc6326c31e2b7b39c9dc8c11245040389f0cc2a8d7739ef",
+        "size": 327893
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0301.png",
+        "sha256": "07c38703227a841e108af17f22133a1c5a1315496a7df5033432a7112319c721",
+        "size": 329104
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0302.png",
+        "sha256": "01bec521595cfe6ebd6ce40ed8514b7dfa0ad38cce06e63dfa6d18d476d9c3b5",
+        "size": 330147
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0303.png",
+        "sha256": "7f867b5ba0449d543af746952bf6b3b42a2da049a0834c608c2c867ddf7a563e",
+        "size": 328110
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0304.png",
+        "sha256": "2362a35fe358353dfbb8fc03d680c0d7f08ae7c9a3c9b73447f6f9952a4ea2d0",
+        "size": 331346
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0305.png",
+        "sha256": "2e9e211968a375416ef2781a5f617dd699dd77710517702f8c2239a1bfff6a51",
+        "size": 330704
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0306.png",
+        "sha256": "4508df540198811b9c7358e1be4555748a32ffea4d90ad2f5725847998a2e070",
+        "size": 328345
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0307.png",
+        "sha256": "87763d0ab6e1c67bc8d936c9f0106bceb0ccf0b1bab0d8e72922fe878076f4da",
+        "size": 329273
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0308.png",
+        "sha256": "35f291cfa9a5a49f0eab799165c9ab81fbe12d7668bba92fe4e176d21fb31a0b",
+        "size": 331518
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0309.png",
+        "sha256": "af7cb715a9c0379b938ebd840626ea54968d77a6881798ad6bfa4ec8bd6605b5",
+        "size": 331003
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0310.png",
+        "sha256": "a6259326e7c340b0633fc152712f210257847f5392d7a0a713687f83a2797cb2",
+        "size": 325741
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0311.png",
+        "sha256": "3cc0772ec5f53598ff580aa908f2bb2cd606bfc4083d74965e6b6ff86e92b89c",
+        "size": 327829
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0312.png",
+        "sha256": "3abf1a0222ce13e8f80c49ea5ea08c2f515d7988ed7ff0780493a6ffc1037bc8",
+        "size": 329420
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0313.png",
+        "sha256": "b79af8efdfa46063c8f4ec9aca140ebcf8ae3e59cd121e2c8a0c97a15d350d2a",
+        "size": 329617
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0314.png",
+        "sha256": "22366b4879c1ca164b533f9cd2571923b4f1fd263c83a225b82b9a4b59ac2dd5",
+        "size": 328427
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0315.png",
+        "sha256": "fed6279104ab324697f7198c819aa03dfa2c2cddc8d81c5dd316ea907510c2da",
+        "size": 330950
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0316.png",
+        "sha256": "910f80c9d55393b57821db1228eb7315b7b2f2630bda2eac087cf8f90720fed6",
+        "size": 330539
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0317.png",
+        "sha256": "aaf9351b633d78ddb835c6c88afd84af15cf5d65a0247cd5196f21e38921f5fb",
+        "size": 328274
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0318.png",
+        "sha256": "f095e28f5628552efe134d84129b84a65b469b5b7f597fca1918495d7e2d5db3",
+        "size": 328984
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0319.png",
+        "sha256": "6e081a958c5bd0d40411e26dd260987b95bbfd7d657727cc9dde16ab0f5b9f22",
+        "size": 331105
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0320.png",
+        "sha256": "5af1975bf3484ed39da1e0294589c9f0b4e9c741d058452975b4892e4e7ada8c",
+        "size": 331043
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0321.png",
+        "sha256": "00fd39c2b7cf1f1287b0d7424091ba953cf3b52854d43dc14e2d061d3230dd5b",
+        "size": 326523
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0322.png",
+        "sha256": "6026fe9f89668df038ebda6e596d8025bbc4f5635a95d149e1f5acbeb4a6950a",
+        "size": 328876
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0323.png",
+        "sha256": "c3f147cb6a1a657c4be7d0767efaae9c67e9e046b9c78852b0edf0a5c5b56694",
+        "size": 329193
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0324.png",
+        "sha256": "502e016a57d6557522ba3696598f5161e87eb4ca947ebedfe2f72f19a0968b6d",
+        "size": 330038
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0325.png",
+        "sha256": "55a446861206fdee41fa25884e5dfdb4567c04a58ed371d14933abd4d97d6ca8",
+        "size": 327953
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0326.png",
+        "sha256": "64b1436cc20fa7930692a32b095423ed5b1d4298ef63894203ccba25cb6e73d9",
+        "size": 331445
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0327.png",
+        "sha256": "a529d249e7fdb669e117131c628b7962f04db1840986afb66d036c72f2ad0f5a",
+        "size": 330736
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0328.png",
+        "sha256": "102b831d130cbf9a468ae110ac43835ed2aa6a8a9df25df08be8ccf7541baf29",
+        "size": 328323
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0329.png",
+        "sha256": "628beec432df70be736275bca18cfda5baa0e82f889e37ce34b03c6d987f665c",
+        "size": 328996
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0330.png",
+        "sha256": "389f7585964b1bb1f702efd2c1a41266c6514d62f983382abe336d035ae3d39b",
+        "size": 330629
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0331.png",
+        "sha256": "0279537b5eb060aebc41ecfb65ebd7605ad3bfd065872b1e43e55dc34f378826",
+        "size": 331338
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0332.png",
+        "sha256": "e486d3a6e42071088780b7f3f495555502930fdcfdb565336a51c4cd8a54dd46",
+        "size": 326675
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0333.png",
+        "sha256": "38652f8fbe143ac87ed58296e0f899bcf226d790a9c6e0b48fc0f420d329a6a3",
+        "size": 328219
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0334.png",
+        "sha256": "967b4feb03efb71b6e39438564cef926519c080d1f65aa9667faa459fdec8c93",
+        "size": 329675
+      },
+      {
+        "path": "ext:Game/Captures/round_seq/0335.png",
+        "sha256": "2cee82d9546b20bfe0dcc4d98e333ee776e2255a97eab370db7f5c21b3e00f7b",
+        "size": 329996
+      },
+      {
+        "path": "ext:Game/Captures/round_trap_preview.png",
+        "sha256": "80fc61e7b2b9eb3fcb736b4c71d74d4390834447b38ed083bbd636a528cecedf",
+        "size": 1623540
+      },
+      {
+        "path": "ext:Game/Captures/round_vent_preview.png",
+        "sha256": "1302b98147f6af8b21427a6cda527f18bf5eb2aee1511aa1e45325a9965133f7",
+        "size": 1615359
+      },
+      {
+        "path": "ext:Game/Captures/start_intro.png",
+        "sha256": "7fcff668a330963c212111e69632876332d4d5d66ca3d6df9af56204da276be6",
+        "size": 924429
+      },
+      {
+        "path": "ext:Game/Captures/start_running.png",
+        "sha256": "45083609beedc10380c6eb2e224b5a45fd8ff594334d775e53319270f623cdd2",
+        "size": 1739747
+      },
+      {
+        "path": "ext:Game/Captures/tool_dig_drag.png",
+        "sha256": "becf29dabd8e7c003c562e42925b1972b9c4964dfc0d524ab79fbee39418d23c",
+        "size": 1682444
+      },
+      {
+        "path": "ext:Game/Captures/tool_heat_overlay.png",
+        "sha256": "08d9d7fa5d735ac645863c58e0bdfdc27355c9b59d230d399694c84735fcf1e7",
+        "size": 1701874
+      },
+      {
+        "path": "ext:Game/Captures/tool_hover_heart.png",
+        "sha256": "d16efb27ef6593e69c981ed17ae7d6a00cf8d8666c8bf14e7fcdda0732dd4f4b",
+        "size": 1677049
+      },
+      {
+        "path": "ext:Game/Captures/tool_room_nest.png",
+        "sha256": "b30edfdcef5cd9beed459d064e9df079f8d3fb9ca9c71c037073780e9151db47",
+        "size": 1699072
+      },
+      {
+        "path": "ext:Game/Captures/tool_stair_rings.png",
+        "sha256": "bfc6636e8f0c453ba43234a89a950b1e5b5fbe10c217cce292005b64bc4b62f7",
+        "size": 1701868
+      },
+      {
+        "path": "ext:Game/Play Underreign.bat",
+        "sha256": "2ac2b295ccbbdc570afdadeb4cd1671f85810e0cbe2f52c41edbe178b956975d",
+        "size": 1152
+      },
+      {
+        "path": "ext:Game/README.md",
+        "sha256": "c0b868e73bf18e1a01a6b0281a80baf4a739f7ee6bf310b14dc8ee02a1d02480",
+        "size": 23221
+      },
+      {
+        "path": "ext:Game/SPIELANLEITUNG.md",
+        "sha256": "716984ab1845822a7c42113194c4627f92fa8b66d5f38b26686f717b26690e86",
+        "size": 3737
+      },
+      {
+        "path": "ext:Game/Scripts/capture.sh",
+        "sha256": "f987373a554431ff0c52b0948c2cc141313c838656937c3a93710d9cb3fb339e",
+        "size": 1991
+      },
+      {
+        "path": "ext:Game/Scripts/sync_sim.py",
+        "sha256": "b237e4b5f3d8f7ae95969d1cfd5ba31fac234c83d4b8648af0ccd4f78f6cab0d",
+        "size": 11317
+      },
+      {
+        "path": "ext:Game/Underreign/Config/DefaultInput.ini",
+        "sha256": "6f8d36adc216c7f659a1ab5b3e042adf8b74178180300c5c7125662b91d46171",
+        "size": 1310
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URCaptureDirector.cpp",
+        "sha256": "b2262d29674f11a5880275645dd80fd655b8a8a70098ea92ec1b0646d26a3b23",
+        "size": 38706
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URHUD.cpp",
+        "sha256": "60ec8c3e47f8527525e03840fa53225542add9fe9ab34fe0a851343a767b3215",
+        "size": 35130
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayView.cpp",
+        "sha256": "30768f581ae2e435fc2bf34edb98b25ef3c13df7254b88a71f01891e7b771f91",
+        "size": 20242
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayerController.cpp",
+        "sha256": "115077be17d544068ad2ab034137ebb454aff242f51b0792da8dd54f926c6142",
+        "size": 47016
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URSimSubsystem.cpp",
+        "sha256": "a89b638de9bc90170a922371f5cb657041503b53d61a588cffe5e6a6c9b28969",
+        "size": 23962
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URCaptureDirector.h",
+        "sha256": "e976660da1a3a2e8666e073e062afe72f2307a6e7f76e1e0c9cdc2919f34a7ec",
+        "size": 5553
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URGreyboxMap.h",
+        "sha256": "fc3a849c8027b647991a71579b5bc3f9118da6874512e237f70e36d8f3d62c2f",
+        "size": 9410
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URHUD.h",
+        "sha256": "bfcc02beb1c46633ee4611e4219894fb45f950130f8d9652dffefa8c2bdcbd98",
+        "size": 2566
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayView.h",
+        "sha256": "50e72642b615cc36787e8c0263ab7e8150c97b307a2828ae9b15aa8affd8aa25",
+        "size": 4782
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayerController.h",
+        "sha256": "798278d5796771657f8ada62cbe02afa8fcac6f07c6176daefa824c57c921e81",
+        "size": 9741
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URSimSubsystem.h",
+        "sha256": "c2b53f42014ad04d5c7e616a2e1c99110dc0b7aca9897f89e58300461e7d82f0",
+        "size": 7536
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/cinder_hollow.map.txt",
+        "sha256": "fcd4329fc7822a239567f8b54a25b6b89f4cbb14d9efe72752f8c025c94fd20b",
+        "size": 10952
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "b0995bc69ec2baa7dbd5b05fdecfde6a21d24532e946ef4046763b109936f62b",
+        "size": 749
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "50cb5c0af5e3bdb1fe9d599fa98d3aaaa63552804704b1a8d12b0474011e4c86",
+        "size": 6872
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_reasonable_seed4_lost.save.txt",
+        "sha256": "587d4b2a7fae14932baca2d9b1b0e508a9590b1b51b5a2977b0136c06f9c5b40",
+        "size": 5400
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_reasonable_seed8_won.save.txt",
+        "sha256": "b2f568206f62f2e1f9f2e86852fb9cd563cb6687ab3a7bf11e7b60461a6c54a4",
+        "size": 7210
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/ReasonablePlayerBot.cpp",
+        "sha256": "b259c3b1298732cd6e5184e4fa9f99b22fb06dbb19a1bb7b3ba48d3c12ee07a0",
+        "size": 24533
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/StyleBotBase.cpp",
+        "sha256": "a7350d2d24d479374d9aba073edf21d981c3c4db360a6f8b1f85317692941ed2",
+        "size": 18169
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Commands/AttackCampCommand.cpp",
+        "sha256": "6ad246a4b0f2ea9ca4ab848998ac4d9f149e1193c815893160a2bbac1a6cd07e",
+        "size": 436
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Commands/BuildLinkRules.cpp",
+        "sha256": "db9fbaabfa92e74fde369778231e2d6ae9b5cd734e8b46923a4bdb0abb6ca6d5",
+        "size": 2624
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Creatures/CreatureBrain.cpp",
+        "sha256": "eaecc9327cc878b604ae2ecee1b20491d475cd36eca51e20f167d26eb450936b",
+        "size": 12276
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Data/MapData.cpp",
+        "sha256": "38d023b6bf5e2c5a8afb911a9015dd5200eb499ae79a1ff2da0915f4b482317a",
+        "size": 4891
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Data/MapParser.cpp",
+        "sha256": "509ac0439daba3aa6fca3bbbe8d535eb1efae01e74f281b68241baf008a079a9",
+        "size": 23599
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Data/TuningParser.cpp",
+        "sha256": "a4183dbac992575d40ea8e83fa53dea6492d2ecaf21873b5271931abd7a75109",
+        "size": 40015
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/CampSystem.cpp",
+        "sha256": "9d548a5911a29ed8512306b5dd69af8fc7c8c5692731993d7df4f59149300327",
+        "size": 5452
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/Intruder.cpp",
+        "sha256": "df8b6464ce208061802291b7354320c9bd39099f53af677b5462171adec5fe7a",
+        "size": 2290
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/IntruderBrain.cpp",
+        "sha256": "c0faf55f6fe0aacd319215ff27be67099f3edc69d7a456bc934ed12383907ee7",
+        "size": 15088
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/IntruderSystem.cpp",
+        "sha256": "f4825d78f8603d4027540fd3c4994374c164a51a189c9cbbcb61df6a2a891037",
+        "size": 14485
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/TunnelField.cpp",
+        "sha256": "a218f660a2ca818748ded075ee1242ec917432b0c4e03f68ab3266c1fbb9f92d",
+        "size": 6360
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Jobs/LinkJobHandler.cpp",
+        "sha256": "284b6127b997310a0523115722e16658a83e292e5fda09e23987d3807cca2dfa",
+        "size": 2475
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Metrics/MetricsCollector.cpp",
+        "sha256": "7581c563977c9e183d0cdbd39e4d438db82cac1e0eef01ec410f08ca3ef66d78",
+        "size": 16128
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Metrics/MetricsFormat.cpp",
+        "sha256": "7e46a7cf6a3628f141cd00b90f0539eb89c3b0142eb5d46881258754e0f4729e",
+        "size": 9288
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Save/CommandFactory.cpp",
+        "sha256": "91030de0a6f065ec422718bf4719e3b929b371d36566692167a99d3eb8fb31ae",
+        "size": 7446
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/SimGame.cpp",
+        "sha256": "7ff95588d52b9fc747228779460a1fd0280d198c8b0aef60ad9e4e14cc7f2226",
+        "size": 34213
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Traps/TrapSystem.cpp",
+        "sha256": "b5dda0e029ce09659dbd3a2f378eba2fbd939e336dce04e45c27e197ee0e79c0",
+        "size": 18076
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Bots/ReasonablePlayerBot.h",
+        "sha256": "c8fb4486e62be4a52bd0aaea7bddce8433108beae047f766a887ec027a3f21b9",
+        "size": 8780
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Bots/StyleBotBase.h",
+        "sha256": "12150c8f093cb45ab4d6bc942fe2da648f9138c8f1e05438231855c197a62c6d",
+        "size": 7116
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Commands/AttackCampCommand.h",
+        "sha256": "a50c3260d0eb389c135e0483149a6379e151f2221661b5de51eaa6009f513529",
+        "size": 811
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Commands/BuildLinkRules.h",
+        "sha256": "865641f82edf8dc670b6c1afd01a06b52cdc72f3e563b3a3fa06c1ca148e950a",
+        "size": 585
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Commands/RejectReason.h",
+        "sha256": "fc86e0d7cd52c0b38edfa2d7a03e4800796439164781ca7306a825205a6475ce",
+        "size": 3865
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/Creature.h",
+        "sha256": "2d4bd3180951accb02e95246b67678dc0faac6693cecb83ff3f2f4ee0851d39c",
+        "size": 3933
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/CreatureGoal.h",
+        "sha256": "086c54ee12118c5514bc9f9fe061ebc1fe02661bed8873c2d43ca434f65b7a85",
+        "size": 1730
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/MapCamp.h",
+        "sha256": "e78951737d5ec59eb5615a80ecb6029f1b14f2a7c45784a46a1aef16f970e4ed",
+        "size": 1432
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/MapData.h",
+        "sha256": "53be943356f3a76a6963d92bfb70a3eca1e1625935de74f874e614ab3905eb70",
+        "size": 1947
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/MapParser.h",
+        "sha256": "6eab616941c7aa5a7cb19824c12527a95f55af873a14064c8809e4edd68e641c",
+        "size": 3062
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "bdefd5698b04039ca39d8b755bebcb508c3fd4716d5945353d0a1f2e9fb3d604",
+        "size": 13510
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Events/SimEventType.h",
+        "sha256": "995c53aea4ef2311fa18657d8762de417f643021c831bb5d28cbae662fd00ae5",
+        "size": 14240
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Fwd.h",
+        "sha256": "c1dc9676cbe009be002dc83ab169a8ecd8be1dfcec8fc6aeb86d2cc91f978b10",
+        "size": 6315
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/ISimView.h",
+        "sha256": "a6415020116a1f8cff416072f0dd4e8c84bb203dda215c054fbc93a206f7e442",
+        "size": 6060
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/CampSystem.h",
+        "sha256": "b3b6b5aaff3ab1d29612b8a433d59554048ac0d738a0a08cd6bd1ffc6e9255ba",
+        "size": 3569
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/Intruder.h",
+        "sha256": "eae9f633f629057bea370c7eea9cb877188b7c77f92076b1f7cebf57cdee36b4",
+        "size": 4705
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/IntruderBrain.h",
+        "sha256": "099b9e1915dfe4a06c2749a53ddc46dc7556b715257ba55ea3fc6ddd735dfabf",
+        "size": 3175
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/IntruderGoal.h",
+        "sha256": "c33bc39378c5fe6809a9709bd5b11814a82095907c09592530aa078e141fb3b9",
+        "size": 1237
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/TunnelField.h",
+        "sha256": "dedc1fafdbf83fced2804221ee227be4182104e792df836bc6a7bf3465f16917",
+        "size": 3150
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Metrics/RunMetrics.h",
+        "sha256": "0a73ba6b57dccfac7ded9276e0d66b6f3d4e94a0928c8d40bc77ce5aa6dce4f8",
+        "size": 5876
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "30412b0d160dedcfbc239bd887147456ca4b953831109b32993b32a96e1154e5",
+        "size": 1536
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/SimGame.h",
+        "sha256": "c9d79b46879bc27d20cd23a778fd18976c2c414193a1a9f3475bd71d11591b63",
+        "size": 11655
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/UnderreignSim.h",
+        "sha256": "5114c9718ffc56ac20da5e04f4054ed8194a46a78f3895ea160d0142daad758a",
+        "size": 10782
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/View/AttackGoalView.h",
+        "sha256": "9063f09cca6dc897daffcf803a34bef2f73e6237ea1d3557cfdecd9054de29a8",
+        "size": 1055
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/View/IntruderView.h",
+        "sha256": "86f905c91fe09a2cb180284bdd792902fa42a3bf4eb9476e945553ba0e23846a",
+        "size": 1886
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/World/CellFlags.h",
+        "sha256": "4b8301b3d2049150109863a02957dceeb18ffe3d7b71cacab720899fddbd1bad",
+        "size": 1636
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/SYNC_MANIFEST.txt",
+        "sha256": "ebc4d02bd3392301e28f8ac8efb90999952d9e3a795d4df6da6fc01318443788",
+        "size": 70475
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/Tests/URSimTests.cpp",
+        "sha256": "dd7a30a7383ffb2a528eae1f80a70416a872359a68f399fea3db6c7a9df69a03",
+        "size": 20385
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/URSimGame.cpp",
+        "sha256": "66d461adec6d704af3564bd9b442d2c333822e6e618fdc4a8dc28c229999308c",
+        "size": 18054
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Public/URSimGame.h",
+        "sha256": "feba10803a974b4065bee31583a4845652b16bb7921ddcfd55767c5452e5772d",
+        "size": 12956
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-UNREAL-PLAYABLE-V1/WORKER_RESULT.md",
+        "sha256": "7f00b7fc2f65117928b48d6f6e6a73c362597bbeed09654713588008db89c14f",
+        "size": 11428
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-UNREAL-PLAYABLE-V1/REVIEW.md",
+      "sha256": "9e8d795f34c265942e2038a2ef256b2f9e2d62e7cc39cac79cdb028ee99e3bfc",
+      "size": 5578
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-UNREAL-PLAYABLE-V1/review.json",
+    "record_sha256": "846a3f693c42699d3f26961ddf45e4ddf3d458a06dcb228df0b10e02df982e47",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "0e0f4175e8f09fd89ff0faa8f3ce826493bfaa2f29841e5846e506c27945310c",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

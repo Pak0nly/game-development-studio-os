@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-UNREAL-PLAYABLE-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "ad8e06eb4e45c1d5e",
+  "reviewer_task_id": "a241ec2f917dc80e1",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "0e0f4175e8f09fd89ff0faa8f3ce826493bfaa2f29841e5846e506c27945310c",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}
