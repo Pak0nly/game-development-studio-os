@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-UNREAL-STAIRFIX-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a0fb491b897cdaad7",
+  "reviewer_task_id": "a88093f0f5e450339",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "6106ecc7c40478a204436f67151e0069e65d38107d6699c63383397b0f22076c",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

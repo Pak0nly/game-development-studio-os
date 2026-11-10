@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-UNREAL-STAIRFIX-V1",
+  "work_order_sha256": "f3868b32519a748b1b7bcb1c575bc273645bee60986539e92b5c7c6ccfbea0c8",
+  "closure_manifest_sha256": "9ac4d6cbcc5888752bdd5ef2ad0762dcf694d1eca4c15239790eb163b3da04ee",
+  "dispatch_receipt_id": "1925ee2ad8637712cac1c3b8903d2bc62d1574ecf809440e9934623b95cf562d",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a0fb491b897cdaad7",
+  "reviewer_task_id": "a88093f0f5e450339",
+  "candidate_identity": "6106ecc7c40478a204436f67151e0069e65d38107d6699c63383397b0f22076c",
+  "evidence_state_sha256": "2085b6fd7f27ca2199c1cc9c6a632ce2978a855ee7e2284790766a7544892ca7",
+  "review_record_sha256": "6298f9b62cbc1d6b04dc25da5062d50de1fe552ee63bf74393f1f148b3d6fc2f",
+  "verdict": "PASS",
+  "receipt_id": "42a0d156601256906692eddf36f87edcd1995965baa00b16e4650dc6d2bc7fc7"
+}

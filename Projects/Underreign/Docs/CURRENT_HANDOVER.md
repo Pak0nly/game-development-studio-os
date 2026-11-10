@@ -13,6 +13,17 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-UNREAL-STAIRFIX-V1
+
+UR-UNREAL-STAIRFIX-V1 (stair/shaft pre-check mirrors the rules with plain reasons; rings the rules would refuse drawn amber; success text for all tools only after the rules accept; likely cause of the Human's report found: ring 0 20 7 is accepted at start but cinderlings cannot reach it; external commit 4a7ca3a)
+Independent review verdict: PASS
+Worker task: a0fb491b897cdaad7
+Reviewer task: a88093f0f5e450339
+Candidate identity: 6106ecc7c40478a204436f67151e0069e65d38107d6699c63383397b0f22076c
+Closure receipt: 42a0d156601256906692eddf36f87edcd1995965baa00b16e4650dc6d2bc7fc7
+
+Next: UR-UNREAL-STAIRREACH-V1 (tell the player when no cinderling can reach a ring or job); then the Human plays.
+
 ## Closed: UR-UNREAL-SAFESTART-V1
 
 UR-UNREAL-SAFESTART-V1 (the Human's PC switches off under full GPU load: every game start now capped at 60 fps with VSync and High instead of Epic; `Game/Play Underreign (Schonmodus).bat` with 30 fps, Medium, no hardware ray tracing, 1600 x 900; fewer shader compile workers, below-normal priority; layer buttons named; external commit 1ec2cb7)
@@ -21,8 +32,6 @@ Worker task: a4b5ee081b16d9d99
 Reviewer task: ac9a80ddfe74e7ff6
 Candidate identity: e08e5b492671c432fed9c227420881236ffa75f32d432c1101774ac431584cf4
 Closure receipt: d0d677278671bf38a286a365ebadbb422c9b011423fbb842b1fc08bd525e29cf
-
-Next: UR-UNREAL-STAIRFIX-V1 (the Human could not build a stair at a ring: the game's pre-check misses the rule "one side must be open floor" and shows success although the rules refuse); then the Human plays.
 
 ## Closed: UR-UNREAL-PLAYABLE-V1
 

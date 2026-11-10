@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-UNREAL-STAIRFIX-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-STAIRFIX-V1/WORK_ORDER.md",
+    "sha256": "f3868b32519a748b1b7bcb1c575bc273645bee60986539e92b5c7c6ccfbea0c8",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-STAIRFIX-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "3f043d064979cd45c88da37ee8a6c9efa7e49a0a1a09a68fb8f5f43cfaf533a0",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-STAIRFIX-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "5c593f963ac0dede04bebf9a5c603c6d85471cb4c1c79e72bce56e9bf884545a",
+    "receipt_id": "1925ee2ad8637712cac1c3b8903d2bc62d1574ecf809440e9934623b95cf562d",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a0fb491b897cdaad7",
+    "reviewer_task_id": "a88093f0f5e450339"
+  },
+  "candidate": {
+    "identity": "6106ecc7c40478a204436f67151e0069e65d38107d6699c63383397b0f22076c",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/WORKER_RESULT.md",
+        "sha256": "b8297cc3ed02e9167a48d7a6fabfcdfe208f32e25ae65c4c38ec717ca1661474",
+        "size": 6982
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/capture_playround.log",
+        "sha256": "93efbf178983b4197f48866771f97fab83c87225d80a8f3ab630e78e0b3ecefb",
+        "size": 279911
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/capture_stairfix.log",
+        "sha256": "302ac7863cd0be544bc863a199f6f712da89da0ec3af6c8d35e77db7fc87a64a",
+        "size": 220051
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/capture_tooltest.log",
+        "sha256": "b60b74a26859fbfa9c94fc35ca85834d75bbdb09e225ec4397b602a152394284",
+        "size": 222566
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/stairfix_rockring.map.txt",
+        "sha256": "12ddb9e145c17646f2f9c5c3de1725786a9be110e1028d296e5782d4f12e13dc",
+        "size": 10960
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/stills/order_refused_by_rules.png",
+        "sha256": "d7fb78f0d739a78bfd366ff6679a673c5172a78d1d0ab785c76a3b50fa399941",
+        "size": 1914660
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/stills/order_refused_trap.png",
+        "sha256": "e47bfaf5eed2b17ecbd8cc4a5c43a23e838b7d0e7efaad137c87611f65904a6a",
+        "size": 1604034
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/stills/stair_refusal_message.png",
+        "sha256": "be84b5003696120885ae48cbf697db1bd5745018a5f434a202a23d2c217feab0",
+        "size": 1878101
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/stills/stair_ring_not_ready.png",
+        "sha256": "3713946eee525e8a377c797bbee8486d0efa08af11374ae7e808377605fe4384",
+        "size": 1882038
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/stills/stair_ring_ordered.png",
+        "sha256": "32de0507bd4f851c6eec6849401726635a25e77b386c414648481e0590ca0606",
+        "size": 1898598
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/stills/stair_ring_ready.png",
+        "sha256": "5ba96221c33d38186a7f83b11accaa9625f02df916d8095b676520d547386ab3",
+        "size": 1891603
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-STAIRFIX-V1/test_sim.log",
+        "sha256": "6a14a55df472aae84c80785d361ec7eef9b6cff8cf86e2a84368611a2efdda5d",
+        "size": 272922
+      },
+      {
+        "path": "ext:Game/README.md",
+        "sha256": "894c225ca8ebca3c16c38118657b681f237da6e714524278e8b54243b0dcbfb1",
+        "size": 26257
+      },
+      {
+        "path": "ext:Game/SPIELANLEITUNG.md",
+        "sha256": "0fb832702ac3d1f93594c63968abb36794c4559c07e9f183ec768cc64ea4853a",
+        "size": 4622
+      },
+      {
+        "path": "ext:Game/Scripts/capture.sh",
+        "sha256": "4c6fc4731d1f076ef06fb58ca994950702b909823b008ef1974cd8ed48d14390",
+        "size": 2154
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URCaptureDirector.cpp",
+        "sha256": "57ecee480adf1693f2eeca2dd232facae3dfcccc92056e749b11002d249164a0",
+        "size": 46192
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayView.cpp",
+        "sha256": "2bb4e31bcd02ee06bdf37b60869a16b296fcaa7dafbb2ab310da2084692831d7",
+        "size": 21515
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayerController.cpp",
+        "sha256": "f1dbee5166aa35cf5257dda8fbdaafdc1d6e031e4532e98b86080bb2f49a3e5b",
+        "size": 50584
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URCaptureDirector.h",
+        "sha256": "ee6024d01b04699edc1fad072c242c25e770d6ac109e4209a8fed1555b3f9ea9",
+        "size": 6265
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayView.h",
+        "sha256": "dca75bea9f975d6b34ac224fbed309a124285c64eb44c25673efb7877fbb5539",
+        "size": 4921
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayerController.h",
+        "sha256": "4f507c6b2d018af1f965113ab043c130e841c063d613ebeb49753ddab21fb39d",
+        "size": 10214
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/Tests/URLinkPrecheckTests.cpp",
+        "sha256": "32e1c38ca8208d8a9a1058f1e94b218968827165d3602f46d135eda88ba7c2ea",
+        "size": 14563
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/URSimGame.cpp",
+        "sha256": "7174185234787c4d0c8c485e9961af6f260cebcac594e64515ba8a334939fa36",
+        "size": 20343
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Public/URSimGame.h",
+        "sha256": "8932d162a4c5a8441f078a8ce85ec9a2401bd366014b4dcb13b191403a4a393c",
+        "size": 14140
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-UNREAL-STAIRFIX-V1/WORKER_RESULT.md",
+        "sha256": "b8297cc3ed02e9167a48d7a6fabfcdfe208f32e25ae65c4c38ec717ca1661474",
+        "size": 6982
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-UNREAL-STAIRFIX-V1/REVIEW.md",
+      "sha256": "a71779332fc4f43a24980bfee3aad9e6219317b6a52053b51d1da27e2fdf50f0",
+      "size": 5975
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-UNREAL-STAIRFIX-V1/review.json",
+    "record_sha256": "6298f9b62cbc1d6b04dc25da5062d50de1fe552ee63bf74393f1f148b3d6fc2f",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "6106ecc7c40478a204436f67151e0069e65d38107d6699c63383397b0f22076c",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
