@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-SIM-SUMMON-COST-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a26850be3a33ddc75",
+  "reviewer_task_id": "ae87bb9c8879ce51b",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "92a88c8060394402413048b24c763c327150376ac2473ae4b3dc4f259e43c3d1",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

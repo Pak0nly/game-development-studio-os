@@ -13,6 +13,17 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-SIM-SUMMON-COST-V1
+
+UR-SIM-SUMMON-COST-V1 (rules 6: summon price 75 + 25 per living cinderling above 4, floor 75, proposal values; ISimView exposes the price; bots check it; 750 tests; new golden replays; reasonable bot 26 %, wave 3 unchanged; external commit 6427850)
+Independent review verdict: PASS
+Worker task: a26850be3a33ddc75
+Reviewer task: ae87bb9c8879ce51b
+Candidate identity: 92a88c8060394402413048b24c763c327150376ac2473ae4b3dc4f259e43c3d1
+Closure receipt: e5a252a420cd6a0cded7c971ab8837a5cd4cc600bc0bdc90663666bb1e7b072c
+
+Next: UR-COMMANDS-V1 (rally banner and alarm in rules and game, resync the game to the new rules, summon button shows the rising price, UD-54/UD-55); then the Human plays.
+
 ## Closed: UR-UNREAL-STATS-V1
 
 UR-UNREAL-STATS-V1 (copyable round report: F9 or the end-screen button puts a Markdown block on the clipboard and writes Saved/Stats/<date-time>.md; built from the rules' metrics plus game-layer extras; function check only per the Human; external commit 76296ce)
@@ -21,8 +32,6 @@ Worker task: a8610637435667600
 Reviewer task: a7b49f2a5939e666a
 Candidate identity: 7ab1e9ec838bb91e28f564e048179ab075ff33a206578a477b1826fca89c32aa
 Closure receipt: cb2f1d9ef2d477fa371009ac870f70e1318cd7270fefc2fabf5b5a66ac2f6ea9
-
-Running: UR-SIM-SUMMON-COST-V1 (rising summon price, SimulationCpp). Next: UR-COMMANDS-V1 (rally banner and alarm, rules and game, resync; Human chose banner and alarm, pick-up-and-drop later).
 
 ## Closed: UR-UNREAL-SUMMON-V1
 

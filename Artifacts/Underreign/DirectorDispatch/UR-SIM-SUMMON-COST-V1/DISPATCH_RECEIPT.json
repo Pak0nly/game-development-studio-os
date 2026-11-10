@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-SIM-SUMMON-COST-V1",
+  "work_order_sha256": "752235e6adc60f010d1f60ec63e7787148d920e309e3f16f19f4f9e4fcf1bd9d",
+  "manifest_sha256": "203c027bdd4e5581e039051621f0853fda5c00c9a36522e056aca12260450a11",
+  "repository": {
+    "branch": "main",
+    "head": "ff79f6cad37c828480e5bbeeccf121af45995a55"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-SIM-SUMMON-COST-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "7414e528d34100bae2a54b1855c1a405068df158840269523b2a5d5311ed4d83",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "23aae721b33a0972f4e309856c7581026e79f2a3"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-SIM-SUMMON-COST-V1",
+      "SimulationCpp"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-SIM-SUMMON-COST-V1",
+        "SimulationCpp"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "0b6a2f337acc8138ef7e2049bf568aee8a53a4c88bbadd174052499639c2f6b9"
+  },
+  "execution_location": "local",
+  "receipt_id": "e050c5e7f106e823ef7704931f0e739fd765169483dc8dd0d06835860ea2293d"
+}

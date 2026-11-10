@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-SIM-SUMMON-COST-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-SUMMON-COST-V1/WORK_ORDER.md",
+    "sha256": "752235e6adc60f010d1f60ec63e7787148d920e309e3f16f19f4f9e4fcf1bd9d",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-SUMMON-COST-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "203c027bdd4e5581e039051621f0853fda5c00c9a36522e056aca12260450a11",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-SUMMON-COST-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "b7d9e762034f7b8829349d8ca7b02415b5fb86389e1f17e41ae96628e15bd92a",
+    "receipt_id": "e050c5e7f106e823ef7704931f0e739fd765169483dc8dd0d06835860ea2293d",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a26850be3a33ddc75",
+    "reviewer_task_id": "ae87bb9c8879ce51b"
+  },
+  "candidate": {
+    "identity": "92a88c8060394402413048b24c763c327150376ac2473ae4b3dc4f259e43c3d1",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/WORKER_RESULT.md",
+        "sha256": "096d883f28830269b58d495aa0ae2896431a2d74c16ee0b8ecbf67c4b094ca29",
+        "size": 9950
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/after/batch_reasonable-varied.csv",
+        "sha256": "054e1a442c49cca963f0472ba15f97069fb04b144ce7cde904ca531a04525c0c",
+        "size": 81018
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/after/batch_reasonable-varied.md",
+        "sha256": "4e4dab8e76fd3bb8adf6fa8a7a0e28e5bbee0fe496115276f67395d0c6c2e065",
+        "size": 3708
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/after/batch_reasonable-varied_flow.csv",
+        "sha256": "af67b6d2e1c837aa5439f5ccc9428ff27be8669ed3910566d04cfa2a9446fb5b",
+        "size": 58580
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/after/batch_reasonable.csv",
+        "sha256": "84450d1ecb684d4b7ba534ffad8a8aa49ae29dcf537ff49456fbd62beaeba3af",
+        "size": 80442
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/after/batch_reasonable.md",
+        "sha256": "293da1c49f5648485457583a1141a16d620eb892ddfd3d38891a715a92a9cee3",
+        "size": 3689
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/after/batch_reasonable_flow.csv",
+        "sha256": "e5f558dcdf5bb8d61d0576f17d0fdd583336ca8f8d1606b3395c3bdc445c15e4",
+        "size": 58477
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/checks/build_full.txt",
+        "sha256": "14ebbca38911b91e8664ef1f3d4c896c15dec303fe0bfdb32c16b50f23550e7e",
+        "size": 3732
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/checks/golden_replays.txt",
+        "sha256": "34894d6d89ff9317208385e1ab61effd40a06dff68cb199f814533f7003e7745",
+        "size": 866
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/checks/source_diff.patch",
+        "sha256": "06bd08933f30a2259cd98fd73026ca80b6e22714684b6d414dd5c48b62e4b052",
+        "size": 17472
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-SUMMON-COST-V1/checks/tests.txt",
+        "sha256": "a002895d65a6a1db27dcf225625310d61a47e024348b10cf968dd74e6962cc1e",
+        "size": 494
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/prototype.tuning.txt",
+        "sha256": "61d04d26890e378d0f0da4c60dc66e2e1f58600e972b70796ce1d9e3c14969fb",
+        "size": 4224
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden.tuning.txt",
+        "sha256": "2cf278923ea721b7eee98e41e598bc9dfff98065435f28c1246382d5532e0616",
+        "size": 2463
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "1fb533dcbd4ebde4c7f7b25c5beb795327449f1e52ba90a75400b8f893a823ea",
+        "size": 749
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "43f46d26f1058f3d39f8d922c595eaaf52711878015e3d814e5e066606a7c9ce",
+        "size": 5697
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed2_lost.save.txt",
+        "sha256": "464f5a9044b3751151f420089bdedc8ff42988a5dc82fd89d537aca7d5e73d7b",
+        "size": 5221
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed4_won.save.txt",
+        "sha256": "e6e61e7557bcfd7f5b5c0c40c4a18ee60218702ee553b514b45bb5c8a8fca51f",
+        "size": 7059
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/README.md",
+        "sha256": "50705157cf3608b33b9371455b58760f63189f8097b16d4566673fd2182e257d",
+        "size": 1207
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules5/golden.tuning.txt",
+        "sha256": "983f77de8516aabe95c8d172878be44d4f9e95ab629da92c6df8b72e13bcdf37",
+        "size": 1883
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules5/golden_idle_seed1_lost.save.txt",
+        "sha256": "1d507148c3364a658c5bbcfe22920924e754628e9fbf79605b904fe075006290",
+        "size": 749
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules5/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "9378f696109cd0e7ef87347bcbb5b001857d7a0e6db04d685075d6ca9b334e71",
+        "size": 7067
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules5/golden_reasonable_seed2_won.save.txt",
+        "sha256": "f3a353dde34336164c75cb3819ebd4a4ff6fefc2485302928518b01007b08a07",
+        "size": 6959
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules5/golden_reasonable_seed4_lost.save.txt",
+        "sha256": "6191331d393df581e05af32002cd8e78060d971ea51aebfca3a2a81ccae03a5f",
+        "size": 6935
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/ReasonablePlayerBot.cpp",
+        "sha256": "4f1e9a3b1eea9664cf6a6f45ca8d7d06eb7f50e25415cc3e627e1834d1c82eb7",
+        "size": 24566
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/StyleBotBase.cpp",
+        "sha256": "133b8d9fbfb818dea3638fc49d96c99e66866b3fe11a73b01696509fbf51b9dc",
+        "size": 18202
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/SummonCinderlingCommand.cpp",
+        "sha256": "c1fc7eef1d2806912e65feee963d8b015b7db039d811927bbcffac74cd2b814c",
+        "size": 918
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/TuningParser.cpp",
+        "sha256": "8c5083fa833b9e28d98c84e882dced25edda54d30e9586dfa700857532f25db0",
+        "size": 40344
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/WorkerSystem.cpp",
+        "sha256": "ae32df1f9ab6d3ccf1b563e5018bfc3de3d7b35a6721ea6d52ced75a2ea1f340",
+        "size": 9876
+      },
+      {
+        "path": "ext:SimulationCpp/Private/SimGame.cpp",
+        "sha256": "36a4faf1b86cad5bd5418821ec54a8ea1a9054540c4ba5d9545f3699a1d64708",
+        "size": 34463
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/SummonCinderlingCommand.h",
+        "sha256": "31e96d464af9025a94652f07bf77703f1666a183d82fc6e22b08216ba5d14ab9",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "d18e9faa088d0d341a495db5abd7c070a720ad84e7299b0cb7bb07a4aa610544",
+        "size": 13929
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/ISimView.h",
+        "sha256": "a6413abc5ba7e2a7cc715ac53cb1d122fff129013885a2c2150bc88a2fdbabd0",
+        "size": 6434
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Jobs/WorkerSystem.h",
+        "sha256": "4df3a2f62cd8abed5ae6c66522eacafb82d7c63376263c51b92e25dd71fccfe6",
+        "size": 2988
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "d683caf59a6d8330731e413ccffccaab53db796f78bd597e1aec785dc8891757",
+        "size": 1699
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/SimGame.h",
+        "sha256": "17e4df025779c3efc7146a3c30b9d7c3c71cbfa806641dfd3fc398526b969d7d",
+        "size": 11776
+      },
+      {
+        "path": "ext:SimulationCpp/README.md",
+        "sha256": "bb4f7ed8cda3176e760f3d54e8d5de71c132dc6c792dfc22ae26261a3991f9f0",
+        "size": 26289
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/AttackGoalTests.cpp",
+        "sha256": "05601f3da952b1a75ca072f59513f9cdef1a6562452243d7bef683a5cbdb9f9e",
+        "size": 14624
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/BotHintTests.cpp",
+        "sha256": "4bd750416fc0dc9f83297906edf590b27749ef2fbde786fbffde1692928472c6",
+        "size": 13165
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeadlessTests.cpp",
+        "sha256": "c7709cbe7164e869287d54473aa38a9b64b1c4eae3b9b3aad189efc68751d07b",
+        "size": 23216
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/OpeningVariationTests.cpp",
+        "sha256": "cc6637fbde3c0e055fe271e0a6fca5848bfe821e285fa474af2bd161d64a11f4",
+        "size": 7677
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/SummonCostTests.cpp",
+        "sha256": "7f8a17351af20287a594851a86982fbf33427da3c819fbc625170cb125925c31",
+        "size": 7871
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-SIM-SUMMON-COST-V1/WORKER_RESULT.md",
+        "sha256": "ab055b7db28868cfc6fdb9e5e13fd99d6e45b801fa8f949ce4a667823fa15e3e",
+        "size": 10146
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-SIM-SUMMON-COST-V1/REVIEW.md",
+      "sha256": "9ea184cdd27766429b9bba05651941a4189e74a470f6fb6c971904aa508d2d47",
+      "size": 3745
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-SIM-SUMMON-COST-V1/review.json",
+    "record_sha256": "816388797222380719fd1d8ceb5254e234ebbdb0265a628ab72186ba33e5125a",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "92a88c8060394402413048b24c763c327150376ac2473ae4b3dc4f259e43c3d1",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
