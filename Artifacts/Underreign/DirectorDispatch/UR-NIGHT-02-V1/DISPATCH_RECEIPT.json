@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-NIGHT-02-V1",
+  "work_order_sha256": "c8e2cad2f6f489478513c4135761951180bff460b6b5d373742d6d54f7b12ee6",
+  "manifest_sha256": "cc59bb91a9fd5750e52b855f2f5b4491ea62e71e29bd1309d4d031f866b5d154",
+  "repository": {
+    "branch": "main",
+    "head": "f3f0e062d759b7b3d859905424d17094ca63768f"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-NIGHT-02-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "74246a27678f1b22cce0228f6e819296a55ff948b616c42a6c4829580bfd5dbb",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "498a303d734ded4d1e788a6bdce192754d12535c"
+    },
+    "allowed_mutations": [
+      "Design/Bible",
+      "Design/Planning",
+      "Evidence/UR-NIGHT-02-V1",
+      "SimulationCpp"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design/Snapshot",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Design/Bible",
+        "Design/Planning",
+        "Evidence/UR-NIGHT-02-V1",
+        "SimulationCpp"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "39b07474eada8d5b779aa70965178823db6bb2312eca891425d0ff76aa031728"
+  },
+  "execution_location": "cloud_night",
+  "night_shift": {
+    "branch": "night/2026-11-10",
+    "evidence_dir": "Evidence/UR-NIGHT-02-V1"
+  },
+  "receipt_id": "bb40017889dcec4cc15b7161c319c4f72910d836518aed27a5d73c75b8195e65"
+}
