@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-UNREAL-STATS-V1
+
+UR-UNREAL-STATS-V1 (copyable round report: F9 or the end-screen button puts a Markdown block on the clipboard and writes Saved/Stats/<date-time>.md; built from the rules' metrics plus game-layer extras; function check only per the Human; external commit 76296ce)
+Independent review verdict: PASS
+Worker task: a8610637435667600
+Reviewer task: a7b49f2a5939e666a
+Candidate identity: 7ab1e9ec838bb91e28f564e048179ab075ff33a206578a477b1826fca89c32aa
+Closure receipt: cb2f1d9ef2d477fa371009ac870f70e1318cd7270fefc2fabf5b5a66ac2f6ea9
+
+Running: UR-SIM-SUMMON-COST-V1 (rising summon price, SimulationCpp). Next: UR-COMMANDS-V1 (rally banner and alarm, rules and game, resync; Human chose banner and alarm, pick-up-and-drop later).
+
 ## Closed: UR-UNREAL-SUMMON-V1
 
 UR-UNREAL-SUMMON-V1 (summon cinderling: key B and green tool-bar button with cost and count, refusals in plain words, HUD "Cinderlings n / 10", cinderling tooltip shows its job; game resynced to rules 5 (951f937) with parity at ticks 600-2400; proof trimmed per the Human: "Wenn keine major changes sind braucht es nur eine Funktionsprüfung, dass es läuft."; the old playround recording no longer reaches the camp under rules 5 (follow-up); external commit 23aae72)
