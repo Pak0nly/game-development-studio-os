@@ -1,0 +1,3890 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-ENGINE-UNREAL-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-ENGINE-UNREAL-V1/WORK_ORDER.md",
+    "sha256": "11e7692fac6cb38b54a2f81650b4530d844c943ee47f55760da9483d3379f475",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-ENGINE-UNREAL-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "34552d5d8f5a4c0074d35edfa5d29ef966ac162d41538fc9492f5e2c1c80dd06",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-ENGINE-UNREAL-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "ba860b6c01e59d4416063fd24e8e5f81722faaad35c10d4cfdbd0596721e8b6b",
+    "receipt_id": "f9ba95fd96b5858dc79dec904942919e2a9f9fb1e67b975aa38fdfbc50b87419",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a7a31ded36c7f07aa",
+    "reviewer_task_id": "a49dc15139384a9ae"
+  },
+  "candidate": {
+    "identity": "4e45d184fee51ba71462bc1090ee102fc7d32a37cbf8e669dae82ec89ea659c9",
+    "files": [
+      {
+        "path": "ext:EngineComparison/Unreal/.gitattributes",
+        "sha256": "db9fa0648179693e57f0af5f4b621202edf4abb6f661de4bd1acbd5bb6e1cbcf",
+        "size": 169
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/.gitignore",
+        "sha256": "4857e78f457c9ec2dfedd66c0434e81861fc508107e390206da6ff6d505c6f5e",
+        "size": 302
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/cam_close_after.png",
+        "sha256": "a8867c5bb14eca558ecf51dd0d5737151f7ae749637dee000a310271a3a298ec",
+        "size": 2975120
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/cam_close_before.png",
+        "sha256": "873ccf76d424bd649f43f3ddba8a1f58cd136cf4904a657558d6a8d964a8e3f7",
+        "size": 2986501
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/cam_overview_after.png",
+        "sha256": "15e26c3501e5b26dbd27458bcac811b1e84ec085d5dda8d2fa5e77363d2a05dc",
+        "size": 3133685
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/cam_overview_before.png",
+        "sha256": "bb6f9707e8074362ffb30ebdca340529368629ff699ab6398d1d108e729baff0",
+        "size": 3131315
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0000.png",
+        "sha256": "2aae7fdbc14a5806935bb14de3b039e554d76ea29da9f17a1474531c2d4e4dd8",
+        "size": 1438029
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0001.png",
+        "sha256": "8fbd18a33c08528d17321c038ba663408f7a455c3ef6d9e98f5fe0a66408cf23",
+        "size": 1438027
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0002.png",
+        "sha256": "18c292c6db748f4991f8344342cd2745aa3cd9990335d77d366eff11225f5b1d",
+        "size": 1440853
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0003.png",
+        "sha256": "e295a4cd8bd7b5a83258a94059d00d62e0fa03c31188e0e58cc6509a93eef059",
+        "size": 1441651
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0004.png",
+        "sha256": "3553a5b75af1ba108f101f789d42a67faee0fbd0308651459a02d4e5aed50bd6",
+        "size": 1438253
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0005.png",
+        "sha256": "23347cfa3167926e2f50414a7301728300b7fd927a8460c12c53eaca164e50a3",
+        "size": 1436742
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0006.png",
+        "sha256": "4a7abba1ea0c76e629f7170cd35f611f41925ec3f0c1f6f866bde03a0a53594e",
+        "size": 1438903
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0007.png",
+        "sha256": "292c68442baed9e390aeb067b13b809470ce1b6dbaf39a3f83c5b892e3b63642",
+        "size": 1438382
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0008.png",
+        "sha256": "b051e09852f6a5316526e1fca2d6e341fc6958a80c57151d79094a205c98f679",
+        "size": 1437019
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0009.png",
+        "sha256": "2a27ee2ca062b116e8f38c3159bf588662bac6089b50599c7e66b397bb032352",
+        "size": 1433551
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0010.png",
+        "sha256": "17558f4b63f4ca0d49d8488766931689db55d2685aaf0b41b6a731f03748d3bf",
+        "size": 1430812
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0011.png",
+        "sha256": "2516ac1ee0472696ba12b0ec027b0083f52fea1cd6b4af9f387ec54270a310a4",
+        "size": 1431067
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0012.png",
+        "sha256": "e43612d53fe89308906104cdb06bcffed3ff974046c7be395537d472be0ae83f",
+        "size": 1430968
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0013.png",
+        "sha256": "8663380db50cdcb8744c7b4a124382731f7a6941530a74afc7968c1fa44e660b",
+        "size": 1431983
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0014.png",
+        "sha256": "23e9a975ff3ff21cd6418f8791ba82e8ac631d478c3ede575c65d8aaf2e36ee3",
+        "size": 1433225
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0015.png",
+        "sha256": "ca2dfee8a61c93289ca7bde553793630862eab457ceb5c6001c4282b09a77090",
+        "size": 1430064
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0016.png",
+        "sha256": "4524f6e47e9d6f18027f1295bdeecff950501b6e3932a662da5f55e52642ed84",
+        "size": 1427697
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0017.png",
+        "sha256": "0a44529e643e77253b24d98df010bd5d323a80fa2b352e90f3550ad41de3b270",
+        "size": 1428507
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0018.png",
+        "sha256": "fd79fc1544787e4433fa4501b914b81939dd05549ae86bcd5f834ec3f85a25fa",
+        "size": 1429377
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0019.png",
+        "sha256": "34793a62cc74b19f973c8f8eb13b9b3264a20f65a51ab28cc14cb2d08a4e32a4",
+        "size": 1428960
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0020.png",
+        "sha256": "cd9951046dd87c6109eb6b2e5623f792ec81e64f68cded7ada29785170e224b7",
+        "size": 1423153
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0021.png",
+        "sha256": "ddf2516ab2d366a5e640e352102eaa455a037b152becad769a7a13d7c8e10905",
+        "size": 1420516
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0022.png",
+        "sha256": "aba22772c685f7f6541364892b4f913484814952493d8ac5cf1591c222b0d597",
+        "size": 1422691
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0023.png",
+        "sha256": "e8adab1db2a9de192bc10b3d8d5bc8e5702a7c0fba415e7251293704ebaf728f",
+        "size": 1422533
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0024.png",
+        "sha256": "c73025888a0f2d7c240da9ac325caec2e4117f0fd05718779ccbe87e41c365af",
+        "size": 1425747
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0025.png",
+        "sha256": "31276b3701f02a18e054962dea34d70cf93ca75b6c4c28741a223af295b2a480",
+        "size": 1425794
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0026.png",
+        "sha256": "de77766be06ce54b3cc1feb37ca4227a54aa230adc7627d446de94dc6973d604",
+        "size": 1422908
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0027.png",
+        "sha256": "51e6025469423e4eee12fe554964b765de243a74bc2b01acb032fcc9f34ca78c",
+        "size": 1421758
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0028.png",
+        "sha256": "1f399d52635c7f1947783a3eb65066b439be131b18a72d7549f1b27d004b70e1",
+        "size": 1421990
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0029.png",
+        "sha256": "2457c8e5c0aa250e433a57f6fe8137b5278e7bab1a1d9b1840404517abbf9033",
+        "size": 1422953
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0030.png",
+        "sha256": "95e58fb2bb13d259491ccff69ce97915254aa571068087208a877f50d107c111",
+        "size": 1421769
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0031.png",
+        "sha256": "8d3eb39bbb755557d5dffd4f42d1dfa0cd378c115144939b07f315f555216742",
+        "size": 1417711
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0032.png",
+        "sha256": "137fae1f05ff109450821632f255a6ba62d4470064b3178a2ccaec0326a7fb02",
+        "size": 1416130
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0033.png",
+        "sha256": "9803b190c0f854ed3303246e300512d9e9964a80292f9f7fe77e1a097f0b415e",
+        "size": 1418007
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0034.png",
+        "sha256": "da5293d250a8f998b135b0f44c5e40ce01dbf516822ae43726e1c82b58223971",
+        "size": 1418028
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0035.png",
+        "sha256": "069cbc756aa4ecef85f069bf34401f8284410f8a0e4628381883adc23f96acea",
+        "size": 1420619
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0036.png",
+        "sha256": "0c38ced853ccac127c2779962155222fc55484ce6df4d7968179d16eb15337bf",
+        "size": 1421178
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0037.png",
+        "sha256": "7a1c636dae7bfa9fdef23cbb9205e2c62ba0bf55557440df1e2523a84549563a",
+        "size": 1417751
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0038.png",
+        "sha256": "7d7cd21417eb80dfff342869f42e792a6b02ca3d6f981eea6d614e4976c52490",
+        "size": 1417137
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0039.png",
+        "sha256": "f0874c71b9cff990f2c789e29b4e9759b7943496ad3e1b6caa5b5225c33948b9",
+        "size": 1419039
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0040.png",
+        "sha256": "9398a5cceefd81f0571621929da134f5994d0f39e57d32d234cdf90ab6e7bccd",
+        "size": 1419500
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0041.png",
+        "sha256": "c76e8a2a9fd2f9e1bbdf4803064661d39af2c6995e1f55b971f9bd342ebeb4e1",
+        "size": 1418423
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0042.png",
+        "sha256": "dd58dd71ed626ae7810df8904315d1385b1e31287aa2c81c678f6ec463e28511",
+        "size": 1413264
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0043.png",
+        "sha256": "4d305321cdd7096a8db5fbbc442b2ec31242ba8b4de8075000f6d7c68599c677",
+        "size": 1411345
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0044.png",
+        "sha256": "cbeb8984278731c52417744580b6973c29cfd2bc497197af1d479cf746e5ddb6",
+        "size": 1415035
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0045.png",
+        "sha256": "3517df9836ed86cbe89fef90fcc073041b38453024ad618046c2350f2fe19727",
+        "size": 1414285
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0046.png",
+        "sha256": "2082c0081f2a72f0ae1be2f4f8e6451fbe6ea39c11a907f50a04a1ecb27d4ac3",
+        "size": 1417862
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0047.png",
+        "sha256": "a6a1090ef46c60654215ee035cb473e2883d9ea3111f87943f6c106753cf277c",
+        "size": 1416604
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0048.png",
+        "sha256": "d7131676d1b91b0621219a5aca3ec90377929c25bc1bda3575c3a56a42a7f39a",
+        "size": 1413988
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0049.png",
+        "sha256": "5be1f3c37e420efadd4860bc3fd587c3c0bcb8788bc186e77eb66b7d7d82be79",
+        "size": 1414687
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0050.png",
+        "sha256": "d2b49dc969f3a84e9916e3fdf76c05041c2829e6d67936c66c885dfb17ef9663",
+        "size": 1414725
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0051.png",
+        "sha256": "d7f3419c2c34219a0572c0395b7da55f19e46842b64d792cd52cc3a9da00b756",
+        "size": 1416276
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0052.png",
+        "sha256": "26b60988307a6efee79200a23d7fba6c816f5b3a96cbdd133403339b0f25a063",
+        "size": 1416017
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0053.png",
+        "sha256": "0547c632788924c7a19addb1f7373e058d2daf80dae0c9e7a3873bfd59b15e95",
+        "size": 1410752
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0054.png",
+        "sha256": "c2a48931c5938ba8b593f1e2d6ec02505f9d3c64c5e2ffa2727e5dd71a06c1e5",
+        "size": 1410746
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0055.png",
+        "sha256": "f756cb5eb18cce2add6a39783112841c9ab968dc2c4fdc60e4c32a006aee4180",
+        "size": 1413055
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0056.png",
+        "sha256": "4a93d672a004436af166943e8a952d473df6a2c667a0b8ae6e253c1df37b860d",
+        "size": 1412266
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0057.png",
+        "sha256": "3d453116fc7e5ccc0dd0a9f55c0229508bc88adb435b9b169cab3fee536272f4",
+        "size": 1415998
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0058.png",
+        "sha256": "d9445acc5f5e5ce5d0355a7233608e1a31fb253fa170ceca31fa9dc4ad656faf",
+        "size": 1415560
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0059.png",
+        "sha256": "ac3f47e6adeb31395fb4bf75391e033eb802b559c9ff66ce36827cc5e5872a55",
+        "size": 1413894
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0060.png",
+        "sha256": "6aa0cf7412488b02ee7626c10709f5df317ad1e10f40cefe9d08816f594f2b46",
+        "size": 1413082
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0061.png",
+        "sha256": "6f3c71a2cfd1b0c7cbf2e3f27f4971972e3d870a8de15be4491563c49b902815",
+        "size": 1415934
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0062.png",
+        "sha256": "bd2485816c988edff4ce384fafebee7f44a27a485294cfcc8430d7278aeda097",
+        "size": 1416297
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0063.png",
+        "sha256": "be61d4dc9426b5d6b6d81b468235dea5dbd2a2ca349835e3ee4e86908051561a",
+        "size": 1415287
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0064.png",
+        "sha256": "f0bf92da0a5e7ef54b296390a5251333575efd2ed48e1f427769e27649580e22",
+        "size": 1410041
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0065.png",
+        "sha256": "98e29fef9379a6adc9af439e05ba7a2f0e068e49d9a9e7397dd717db992a4600",
+        "size": 1410073
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0066.png",
+        "sha256": "7aeb9f08e319b8ab8e5f2d70447db549b6a440d730eedde13270c127f96d05d5",
+        "size": 1411089
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0067.png",
+        "sha256": "025333ee15780103f40b9621c8697ac78941461993952819b397da32bbb0942c",
+        "size": 1412535
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0068.png",
+        "sha256": "e3a0382b64b42bb76096862a10c45ae3b679c838962049dd1ac1b585efcd6bc5",
+        "size": 1417276
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0069.png",
+        "sha256": "2d91ac28567d17989d28bae984ce6d8be6830c7cb63b2ed31868b2755b82de50",
+        "size": 1414896
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0070.png",
+        "sha256": "0e11dbb11b6c288b4aba672292e205ef1f6bad355826359495c18dbd3e985d56",
+        "size": 1413694
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0071.png",
+        "sha256": "b1841ac7c1c9c2f337555c1d70f07c9f551427dda834d2b1e31898ad289bdfab",
+        "size": 1413894
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0072.png",
+        "sha256": "1371e0e73ee4c2b71a690436b1bfccdb92202e7916da3e8475fa5e85965369fe",
+        "size": 1416237
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0073.png",
+        "sha256": "b5f6d603b64ac898b7e7408729911f107a65b847b21564052ba56c1d25d1d299",
+        "size": 1415719
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0074.png",
+        "sha256": "1959879d1e5f30b587ce873339e98d5e99c56b391c81d36819696247c3ca6410",
+        "size": 1414052
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0075.png",
+        "sha256": "a0c8b16caf1152e621b5a7897a4de5e48f43abd7b6db3527f35fe587c2ee7c3f",
+        "size": 1408842
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0076.png",
+        "sha256": "35ce41e3a2e8229039fe5c133421fafbf4a5d9e5edfe615e44d5edc9ce9aab83",
+        "size": 1410136
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0077.png",
+        "sha256": "5a963849db124155c8c6befdb65f703112b7ec17d2bdb43e18ba983de4758222",
+        "size": 1410751
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0078.png",
+        "sha256": "c0159d3ed77912e66853e99402d2e59bef2968cf5f316da559dd35526d641911",
+        "size": 1411604
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0079.png",
+        "sha256": "d89510be1a39f4c0c8addd88627be0302e0394aeef2f106bfc502057840fe131",
+        "size": 1414564
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0080.png",
+        "sha256": "4163f1b233d812ed561acfe6b54c64afeaf389ba69d325f8cd252fdf14ca5067",
+        "size": 1413209
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0081.png",
+        "sha256": "211a2ec542bd5c132af3266387b790dc341210788e2b2ef0b683fbf8c1b17240",
+        "size": 1412012
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0082.png",
+        "sha256": "f4d34770d9af7c319cfb4d0ba1fb833fdebcc1bd07be63241c3a25c10b51b15f",
+        "size": 1411807
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0083.png",
+        "sha256": "f7c2cc81d6b856f66cbc18a5f9745fd644565d0bc18d094536f4643fecbd7995",
+        "size": 1413473
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0084.png",
+        "sha256": "7664faf8c6b6b52e6e22d7bf2b3f48e21dfc382b9e4cf58302f5754f28de7fe0",
+        "size": 1412845
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0085.png",
+        "sha256": "8e84bc5b78c5ec2d28e39d92a72836897df3c719c0ad531eef95b0f371a5ca57",
+        "size": 1412537
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0086.png",
+        "sha256": "0581407995ef811cbc977eefed7607fbc9f8b1f806e2595b2be438ad69d4cc4f",
+        "size": 1408549
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0087.png",
+        "sha256": "c1e440f0035047305661fb173e9f8cd5eefe101cef04ec1fe340a873ccc5deb8",
+        "size": 1408556
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0088.png",
+        "sha256": "b5519deec3859d2f2667dc658c5177bac2bab1452f331232b1d8a59fb4f763c0",
+        "size": 1410135
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0089.png",
+        "sha256": "050e9dfd868656323a206a3135217258178cf427cfa8fbb9d6ba572cab406e1d",
+        "size": 1410004
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0090.png",
+        "sha256": "afd16b4a5241efe2f935b0c25be57095a9fbebf4b20afb72e29ac2cde0472687",
+        "size": 1414011
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0091.png",
+        "sha256": "96122101cf97fb515524adfac90675ba06cfbd64f299f10d28e7563f2fa946ae",
+        "size": 1412366
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0092.png",
+        "sha256": "58b1d756551fdd46dde93cacdf5a4455f9085fc49a44faabf7288c7ee2785f13",
+        "size": 1409792
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0093.png",
+        "sha256": "0f3277134734340092e8de52d776289050850badc58a6fd60dbea85de7e8acbe",
+        "size": 1410372
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0094.png",
+        "sha256": "852d098a8f41ee21b13e21c0267964195615a65d9969f81c479a9c467a89c55c",
+        "size": 1413384
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0095.png",
+        "sha256": "26533c6512155926ceb68374e0086c3a4e4510862acc411d47e47c4bc9a937ad",
+        "size": 1412205
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0096.png",
+        "sha256": "d5aa850e37ddd02bfe1a0368b2265f7055e79fa511c3a4a0702cf8cc057f4b1f",
+        "size": 1411559
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0097.png",
+        "sha256": "5c6a57d6ca81960c2ff28293433b66e285fe99304165b6393d57bd4ae648fadc",
+        "size": 1405686
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0098.png",
+        "sha256": "0e0a82e74fdfcc48503d76afb7269bc7f943e4c58acf230fa394d2f1e149b000",
+        "size": 1406748
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0099.png",
+        "sha256": "d47136e4918f34434f504ff6f4eb35938e4ef64a593419916721c93dcd218246",
+        "size": 1408131
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0100.png",
+        "sha256": "441ec9bd15c4d22aa0440bb05a610c5f7797252ba673d98e3bc2231c002e1ebd",
+        "size": 1407599
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0101.png",
+        "sha256": "4c2ba287ef66d0fc13134530d5e92ba706a2c3d28f89b585ff18c566a93ff6da",
+        "size": 1411524
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0102.png",
+        "sha256": "11615fca0c397b87c1c0953c29023048d49c483eddfaa5a80243ae9d5d176be9",
+        "size": 1410179
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0103.png",
+        "sha256": "4d919c3f36747ba4d5c2d14b77929cafb304c10677d5e07bc5b31e08d9bcfe49",
+        "size": 1407426
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0104.png",
+        "sha256": "eeb307ae551f8878f05f2f23064dff2d718850f4e31ae8025b4a77d523b2a865",
+        "size": 1406912
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0105.png",
+        "sha256": "4b9d7d38d598a5cdb84839134180a04daedbf629e5fa9faac63c796c1b0efe32",
+        "size": 1409398
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0106.png",
+        "sha256": "35249c72976d30dc4aaf32a9e37bbbcc00d89aedab4573a9e9f3796df34790d4",
+        "size": 1408267
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0107.png",
+        "sha256": "54718c688f6a821db4166dc3625b32816ad45493b7f1b1e08502785ee9c01b2b",
+        "size": 1407060
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0108.png",
+        "sha256": "20fb3f1b29a225df6bed4a52d7691361bdaccfa0386ea7d9b6aed8b654aa4902",
+        "size": 1403104
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0109.png",
+        "sha256": "131fb1f7cba0901e615465370d5ae942ff43acb2a058845287e4829ab2b78651",
+        "size": 1403110
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0110.png",
+        "sha256": "5839fbe91a699fa201478b83816f7f3570eaa3c3505c43efebb0afac9c89593c",
+        "size": 1404473
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0111.png",
+        "sha256": "e6ac45c1fe180ccd8105f56f4f470c85b76d4721fc5d50d2df916f62df056272",
+        "size": 1405273
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0112.png",
+        "sha256": "629f0eb09f4eedf83895ea86bac4ddad810ec557893d968ba791c58305416ece",
+        "size": 1408172
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0113.png",
+        "sha256": "aa9bf42e891fb6f007303b1506c6d3f27fe2d9c0b6285ad1a6e413090131cc1a",
+        "size": 1405559
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0114.png",
+        "sha256": "453cfcc6eaa059eaa3a022d8e482d035f8946b92abc4ca928428526a64237537",
+        "size": 1404600
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0115.png",
+        "sha256": "502f7828828749d2e33b4fc6269a9c480d3cb495ac4a9d6a417d80470b86207d",
+        "size": 1403646
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0116.png",
+        "sha256": "f4dc9dc0076278af3c64ed6550e2f1b6a4b048c5ca726bd46102b0a97750b9e0",
+        "size": 1406441
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0117.png",
+        "sha256": "f1d3bfd88ed40334b7595ab05d935fd4d8433a52ea9b38e9a98f89f9f145830d",
+        "size": 1405744
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0118.png",
+        "sha256": "a6ecd1c9cd72ca3f77fc3f5f1beb7b3306656372b800f4075b4141b031b19406",
+        "size": 1405257
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0119.png",
+        "sha256": "ceb87b8a09e2aa431eed7c37b87b3ed1291d87722d5416dfbda36fc5d2c24b85",
+        "size": 1399609
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0120.png",
+        "sha256": "5b2abe7a1cfcc1d26a1704c51c4457b7bcd75f4ff9a1a5674a8215eb112a15b1",
+        "size": 1402421
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0121.png",
+        "sha256": "62bbe4a7b6775b3103fb086fcadb772416c3665fa35d554ee3c7aa9169fd0513",
+        "size": 1401721
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0122.png",
+        "sha256": "8cdb8a5d7921572859316f1caa50d0b7031efe35aea5e504b92a2c6ddbc4906f",
+        "size": 1403172
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0123.png",
+        "sha256": "025d32336de74f6e48c755ee0829220c9e05e84c123e3f9bdabc9b0b67672c54",
+        "size": 1405917
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0124.png",
+        "sha256": "0da0ed870c9d5fe0be95cb768f14066096e17fb3ee9c7b919900b54ab4ce5f5d",
+        "size": 1403585
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0125.png",
+        "sha256": "6c4a2465d5b1b97b6ccd36e030fa79dcd26eb1a3b76be53b9941b6efc4cb8d78",
+        "size": 1403012
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0126.png",
+        "sha256": "227bc561b96c73ac0c6a9cec4645b59de425adc9c10dd673121e3acb9f1c6b53",
+        "size": 1402605
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0127.png",
+        "sha256": "81056e7801afc77640665e4f102f25ec9646a35344c13d2a393c0c6e68ae18ff",
+        "size": 1404102
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0128.png",
+        "sha256": "62ed945ca562a89c6312d7e985853bc16bb3f15a4778cc4c48eed7807d1235f2",
+        "size": 1403568
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0129.png",
+        "sha256": "73197a06a89315c32b0306007f6fe49c83e33311bc73c2862102d75523fa575d",
+        "size": 1402704
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0130.png",
+        "sha256": "6dbbb764eac2552148cea6eb13f4ac1246d9a2247b2a4b20243017e01bf6e9bf",
+        "size": 1397609
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0131.png",
+        "sha256": "1eea6623cafd0f7ab280d16d6dbd80562862c9059e229a4f12c9ed19e1eb5b1a",
+        "size": 1399369
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0132.png",
+        "sha256": "78d862a4bfcd5666729f36481c9275128e8a2a8d9d2da39b38e6d83d48c9202d",
+        "size": 1400322
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0133.png",
+        "sha256": "32ae4517c75934c6b5c89115f2c0f68ca93bd8daeba232086e4da4b47dd29e17",
+        "size": 1401653
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0134.png",
+        "sha256": "518c9844841ab9bc1a1ba72e1b3f214af51328dfa341d62bf6c87d203119991f",
+        "size": 1405122
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0135.png",
+        "sha256": "5294d1adcbdbb468efd4091c92b141ec701acd34807b7834ef7165e7d6fb4bf0",
+        "size": 1403541
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0136.png",
+        "sha256": "26378e55d83edf50e05592bb8cc565d3988d66167c50a2dea7fc019b83197571",
+        "size": 1400796
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0137.png",
+        "sha256": "b66ca4923076cf1979ed5b6ad29b128f4c487d5970e1f348346f778ca0f4cbe5",
+        "size": 1401738
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0138.png",
+        "sha256": "e5a79ee72dddf6bd4fd8d711e2e68c1ae56f3b517daf9c45e61a25e0a2550c06",
+        "size": 1402808
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0139.png",
+        "sha256": "1f68e29e97c12eb7ac90e540882d5ef8e0d4603b6de447a587f3442294d93b8b",
+        "size": 1402965
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0140.png",
+        "sha256": "f69e6c3c08f79f5bcdefdadf21111f4030bb7628db2a663fda0fac1aea5b25c8",
+        "size": 1402121
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0141.png",
+        "sha256": "1087c2eceb8f8b0048c2548d27b8dc06a35d0332f9f9e98d7ad4c92b493116d2",
+        "size": 1397082
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0142.png",
+        "sha256": "e030444f9b462a40f3134e1aedd2a5620829b7c21861dfa9dc512e80c6c47f3c",
+        "size": 1398899
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0143.png",
+        "sha256": "87776c677d41a7b7863746e78c8135a067a24bd59b4db4906b0e824b6510e32d",
+        "size": 1399760
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0144.png",
+        "sha256": "2d125c172d8c24b1afb2faf453553997f0653b52fa0700de16af643dfce542b2",
+        "size": 1399301
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0145.png",
+        "sha256": "c1b581138a4ecd0a38a2f927593e9d69bfeeea40ac6474ebc58add8e0dbb30ac",
+        "size": 1403799
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0146.png",
+        "sha256": "65b377382b1ae4ae8f5deb5993b2715b23688e51ab45ee7d2ffd716ad6a3dd7d",
+        "size": 1400360
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0147.png",
+        "sha256": "240d2d9760fe95aaeddb541b02c02ae3f03f8c0d016505036739fc7215a4ec76",
+        "size": 1399266
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0148.png",
+        "sha256": "caf2e825153f0ce7227b3a8f987a774fdb6f7d9fc9bbc985ed2643ba7140e2c0",
+        "size": 1399768
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0149.png",
+        "sha256": "c27dd7fcd77134608d4a87a24c35f2ae6597cced5f5fe69457aba575b2026a95",
+        "size": 1402720
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0150.png",
+        "sha256": "53f671d2bf07bde10dbc8396004980ad403803e17ead66cf0b54a06c66b5c1b2",
+        "size": 1401108
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0151.png",
+        "sha256": "7d38ba0591015ea5107a899fcc32bf91f1fc3cc6f98783ac7e3f51ca8af0731c",
+        "size": 1400817
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0152.png",
+        "sha256": "3708e72385241dc5f3662f248a4167bfa3b8f7edd4bd5ed18e5fcbdd4b185998",
+        "size": 1395601
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0153.png",
+        "sha256": "9622846fe1b4fd3e3ddf964ecf15c8b917433f468b9c2846416729fd1521172f",
+        "size": 1396950
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0154.png",
+        "sha256": "143181b8d3cf6be055c69e66954a32157554da1f4e1d8c64f1e44de585b2ee00",
+        "size": 1397637
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0155.png",
+        "sha256": "bad7c9605912815597bacb5169fa209e6c44542c246f4a1d170ab12990818b8b",
+        "size": 1398883
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0156.png",
+        "sha256": "7156ae50327fa5426af734658d628aefc79272f98a5d7f2d8502902af0272752",
+        "size": 1402328
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0157.png",
+        "sha256": "a9598dc67038f52c2c1778651ac8d3a55ede0d1c3fdc61a7093a8406066fb73c",
+        "size": 1399701
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0158.png",
+        "sha256": "208a192525abcfdb7f0b149a7b01f96730d488475e8c40d35b4283ba3c96cfa6",
+        "size": 1399206
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0159.png",
+        "sha256": "baf460a46cba311020329017f26bdea6d53655023c609922179b3f61e0dfb265",
+        "size": 1398934
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0160.png",
+        "sha256": "36f26fc2ea64445be57c078eaf04ce55b7af0398a96a7e23c8ab2c61f9b1dc4b",
+        "size": 1400644
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0161.png",
+        "sha256": "b57f2c57a21e593fb6e049c134aeb3ca35b0c28b0707e4ae17412baa5d3c99c2",
+        "size": 1399678
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0162.png",
+        "sha256": "fbbc4e94cb9253217bb2870c47fe7cc1c0e5aab045460fb5a0fba0c5c9ee93f3",
+        "size": 1398895
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0163.png",
+        "sha256": "80152a632ba2c5370838b7d0d3c4ada7c8a9b75fff02aa2a03fcfe53f93bed1f",
+        "size": 1393354
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0164.png",
+        "sha256": "47d37ab23a8d2fde05b35342b821b4b57da2353f9d4c5a5f48af92985ba7481f",
+        "size": 1395506
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0165.png",
+        "sha256": "1868b1742a0544333f514cdfa86ae539bd15c8e5e50a3d8553f0d6fed826b823",
+        "size": 1396820
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0166.png",
+        "sha256": "b1785283401a0fb8bb1e81dbb8af88d68d7f983a8b82099674022d2b1ee59360",
+        "size": 1396582
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0167.png",
+        "sha256": "9bdc0863b024457e2a6e34918709cacf9238f1a71fc2273e4459c194296d0010",
+        "size": 1399643
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0168.png",
+        "sha256": "fcb72aa50f36254942a6233b8152aefcbd392ac34ab837270ed334af725b5de2",
+        "size": 1397487
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0169.png",
+        "sha256": "9bf7bb1b3480ac02bf9b7f5d0732b8d4cb9948b06fbf67f9a16fb948e21961dc",
+        "size": 1396181
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0170.png",
+        "sha256": "ad061d023e4d983b7fadb86ba13436851444d14793c49640cd8b585ca81caa54",
+        "size": 1397006
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0171.png",
+        "sha256": "1acc8b2c6aec75c437377b39da90d058f2849caea0735cd3df162638aaa4d01a",
+        "size": 1398725
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0172.png",
+        "sha256": "8f56cba384220a9dd3ed838fe6dae0081489154e82c02c3f73fb3d79dbd63183",
+        "size": 1397835
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0173.png",
+        "sha256": "56e098d758789f04326f7ac401a975a029e72cb3ce40b3d8182f93c8bfb3b108",
+        "size": 1396921
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0174.png",
+        "sha256": "3ff5e279f2330fc47a7f585b0365298c3f20861683e42bcc3e1032cd98ae9c3c",
+        "size": 1391816
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0175.png",
+        "sha256": "ac467a12480ae49cdb4673af7d078940a6a36cf09b2df6f1f513a0c58a750336",
+        "size": 1393061
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0176.png",
+        "sha256": "491857d1f7b9f533aea9a92edf2f374a16c29a6d5dceef225a9d3cbc7f9e537c",
+        "size": 1393792
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0177.png",
+        "sha256": "59a79140de30c34e10c6fc192091623005e4a5f8bf54ea1b440fa8e7ef6fd9be",
+        "size": 1394311
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0178.png",
+        "sha256": "6938a23ecd76edeb55b292b93c29108763a4d57850cf53472ac85a144a137c10",
+        "size": 1397299
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0179.png",
+        "sha256": "fcb644f8d77112fc10012b0e49e0a88eb075d536274127998c3bfe94bc7dcf6f",
+        "size": 1395450
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0180.png",
+        "sha256": "69e710a60693d45d99998a752f14873e69e8fd0e4c2bcb99588df4c848884432",
+        "size": 1392510
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0181.png",
+        "sha256": "a5a467a82d348f6dd369718492ba950e1a419ac8c4286cacc26880352a00c8bb",
+        "size": 1392986
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0182.png",
+        "sha256": "9eba9387102406dbb18ed162ded6b9c6240d8286c2dd9a25f98b1de268e4abc8",
+        "size": 1393801
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0183.png",
+        "sha256": "e28caf96e052391a0030aaeb2909f01404a026f71f57541d12eccdc060539baa",
+        "size": 1393626
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0184.png",
+        "sha256": "b15509e5f808c95cbd9ba3b3f7ff5a88d7b89768d3f41aa27f09d176b4578397",
+        "size": 1392919
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0185.png",
+        "sha256": "b1ca91c77d1bd17df5e78f4b59ea93f98b844e8db9d255aafd6312224bcb6073",
+        "size": 1387767
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0186.png",
+        "sha256": "ad611d0de6babdab853bf1f4eeb38e6723da20daa2e4c54073a5adc01f491c2c",
+        "size": 1388748
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0187.png",
+        "sha256": "d0dca46ce13beebf6837cac3e73f8585415d22eaf82fa8df17fe815011eb01d1",
+        "size": 1389797
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0188.png",
+        "sha256": "c69457498ac5343d2a3fc195930e7e5d4e8777a789335f78bc7defca9d162dc9",
+        "size": 1389765
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0189.png",
+        "sha256": "b3592f37535d3d8a24ca863cb25fbf1a0b72f6ab2d48be9126fdbb12f4a74365",
+        "size": 1392066
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0190.png",
+        "sha256": "f568d079b3b8853d52793920e5f318a69548c444c29b0261d8d3b4f592ca1ce4",
+        "size": 1391282
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0191.png",
+        "sha256": "77710eb79e4adba81628efd33ea212cb8cdee2e2adb5228fb78d28dbe0fa2183",
+        "size": 1389206
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0192.png",
+        "sha256": "3303baf256f714a91ae76ce6556932ac912b4b7d7e20571ffa7d32c90d4287ed",
+        "size": 1389773
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0193.png",
+        "sha256": "abe8dd666d27e9418d09ae762e62039b1e2bc727c1e29819deb33ac3bda48f53",
+        "size": 1390199
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0194.png",
+        "sha256": "e83fa0aa40b6e57520da2524ccfdf20dbca90da394103e3fe7e300a98b9bb0fd",
+        "size": 1389203
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0195.png",
+        "sha256": "e9679a8bc21ecc6090ab2caa6171f65e55854962a6e3e622583bdadbc5f82a77",
+        "size": 1389146
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0196.png",
+        "sha256": "f8f45fe7a04e7bd2175b59437cb21f48a256e872c2fc7fb2eff8b2615cab9d55",
+        "size": 1384223
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0197.png",
+        "sha256": "c081a32458f511bf7e262f4532d3b43bdbc9657a5ad5f6e6f083b79a17e53fa6",
+        "size": 1385266
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0198.png",
+        "sha256": "de3e322889385fd9d8bd9c6cbfec544d9710c99f01ef4581406e04fbc325a3de",
+        "size": 1385700
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0199.png",
+        "sha256": "8817b0cb28601c038bcfa04a5f9c20953055017e5d43fddb49471434279b3bca",
+        "size": 1386427
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0200.png",
+        "sha256": "d70b19061a44432f98449a4559f93efa7127785a0d49b4d82b7c8a23f0a9bc37",
+        "size": 1389796
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0201.png",
+        "sha256": "2f73f0970967903d1ccfd334fc6d47188fe2c340e1a52c8d959eab7a129ef084",
+        "size": 1388708
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0202.png",
+        "sha256": "1a8f22d31c7f0f0b5801e5feca1ee25251c0f4acdfea84dc191837618b12048b",
+        "size": 1385081
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0203.png",
+        "sha256": "3932e2710f892507ed98caea9364f819f07d0ab9f6e67f7a86c55c70a220ecf5",
+        "size": 1386382
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0204.png",
+        "sha256": "d0063a1e72727bdc11e163429e52a64caecf777b2a6a956991ebc336ee01ac53",
+        "size": 1388016
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0205.png",
+        "sha256": "d704c4aaa7a6171ce928c6899a49948b6bf3855d691909a0ef143442e0f1d267",
+        "size": 1387433
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0206.png",
+        "sha256": "b11016f49fb5cccdda2ac96eeb5faa34053004c5bdc53a342ad7bb20b341b35e",
+        "size": 1387310
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0207.png",
+        "sha256": "63d4952506d7fed71a87ba16859a01d1335a5b6344eb4775c33bfef07b648a98",
+        "size": 1382224
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0208.png",
+        "sha256": "eab7bbb9ace79329b6a7450cb30e28eee32c16130e41ac9aeb0b7cf4f880efd3",
+        "size": 1383719
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0209.png",
+        "sha256": "e4f53acf6f1485f61dd6b2361c902c056fa0b2312201c78990b8ed59bf33e74c",
+        "size": 1383905
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0210.png",
+        "sha256": "71eaae52aa6ac63a999ad3fa6b9616115be0a801dceae23e944a7560fee51499",
+        "size": 1383641
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0211.png",
+        "sha256": "98b284c865c9945f7b1df085e1596a36dfdb82c5e6a99a4aa659bfeb05101e40",
+        "size": 1386716
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0212.png",
+        "sha256": "cf7879283dbea86d3eb637f831ba0fe13373aff682e40cbcbebf9b0bfb581d90",
+        "size": 1386020
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0213.png",
+        "sha256": "ed6c72bfb49e169fef6daac62f7ac942a1a2301d55f9b5f3904871034555bd4c",
+        "size": 1383699
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0214.png",
+        "sha256": "bd7ce8ebd36571f7d13f46df16d2c0b2e9d6a964eaa765573f57e41130bbbdbd",
+        "size": 1383110
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0215.png",
+        "sha256": "72db31a5747e45294087ee318b5f369002811a301bd78e6ab4b68015e28ba163",
+        "size": 1386723
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0216.png",
+        "sha256": "e7d066e3cf18b3e497b5c2add18591a4b8cfab4b9ccfdf878e1f00ce9a2210b6",
+        "size": 1385468
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0217.png",
+        "sha256": "0042b86939e0f5c7b7a24305e2c475a6337245ef91170c3e2361a8e56a12407c",
+        "size": 1384572
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0218.png",
+        "sha256": "d3a067c1aa6698eeedec31402c98de74970992c0e302a9ba1bb942d60636cdde",
+        "size": 1379101
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0219.png",
+        "sha256": "507516a35db1817dbe562cffa8d30adbd386c5332e96fae0400cd6928d7bcc82",
+        "size": 1381053
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0220.png",
+        "sha256": "9f90b10e90f1c795d1af9b6cde0e66249677b0beada20aabc92035419b30a94f",
+        "size": 1381943
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0221.png",
+        "sha256": "ea847305c2b32344572c8468e58e18d166107df7a7c4c8b776649bef33a39922",
+        "size": 1382564
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0222.png",
+        "sha256": "eef04878608031bfdfe5564837b0c2cfaead10720a93a885f902b29f2935301f",
+        "size": 1386107
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0223.png",
+        "sha256": "f4c6d9658ba39c52859ab8f94fc3aae162a447d12ba03b576ecec5b72f69af3c",
+        "size": 1384847
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0224.png",
+        "sha256": "c897334c9fe84b0090e2fe63e61d8413e487dbb4763930d6ab6c563f78436737",
+        "size": 1382685
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0225.png",
+        "sha256": "814a47360459059832ce59490e4986f1880137649485cc71edc5385ac09c7812",
+        "size": 1384316
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0226.png",
+        "sha256": "a93bfff70ed1d7aeedca30f8ce0c8887b7992d04e76e4af7e30fd2bf24378d81",
+        "size": 1385786
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0227.png",
+        "sha256": "784cfd85675e03fdcc1a379475bd12e611ff9bf9aa913f3e9fad384f689cf82e",
+        "size": 1385146
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0228.png",
+        "sha256": "81078f8cb9c95cb463e605a895387615176bcde96de102b71264cb1c640e07ad",
+        "size": 1385037
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0229.png",
+        "sha256": "fc436dddf50cd099352b109c27706c1a2f82922e916563da6e36d0eb27dc85aa",
+        "size": 1380349
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0230.png",
+        "sha256": "e584586f13a39ed7c3839c2fb1f90a45839e0233d5f11db4a7644c76c717d316",
+        "size": 1381217
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0231.png",
+        "sha256": "3c31403c213a52eb0a130d0a099ee786cb9bb5966e8773a89590970a94a243a6",
+        "size": 1383200
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0232.png",
+        "sha256": "92d249808cbd23b501e8dbf81b8bc12dc1a450281618b48e87571b4594e51438",
+        "size": 1384216
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0233.png",
+        "sha256": "6f9fcac6201b4cd92d61f9b6f5b1931ad67d9d4b96c3a5a309a2b2755ae3721b",
+        "size": 1387525
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0234.png",
+        "sha256": "3e95950468000083f470cd011a68721bb3e8d6e47449a4cb4db5574a49f9f5be",
+        "size": 1386173
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0235.png",
+        "sha256": "eb69a7bf1a1782aa3953ba50c4df5c8cb2bf8c6962ffb3db828556b479b80e7c",
+        "size": 1384364
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0236.png",
+        "sha256": "47b6a284d670e781b017f3bca5e301e72a703815d1c9e96a72172f3138f24a52",
+        "size": 1385148
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0237.png",
+        "sha256": "e7cd11c45198a34e46efcbac137ff10af50bf85a875bba34083a114015db7306",
+        "size": 1387987
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0238.png",
+        "sha256": "09a0959a72a61441464e6cb78fea2c1d6b97237151617898911e459b92216973",
+        "size": 1387771
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0239.png",
+        "sha256": "e712f0f9122fa373ea27f60bc4bc96770121830f8c3f5fa8478f62f6d3a37447",
+        "size": 1387178
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0240.png",
+        "sha256": "ea0c640f1beda626bffa0ee0d439595a90043c07000270f46a7bf0dc52d099bf",
+        "size": 1382567
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0241.png",
+        "sha256": "07d443a5cc43b3739ebeb44ec8ac32896b66187ef5282619e0a78388af5f3f3d",
+        "size": 1383443
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0242.png",
+        "sha256": "6d2c9eb2460dd80795eb9c0c8ab91b755a0c0cdcfac3730ac7966bbecdf530f8",
+        "size": 1385302
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0243.png",
+        "sha256": "067d1302330cc2648d2652ba492faa59c52db7c1211c81d67f82b2c6f31c5daf",
+        "size": 1385445
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0244.png",
+        "sha256": "f253a1b30ccc504ad60f744df3c65b03fb3a3185d672cdb3c7da14d5c888483c",
+        "size": 1389346
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0245.png",
+        "sha256": "3531f8bc11faa21c351396576e7f3f1adbbff30a90cbd37734272bf95ebe84a7",
+        "size": 1388089
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0246.png",
+        "sha256": "e83b9410d26266a20c64de1fdf3493f7e4e2543b48919500a87ecd07aa88de8a",
+        "size": 1386671
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0247.png",
+        "sha256": "e6538d7aa431c65e9f6ed2bb7dae8407c7dd373f4d1cab0875daf4078c9e91de",
+        "size": 1386766
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0248.png",
+        "sha256": "c4b3ea4f01061769d0a4d0f9d08cdbb2e4449be76d08ee33a9e07f7e2921b04c",
+        "size": 1389883
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0249.png",
+        "sha256": "5ec3f0dcaa522fe0514cbdb15962661149229e896a083568d43fd880943d660b",
+        "size": 1388755
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0250.png",
+        "sha256": "a7c0c471d94922a9b66ae2c34654c186bfcf289eb1e7275b827465f97500e7e7",
+        "size": 1388514
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0251.png",
+        "sha256": "2c43a1556e5bfce808d48073930799c32bb7e87d4ad2a3281255834d3d30b07f",
+        "size": 1383811
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0252.png",
+        "sha256": "e927fd98e78caf1fb4bd3a4230f3bee1b43f9b2826e33d6bf074393f9a831089",
+        "size": 1383899
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0253.png",
+        "sha256": "69a914b446fdf82bde8437d29314f12ef298bcd7fa8fdd618dfdd5693ae6687d",
+        "size": 1386667
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0254.png",
+        "sha256": "7924d519be2bdaaa7a62f63f9cd897c002b54a3f18cec873e466972fbdd7efbd",
+        "size": 1385743
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0255.png",
+        "sha256": "063c8c358ff14d87175d6fb77bed978f7bfb6489b64538336104839fd244dc66",
+        "size": 1389907
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0256.png",
+        "sha256": "75462f6dae6d14d45f9e1680244cb7375d12559516bc312202887e93f9c92f00",
+        "size": 1388644
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0257.png",
+        "sha256": "a7257c7132f1edf43699f0ce0c1036bd00823fedbd3362f1c1650538caaab433",
+        "size": 1387367
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0258.png",
+        "sha256": "a2bb5bb5922a394e792533d83ddcc0b516f315893be3173d373e39f738aebdfe",
+        "size": 1387186
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0259.png",
+        "sha256": "be31bbacfc74da8e4c81f9fa03b2c40ef4564c4743afe1365d7fa7aeccc95bc9",
+        "size": 1390362
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0260.png",
+        "sha256": "40d294446ac55fddd837485a2e1c61d425a843d55c98dfbaa6cbdcfbf2937519",
+        "size": 1389286
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0261.png",
+        "sha256": "ccbce545a4dcbc5958349b11bec630bd2d14631a190b5303514a3822c30caa6e",
+        "size": 1387671
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0262.png",
+        "sha256": "9a12658fdc6eb7e5d471d02d6d362dbac20c5a7fec3b5c53e9c6de7b39741ba2",
+        "size": 1383576
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0263.png",
+        "sha256": "f3a504ffcdc7dc563ae2db389a8d9faf35e44fc5102916b9d3b95da426f8611b",
+        "size": 1382410
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0264.png",
+        "sha256": "7fe0ed4c054c9561150ac2e9a9909baebc8a4c9c842aa8b7e70e985ecd420ecd",
+        "size": 1385780
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0265.png",
+        "sha256": "492e316fbeebc0c7378578e3f01a7e58cdb8ab9fd5677e6aa599d2d3c00d044d",
+        "size": 1385592
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0266.png",
+        "sha256": "386be7e0b4a5831fd6b2aaa32e6809b4827e54587d16278130ce38c19c1d4fe7",
+        "size": 1388510
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0267.png",
+        "sha256": "4aad96f19f25519238de20db992610c7912b45ad541530dedbe2b1bcb893838b",
+        "size": 1388478
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0268.png",
+        "sha256": "20136a9aabe7b4094f64ac37bdfd69115d9913c02a799d4ff9240446d4803666",
+        "size": 1386549
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0269.png",
+        "sha256": "e89129bd69eda6a598b98326a10f665985651ce2886adbc0f55f38109197c6c4",
+        "size": 1386835
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0270.png",
+        "sha256": "951faf0d22c197e3556ffb3d2c97584203a7a1c2d4c2b8083c54f31a834b37fa",
+        "size": 1388343
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0271.png",
+        "sha256": "60f810ccc10beb1f5fde29e61128af1621321f45a437b5a07bd018b6b14456c3",
+        "size": 1389257
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0272.png",
+        "sha256": "2b8fc3ff2e13eb21c1518faaf3e7c5bb1fb104066b22b0e79f7e9df15fa8f34d",
+        "size": 1388291
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0273.png",
+        "sha256": "370cc44edae6cd544077cf827e990238ccc817a6422987c30123f43a3ed8dd44",
+        "size": 1383047
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0274.png",
+        "sha256": "cd943be556218da8a414fb69707ddccf3a651a1fbe6386912f8501839b5d5ef3",
+        "size": 1382190
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0275.png",
+        "sha256": "9c4adf2d4c43562019068383c6fd1edc2a1f27fc60d047ffaae63536e864ce91",
+        "size": 1384544
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0276.png",
+        "sha256": "340a102416ade9ca2ae45fba04b0fb53d2de8045dba1e8e2b379cdfad67fbd77",
+        "size": 1385486
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0277.png",
+        "sha256": "7128a87be599df5a85a57f497f84d1f80ea85100985e82cdd8cb4512b7835072",
+        "size": 1389028
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0278.png",
+        "sha256": "b593efd5c87f5b3cb4f840eb9d36b861d75e9618be52fad82a7bd50c9892655e",
+        "size": 1389073
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0279.png",
+        "sha256": "166139ada63591658f66e172e58248e3fb0365822d780fde9701d6577b412d67",
+        "size": 1386601
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0280.png",
+        "sha256": "7ef9eed919344fee131efd6135fab4c25a0da7e16bbb7e85c1e3b43e7bb6250a",
+        "size": 1387183
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0281.png",
+        "sha256": "bda04a669493ecf84dec939a71888c6dcd833689212531b0071866f507acf0b2",
+        "size": 1388642
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0282.png",
+        "sha256": "8f1baacaa6c2c0e0ea64e6b820a1a7f4019adc7935e0dd40828b936e7097ac6f",
+        "size": 1390125
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0283.png",
+        "sha256": "a32ec330459c4b16d733cd23699ac1feb3d1eb560a387ecd9e281272d62f61aa",
+        "size": 1389665
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0284.png",
+        "sha256": "a3baeb0b0580312a23d9db2b118addbd76823b868dcac795dbcd1c50880fd7f2",
+        "size": 1384155
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0285.png",
+        "sha256": "e68e15b619496ecce08c4d3f7d725a5bc3e149c042196e78f6f2bd7ed5849d50",
+        "size": 1382129
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0286.png",
+        "sha256": "01672b585da14d720bb3324a34fbfca517ccde802575016fa6d04d2b9e397730",
+        "size": 1385881
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0287.png",
+        "sha256": "b922929fa6b99ea5286619a4cf6fec59ecea593c03984a05b19455a7e529b3bb",
+        "size": 1386664
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0288.png",
+        "sha256": "981811c17b97f5084c03167fe8947c8f67cc42b74eb24954493e8723cc871a07",
+        "size": 1389589
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0289.png",
+        "sha256": "9de9aa930c61d986943d0522ff761b801b28feeae70749f2621ddbbce9aae954",
+        "size": 1392100
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0290.png",
+        "sha256": "f2c1ea312718aae0ae3281e366194d509927ded1ecd0f834b0c01f34258dd746",
+        "size": 1389132
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0291.png",
+        "sha256": "6a767ac458418bec1a15a68058864c5c407f48be5ca71ab97fe2d0704e91019a",
+        "size": 1389765
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0292.png",
+        "sha256": "19e506ab46abf514ac12c102b3f16febdfbfc8b86c82247f4709e608c9a82e50",
+        "size": 1391643
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0293.png",
+        "sha256": "5cec58afb56faa5a653c131182a62993642aac8828ade06f9fe21e0f36ba98b6",
+        "size": 1393244
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0294.png",
+        "sha256": "d704c554b0ad7828f30620517ca522451c80952b97e1e09d200ca71ee7e92951",
+        "size": 1393294
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0295.png",
+        "sha256": "d9954e9c8b7086d325ae769fea4d40b70737e66d4b2b959b2c5a50975bde02d0",
+        "size": 1386823
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0296.png",
+        "sha256": "7f3e4bb9bec6b4aea752a0266f0a9428fcc4ba62a632f455d4ccff83b6ca2a03",
+        "size": 1384907
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0297.png",
+        "sha256": "0c48d502130073ba2cd9b25474ba85dbe72bb756ff6b6e2926c1c9ec3945ac90",
+        "size": 1388338
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0298.png",
+        "sha256": "ae56abdffc4da163535e530c48113a954c622eaa729f23076b7cebbb147baf10",
+        "size": 1388763
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_close/0299.png",
+        "sha256": "9eb94e75763160402c3ca96d231de8ae2da96acded4548cfb430650dc941e186",
+        "size": 1393124
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0000.png",
+        "sha256": "9b364331292fb7dc5b49dd3923ffed669d5d38274a56dabaa8035e2f8d4f81f6",
+        "size": 1437336
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0001.png",
+        "sha256": "8143ad58033e053ebd4f6bd88a15e6660aa4c9561c8bf2b3e0309be495e9c97f",
+        "size": 1438450
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0002.png",
+        "sha256": "3b98cc349cfc94984d8bdc8ae0ac394d6d8b557a62654d0f18c39d1e1ee0ecad",
+        "size": 1442545
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0003.png",
+        "sha256": "6a4edda5db24f2230fe34fa2e5e5d7ee34334829a6d764331dd66b9e47814490",
+        "size": 1445203
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0004.png",
+        "sha256": "f2e4ba550eeead611b5b169eaf2c3c5ef0f2a85cd3c883b029b9bedcf38d2d67",
+        "size": 1441261
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0005.png",
+        "sha256": "734e2ae4ea794c9c181189ce99f00b1f2df0ded39fd1dbaeab033954fa984e3a",
+        "size": 1439863
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0006.png",
+        "sha256": "5aad258a07f10538b2d9e3a7658c8937c069e5dcc040885413016ffe0c368866",
+        "size": 1443089
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0007.png",
+        "sha256": "0d7f75fefc2ebc045640c582e0f38899d60678aa6921f32188a38d263b42c090",
+        "size": 1444935
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0008.png",
+        "sha256": "e470bea3d2d047ff5a2d3ac13742bc008f6e1f0e027dd6a0bb3c29662d51a62a",
+        "size": 1444591
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0009.png",
+        "sha256": "3c5e67a8f0c02ae978e4b636f56d18f03e01a5a03dfda9ba9f61689a10724d9b",
+        "size": 1435957
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0010.png",
+        "sha256": "ae6a2b4e470924282442fb1a6db23891ce0b685d672142969dbbb4566b11b070",
+        "size": 1431374
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0011.png",
+        "sha256": "5e1915c86c8dec41548335759ae7ba81b80da0451a1bbcd8d862159f926dc45f",
+        "size": 1433111
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0012.png",
+        "sha256": "5d1f17229de2552de0f55d3b84dc59abf393ac33312790f2bd9e33cb66d5aa47",
+        "size": 1433367
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0013.png",
+        "sha256": "1c059439f53132c4fbff9b199e32e4ee2877bda98b2c51f60e1fe5dc06674484",
+        "size": 1435495
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0014.png",
+        "sha256": "8d42512787e38efc327b5224fd287195670333dc904019c0483f3648d76a9e7d",
+        "size": 1435487
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0015.png",
+        "sha256": "19f84e59870f23b26504f269095eae3bb28afbcc73f31cd66b011e6907d96172",
+        "size": 1429780
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0016.png",
+        "sha256": "288cd0b506209c9a21152b2445d30e7ff8f6aa511705b462021364f11786e19a",
+        "size": 1426710
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0017.png",
+        "sha256": "7acaebdd1be175a943aa2d77838bda274a0a745929eb5ad845f693935765ebf0",
+        "size": 1429154
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0018.png",
+        "sha256": "6e883d1e0e2ff100c5f5e37dc8f25eed348986b7166bed46e9eae95075f59de2",
+        "size": 1431070
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0019.png",
+        "sha256": "5200a6fec0d01f0fa5f016751bef541d01e791bda64765ba9f2febc67d90e3e8",
+        "size": 1429601
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0020.png",
+        "sha256": "f406b352c3f5a102b21d0158cbb559922ad138726be7eedf1a2c46b1b49daba6",
+        "size": 1418893
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0021.png",
+        "sha256": "a2f372433e39faee0de89adf0936d221f38b66f1338f72b7340539e092da7911",
+        "size": 1413937
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0022.png",
+        "sha256": "b497973cafcf8cf7c81140bb5ec33606619781e4e3255a5db6a6a4831ed62f3a",
+        "size": 1416490
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0023.png",
+        "sha256": "9d9f661a82193579a4acfd013309d8dd61e26d58f940481f1854eca66fc60516",
+        "size": 1418332
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0024.png",
+        "sha256": "42aab6d111d5d8591e32d1a52c884df2c0a2e7b954d391f21e42aab436f5936b",
+        "size": 1420660
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0025.png",
+        "sha256": "e86369ec15d3e5bb91584700af4ead4bd9102face1b63b8e881f02406fe1d766",
+        "size": 1419877
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0026.png",
+        "sha256": "4edea7711d94659e0027c3d98a2eab35538daf80b7e36432089f3a9f66ef2bcc",
+        "size": 1416110
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0027.png",
+        "sha256": "949a564a94409059286424873759cb4b67f2f3d6441627c0c51cd56ccb618430",
+        "size": 1411347
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0028.png",
+        "sha256": "7125f621dac86f614df96f74dae5aba5ee912621f93a67549d0cfb1918947557",
+        "size": 1414924
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0029.png",
+        "sha256": "f81f46c51800c3708f309effb55283908ad6f07b75a843f6d71fab8df7f2099b",
+        "size": 1414911
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0030.png",
+        "sha256": "32da4ee7899378d45cbd18b1e5dc698766fd89b76cff693b45c659777d3105ab",
+        "size": 1414340
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0031.png",
+        "sha256": "f359af0421f752be0ea3c37b5d9bd2a697906cc32954cc8af496e011fc6dcb9e",
+        "size": 1403178
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0032.png",
+        "sha256": "c97a19551bc37aac7ece84c024427584c0802a4dd605dfac0880df4737690528",
+        "size": 1400976
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0033.png",
+        "sha256": "d8ca6a40aff04514218fe4519bd3465c0865b6ed59be7a14ccc2f2d731b724c4",
+        "size": 1404477
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0034.png",
+        "sha256": "0a23a5dc17420996520b342e2e06061b7c18a348085a408f409d39c67733eb8a",
+        "size": 1405600
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0035.png",
+        "sha256": "6584246f2624727528e761c70140029b94e7c29f3636be18435a873f93224e55",
+        "size": 1407909
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0036.png",
+        "sha256": "a28843d0830ec3a91b8421dcd3583960096c919b0aec2fc822821f85d0c7bd57",
+        "size": 1406772
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0037.png",
+        "sha256": "5a8753594cef05389aa81626a93cfc8f89ff6d8b2f98eacf1cae3e91b5c6b005",
+        "size": 1404143
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0038.png",
+        "sha256": "8d38b908598645f57f13c79540e19e0fa0542c748261c172aa0bc746e3e3fe2f",
+        "size": 1401864
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0039.png",
+        "sha256": "e8a391742f6c6537ca5a54b2c528f426296caccb725c759f7bc6233e80e6500d",
+        "size": 1405408
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0040.png",
+        "sha256": "79962b1f8300843aa52db828935ae726e67722aa026e76b3fe5bbf9d489c9c03",
+        "size": 1406305
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0041.png",
+        "sha256": "6d57f634649bbc804b34e8c3e71645009730e100098405bce1ff28edaa81bce7",
+        "size": 1403754
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0042.png",
+        "sha256": "90c733fb3378447fc6739b2e586f47955c01267a775a68423455354b6e4b09ae",
+        "size": 1395237
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0043.png",
+        "sha256": "b90004738635e51308785d24ded51908db9dff5bc59b5bb24b8a67e4663819c1",
+        "size": 1395576
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0044.png",
+        "sha256": "bcdfe660dc7fe6c73a3403e86ffae49bd9c2991c06d71ff87ee79bbaac23c315",
+        "size": 1399070
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0045.png",
+        "sha256": "6ea21269c6692f96ea00739d292df7bb3ec305929d81819e473d3b9d14378bc5",
+        "size": 1398965
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0046.png",
+        "sha256": "1f120581b2eae76474ced17b1ea71e66c040caa699f9cf80e9dfd1f924e8bb7d",
+        "size": 1401351
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0047.png",
+        "sha256": "d5cab0a697b08f7b96ad51b3bb670965f531a0a159c5cdbbae41dc53b78e3525",
+        "size": 1401032
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0048.png",
+        "sha256": "8c6b203baea506ecefee49ab5cf358a1591d3c9da1d189bb820053c498e6b292",
+        "size": 1399728
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0049.png",
+        "sha256": "1027964995ba75cdbf1d1274afab931329f373d80ff419ad44ef29cd96303b74",
+        "size": 1397352
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0050.png",
+        "sha256": "891f698995244be67677831f9aa9de5616dcab3b7304e36d44dcacd542d7d856",
+        "size": 1402474
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0051.png",
+        "sha256": "abaa948c034b695ccf86a6838f8008b40cf2db0eacbbaa75a762670a8874f806",
+        "size": 1401102
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0052.png",
+        "sha256": "c8e2c9eea8a8c651a52914530097c69d90911f360643ec2c79ff42a020aa5eb0",
+        "size": 1398655
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0053.png",
+        "sha256": "00121e4383429b8cd86dc7cceea37b39dd14aab7805feae86c2a34ee52a7f336",
+        "size": 1391712
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0054.png",
+        "sha256": "dd99066d7c82a710c4250a205007e59c642fca7795c650124ea86f17800b78df",
+        "size": 1394186
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0055.png",
+        "sha256": "0a35685a839fb5ea456c997739ea3e4d8be64f6cdc05a3e6b388cdcac44433a1",
+        "size": 1395064
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0056.png",
+        "sha256": "b92c0111418a46b79634a041c49de4988b1b67f8eaa974f8ace8810bcb17f21b",
+        "size": 1396841
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0057.png",
+        "sha256": "420f8bacc82f73dd69aa39b9895e6463e42b23c71d4a07bf2fa01f0628754522",
+        "size": 1399647
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0058.png",
+        "sha256": "bc725a69200453b37af7fae5dab810e350b29b8ff8ae3fd688e0007e5a30bda7",
+        "size": 1399108
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0059.png",
+        "sha256": "e4343cffb329939d3bf6ab84d9027a176d690cf3fd13bb567cfd38a896d15a92",
+        "size": 1398048
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0060.png",
+        "sha256": "eb17bfe73929545c5176e476ade5fa6ffa4136ef56333d6ed38df59b7dae8aaf",
+        "size": 1397752
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0061.png",
+        "sha256": "92ca6dfce4a0080fba83c3b3939bc00ae95c849ddd3d8a2c20f4695fa54d8295",
+        "size": 1404541
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0062.png",
+        "sha256": "61c9d251f14eda657d764a6af0cebdeddf7be0ffbeedf3da872a694640f48118",
+        "size": 1401447
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0063.png",
+        "sha256": "473e0097c5faf05fdf3574b4863e6e6a2ffbf82dcc72db1a653ba959a5ae0742",
+        "size": 1399769
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0064.png",
+        "sha256": "86e2afd47f1d247455350ba1d5c2a88a351b8948810b92db10f82c65125f4a44",
+        "size": 1394578
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0065.png",
+        "sha256": "a8c5232e85e2fa295040ddcb66494c6ccbca770507ccc283826540987433f9bb",
+        "size": 1397239
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0066.png",
+        "sha256": "fbcd94652013e79d7033b3b2eabf9bf08b4bf417a0d4985e08e7696ee3db2db6",
+        "size": 1397075
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0067.png",
+        "sha256": "2f66a1d4faf4348c7663ddbd38af92a985265eaa489767fae45b941f87b818ac",
+        "size": 1396527
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0068.png",
+        "sha256": "f24f56eb834f3346160049f00d1fb1a0b81cf43ac006ae8f6429443372164930",
+        "size": 1402513
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0069.png",
+        "sha256": "924beb14ee3ff52add296f03f69bd85186a71fff61cc5e2d988412dadaa59809",
+        "size": 1400990
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0070.png",
+        "sha256": "5a1ad7ed2169b380e030577d739d973377a850e6387de118eddd4d40035335e9",
+        "size": 1401496
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0071.png",
+        "sha256": "8ae5fa3ad316dd369f963f0001a394b2bfbc78d8afd34d50c16053c90ac4fad1",
+        "size": 1399992
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0072.png",
+        "sha256": "268150de0418606730075efa97f6d3b4a5de2258e4f9ce56d1ad406143046b28",
+        "size": 1407852
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0073.png",
+        "sha256": "b5f94854d20bb3f6a0075f789b2c1fc940b180bb162da0e387731d65687cb3f9",
+        "size": 1404114
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0074.png",
+        "sha256": "41af8368dc9844b004b194cee5df5d1021f256bb9a7cbf7b18ee0e4061f11c38",
+        "size": 1402294
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0075.png",
+        "sha256": "90f6252dbc2367c0cf14ad145dba0149e7b871a61a4afbe188119e15f28f7c7e",
+        "size": 1398993
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0076.png",
+        "sha256": "0e7a0941a6a4c68f17aa92b1f7e40fb7bc1d0c3cfa437ac66007a7b646f6f7de",
+        "size": 1400379
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0077.png",
+        "sha256": "b92400fe2a872219d5e124ee22a9446f77f7b1da63dfce3a760661762eaa2394",
+        "size": 1400560
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0078.png",
+        "sha256": "467037b64ac65d4e4ced2d9fd546ec52516040154646138691ad3c5dc284e738",
+        "size": 1400352
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0079.png",
+        "sha256": "195e9bc9e130e527ec465534476a7112a975466fa03d5e8a9403222831b9b21d",
+        "size": 1406513
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0080.png",
+        "sha256": "6fd9899d8df58b5e79b345282308456cb78fc2e485aaac552f9d0ffd51d31b50",
+        "size": 1404798
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0081.png",
+        "sha256": "df5e843fae35d1fe1a34c3b05775dd633fee371f252dc4e75db222ddfc8c0f62",
+        "size": 1405898
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0082.png",
+        "sha256": "747d6d32470b6130643b2ff9ade1fe03dad0ce60144b4245a5020c500a208703",
+        "size": 1405030
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0083.png",
+        "sha256": "3fbb28b03e6410139e4b21d6f277ff0b3f6b646fa2bb40a6301dc9cfbbdf45cb",
+        "size": 1411797
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0084.png",
+        "sha256": "ca2b9460a4bafaf050b37fc579d5270d35c55c2a383368de86750688c8870b23",
+        "size": 1406902
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0085.png",
+        "sha256": "cb6ba24ad6a55a1a750a10f6f78ce6e9ef8c70093a08d2b680314066ad77cd2f",
+        "size": 1406312
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0086.png",
+        "sha256": "a4b6aea28fa36b3d8384474dd8f96a40e38a7fd21ad0211c76e8427c6bb0d4f7",
+        "size": 1402161
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0087.png",
+        "sha256": "731680170a7956254137d95e8d4f098113c9636f9deaab93665530e3170d3421",
+        "size": 1404630
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0088.png",
+        "sha256": "a7a10421c1e86e7e04a85914e54d2373850aace8161428bc4205c26f7bdbbc81",
+        "size": 1402799
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0089.png",
+        "sha256": "f07aaa279dca073a687b79179be9221a921292bddbf30e44ec4cfc1485daf0fd",
+        "size": 1403860
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0090.png",
+        "sha256": "67671621a64ed0b2483066e8aee3785f3ccd1ca095be940dbb42d85b2a19d079",
+        "size": 1410124
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0091.png",
+        "sha256": "03656e26e47aef373a53a3be205929af33207b2b0e2171de90351a4ed5b75ff0",
+        "size": 1407000
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0092.png",
+        "sha256": "7787a87df2500a6b0d6b230bec397ccbe77de5f178009ca229fcf2e0eaa5762e",
+        "size": 1409552
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0093.png",
+        "sha256": "162dda92ac95e087eaced1d88b09b6ebbf79745016f0655eaa8c3eafb7675018",
+        "size": 1407300
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0094.png",
+        "sha256": "1f2a9048c1e5fb257bb198694fd4e0957b17512533888c65b8c000b08142fe66",
+        "size": 1415429
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0095.png",
+        "sha256": "d9b3e0e3d614c9a5c9dd737ef6aab4fcd015aedc410ca50f7ee3397fbcdbaad6",
+        "size": 1409164
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0096.png",
+        "sha256": "239b0e39fe56574d080002e2c2feb2c87461e3af62592f51ac23815a63ce27ed",
+        "size": 1409356
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0097.png",
+        "sha256": "b3c5148d270acc4f69ca4792197532ab7185f52c68a7ea9edda09aa2e0cc9b39",
+        "size": 1405201
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0098.png",
+        "sha256": "2d06f28e7418a1d1d3d625710b333e4f728041aa698bf5ed7fc395074531b729",
+        "size": 1407610
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0099.png",
+        "sha256": "ddb275c5653cb3e1ba8e3da57b36ca0e323c4288eef33bdcfe28e5aac85de201",
+        "size": 1404890
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0100.png",
+        "sha256": "4bb365ffe90b9ac832cfaa67def8c234615aa034eed772c7764077ba6145bd87",
+        "size": 1406657
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0101.png",
+        "sha256": "0d5a6880fdafbd2a0cfc3baf3ed058dd331cfe43de92e7b190b3ced6e33294f9",
+        "size": 1412554
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0102.png",
+        "sha256": "7660808de1b61481505d99eccada1d871ca85068acc8bc572d14d7e0330af766",
+        "size": 1408734
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0103.png",
+        "sha256": "4b50035e60dcfc6d95e057df7f66f2c386c8760dac522b5caffc052a8fd740b7",
+        "size": 1411574
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0104.png",
+        "sha256": "50ec4983d39c65210b3bb4e5254d552afd43b00a0e7fdea657ecdcf7ba52e611",
+        "size": 1408874
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0105.png",
+        "sha256": "4a67e7540885c0e6d2ba6b559839b5a746730f224a85466a47429c1a5867960a",
+        "size": 1417721
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0106.png",
+        "sha256": "3c05faa3ecd03eba27a2eabaaf9fde841f7df5ffa7111cec225242779751065a",
+        "size": 1411620
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0107.png",
+        "sha256": "473af9c80824e08e88f90f0243c4c5dbc305e2471d94fb94576c9f38255a48b0",
+        "size": 1413665
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0108.png",
+        "sha256": "e45786c87d717aef58cbe6c0494f56162bf1db711ef0abe83605c95bd213da9e",
+        "size": 1407159
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0109.png",
+        "sha256": "ed1f898da3adc1cf078c30b42b988219733a131dc39d267b17ec0cbc7e72a1b0",
+        "size": 1410057
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0110.png",
+        "sha256": "55232c03c1f7c0ad974c2b78a0b2b31a3ad7035e7e0eeffb875ea643cf4ee32f",
+        "size": 1405912
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0111.png",
+        "sha256": "eb9656e5cd0db23274bdcc07e733282c06cb10b744c1b8cfcea94e24a3621a50",
+        "size": 1409187
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0112.png",
+        "sha256": "4e7645d9b6a8f022606f7ad68a368daf4a6e048d5f944769dac3a793918f4986",
+        "size": 1414185
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0113.png",
+        "sha256": "1e5d4cea75fecf1eb6bb77297a838779a4cd4b76012fdf922164a51c4164dd89",
+        "size": 1411317
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0114.png",
+        "sha256": "1925e2f740c1982b5409fd0f8639cc8fe0ff74e2a4c8923949aa80b7fdf1fcf0",
+        "size": 1412308
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0115.png",
+        "sha256": "21f6f069b667ecf5d69fc03e0532cf0139ce2c3915ab7c30d3c0c7d9c87e571b",
+        "size": 1411111
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0116.png",
+        "sha256": "778e5ded383e34a6821802f1e730e11b9008ff22b8be7205c83248340511bdbe",
+        "size": 1419684
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0117.png",
+        "sha256": "8dc3037f4e4eb49b26285dc1871a0a1dcefddea84044e0fbb9c46391c0fdc2e7",
+        "size": 1412322
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0118.png",
+        "sha256": "18eb07641a89d720b0b57591dacedbde52c26fe68bd1737f263e5f2671925ba8",
+        "size": 1414068
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0119.png",
+        "sha256": "dd3002e5af158e08db0ff97076f51842e4a5e5d0056520e88c4d0d57e3ecc491",
+        "size": 1408877
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0120.png",
+        "sha256": "1900b93b9763c90dad12b3b8490b9559d386bb95593cabd4fa474f86b87f11e3",
+        "size": 1414041
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0121.png",
+        "sha256": "1bfea27c1fce49af5abd553bb71c7b4fd0db32030366fa3b8eb266a485055d62",
+        "size": 1409619
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0122.png",
+        "sha256": "19af37352d71eb0635f01b444b735fc72aa4d69e2a87703e147d2fbf74f7e65e",
+        "size": 1413422
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0123.png",
+        "sha256": "866c136c1f34c32727686b0f8a147bef3d6e3fb0f0934dc440db3292a658722a",
+        "size": 1418522
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0124.png",
+        "sha256": "98fae6fc43d826ea91e564f3d28a72ab02b448880548be54813a3df5cc761088",
+        "size": 1415432
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0125.png",
+        "sha256": "3139263a4299e3b7b358c53d7727f918332a6db341ca3dea3a0fc5b740dc1be5",
+        "size": 1418789
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0126.png",
+        "sha256": "ab4aeb4083176be1ac8ef041ff790936d8852e212d33a46aebb8a65986b8d0e6",
+        "size": 1415671
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0127.png",
+        "sha256": "e9e5e10c8055ca81ff6ba4a774886b8e61e87d324539212ec902679a01f2579c",
+        "size": 1425533
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0128.png",
+        "sha256": "9bd5f93ff3b40aa7489ad01d8f34d598eee573c9d75b06b7e0b6ffc3937a089f",
+        "size": 1417372
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0129.png",
+        "sha256": "dc11817d67ca0a294b3089b2138d53204b160ccffef2bb2360bc3acadbd244e4",
+        "size": 1420464
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0130.png",
+        "sha256": "c7ce21753b53894653cc34895557eebb7624d545b101a93714a7ad1e4d505f36",
+        "size": 1414018
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0131.png",
+        "sha256": "c130e20d318c2deee5023d94e0362360c5d745f0f14f387b16b7e606f606d8db",
+        "size": 1417354
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0132.png",
+        "sha256": "508807fa30be7e96e064fde0925d5f2a0802bcc80bd21c5cc0b18cb8b78a0aba",
+        "size": 1412666
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0133.png",
+        "sha256": "edc23bd330b05063a0d80e2f2ffda2c4f88a77d8d7ef64ae79c3d87c74ec8410",
+        "size": 1417128
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0134.png",
+        "sha256": "0a7cb11303e9e0597ce792684a8a93d54f1ac4f9b75753a1777df37c0b57dd68",
+        "size": 1420857
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0135.png",
+        "sha256": "fa82ca8de3c0ef99c36497177c1ad9847852e23c93c2894dbb4824dd0df59d90",
+        "size": 1417805
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0136.png",
+        "sha256": "5e5cc60def5ad892873864c2e38bccd96057aa9b2ddfe1ec61c74dd99d6951ac",
+        "size": 1419149
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0137.png",
+        "sha256": "57c0e79bb9f882c6826520f817f8b7146f576bd1e3c8e0f8bcf7a32f38352515",
+        "size": 1417456
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0138.png",
+        "sha256": "785a15eac965c25d5585f0540c92279045981a071723587f125e1313094c5919",
+        "size": 1426426
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0139.png",
+        "sha256": "f35008307b28e8f1b39aae8991cf9ccde12ae26b111201b4a3af65113aac7401",
+        "size": 1418607
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0140.png",
+        "sha256": "082f73bafbc7f0e118d440af32c55665c9d0f455eef6821ef0074013fc4cea8e",
+        "size": 1422847
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0141.png",
+        "sha256": "6d824356cc604ca2c00a0ba105581b92f225e8189237770f7f54fef8816ec364",
+        "size": 1416230
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0142.png",
+        "sha256": "a99e3bf9fea04894aa7318f648eadb860b017a7a3c056015ed91d30fd725ec40",
+        "size": 1419431
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0143.png",
+        "sha256": "0484b41e2321c72848d4bbac71ac62b1b45d0f3676a4aee4a960e1e2c1f7ff31",
+        "size": 1414631
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0144.png",
+        "sha256": "56608f40f227af7e0dc653126b94e88a2aa063c4ab1debdf2300dd95a438cbd1",
+        "size": 1419425
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0145.png",
+        "sha256": "bdd502adb12b33e7d9a013d49895b19b887fdf3891530e8c3d3774577622399d",
+        "size": 1424032
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0146.png",
+        "sha256": "9ce01a9a41938359276fc54b18b159985df1affb7187ae36764cf10f29800118",
+        "size": 1421372
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0147.png",
+        "sha256": "d5b065e95195447d03f1efb801ecea4d074961497b5f28e7969eb0fb3b5315f2",
+        "size": 1422666
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0148.png",
+        "sha256": "724cd38ee85ae1e9c95a6fb072a482f40b27de3dae1a6c7e53112cc9d81979be",
+        "size": 1420196
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0149.png",
+        "sha256": "4481b994552ea378678368171fd84d3e3c5741b0a68737a63ce48d04d66c6b20",
+        "size": 1429915
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0150.png",
+        "sha256": "37fc20aed5490e3620fbb76e5bbbcd8e307c89bd9c15a630703253c724e4a411",
+        "size": 1422644
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0151.png",
+        "sha256": "665c2479941b5dc334d18f7d17aad5d3f4b674299608ca12dd69465ee121c58e",
+        "size": 1425142
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0152.png",
+        "sha256": "e37c928fc26818bdbfae6ec1d9323e8ed7fedd13ace78fdb93a6a0889b8ffd72",
+        "size": 1418135
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0153.png",
+        "sha256": "de4d4aac1855a8d70ae22ba90845cc84b7caba0b758ce290dce75ec4f538360a",
+        "size": 1421947
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0154.png",
+        "sha256": "d80672415f0ad05d628b556fb7e1d980336f25595aabe7f31e9dc47e6ddeae40",
+        "size": 1416600
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0155.png",
+        "sha256": "fbac62029ecb8dc553f8738b72ea2834536f1c224cac07511b2ef2fc2168a6a9",
+        "size": 1422608
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0156.png",
+        "sha256": "b1d3aedbbf636a2690706dd765b5aa89703509429ed69bc4cb316ced94e72d37",
+        "size": 1425786
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0157.png",
+        "sha256": "1536667992d49edc5973f3e47a3febde7409efeae140f2107b549bc609620211",
+        "size": 1422567
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0158.png",
+        "sha256": "29775ce3975394680acc275f8d55183fdc01321d459bb9debff9074c4bff188c",
+        "size": 1425111
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0159.png",
+        "sha256": "4792a0419a65409ba4c988cba7936cc03288662e94ba6aef9a35bc3924abfe7d",
+        "size": 1422787
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0160.png",
+        "sha256": "509979f0a55e27d0ceffd950647c21f1909be22d4119cb70909703c53bcbf436",
+        "size": 1431449
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0161.png",
+        "sha256": "7ed4850fc20100ad3eeafd4a410399f023fb5d16f5df1e87aa76e155a1075fdf",
+        "size": 1425440
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0162.png",
+        "sha256": "011f82664a8c9a1705d8de9d2b8632a3fd4e406f6957c003023441aa3ef4ea3f",
+        "size": 1427196
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0163.png",
+        "sha256": "ae4b876fdb430de4ee3851913713f3c369767eac88e326c2cdbfa3c836527f95",
+        "size": 1421434
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0164.png",
+        "sha256": "01dc4705635ac71db795797fc9b968825c7156ae934656ac22e31a64df5c5f21",
+        "size": 1423839
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0165.png",
+        "sha256": "c2e9856b4ed65cfc1ce4c3070088bbfc1d19df36a9b674f845671b65fce2856d",
+        "size": 1419063
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0166.png",
+        "sha256": "2de8e0e9c8fc84e0619633c3a2f0e76af0f459cb7949488ea169e1acedf30288",
+        "size": 1423416
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0167.png",
+        "sha256": "4dfd29e50e1b3dafd4597c00065664c41ad34b9730c99b9639e5e3c1d417fcf7",
+        "size": 1426954
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0168.png",
+        "sha256": "648d0119b9dc91afd574b101533d086d9cf298d35bf33f924c2f77a052f85753",
+        "size": 1424786
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0169.png",
+        "sha256": "3c8f38919a1e50c2e206f7afb8e8bac0380259192718720bd69f0b7e4c503964",
+        "size": 1425881
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0170.png",
+        "sha256": "8cc80b309305a1d220462c1defb188baee15f91986492eb73b9b7773e779bdfe",
+        "size": 1424981
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0171.png",
+        "sha256": "203f20bd4d3d552019c57c06b0d9c159cf1e3a9658de4f11f3e06a44283d3e5d",
+        "size": 1431966
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0172.png",
+        "sha256": "f9c2085a481718bca362d970fb94d2abb2c39a38333fb5d2bea995c79d3fc400",
+        "size": 1425413
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0173.png",
+        "sha256": "977a04c8b77a4d9d41cb8095f1a83d9bb8e9ca3442c5c1f228afdb1d8b401d71",
+        "size": 1428094
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0174.png",
+        "sha256": "b9bca9d7afda1d8d7c90f8e504b5464a039fdd81e4616476b62e66866b082323",
+        "size": 1421376
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0175.png",
+        "sha256": "0f9139149772c0af739c2dca0804e593071b2de31a8f66eaceb950db48cc9903",
+        "size": 1425188
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0176.png",
+        "sha256": "bc1cead0d161e6260018fc6bd06801185e50eaf45737f71d806fa2ab0d228a39",
+        "size": 1419465
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0177.png",
+        "sha256": "a9d55d932f77b560a42d8b1409e4e8e895bfd2d6ac530d567276f07eece597f3",
+        "size": 1425566
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0178.png",
+        "sha256": "960bdc22498df1183eee186a544d20d2005b4fc298502fff3d5b0ce1e7fe781f",
+        "size": 1428299
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0179.png",
+        "sha256": "e164ef6d5e91eade58cf40fc46eb1a2ec34244a8e7d8a17db6ad71c83886bb60",
+        "size": 1426676
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0180.png",
+        "sha256": "f61f06c762cd93066df0e029f458422064c101ae6f4e9631b8264e899fc287ef",
+        "size": 1426882
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0181.png",
+        "sha256": "5db5d43954859e2277363ca7a2a58b04c72789a5243ecd4954420b52e8ee1b95",
+        "size": 1425166
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0182.png",
+        "sha256": "e642bef39e86143bd6dfa78ec1b2c1bf81558fb8aee38444ffa467e1679d03c9",
+        "size": 1432487
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0183.png",
+        "sha256": "9c7e30b3734dc561b1889325f011f735883eddf23725ed875c4c31fd9b143490",
+        "size": 1426780
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0184.png",
+        "sha256": "aff40ad1ffee3ca6d74395808cc230e3b0f73937e240abf5210ca4c13c741055",
+        "size": 1429247
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0185.png",
+        "sha256": "99ebea1363397fccacfb91cb6d23b1d9edf0283d0261796a5227c9e3f50d601e",
+        "size": 1423013
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0186.png",
+        "sha256": "3d76059a7175cb56a690a30e7d15784ea8f18f75f7b3d9a307707e91929c195c",
+        "size": 1426579
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0187.png",
+        "sha256": "233fd2b3b121fcf80d29a58fbf75073aa9c233a942b6eee999c94e577489e8ba",
+        "size": 1421271
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0188.png",
+        "sha256": "9f819f07805f5fd0818786b7fcf36770655bf0a96f8061e71d2cbe0bb856a18a",
+        "size": 1426167
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0189.png",
+        "sha256": "06bb90a27a8e7b26923e8fe47905ea25e0a2ebeef8079d751eae9a6cffbddcc3",
+        "size": 1429091
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0190.png",
+        "sha256": "e90068d899471dd933cb91e5207815c7e7f95214a3e2dcd85b3fdfc0f549b96b",
+        "size": 1426259
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0191.png",
+        "sha256": "f737d66bae2f16ad08c2d5da17104752216f169667056f4c1cb142e4eba8ef8c",
+        "size": 1427252
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0192.png",
+        "sha256": "57c28a76a14b743700fc2fcdc37d312bdb2c40c36b9f02ea3a513ebdfac256e6",
+        "size": 1426219
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0193.png",
+        "sha256": "483c7a7be1a0049524c1c203f385e5b26699a99a12e6722299b1f80ece662e90",
+        "size": 1435209
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0194.png",
+        "sha256": "ab06e5e8ab7eb3cacd397d47ba3a253c418341e9d70e0c2332e9c12981e7d1af",
+        "size": 1428478
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0195.png",
+        "sha256": "00f994b6e81e7c8ff75fba56142da495d45bf08cac8d94e5b21b0aad3f90f94a",
+        "size": 1430486
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0196.png",
+        "sha256": "0f1c11847619e843b6f68ddf02923138be2094dfcb9d188806221a021a84644e",
+        "size": 1424916
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0197.png",
+        "sha256": "fd14f97d088c49d39147700610984e526d9ce89018757c859195bbe48ae4690a",
+        "size": 1427007
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0198.png",
+        "sha256": "94917f4e8003a059615fc4bee0529fc6b12ac88fcca0d288d875033165f6d2a7",
+        "size": 1422763
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0199.png",
+        "sha256": "81ff24fd6640edc2be3188e4d2c55139e19a448a81ddf9ec669c739973225aaa",
+        "size": 1425988
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0200.png",
+        "sha256": "4dee5da8ad9c4626835d1b497afebe140bde08032b21efb7c6aedc071ed14388",
+        "size": 1429813
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0201.png",
+        "sha256": "3b4972ed2814038661b250e0846cd01df99337a7640bc84dcb02640a33b11313",
+        "size": 1427155
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0202.png",
+        "sha256": "f710b37ec034e640824c18799871be41ebac4b4dfb3532cc9104d6777701359f",
+        "size": 1428532
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0203.png",
+        "sha256": "4bb2b5574bccd2854e12be43003c8fefdf1b3f27e082f198e75c3fe0eb5f4f05",
+        "size": 1427348
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0204.png",
+        "sha256": "630fa59296fc3a218b2ac713d83c9f2d71505af776fcfd91b42cf7bb5d564b00",
+        "size": 1434674
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0205.png",
+        "sha256": "1926b28616cd02a956d114dbca87cd72397e9dec8e3ed85a14ae0d8ec9b6dc78",
+        "size": 1428717
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0206.png",
+        "sha256": "8940eb25923164bfb3a0782fd375a3bc9f4a4c02906f96089e3ab4b9ca0db281",
+        "size": 1430419
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0207.png",
+        "sha256": "693ff992b29ca12275fa5ef58d27677ec22a3469c1fc4456c39b82d027f5218e",
+        "size": 1424042
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0208.png",
+        "sha256": "f5293cd244ceb925a4a27a20cafbe3a657de0b744db060980b4d74648aeca925",
+        "size": 1427450
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0209.png",
+        "sha256": "c341ccfeb26bff6a922dfa4db7e4eb32a519fc11eaf850a2156cfad0836ccdac",
+        "size": 1423267
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0210.png",
+        "sha256": "99341f6dcbf00a8ffac0f11a248ebb06c8cda50c6540a6f0aa508f8b095184c2",
+        "size": 1426318
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0211.png",
+        "sha256": "9add238d7473fa6a390db7785eaef18492ca5779f21d7b027e4a6e6111e29e67",
+        "size": 1429462
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0212.png",
+        "sha256": "72759565a75290cf52db76311de336ee48f9a1214ca887c7109a88a27a3e9364",
+        "size": 1427891
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0213.png",
+        "sha256": "8caa17644fe046788b446642c23369e92feeb9c78a63d6543594a1317039123d",
+        "size": 1428544
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0214.png",
+        "sha256": "f2544c4d07e57cef1a02d43657fa743e6e09249d9a9b0c15f8ff83cdd4247a2e",
+        "size": 1427531
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0215.png",
+        "sha256": "f6d91067af4fb3829500acb45d4d91558225d071e1a2df6b3e196bb4434c26a5",
+        "size": 1435125
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0216.png",
+        "sha256": "458e7589c22c132974a8ae2cd4310a064e87986dde041d0727853c1db57a4fdc",
+        "size": 1429496
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0217.png",
+        "sha256": "da991c804c6bdecd0ccbd665ce586317f695cbfe4196eb60cfe38b0b0a62469b",
+        "size": 1429866
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0218.png",
+        "sha256": "0cadebe8a37ea5d4e1b02ab6be72e0f15b9628342dc32e3576cdfe0f63f44b6c",
+        "size": 1424887
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0219.png",
+        "sha256": "1debc07437cdd0c689f65291bd1b1dd61c8d41df51d6cb32c4f56e7a1d8e83b7",
+        "size": 1426876
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0220.png",
+        "sha256": "2f3861a57cd9cfee2b9bb57926c157f69166cbea0df26952097803d9da227d73",
+        "size": 1423830
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0221.png",
+        "sha256": "86f44ea618c819467decb10d07d9dff546a37edb9f1516da713a01eb503f19e6",
+        "size": 1425255
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0222.png",
+        "sha256": "7b314ded197e54b234571b9254d747269fbda53a230ac762d07f5dca7297eb24",
+        "size": 1429482
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0223.png",
+        "sha256": "8a543dcb4c518fe39acf966cca60cfa797cd6fb547a54aa2f6e7c643e4bdfd9c",
+        "size": 1428324
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0224.png",
+        "sha256": "571a84a9e725f3ec3bd43c75904ff953a7c26bf99d662900f9d94e3dd2f796a1",
+        "size": 1427386
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0225.png",
+        "sha256": "5c9994ffa895aef42b7f270c230f873a1a429105ad166c430048a431d40c15ba",
+        "size": 1428206
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0226.png",
+        "sha256": "34716bc48358bf5706e82ce23abd4dea0633004f0f9b5a3697b162b3a8344691",
+        "size": 1433679
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0227.png",
+        "sha256": "cfb31be3695ddbb3713990d9c5dd028f39564797e5b3979e9babc1e9503a5b96",
+        "size": 1430589
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0228.png",
+        "sha256": "a9c2e09eaacf6845fd90825b1076b77764cd6807d6c699f49cb566574dcbda4f",
+        "size": 1428881
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0229.png",
+        "sha256": "dab01468348de0d75cdc3778a7c5a0a83ebaaf85733f4492d5bb3a3f14e07db3",
+        "size": 1424296
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0230.png",
+        "sha256": "f730231c069c3c745009b1559eaae03da31fe92c3584463f0013655fdf958c0e",
+        "size": 1426346
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0231.png",
+        "sha256": "4078da52e312355785258a6c15ced8721500ad99f23ef0469de1f680b2562966",
+        "size": 1424401
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0232.png",
+        "sha256": "79a9da39d71108fc59d77b7a39a8af4f64ee0fe12017f1da4509faea0ec95a3c",
+        "size": 1425236
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0233.png",
+        "sha256": "23cbd193c9c2c408bb7df58eab23204667ccd0d1b8cd84409d23b01e4f622f76",
+        "size": 1428595
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0234.png",
+        "sha256": "c56c3065f58d84e78d2a188d4d6cb369458c7c6d7b9f50a4e672f882c46d3fd0",
+        "size": 1428029
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0235.png",
+        "sha256": "36d88c451793aa330b2cc7b7e00d0e3762a029360386ea39dca5183b37a26b51",
+        "size": 1426882
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0236.png",
+        "sha256": "edead8d05ca80bb82c835544b741397c3dd34b694d2b9a04260f9c171f6af89f",
+        "size": 1425904
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0237.png",
+        "sha256": "348a07e3a79c44e9f99cc24cfff170461a3dfa39da27afdfcbb99557961901d5",
+        "size": 1431492
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0238.png",
+        "sha256": "6c59dee86bb2daadc1eeb28d920c2f59dd41041e271ec653183225453762c053",
+        "size": 1429752
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0239.png",
+        "sha256": "1c60c466469c2dfdc30f2732c126f002a60fe383d80b0010aa2ed6597276a84a",
+        "size": 1425425
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0240.png",
+        "sha256": "f8fced36b8e772381ba35a09b4f4b248b3ff1524d59b1c117ef82fedbd0bfbe5",
+        "size": 1421504
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0241.png",
+        "sha256": "75e6b43e6855b381e4f8db6f3e506730b715dd133551e5a57ef206ca29c2bd77",
+        "size": 1423775
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0242.png",
+        "sha256": "26820bac2a45880c077cdfd2d3df7d4cea755ea9781c595e363a41d774afcfd4",
+        "size": 1423912
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0243.png",
+        "sha256": "1d695ffd3c478bd49432b9838681b92196467303818e1d61a280456cd9dbd2a4",
+        "size": 1423019
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0244.png",
+        "sha256": "6542fbb1974f4ef64ca468cd27adfa9dcc284be1051869adacc1c4f2fe1c454a",
+        "size": 1427185
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0245.png",
+        "sha256": "86dea2185243d19bc554e263b156d27c6e21ae703aab7149f9e08dc4e4f123d0",
+        "size": 1426846
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0246.png",
+        "sha256": "d90e2129950014a757a079da9958718fd857a7dfcb2e885584d4b3af24c16cd4",
+        "size": 1425527
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0247.png",
+        "sha256": "81f6e26d949bbed6ca1156f4acb1ee98818d5ebd83243ea2ec01c51413db16fc",
+        "size": 1425678
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0248.png",
+        "sha256": "0673480d619e3e95b028db0b1532bf3055e5b63255929c19e1b344130310bf7b",
+        "size": 1429235
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0249.png",
+        "sha256": "68d5f0ef68dbe37304d87f1f8bddd9a611b2d903b5f5625ff803660a9822be8d",
+        "size": 1428434
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0250.png",
+        "sha256": "68331c1a3d793c686a5accea5087aa84fbe4b6371247a519df2a04e46f39fd6c",
+        "size": 1425224
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0251.png",
+        "sha256": "847240e40dc790b8741c45a9a5ee1a2e0e6dafa60519c5b303a565f01b01a922",
+        "size": 1419088
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0252.png",
+        "sha256": "d7390c5336dd552cd874fc99931035fc4243fa1c6e444e89b637f79802d99c4a",
+        "size": 1421224
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0253.png",
+        "sha256": "7eef6b12448f005a3da795a3ce5f63c8f6f5a99393d826917b5e9b4cb410c694",
+        "size": 1422611
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0254.png",
+        "sha256": "617ed7a570002b1f093fac16c37f1c5f0715dacbb48ed861f288088f00ab9043",
+        "size": 1422404
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0255.png",
+        "sha256": "69acc5c3616e0902f67ad970c87145186405ab63620f83e25e9d2675402f8e9f",
+        "size": 1426024
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0256.png",
+        "sha256": "f35534b80dab55f90aebe8851d4189d3cdfabbffdcf99ef1e1c91eeae97036de",
+        "size": 1425956
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0257.png",
+        "sha256": "b95694fcad28334057a4ddb8f9ebd5fcb0394e4759ffdbd8f7a2745f3ec6fb12",
+        "size": 1423367
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0258.png",
+        "sha256": "a6f03d2f8dd98187466b1fd9ab3f1baf13626054790d965eb42b8d2700e7016d",
+        "size": 1423847
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0259.png",
+        "sha256": "a55ea0ea0497a7d06d91e1d7d827b1b1768aa2a5c98f84a9eb55d6c6f5dc58ab",
+        "size": 1427090
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0260.png",
+        "sha256": "1db84417495ba5466f4d79778790f33da7019627e0fdc9728ce4dae2f3284db9",
+        "size": 1427602
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0261.png",
+        "sha256": "962c085d5c3d54c65f50023342f16939760f3dbe6210cfbaec4981ea6e630a2b",
+        "size": 1424825
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0262.png",
+        "sha256": "f67cb390cc89c4e046b27b87166523fb9617b72c94a9a089ac79853ab6fbf482",
+        "size": 1417498
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0263.png",
+        "sha256": "a5330a8fa083b8d3f5da04dba4d735680f19fa5a0e4b3b1496cc149b3982a22a",
+        "size": 1418226
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0264.png",
+        "sha256": "64ce9f2e650a42ae75167d645149a984199e23cc61652a52219b3b713e8b0376",
+        "size": 1422555
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0265.png",
+        "sha256": "41cd347c1bb431b3ce59fcb1c7e687e9ce1b766ba25dfc3feb3104b151785ec2",
+        "size": 1422772
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0266.png",
+        "sha256": "f0ec1d824e9aa5fd69a2abcbe0795cef865aced1fca4da3ec6b371fa340450c6",
+        "size": 1426145
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0267.png",
+        "sha256": "7eb1cc8e1437a2f61d27f942fa7683932b9b4248bc0ed4501924001f352d2177",
+        "size": 1425721
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0268.png",
+        "sha256": "c79ad4fbb988538f1a6cabcce2fe388cbb3123026498053cdf49d2951f1d78f5",
+        "size": 1424279
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0269.png",
+        "sha256": "0db5338c2c3bd7b6f01df5bb2301ce85532689125e05a31a99024c65e643ecbd",
+        "size": 1422758
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0270.png",
+        "sha256": "04882179e3e832b54866dd17be4e6aa613b6596e598a2b9d64837b6e793b7252",
+        "size": 1427234
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0271.png",
+        "sha256": "4c24c6770d0e0139db68d9626561a063c1bf4a706acbaaf1932f6242defb9ca7",
+        "size": 1429834
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0272.png",
+        "sha256": "dd1b1b015d8ccef4a6cae144be2843160364cd9be636d663a609dea732eb19e5",
+        "size": 1428546
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0273.png",
+        "sha256": "22d1765b05703e4d3251e35e7840af79dedc26e08e09964b26b1b09fd82d8afd",
+        "size": 1419240
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0274.png",
+        "sha256": "a495d844757644927c132922c8690302bddbc280069a26f2d1525d6ecd5c6152",
+        "size": 1419103
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0275.png",
+        "sha256": "498c3f913e140b5ee8c85fa3c657063bbbdd369266d4597c933af3f7db59082d",
+        "size": 1423494
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0276.png",
+        "sha256": "0a075a210dff1be7f4041b8b288d32c1b3bf81ffb11fbab58502d615080ed1f5",
+        "size": 1425308
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0277.png",
+        "sha256": "03c8766d79aff8c5f8d81ec0fe99712112d3250f55575ccc9fdecefb462b5410",
+        "size": 1430918
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0278.png",
+        "sha256": "55df655284dbe9bb2fb696cce65944a14f679889a712bd8b9df418e593c5633c",
+        "size": 1430971
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0279.png",
+        "sha256": "7b30aad8ece7232c8d716ec1810e460422f0f01dafa236ef3e62ba6d9e9cceff",
+        "size": 1428962
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0280.png",
+        "sha256": "9b07ce611080e40a82769dfb0af0697e84bc85291a7d588acf02acdff4369ec9",
+        "size": 1427437
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0281.png",
+        "sha256": "68a890038efcbeaed89c4d51c485a7d840fce14c27f5c676dc8ed80bd263107d",
+        "size": 1432720
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0282.png",
+        "sha256": "ef45d1cf87d0f7da0bea337a544af53fb5213e8ff5213163aecdac03da2ff9b4",
+        "size": 1435925
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0283.png",
+        "sha256": "95d75daed5eaf92c73d0e28f628509512f51f6bdf74d1f7aa069957723896184",
+        "size": 1438051
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0284.png",
+        "sha256": "8d279217802db0c36ec1d9168f3e95dcf8380f6b0dc436f56ac19b3e2484712d",
+        "size": 1428537
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0285.png",
+        "sha256": "016a4f4582c72d0198de0d3636358a808bf19773c9609261281f76fa75adf90e",
+        "size": 1425862
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0286.png",
+        "sha256": "cf9310c6673130f4eeccf76a816e8f3d66525593164db28df0601f107e1b4bfe",
+        "size": 1429491
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0287.png",
+        "sha256": "e9ab3823c5e204108b6b0a2cd72105f91542d020c089d0b805e90f0e6a91fa8d",
+        "size": 1433052
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0288.png",
+        "sha256": "6c0aa76faf8ba302140dbc2ca46dd64e1698001fab6b9d15a4b2dcd07784bf10",
+        "size": 1439444
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0289.png",
+        "sha256": "8a22c08eb18170e21ee0a332ad93945cf2d405700070630cc68de5106c8317c6",
+        "size": 1440921
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0290.png",
+        "sha256": "3e77f19c0578838e2919c3e04bbefba58d31b2e4ac73fdefb94573aa4bd6463f",
+        "size": 1438332
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0291.png",
+        "sha256": "e9487ce66da19e2b9513d5f8aa7743064debdf22fa5ede5541336ceea51bac7b",
+        "size": 1437660
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0292.png",
+        "sha256": "dfef84689db7bc31c10eae41952d0cb369d62bc494659f95c70a25782bc21ae2",
+        "size": 1442350
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0293.png",
+        "sha256": "b756af9de41835d55dacb035429a67144d6799e3c87526db193212b4d11be75e",
+        "size": 1446375
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0294.png",
+        "sha256": "08f95477b3b2fd4c3068ef5d398aca3da092b765dee76a475f38dd5ba65a3c16",
+        "size": 1448297
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0295.png",
+        "sha256": "8346f3f3b1f977a83b43d90a79b986d97c79693494bfce6f81e4c97fe9eecb82",
+        "size": 1439801
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0296.png",
+        "sha256": "992b6c64832eb0fd5b4da788e414a5b411d2531f6d5c39d7d72e329ddd956ed5",
+        "size": 1437053
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0297.png",
+        "sha256": "7248345913d4c6f839267365587c5326bc167f919fa5ae4cdd2ddd38c425415d",
+        "size": 1441088
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0298.png",
+        "sha256": "cd41e41ff575748d4d9642c9ddb5c69a8574d41638c9586ad629f0625269b8bd",
+        "size": 1443670
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Captures/Lumen/clip_overview/0299.png",
+        "sha256": "1df3f6a703ce2488bcbafb0aca2e76c1334715d08928d07e6d9054a8080a63c1",
+        "size": 1448592
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/RESULT.md",
+        "sha256": "08799aacaecd81baf31cf06d156d5a388682304cb5f8c71beddcc71405c90ac4",
+        "size": 14688
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/analyse_frames.py",
+        "sha256": "665ecab182e89305a2aad799ec36d33905981889078b6168102b08df9878cca9",
+        "size": 1736
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/build_perf_level.py",
+        "sha256": "403c6c00513e1649368d0b27df35300708d2b6a667e12040d8dcf24ff9758f0e",
+        "size": 1225
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/build_scene.py",
+        "sha256": "2ff3aaee72f4ce3d6744a38aa8c12444f0dd3dd64ba49b7c777f2cb170f78796",
+        "size": 23512
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/generated/T_UR_AmbientUniform.hdr",
+        "sha256": "0e10061dcd234b22a0c662a76b48497f109afa12754acc5e28f4dbb80e3d068b",
+        "size": 8239
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/import_kit.py",
+        "sha256": "78df1b80cee87ae63ca1951466af92a2979e150bb54916b32badc93b08a446d9",
+        "size": 6272
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/look_settings.json",
+        "sha256": "b83ba9ef059cbf5ead696e0489a43e14fad790bc497ebbd49d82ef4439c6a0fc",
+        "size": 1280
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/perf_run.sh",
+        "sha256": "b23d60f5dec1f829f1d4798289e91d69cf00543b28613c991445dc7c240b0a0c",
+        "size": 1043
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/perf_stats.py",
+        "sha256": "16002a6bedc8d0c86fefb6f7bbb157d9a6c4ee97545cd1189305402224571bda",
+        "size": 1896
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/render.sh",
+        "sha256": "52c674b964299bcd4c09a470948511ed16c42dcb022190023852ccc6c5cdaf99",
+        "size": 729
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/run_build.sh",
+        "sha256": "11117ff4e606dc73db5c94dc5de1d1d95d2c2604d7f3a8578be8ad4dd57d0a72",
+        "size": 1326
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/Scripts/ur_common.py",
+        "sha256": "bd499c75fff44d0db059dede813b72d8a90ece89495c96d39eb6a4fc994428f8",
+        "size": 2530
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Config/DefaultEditor.ini",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Config/DefaultEngine.ini",
+        "sha256": "602acb7dc871e389f406980062313699ed47c0ae45f67f5e5d10941f564a3b4c",
+        "size": 1816
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Config/DefaultGame.ini",
+        "sha256": "cc28a2232526bc43c15b42e9a67bcee0590c3372357d544d2ed43620cedf5d01",
+        "size": 433
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Config/DefaultInput.ini",
+        "sha256": "fc9bf4eb5d2727bb6f80f24ffcb846698ddc717dae0dc9455524ebf472eeced0",
+        "size": 9026
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Cinematics/MRQ_Clip_Close_720.uasset",
+        "sha256": "718a372e982dd3c381fc484600f3dd8f13fee343929cae56b5836f383a070688",
+        "size": 5525
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Cinematics/MRQ_Clip_Overview_720.uasset",
+        "sha256": "8f9e937763e19a2f3467e4664d249a0a1c01ef2ddf11b093c601d09762c59b15",
+        "size": 5540
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Cinematics/MRQ_Stills_Close_1080.uasset",
+        "sha256": "c81698b43ea6805b14f9f39e680c289c0513e844a2f095c6d21aa30653e7ae64",
+        "size": 5614
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Cinematics/MRQ_Stills_Overview_1080.uasset",
+        "sha256": "7eed70a7affc98c4c59cef5a77df879531f14a39a649e05c17856523d3a09102",
+        "size": 5629
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Cinematics/SEQ_Close.uasset",
+        "sha256": "5aa2b7a59f2965b09ceaa8dbe4c269f5aa56eb78dbe8be45871d4ef291f11b84",
+        "size": 216334
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Cinematics/SEQ_Overview.uasset",
+        "sha256": "f1d753ebac836bf07b1c2cb1db1d629b3c8c5ae06f82d1dab1b6c2c4d8776cb6",
+        "size": 216349
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_T_RockRaw.uasset",
+        "sha256": "e22647fedd0234b01aab8c514445e810eaadae5f2cd0b3ef7ad38498ba511044",
+        "size": 5457
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Brazier.uasset",
+        "sha256": "c7fa2607c84979a8bc6d0e3f518ed8b6922ac27931baf44e48e01345b41c72e0",
+        "size": 5392
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Char_ContractKeeper.uasset",
+        "sha256": "4255c858fe3495bfa25449408bbba89456e8a98563d92749f0ef9b3449b1e418",
+        "size": 5548
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Door_Contract.uasset",
+        "sha256": "73b878c5fbfcf5cae807133a6f499efe49c2b813c0b7fc37ce3e2308fadeb5f2",
+        "size": 5470
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Floor_Flagstone_A.uasset",
+        "sha256": "b0cac4e2b9b87424fd81c99b99e7436e609665f382702097d3abd8e91d79a49b",
+        "size": 5522
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Floor_Flagstone_B.uasset",
+        "sha256": "b45d9470cc12b8be3ef134327822927cff7f54fe606b2d117d738a953ec7d19b",
+        "size": 5522
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Floor_SeamGlow_Room.uasset",
+        "sha256": "9b7c0c3d9917d1cd69b0053a1f6044613611669a545390e6a01079ebbfb203b0",
+        "size": 5548
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Hatch_Frame.uasset",
+        "sha256": "25fdf6df4494bf89f42b7dc3ce7471500e083032c9d163171374f5fa868a5cb4",
+        "size": 5444
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Lava_Channel.uasset",
+        "sha256": "a25e3aa9e7040ce1f7f47354e5d8c85a0a5ba9c428421a832a5f8b473a3cb097",
+        "size": 5457
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Lava_Surface.uasset",
+        "sha256": "b8aea2b11001272db58445d2c577d86f53d9191c53eb2005c66682d8c48790b2",
+        "size": 5461
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Pillar_Basalt.uasset",
+        "sha256": "497adca74ab6f903f84ec211721b5dbbdc1ac63033700cb367eb64761e14f7e6",
+        "size": 5470
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Pillar_Basalt_Cut.uasset",
+        "sha256": "8de3a8e2c92fea0fcc704a61f1eb663dde15fe2a84c47b607a12bc33795b824b",
+        "size": 5522
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Prop_Scrolls.uasset",
+        "sha256": "a6d7459a69adf10cd97022297a4937dc094096454c1fd2e7dd31e37c593e4d54",
+        "size": 5457
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Stair_Spiral.uasset",
+        "sha256": "e207dbf86962e967dd1625eb362dec5b89d70f7c6d5fd9cfa98b2fd4937d4338",
+        "size": 5457
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Torch_Sconce.uasset",
+        "sha256": "8ea1d73a13c3e8fe402f5dad41e23ac9608bad520b0babc5ad0ada93ca060ea7",
+        "size": 5457
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Wall_Basalt_A.uasset",
+        "sha256": "9198cd564130c3ce6053ce9ccc54e1bf25ed4dd0c829ffaea5ca4558bba54048",
+        "size": 5470
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Wall_Basalt_B.uasset",
+        "sha256": "cb14dc22d456fddcf3b877670b773b7863453273145746d78aed950ef4f1e151",
+        "size": 5470
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Wall_Basalt_Cut.uasset",
+        "sha256": "09d54f145e42c4915543641f91d61a427ea45a660924911299652baa20418bb7",
+        "size": 5496
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Wall_ScriptPanel.uasset",
+        "sha256": "a62855545764291770bdc3703dddca086ccb150746e53f071d61e7f642bd7106",
+        "size": 5509
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MI_UR_Wall_StairArch.uasset",
+        "sha256": "977318fac0b9d5b69b9a7de69ca503e8c61084c72b852c09ac9c8da32e21e7cc",
+        "size": 5483
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/MPC_UR.uasset",
+        "sha256": "fad546e0587a5014f328f341a385ab960bea4f220c53f342d489a4573681c487",
+        "size": 1563
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/M_UR_Kit.uasset",
+        "sha256": "6b4bb011a56a59ecdaa9d148444943fafcb7c541cd48eff3eef328c240f9c544",
+        "size": 9153
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/M_UR_Kit_TwoSided.uasset",
+        "sha256": "e06e6c7800ec198ba0fe98d785ea7aa0c61d22f981e2a574e08b6888765942d1",
+        "size": 9240
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Materials/M_UR_Lava.uasset",
+        "sha256": "abb82ac125b18d3a34b85985911d23b7a43529df593fb16a3bd39c04836abe12",
+        "size": 12096
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_AxisMarker.uasset",
+        "sha256": "637fb6d6653705933913b424de2435b5814bd60466417a6d347b3aa1a99d1d93",
+        "size": 14806
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Brazier.uasset",
+        "sha256": "71a9383692b10f5f86f33b6285b6ace161b06c18b9c3cf8140775617a3c01ae5",
+        "size": 251012
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Char_ContractKeeper.uasset",
+        "sha256": "c250192efa59cb9ebf8d9bfb6568a596860c10dc81991abfec298789c24ba533",
+        "size": 1395763
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Door_Contract.uasset",
+        "sha256": "ccc90eb4265a49e3fad5ebdcc78a7846dcdc954418924fcabd7066632833d0e5",
+        "size": 612664
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Floor_Flagstone_A.uasset",
+        "sha256": "d60ff3bbea248997444b9e70782bfe4509f14285c069c3fd69531e7fd2f2597e",
+        "size": 53498
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Floor_Flagstone_B.uasset",
+        "sha256": "b8f80790024d59a93fb1f882f818a9768bfbb986dd9f4af4e918897d58fdbfe8",
+        "size": 44093
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Floor_SeamGlow_Room.uasset",
+        "sha256": "963037f2e45be235f6a9651f82b03efde1ea5b5c34f912d432a8d2a11d5ffaba",
+        "size": 14534
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Hatch_Frame.uasset",
+        "sha256": "deff7a06c7c6752a6026146bcc92e1d026c545489ba553bdfab0f42168276fbe",
+        "size": 504984
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Lava_Channel.uasset",
+        "sha256": "a3a73264b71d69e45713e721e4ee45a60273b6146ffe803dea5faf57820c4148",
+        "size": 73492
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Lava_Surface.uasset",
+        "sha256": "3291ed7d4228e8e9bde6dff634f1610b67a122183e6f341281cd73be5bc6f269",
+        "size": 26807
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Pillar_Basalt.uasset",
+        "sha256": "6869ffe6cbb38c40217ccb04a160a57a07ac31eebaf1e1e67c3fc0df2e2c746d",
+        "size": 76629
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Pillar_Basalt_Cut.uasset",
+        "sha256": "14b63e4d6d6c4e69f585db95a9c6833b8ecb1dd6cab924633e24a2778d4541df",
+        "size": 28100
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Prop_Scroll_Bundle.uasset",
+        "sha256": "9ff97814eecbde36a06e5acb1bffff5a5b66f9b8c63fa845cb5489b2c191e2da",
+        "size": 37140
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Prop_Scroll_Closed.uasset",
+        "sha256": "89d893e0714edcdc919a99a758dba77f64915372bb306ff1ac79d43abaa4907e",
+        "size": 21725
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Prop_Scroll_Open.uasset",
+        "sha256": "12b117eca5bf29155f0fe31fcda8b131fb79fec937f21c28d3134ed407312cbe",
+        "size": 27466
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Rock_Fill.uasset",
+        "sha256": "caaab5feb4bad6870700c87d2c911a3ef3675c0db92fade239be76cb48098be8",
+        "size": 1908972
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Stair_Spiral.uasset",
+        "sha256": "0b657a745f45c0c45412b49494d69a6f2a05176837a207baa4c832f86a0aeccf",
+        "size": 2065628
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Torch_Sconce.uasset",
+        "sha256": "2ecbc2f836424f74caefb9ef5a77bd5880af055a28e8e22550bf2b6e89bca46e",
+        "size": 94809
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Tunnel_Fresh.uasset",
+        "sha256": "ef9b4c7d4e5036391fdff59c5c743c0f6b4991444c659292856c6ec0dc6cf442",
+        "size": 250090
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Wall_Basalt_A.uasset",
+        "sha256": "40efa90a0955642a5dd6b5019b82e4c1893dce34e328e3e49a4bf1372cf1879d",
+        "size": 184946
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Wall_Basalt_B.uasset",
+        "sha256": "850a03d435ea61a1fa66f6dd35b2ae6a6789fce15e46e36d70b1905f1f5e2333",
+        "size": 188011
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Wall_Basalt_Cut.uasset",
+        "sha256": "90558fb8f01c8f0b8335b59c50044f84ce5cd8808b4a643a525d6eb0bf20ba12",
+        "size": 111617
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Wall_Dig_Removable.uasset",
+        "sha256": "fbcc94f6fedc8584bba95d89b7571bdeb12bf53cb894284d329242c2b905fc57",
+        "size": 184976
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Wall_ScriptPanel.uasset",
+        "sha256": "0b7f8aba50dff139aa029f5f0666b11c6866937b4fb945390f8b61cb94306dae",
+        "size": 227459
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Meshes/UR_Wall_StairArch.uasset",
+        "sha256": "0c8949b8c031eae4cc144dcb600b40568150b9b4f2382aa6e31132681bd93847",
+        "size": 212412
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/T_RockRaw_BaseColor.uasset",
+        "sha256": "709072f7f34f72f66a11806cb402b54425d6cc7016102b78fa8c21fd3f23e77f",
+        "size": 3295455
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/T_RockRaw_Emissive.uasset",
+        "sha256": "f8935587b12bebadc76441919c8d94261cf24ee9c2d488e15fff0cf2d592f666",
+        "size": 14402
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/T_RockRaw_Normal.uasset",
+        "sha256": "9bbbb4c4ea6a8111a21a0e69ee1ad351838206a6b56b40137bfdc06943662166",
+        "size": 6529496
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/T_RockRaw_UE_ORM.uasset",
+        "sha256": "832c665fdeca97e0e5fd0b276fc7730e3e4b113b57eb843942161688514ffd8a",
+        "size": 1144446
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/T_UR_AmbientUniform.uasset",
+        "sha256": "f90590537d0520c3142d7125f7c172bb4ac99f6f3cc6d9dce2881a755fa03ac0",
+        "size": 10749
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Brazier_BaseColor.uasset",
+        "sha256": "0656efbd3371ab5bea582d16c47dcf4e746dd08023f91c2cdaa905fb3e240ba3",
+        "size": 960948
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Brazier_Emissive.uasset",
+        "sha256": "879d9826cf0a5ed15a30a9e6d49ee252525570418ab3bc36a75c4fb05bbf78eb",
+        "size": 477064
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Brazier_Normal.uasset",
+        "sha256": "a8cae848754558bba67b731e7d1c49273ab6d8abcaee5e396573fc1ed4a6fd72",
+        "size": 523089
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Brazier_UE_ORM.uasset",
+        "sha256": "b8c58a173dd5d4c75c91c43345038ada2f2345953c64562a7c1ee630f511af1d",
+        "size": 614294
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Char_ContractKeeper_BaseColor.uasset",
+        "sha256": "014b233701c66d479bf1625edb5c0bd73b72d423e0c1af4326810d22ebddca8d",
+        "size": 3525207
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Char_ContractKeeper_Emissive.uasset",
+        "sha256": "03a5376600c5067dddb2e1b6cbe1f407ab1ff3964ecbad37fad4fe3e63b8112c",
+        "size": 1630987
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Char_ContractKeeper_Normal.uasset",
+        "sha256": "4d47e754240aa5b06c2ecbf1b6e6e8484813ff1ecf1287978f6ca17cc288aed1",
+        "size": 1991261
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Char_ContractKeeper_UE_ORM.uasset",
+        "sha256": "02800ac3b4418f94728ac1dda229e2f8f6d2d2873f3a537164a72444fc021577",
+        "size": 1621673
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Door_Contract_BaseColor.uasset",
+        "sha256": "328eb60af7d239e2478659cfed441838ee1c2f92fa89983e0657507f3d82c06c",
+        "size": 3471923
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Door_Contract_Emissive.uasset",
+        "sha256": "557359ba7c00ce51ce33e308608692091773fb51b0d8819b73d6199d133ee78d",
+        "size": 14550
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Door_Contract_Normal.uasset",
+        "sha256": "f445cb00273a8486b43f6879e177562608120c39214aa9dd1c0f69bb4d77e51c",
+        "size": 3217125
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Door_Contract_UE_ORM.uasset",
+        "sha256": "904320f485e326b02c7e25d8c0b4f923d37a444e8a113821493234bce5c73b88",
+        "size": 2233048
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_Flagstone_A_BaseColor.uasset",
+        "sha256": "e40a8b18ebd24a2772a65a5da5c9dadaa55968c83a92297e4cee590e8680aaee",
+        "size": 1623095
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_Flagstone_A_Emissive.uasset",
+        "sha256": "2b5b4169b19d22de1f7b1755b3b73af7705ede9d95232e5b1b3d303c572c70c2",
+        "size": 406391
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_Flagstone_A_Normal.uasset",
+        "sha256": "087f4b801313923e2e02cf034294602c2c04c09e70391de33290a1f0352c3e5c",
+        "size": 1790986
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_Flagstone_A_UE_ORM.uasset",
+        "sha256": "05f5bc361dc379b035787d6880f2d17802289cac7ef65f6fbe6311ad7ddf8406",
+        "size": 713108
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_Flagstone_B_BaseColor.uasset",
+        "sha256": "2bfa6ae1d908180711d1e827242205ec808b4dec368dbe172a3e89826e5a8006",
+        "size": 1744460
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_Flagstone_B_Emissive.uasset",
+        "sha256": "b82622aa70724ccfa7cd5e4ab46fca7ed8dae3567675330d2430bd66aaa5beb8",
+        "size": 424319
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_Flagstone_B_Normal.uasset",
+        "sha256": "4037603db9618492cf7ba76aaae51767d603c5766a55e0e6f49a1dcc8f51b322",
+        "size": 1994586
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_Flagstone_B_UE_ORM.uasset",
+        "sha256": "16ca2de03393e90cb567c3b3a7af209d1df8b656817c76aea50ed297f63062e5",
+        "size": 776576
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_SeamGlow_Room_BaseColor.uasset",
+        "sha256": "686eafacb012e4924a4cd661f7d4b2f5d258a81efbbf1cb0b5a1ff5c8cde7248",
+        "size": 12809
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_SeamGlow_Room_Emissive.uasset",
+        "sha256": "df7b3f0272a8cf6ea15f8f90355e0a371f820b7c221f77ebf82724722a7aec4a",
+        "size": 533959
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_SeamGlow_Room_Normal.uasset",
+        "sha256": "b46a4cb07f177c8bd2eb0555483ff9b70f37c9f4f0074f97d998a6c9b65f0886",
+        "size": 12720
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Floor_SeamGlow_Room_UE_ORM.uasset",
+        "sha256": "5ca9bebf4eecc04c00ff7db10888b8cc8b1ba62df9a150db66d28d3d5631746f",
+        "size": 12793
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Hatch_Frame_BaseColor.uasset",
+        "sha256": "5fa19bd32ecf13a2032705bda23d20beec084f2c489c18f59d3aafc64df6fa01",
+        "size": 3841146
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Hatch_Frame_Emissive.uasset",
+        "sha256": "0703e7e91a1882441375ca9a9317e60745b40297e04716a30404e501c3f2a612",
+        "size": 14509
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Hatch_Frame_Normal.uasset",
+        "sha256": "be19cb8052415a434fdca11ca2cbbbaf3c8210b593295d4e8eaefeff14da964e",
+        "size": 3356829
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Hatch_Frame_UE_ORM.uasset",
+        "sha256": "9c31064afd19be63578200480cab398972251564d9f119258178da486087cfaa",
+        "size": 2733921
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Lava_Channel_BaseColor.uasset",
+        "sha256": "6463564503712017c1ee646d571aaeab88142c7df24c42a151ae20e2ce26cb17",
+        "size": 564045
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Lava_Channel_Emissive.uasset",
+        "sha256": "43918af84795cdf0059b9011505a344e1cba2bef32d0f411d63073d1c68b0315",
+        "size": 67263
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Lava_Channel_Normal.uasset",
+        "sha256": "0988311659af7f639a823892451f5bd69dcb9c3d3f48f5286b70805527e6f7e0",
+        "size": 801039
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Lava_Channel_UE_ORM.uasset",
+        "sha256": "2eeaa99eb8e24667d66b910f3df480db24879890abd43873b18a9b646edd1bcb",
+        "size": 300122
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Lava_Surface_BaseColor.uasset",
+        "sha256": "7ef148382d9ed5cac388f38a0001bdf0d4bd071321a2be81e8a5b4b461de260a",
+        "size": 1241768
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Lava_Surface_Emissive.uasset",
+        "sha256": "3248736884fdd42db4fdcbc756c32b306ca450fd6296e0d3a61d6fe689a35d0a",
+        "size": 1302405
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Lava_Surface_Normal.uasset",
+        "sha256": "487c56c02d41b835ed38735e49eb6d1604a413891ce3edcf661001b65d46cbe7",
+        "size": 2180931
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Lava_Surface_UE_ORM.uasset",
+        "sha256": "24fe08e893926f977afde415c2530a20aa73f267fd19e8c5d0aee94a114b476a",
+        "size": 518390
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Pillar_Basalt_BaseColor.uasset",
+        "sha256": "ead98931fdaf36aff749cb787b3179498bcde4b4f2a60f8f6b22968d81d103a4",
+        "size": 751290
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Pillar_Basalt_Cut_BaseColor.uasset",
+        "sha256": "c827265209b76d2111a13d1804c7714d5214184384013abb25632308fd48f045",
+        "size": 519722
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Pillar_Basalt_Cut_Emissive.uasset",
+        "sha256": "10621b70e09c42d2339d9e50be4481131cfabd34e2a13ec16baf992597acd042",
+        "size": 12251
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Pillar_Basalt_Cut_Normal.uasset",
+        "sha256": "67ede06e0c7b8fa44173d2ad41922493eb5ef26d81e2dd3ad200e025c26385e8",
+        "size": 656158
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Pillar_Basalt_Cut_UE_ORM.uasset",
+        "sha256": "22a40e345bee973fc90c0694fc62a8f199eebf0ab04c9c307c2d691b4c7ba147",
+        "size": 205017
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Pillar_Basalt_Emissive.uasset",
+        "sha256": "aac444c21252220aac3eb2f130ce91fa699ca5448adf8c4ff5101a5f31175760",
+        "size": 12167
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Pillar_Basalt_Normal.uasset",
+        "sha256": "b5ba2cd31a8ec2d22f44ee41f97d585a914bb212c128786e867f71d3a233e633",
+        "size": 897329
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Pillar_Basalt_UE_ORM.uasset",
+        "sha256": "b53e3e08100536b047e4b35b2ad24c000f31d4d67571b52fc23a1ca4f03f900c",
+        "size": 306882
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Prop_Scrolls_BaseColor.uasset",
+        "sha256": "0d14430c2b0883405af3e936d623cb98f59d09b0668d6aeed3ce42cddc80dc28",
+        "size": 1041272
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Prop_Scrolls_Emissive.uasset",
+        "sha256": "2732c2c13ef54f9c41b6d5b163eee8afa37102fde021f1b22d7f1748296fe5e0",
+        "size": 12146
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Prop_Scrolls_Normal.uasset",
+        "sha256": "5933870ae8177c9f95a493f3c7a284a752657039151c940a80acdbe9f7a873c1",
+        "size": 242697
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Prop_Scrolls_UE_ORM.uasset",
+        "sha256": "64677fdbfee11d4de3bc10cff469d5d1ff7011f7aadd4631f6bdfd50328c68b2",
+        "size": 250046
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Stair_Spiral_BaseColor.uasset",
+        "sha256": "681e2e530c8ce214d4874608d2b4d650640f62a250ead7d3e6107deb357ef379",
+        "size": 2906529
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Stair_Spiral_Emissive.uasset",
+        "sha256": "5a8022b9368b6a5565aafbdbd98d73d33dc90cbb618e4fe62dc4d388dea68a96",
+        "size": 32279
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Stair_Spiral_Normal.uasset",
+        "sha256": "85f7d2f3b865a0e98bb730e98a11c73d8d6f112ea2545a0a7ea0eb517578adda",
+        "size": 1966006
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Stair_Spiral_UE_ORM.uasset",
+        "sha256": "3fae09064f87c6bfdd266af8159d848927e343d2b7eb89be97112a216d13b825",
+        "size": 1613657
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Torch_Sconce_BaseColor.uasset",
+        "sha256": "f35f131e51937310d8d7cef95fd5d5c77d45c19270ed963483a93f3f893932b5",
+        "size": 681558
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Torch_Sconce_Emissive.uasset",
+        "sha256": "7aebadc2a43544144e867fe5d3c1adf1bfee236d688c8597e21be7cdcb19bfe5",
+        "size": 352736
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Torch_Sconce_Normal.uasset",
+        "sha256": "4acab2e0acc18f573cdd5ff3dec87566e515c173cd5321ad02031c8c45c147c5",
+        "size": 380430
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Torch_Sconce_UE_ORM.uasset",
+        "sha256": "e108d2c4ae2eec8efd32825863d6e3157b71f8228c81d1b03f09728e8454c509",
+        "size": 426867
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_A_BaseColor.uasset",
+        "sha256": "88ea33ae640bb5056739eaeb103c0c436cfce1e04aeef21869b2e5ed6f03c859",
+        "size": 2511766
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_A_Emissive.uasset",
+        "sha256": "297b87c726d9f3bc4c825bb9bb0de0f562a64f04ddfdd74f9bfc27c94c9f1429",
+        "size": 14551
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_A_Normal.uasset",
+        "sha256": "21a51b5243d8a0c387def40f3a6c3da504b09e1f3ad404a0534e257c086bbd54",
+        "size": 3118893
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_A_UE_ORM.uasset",
+        "sha256": "5cb45dcdec25d637d98e2b117202e6ea4cd722ef05db9da854286d0ff75ee602",
+        "size": 1111557
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_B_BaseColor.uasset",
+        "sha256": "dab32faf0f288565130445e6e0460ee30b17512c091f80eda599bbd34e0fe8e2",
+        "size": 2546884
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_B_Emissive.uasset",
+        "sha256": "45527c101905f22e2acd43b20261431e0a4d4ec084bc41ca0dec5342e7f7ebbf",
+        "size": 14551
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_B_Normal.uasset",
+        "sha256": "ee244e66f1418eed4fc6749ebbce8afa7348d8d2df1c823b1235e48d5a085a0c",
+        "size": 3213571
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_B_UE_ORM.uasset",
+        "sha256": "a893055e0bb7d92507bf01b448dfc42555db0ecb1d94cd3b4a5a3ae0107eb038",
+        "size": 1121376
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_Cut_BaseColor.uasset",
+        "sha256": "7f48e6c69c86c23a8243ad9e26901a6ecadcbdad9ea8b4c3a5b6735b7e3abaa0",
+        "size": 719223
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_Cut_Emissive.uasset",
+        "sha256": "f753a82b8597f1214ce5ce03cf3a959b13f3fa3867657ed5b093f12b3be1c592",
+        "size": 12209
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_Cut_Normal.uasset",
+        "sha256": "e6594afd75d6a5a8564e3ed2f4117b87088388f8d6041ddc99ac3b10e742e4fc",
+        "size": 837512
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_Basalt_Cut_UE_ORM.uasset",
+        "sha256": "e1157c6a817ba6108f11b19c1f60c85426fd262418306593f6368a0623414630",
+        "size": 317900
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_ScriptPanel_BaseColor.uasset",
+        "sha256": "9ba91f214a4146234129e27d2c70072f628b256e326059a39cd4a48e772c78e5",
+        "size": 2702836
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_ScriptPanel_Emissive.uasset",
+        "sha256": "9c9878b9fdb019307d22dafd065f70ec45858cc98920c35dd60622f27125679f",
+        "size": 176710
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_ScriptPanel_Normal.uasset",
+        "sha256": "4ded19ec440fe1b21bf15e20873dc04643e4f928d6e5886c8101b1684dcd739b",
+        "size": 2560045
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_ScriptPanel_UE_ORM.uasset",
+        "sha256": "9464be3500adc0cd6fd0434dfc99ff87ded9842faacc7cd8684976c484bfc599",
+        "size": 1475928
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_StairArch_BaseColor.uasset",
+        "sha256": "795a2e622f23f9394ac3e2e9b13236b26df09b046e9d8742ed1ed99bc5256514",
+        "size": 925863
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_StairArch_Emissive.uasset",
+        "sha256": "cfb77cb921641fabdc0a8ffed6b57691633de1cfe7a58364366b21054f9d9d59",
+        "size": 12188
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_StairArch_Normal.uasset",
+        "sha256": "b478fdc93082c0432a045cb85a2de5057637233e32b21cc3b54d49da9e7fbb6d",
+        "size": 766409
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Kit/Textures/UR_Wall_StairArch_UE_ORM.uasset",
+        "sha256": "c7f5e2e1baab6c8c875e3f1c86d9a471c81246125eae6ab6e60c4b3407253eaf",
+        "size": 568053
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Maps/L_UnderreignCompare.umap",
+        "sha256": "dd426f1374b87e3344ae9e2c82065d500f479ba462ceadeb608fca39e827c4de",
+        "size": 316068
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/Content/Maps/L_UnderreignCompare_Perf.umap",
+        "sha256": "a41c4100c897c7185cde619a8630737f5e07f1cdd60ebff87889e478b213266a",
+        "size": 321017
+      },
+      {
+        "path": "ext:EngineComparison/Unreal/UnderreignCompare/UnderreignCompare.uproject",
+        "sha256": "9c4fec860691cb096a52011af3702cd85b359b811149014ab1926c16996c16c7",
+        "size": 502
+      },
+      {
+        "path": "ext:Evidence/UR-ENGINE-UNREAL-V1/WORKER_RESULT.md",
+        "sha256": "113c84308f3b7ba1d985dc03c2b21241f4bb4b1ee62f8e9cf4279bce8aa4a10d",
+        "size": 16865
+      },
+      {
+        "path": "ext:Evidence/UR-ENGINE-UNREAL-V1/dig_adaptation_overview.txt",
+        "sha256": "5240b85404e32326233170db17ff9ff2d68126c8586d554c66df33f2592c677c",
+        "size": 1040
+      },
+      {
+        "path": "ext:Evidence/UR-ENGINE-UNREAL-V1/perf_main_summary.txt",
+        "sha256": "0dc24821415444510b7ed39de38514dfd6f6306e87cfaf486a36035655d21d65",
+        "size": 990
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-ENGINE-UNREAL-V1/WORKER_RESULT.md",
+        "sha256": "113c84308f3b7ba1d985dc03c2b21241f4bb4b1ee62f8e9cf4279bce8aa4a10d",
+        "size": 16865
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-ENGINE-UNREAL-V1/dig_adaptation_overview.txt",
+        "sha256": "5240b85404e32326233170db17ff9ff2d68126c8586d554c66df33f2592c677c",
+        "size": 1040
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-ENGINE-UNREAL-V1/perf_main_summary.txt",
+        "sha256": "0dc24821415444510b7ed39de38514dfd6f6306e87cfaf486a36035655d21d65",
+        "size": 990
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-ENGINE-UNREAL-V1/REVIEW.md",
+      "sha256": "a3fac1400fdde1d564f280543b13a3338d99ab94ff0efecf03bd29ef506799f3",
+      "size": 1366
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-ENGINE-UNREAL-V1/review.json",
+    "record_sha256": "aa108a66c80f1c08c8dda8cbad48fe6bd7110335f6eab3ec34c9e86792104815",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "4e45d184fee51ba71462bc1090ee102fc7d32a37cbf8e669dae82ec89ea659c9",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

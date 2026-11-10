@@ -34,6 +34,27 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: engine comparison (UD-46)
+
+UR-ENGINE-UNREAL-V1 (same scene in Unreal 5.8 with Lumen; about 94 fps at 1080p; external commit 96ad7fe)
+Independent review verdict: PASS
+Worker task: a7a31ded36c7f07aa
+Reviewer task: a49dc15139384a9ae
+Candidate identity: 4e45d184fee51ba71462bc1090ee102fc7d32a37cbf8e669dae82ec89ea659c9
+Closure receipt: b48d66fb2220cf1a9dbe6ffcc54e4ceb47418f770782073e53aa5e0d41f04bec
+
+UR-ENGINE-UNITY-V1 (same scene in Unity URP and HDRP; about 321 / 68 fps; external commit e4c8e31)
+Independent review verdict: PASS
+Worker task: a5ae2c20e16df9201
+Reviewer task: a49dc15139384a9ae
+Candidate identity: 6d62aed1cc9b95407b3192a7adfb70bb053ff1ff046cd94fcfedcd2e73514d13
+Closure receipt: 679479528af8bcacf0e6b8e2e91d9352754488a649a6083d265c215396e7ce34
+
+Kit: UR-ENGINE-KIT-V1 (Blender kit, external commit 0c633a2; Director visual check, no review required).
+Both engine sides applied two kit corrections (local lights x 4 pi; rock two-sided).
+A broken Unity build-cache entry from the 12:00 power loss remains under
+`%LOCALAPPDATA%\Unity\Caches\bee` (deletion awaits the Human's yes).
+
 ## Earlier closures
 
 UR-GATE-EXTERNAL-NIGHT-V1 closed 2026-11-09 (closure receipt
@@ -41,15 +62,6 @@ UR-GATE-EXTERNAL-NIGHT-V1 closed 2026-11-09 (closure receipt
 
 ## Human checkpoint
 
-Round 5 recorded by UR-DECISIONS-R5-V1 (UD-34 to UD-45; gate receipt
-`987e2171…`, verify-worker PASS; routine recording without independent review).
-Plan approved, standing Unity-start approvals given, URP for now. Before any
-engine work the Human wants to discuss: Unity or Unreal (OD-11), layer
-connections at fixed points (OD-12), winning needs more than defending (OD-13).
-Round 6 recorded by UR-DECISIONS-R6-V1 (UD-46 to UD-48; receipt `982a1995…`,
-verify-worker PASS): engine comparison sample before the engine decision (free,
-owned or Blender-made graphics; Unreal's 5 % royalty acceptable); layers connect
-only at fixed breakthrough points for all peoples; destroying the enemy Heart
-wins, alternative objectives welcome, the prototype gains a small attack goal.
-Installed: Unreal Engine 5.8, Blender 5.2, Unity 6000.6.4f1. Waiting for the
-Human's go on the engine comparison order. No engine work before.
+Engine choice after the comparison (OD-11): Director recommends Unity HDRP
+(nearly Unreal's look here, keeps the C# simulation and text-based tooling);
+Unreal is the alternative. Waiting for the Human's choice.

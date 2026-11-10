@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-ENGINE-UNITY-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a5ae2c20e16df9201",
+  "reviewer_task_id": "a49dc15139384a9ae",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "6d62aed1cc9b95407b3192a7adfb70bb053ff1ff046cd94fcfedcd2e73514d13",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

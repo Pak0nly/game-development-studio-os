@@ -13,6 +13,27 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: engine comparison (UD-46)
+
+UR-ENGINE-UNREAL-V1 (same scene in Unreal 5.8 with Lumen; about 94 fps at 1080p; external commit 96ad7fe)
+Independent review verdict: PASS
+Worker task: a7a31ded36c7f07aa
+Reviewer task: a49dc15139384a9ae
+Candidate identity: 4e45d184fee51ba71462bc1090ee102fc7d32a37cbf8e669dae82ec89ea659c9
+Closure receipt: b48d66fb2220cf1a9dbe6ffcc54e4ceb47418f770782073e53aa5e0d41f04bec
+
+UR-ENGINE-UNITY-V1 (same scene in Unity URP and HDRP; about 321 / 68 fps; external commit e4c8e31)
+Independent review verdict: PASS
+Worker task: a5ae2c20e16df9201
+Reviewer task: a49dc15139384a9ae
+Candidate identity: 6d62aed1cc9b95407b3192a7adfb70bb053ff1ff046cd94fcfedcd2e73514d13
+Closure receipt: 679479528af8bcacf0e6b8e2e91d9352754488a649a6083d265c215396e7ce34
+
+Kit: UR-ENGINE-KIT-V1 (Blender kit, external commit 0c633a2; Director visual check, no review required).
+Both engine sides applied two kit corrections (local lights x 4 pi; rock two-sided).
+A broken Unity build-cache entry from the 12:00 power loss remains under
+`%LOCALAPPDATA%\Unity\Caches\bee` (deletion awaits the Human's yes).
+
 ## Closed: UR-NIGHT-01-V1
 
 UR-NIGHT-01-V1
@@ -25,6 +46,6 @@ Night return receipt: d9fc8767bccf9936492a119aaa3dc659465cdac1703a2cce7a8a28ce9f
 
 Recorded: DEC-042 (Underreign-only no-training scope for own content), UD-49 (Meshy for main modelling, Blender for adjustments, rigging, animation), UD-50; OD-06 direction decided.
 
-Next action: on the Human's go, dispatch the engine comparison sample
-(Blender-made Ashen Pact kit, same scene in Unity and Unreal 5.8, same camera,
-stills and clips side by side, including a dig moment for dynamic light).
+Next action: record the Human's engine choice (OD-11), then plan the
+prototype's engine work from `Design/Planning/UNITY_WORK_BREAKDOWN.md` (or a
+port plan if Unreal).

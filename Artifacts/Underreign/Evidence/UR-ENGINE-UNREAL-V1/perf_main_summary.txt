@@ -1,0 +1,19 @@
+window 10.0 s .. 30.0 s: 1888 frames, 20.00 s, average 94.4 fps
+FrameTime          avg   10.60 ms   worst   12.76 ms   p99   11.45 ms
+GameThreadTime     avg    1.28 ms   worst    2.06 ms   p99    1.78 ms
+RenderThreadTime   avg   10.59 ms   worst   12.79 ms   p99   11.45 ms
+RHIThreadTime      avg    1.62 ms   worst    2.36 ms   p99    2.05 ms
+GPUTime            avg    9.53 ms   worst   10.63 ms   p99    9.66 ms
+GPU passes (avg ms, top 12):
+  GPU/Lights                           2.31
+  GPU/RenderDeferredLighting           1.92
+  GPU/TemporalSuperResolution          1.31
+  GPU/LumenReflections                 1.23
+  GPU/ShadowDepths                     0.87
+  GPU/RayTracingScene                  0.28
+  GPU/ShadowProjection                 0.27
+  GPU/Basepass                         0.26
+  GPU/Unaccounted                      0.24
+  GPU/NaniteVisBuffer                  0.15
+  GPU/Postprocessing                   0.14
+  GPU/LumenSceneUpdate                 0.07
