@@ -3,7 +3,7 @@
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md`
   (UD-01 to UD-33), `Docs/OPEN_DECISIONS.md` and DEC-041.
 - Night shift 1 results live in `C:/GameDev/Underreign` (`main` = `f94ca38`,
-  locally fast-forwarded, not yet pushed): `Design/Planning`, `Design/Bible`,
+  fast-forwarded and pushed to `Pak0nly/underreign`): `Design/Planning`, `Design/Bible`,
   `Design/Art`, `Simulation`, `Evidence/UR-NIGHT-01-V1`. The Studio repository
   holds only the gate artifacts and review for the night.
 - Catalogue round 5 (German): https://claude.ai/artifact/TfyGXsaWnvENLpK3cY5dxq

@@ -13,7 +13,7 @@ heat rises, greybox.
 - Dispatch gate `Tools/UnderreignDispatchGate` (independent copy; external root
   `C:/GameDev/Underreign`; cloud night mode; 75 tests).
 - Unity project folder `C:/GameDev/Underreign`, remote `Pak0nly/underreign`
-  (private). `main` fast-forwarded to the night result `f94ca38` locally.
+  (private). `main` fast-forwarded to the night result `f94ca38` and pushed.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
