@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-SIM-CPP-PORT-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a942e1a25ee9ab239",
+  "reviewer_task_id": "a460a22eb4053ad8c",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "7e3591f57c72a190a757ceaa8b3c20a03cc081fbcc60dd19e598f2901ce4b53a",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}
