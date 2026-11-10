@@ -13,6 +13,17 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-UNREAL-SUMMON-V1
+
+UR-UNREAL-SUMMON-V1 (summon cinderling: key B and green tool-bar button with cost and count, refusals in plain words, HUD "Cinderlings n / 10", cinderling tooltip shows its job; game resynced to rules 5 (951f937) with parity at ticks 600-2400; proof trimmed per the Human: "Wenn keine major changes sind braucht es nur eine Funktionsprüfung, dass es läuft."; the old playround recording no longer reaches the camp under rules 5 (follow-up); external commit 23aae72)
+Independent review verdict: PASS
+Worker task: aeb45d886648caa23
+Reviewer task: a936a2d9629b90134
+Candidate identity: 6d218a882068a6ecfc2a26368f96a73bf7ec4a7d24e5b6f581eb807ca1605365
+Closure receipt: ac80d5ae60e62cf0b3c38e6bf383877a80d22edc735ccfdc5e4b813368809f44
+
+Next: the Human plays the new version (summon, nearby-work rules). Open: a new playround recording for rules 5; gold carry walking (proposal).
+
 ## Closed: UR-SIM-WORKER-JOBS-V1
 
 UR-SIM-WORKER-JOBS-V1 (rules 5: within a priority the nearest idle cinderling/job pair is matched first, claiming spreads outward, work area kept; dig opening: cells walked per job 7.98 -> 2.58, far-job cases 48 -> 0; 739 tests; new golden replays; reasonable bot 23 %, wave 3 unchanged per UD-53; remaining walking is the gold carry loop; external commit 951f937)
@@ -21,8 +32,6 @@ Worker task: aff436bb274b5b1bc
 Reviewer task: a510eda045a9bc49a
 Candidate identity: 25d842dcee3db0d3d9e62a77266aae2b8a4b916e70af187f642941a59d43754e
 Closure receipt: 324897dbb4171db4a989f9cff629fbfcf5de997c0283e2b8f3cbdabc387a591f
-
-Next: UR-UNREAL-SUMMON-V1 (summon button, resync the game to rules 5 at 951f937, parity); then the Human plays.
 
 ## Closed: UR-DECISIONS-R7-V1
 
