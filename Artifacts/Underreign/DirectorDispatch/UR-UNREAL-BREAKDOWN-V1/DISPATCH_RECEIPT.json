@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-UNREAL-BREAKDOWN-V1",
+  "work_order_sha256": "94156e1a344bf13207513e0e09066cfa7d4a6696d89ad24d9fa3278d6729740b",
+  "manifest_sha256": "61ad129e0179e88dd4159b9b9a8790fc1d025003930ac8a1c05a944eace5435e",
+  "repository": {
+    "branch": "main",
+    "head": "a85fe274829a721e2eea79d8e0751d8689754cd0"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Artifacts/Underreign/Evidence/UR-UNREAL-BREAKDOWN-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "eec3837b23680b49d596859e3e30ed4518ed31917c61da04228a04ff14423571",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "e4c8e31bc6a6d95555ef7d60c9c3747259208c96"
+    },
+    "allowed_mutations": [
+      "Design/Planning/UNREAL_WORK_BREAKDOWN.md",
+      "Evidence/UR-UNREAL-BREAKDOWN-V1"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design/Planning/UNITY_WORK_BREAKDOWN.md",
+      "Design/Snapshot",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation",
+      "SimulationCpp"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Design/Planning/UNREAL_WORK_BREAKDOWN.md",
+        "Evidence/UR-UNREAL-BREAKDOWN-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "970e039ecedbf65593627d99e95164b6f5c904d095cf830c73d27b68c3abc344"
+  },
+  "execution_location": "local",
+  "receipt_id": "9e1aa5416e8651d9daa59866c04e1c12ee8a5e5190351b8ef88cc48f3a30ed63"
+}

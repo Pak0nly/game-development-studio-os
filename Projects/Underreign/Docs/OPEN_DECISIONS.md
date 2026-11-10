@@ -17,5 +17,5 @@
 | OD-13 | Winning needs more than defending ("Nur Verteidigen gewinnt nicht.") | DECIDED (UD-48) | Active win goals; destroying the enemy Heart is a win condition; alternative objectives welcome, especially in campaigns; the prototype gets a small attack goal after the third wave. Earlier note: Human remark on UD-42. |
 | OD-14 | Full-game direction questions from night shift 1 (eight questions) | OPEN | N-13 was not answered by the Human and stays open. |
 | OD-15 | Assets and Blender for the engine comparison sample | OPEN | The comparison sample (UD-46) needs graphics. Open: which free assets or assets already in the Human's accounts can be used, and whether Blender is available for Claude to make assets. |
-| OD-16 | Does the standing commit approval of UD-35 also cover Unreal jobs? | OPEN | UD-35 was given for the Unity start; it is to be asked whether it also applies to Unreal jobs. |
+| OD-16 | Does the standing commit approval of UD-35 also cover Unreal jobs? | DECIDED (UD-52) | Yes, finished and reviewed Unreal jobs are committed locally without asking each time. Earlier note: UD-35 was given for the Unity start. |
 | OD-17 | Simulation port from C# to C++ and the Unreal project setup | OPEN | Next work: port the engine-free simulation with its tests to C++ and set up the Unreal project at `C:\GameDev\Underreign` (DEC-043). |

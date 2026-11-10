@@ -104,3 +104,9 @@ Open from this round: OD-11 (engine, comparison sample first), OD-15 (assets and
 | ID | Topic | Catalogue answer | Decision |
 |---|---|---|---|
 | UD-51 | Engine: Unreal Engine 5 | Human statement after the comparison (not a catalogue answer): "Für mein Verständnis: Es wurde jetzt nur die Blender Scene in beide Engines eingebaut und Standard Einstellungen verwendet richtig? Also keine Grafik Optimierungen in irgend einer Form? Ich gehe gerade davon aus, dass wir eine weit höhere Grafikqualität in Unreal erreichen als in Unity und das bei gleicher, wenn nicht besserer Performance. Das wäre für mich ausschlaggebend." Asked "Which engine do you want?" the Human answered: "Unreal". Royalty: "Wenn ich es schaffen sollte, damit über 1m $ zu verdienen bin ich glücklich. 5% ist dann ok." | Underreign uses Unreal Engine 5 (5.8.3 installed) per DEC-043. Resolves OD-11. Superseded: UD-04 (Unity like Hearthlands), UD-36 (URP for now) and the Unity-specific parts of UD-35 (Unity add-ons, Unity 6.6 install). Whether UD-35's standing commit approval also covers Unreal jobs is still to be asked (OD-16). |
+
+## Unreal start — 2026-11-10
+
+| ID | Topic | Catalogue answer | Decision |
+|---|---|---|---|
+| UD-52 | Standing commit approval also covers Unreal jobs | Question whether the standing commit approval of UD-35 also covers Unreal jobs, and whether the broken Unity cache entry may be deleted. Human: "Ja, beides" | The standing commit approval of UD-35 also covers finished and reviewed Unreal jobs: after each such job a local commit in the project folder is made without asking each time. Resolves OD-16. The Human also agreed to deleting the broken Unity cache entry. Same day the Human asked for as many parallel Workers as sensible instead of a cloud night. |
