@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-NIGHT-PREP-02-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a545fb32dceca6e3d",
+  "reviewer_task_id": "ab4689424c27a8f6f",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "27fd14a01895fb1202afe385ea37134681e48339b61554829993eae7dff09788",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

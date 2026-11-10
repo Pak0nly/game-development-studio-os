@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-NIGHT-PREP-02-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-PREP-02-V1/WORK_ORDER.md",
+    "sha256": "0c1ff731b5a42474d8fbcf7c4c9fac4ba5a0182d086248122df8b37eb99a68bb",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-PREP-02-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "b8d751d776266e3561d294b59b6ea303faeccfac069b50162ee47f7661b3ff37",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-PREP-02-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "d737e9f51ee8ab7c82fbf0f7084e124a99e5980f2bd48ca30211a2b8533c18a7",
+    "receipt_id": "5280aa168974bfbb20ff609cd32581c710baab2f1aea3986c1f722d2d882f284",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a545fb32dceca6e3d",
+    "reviewer_task_id": "ab4689424c27a8f6f"
+  },
+  "candidate": {
+    "identity": "27fd14a01895fb1202afe385ea37134681e48339b61554829993eae7dff09788",
+    "files": [
+      {
+        "path": "ext:Design/Snapshot/DISCOVERY_DECISIONS.md",
+        "sha256": "9e0f4d4c649e68ae9ae975fde460b3e7a930ad285d7d6190d5bec8f6ee715bfa",
+        "size": 25554
+      },
+      {
+        "path": "ext:Design/Snapshot/OPEN_DECISIONS.md",
+        "sha256": "a1df0e8fa95308aabaaf17126b21c555d1bc759be894a22922cef6630959577e",
+        "size": 5399
+      },
+      {
+        "path": "ext:Design/Snapshot/PRODUCTION_PROFILE.md",
+        "sha256": "96b339ef0cdaee350d609cf7ad3c4a151f337fc7f3625f2d19ea3f2fe8167f0c",
+        "size": 640
+      },
+      {
+        "path": "ext:Design/Snapshot/README.md",
+        "sha256": "82287cbd227e7438eea4ba268e4f081a6f6182c46b50dbd9907e0820d7e030c4",
+        "size": 3796
+      },
+      {
+        "path": "ext:Design/Snapshot/SNAPSHOT.md",
+        "sha256": "7188f149b887fd64ad3760d7a3a60e4abeffa42fd7678a84a46721dfce2d5da4",
+        "size": 186
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-PREP-02-V1/WORKER_RESULT.md",
+        "sha256": "95e02d3eb0b9c9783c5f27ff7c7455c05cef97411918ad5872529b06346e0007",
+        "size": 908
+      },
+      {
+        "path": "ext:Night/UR-NIGHT-02-V1/WORK_ORDER.md",
+        "sha256": "c8e2cad2f6f489478513c4135761951180bff460b6b5d373742d6d54f7b12ee6",
+        "size": 7605
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-NIGHT-PREP-02-V1/WORKER_RESULT.md",
+        "sha256": "95e02d3eb0b9c9783c5f27ff7c7455c05cef97411918ad5872529b06346e0007",
+        "size": 908
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-NIGHT-PREP-02-V1/REVIEW.md",
+      "sha256": "cb371589b3e06bd883011c090c61791e2959d7683316aa286c91d83ba6f6b22d",
+      "size": 2948
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-NIGHT-PREP-02-V1/review.json",
+    "record_sha256": "98fc6497853778e50fed4f14e4a6d610bba9a7f6bd979efa30af5080b03cfc29",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "27fd14a01895fb1202afe385ea37134681e48339b61554829993eae7dff09788",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

@@ -34,6 +34,15 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-NIGHT-PREP-02-V1
+
+UR-NIGHT-PREP-02-V1 (design snapshot refreshed from Studio b301593; night order placed at Night/UR-NIGHT-02-V1; external commit 498a303)
+Independent review verdict: PASS
+Worker task: a545fb32dceca6e3d
+Reviewer task: ab4689424c27a8f6f
+Candidate identity: 27fd14a01895fb1202afe385ea37134681e48339b61554829993eae7dff09788
+Closure receipt: 3ddfc765feaa4fdf6fb49dfb295df6a44e55e40a6f2ee1be6f950b4baf645ced
+
 ## Closed: UR-COMMANDS-V1
 
 UR-COMMANDS-V1 (rules 7: rally banner (G place/move, L lift; free, proposal) and alarm (creatures with nothing to do attack intruders on claimed ground within 20 steps); game resynced to rules 7 with parity; summon button shows the rising price; UD-54, UD-55, OD-18 recorded; reasonable bot 41 % (alarm), wave 3 unchanged; external commits f304732 and 2ddc6f0)
