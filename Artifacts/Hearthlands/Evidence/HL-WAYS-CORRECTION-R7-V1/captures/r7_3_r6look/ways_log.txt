@@ -1,0 +1,60 @@
+0.0 R3 switches: quarry radius 48, spread 450, store surplus True, base natural (round 2), clock interpolated, log length 1,5, refused models drawn, draw separation True
+0.0 R5 switches: ground trodden level, torches the models' wall torches (R6), levelling round 6 (the ring's height), slots True, inside True, first ring for logs True, grill round 6, gravel 0,7, small stones taken 17, boards True, food arrival True, fire stores False
+0.0 R7 switches: steepness ring True, hunt at the game False, one worker at the start True, fuel piles (round 6)
+0.0 ways game on Testtal: 8 dwarves, own land 441 tiles, bench False, small fires 6 dwarves, arrival EveryFireWithRoom, path to road True, look look on: day 6.0 min, night 4.0 min, start 8.0 h; lights 7 (fires 1, lamps 4, waypoint fires 2, lanterns 0); river True; fog High; yards on 2 foundations (380 ring cells); seat logs 0; built in 9.5 s
+0.1 r7 00 switches: shown levelling round 6, fuel piles (round 6), hunt at the game False, steepness ring True, one worker at the start True, max slope 0.18
+0.1 r7 06 the dwarves in the top bar: shown added by the debug step 0 of 8 tried; dwarves 8 of 8 places
+0.1 shot r7_06_zwerge_oben_nicht_ueber_plaetze 1600x900 dwarves drawn 8 tick 1
+0.1 r7 the Human's case: forester (44, 40), woodcutter (46, 44), own heights differ 1.13
+0.1 shot r7_01a_foerster_holzfaeller_vorher 1600x900 dwarves drawn 0 tick 1
+0.1 shot r7_01a_foerster_holzfaeller_vorher_spielkamera 1600x900 dwarves drawn 8 tick 1
+0.1 r5 ground samples: slope (31.00, 41.00) spread 0.72, flat (45.00, 51.00) spread 0.00
+0.2 r5 placed sawmill at 31,41 site
+0.3 r7 placed forester at 44,40 site
+0.4 r7 placed woodcutter at 46,44 site
+0.5 r5 placed forester at 45,51 site
+0.5 host refused the site's model sawmill at 31,41 (it is drawn without a model)
+0.5 shot r7_01b_saegewerk_ufer_vorher 1600x900 dwarves drawn 0 tick 5
+0.5 shot r7_01b_saegewerk_ufer_vorher_spielkamera 1600x900 dwarves drawn 2 tick 5
+26.3 building woodcutter at 46,44 finished; own land 441 tiles
+57.5 host refused the finished model sawmill at 31,41 (it is drawn as its outline)
+57.5 building forester at 45,51 finished; own land 441 tiles
+62.5 building forester at 44,40 finished; own land 441 tiles
+97.5 r7 01 levelled forester: shown forester at 44,40 level 9.96 own 9.95
+97.5 r7 01 levelled woodcutter: shown woodcutter at 46,44 level 10.52 own 11.09
+97.5 r7 01 levelled sawmill: shown sawmill at 31,41 level 9.92 own 9.50
+97.5 r7 01 levelled forester: shown forester at 45,51 level 9.98 own 10.00
+97.5 shot r7_01a_foerster_holzfaeller_nachher 1600x900 dwarves drawn 3 tick 975
+97.5 shot r7_01a_foerster_holzfaeller_nachher_spielkamera 1600x900 dwarves drawn 5 tick 975
+97.5 shot r7_01b_saegewerk_ufer_nachher 1600x900 dwarves drawn 1 tick 975
+97.5 shot r7_01b_saegewerk_ufer_nachher_spielkamera 1600x900 dwarves drawn 3 tick 975
+97.5 shot r7_01c_foerster_eben_nachher 1600x900 dwarves drawn 1 tick 975
+97.5 shot r7_01c_foerster_eben_nachher_spielkamera 1600x900 dwarves drawn 5 tick 975
+97.5 pads r7: [39,45 side 3 level 10.02] [42,46 side 2 level 10.02] [44,40 side 1 level 9.96] [46,44 side 1 level 10.52] [45,51 side 1 level 9.98] [31,40 side 2 level 9.92]
+97.5 r7 01 the largest step the levelling adds (per 0.05 tile): shown 0.457 world units
+97.5 r7 01 too steep here: shown (42.50, 45.50): Hier nicht: Zu steil hier: der Boden am Gebäude und rings herum ist zu uneben | Ablageplatz: Süd (R wechselt die Seite). Dort legen die Zwerge die Waren ab.
+97.5 shot r7_01d_zu_steil_hier 1600x900 dwarves drawn 5 tick 975
+97.5 r7 02 good places hunter: shown 3: 52,46 n 85 game 0 trees 48; 49,34 n 79 game 1 trees 56 outside; 49,39 n 76 game 1 trees 50;  | preview: Hier nicht: nur auf deinem eigenen Land | Grenze: Die kleinen Laternen markieren dein Land. Nur darin kannst du bauen.
+Ablageplatz: Süd (R wechselt die Seite). Dort legen die Zwerge die Waren ab.
+97.5 shot r7_02a_jaeger_gute_jagdgruende 1600x900 dwarves drawn 3 tick 975
+97.5 r7 02 good places woodcutter: shown 3: 50,35 n 61 game 1 trees 61 outside; 49,40 n 51 game 1 trees 51; 52,46 n 48 game 0 trees 48;  | preview: Hier nicht: dieses Land hast du noch nicht gesehen | Ablageplatz: Süd (R wechselt die Seite). Dort legen die Zwerge die Waren ab.
+97.5 shot r7_02b_holzfaeller_gute_plaetze 1600x900 dwarves drawn 1 tick 975
+97.6 r7 placed woodcutter at 49,40 finished
+100.6 building woodcutter at 49,40 finished; own land 441 tiles
+100.6 r7 04 a finished woodcutter starts with one worker: shown slots 1 of 2, crew 0 (round 6: 2)
+100.6 shot r7_04_holzfaeller_ein_arbeiter 1600x900 dwarves drawn 1 tick 1006
+101.6 r7 03 store house: its carriers and the free carriers apart: shown slots 0 of 4, store carriers 0, free carriers on their way 2
+101.6 shot r7_03a_lagerhaus_0_von_4_freie_traeger 1600x900 dwarves drawn 6 tick 1016
+101.6 r7 03 a free carrier's info: shown Freier Träger vom Feuer: Große Halle | trägt Stämme zu: Lagerhaus
+101.6 shot r7_03b_freier_traeger_info 1600x900 dwarves drawn 4 tick 1016
+101.6 slots store at 42,47 -> 1
+191.6 r7 03 a store carrier comes: NOT shown crew 0 after the slot was set to 1
+191.6 r5 open meadow for the small fire (38.00, 36.00) trees round it 0
+191.7 r7 placed hearth_wooden at 38,36 finished
+192.7 fire hearth_wooden at 38,36 finished; own land 597 tiles
+192.7 r7 05 fuel filled in: NOT shown wood 3 of 3, piles drawn 8
+192.7 shot r7_05a_feuer_holz_eingefuellt 1600x900 dwarves drawn 0 tick 1927
+192.7 shot r7_05b_feuer_info_holz_eingefuellt 1600x900 dwarves drawn 0 tick 1927
+202.7 r7 07 the village: shown game s 203, dwarves 8 of 14, stock 10/4/5/8, buildings heart_fire ok; store ok; sawmill ok; forester ok; woodcutter ok; forester ok; woodcutter ok; hearth_wooden ok; 
+202.7 shot r7_07_dorf_spielkamera 1600x900 dwarves drawn 6 tick 2027
+202.7 capture done

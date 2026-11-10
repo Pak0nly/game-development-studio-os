@@ -1,0 +1,3 @@
+rule;deliveries;by store carriers;dwarves at the end;newcomers;sites done;sites open;logs;stones;game;boards;idle dwarf-seconds;worker-seconds;carrier-seconds;hidden-seconds;site times
+round 7 (one worker at the start; the map's store house 0);66;0;12;4;9;0;21;6;10;0;191;2268;0;0;quarry 33 s, hunter 27 s (hunts at 46,44), forester 35 s, woodcutter 41 s, hearth_wooden 84 s, store 137 s, sawmill 236 s, well 147 s, woodcutter 46 s
+round 6 rules (full at the start);24;3;8;0;6;2;9;6;6;0;69;3222;176;11;woodcutter not placed, quarry 33 s, hunter 27 s (hunts at 46,44), forester 35 s, woodcutter 34 s, hearth_wooden 398 s, store 303 s, sawmill open, well open

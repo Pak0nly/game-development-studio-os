@@ -1,0 +1,17 @@
+step,part,shown,detail
+00,switches,yes,levelling round 7; fuel filled in; hunt at the game True; steepness ring True; one worker at the start True; max slope 0.18
+06,the dwarves in the top bar,yes,added by the debug step 0 of 8 tried; dwarves 8 of 8 places
+01,levelled forester,yes,forester at 44;40 level 9.95 own 9.95
+01,levelled woodcutter,yes,woodcutter at 46;44 level 11.09 own 11.09
+01,levelled sawmill,yes,sawmill at 31;41 level 9.50 own 9.50
+01,levelled forester,yes,forester at 45;51 level 10.00 own 10.00
+01,the largest step the levelling adds (per 0.05 tile),yes,0.017 world units
+01,too steep here,yes,(42.50; 45.50): Hier nicht: Zu steil hier: der Boden am Gebäude und rings herum ist zu uneben | Ablageplatz: Süd (R wechselt die Seite). Dort legen die Zwerge die Waren ab.
+02,good places hunter,yes,3: 49;34 n 1 game 1 trees 56 outside; 49;39 n 1 game 1 trees 50; 54;44 n 1 game 1 trees 55 outside;  | preview: Hier nicht: nur auf deinem eigenen Land | Grenze: Die kleinen Laternen markieren dein Land. Nur darin kannst du bauen. Ablageplatz: Süd (R wechselt die Seite). Dort legen die Zwerge die Waren ab.
+02,good places woodcutter,yes,3: 50;35 n 61 game 1 trees 61 outside; 49;40 n 51 game 1 trees 51; 52;46 n 48 game 0 trees 48;  | preview: Hier nicht: dieses Land hast du noch nicht gesehen | Ablageplatz: Süd (R wechselt die Seite). Dort legen die Zwerge die Waren ab.
+04,a finished woodcutter starts with one worker,yes,slots 1 of 2; crew 0 (round 6: 2)
+03,store house: its carriers and the free carriers apart,yes,slots 0 of 4; store carriers 0; free carriers on their way 2
+03,a free carrier's info,yes,Freier Träger vom Feuer: Große Halle | trägt Stämme zu: Lagerhaus
+03,a store carrier comes,NO,crew 0 after the slot was set to 1
+05,fuel filled in,yes,wood 3 of 3; piles drawn 6
+07,the village,yes,game s 203; dwarves 8 of 14; stock 10/4/5/8; buildings heart_fire ok; store ok; sawmill ok; forester ok; woodcutter ok; forester ok; woodcutter ok; hearth_wooden ok; 
