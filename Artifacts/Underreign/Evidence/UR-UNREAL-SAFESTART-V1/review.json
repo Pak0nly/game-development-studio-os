@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-UNREAL-SAFESTART-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a4b5ee081b16d9d99",
+  "reviewer_task_id": "ac9a80ddfe74e7ff6",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "e08e5b492671c432fed9c227420881236ffa75f32d432c1101774ac431584cf4",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

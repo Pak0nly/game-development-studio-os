@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-UNREAL-SAFESTART-V1
+
+UR-UNREAL-SAFESTART-V1 (the Human's PC switches off under full GPU load: every game start now capped at 60 fps with VSync and High instead of Epic; `Game/Play Underreign (Schonmodus).bat` with 30 fps, Medium, no hardware ray tracing, 1600 x 900; fewer shader compile workers, below-normal priority; layer buttons named; external commit 1ec2cb7)
+Independent review verdict: PASS
+Worker task: a4b5ee081b16d9d99
+Reviewer task: ac9a80ddfe74e7ff6
+Candidate identity: e08e5b492671c432fed9c227420881236ffa75f32d432c1101774ac431584cf4
+Closure receipt: d0d677278671bf38a286a365ebadbb422c9b011423fbb842b1fc08bd525e29cf
+
+Next: UR-UNREAL-STAIRFIX-V1 (the Human could not build a stair at a ring: the game's pre-check misses the rule "one side must be open floor" and shows success although the rules refuse); then the Human plays.
+
 ## Closed: UR-UNREAL-PLAYABLE-V1
 
 UR-UNREAL-PLAYABLE-V1 (first playable version for the Human: Unreal rules module resynced to rules 4 (69a1bea) with parity at ticks 600-2400; stair/shaft tool at fixed breakthrough points, six trap parts, chain wiring across layers, show machines, remove; attack order and call back, camp and guards drawn, win/lose screen with play again; hover labels, key help, heat overlay; `Game/Play Underreign.bat` and German `Game/SPIELANLEITUNG.md`; rules and tuning unchanged; external commit 07f2f66)
