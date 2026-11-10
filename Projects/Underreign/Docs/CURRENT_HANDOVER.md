@@ -46,6 +46,11 @@ Night return receipt: d9fc8767bccf9936492a119aaa3dc659465cdac1703a2cce7a8a28ce9f
 
 Recorded: DEC-042 (Underreign-only no-training scope for own content), UD-49 (Meshy for main modelling, Blender for adjustments, rigging, animation), UD-50; OD-06 direction decided.
 
-Next action: engine is Unreal 5.8 (DEC-043). Get answers on OD-16 (commit
-approval for Unreal jobs) and the Unity cache entry; then plan the C++ port
-night and the Unreal project setup (OD-17); rewrite the work breakdown for Unreal.
+Human 2026-11-10, "Ja, beides": (1) the standing commit approval (UD-35) also
+covers finished and reviewed Unreal jobs (record as UD in the next decision
+order; resolves OD-16); (2) the broken Unity cache entry
+`%LOCALAPPDATA%/Unity/Caches/bee/9f90563c...0006` was deleted by the Director
+(no Unity was running).
+
+Next action: on the Human's go, start the C++ port of the simulation (cloud)
+and the Unreal project setup with a rewritten Unreal work breakdown (local).

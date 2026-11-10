@@ -52,8 +52,8 @@ Closure receipt: 679479528af8bcacf0e6b8e2e91d9352754488a649a6083d265c215396e7ce3
 
 Kit: UR-ENGINE-KIT-V1 (Blender kit, external commit 0c633a2; Director visual check, no review required).
 Both engine sides applied two kit corrections (local lights x 4 pi; rock two-sided).
-A broken Unity build-cache entry from the 12:00 power loss remains under
-`%LOCALAPPDATA%\Unity\Caches\bee` (deletion awaits the Human's yes).
+The broken Unity build-cache entry from the 12:00 power loss was deleted on the
+Human's yes (no Unity was running).
 
 ## Earlier closures
 
@@ -63,6 +63,6 @@ UR-GATE-EXTERNAL-NIGHT-V1 closed 2026-11-09 (closure receipt
 ## Human checkpoint
 
 Engine decided: Unreal Engine 5.8 (DEC-043, UD-51; recorded by UR-DEC-043-V1,
-receipt `9b3616c2…`). Waiting for the Human: does the standing commit approval
-cover Unreal jobs (OD-16), and may the broken Unity cache entry be deleted.
+receipt `9b3616c2…`). Human approved commits for reviewed Unreal jobs (OD-16, to be recorded) and the
+deletion of the broken Unity cache entry (done).
 Next work: simulation port C# to C++ (night) and the Unreal project setup (OD-17).
