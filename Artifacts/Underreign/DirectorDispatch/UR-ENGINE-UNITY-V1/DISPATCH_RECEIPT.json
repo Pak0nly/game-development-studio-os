@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-ENGINE-UNITY-V1",
+  "work_order_sha256": "739852319d533dba5b71db97bf16e0c22cd790c2d0a46b2455dd0ab7e7fb6dd8",
+  "manifest_sha256": "ddcd344d994293b44b0913e36b09c6d7929214e73e13466ef15131eebc0b9efa",
+  "repository": {
+    "branch": "main",
+    "head": "5fd85f476ac3169e1d174a666fdfa762052b712b"
+  },
+  "project_identity_sha256": "dce56f34ccf58e1d1f2f3bf40e3157f74d89f37dcde6cb30c56e33f9e0ff189d",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-ENGINE-UNITY-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "c43b83597a78f98c6b9398a87c2ad6e31d592e426835e731b7a6164fd9ee30a6",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "0c633a2ffd7a4bca1701c326e756f9a8f91c34bb"
+    },
+    "allowed_mutations": [
+      "EngineComparison/Unity",
+      "Evidence/UR-ENGINE-UNITY-V1"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison/Kit",
+      "Night",
+      "README.md",
+      "Simulation"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "EngineComparison/Unity",
+        "Evidence/UR-ENGINE-UNITY-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "b38e12a0b00a2ab0a366e12ceeb6969c01d2b85d32caebbb9a8ee34a59645fba"
+  },
+  "execution_location": "local",
+  "receipt_id": "97f74d5c8a05f87282225634e9c00ae32b2c2b965ad8b7a777585bd7dc8f4db4"
+}

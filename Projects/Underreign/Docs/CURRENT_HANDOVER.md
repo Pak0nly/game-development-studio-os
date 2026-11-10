@@ -23,6 +23,8 @@ Candidate identity: f98d497babee7b394ffe4e75907eaa17ad22f47f810364c5ce9a5b406be2
 Closure receipt: d0aba6ce02136b682a7863690ad918f5451f7233b3e277b124702e964f58719a
 Night return receipt: d9fc8767bccf9936492a119aaa3dc659465cdac1703a2cce7a8a28ce9f57d4da
 
+Recorded: DEC-042 (Underreign-only no-training scope for own content), UD-49 (Meshy for main modelling, Blender for adjustments, rigging, animation), UD-50; OD-06 direction decided.
+
 Next action: on the Human's go, dispatch the engine comparison sample
 (Blender-made Ashen Pact kit, same scene in Unity and Unreal 5.8, same camera,
 stills and clips side by side, including a dig moment for dynamic light).

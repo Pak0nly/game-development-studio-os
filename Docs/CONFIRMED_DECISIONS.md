@@ -753,3 +753,21 @@ authority boundaries.
 **Human confirmation source:** Human Developer answers to the Underreign concept question catalogue (setup question answered "Ja, so anlegen wie Hearthlands und MobileArc."; platform and engine from the answers "Zuerst PC über Steam" and "Unity wie Hearthlands"; full record in `Projects/Underreign/Docs/DISCOVERY_DECISIONS.md`), Underreign concept chat, 2026-11-09.
 
 **Supersedes:** None
+
+### DEC-042 — Underreign No-Training Scope for Own Content
+
+**Status:** Confirmed
+
+**Scope:** Project Underreign only
+
+**Confirmed decision:**
+
+- For Underreign, content created by or for the project itself (own models, textures, sculpts, animations, concept images and other project-owned material, including Claude- or tool-generated content made for Underreign) may be submitted to generation and processing services such as Meshy at the Human Developer's own responsibility, even if the service's training practice cannot be verified.
+- Third-party assets (Asset Store, Fab, marketplace or other licensed or vendor material) stay fully under DEC-025 and its licence restrictions.
+- All other projects and all Studio OS content remain under DEC-025 unchanged.
+
+**Implications:** Steam's AI-content disclosure is required for AI-generated content. Provider choice and accounts follow DEC-013 and DEC-014. Record which service and which asset in a provenance note per asset.
+
+**Human confirmation source:** Human Developer, Underreign chat, 2026-11-10: "Die Lernsperre gilt für third party assets. Eigen erstelle Assets sind in Eigenverantwortung. Das auf Steam Angaben gemacht werden müssen ist klar." On the Director's question "Soll ich das so eintragen? A: Ja, nur für Underreign (meine Empfehlung). B: Ja, für das ganze Studio. C: Nein, die Regel bleibt, wie sie ist." the Human answered: "Ja." (option A, the recommendation as written: "die Ausnahme nur für Underreign festlegen. Eigene Underreign-Inhalte dürfen dann auf deine Verantwortung an Dienste wie Meshy gehen. Fremdassets bleiben unter der Sperre. Für Hearthlands und die anderen Projekte bleibt alles, wie es ist.").
+
+**Supersedes:** Only DEC-025's application to Underreign's own content; the text of DEC-025 is not changed.

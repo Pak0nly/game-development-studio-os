@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-DEC-042-V1",
+  "assignment_type": {
+    "value": "Record DEC-042 (Underreign-only no-training scope for own content) and the asset generation direction",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Standard",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-DEC-042-V1/WORK_ORDER.md",
+    "sha256": "c3bfe85e69d753646011561e128202a049aa3c9223da8fdd337afda7f54f4527",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Underreign",
+    "project_id": "Underreign",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "e41c9a71db5a73a547aedff81fcb27d6aaffeaa136d114db9a69078e803edd8a",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Underreign",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "5fd85f476ac3169e1d174a666fdfa762052b712b",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Docs/CONFIRMED_DECISIONS.md",
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Artifacts/Underreign/Evidence/UR-DEC-042-V1"
+    ],
+    "sha256": "cf48992fe8a7daeb34d7ada00afa8f22021e3b61b498ada372c9cbdcf1f80c93",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-10, Underreign chat): 'Die Lernsperre gilt für third party assets. Eigen erstelle Assets sind in Eigenverantwortung.' and 'Ja.' to option A (Underreign only); Meshy direction statement.",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a442ee7714ad051d361978b715b2dd0fd157325aa043cce9edd652f2fbed7eeb",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "b2eb81d4a757afe0897910042d6d022b07b93f07aacb96d02055cd6b27ef4e7c",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "1935cb00878be39cd971467b4e1f5e3a7daaa5ab890061366d691524d030ac1f",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "sha256": "cc45c62fe946ec78114de21da66ef8cf8afeae1baa4a3b93f005b276752fa7e4",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-schema",
+        "path": "Tools/UnderreignDispatchGate/underreign-dispatch-schema-v1.json",
+        "method": "file_sha256",
+        "expected_sha256": "b66b8e84b166dec78fbf1a8f751d06dda67c5de12231928a3257e7c6fa251f6e",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-10, Underreign chat): 'Die Lernsperre gilt für third party assets. Eigen erstelle Assets sind in Eigenverantwortung.' and 'Ja.' to option A (Underreign only); Meshy direction statement.",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Docs/CONFIRMED_DECISIONS.md",
+    "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+    "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+    "Artifacts/Underreign/Evidence/UR-DEC-042-V1"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs/README.md",
+    "Docs/WORK_STATE.md",
+    "Tools",
+    "Projects/Underreign/Docs/WORK_STATE.md",
+    "Projects/Underreign/Docs/CURRENT_HANDOVER.md",
+    "Artifacts/Underreign/DirectorDispatch"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, or any need outside the allowed paths.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Discovery",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Record DEC-042 and UD-49/UD-50",
+      "class": "Routine",
+      "reason": "Bounded documentation recording of two Human answers with exact quotes; routine.",
+      "requested_model": "sonnet",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Game Designer"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Director owns scope and Human checkpoint.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Game Designer",
+      "status": "ACTIVATED",
+      "reason": "Worker writes the Deep Dwarves concept entry.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Record UD rows and open decisions",
+      "status": "pending"
+    },
+    {
+      "step": "README and WORKER_RESULT.md",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "UR-DEC-042-V1",
+    "rounds": 1,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Underreign Director session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "sonnet",
+      "reasoning_effort": "medium",
+      "reason": "Bounded documentation recording of two Human answers with exact quotes; routine."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": false,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": false,
+      "reviewer_separate_from_worker_and_director": false,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Human reads the recorded round; next is the prototype planning Work Order.",
+    "declaration": "HUMAN DECISION"
+  }
+}
