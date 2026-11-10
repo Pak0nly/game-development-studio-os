@@ -2,54 +2,46 @@
 
 project_id: Underreign
 
-## Present state - 2026-11-09
+## Present state - 2026-11-10
 
-Project Underreign (working title) is set up (commit aff7610). Concept v1
-approved (UD-23); catalogue rounds 2 to 4 recorded (UD-24 to UD-33). DEC-041
-records the project.
+Project Underreign (working title, DEC-041). Concept approved (UD-23); catalogue
+rounds 1 to 4 recorded (UD-01 to UD-33). Peoples: Ashen Pact, Mycelid Choir,
+Drowned Court (eerie deep-sea people), Gearbound Kin (kobold tinkerers), Deep
+Dwarves; Crystal Brood later. Prototype direction: Ashen Pact, three layers,
+heat rises, greybox.
 
-- UR-DECISIONS-R4-V1: first dispatch through the Underreign gate (receipt
-  `0d7b1b88…`, verify-worker PASS; no independent review required for this
-  routine recording). Recorded UD-32 (Deep Dwarves: fifth playable people, also
-  rivals digging in from the side) and UD-33 (Crystal Brood later); created
-  `Docs/PRODUCTION_PROFILE.md`. Evidence:
-  `Artifacts/Underreign/Evidence/UR-DECISIONS-R4-V1/WORKER_RESULT.md`.
-  Committed.
+- Dispatch gate `Tools/UnderreignDispatchGate` (independent copy; external root
+  `C:/GameDev/Underreign`; cloud night mode; 75 tests).
+- Unity project folder `C:/GameDev/Underreign`, remote `Pak0nly/underreign`
+  (private). `main` fast-forwarded to the night result `f94ca38` locally.
+- Reference images of the peoples (rough, orientation only) in
+  `Projects/Underreign/References/ArtDirection/`.
 
-- Dispatch gate: `Tools/UnderreignDispatchGate`, an independent copy of
-  `Tools/ClaudeDispatchGate`; forbids mutation of other projects' roots; 41/41
-  tests pass. Built by UR-SETUP-INFRA-V1 under bootstrap (no gate existed);
-  independent review PASS, low findings corrected (Correction 01). Correction 02
-  recorded round 3. Evidence:
-  `Artifacts/Underreign/Evidence/UR-SETUP-INFRA-V1/WORKER_RESULT.md`. This
-  bootstrap creates no standing exception; every later mutation-capable
-  Underreign dispatch needs a gate receipt.
-- Unity project folder: `C:\GameDev\Underreign`, own local Git with Git LFS,
-  no remote, no Unity project yet.
-- Prototype direction: Ashen Pact, three layers, heat rises (UD-24), greybox.
-- Peoples: Ashen Pact with glass horns (UD-28), Mycelid Choir, Drowned Court as
-  an eerie deep-sea people (UD-30), Gearbound Kin as kobold tinkerers (UD-29),
-  Deep Dwarves (UD-32); Crystal Brood later (UD-33).
-- Image prompts for rough looks:
-  `Projects/Underreign/References/ArtDirection/IMAGE_PROMPTS.md`.
+## Closed: UR-NIGHT-01-V1 (night shift 1)
 
-Nothing in Hearthlands, MobileArc or Crime99 was changed.
-
-## Closed: UR-GATE-EXTERNAL-NIGHT-V1
-
-UR-GATE-EXTERNAL-NIGHT-V1 (gate gains external root `C:/GameDev/Underreign`
-and cloud night mode; no budget field; 75/75 tests).
+UR-NIGHT-01-V1: prototype plan, technical design, Unity work breakdown,
+engine-free simulation (684 tests, .NET and Mono/NUnit 3.5), 200-seed balance,
+18-file game bible, art brief, questions for the Human; 980 new files on
+`night/2026-11-09` in `C:/GameDev/Underreign`.
 Independent review verdict: PASS
-Worker task: a577e0a890a4cb7e9
-Reviewer task: a71ee8999657bf6b9
-Candidate identity: 3c5f4850bd0cd679eb3e996c42182c4f94f6ac0f5c97fd19a048f9d748364a20
-Closure receipt: 4a7487c363271a1a9952c8ff2d9351b8a8a1e3702a6395b0bd2ae726645bb235
+Worker task: cloud-task_6230facb-underreign-night-1
+Reviewer task: a81772f980de7621c
+Candidate identity: f98d497babee7b394ffe4e75907eaa17ad22f47f810364c5ce9a5b406be2d2b7
+Closure receipt: d0aba6ce02136b682a7863690ad918f5451f7233b3e277b124702e964f58719a
+Night return receipt: d9fc8767bccf9936492a119aaa3dc659465cdac1703a2cce7a8a28ce9f57d4da
+
+Open from the night: balance depends on opening luck (fix proposed), creature
+survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
+loses; ready variants exist for heat and traps.
+
+## Earlier closures
+
+UR-GATE-EXTERNAL-NIGHT-V1 closed 2026-11-09 (closure receipt
+`4a7487c3…`); evidence in `Artifacts/Underreign/Evidence/UR-GATE-EXTERNAL-NIGHT-V1/`.
 
 ## Human checkpoint
 
-Night shift 1 in preparation (Human, 2026-11-09): private GitHub repository
-`Pak0nly/underreign` created and set as `origin` of `C:/GameDev/Underreign`;
-night order UR-NIGHT-01-V1 (prototype plan, simulation core, game bible) runs in
-the cloud on `night/2026-11-09` until 07:00 UTC; snapshot order
-UR-NIGHT-PREP-V1 prepared. Morning: fetch, `verify-night-return`, review,
-sync results into the Studio repository.
+Waiting for the Human's answers to the night's questions (catalogue round 5,
+https://claude.ai/artifact/TfyGXsaWnvENLpK3cY5dxq): plan approval, Unity start
+approvals, render pipeline, walled-in Heart rule, then balance, names and
+full-game direction. No Unity work before that.

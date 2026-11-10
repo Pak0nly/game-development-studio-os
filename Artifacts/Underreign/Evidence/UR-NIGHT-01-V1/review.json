@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-NIGHT-01-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "cloud-task_6230facb-underreign-night-1",
+  "reviewer_task_id": "a81772f980de7621c",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "f98d497babee7b394ffe4e75907eaa17ad22f47f810364c5ce9a5b406be2d2b7",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}
