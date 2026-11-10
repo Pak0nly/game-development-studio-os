@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-SIM-WORKER-JOBS-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-WORKER-JOBS-V1/WORK_ORDER.md",
+    "sha256": "05c914f92b0014743bd5bc8df0114fe39cb9c16af0102b172cff11a94648d34d",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-WORKER-JOBS-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "622f9419d07f6f8e71b2f7d7a5c2703d1f6147f6a6ffb6e16a39c12df3189a37",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-WORKER-JOBS-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "52131adc3ef80e603869c9852dbacafad33eb868460c146a12d851625b6cba54",
+    "receipt_id": "14766c3d08c6ec181418d2966bcdf2bc50b08458dc74a192f3bd7b8e65c0657b",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "aff436bb274b5b1bc",
+    "reviewer_task_id": "a510eda045a9bc49a"
+  },
+  "candidate": {
+    "identity": "25d842dcee3db0d3d9e62a77266aae2b8a4b916e70af187f642941a59d43754e",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/WORKER_RESULT.md",
+        "sha256": "81662f41e6bb0259ea9acb1f2e0487e0ec10196f57189bfa1b06cda374c820f7",
+        "size": 20512
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/batch_reasonable-varied.csv",
+        "sha256": "ae50ca193f76ecece4fbc5989eef87ac93b19c74e3a5cce846b0de70db78c6e0",
+        "size": 81239
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/batch_reasonable-varied.md",
+        "sha256": "b6d6260ab4b8d4bf1de0b1025fa9691d705e4ee5b5a0cc5ef075d07af2a824bd",
+        "size": 3697
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/batch_reasonable-varied_flow.csv",
+        "sha256": "e7a73400933a39a5b51b0a853cccc5b9c5ae09d44ef8c5b2878880892a118cf5",
+        "size": 58614
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/batch_reasonable.csv",
+        "sha256": "40a79abe90decfe4a0d264cc3fa7119dfb2bfd36f9be136f883b171d9764bb74",
+        "size": 80388
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/batch_reasonable.md",
+        "sha256": "7bfb4213d972c15fe934c44abf4cba793e15ce043ca976182e344dd84102c7b4",
+        "size": 3681
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/batch_reasonable_flow.csv",
+        "sha256": "68bf3f5828f2ff64462ebaadb2fc2ec4ae1817bd48840f329398c4bc97ba27d9",
+        "size": 58355
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/jobtrace_digopening_seed1.md",
+        "sha256": "607a4a0e1689a9d8e5abc9223042494fa44aad3e5b4a52472bc11251e4f5e1ed",
+        "size": 1134
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/jobtrace_digopening_seed1_jobs.csv",
+        "sha256": "c9472f9cf85818e4ffaf86dbb6323ed7b2de435b2c367c82a66860cbc0543938",
+        "size": 16821
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/jobtrace_reasonable_seeds1-20.md",
+        "sha256": "ee9805d96655a8fdd15b4950f38520ff4bc4d1a592db3041d38911954e5a6435",
+        "size": 1534
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/jobtrace_reasonable_seeds1-20_jobs.csv",
+        "sha256": "44769ed24744644c7a91089a3b815fc098cc851d874fc0da720e615d45c9b66f",
+        "size": 589409
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/jobtrace_varied_seeds1-20.md",
+        "sha256": "670baab156b4a06321f11a03f2d59ce4a75b7bf01bcb3dd607aa12aa68087a53",
+        "size": 1538
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/after/jobtrace_varied_seeds1-20_jobs.csv",
+        "sha256": "7d10095b08715b54b860f6b153694049bff8f6a976e4b6874cde72071bd66e4f",
+        "size": 573346
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/analysis/aba_by_kind.py",
+        "sha256": "8b51c682d0d259b35e31e0f99879ba9d2af2fca602a732c8c27718bcb578c4bb",
+        "size": 1409
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/analysis/aba_reasonable_after.txt",
+        "sha256": "7654691407d606d1990a49f6dd03dececfc2efc2d4bfb7005e33a4884f28f84c",
+        "size": 936
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/analysis/aba_reasonable_before.txt",
+        "sha256": "0c72fea7d7681b52bac39f7919f955b61e085847678e3954b7ec272d14f6e8e0",
+        "size": 943
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/analysis/aba_varied_after.txt",
+        "sha256": "8d8a8edb03dc372ae291e7f03db6cfefe747569454904ee198a6afabe4d878f6",
+        "size": 930
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/analysis/aba_varied_before.txt",
+        "sha256": "9d3dc242dd0d5be994f604c1212ef6271a809fc8751b2e85d174df64f8bb885e",
+        "size": 945
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/batch_reasonable-varied.csv",
+        "sha256": "063ec69140e43ddff0eaa0a25e6a3c803ddb1082bd1004d52f7f377e942c4e61",
+        "size": 81418
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/batch_reasonable-varied.md",
+        "sha256": "2778682a383129b163ed5a9265824b9fa8967760c42c85ff9192c8e3048a0902",
+        "size": 3692
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/batch_reasonable-varied_flow.csv",
+        "sha256": "10407514eeddcadff07869fb78d475029c188c4d02935164bdd322fea571826b",
+        "size": 58127
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/batch_reasonable.csv",
+        "sha256": "95c2a580389af58cd5c6bd92d93fd98204a2ed56636eea81c0f8857515e5caa8",
+        "size": 80492
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/batch_reasonable.md",
+        "sha256": "08aff33a12c159e3be5712092df3955e1318a1577d632b8d3fc6a0acea4beb25",
+        "size": 3675
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/batch_reasonable_flow.csv",
+        "sha256": "5c0039ba9191ae11581d882517acfae6ba52251e959fd45ebf09b616872f69ae",
+        "size": 58171
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/jobtrace_digopening_seed1.md",
+        "sha256": "5edc97bd045c6ac4fdb30337133cb70cbcebdbdaa186f4f7236774c34217e9e5",
+        "size": 1056
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/jobtrace_digopening_seed1_jobs.csv",
+        "sha256": "ae594170b45fc9e942bdcd4c5cc1121e4f37c08f904e77a3c801b4faf32900a0",
+        "size": 9680
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/jobtrace_reasonable_seeds1-20.md",
+        "sha256": "7e6c0ded73ee493bbad7b300b6f1583a16b8e92cc9df6beb79ce12becd5720eb",
+        "size": 1537
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/jobtrace_reasonable_seeds1-20_jobs.csv",
+        "sha256": "9029df0b5ba28e1a404f28b4022c44da6fefe9a870d901fc8e310af3e90a3713",
+        "size": 568244
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/jobtrace_varied_seeds1-20.md",
+        "sha256": "1f6bcd431f636999206f926c3f3b4c7de3b5da568900344cc13858933a415e48",
+        "size": 1540
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/before/jobtrace_varied_seeds1-20_jobs.csv",
+        "sha256": "8dfa2788796393b3f695d3a77f6a00176d87a33a47c04d8299d6892014dcc13b",
+        "size": 569013
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/checks/bench.txt",
+        "sha256": "f761eb5d5094a0657c919271e496a2155259bd1fb4731a76cf8098a0ef525f9a",
+        "size": 5449
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/checks/build_rebuild.txt",
+        "sha256": "6a36a7238c24c7c0990d194b56e4d33ec32ba88b3553221991a9d9fbd724a14b",
+        "size": 231
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/checks/golden_replays.txt",
+        "sha256": "3e6a6cbce539fbaaffb2278ba4f8382dc9214e11498a2ecd7ba190d2ee0c7e36",
+        "size": 1052
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/checks/source_diff.patch",
+        "sha256": "814c7b7b58accc22ed06885b4aadcd272cf5d398e527cbbf7a6db9a85cb7e1c2",
+        "size": 53137
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-WORKER-JOBS-V1/checks/tests.txt",
+        "sha256": "94d928c433ac9c6bf1b449fc18c2d2884951b24bf5e7a276ff5d9981758c4e0f",
+        "size": 494
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "1d507148c3364a658c5bbcfe22920924e754628e9fbf79605b904fe075006290",
+        "size": 749
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "9378f696109cd0e7ef87347bcbb5b001857d7a0e6db04d685075d6ca9b334e71",
+        "size": 7067
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed2_won.save.txt",
+        "sha256": "f3a353dde34336164c75cb3819ebd4a4ff6fefc2485302928518b01007b08a07",
+        "size": 6959
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed4_lost.save.txt",
+        "sha256": "6191331d393df581e05af32002cd8e78060d971ea51aebfca3a2a81ccae03a5f",
+        "size": 6935
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/README.md",
+        "sha256": "a74efb213ade404518a04922f754c42d72ff902606da0f28dd21bbe7c5e17876",
+        "size": 817
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules4/golden.tuning.txt",
+        "sha256": "6e27de7c808331e125306fbfb2497e55fc34ba29800a3118f64e91d4ab4899e3",
+        "size": 1908
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules4/golden_idle_seed1_lost.save.txt",
+        "sha256": "b0995bc69ec2baa7dbd5b05fdecfde6a21d24532e946ef4046763b109936f62b",
+        "size": 749
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules4/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "50cb5c0af5e3bdb1fe9d599fa98d3aaaa63552804704b1a8d12b0474011e4c86",
+        "size": 6872
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules4/golden_reasonable_seed4_lost.save.txt",
+        "sha256": "587d4b2a7fae14932baca2d9b1b0e508a9590b1b51b5a2977b0136c06f9c5b40",
+        "size": 5400
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules4/golden_reasonable_seed8_won.save.txt",
+        "sha256": "b2f568206f62f2e1f9f2e86852fb9cd563cb6687ab3a7bf11e7b60461a6c54a4",
+        "size": 7210
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/JobTrace.cpp",
+        "sha256": "43181f5eb395a97844f65a7db2eff0524000bd75e7ebba6dd99dd1341fe732b2",
+        "size": 14740
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/JobTrace.h",
+        "sha256": "fed9d3c4cf19643c23396c6e0468f13e4c4bb61a66dfa34783a839ef4a2bca71",
+        "size": 2385
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/Program.cpp",
+        "sha256": "72a1c6a261aaebed70d57d56aaca4cb371c5b6d6683c5ae0d898965f3f1c3f91",
+        "size": 7762
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/JobBoard.cpp",
+        "sha256": "82d9d062a7396357cea6c82c67e36ee81bb10e32f0106ba34ad3f00fcbc3b0c8",
+        "size": 14675
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/Worker.cpp",
+        "sha256": "1dee0dbb06562707bbb42cf2fd76a352ebeaea7ba9b12cddeb00da9bb0662983",
+        "size": 302
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/WorkerSystem.cpp",
+        "sha256": "971beb2a3643ce73431b94b6de47c716fdd3d4100d15e79755eb63f60de0947e",
+        "size": 9712
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Jobs/JobBoard.h",
+        "sha256": "aa5c0866f979529b46de225aa02c9f0787e1d2041d455859eb416b998764f907",
+        "size": 5147
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Jobs/Worker.h",
+        "sha256": "1763444d4b166bde237bea3905a971ec2107ab5bbfa7409c27d08c9f2a4fc512",
+        "size": 1176
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "b81a2a68c535f9285cc571936a78d61ddf7b3352041adc0fdb99f6ecd83eaac1",
+        "size": 1699
+      },
+      {
+        "path": "ext:SimulationCpp/README.md",
+        "sha256": "28917fe6e83910b18f063d697cacbd911208cb8c47904f9e166ebaf296641aac",
+        "size": 22276
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/AttackGoalTests.cpp",
+        "sha256": "6dd2a9cb6d6cee2bb5d921ee033d5dde48edca88290483b6270cdac9d3c95325",
+        "size": 14449
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeadlessTests.cpp",
+        "sha256": "eb62603527f68053995d79471506afd2734468602200c576972b6018e6789a95",
+        "size": 22893
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/OpeningVariationTests.cpp",
+        "sha256": "477b1836512df56841d9b2768b64185399a8052ade2227d705114966d32c59d4",
+        "size": 7586
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/SaveTests.cpp",
+        "sha256": "990a41fbbadbe0a94a685c2ff3b0fd00999e5da30cfead5bd05fed5ace7bb448",
+        "size": 9524
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/StyleBotTests.cpp",
+        "sha256": "86ca57a4c54943e940c03b641bff7715274f62480a0a910cf25cd1f87b9e1b1a",
+        "size": 8472
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/WorkerJobTests.cpp",
+        "sha256": "bb37d3ae63a1cfd6dca14bda78cc2209eff4724835c05fdcbfe19cd3a4f1e9b8",
+        "size": 11009
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-SIM-WORKER-JOBS-V1/WORKER_RESULT.md",
+        "sha256": "bb40f3b6fcdead983bb3f4d32f32524fb51fbafea8dd54c4aa95636620cf3dc8",
+        "size": 20755
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-SIM-WORKER-JOBS-V1/REVIEW.md",
+      "sha256": "d24469a2433076df2852fe4fa6bf26017683dfcc0b9972ca7c375a7efaca47a9",
+      "size": 4613
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-SIM-WORKER-JOBS-V1/review.json",
+    "record_sha256": "df237f2d664bf465dded2af3cf3faaf42eff8724be585265ca1bab0695c75aa2",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "25d842dcee3db0d3d9e62a77266aae2b8a4b916e70af187f642941a59d43754e",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

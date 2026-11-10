@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-SIM-WORKER-JOBS-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "aff436bb274b5b1bc",
+  "reviewer_task_id": "a510eda045a9bc49a",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "25d842dcee3db0d3d9e62a77266aae2b8a4b916e70af187f642941a59d43754e",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

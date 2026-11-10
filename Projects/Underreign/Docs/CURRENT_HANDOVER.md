@@ -13,6 +13,17 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-SIM-WORKER-JOBS-V1
+
+UR-SIM-WORKER-JOBS-V1 (rules 5: within a priority the nearest idle cinderling/job pair is matched first, claiming spreads outward, work area kept; dig opening: cells walked per job 7.98 -> 2.58, far-job cases 48 -> 0; 739 tests; new golden replays; reasonable bot 23 %, wave 3 unchanged per UD-53; remaining walking is the gold carry loop; external commit 951f937)
+Independent review verdict: PASS
+Worker task: aff436bb274b5b1bc
+Reviewer task: a510eda045a9bc49a
+Candidate identity: 25d842dcee3db0d3d9e62a77266aae2b8a4b916e70af187f642941a59d43754e
+Closure receipt: 324897dbb4171db4a989f9cff629fbfcf5de997c0283e2b8f3cbdabc387a591f
+
+Next: UR-UNREAL-SUMMON-V1 (summon button, resync the game to rules 5 at 951f937, parity); then the Human plays.
+
 ## Closed: UR-DECISIONS-R7-V1
 
 UR-DECISIONS-R7-V1 (UD-53: wave 3 stays unchanged, Human: "Welle 3 bleibt auf jeden Fall so wie sie ist."; first own round feedback recorded as observations)
@@ -31,7 +42,7 @@ Reviewer task: a0498e18dfd1ecb56
 Candidate identity: aafcf8eebacc000e8b733ae84533786e393ad4ddff23ea9501a0d3a6532c3dbd
 Closure receipt: 543ddeb3c9f22675fe17bb9ab7cf6d9f78baf583ffec403cd04ac9c6a22beb11
 
-Human's first own round (2026-11-10): won 18:49 without traps; wants more cinderlings (the rules have summoning, 75 gold, cap 10, but the game has no button yet) and cinderlings that take nearby work. Running: UR-SIM-WORKER-JOBS-V1 (SimulationCpp). Next: UR-UNREAL-SUMMON-V1 (summon button, resync to the new rules).
+Human's first own round (2026-11-10): won 18:49 without traps; wants more cinderlings (the rules have summoning, 75 gold, cap 10, but the game has no button yet) and cinderlings that take nearby work.
 
 ## Closed: UR-UNREAL-STAIRFIX-V1
 
