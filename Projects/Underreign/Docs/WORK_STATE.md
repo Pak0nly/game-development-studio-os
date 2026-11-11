@@ -34,6 +34,15 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-STYLE-SAMPLE-V5
+
+UR-STYLE-SAMPLE-V5 (blur cause: world-space materials never streamed beyond 64-128 px; plus chromatic aberration and grain; fixed with full texture load (sample-only), no aberration, little grain, 16x anisotropy; neutral grade per the Human ("neutralerer Ton ist besser"); lossless stills, 1080p MP4; GPU 10.3 ms High / 17.2 ms Epic at 30 fps; Human verdict pending; external commit 569edc4)
+Independent review verdict: PASS
+Worker task: a1fa36864f20845c7
+Reviewer task: a8323bfb2b913e83a
+Candidate identity: da351d254ba61958d6142d3ff6e9c6fa1861f15bd397770d4a13b205ac5aba45
+Closure receipt: 9c4d7acf71ccf4931caee17bc555c5d5f2e223af8429ace7b0a09e40b2a2b41b
+
 ## Closed: UR-STYLE-SAMPLE-V4
 
 UR-STYLE-SAMPLE-V4 (dark charred scans chosen by measured albedo; floor of 183 irregular set-in slabs with sooty joints, broken and missing slabs; dark blood pools; braided lava streams; warm light only from fire and lava; overall still too red-orange vs the target's neutral grey-brown; GPU 10.5 ms High / 16.7 ms Epic at 30 fps; Human verdict pending; external commit d19406d)

@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-STYLE-SAMPLE-V5",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V5/WORK_ORDER.md",
+    "sha256": "62a6575b905a6a5a830a9e25adbdca56cb2aad29c3769e92322cd8af9f83647c",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V5/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "8f893d860150ce475efccb3a0f70a8b555d1bef7c54e25e961e5003c123f2acd",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V5/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "f0fa325cfcebea82fed6ebb303f8b40800338311ed3eb64f23a40b872fc929f3",
+    "receipt_id": "4380dc0b8beddd1e1f415872ef7c3f4a3bd26fd3b8f0f16b9694e7a33f24c5a9",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a1fa36864f20845c7",
+    "reviewer_task_id": "a8323bfb2b913e83a"
+  },
+  "candidate": {
+    "identity": "da351d254ba61958d6142d3ff6e9c6fa1861f15bd397770d4a13b205ac5aba45",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/WORKER_RESULT.md",
+        "sha256": "8d8bfaa7fafbe9162d1b1d85237ff418fca44d8599c72e89280e5a0f0fa51178",
+        "size": 9313
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/perf_stats.txt",
+        "sha256": "da441828fd2dd048ea21a4106e53e572f14f5da657a300e25a23635b684867a1",
+        "size": 3866
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/streaming_evidence.txt",
+        "sha256": "375efab98dfb10f1e5b57dd04e812352f08006a44251093a7e501957d282d152",
+        "size": 4670
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/v5_perf_q2.csv",
+        "sha256": "3f6ba396f968bbd01bd9d0eb652ccc8722b56cde0c091db20ad553a140889ba6",
+        "size": 1121537
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/v5_perf_q3.csv",
+        "sha256": "7c54dc98e23b87f688222a6c2f36f44472368fb1e1e99c0d95784055d2e40fb0",
+        "size": 1126358
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/v5_perf_q3_4k.csv",
+        "sha256": "198bb693f790e72645a6c99a74286f19475ff305b2659b15a6cfff54cc3cbb53",
+        "size": 1121967
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/v5_perf_q3_aniso8.csv",
+        "sha256": "a730c70f71ca3b65e09a371b8ec2eea8c79f59ffae3f5a08f2167231d170b428",
+        "size": 1122359
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/v5_perf_q3_stream0.csv",
+        "sha256": "bf316d0837dce29e5abf225c4489d7b67d6283e4a63fa5cb17f0500a5eb6d27e",
+        "size": 1122438
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V5/v5_perf_v4map_q3.csv",
+        "sha256": "4b900464ebf4323d01dd4d3fd7127f9e6f62b2819a41361334dc907030db885c",
+        "size": 1114410
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/06_camera_move_6s_1080p.mp4",
+        "sha256": "b605304a46b531b57b9f2e2dc9d9e8d5eb9ae157de026827eaade310f09cfd1f",
+        "size": 28278881
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d01_base_300.png",
+        "sha256": "4bc99ff03789ad7e5791b7661316892875f78e26428d9a41af885544c9ea87ae",
+        "size": 3090138
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d02_base_600.png",
+        "sha256": "8069c74922064bc3cec6011c14325acd637a4e42da2e3d61269134615a16ad9e",
+        "size": 3089825
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d03_fullload.png",
+        "sha256": "33bd6e021682a901203a308c9f2f54215f79982f8a31ee924b2e87a6bca3dfc0",
+        "size": 3179730
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d04_fullload_grabshot.png",
+        "sha256": "735504504813e7af68a0ffbeb1c48446da0542ff294d01a2bef04be10d753655",
+        "size": 3152456
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d05_nograin_nofringe.png",
+        "sha256": "a7c46f5aed9d7b26f7a035ffbbe9407ed61b2ae903679ca4a6e17471fd0da4ce",
+        "size": 3143953
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d06_aniso16.png",
+        "sha256": "81864127b45572328578c5d8e6422a39239e10ac33cceb3b3dd80cfd7ad94f55",
+        "size": 3119494
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d07_tsrhist200.png",
+        "sha256": "9287019daa29a0fa609629c895711c85725fa19b33cfe2871d7b4a3fd75e0b11",
+        "size": 3138946
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d08_mipbias_m1.png",
+        "sha256": "7cfcf77150d205b24b95cebdba0bb2f1a9dd1832e5d386b891b246cb78906607",
+        "size": 3323595
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d09_forge_now.png",
+        "sha256": "38ab43c44c4e5b6a29a960320a84397257478c4f7ead781f48bd132c965ca97a",
+        "size": 2649363
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Diag/d10_forge_f8.png",
+        "sha256": "c43a2af61d30b8e223ce2729fbe08fb66552b9151aa53887698b0f03f975e5b9",
+        "size": 2633856
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g0_forge.png",
+        "sha256": "6a7e4c7a2e835b9662a9008f320200ccbad437d88d8c0d6d8d07a13b173fe5ef",
+        "size": 2705566
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g0_game.png",
+        "sha256": "d16d85b183d60e353c50b85a2f7b31fe3f6fc22a8c20834c782d73400d3a041d",
+        "size": 3164422
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g1_forge.png",
+        "sha256": "be16ed0da9f7761450bbd3dda80aa9728eff1e4756f980acfcc20dbff647561d",
+        "size": 3170576
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g1_game.png",
+        "sha256": "c5f19948e85179a605df2a78bf25fd9bb555e5626fb2c491e808a2ec788aab6c",
+        "size": 3571853
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g2_forge.png",
+        "sha256": "6a1ee1088384e625cb204fd0c128e4b8f8817af9a82432969ea85fbcfdaf1c34",
+        "size": 3361767
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g2_game.png",
+        "sha256": "3582edf848e93011c2ca9f60a383540426db4ee906802ef437af4731844ab787",
+        "size": 3755543
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g3_forge.png",
+        "sha256": "b3b8b2e89197fdddde965c1867561bcd9e7a41e171bee4b036522a56963a9d6a",
+        "size": 3180983
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g3_game.png",
+        "sha256": "f88dbcb8b5d25688acbb9acdeec67e655ccbdcfe08eddcb0eb45d2ccba2257c0",
+        "size": 3480074
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g4_forge.png",
+        "sha256": "0aa65fff501848127adc5d86a86dacc10281a3185b43112f73fd793b8c9ad350",
+        "size": 3234593
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Grade/g4_game.png",
+        "sha256": "0b8befbc23cd74423e572dfc5f734c528cd265ea68dada8e50019613e55df591",
+        "size": 3562628
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Stills/01_game_camera.png",
+        "sha256": "6239fc53475b3157c41e5828d2dbeb3c95e7146d6da7e8141d1a6eb3d26ac48c",
+        "size": 3509033
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Stills/01_game_camera_4k.png",
+        "sha256": "6deabcf51e62d4f241bda8314fbce286efaceb0b29678a01d87b8b86be180714",
+        "size": 13987822
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Stills/02_close_forge.png",
+        "sha256": "ca9e9ab03014679c9436db53e516549ff812fd34e88b4eebf80c67cea1abd196",
+        "size": 3223536
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Stills/03_close_chasm_heart.png",
+        "sha256": "b4085ca8516e1ce838b5d2f011db309ba76eb87197e3ebadbcc7298f06fc7e67",
+        "size": 3083352
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Stills/04_game_camera_units_plain.png",
+        "sha256": "9ef38f4cebbb895c496c6aae090624e51a7a4dda2821072c3bb567ba4c5c9ef7",
+        "size": 3586251
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/Stills/05_game_camera_units_aids.png",
+        "sha256": "0a2116981667e42f53afac72b2027fcf5cccdea9eb3ff06bdbf394f2f9e724e6",
+        "size": 3583927
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/crop_4k_vs_1080.png",
+        "sha256": "affd61d1417f89a40383c328f1bb5ec841c8eeca25286966adc85179c5170b11",
+        "size": 512803
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/crops_100pct.png",
+        "sha256": "18eca7fa29c0c042a42af76c05e1022ac696aee1332e518a095a857d32dc2a26",
+        "size": 2418440
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/sidebyside_forge_closeup.png",
+        "sha256": "e68a7591e493f3f4a00a34d63aefb1a1f7f625cbac538bb32f217bc90b8bfeb5",
+        "size": 4046807
+      },
+      {
+        "path": "ext:StyleSample/Captures/V5/sidebyside_game_camera.png",
+        "sha256": "1bcd358c9124725fa025c0f353b20b7c3b60a975a71a78c9e0d154eaea889387",
+        "size": 4471038
+      },
+      {
+        "path": "ext:StyleSample/README.md",
+        "sha256": "8988737ba47b8ba82524134c686fae729c6cd33c0bfc75a20c66a414a9f680bf",
+        "size": 19358
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_diag.json",
+        "sha256": "823f2724dd43857f9b7f5d7723d7e97cf2529d260c52e666700d1ab514197b10",
+        "size": 1773
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_grade.json",
+        "sha256": "6851bde789d731d47ce10028906872616c997b42139fdc7719546885c92aa5e1",
+        "size": 1391
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_grade2.json",
+        "sha256": "945303b037d07554b9086eb08e275376f61a668657c1cb60e99721a6bf241167",
+        "size": 1169
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_move.json",
+        "sha256": "54f053d9ffefe0fcf895c7eb5648f02b297ba5e99a365b717d73b2fe7fc58cb1",
+        "size": 394
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_perf.json",
+        "sha256": "cdd04823da98c192006e845e0699f173a86fa009484450f1ac126b483a4b3076",
+        "size": 137
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_perf_aniso8.json",
+        "sha256": "374a90485ab23b0bb632b98fd5683cc12a369ed0b6394d85ef5504a2c99f8120",
+        "size": 167
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_perf_cap10.json",
+        "sha256": "2713a0769f4f6842a17f7804c1347917db3742969bdec01955f46d51d47162c9",
+        "size": 161
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_perf_stream0.json",
+        "sha256": "f5e8a5329adde3654bbe70107137177cd86e7bdc5e5aaec230e06c35c51940da",
+        "size": 185
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_still4k.json",
+        "sha256": "1f698fb5b1f277b61fc5b45960472c6c3d97f6306c84ab21792c189bef1052cd",
+        "size": 333
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v5_stills.json",
+        "sha256": "c5f0c1d0bdec0c89defd112dbc123ceb6d630dd95a96001f3ee38af7f98f598b",
+        "size": 760
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v5/build_v5.sh",
+        "sha256": "bfc59b0436b72b31992c581e5ce3a816ab51c92590f0bd9af952c43dca2c2137",
+        "size": 407
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v5/capture_job.json",
+        "sha256": "2713a0769f4f6842a17f7804c1347917db3742969bdec01955f46d51d47162c9",
+        "size": 161
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v5/capture_v5.py",
+        "sha256": "f06dfba0ee19a7030bf084c465f29aeb7e7748be3d9ab2fe7268fd23e72e8a59",
+        "size": 10889
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v5/capture_v5.sh",
+        "sha256": "2c8f3d3b5709fcec18ff4263f2e8863177fa4dac10ed837d7a18ada09803ae5d",
+        "size": 1775
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v5/level_v5.py",
+        "sha256": "3a5864bb9067bb53136f6abcf751d069d93a814183bdb5678e98cd7bbdb5b335",
+        "size": 2407
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v5/make_sheets_v5.py",
+        "sha256": "9a19c301efc47271658b9de3508e732e9368095b6ba145ea8c0645cab0a3b82d",
+        "size": 3922
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v5/make_video_v5.py",
+        "sha256": "885bf70ee34fa536bb29106416ad53d833e7875c36fae7910d4cde3728cc6805",
+        "size": 821
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v5/probe_textures.py",
+        "sha256": "90f09acda1e0c9a956c8bb9a03dd1779d4fd3c47e164921d3ec378a4b7cf615b",
+        "size": 950
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Config/DefaultEngine.ini",
+        "sha256": "73264e7374f8b371961983a3ca15af092f473339d5b2947fe3e1d8c74ea6c563",
+        "size": 2238
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Maps/L_StyleSample_V5.umap",
+        "sha256": "b5bea99630e047722642c0dcb7461dfdd8b73ea3571d2a81037ba81deb068c62",
+        "size": 608928
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V5/WORKER_RESULT.md",
+        "sha256": "8d8bfaa7fafbe9162d1b1d85237ff418fca44d8599c72e89280e5a0f0fa51178",
+        "size": 9313
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V5/REVIEW.md",
+      "sha256": "1f5271910de48cae27924dbf66b2085e51a56844168fdbefa5af1d953a27e321",
+      "size": 2395
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V5/review.json",
+    "record_sha256": "ea2c51bdb7474e200c594e0f720efbccc7799ce20c00bdca455fd9bfde53854a",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "da351d254ba61958d6142d3ff6e9c6fa1861f15bd397770d4a13b205ac5aba45",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
