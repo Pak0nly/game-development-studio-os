@@ -34,6 +34,15 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-CREATURE-VIDEO-V2
+
+UR-CREATURE-VIDEO-V2 (Seedance transfer v2: timing/body/head/tail from the video, leg placement and depth from rig rules; walk paw slide 1.19 -> 0.07 cm, parallel legs, all paws lift; bite in place (8 cm reach); shake split out (weak sideways); death not started (needs body roll in the fit); stray folders C:/inputs and C:/frames for the Human to delete; Human verdict pending; external commit 817147a)
+Independent review verdict: PASS
+Worker task: a9cd12fd7176467fe
+Reviewer task: a0fab0dc990389f96
+Candidate identity: 264b538cb5f6bcabfb5387d6fdcb5e8e94c2d75006cfe89630640cea711172f9
+Closure receipt: 0c7511e146a1c657455fd2f9b3de5400f71e53fc055c1a18b0ad2a3d103e60c6
+
 ## Closed: UR-STYLE-SAMPLE-V6
 
 UR-STYLE-SAMPLE-V6 (volumetric scattering of fire and lava light, chasm bounce and rim lights, practical lights, wetter floor and smoother metals with stronger Lumen reflections, denser sparks, dust/ash/haze/smoke, lava shimmer; light shafts mostly halos from above, dust barely visible at 1080p; GPU 10.8 ms High / 18.8 ms Epic at 30 fps; Meshy props later; Human verdict pending; external commit 94041ca)
@@ -43,7 +52,7 @@ Reviewer task: a01b538a53d46a3b0
 Candidate identity: f66bbb5d0793dd752a67bc8ea7b9437ceb399f284795f509629249806c531701
 Closure receipt: 8244dbd99eb9f6453cc00db41a22b728bc0834da337057ba59ba7778f18d39a3
 
-Night shift 3 (UR-NIGHT-03-V1, cloud, rival realm, roles, stance, army size, balance) runs until 08:00 UTC on night/2026-11-11; it was requested before the Human's explicit start (Human: "Wieso denn schon starten? Davon hat niemand was gesagt."). Running locally until 22:00: UR-CREATURE-VIDEO-V2 (walk, bite transfer).
+Night shift 3 (UR-NIGHT-03-V1) was requested without the Human's explicit start and stopped by the Human ("Wieso denn schon starten? Davon hat niemand was gesagt."); the night branch has no commits; the order can be reused, extended by prompt writing (creatures, a second people, props, traps) per the Human.
 
 ## Closed: UR-CREATURE-VIDEO-V1
 

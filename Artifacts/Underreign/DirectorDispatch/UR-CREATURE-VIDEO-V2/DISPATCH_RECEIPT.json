@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-CREATURE-VIDEO-V2",
+  "work_order_sha256": "75f28c0cc46ffb76e4500860bfa8a4e89ddee5a2634dcb8246fbcc8571da8fe7",
+  "manifest_sha256": "7a02f1074f4c3f436e8d5f439e0eda9ceae98833943fc3c8121360bcd354f90d",
+  "repository": {
+    "branch": "main",
+    "head": "6020ba40468a8a99d2287df10df6357d1a3dca8c"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-CREATURE-VIDEO-V2"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "6c64f142d39d33e4fb283396a7fb01a9a904990179fe91ab53415380ff5ddfd3",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "6a47e6e61383988ece2e8be5c0ae9b75511828db"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-CREATURE-VIDEO-V2",
+      "StyleSample/Creatures/BrandHoundVideo"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation",
+      "SimulationCpp",
+      "StyleSample/Creatures/BrandHound",
+      "StyleSample/UnderreignStyle"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-CREATURE-VIDEO-V2",
+        "StyleSample/Creatures/BrandHoundVideo"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "4aec9a88f62509b6c7c065f10fe857877bf7c9d0426aaa1d97a6337d1df2bbad"
+  },
+  "execution_location": "local",
+  "receipt_id": "660ab58e815791e341b50c09ae94c67dc1269b083b35a92268f331e5dd55844b"
+}

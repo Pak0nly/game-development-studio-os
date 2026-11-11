@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-CREATURE-VIDEO-V2",
+  "work_order_sha256": "75f28c0cc46ffb76e4500860bfa8a4e89ddee5a2634dcb8246fbcc8571da8fe7",
+  "closure_manifest_sha256": "939aed97f571e6403b997c209b38b227f38644e8069a11d21536f210dc261ca5",
+  "dispatch_receipt_id": "660ab58e815791e341b50c09ae94c67dc1269b083b35a92268f331e5dd55844b",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a9cd12fd7176467fe",
+  "reviewer_task_id": "a0fab0dc990389f96",
+  "candidate_identity": "264b538cb5f6bcabfb5387d6fdcb5e8e94c2d75006cfe89630640cea711172f9",
+  "evidence_state_sha256": "cf1210feeba031e2f2465f6bb790a05d63a03cb7f1cad8c3bcccf980aebe64f1",
+  "review_record_sha256": "bbe4b075fc360eb3f77d5f39316d19ac4ed8ad412be7e78b7118c1257f676cab",
+  "verdict": "PASS",
+  "receipt_id": "0c7511e146a1c657455fd2f9b3de5400f71e53fc055c1a18b0ad2a3d103e60c6"
+}

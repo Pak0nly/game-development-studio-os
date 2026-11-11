@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-CREATURE-VIDEO-V2",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-VIDEO-V2/WORK_ORDER.md",
+    "sha256": "75f28c0cc46ffb76e4500860bfa8a4e89ddee5a2634dcb8246fbcc8571da8fe7",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-VIDEO-V2/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "7a02f1074f4c3f436e8d5f439e0eda9ceae98833943fc3c8121360bcd354f90d",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-VIDEO-V2/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "39d3e7445eff0e043bfed27e87e33eb1634e4953f79ad54606d024a268d6961c",
+    "receipt_id": "660ab58e815791e341b50c09ae94c67dc1269b083b35a92268f331e5dd55844b",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a9cd12fd7176467fe",
+    "reviewer_task_id": "a0fab0dc990389f96"
+  },
+  "candidate": {
+    "identity": "264b538cb5f6bcabfb5387d6fdcb5e8e94c2d75006cfe89630640cea711172f9",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/WORKER_RESULT.md",
+        "sha256": "784b7b5c639d63916a49967e33ecef7649ae22ad8213d4a13439c2d6e363205c",
+        "size": 7904
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/anim_stats.json",
+        "sha256": "3f8cb90164927d0ed5d93fb8d148cc20723ff187f86ec1b5193dd8e6b9b7feed",
+        "size": 57424
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/bite_sheet.jpg",
+        "sha256": "6c767a1d887e2e93da5799112ea1f648e8d824543fba9ff1786274a7c2fe86ef",
+        "size": 346972
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/gait_bite.txt",
+        "sha256": "17fb4f91280ae7973e32c1a4cacd924fc4a5e3929477b7bef409c39266060292",
+        "size": 842
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/gait_shake.txt",
+        "sha256": "2ed232f5148df4db315546918d96886d23a1d340788708baab32e5a8de299c6b",
+        "size": 800
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/gait_walk.txt",
+        "sha256": "a99a4eb0f7798c75302499f64c100c5c363df59ac4664473cd836b9368c22aa5",
+        "size": 929
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/gait_walktq.txt",
+        "sha256": "69fb3fe8181f2c517a06d067701297ea964fab430019ea501daa86913d814c26",
+        "size": 946
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/post_bite.txt",
+        "sha256": "556b2aea5341b1ddc2741faf9ca51ce8ce4aac8c946f239a57b968a60a1c6b00",
+        "size": 127
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/post_shake.txt",
+        "sha256": "c9b57aaa2bcf7d0dd74927962c63071586b581822cf531acce217d975bbb07f2",
+        "size": 128
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/post_walk.txt",
+        "sha256": "35d820d773aa6dbba833f2f31ab0c4f6d3d4cb1ba135ded2d7488040f5b53128",
+        "size": 199
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V2/lanes/post_walktq.txt",
+        "sha256": "41753adf30f5bce8877b8e0403dd8aa2ce24488140968ad26069e43b93ad0b86",
+        "size": 199
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Footfall/BrandHoundVideo2_Footfall_Walk.png",
+        "sha256": "88a8465d0ab11b5574254b18435e7cc148c98570a502310bda6c4caf619d2b42",
+        "size": 92758
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Bite_game.gif",
+        "sha256": "cae0f70e99803786d1e382e3679c82c51860f1108d1c0449ff5fd9c6a4ae438a",
+        "size": 3526110
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Bite_game.mp4",
+        "sha256": "382cd5c8f5704d90de83866e6d056c891607f9c2c02fa4e8ce5f4318a08b7fde",
+        "size": 248977
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Bite_side.gif",
+        "sha256": "e8fe0a4abeca249e6fc003ea76425d5278fef068cb97fa0f3e4d9bdbcefdeccf",
+        "size": 3242357
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Bite_side.mp4",
+        "sha256": "7e8df275ae7bf033714d10e909a6052995ca0bc2c0bcdd3acfa40a3dcfd29322",
+        "size": 336822
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Shake_game.gif",
+        "sha256": "3132e35dc469a92cc94a6837e386bd26a416d7490fcf04cae7d50ef2966b078b",
+        "size": 2085451
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Shake_game.mp4",
+        "sha256": "0d0f6987790e88910e44909139917c9fa0e5ed2f944a24edded51b5e1cc79417",
+        "size": 142525
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Shake_side.gif",
+        "sha256": "791f223c58b36be4c27785c86d816ab6c09a5a44c64295600290052eb6960f88",
+        "size": 1860383
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Shake_side.mp4",
+        "sha256": "fa7957b74f1ddf10b358fde3c5f2080f4974f33d7f0b836820a042b6a8b6a201",
+        "size": 183597
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_WalkTQ_game.gif",
+        "sha256": "97f89c4f505a79f4e9612257a055a849866dd705697061d6e140dc7b6762654d",
+        "size": 3849951
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_WalkTQ_game.mp4",
+        "sha256": "aaf5f0ae756a1a9a1f5fb7613fcba00c557e3072f957a664a1d231b45f9a2987",
+        "size": 399550
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_WalkTQ_side.gif",
+        "sha256": "c8a1af00ecd11bf63d89d23035cb2bafa70f13441af349bcee6d60d06e0dc65c",
+        "size": 3279510
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_WalkTQ_side.mp4",
+        "sha256": "c4b14d20a3e652f4f00c2dd289efd3f8067fb8846488b3ae29a1fe92202a14bd",
+        "size": 417731
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Walk_front_lower_half.png",
+        "sha256": "66a8cccb6ea9e15e4ed384ba974bb2090913ef9efc969a6422622e79448b0ec1",
+        "size": 840299
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Walk_game.gif",
+        "sha256": "d429b08d09213f4230e48e178b694c8f6a7e600b5a0ea4f21f1d2788e31df299",
+        "size": 3833636
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Walk_game.mp4",
+        "sha256": "b2480748312c0365e75015bdbb9338316beaa5ab7aa7fd849d7863478c04c8ab",
+        "size": 388408
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Walk_side.gif",
+        "sha256": "b71b5382291d94ecef1caa9f1d87967eb03a399c08efd8075458f156de77178d",
+        "size": 3257191
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo2_Walk_side.mp4",
+        "sha256": "a71b4d5ffabc1cb386667ee1d401521c3e04248d7dac4a5657f2aa2f419380f6",
+        "size": 401076
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V2/apply_fit_v2.py",
+        "sha256": "41d8fd2c91c26fcb7dd7a9f01a2a15921d950935a8a0755f98d566391145a0d2",
+        "size": 8909
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V2/compose_v2.py",
+        "sha256": "381c706fc18f6fb62637718adb103941edae2c32564ffb149a8b5cefba9f58f1",
+        "size": 5384
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V2/post.py",
+        "sha256": "d6faccfdf51ac6614c8d0d6a516e862f3f852fb5422267b11014be93c8dfccf5",
+        "size": 6527
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V2/preview_v2.py",
+        "sha256": "fd7c41edbceb32541da22ef8663a357f94b1ab74db30a7b93afcd010ffd54ed6",
+        "size": 5373
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V2/render.sh",
+        "sha256": "14ed78a43a7f14fd98441de9b87edcfdc78da31ebb0c13b1d6eab7bad67b2abb",
+        "size": 571
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V2/sheet.py",
+        "sha256": "5ad02208307db9d3d50886c44799f227b1f1812657cbe5f6b994f7a0763cda66",
+        "size": 398
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/SideBySide/BrandHoundVideo2_Bite_vs_V1fit_handbuilt.mp4",
+        "sha256": "798c97ad8684c91842fd1c5103874d50654ea4857e427ed59ba7644f80f0dfad",
+        "size": 1044533
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/SideBySide/BrandHoundVideo2_Walk_vs_V1fit_handbuilt.mp4",
+        "sha256": "328a3f9ade276b24dd0371026679b09d5a262e6bf2f845b511ea1cea08c6757c",
+        "size": 1810905
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Source/BrandHoundVideo.blend",
+        "sha256": "3d680591e1c618c49beb4e2740f0bdb121c3e56826b0be2fd639b98673ad15db",
+        "size": 4774513
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-CREATURE-VIDEO-V2/WORKER_RESULT.md",
+        "sha256": "784b7b5c639d63916a49967e33ecef7649ae22ad8213d4a13439c2d6e363205c",
+        "size": 7904
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-CREATURE-VIDEO-V2/REVIEW.md",
+      "sha256": "ce2e254e5f409c969185d3b5399a2c3ced4e241387b9971b0fde7c2e3fb8a7ba",
+      "size": 1620
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-CREATURE-VIDEO-V2/review.json",
+    "record_sha256": "bbe4b075fc360eb3f77d5f39316d19ac4ed8ad412be7e78b7118c1257f676cab",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "264b538cb5f6bcabfb5387d6fdcb5e8e94c2d75006cfe89630640cea711172f9",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
