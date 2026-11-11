@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-UNREAL-NIGHT2-V1",
+  "work_order_sha256": "084e910abd616d5998f35f0426c7e22c23474e18f7a8c7b0bd76cfade74d48a6",
+  "manifest_sha256": "6bed988fadc937de657ffa8091638ee47ab5539297f74b2b98ce51bc4cf017cc",
+  "repository": {
+    "branch": "main",
+    "head": "8a745c1e085db61e22e4ab9095f2d043e76afc07"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-UNREAL-NIGHT2-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "74246a27678f1b22cce0228f6e819296a55ff948b616c42a6c4829580bfd5dbb",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "d8a890aad532bf4f78bf965f230fab06e84fb7a3"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-UNREAL-NIGHT2-V1",
+      "Game"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Night",
+      "README.md",
+      "Simulation",
+      "SimulationCpp"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-UNREAL-NIGHT2-V1",
+        "Game"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "6753dbf0d4f5a9d764c5f3a47f6b4a049fbe9fb4a60158fa5c0e006bc586cb5f"
+  },
+  "execution_location": "local",
+  "receipt_id": "8ad6547b82635440156b9bd4fcb961086e83c4c61cc6594fcd61b012a46513cc"
+}

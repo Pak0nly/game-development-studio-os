@@ -13,6 +13,15 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-UNREAL-NIGHT2-V1
+
+UR-UNREAL-NIGHT2-V1 (game on rules 22 (d8a890a): placeholders and plain tooltips for the four new creatures, six new intruder types and ferrets, lava, map choice with "Random map" first, no banner hint; parity on four maps; external commit 1b5c82a)
+Independent review verdict: PASS
+Worker task: a4dc452c2c40c8ddf
+Reviewer task: a57df841e223a1991
+Candidate identity: 8ee8afac918e92488efba3c9ddb00d0b6f134079376381eb95c15348c5f342bd
+Closure receipt: 4be66706c2e22223f62a75492e2ca0891daf35f1cd0e8a1e384616d3a7d61867
+
 ## Closed: UR-SIM-ROUND7-V1
 
 UR-SIM-ROUND7-V1 (rules 23: cinderlings flee after 0.4 s (deaths 0.29 per game), crossbow special flee rule removed, gold batches default, Flame Vent heat halved by the Pavisier's shield, Ember-witch needs a clear line; UD-56..UD-78 and OD-19..OD-22 recorded; Ashthread Drift 45 % -> 23 % under batches (an escaping scout reports traps; expected to change with hidden traps); external commit e54c061)
@@ -22,7 +31,7 @@ Reviewer task: aaf5cdc281d934056
 Candidate identity: acdee902ee58bc391ff62d8237973dc81dd3c778ac4511030aa556b3c965920d
 Closure receipt: 02d07d912c13cd0f742582f757b6eef50b42788f2509b9f8fb6ec1ed822543a2
 
-Running: UR-UNREAL-NIGHT2-V1 (Game, rules 22 + night-2 content), UR-STYLE-SAMPLE-V1 (StyleSample). Next: UR-SIM-TRAPS-DOORS-V1 (hidden traps, lockable doors); then resync the game.
+Running: UR-STYLE-SAMPLE-V1 (StyleSample), UR-SIM-TRAPS-DOORS-V1 (SimulationCpp). Next: resync the game to the newest rules; then the Human plays.
 
 ## Closed: UR-NIGHT-02-V1 (night shift 2)
 

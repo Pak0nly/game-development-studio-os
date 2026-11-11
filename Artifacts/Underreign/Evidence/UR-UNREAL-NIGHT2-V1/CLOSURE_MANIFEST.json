@@ -1,0 +1,1015 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-UNREAL-NIGHT2-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-NIGHT2-V1/WORK_ORDER.md",
+    "sha256": "084e910abd616d5998f35f0426c7e22c23474e18f7a8c7b0bd76cfade74d48a6",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-NIGHT2-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "6bed988fadc937de657ffa8091638ee47ab5539297f74b2b98ce51bc4cf017cc",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-NIGHT2-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "66ade54e4ccd738b2f76143792a232b51b6699cab4065344b6d72580c180ad08",
+    "receipt_id": "8ad6547b82635440156b9bd4fcb961086e83c4c61cc6594fcd61b012a46513cc",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a4dc452c2c40c8ddf",
+    "reviewer_task_id": "a57df841e223a1991"
+  },
+  "candidate": {
+    "identity": "8ee8afac918e92488efba3c9ddb00d0b6f134079376381eb95c15348c5f342bd",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/WORKER_RESULT.md",
+        "sha256": "0bf8fc8e2d6738497ccbd4d2194626727a9b5a7e623340bc091c9a77b4eb282e",
+        "size": 6787
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_footnote/night2_c6_close.png",
+        "sha256": "114a32bc3c7a199c190a943b9d86f781bd8ad2b6b839e60404dc70fb9d3d8993",
+        "size": 1966424
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_footnote/night2_c6_wide.png",
+        "sha256": "6729c17764aea6bc675b22f542a6c151b63750673ad3db2b58ceff8ac412af4b",
+        "size": 1885305
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_footnote/night2_c7_close.png",
+        "sha256": "fd172b9b8a1576aa8690fdbbc9029489863709b02286635312a43ab1e3020b18",
+        "size": 1799664
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_footnote/night2_c7_side.png",
+        "sha256": "b4cf35cff34ca31acd3d876258caa66deb347c003a97ce7b5b9a5f0e54024fc3",
+        "size": 1094863
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_footnote/night2_c7_wide.png",
+        "sha256": "b7bcb71fb4fb7f9f90ec5ca158cc6138b3867accbe0d7cb6e77fad322affb2db",
+        "size": 1707552
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_footnote/night2_ovw.png",
+        "sha256": "c0bce268171087eda008ae51ef3f7d9a91cc166d32f4deabffc1c64a43db117c",
+        "size": 450686
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_w3/night2_i7_close.png",
+        "sha256": "842dc8c80b8659e17d40a909d9b09d9157ef6105201369e058b71d3c37d66b89",
+        "size": 1754526
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_w3/night2_i7_side.png",
+        "sha256": "52f97961c67622e7c7f2c3eec5aa01f91bb7312ac8b5fd6645f6317a0514ac2c",
+        "size": 1130706
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/ashthread_w3/night2_i7_wide.png",
+        "sha256": "5940409bc9080693f2f98cada9827383ef18bc9dc7f204d02f19c126796d5244",
+        "size": 1602580
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_ferreter/night2_i8_close.png",
+        "sha256": "7df18716c0475fb3d6135e20c2b56a047af4f9a22d96a9c863deae6d6752b05c",
+        "size": 1754880
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_ferreter/night2_i8_side.png",
+        "sha256": "b53f1ef06ef830bc8bc5c3018c8c8dbfdae3f37fb6a1ef4fcca3ebb84438689e",
+        "size": 1107121
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_ferreter/night2_i8_wide.png",
+        "sha256": "b2b0081dd396cce1fb35c6cde319f3b603d65c4551e285398933d9170c5f0987",
+        "size": 1660795
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_ferreter/night2_i9_close.png",
+        "sha256": "289c469196d202097bc2d971911a5b635359842c0ddef79cb636376035af9fc2",
+        "size": 1740995
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_ferreter/night2_i9_wide.png",
+        "sha256": "f2207d3e139b5ed7b68665e538fdaf73942e7ef980474d866e7ad62a04db6b4c",
+        "size": 1706612
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_lava/night2_lava_close.png",
+        "sha256": "b4fad4e0bb31869f211282dc8801f31fa6db35d6d653a941ce10188a97913647",
+        "size": 1689687
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_lava/night2_lava_heat_close.png",
+        "sha256": "303eba27453de9b9c171f68a0bbcf7f630b64c26dfffcf7495106567b122fb03",
+        "size": 1768523
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_lava/night2_lava_heat_wide.png",
+        "sha256": "9082d14a2b1951d32355498865f36ecd082efd4eabff91aa79eda0eb4a45e17c",
+        "size": 1678601
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_lava/night2_lava_side.png",
+        "sha256": "bfb429a8a69c144673de52665070580da63e7a2698fe1cc27e83f7cbd9223575",
+        "size": 1298757
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_lava/night2_lava_wide.png",
+        "sha256": "a9244dc1791e0993f0b88357f9d2553475bc2543a2cf13314d7d623a5e2ac7d3",
+        "size": 1642347
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_lava/night2_ovw.png",
+        "sha256": "15cdf28e98c8089b9689daca3c4fd7a8ae6ebf2c3da0b0c2f016d3f3858a9ea3",
+        "size": 932444
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_wax/night2_c5_close.png",
+        "sha256": "6980328b1dbc329b623c4d3ecc6b210f3060a5e907f168f3e366f1aa25773287",
+        "size": 2010605
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_wax/night2_c5_wide.png",
+        "sha256": "ad43997d3efe0a63a3df9eaf92322058591a8f5f1bc53660194db1ba7b897079",
+        "size": 1694033
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_wax/night2_c6_close.png",
+        "sha256": "0f7be0ea2c6c98a005a7d1f00624177b5aa71973501c5f6d625ac0e7b67fa94d",
+        "size": 2057830
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_wax/night2_c6_side.png",
+        "sha256": "9442710434dee0247da8faac5cd0fb3c8e70c46dce9234bfd3ff7567800203cb",
+        "size": 1156694
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/crownkiln_wax/night2_c6_wide.png",
+        "sha256": "e4206306a11ed3baf64c1fd3f0ffedd437fe0720083820b336b7c38baad0359a",
+        "size": 1655318
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/footnote_spot/night2_spot_close.png",
+        "sha256": "7294fa04a05fe55e01c0b553fadb7877b09556610cea4092c7b217335bf24471",
+        "size": 1922937
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/footnote_spot/night2_spot_wide.png",
+        "sha256": "7a7aad28ec4fc5152515f019d6da95a30ffa92888b5e588628c55026d7393365",
+        "size": 1309661
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/kilnox/night2_c4_close.png",
+        "sha256": "cd6568008226d2ed9dffb6978d4bcf820f16a6928925d3b67474930dbd5d03b0",
+        "size": 1955004
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/kilnox/night2_c4_side.png",
+        "sha256": "177b41f778bfb6f52fe13d934dc035133b0bbacdf0fee40241a63304e8363450",
+        "size": 937553
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/kilnox/night2_c4_wide.png",
+        "sha256": "86ef313ee9c188a8564b1bf3e165633d8e6ff570abf967850de9902565b445cb",
+        "size": 1851857
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/kilnox/night2_c5_close.png",
+        "sha256": "6943a15fd77ec1077b866797d7f5667d07199263902aaa80ae67d608d5431d2c",
+        "size": 2020123
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/kilnox/night2_c5_wide.png",
+        "sha256": "e028a2a61d7e632a93f394cc2e9d6414aabe73080b0eafc8cc9fe70c17596a64",
+        "size": 1889485
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/kilnox/night2_ovw.png",
+        "sha256": "20640465c2da056063b633b255e9b184894d6db31eb9f62d0f60af764de7d648",
+        "size": 963611
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/lavavariant/night2_lava_close.png",
+        "sha256": "de539e577dd794d7318742e0c301ec5edde2a3070b9c6fb506aea1fd29f3e490",
+        "size": 1880402
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/lavavariant/night2_lava_heat_close.png",
+        "sha256": "94d7978989117b47eea1ceba37cf94d373a4a63d8c1e6c3fbd18c218a4b2e9fa",
+        "size": 1930051
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/lavavariant/night2_lava_heat_wide.png",
+        "sha256": "112aaed439bb6475f722edda0b6e867466bf05deddee67802f24535969665a16",
+        "size": 1924858
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/lavavariant/night2_lava_wide.png",
+        "sha256": "774b603e3a6e7eb6c890173766562df00048067126399ce329195e1602f2806d",
+        "size": 1911528
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/lavavariant/night2_ovw.png",
+        "sha256": "99e4280d174deca51fa19ad161c2fb60e477154d1d23020c10b9d596613b6c8e",
+        "size": 972486
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w1/night2_i0_close.png",
+        "sha256": "ec410e0bf0c405b9b138a5c22114d3fd33152cc2b32c149755e4885cd10db275",
+        "size": 1894508
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w1/night2_i0_wide.png",
+        "sha256": "28f41e2bf8060852a052b0432ba9fe3a5bec561ec4c18b5f5429b705f425251f",
+        "size": 1803444
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w1/night2_i6_close.png",
+        "sha256": "bc951ce1967c049575c60e7254d8ff9e1a8b05651375ed9bb367dbaee3590a46",
+        "size": 1888041
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w1/night2_i6_wide.png",
+        "sha256": "a6d6e4cf05ee6c7587437172657a3db3b8508f392842891776638e74d09a9c55",
+        "size": 1798819
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i1_close.png",
+        "sha256": "f64cc4d05b76021794b991cbd6b56bff1bf9abbff4e0f1e25089b6578617fbc5",
+        "size": 2044005
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i1_wide.png",
+        "sha256": "a47db58b4ec6c76e1d8280526aa485a64b82a7bab0bd96d158713157c676d2c8",
+        "size": 1757150
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i2_close.png",
+        "sha256": "26c177177a29cb22753ccca6dbea1c50d1bbd3bc050e7c9c1e1d00f44a6384aa",
+        "size": 2063938
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i2_wide.png",
+        "sha256": "c84fcd5a3d2f5c2711c46e6c8bed3aa9b5fec565136a8b0c7d00a62f29ec9777",
+        "size": 1750996
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i4_close.png",
+        "sha256": "cb6fe5536d72b93ff368d9633ea301a41a1099490b2b84029d718fc3fe4c234d",
+        "size": 2009001
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i4_wide.png",
+        "sha256": "4816f53f95bfbf67aadbab888d71c680edede08fcd7df97468309d5ee4ed1da8",
+        "size": 1795477
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i5_close.png",
+        "sha256": "7cee6dd4d521abcd2c4f5ec2429ff1b4dbc1249da267ffc29a563f0913603643",
+        "size": 2039175
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i5_side.png",
+        "sha256": "2ed147322e2355176765e1c5d95f905a3155d98353b074975a96e28fd0a24297",
+        "size": 980652
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/newintruders_w2/night2_i5_wide.png",
+        "sha256": "7f30ccdf62d97f6e54b3cfc320fb367681eb2a900489ef2126f21907cad24e9d",
+        "size": 1770706
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_ashthread/play_heart_vein_layer3.png",
+        "sha256": "e385f393823dff94159ab58840e7f336d0865b9b090b0933dd5ec73e91376090",
+        "size": 509222
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_ashthread/play_overview_layer1.png",
+        "sha256": "cf9a5273f0e5484ad3fb9b4758fbe44413bd40a707645af8d50a1e9f9e9fd2a6",
+        "size": 535099
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_ashthread/play_overview_layer2.png",
+        "sha256": "82f2f55b668618a68aab60a8298828e1ac3b4a72f41f1351580492d555af546d",
+        "size": 524229
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_ashthread/play_overview_layer3.png",
+        "sha256": "5288348966744d17a96c1c41d9fe4fbb8a0fa957c0b4fdeb66d2fb81a8e715e5",
+        "size": 457670
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_ashthread/play_rooms_layer2.png",
+        "sha256": "6e38816d42d28ac91f154f8862f52b3d7f81e4ef2ac4b3e7e67772a7cd5d4337",
+        "size": 1709136
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_ashthread/play_side_view_y21.png",
+        "sha256": "2382aec7cfe7d573fd6e3b33865cae4dd3754bfca8f782ad6a84eb876c9f319b",
+        "size": 740820
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_cinderhollow/play_heart_vein_layer3.png",
+        "sha256": "c29a1f8d205feb628656eebf71982636a5c78aa792cccf921ccb1cdaf9b005c7",
+        "size": 1888059
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_cinderhollow/play_overview_layer1.png",
+        "sha256": "8ecc807449475055eed41579486ca21c640df662654451dfd901d8e3572a7c5d",
+        "size": 1154233
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_cinderhollow/play_overview_layer2.png",
+        "sha256": "a27edbf18e8da34b9521d04b9c36b86fa8067efe081d08bdd743dce127d38e8a",
+        "size": 1144306
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_cinderhollow/play_overview_layer3.png",
+        "sha256": "9cdeb763044a7196e1a26602bc159e0460065570a9562643357dcd4bb7506545",
+        "size": 974663
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_cinderhollow/play_rooms_layer2.png",
+        "sha256": "5bf56574135351ba8f57e415e965457ecfb7d29271dbe353c35e4f4d96c20416",
+        "size": 1944885
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_cinderhollow/play_side_view_y21.png",
+        "sha256": "2b55b2ba417b57ee2b58d5ecfea9a178ed6541efb13d41f798985ac101a9869a",
+        "size": 990480
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_crownkiln/play_heart_vein_layer3.png",
+        "sha256": "3eebc3364771338b95d292429f1e2e950380b84ff23f5bb0c871beb1ebf410b5",
+        "size": 1767066
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_crownkiln/play_overview_layer1.png",
+        "sha256": "808884058ff52b16d8124da22fff4ef3f3c3ffd3f22a200c34467a09a40ac2e3",
+        "size": 925396
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_crownkiln/play_overview_layer2.png",
+        "sha256": "f78109b3aeeddd2eb684fb8d19ee85c8950b09d53529948c17c9b7617fb1e5d8",
+        "size": 954436
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_crownkiln/play_overview_layer3.png",
+        "sha256": "bbbf93943e3ed79da0f109003ab5b7d9a8b19f3ee46a11491d181acff1ff55ba",
+        "size": 841471
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_crownkiln/play_rooms_layer2.png",
+        "sha256": "78ec0be59aadd4bb6792cafbbd49f6aa50530cc90189f3ec2e1ebc02decfba0a",
+        "size": 1762451
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_crownkiln/play_side_view_y21.png",
+        "sha256": "4997d35369c2251ef8ef8ba7afdcd10d7276b0cb46f6357edcebaf354250f1f6",
+        "size": 1230187
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_newintruders/play_heart_vein_layer3.png",
+        "sha256": "d3701beb4746ee2c5ea34aaae2cf836a4460977511efdd6f552ba183112d369c",
+        "size": 1866206
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_newintruders/play_overview_layer1.png",
+        "sha256": "0fb1a2237630be3c28e52c3b22ae5c2ae119df6485ce85ca8c6a1cac8c77a1ca",
+        "size": 1135498
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_newintruders/play_overview_layer2.png",
+        "sha256": "493d0897034a75cc3985711ba47683809c2f61fb6778db27e060eff1caa0488c",
+        "size": 1121600
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_newintruders/play_overview_layer3.png",
+        "sha256": "d238ac7c556785bcc3f65a7849a2be1ba9524f9583e91a5a25c5b15c6d934c6f",
+        "size": 954778
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_newintruders/play_rooms_layer2.png",
+        "sha256": "989d6be232a42480e7e554a77e6f777e94e545749e29a4d24e122bd949557fc4",
+        "size": 1922425
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/parity_newintruders/play_side_view_y21.png",
+        "sha256": "83ad79ae4ae0e0f8a69a9a146e8ec26e353e7ddb323b9a35d1494751348914de",
+        "size": 987611
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_ashthread/start_intro.png",
+        "sha256": "9fb2123139b4811325e8c7f5a4ca61686fcd9244f4ace90d6d367d4c57e7617b",
+        "size": 484693
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_ashthread/start_running.png",
+        "sha256": "935cc3011cb076b48ee2dddce93cb428557c892ddec4f01d4605d5097c70dac2",
+        "size": 1050736
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_bellows/start_intro.png",
+        "sha256": "43fcf91f8844e8a80cd8595b7f4779a8638dc59bb977bc0326c3dbc10a8da514",
+        "size": 590921
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_bellows/start_running.png",
+        "sha256": "244d83b141eb89fa4660181476b060b832f7d26e3d97999f5c277db386c2f2f6",
+        "size": 1128263
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_crownkiln/start_intro.png",
+        "sha256": "9fd200e30a847d14389a94d21d12b651720517392938e8d122efddae6a14f07a",
+        "size": 481592
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_crownkiln/start_running.png",
+        "sha256": "fb5c63319cc70dbc4ad11608cf9fa59d7b62c5a1af088a997607eb2729365bd4",
+        "size": 1041629
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_inkdrip/start_intro.png",
+        "sha256": "ebd3db84ab013166ccde2ce6bdd679e3645314eabfe8dc751d7893caaf116c96",
+        "size": 567038
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_inkdrip/start_running.png",
+        "sha256": "7d351fdd54ff63a41aba6fee09fbd2da2644ba8a431c6076c399ce2b33c405b8",
+        "size": 1164171
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_lava/start_intro.png",
+        "sha256": "f7ed4a7431fee0277feb078a8f3abebe6c3cb418ae17b9eec291d3ed06c163fa",
+        "size": 579400
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_lava/start_running.png",
+        "sha256": "81d72f1052d34b8db1e1f6c2d0a3e31018f5575f761a23bdd3a4881cce7cce5c",
+        "size": 1179897
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_newintruders/start_intro.png",
+        "sha256": "7e61146913b3856754f68d795abce35e46f514685a4469d028d7aeed61ee2de0",
+        "size": 574956
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_newintruders/start_running.png",
+        "sha256": "1e918a1608e6908bfb640269f3a0290724839f7ea15f753639d1ff2e5c02f2c0",
+        "size": 1149561
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_random/start_intro.png",
+        "sha256": "ae033e81d304e40a3777663ba9128b01ce490bd809eca80495088ad34b64184c",
+        "size": 577333
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/stills/start_random/start_running.png",
+        "sha256": "1bfd9e869ab680cea0d49e625431a1f5f1e58193eda5b30a2676c030dc850641",
+        "size": 1178535
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-NIGHT2-V1/test_sim.log",
+        "sha256": "78b5e4687c5865b39b4952c984af8c6a894e1926b66d4b43524d0f113660c787",
+        "size": 284987
+      },
+      {
+        "path": "ext:Game/README.md",
+        "sha256": "788131d2c8587c3adeb3a6a072829f3362c307c208d1ccb4369bb3a537288d7b",
+        "size": 39043
+      },
+      {
+        "path": "ext:Game/SPIELANLEITUNG.md",
+        "sha256": "222cf5aa825210da6cf3fdb6e5494fbe03855629fccd51a398559acb109db6c4",
+        "size": 11855
+      },
+      {
+        "path": "ext:Game/Scripts/capture.sh",
+        "sha256": "d0ba3d85b972d63c3c60a34cc2574310b8fa1a155f01af3dad9cf37a4615277a",
+        "size": 3500
+      },
+      {
+        "path": "ext:Game/Scripts/sync_sim.py",
+        "sha256": "9b0680c3154e1a637f312f0a0a550bbcb1a2b294972f8aa3d0cd6090d4848b8b",
+        "size": 15769
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URCaptureDirector.cpp",
+        "sha256": "1befe4ff017448f16b61ca83e14a1afd857c901581cfeb1fc60954b3c59c25b5",
+        "size": 77416
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URGreyboxMap.cpp",
+        "sha256": "9321ed5fe236bc86c85cd0e7cf47ead910e7f83181de681f3cc1052f00f6b559",
+        "size": 31838
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URHUD.cpp",
+        "sha256": "309b7ad6330878910f911b02446d9111e65d85cbbbc5c38d22f2c9118b8024b4",
+        "size": 47474
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URMapData.cpp",
+        "sha256": "a7585e2ff23c88705f2345b6cab880124ff2d35f57dc4f8ff54e3231f927b7f1",
+        "size": 7305
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayView.cpp",
+        "sha256": "51251c3a2f3c4ef17055e80d1d14f0c068cca0619d571fab606fbfcd2dd1c7bf",
+        "size": 31582
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayerController.cpp",
+        "sha256": "bf4a41de35aa64de4af41617235a644ee2f76a28cc35b4bd5f617d7b0f7f3e6a",
+        "size": 66145
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URSimSubsystem.cpp",
+        "sha256": "598f24e9054f378e24d4fdcb71d2c670259bf01f1811c839296706f6595a8e73",
+        "size": 35678
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URCaptureDirector.h",
+        "sha256": "2c52fb2ab66a6dfb84624d52c31cdf61d370a14e520545f1147fb12f0fafffe5",
+        "size": 7980
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URGreyboxMap.h",
+        "sha256": "9c41a6e197da4da666402418cb922cbe76de48162fd28c2f7fb972f0b009350e",
+        "size": 9783
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URHUD.h",
+        "sha256": "e6623d4371f22e0cf972c56398371190e0ce73e480c6908aebe5c333d17feb09",
+        "size": 3488
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayView.h",
+        "sha256": "7bbb67fcdf2b1da5eac76469a89fcdb1543d0eaf972fe36db653872596a0ba8c",
+        "size": 6193
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayerController.h",
+        "sha256": "26e9715721224aba486abefd3f302e6990b32511c9c0b9b5d763782de90df4ce",
+        "size": 12951
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URSimSubsystem.h",
+        "sha256": "2ae37992fafc5e8cf90958d09173415b858c8f4025c2404aead4041f880732da",
+        "size": 11286
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/prototype.tuning.txt",
+        "sha256": "73f1cfcfb73bbe6229fd66373b20b79a5140d9aadad51d6f548cf1ab0454bb21",
+        "size": 5603
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/test/ashthread_drift.map.txt",
+        "sha256": "d0b5326b914d5e7449bb5c7be101a58740ddd534ec6ea7cbdb84ca0495ea5785",
+        "size": 7711
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/test/bellows_gallery.map.txt",
+        "sha256": "b5172f05f04af08423f07a0bc0c9ddc266a449880937e5c6c8c8c0d9dee57d71",
+        "size": 10454
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/test/crownkiln.map.txt",
+        "sha256": "b745c4b08f6219418e99e0dcf01ce943c7da7755a65498b801a2477943248390",
+        "size": 11651
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/test/inkdrip_shelf.map.txt",
+        "sha256": "88dfc2723dc875cc3c6121b3674e340b703a4a5a7a9feb22ffbdbca64d88986e",
+        "size": 11939
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/variants/cinder_hollow_ambush.map.txt",
+        "sha256": "5098a40ec1cc6b5661e7098745d0e4d5ec7e9543d0fcd00080a2849e80328f1f",
+        "size": 11811
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/variants/cinder_hollow_lava.map.txt",
+        "sha256": "c95f6a685e5db34199d7fd19dcb780b5af888706dbac59f23ee0fa79d8bb90ad",
+        "size": 11580
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/variants/cinder_hollow_new_intruders.map.txt",
+        "sha256": "dbab72e691d3415b77e471f187aa7cd79fabf78bf43c6454c2395ea74ea6eb0c",
+        "size": 11440
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Maps/variants/gold_batches.tuning.txt",
+        "sha256": "f11fef08c261e9c142f26cb5a77cf21ea8791bf591c5f6992936d343f11f1e5c",
+        "size": 6145
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden.tuning.txt",
+        "sha256": "40322eae5b076c01c75b946eaa5e19eec7146b2f61d0adda37d5d5f82f674f4d",
+        "size": 3785
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_ashthread_seed1_lost.save.txt",
+        "sha256": "360c69c5ecc8dc52760f3cc23c5416f71c67c7f848a2d89a65fa9a1fb0acebda",
+        "size": 5618
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_banner_seed4_lost.save.txt",
+        "sha256": "bf2ccd17863d4912459f8b46826e0177b11b8ec582d21b54313c7bff09deb2e6",
+        "size": 6677
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_crownkiln_seed1_won.save.txt",
+        "sha256": "154d2eb714f023f25f4f95edf5332762f0df1cb617e8c53208633dde117c41b9",
+        "size": 6873
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "b491137711af11c4167665f4ca3816d3491f17080ec9989e4a8d8a88b71c5274",
+        "size": 750
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "74e02cfd7b51a11d7925eb4f26fafa157bb951e02ae05f0c7f02580025351f03",
+        "size": 7539
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_newintruders_seed1_won.save.txt",
+        "sha256": "2fb45658df6937725618503a7aba53d1d6a136ddb24dd44be3dbdf23fa3bc436",
+        "size": 7137
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_reasonable_seed1_won.save.txt",
+        "sha256": "72f26da94e77c23443746f8b7332c6b948969c495afd3aea7e0158eb7a626597",
+        "size": 6969
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Data/Replays/golden_reasonable_seed5_lost.save.txt",
+        "sha256": "5722ed6d0ad0c4c92b00b46d0b4a6607d80b6a7e8d758bdc3d9b18d5ccb80739",
+        "size": 6662
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/BotFactory.cpp",
+        "sha256": "9c5777180731a1acaa895c5d6001a36af9d59ac41988c1a34b7b39b354e4d32b",
+        "size": 3084
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/BotPlan.cpp",
+        "sha256": "004e11e053d3687443030dd9404d6d6e3749686d54c48aebb2e498f9f74aaf04",
+        "size": 8137
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/GreedyBot.cpp",
+        "sha256": "6eb15b04e394870dd9f3ed1cb7c39bed3fd73e66e6edf1eb3d2282e127ec5d9e",
+        "size": 3322
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Bots/ReasonablePlayerBot.cpp",
+        "sha256": "e3f13f8fbd48041c2d2ce4ac4bc3da06d084a933bfc58ab99b16f1aa5734f2db",
+        "size": 27026
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Combat/CombatSystem.cpp",
+        "sha256": "075fed5cd856a94516b6e92209341d66c67089d184ebf95092360d451911753c",
+        "size": 6651
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Creatures/Creature.cpp",
+        "sha256": "03503c9b6611d2ea88aed6f51120f4312accd46d897947bb9b708880e0d3f94d",
+        "size": 1330
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Creatures/CreatureAbilities.cpp",
+        "sha256": "449e14f9665a9fc64ca81971d05cd037187d84be09975186c933f49f4e66a93b",
+        "size": 9024
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Creatures/CreatureBrain.cpp",
+        "sha256": "eef764cf64b4ab1497d6791723ec14d285fcbd8bffd2fc1ac7f4ad5ea6d93f8d",
+        "size": 18538
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Creatures/CreatureSystem.cpp",
+        "sha256": "4008d3d5d037a1d7eaa03b9cee59042acf46532377e8db801f34b766658c8130",
+        "size": 7899
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Data/MapData.cpp",
+        "sha256": "d717812500d01e4735a53970c8d6c1467e4a57191a9a4c68e4695fb9f52bb795",
+        "size": 4961
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Data/MapParser.cpp",
+        "sha256": "881dd905fb559a8567a916df2e8d995ed0636d2aec269039eada78c1c69926a3",
+        "size": 23724
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Data/PrototypeContent.cpp",
+        "sha256": "efcc27e44345a35652df928fee2b0bae371c8d69c672fe52bc492ece751ba4eb",
+        "size": 15100
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Data/TuningParser.cpp",
+        "sha256": "a7ed8e0b1c60f7d6f1174cbb3d4fc8c30f298f9aba1bb2a9a68763bbc6a1718a",
+        "size": 45402
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Diagnostics/AsciiRenderer.cpp",
+        "sha256": "82710de685293d48c8d4bdf9ddceb0685b4f8d3b7a9be2cf312b55c859def2ab",
+        "size": 6897
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Heat/HeatSources.cpp",
+        "sha256": "d7302f7fecd79d3e1318534c0a6898a775d3c97e4658a8c19c7260b604ba5ed6",
+        "size": 2959
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/Intruder.cpp",
+        "sha256": "36273b5501eb4414b8e8e1c4c887bf2c72a353b8c7fa24128cc59bc94a45c797",
+        "size": 2393
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/IntruderBrain.cpp",
+        "sha256": "3bccad3de2037d420e6b31d0d1b3e0a50c31604663ac65f46b90b0dd3ce049c9",
+        "size": 17066
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/IntruderSystem.cpp",
+        "sha256": "aa6d975befbf6a28ed19c2b2ec3ded1d52c8f1a3da5dda1cb30c7a805251a677",
+        "size": 17360
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/TrapSpotting.cpp",
+        "sha256": "31ed1e7d4b66a550b98a34911532e9b39aeaf9d304f37e81aa2c2041c027b165",
+        "size": 5837
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Intruders/WaveSystem.cpp",
+        "sha256": "ff24a3555b5e97a3c871b0381e4347ed186524cdc58c574faeb8df049d437f80",
+        "size": 6290
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Jobs/HaulJobHandler.cpp",
+        "sha256": "b3d636048ded42cd893acbef5df86691db598fb9d123bab97fe215cb6de544bb",
+        "size": 4070
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Jobs/JobBoard.cpp",
+        "sha256": "b192a010070b99c3b194e4c140116ef2b4a200f3bb40dc6bdee492f114e00422",
+        "size": 14937
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Jobs/TrapServiceJobHandler.cpp",
+        "sha256": "90cf896fb5499ba57ac91361150948c017549e0b2c556c61355cecfd2d18bd60",
+        "size": 2388
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Jobs/Worker.cpp",
+        "sha256": "4d741b7cd12baa1f2ec0001ba71dbc2bc2671ca3b5b0a12b88e4365c9be7efb7",
+        "size": 389
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Jobs/WorkerSystem.cpp",
+        "sha256": "fb40e30f5aeca86f6ec71b260b153fe5fe51542512680a5f8aec2405468f8b0a",
+        "size": 21684
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Metrics/MetricsCollector.cpp",
+        "sha256": "410aa6c105a1ab811b65e014cf447dcb300903b5e68e1f1868bd439d1b821067",
+        "size": 18457
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Metrics/MetricsFormat.cpp",
+        "sha256": "666d8a7769f376c46a7455a2c7abd67ede53640c7a77eb082bc6146288679576",
+        "size": 10527
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Rooms/CallStoneSystem.cpp",
+        "sha256": "9a6e2e024582da07ed26c0d30786305f9ba9daf5ebc6fb8ba0a213bb685c7473",
+        "size": 4393
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Rooms/HeartSystem.cpp",
+        "sha256": "624bc5cf91cb40caacecb98b6be3ebff1592f21226fae619d472ae436169345a",
+        "size": 2090
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/SimGame.cpp",
+        "sha256": "e8efea18ffb091359cbb2d77eb02a3093c2cb432c2d3ee7bb586bbe49d2ef121",
+        "size": 36484
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Private/Traps/TrapSystem.cpp",
+        "sha256": "41f9520c97a75e76c2c4496b0c4398110b10f988175eefe8d54f4d4f8975b25e",
+        "size": 18321
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Bots/BotPlan.h",
+        "sha256": "039634966bba861701a091d66f41cb8e0662cad08289831119a1c564ff1f561c",
+        "size": 2326
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Bots/GreedyBot.h",
+        "sha256": "811884f98bca085f6a0517af9bd51d8ffaf166a6e8bb94e0794e3cf8231f9373",
+        "size": 2063
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Bots/ReasonablePlayerBot.h",
+        "sha256": "3735b6949b632fdc0b49d6eb990fbed2e3f2309cd2b6ca7740377c0dde6637a1",
+        "size": 10473
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Combat/CombatSystem.h",
+        "sha256": "6a1a50dc6ad7a6aad8adf030b53a537cb6defcd9462b4cd8b9768d544362d60b",
+        "size": 2135
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/Creature.h",
+        "sha256": "a3b471fd5075ecc8a5723a184f136501be4d9d81e254266d7969a837156a45ae",
+        "size": 4356
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/CreatureAbilities.h",
+        "sha256": "9e5b88a949c3ce15908061913267d63833008f11fd8c8d80b9379b059a71899f",
+        "size": 2967
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Creatures/CreatureType.h",
+        "sha256": "b02a6797e771049bec24bbe11e116ad4d62c9f69cd07b2e730a32e5722440cdb",
+        "size": 1405
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/CreatureDef.h",
+        "sha256": "9887e63d8cc86dc80d4e70c0fa25d4cb63b9bbf010c6512c33d33fceadbc2a6b",
+        "size": 3966
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/IntruderDef.h",
+        "sha256": "aa4e90d50b7790a57da71ca8dbc9db76a2d7f9ef43bc48c50b7c158af75fe7d9",
+        "size": 3321
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/MapParser.h",
+        "sha256": "1d1f91e79da98933abdd2f272860438ae249da2c44e5eaf012ad7d56c37ff541",
+        "size": 3150
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "a210901eb00390456c245b737d2a576f2ce1f1c2c2354d18ad2bfe70d9637fbe",
+        "size": 16387
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Events/SimEventType.h",
+        "sha256": "9a404c238cca8b640592341afb71c7fa8b7ebb03a35a9ba21098722664de27ac",
+        "size": 17057
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Fwd.h",
+        "sha256": "6eb845c6c97dd0e38e460f8852eaadaef8b901350ec6c274ede4d58e52df222f",
+        "size": 6448
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Heat/HeatSources.h",
+        "sha256": "2fe293c579becc7f1b9931988876bed783427bc8ef7a58ec429e44623654787c",
+        "size": 1352
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/Intruder.h",
+        "sha256": "5cca465a60eed959420fd2b18f0dc120bdfb181db8b14f1ad7279204e93fc9c2",
+        "size": 5261
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/IntruderSystem.h",
+        "sha256": "f6e97c0e7657dea87118795c777cddd95b1c583bae78a6dfa2ca77c52f9d849a",
+        "size": 5954
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/IntruderType.h",
+        "sha256": "a2f96b44a8fc2b276367eda192dd537886604ec810a6ebd4c6fa59799153d9ad",
+        "size": 2010
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Intruders/WaveSystem.h",
+        "sha256": "70ee9a4427b57d6535ebc96737e61fb9e12c364964aaec3217f10ff3abdcc690",
+        "size": 2679
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Jobs/HaulJobHandler.h",
+        "sha256": "61bd7c5698ff577450214d13c7b27a5ae621ddd5f9dfcfa184f193f132c30a36",
+        "size": 1249
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Jobs/Worker.h",
+        "sha256": "6d7526b8544dcbb789879e63029b6bf6ea4d938617982bf7585ca69922402668",
+        "size": 1453
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Jobs/WorkerSystem.h",
+        "sha256": "f3b7c8aed6f9452941d50036ae8b464e50bf106bb2c751076176b488a62c08a3",
+        "size": 4656
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Metrics/RunMetrics.h",
+        "sha256": "53438fb67bbe79c915d9fd827ac3ddeacdc1909d75a56c600d9b2899bf73fbd8",
+        "size": 7067
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "cd741ff6b42f09c069b843fb19a2dd1087010423f68c01f16d4ce17c1ba5a8a6",
+        "size": 4131
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/UnderreignSim.h",
+        "sha256": "4a9b654a9f0fb39606a0108436a98714f6c7707494e5bd1b0096bd6b29643142",
+        "size": 11037
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/View/AgentView.h",
+        "sha256": "62d1cd66bf188a35482f099aea51af8655a47df75bf8ef38dd5b9c81ed979beb",
+        "size": 1405
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/View/CreatureView.h",
+        "sha256": "587c783b71b20f908fdad7baa731e5c8e785c558c6d27ec6499a9402c3a2bd91",
+        "size": 4280
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/View/IntruderView.h",
+        "sha256": "7e28351a886526f0d35de1844be860479f97b9c074653dcc0f03b00ce9799141",
+        "size": 2044
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/View/WaveGroupView.h",
+        "sha256": "018e8d2348d5dafc4910f8bf4dcebace69c57a6f725c39d12610fd78b7723d4d",
+        "size": 2130
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/Public/UnderreignSim/World/CellFlags.h",
+        "sha256": "6dbc2dc23d1d837aaa50357e8e97cacb026d75458a0a4f200e5ef683e6e61263",
+        "size": 1877
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Lib/SYNC_MANIFEST.txt",
+        "sha256": "15ff6e200700aa430ec4743e1ed2f6e4471e18aadf0891cc4d8ce657d8196703",
+        "size": 74612
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/Tests/URLinkPrecheckTests.cpp",
+        "sha256": "b8a7ef80d0b568db376657f67292d5ac2d657eca4c9aa01b85a30c60c2486b74",
+        "size": 14574
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/Tests/URSimTests.cpp",
+        "sha256": "9cdc9d2b467bcaf4ea29c436782b4acc85672a093f77fd7675ffdde46e8509e7",
+        "size": 35079
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Private/URSimGame.cpp",
+        "sha256": "f3288b2cabb7aad0beff0e24cbcbefa8c6fc7cc2dc75903f9d8e87576d9ab9f8",
+        "size": 43154
+      },
+      {
+        "path": "ext:Game/Underreign/Source/UnderreignSim/Public/URSimGame.h",
+        "sha256": "aac0707b7e06da780efa73e8ef3995f6694da1169a85968e8e1c09148143d055",
+        "size": 23261
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-UNREAL-NIGHT2-V1/WORKER_RESULT.md",
+        "sha256": "0bf8fc8e2d6738497ccbd4d2194626727a9b5a7e623340bc091c9a77b4eb282e",
+        "size": 6787
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-UNREAL-NIGHT2-V1/REVIEW.md",
+      "sha256": "2f3788c408de4bd7a3dfe437cdd96354fbd86e66d64077ca1871a2e41fb8b870",
+      "size": 2893
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-UNREAL-NIGHT2-V1/review.json",
+    "record_sha256": "802cb679ff35d169b5b0fa96d9d0e206a65f99ac541134eae9ceef5f225d08ac",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "8ee8afac918e92488efba3c9ddb00d0b6f134079376381eb95c15348c5f342bd",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

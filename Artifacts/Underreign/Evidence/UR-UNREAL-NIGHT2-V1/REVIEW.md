@@ -1,0 +1,14 @@
+# Independent review — UR-UNREAL-NIGHT2-V1
+
+Reviewer task: separate read-only Claude Code subagent, requested model sonnet — not independently attested.
+Verdict: PASS (no high or medium findings).
+
+1. Scope: in C:/GameDev/Underreign every changed file is under Game/ (plus the untracked Evidence/UR-UNREAL-NIGHT2-V1/ and StyleSample/, the latter belonging to another order). SimulationCpp/ is not in the diff. The Studio folder Artifacts/Underreign/Evidence/UR-UNREAL-NIGHT2-V1/ holds only WORKER_RESULT.md (and this review). The library under Game/.../Lib matches d8a890a (SYNC_MANIFEST source-commit d8a890aad532; spot compares of IntruderSystem.cpp, SimGame.cpp, CellFlags.h, CreatureSystem.cpp identical to `git show d8a890a:SimulationCpp/...` ignoring CR).
+2. Logs: test_sim.log has 7 Automation tests all Success, 139 PASS lines, no FAIL; eight golden replays each PASS with expected tick/outcome/hash (3d5236649d19641d, ddff1ba1b3e79b44, 7140028c0bc8d980, 183eaa5bc10dbb52, c7a912f7ffa892c2, 952bc363583e57b8, 5004bcc77673543f, 330e93330038d938), matching the result file. Parity PASS found in the editor logs for Crownkiln (6000), New Intruders (7200), Ashthread (9000), Cinder Hollow (12000), library commit d8a890aad532. Seven startcheck_*.log (six new maps plus a random start): UR_START_CHECK RESULT PASS (0 failed), about 30 fps average (capped), GPU about 1.5 ms.
+3. Stills viewed: start panel shows the map list with "Random map" first and highlighted (default), then the nine maps, with the random pick named; Kiln-ox tooltip, Pavisier tooltip (new intruder), lava tooltip with heat overlay all plain and readable (what it is, what it does, numbers). Scout tooltip also fine.
+4. Code: URSimSubsystem::ResolveGameFiles rolls Random (-1) on a normal start; RequestMapChoice only changes selection on a click; PlayAgain only calls RequestFreshStart and keeps MapSelection and LoadedMap, so the map is kept. No banner hint text added (the intro banner paragraph is the pre-existing command text).
+5. FAIL lines: only one FAIL was still visible in the editor logs (tooltip target c6, Brand-hound on a shared cell, UR_NIGHT2 RESULT FAIL (1 failed)); it is a secondary target and the next run passes. The other FAIL runs were overwritten, so the claim is consistent but not fully reproducible from the logs.
+
+- Low: capture and start-check logs are in Game/Logs and not copied into Evidence/UR-UNREAL-NIGHT2-V1/ (only test_sim.log and stills are); parity PASS lines had to be found in Game/Underreign/Saved/Logs.
+- Low: the last Footnote-spot colour tweak was built but not rerun (stated by the Worker).
+- Info: the Pavisier tooltip line "The intruders' camp - opens after wave 3, then attack it to win" reads slightly odd; "Random map" pool is a proposal; open points (effects, wave warning naming types, playtest sheet) are disclosed as not done and were outside the task list.

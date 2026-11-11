@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-UNREAL-NIGHT2-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a4dc452c2c40c8ddf",
+  "reviewer_task_id": "a57df841e223a1991",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "8ee8afac918e92488efba3c9ddb00d0b6f134079376381eb95c15348c5f342bd",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}
