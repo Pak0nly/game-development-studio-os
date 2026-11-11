@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-CREATURE-SAMPLE-V1
+
+UR-CREATURE-SAMPLE-V1 (Brand-hound benchmark from the Human's ChatGPT concept and Meshy model: game mesh 52k triangles with baked 4K maps and emissive mask, 41-bone rig incl. collar and four ring bones with baked swing, idle/walk/run/bite/hit/death at 30 fps, previews; weak points: shallow bite (no mouth cavity), emissive mask too wide, scripted motion, legs dip in death; Unreal import pending; external commit 51fc690)
+Independent review verdict: PASS
+Worker task: a80fd6541ac67dcad
+Reviewer task: acc5b2c1548b60ad0
+Candidate identity: f358265402cbeea4ab93748ff224172a4f8883a5105969f4dc40a86faa0b2017
+Closure receipt: 7106801de041a6704e9064851c60fedceefa6b404b9de31e593bb7c1d2c5099e
+
+Next: Human verdict on the hound and on style sample step 3; then the hound into the style scene (and/or a step 4 for lava, slab colour, blood).
+
 ## Closed: UR-STYLE-SAMPLE-V3
 
 UR-STYLE-SAMPLE-V3 (visual survey of all 89 scans (158 previews) before choosing; floor now clean wet slabs, cooler light, forge and anvil rebuilt; lava too regular, slabs too light/reddish, blood a stain; UD-85: third-party assets and renders may and must be viewed locally to choose and review (DEC-025 unchanged); Human verdict pending; external commit c57a221)
@@ -42,8 +53,6 @@ Worker task: a6e0410188b051134
 Reviewer task: af711f71db916f2b0
 Candidate identity: a3a3776333a8fe8565a1cdcfdedebcba05b01d130b9745e5df24e398831893d4
 Closure receipt: 4409454ccadb28e2544d1c144820eb402fcc4c5b84c7f4cde7a127e31881d7d4
-
-Running: UR-CREATURE-SAMPLE-V1 (Brand-hound in Blender). Next: the hound into the style scene.
 
 ## Closed: UR-STYLE-SAMPLE-V2
 

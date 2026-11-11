@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-CREATURE-SAMPLE-V1",
+  "work_order_sha256": "ebc06c3f7d843ac4dfcda3117824ac85d82c24486039e4b404e9a01483862aaf",
+  "manifest_sha256": "00ebd116e0f9368995537e9dedc227efb7c2c262f8a75e697c50eebff0e0fedc",
+  "repository": {
+    "branch": "main",
+    "head": "8838cc34196284f650de1c88f6b0f76e386a9093"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/References/ArtDirection",
+      "Artifacts/Underreign/Evidence/UR-CREATURE-SAMPLE-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "dc0ad4748925a40d95fc5a8be89be131cd913af7c281449180c37c8f52f97254",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "db5c897baa62ba5cd744c86ac94cf16b58aa8d68"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-CREATURE-SAMPLE-V1",
+      "StyleSample/Creatures"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation",
+      "SimulationCpp",
+      "StyleSample/UnderreignStyle"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-CREATURE-SAMPLE-V1",
+        "StyleSample/Creatures"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "4cb1d99f664599dfdac77d5455bbb6b3a90a3751575a6de24a8e38969498509c"
+  },
+  "execution_location": "local",
+  "receipt_id": "7414fa9d477366d541e3d5e71ae46f43841e71604c7ca887983512abdf4296d0"
+}
