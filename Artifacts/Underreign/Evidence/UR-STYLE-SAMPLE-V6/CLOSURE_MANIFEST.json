@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-STYLE-SAMPLE-V6",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V6/WORK_ORDER.md",
+    "sha256": "7a25a50e872145003cf4e106ce4424a55d46441456ce38200674bc7bbc347db0",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V6/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "083e0b8e060979abeabfa633279453dae6c6eb1f1a7b1f5d4e7475c49edaa59b",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V6/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "1ae750ecd3e9d7d42612d99094a6b1eb8acb12cf171058efd9e0432823587849",
+    "receipt_id": "26628717b6a7f2e7f371560cc6ab8a7ff8cb6b41cc11531b8f21b6fc5d1bbd2b",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "ae5fec310fe197966",
+    "reviewer_task_id": "a01b538a53d46a3b0"
+  },
+  "candidate": {
+    "identity": "f66bbb5d0793dd752a67bc8ea7b9437ceb399f284795f509629249806c531701",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V6/WORKER_RESULT.md",
+        "sha256": "15a22adb4632a89db13f6197cbe90140da6ba6326bec159381695a6136192ec4",
+        "size": 8852
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V6/perf_stats.txt",
+        "sha256": "03d14ec646a197905573dfcadfc19076a5e2a1ea2cc41bff22daa45ce9bcca41",
+        "size": 2636
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V6/v6_perf_4k_cap10.csv",
+        "sha256": "91ab1baebe4a289b27651129dcd2cea16cddb75f815552fcb94a7d625437a515",
+        "size": 1120415
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V6/v6_perf_q2.csv",
+        "sha256": "8aeefcf6c0154b67e2f47771eb4d41eb0c2218d86cfc654a4e131df88bc6ee00",
+        "size": 1127722
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V6/v6_perf_q2_first.csv",
+        "sha256": "7a1cb173e5780996f876097a1c21e0dd2b7d06ae016d1d97d233cf84839698c8",
+        "size": 1117823
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V6/v6_perf_q3.csv",
+        "sha256": "01e549470b0105069fcefe553a299ff8ec641a3832229dd8caea0261fdc9e35f",
+        "size": 1120659
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V6/v6_perf_q3_first.csv",
+        "sha256": "e1ca1d1cac70a6f5884b2ac57eb3f05413e39866decc2857979baf6b0d3b2e0e",
+        "size": 1128040
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/06_camera_move_6s_1080p.mp4",
+        "sha256": "e5db5b4ca07b2c15180e7da39acdebeec6465152f42791900054fcde53e8517e",
+        "size": 30569207
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/Stills/01_game_camera.png",
+        "sha256": "b39fe67c5581898e32c9d0dd6f53e44b604bb990fd9c6e13535ee390c6a022d1",
+        "size": 3558043
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/Stills/01_game_camera_4k.png",
+        "sha256": "7ac92b2d7c56f3a1fce80d5fad7c0b1b26d2bf791a28484849763d568c546a1f",
+        "size": 14060851
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/Stills/02_close_forge.png",
+        "sha256": "81840565c46dfc995e09b1cf403f936bcf3f320dc3ebf228b89de1a3e61cf05b",
+        "size": 3318978
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/Stills/03_close_chasm_heart.png",
+        "sha256": "cca4114fbab36c5a1cee0ac9ca8dc76ab4d7b1a671713ae719ccda1e4733c49b",
+        "size": 3036984
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/Stills/04_game_camera_units_plain.png",
+        "sha256": "3d7b27d7d5bde0df55cc1fd059157c5512e8ff216cfb0abe51904aa66f5d39e1",
+        "size": 3558886
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/Stills/05_game_camera_units_aids.png",
+        "sha256": "e555fffbfe5119f9f4250c48eb6e37c3145c3761c3fa44083d368b1647d89bf1",
+        "size": 3570125
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/sidebyside_chasm_heart.png",
+        "sha256": "60aa243bf866330c4294b11447b6336a9c206cddda128ae0c1f12ab3777c9b3b",
+        "size": 2537133
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/sidebyside_forge_closeup.png",
+        "sha256": "81d2c5e297ee5e8450f72077b1b1e68a90601f6ca58c663806053c1cd902f569",
+        "size": 4276811
+      },
+      {
+        "path": "ext:StyleSample/Captures/V6/sidebyside_game_camera.png",
+        "sha256": "c29821436f0a32a617f3c6b4372c35d710465ff1b0f9d6946714c631065ca1f6",
+        "size": 4651899
+      },
+      {
+        "path": "ext:StyleSample/README.md",
+        "sha256": "b881e9358a8fa706bcc31dc5d50e36577b07e07fe6cd484b52b373991ff031f8",
+        "size": 22981
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v6_move.json",
+        "sha256": "2779a50711c6fa7b6d55b6f6c5846b331647383eaea5714415b22db771b858ef",
+        "size": 393
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v6_perf.json",
+        "sha256": "017cf4240e00bdaac0b32ab9e0f2d82f307235b517d77b95d3cb96c89702aa45",
+        "size": 136
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v6_perf_cap10.json",
+        "sha256": "56cad02a3ad5b9a1dfda6ce73d9abf2c653812ec64b15aa6867d89fa5f94e953",
+        "size": 161
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v6_still4k.json",
+        "sha256": "cad23775be1122ad5176b7a9c41ff73d9f9cd9ffe6cc13c9fabfa63c851dc78a",
+        "size": 333
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v6_stills.json",
+        "sha256": "131952959401b04ffa4f2a0d854a1f83bc587b81306ff1066086463d28fd5425",
+        "size": 698
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v6/build_v6.sh",
+        "sha256": "6e9a2528a7aa653b6e2e1a9a90b4cb64359ed11b7ef014bb45f73ae3673747a1",
+        "size": 737
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v6/fx_v6.py",
+        "sha256": "3761b7f7e272b340ec874d1af2d0cffd080741319415c54ceb3007a01d6c1d46",
+        "size": 7579
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v6/level_v6.py",
+        "sha256": "7dbca61be393ea678177628322293ee4b424917bcef5124001b98adf6f97b999",
+        "size": 9324
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v6/make_sheets_v6.py",
+        "sha256": "b070c8f3dab088879484298f6b4732598c4425b8b1b6d7689d764a4dfdbe2b48",
+        "size": 2526
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v6/make_video_v6.py",
+        "sha256": "ad911b2b064c74fe0f814f0559b89c15442ab157931d278a4cf225e2f6d5a063",
+        "size": 837
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Maps/L_StyleSample_V6.umap",
+        "sha256": "0069349a8c5071e15ca5c6bf3c0f87776f594b72be3f1ae6db0a5497b58cc624",
+        "size": 660211
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/FX/NS_V6_AshUpdraft.uasset",
+        "sha256": "3313c9612b845d1be55a836c6e253e9d708426c192a07c9d75e89df8a0334faa",
+        "size": 138508
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/FX/NS_V6_BrazierSmoke.uasset",
+        "sha256": "bda3dbfbf3c255aa627e82ea34a8de75cd02235c56a7388d9c258d1f0b9629f3",
+        "size": 139052
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/FX/NS_V6_BrazierSparks.uasset",
+        "sha256": "ea510a0544bf3955fbfd9e6659832f670ca8cbffaabaa92870d5a730e96563c1",
+        "size": 138533
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/FX/NS_V6_DustSwirl.uasset",
+        "sha256": "6b06094267b50211438c7963d2406a3c6adde5f3e580f3e48838c12360f77af4",
+        "size": 138502
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/FX/NS_V6_ForgeSmoke.uasset",
+        "sha256": "8410c09ad39200ee24490fcc77e48a13deb8784bbe1e65981ad93ab613df6ed1",
+        "size": 139048
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/FX/NS_V6_ForgeSparks.uasset",
+        "sha256": "5223592c82175cc6dd6480cc1b11a7b7b93c1209e59c972eca1531540374c8a1",
+        "size": 138521
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/FX/NS_V6_LavaHaze.uasset",
+        "sha256": "722f0dd602499c9af57961956f84f6fdf6e5f7f297ecfe9980b281b399ca4804",
+        "size": 139206
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/Materials/MI_V6_Brass.uasset",
+        "sha256": "4ff1f68bdfe011bb6e35718647c1f22e24d1e4a7b08dadc0b7e1efff4bc2a4c4",
+        "size": 7969
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/Materials/MI_V6_Floor.uasset",
+        "sha256": "aa131a78ec571992186af101f3d51ca3dd4a90d5c3ec05ba8e996c73152dc223",
+        "size": 4327
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV6/Materials/MI_V6_Iron.uasset",
+        "sha256": "28afc1b521bf91954ef6191564dda394873517f520768a6096e887b3241d4f46",
+        "size": 8399
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V6/WORKER_RESULT.md",
+        "sha256": "be5e0eb1e66a90a5214cebae0eec26b77da98eddec850e2b7b60c2777e8d2424",
+        "size": 3221
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V6/REVIEW.md",
+      "sha256": "7f75a4bb396a26366f4f60f7bc9d6cb1a81cbe675fb8f3fff95c2d19599b53e3",
+      "size": 1317
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V6/review.json",
+    "record_sha256": "367b227e1169de5f62a077db3ad0c8a2e4dd11abd997bd69b947469823ead935",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "f66bbb5d0793dd752a67bc8ea7b9437ceb399f284795f509629249806c531701",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

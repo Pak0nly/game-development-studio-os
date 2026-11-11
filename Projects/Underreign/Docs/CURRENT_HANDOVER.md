@@ -13,6 +13,17 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-STYLE-SAMPLE-V6
+
+UR-STYLE-SAMPLE-V6 (volumetric scattering of fire and lava light, chasm bounce and rim lights, practical lights, wetter floor and smoother metals with stronger Lumen reflections, denser sparks, dust/ash/haze/smoke, lava shimmer; light shafts mostly halos from above, dust barely visible at 1080p; GPU 10.8 ms High / 18.8 ms Epic at 30 fps; Meshy props later; Human verdict pending; external commit 94041ca)
+Independent review verdict: PASS
+Worker task: ae5fec310fe197966
+Reviewer task: a01b538a53d46a3b0
+Candidate identity: f66bbb5d0793dd752a67bc8ea7b9437ceb399f284795f509629249806c531701
+Closure receipt: 8244dbd99eb9f6453cc00db41a22b728bc0834da337057ba59ba7778f18d39a3
+
+Night shift 3 (UR-NIGHT-03-V1, cloud, rival realm, roles, stance, army size, balance) runs until 08:00 UTC on night/2026-11-11; it was requested before the Human's explicit start (Human: "Wieso denn schon starten? Davon hat niemand was gesagt."). Running locally until 22:00: UR-CREATURE-VIDEO-V2 (walk, bite transfer).
+
 ## Closed: UR-CREATURE-VIDEO-V1
 
 UR-CREATURE-VIDEO-V1 (Seedance trial: 7 videos, 762,300 tokens (~4.90 USD; pack left ~3.1 M tokens); pose finder trained on own rig renders (1.44 px mean); fit baked onto the fixed V2 rig; bite clearly better than hand-built, walk good timing but leg issues, trot noisy, gallop and death fail on the rig; recommendation hybrid; found the hand-built V2 rings jump 84-120 deg per frame (the collar spin); lesson: shorter Seedance clips to save budget; stray folder C:/inputs for the Human to delete; Human verdict pending; external commit 6a47e6e)
