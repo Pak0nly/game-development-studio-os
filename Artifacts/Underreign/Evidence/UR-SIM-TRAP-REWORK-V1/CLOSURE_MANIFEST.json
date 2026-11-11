@@ -1,0 +1,845 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-SIM-TRAP-REWORK-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-TRAP-REWORK-V1/WORK_ORDER.md",
+    "sha256": "0b0c64a42c85e6331f99e2195c04d52d72f73567517e26188e7e033d090c6cf2",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-TRAP-REWORK-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "7970b87e8f19e188d3836f7b58f82c6ad75a560497fa5083ce369c0357a098d0",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-TRAP-REWORK-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "78089772c3292552166507aba33a20a68f17b3864eb2c913a4c34881935407de",
+    "receipt_id": "cf7cb5fe98bb5d0cb5d5a54abdbdd1f5bc6df0c1e392c0227e7fcddd06907ce3",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a35a94c913ae5794d",
+    "reviewer_task_id": "a09146411a1692231"
+  },
+  "candidate": {
+    "identity": "949f6a6261018157f12203fd5fa680d9bd331f99e56d46eefd44ed41f06471ef",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/WORKER_RESULT.md",
+        "sha256": "52dd9c0aa646cede23ede07da80ac262069b1680bdfd34447e71ab80e9bcf2b1",
+        "size": 23663
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/SUMMARY_1000_SEEDS.txt",
+        "sha256": "0132924c8c888866a3d28ea5a582ca79c3d2f377a57ccbcb4ed839698375309f",
+        "size": 5527
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/after_ad.md",
+        "sha256": "2089e1d2cd53325c9f39e48b6e2fc9bc8beca8c7ba09bcf72550125fe9ba73a1",
+        "size": 4840
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/after_bg.md",
+        "sha256": "d64995b77f967eaa0ca69129af4d749f373a21e21121465e25fb42dd40d04951",
+        "size": 4819
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/after_ch.md",
+        "sha256": "b4a637f7cc261cf1c5f97ab6955ade61339e8e6ec328893f2c4b5ffb99d3509d",
+        "size": 4827
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/after_ck.md",
+        "sha256": "47b2080f935130a484800c1253eb9f1e2cd6d1b3bbfe18d7e221de87701a486d",
+        "size": 4817
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/after_ik.md",
+        "sha256": "b8ee2897028d5d529de8a2228d784c9a58ce6e838c41bf1f9f49f3cc4d0a453e",
+        "size": 4743
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/after_ni.md",
+        "sha256": "303f129ddcceefd74196565c6a3599b4ae7c2a7468f8927cbde2b7ddcb0f0a6a",
+        "size": 4826
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/afterv_ch.md",
+        "sha256": "edf2b841ef3400ae8f616c5dfba10ee09a13c30721b80308044c6a16da475794",
+        "size": 4849
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/before_ad.md",
+        "sha256": "947ea7ca60d6f96fc509d25615342df9b3f3789fde8ec9fafe5d413a66115da6",
+        "size": 4855
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/before_bg.md",
+        "sha256": "e5d1729ff56f8aa9724e229882fa991ed9b1d6b933c235cef2e2756673e01b40",
+        "size": 4840
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/before_ch.md",
+        "sha256": "e20c3cddcd7ebdb359ea7891417fa642c9b20af7058267be762586a66d6a5170",
+        "size": 4853
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/before_ck.md",
+        "sha256": "39b03c0c65ae41247edb91966c9b7a4204af171b61092d4523ff510ded65c5d1",
+        "size": 4852
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/before_ik.md",
+        "sha256": "5de2e3c227e425e33badec00935f6a17d019927c33bb48ddbf6cffbf42db4804",
+        "size": 4783
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/before_ni.md",
+        "sha256": "f5e15da161a1d3be79955709ae798ef349574dd3e055a96b4aca882d5c6846c3",
+        "size": 4849
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/beforev_ch.md",
+        "sha256": "cdd9f608e1e56ff823c981aa200d328a4d20b9177923383365237dc04082d4b4",
+        "size": 4863
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/conv_maps.py",
+        "sha256": "789c1bb963ad32e0b3bdae6a3ac54aa1ecb9864704270f12f54bea8990ea811d",
+        "size": 2696
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/determinism_crownkiln_a.md",
+        "sha256": "cb59b5ae5c4f3ddf3dea3a3adc63b477fc0c0b671d9a889ba0aa7df1ef577e72",
+        "size": 4802
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/determinism_crownkiln_b.md",
+        "sha256": "a238b6dbac467697723e4e1c1bf6598bba3f0faa9a8582f3117ebe54dcc2171d",
+        "size": 4802
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/exp_bg_nopanic.md",
+        "sha256": "2b269e56474d06b45bfde19377f39e487d29b2c6685d9cf9b6cec383e0ab8c1d",
+        "size": 4925
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/exp_bg_noturret.md",
+        "sha256": "d7691e6605a200728ecb605fe0ddc0777937711ace36a596fb790f0243114f55",
+        "size": 4829
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/exp_bg_olddmg.md",
+        "sha256": "5546963148988388e4294ea1388e0d809eb1c3d23689219dffc13eb3bf493fdf",
+        "size": 4926
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/exp_ch_nopanic.md",
+        "sha256": "ce233a132aee3c63c4aa285ed5c01a3cef51e7038c75e59dcd54db10916c7fbe",
+        "size": 4960
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/exp_ch_noturret.md",
+        "sha256": "ccc3463d8bcc448bd83074bcc7132d26340a96dbbf72e0d3761bd2b7b9633256",
+        "size": 4853
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/nopanic.tuning.txt",
+        "sha256": "73b7722e8cfa189b3ce94bc96cf9b069d88a42eedc07258a694374a61eec0f0e",
+        "size": 6334
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/olddmg.tuning.txt",
+        "sha256": "fb3317215fab5f717806ca78414d5dbcbe3e938cb411fe6b24bf49e348d73011",
+        "size": 6360
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-TRAP-REWORK-V1/raw/summ25.py",
+        "sha256": "769945220d03af516f0ba4241984e69f6fe7e09b33d3883b245c0178e709957f",
+        "size": 1908
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/campaign/ashen_m1_terms_of_arrival.map.txt",
+        "sha256": "9286deb08731bd87ede3556cf5a36c16be4a772acb7bef0c57405fa0aff1cae1",
+        "size": 9755
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/campaign/ashen_m2_an_audit_of_thieves.map.txt",
+        "sha256": "10485ec410268304508e1dc5e19e0fc1aef9bb516733d5ce0cdee75bdbf81a0e",
+        "size": 10457
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/campaign/ashen_m3_two_doors_one_bill.map.txt",
+        "sha256": "6fddff6fd3495ea5304189a2590b87e74b1fd406b3409d8d11cdb54347d47200",
+        "size": 12482
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/cinder_hollow.map.txt",
+        "sha256": "ba7353112895d3eedba2f3e12d19716de1c0af047cf741e2f14d13950017c97f",
+        "size": 11012
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/test/ashthread_drift.map.txt",
+        "sha256": "af987890cff576015ecbd73f6a0c1d131dd7973c91aa9a319e47faf78c278ef8",
+        "size": 7676
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/test/bellows_gallery.map.txt",
+        "sha256": "6f240ad996b0d01d0c55578e7847ff127ee1cfc9caa31b67c92790e86104fc3d",
+        "size": 10434
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/test/crownkiln.map.txt",
+        "sha256": "ca6b0d225859d8bfe0379e695d66ebb85c9a3a5d9764df2e6c3b16b1767fb9c7",
+        "size": 12111
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/test/inkdrip_shelf.map.txt",
+        "sha256": "d07704d2c6c51fb72798fb76327456daf68a6efb895f7517f3b0765c4cb06e95",
+        "size": 12002
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/ashen_m1_with_camp.map.txt",
+        "sha256": "d787477c7909729fa3bad1cfefa21a7df6cf1a684db153201850cc508523c7bd",
+        "size": 10672
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/cinder_hollow_ambush.map.txt",
+        "sha256": "700b616cdf36d9253b507788a525660de44f8402f4591f010532c6dcc255940d",
+        "size": 11840
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/cinder_hollow_heat.map.txt",
+        "sha256": "cb220d80e3922475f01292d64d79bdeef44d886b69901efd56adaa8e7e1354b9",
+        "size": 12568
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/cinder_hollow_lava.map.txt",
+        "sha256": "3a9ee19006de0f70c2d1347d5185e4a973bea089ded77ccba2f0b14dbef7d50d",
+        "size": 11646
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/cinder_hollow_new_intruders.map.txt",
+        "sha256": "41c7183c7f75cbeaf19bb0da7fe711c50b449cf6260e441bd01285706db90fd4",
+        "size": 11504
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/cinder_hollow_traps.map.txt",
+        "sha256": "1f94377e9c6a7684f961320177218a52b76af1ace43960fdee8946f33401142b",
+        "size": 12733
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/inkdrip_shelf_lava_south.map.txt",
+        "sha256": "d27637823a581e4d51fb759713416639d793345c3941ccdc54dc78f89c4f50da",
+        "size": 12649
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_ashthread_seed1_won.save.txt",
+        "sha256": "106998d163e3e74c40131957d5568b1809022fb626bd4543cd4e427d81f97f84",
+        "size": 6526
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_banner_seed4_won.save.txt",
+        "sha256": "84d4934ae2a692dd6f557f6371a2caf6811913fbcf2d10b8d02b86f4fe1a4ac1",
+        "size": 6722
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_crownkiln_seed1_lost.save.txt",
+        "sha256": "e490f0de5a536f708a1c942b91fdd7bcf2a7281c34386d3135ad9d5bcc0a1993",
+        "size": 6643
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_doors_seed1_won.save.txt",
+        "sha256": "b42b906ccbddaad4a31ee2b9511a8f80276686f74aa3b78d362c076adfc1b752",
+        "size": 7029
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "374d572d517116325966ac295a0369174fb8589c9ca4480c950bdb58db93a840",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "6564f16df49450996b8515b321636426f8fe27392b19ff0898b2ffc27ab31d08",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_newintruders_seed1_won.save.txt",
+        "sha256": "be63575a3b9d57a11ec56767f7ac12b4a869b6fb2f6c37c8c84832d8cccf1121",
+        "size": 7046
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed12_lost.save.txt",
+        "sha256": "ba8b2f08fc0d60cca40f36ef681c65dba064dc54da662f397376f375e795d0cd",
+        "size": 5843
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed1_won.save.txt",
+        "sha256": "66ee778ba56e61b6ed1d25a2526dcd63009d712acf6124f6ca72b83a4f94eb33",
+        "size": 6688
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/README.md",
+        "sha256": "14af5ddb672d10167c1cff05d65632c9e14c4a331c5848a5c5fa71e20e2005bd",
+        "size": 5154
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_ashthread_seed1_lost.save.txt",
+        "sha256": "cfc68eef6c4f282c8d168850215bc158f5945476eba16140e83c6e95539f7cb7",
+        "size": 4551
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_banner_seed4_lost.save.txt",
+        "sha256": "9b687281f87da04f2528192aa7afd055ebb7eb90d234ac2b439a618a409e2418",
+        "size": 6834
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_crownkiln_seed1_lost.save.txt",
+        "sha256": "17c4c28dc96d332f765c04d1add7f15e2367e1e39f921c1f0df218cf0ac3b0e9",
+        "size": 6464
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_doors_seed1_won.save.txt",
+        "sha256": "50dc48b8a979b0fb4e267a5a1ca2e5a9beb835af499a3a55a2b38026b039050e",
+        "size": 7160
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_idle_seed1_lost.save.txt",
+        "sha256": "fa1f683ce7ba2d1304052621e0c191cf463e0f4952d607f63c96c85aee3bf19a",
+        "size": 750
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "20d4a7fa287b51250536441c65a553f5eb2a1130ca0db9103664054d6120b83b",
+        "size": 7567
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_newintruders_seed1_won.save.txt",
+        "sha256": "c2df91bf4ed3f692c583e9aee847168c9565e16105cc607c84e97843d1ba1837",
+        "size": 7152
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "252bac68adeeb651d6182a6e6ff2cd38d65ac4e2a793f11703132638606bb3eb",
+        "size": 6655
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules24/golden_reasonable_seed5_won.save.txt",
+        "sha256": "1110dca990e28c29e2ed765955014a3c23ca4a15f9c43a8de4b422c095d3d696",
+        "size": 7013
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/Benchmark.cpp",
+        "sha256": "8663e65939428f68091f58ddddeefb79eafc1872323c71c54ea3577456f055c9",
+        "size": 10403
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/BotFactory.cpp",
+        "sha256": "515915788375df70c73099b769462cf5326568c246255074d4f317ed2bb09a78",
+        "size": 4163
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/BotPlan.cpp",
+        "sha256": "c8766d6fd3576c36c904769927fd291350f0f686f815541a7cec1e07309836d7",
+        "size": 7627
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/ReasonablePlayerBot.cpp",
+        "sha256": "826a904bf52312d0a1ef9e6b4af4aea32b55eb4fdc69e7d5c82349424a2426f8",
+        "size": 29584
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/StyleBotBase.cpp",
+        "sha256": "e0781e65846d46e589478351493ec2ffc8bcf58387d3191667370f1a71a4ca59",
+        "size": 14329
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/BridgeRules.cpp",
+        "sha256": "464014a346e81b88e189496e8d3cc727f61e8f133bf972705ab4c25812c6cdde",
+        "size": 3060
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/BuildBridgeCommand.cpp",
+        "sha256": "c2262e33304a95545b48792ed98972b30c6ef8694eeb05ba25c22d4e34b45804",
+        "size": 409
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/PlaceTrapPartCommand.cpp",
+        "sha256": "69a2423d3be6688a23967e9cb6cabbf67dae2af611b20fa36ca0d229c2100dbb",
+        "size": 995
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/RemoveBridgeCommand.cpp",
+        "sha256": "6e22228d0949b68ecdf6d4cbbff8309b6eb547679f967e093de1ee176f33d59c",
+        "size": 414
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/SetTriggerCountCommand.cpp",
+        "sha256": "122bdfd668daf4ead2935ffde5b4e3025c9f08b111dc2a994335e140bc716c21",
+        "size": 447
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/CreatureAbilities.cpp",
+        "sha256": "50cf7abac0b65438102aad41962026acf19d48d6a47d8e4996e0e352605e8de8",
+        "size": 9622
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/PrototypeContent.cpp",
+        "sha256": "69b12fbb9db55ad61a70b18edb115479b716d0f4d0cb3e13318b57f1ad8b4327",
+        "size": 18382
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/TuningParser.cpp",
+        "sha256": "d2156e212d745e899eb00d16e554737b975229d067427d79acd0cd67afc494e0",
+        "size": 47968
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Diagnostics/AsciiRenderer.cpp",
+        "sha256": "0c3840b43a697cf38366dbb401c396e72e704d6f83db849847aecb8d0f104f13",
+        "size": 7562
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/Intruder.cpp",
+        "sha256": "3ba44121a83e780f2f7c1b674d4594931c855076ad44001f7c48dd4e5a210449",
+        "size": 2524
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/IntruderBrain.cpp",
+        "sha256": "d34071e213ccb33551fac305f1c5b1938db54158db09bdaaa6f93c7a87e7a63c",
+        "size": 19168
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/IntruderFieldSet.cpp",
+        "sha256": "6164a0dd76a17ac76923721854e187d21177a75def85ef2cf16585fd60b01cae",
+        "size": 9346
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/TrapMemory.cpp",
+        "sha256": "d41130a7daec418b9bce52607dc8f8d193d50b43bbca9bd4a02a50c00ef81c6c",
+        "size": 5272
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/TrapSpotting.cpp",
+        "sha256": "f4ed4de469c2aec0f131fa91c1830d3aa5401ac6a0043e495534e4e7da45025f",
+        "size": 7618
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Metrics/MetricsCollector.cpp",
+        "sha256": "300f8b99768418ce112fb83732282cab0014523e679caa3655295a9e7207bed8",
+        "size": 20866
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Metrics/MetricsFormat.cpp",
+        "sha256": "093ca3cf29d5b42f7e7a6ec86e90ca1323112137e2fb910501198b7d6c57c400",
+        "size": 11619
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Save/CommandFactory.cpp",
+        "sha256": "34100030711e0b2e0b6a600afebe2814c7ab6213726c4869bc11547d39994c8f",
+        "size": 8543
+      },
+      {
+        "path": "ext:SimulationCpp/Private/SimGame.cpp",
+        "sha256": "187471fbd9364c7f2d6f31bea703ea301402679616d6478fc8ba30e5f12ed4b0",
+        "size": 38438
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Traps/TrapEffects.cpp",
+        "sha256": "c40a35ec23521c4c72d063d4bd72045805f7c58e86f71d8b1e3b7998825e59b0",
+        "size": 13813
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Traps/TrapGraph.cpp",
+        "sha256": "86cda839ba585d9ecbec96ccc75dcbd4dfdc6175f032e0ecf82a7bb46713dc9e",
+        "size": 980
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Traps/TrapPart.cpp",
+        "sha256": "83f6179be5fb9850bb40024886ffb04790181d6a3ec6517347cbce7cd360255f",
+        "size": 1108
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Traps/TrapSystem.cpp",
+        "sha256": "0d49306c88c4deb453ed4c144109cd1e080852ff0e70b1b8bab97ad3113cd694",
+        "size": 27890
+      },
+      {
+        "path": "ext:SimulationCpp/Private/World/Grid.cpp",
+        "sha256": "4f141af898857d539ea938233ea6ad17287688bc8d30b3a10b3a6cba6c2fc246",
+        "size": 3495
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/BotMachinePlan.h",
+        "sha256": "3192a20caa97f907c83227b2ec14c5a62f5d1e231217a1b9e7d39cf56708516b",
+        "size": 822
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/BotPartPlan.h",
+        "sha256": "2d8f6bd69c520ce23c7e102c99d55f8afdb580bf100ef4987f1effbbffeeee68",
+        "size": 675
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/ReasonablePlayerBot.h",
+        "sha256": "0d78bb659918898d4a19820ab3c40512de60698511d9b92e8aedb85c035aac73",
+        "size": 12012
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/StyleBotBase.h",
+        "sha256": "c0577386681fc6f1f0079cd290cd25e3180262a8ef718f739a625a19dcdfe253",
+        "size": 6984
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/BridgeRules.h",
+        "sha256": "2d47a0590f965a13026ef1dc3799561dfb075f0052f8711709432914331d0d6a",
+        "size": 810
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/BuildBridgeCommand.h",
+        "sha256": "02307052238ee903c14ace0750ba1c285a460df3ce533443625e695f414e053a",
+        "size": 987
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/RemoveBridgeCommand.h",
+        "sha256": "57a95e8f2401d3a1707041e7b4fb2c74239a27c35a8d81965ba663d5b7e5c9ac",
+        "size": 852
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/SetTriggerCountCommand.h",
+        "sha256": "b722897c5aa92d4a7da67006983ffb9888508ac84fb529c07e48d8d88f266a45",
+        "size": 802
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/CreatureAbilities.h",
+        "sha256": "b7862403aa2a3c8cf9dc95622d0b997abe1b9fdc3e63029d66495c47ead1c8e9",
+        "size": 3087
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/IntruderDef.h",
+        "sha256": "7458a8326ff5a65cab46974360c1a2aef4bee814a74789fc5877b7d1f6b7a160",
+        "size": 3992
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/TrapPartDef.h",
+        "sha256": "39f29ae629c784cf9a3b4fb354de027db18de111209593cb57b31274c7aa0ff4",
+        "size": 3145
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "102e23e789dd47ee9388d9a9ff8601abbdfe751051e5dacd2107feefc24470a2",
+        "size": 17206
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Economy/SpendReason.h",
+        "sha256": "e25c48c2fb1d2a0a20d913ad1c1e2dacab35dab391b873f5ae870cd168fd6a94",
+        "size": 1787
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Events/SimEventType.h",
+        "sha256": "56a7e37c1fe6d6e8f20dfa9af9710bd24a9ccd1c27c1b276b3d01f1feb39310a",
+        "size": 19810
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Fwd.h",
+        "sha256": "932ec99ec657d35e3f4a718c05d07bc03dfd0263de891f0d07e3228e7fee4e4b",
+        "size": 6367
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/ISimView.h",
+        "sha256": "4a2176d3a00dea2e8ab7c56f344f126a0c5faa381516d8b24ddba1b08ad77aa3",
+        "size": 6845
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/Intruder.h",
+        "sha256": "f76c33960bf1ff1c76be4d830c04a78178b0768c13acba1335c091b2a03b190e",
+        "size": 5764
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/IntruderFieldSet.h",
+        "sha256": "8373fc75d1aea25ab4e7e3c5050ae4436d73d37aaedbe4644013c4c1c17d0336",
+        "size": 4130
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/IntruderFleeReason.h",
+        "sha256": "1772f4e31eab6b481edb8e3c3090aa67d63d942b61f62d8f08feb3e0049b3da3",
+        "size": 1147
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/KnownMachine.h",
+        "sha256": "6c56957f262e05ecbeb422f685cd4b6aac90b9704123cee024ca2338c94eaa46",
+        "size": 1296
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/TrapMemory.h",
+        "sha256": "7044f5207da8452acb05a1063f0bb1d859a821278b760d67cece22d635d0ba05",
+        "size": 3159
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/TrapSpotting.h",
+        "sha256": "a9c678f85a92990745e742adeb4db824303c894cb1aecf3880a64d2eff584d38",
+        "size": 3790
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Metrics/MetricsCollector.h",
+        "sha256": "36b8767e666738b5dddac25e832daf6793eb0d0c0f51316df83198cfa9463658",
+        "size": 2590
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Metrics/RunMetrics.h",
+        "sha256": "88650e85978e3ed15c64cacfe7f8c1f6252294292bc3875522ac6dc33fffa347",
+        "size": 8343
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "ee79ecf23aa5606535a5830e30666d29dfd8fbdd72751047104957248f84e61f",
+        "size": 5319
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Traps/TrapEffects.h",
+        "sha256": "c2b1e52cf92c702d549a5464a9e783d83fe952cb39231d3aa1333a222d1fc6d6",
+        "size": 4384
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Traps/TrapGraph.h",
+        "sha256": "359bc921986a673617074316c4ba097c2e0b4f3b64d0e7a2e6c733394670726a",
+        "size": 1039
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Traps/TrapPart.h",
+        "sha256": "e56499fbceda8ad8568a1e1f337558484ae4984cf167a174374292825c08c29c",
+        "size": 3622
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Traps/TrapPartKind.h",
+        "sha256": "dc359806f892dd6bc956c70131219ab5c27b70ab5aa1d6e1cad010167337ddea",
+        "size": 2440
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Traps/TrapSystem.h",
+        "sha256": "72745c7b6376f8479969038e5300454a2d43fe0a51aee8d3cfc23a1887d80eeb",
+        "size": 8474
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/UnderreignSim.h",
+        "sha256": "2fefb9f677e3534b4c0bc2bfd52d2a105845afc823dc0eee64ea0cbcb10cece4",
+        "size": 10614
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/KnownMachineView.h",
+        "sha256": "e521bba2399e97a848747a9bc6233a7eb2bbd503bd4c84e51acd4a943784e7f7",
+        "size": 698
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/TrapLinkView.h",
+        "sha256": "191b7bffa3c02f017a0892ae8e402fe91464a2a493c631eddf6b9a1a2c06f026",
+        "size": 516
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/TrapPartView.h",
+        "sha256": "1a9f1e54916a15b99ad59ceab52bf515c52f376452950c1ad2fe83956962e63d",
+        "size": 2185
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/World/Grid.h",
+        "sha256": "bb1bd6b00e0d70e8853d81fded3d9dd22537179b210f59197f0876138695107a",
+        "size": 6713
+      },
+      {
+        "path": "ext:SimulationCpp/README.md",
+        "sha256": "e148f9d17d303daf67be5fad746aa8177771541f27d59a11478d969e858dc19b",
+        "size": 75223
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/BotHintTests.cpp",
+        "sha256": "6600340c8e79a24866f4af90f9fd436c4f8ed990dad6c7c26d2e84927001d088",
+        "size": 15363
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/BreakthroughTests.cpp",
+        "sha256": "005c891ce97f906925e3cb729c80dbd0d2443f94bb2e3846bd453c63e2f46ec9",
+        "size": 15438
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/EdgeCases/DeterminismEdgeTests.cpp",
+        "sha256": "c98acd0612441650e4ba4fd697d452609b21eb0554eed4bff4ca966a7a5cad01",
+        "size": 6263
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/EdgeCases/HeatEdgeTests.cpp",
+        "sha256": "3ad113da4305a042d084918fe36cbbffa285f2a66ddab9e6753df0795992d6e6",
+        "size": 14661
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/EdgeCases/StarvingAndBrokeTests.cpp",
+        "sha256": "35b1a045e81ec8013fe6f534bf1ae807acdc7e2a2589e8e8d1e972520416bf90",
+        "size": 16529
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/EdgeCases/TrapEdgeTests.cpp",
+        "sha256": "86ac7af8908c750b4edb7b72aef8ecdc7e967410b8b2bfbaad2b88b37e923463",
+        "size": 12313
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/EdgeCases/TrappedIntruderTests.cpp",
+        "sha256": "dc206d4547f56392b780276518e02ed39a54b117534e7e37f5edb10a3deada82",
+        "size": 9029
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/FerreterTests.cpp",
+        "sha256": "081e9cfcb297b87b158ba4ad97a4b95364af0d4001f445c6839d50f393bcf3ab",
+        "size": 3880
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HardeningTests.cpp",
+        "sha256": "819a96e2dea8f6e8b851cfad8bc6436f40b7edc123daa1caf178efd160399131",
+        "size": 23197
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeadlessTests.cpp",
+        "sha256": "f69e586228ce07384f51045188bc7b6ac2e1a790d0b0f2ed23cb60b2346d0a9d",
+        "size": 30287
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeatTests.cpp",
+        "sha256": "77bbd9432450bae18b512d2b763c2c6017e83818060d67bdde938e5e47f22721",
+        "size": 24664
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/IntruderTests.cpp",
+        "sha256": "86925f040e073449b5656f50606007b8cfc8e582571af584e5a4883e0edebf62",
+        "size": 26284
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/LamplighterTests.cpp",
+        "sha256": "5dffb7b3520b5e13b884b6166f58b0a7295ef8960aa47c8e629017b3e52f9bf1",
+        "size": 3539
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/LavaTests.cpp",
+        "sha256": "7e6759d9b768fb6d56dd9b80007f69c7792b3da081566f7cfa09002b21586c55",
+        "size": 11346
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/LivenessTests.cpp",
+        "sha256": "3a1f7faeb3c934050a11dfa85058637e245765f518a1b3f65633da09dec248ec",
+        "size": 4639
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/MemoryTests.cpp",
+        "sha256": "65344fa223cf12aa68db2141f47d6e5ae5bec59f904648aafa981dfb82495d09",
+        "size": 14212
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/OpeningVariationTests.cpp",
+        "sha256": "3c269f1d9a32045c70ed6a85d7eee6dbcd8756f960f56fd3ee9b57a500f83912",
+        "size": 8409
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Round7Tests.cpp",
+        "sha256": "bee56481e9808826505867f293f9e0d792bcdd206d90c0836bf8268a0d0b1781",
+        "size": 7301
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules12Tests.cpp",
+        "sha256": "8382e1df46a92853532fbd534d347e2af9668eb254098294dc356dce915c69f0",
+        "size": 7987
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules13Tests.cpp",
+        "sha256": "abcba587a3edf01eac3cf2c92a542d60e9ec771e1a6fb030c01c31485b1b8b26",
+        "size": 8289
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules15Tests.cpp",
+        "sha256": "5792cc82eab413b0089dd855b96edaf908f0062157abffdb8f655cd3a11c70ae",
+        "size": 9148
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules24Tests.cpp",
+        "sha256": "15092a5e5755f9a4f53ca6e084ac8f2fd35e87aaf5804605195f99da029b1109",
+        "size": 24187
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules25Tests.cpp",
+        "sha256": "6d0f12f33cf887f16c2054110532c620fdeed5c49d96cc1e674dc47008207d99",
+        "size": 16999
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/SaveTests.cpp",
+        "sha256": "3c09ad40c96fd878d88d08dc0063df4222b496037a1f3a76cc48bc865963c3f0",
+        "size": 10312
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/ScenarioTests.cpp",
+        "sha256": "b68e2da46a68431b968cf21167e252f5392045438cd8bf771e80e5353c290122",
+        "size": 8722
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/TrapMaps.cpp",
+        "sha256": "01aff0ab1ac8229264434ddb1cc7ea785c8bf2d3e5a68928a055926bbaad0c15",
+        "size": 2699
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/TrapMaps.h",
+        "sha256": "f4d55dbcbd45e9a8f6c0111b8e4f88460d7608ddcb5536531d7a66ed76c53e8c",
+        "size": 2161
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/TrapTests.cpp",
+        "sha256": "d120efb6ecc87a0be12504aaf3c3677a8714febfaab0a816ef5e2f029c309d5d",
+        "size": 48731
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/ViewAdditionsTests.cpp",
+        "sha256": "72f76618f38bb5137847003190b81a1d17dde0d4123c842f8f2d94b418c41fd0",
+        "size": 19577
+      },
+      {
+        "path": "ext:SimulationCpp/build.bat",
+        "sha256": "58b3ad1309c5a873e7e3220756fc988ac1f473a560fb7f4fdedc01cb964f60c4",
+        "size": 1842
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-SIM-TRAP-REWORK-V1/WORKER_RESULT.md",
+        "sha256": "034957ad53689915e2d9eba5dd6ee81f6d5a7f79f3f2366ae0956ceee5f32699",
+        "size": 23805
+      },
+      {
+        "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+        "sha256": "04368516e787d7c60da868347d4ba90c66ee3a2ec8de0030c5e261bb2c2d243a",
+        "size": 41666
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-SIM-TRAP-REWORK-V1/REVIEW.md",
+      "sha256": "46f13865d65f43cdc3aba41bd59b6ad470211460696d11b60f88511d9bca4b69",
+      "size": 2623
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-SIM-TRAP-REWORK-V1/review.json",
+    "record_sha256": "7b6ca0a33b2390d839e4e18f87e46b9ef81356bf5e8af1b5ee53b49e1b8473a3",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "949f6a6261018157f12203fd5fa680d9bd331f99e56d46eefd44ed41f06471ef",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

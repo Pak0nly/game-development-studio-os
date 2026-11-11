@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-SIM-TRAP-REWORK-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a35a94c913ae5794d",
+  "reviewer_task_id": "a09146411a1692231",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "949f6a6261018157f12203fd5fa680d9bd331f99e56d46eefd44ed41f06471ef",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

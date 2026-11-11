@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-SIM-TRAP-REWORK-V1",
+  "work_order_sha256": "0b0c64a42c85e6331f99e2195c04d52d72f73567517e26188e7e033d090c6cf2",
+  "closure_manifest_sha256": "be3023b54cbb9065a9e80bc2d1606349e702e2e45d7a024aaefef33e93ef1c22",
+  "dispatch_receipt_id": "cf7cb5fe98bb5d0cb5d5a54abdbdd1f5bc6df0c1e392c0227e7fcddd06907ce3",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a35a94c913ae5794d",
+  "reviewer_task_id": "a09146411a1692231",
+  "candidate_identity": "949f6a6261018157f12203fd5fa680d9bd331f99e56d46eefd44ed41f06471ef",
+  "evidence_state_sha256": "2bcb1d5eb6aaefd24ad95727d2e602dafe9d8668ead2507d81f5927aedde3c4a",
+  "review_record_sha256": "7b6ca0a33b2390d839e4e18f87e46b9ef81356bf5e8af1b5ee53b49e1b8473a3",
+  "verdict": "PASS",
+  "receipt_id": "cf5a682c530ad01a91afe3f423342276b043fa4f70155afb2e189956b01b7908"
+}

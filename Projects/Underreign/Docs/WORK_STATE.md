@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-SIM-TRAP-REWORK-V1
+
+UR-SIM-TRAP-REWORK-V1 (rules 25: traps fire on their own; Weight Plate (heavy intruders) and Count Trigger (Nth, 2-6); plain triggers, chains and lever removed; Turret (range 5, clear line, 10 shots, refill); bridge over lava; control effects (vent panic, longer snare hold, charge knock-back and stun, hatch drop or pit) with less damage; creatures now deal the largest damage share on every map; UD-80..UD-84; 862 tests; balance off both ways (Bellows Gallery 15 %, Inkdrip Shelf 99.7 %), waits for the Human; external commit 46653a6)
+Independent review verdict: PASS
+Worker task: a35a94c913ae5794d
+Reviewer task: a09146411a1692231
+Candidate identity: 949f6a6261018157f12203fd5fa680d9bd331f99e56d46eefd44ed41f06471ef
+Closure receipt: cf5a682c530ad01a91afe3f423342276b043fa4f70155afb2e189956b01b7908
+
+Next: UR-UNREAL-RULES25-V1 (game on rules 25 with doors, trigger, turret, bridge UI; target images and the open unit-control question recorded); then the Human plays.
+
 ## Closed: UR-STYLE-SAMPLE-V1
 
 UR-STYLE-SAMPLE-V1 (dark realistic style sample, environment only, separate Unreal project StyleSample with own Blender assets, no scans: mood right, surfaces look soft; readability needs outline, ground ring and unit light; GPU 10.6 ms High / 17.2 ms Epic at 30 fps; Megascans list for step 2; Human verdict pending; external commit ab94a8e)
@@ -51,8 +62,6 @@ Worker task: afe4c46464f0ca683
 Reviewer task: ac9b57bb643275cf2
 Candidate identity: f944427406e5b90d5ca2e0015174fe9941746aeaffd996c833909f2a60975a1a
 Closure receipt: 2d39c7ba73bdb8b5eb0161692d40e228b6725b40f89d4f3d631b7be67a9869e0
-
-Waiting for the Human: trap rework (self-triggering traps, weight plate, count trigger, no chains, more control effects) and the style-sample verdict / Fab login. Then resync the game to the newest rules.
 
 ## Closed: UR-UNREAL-NIGHT2-V1
 

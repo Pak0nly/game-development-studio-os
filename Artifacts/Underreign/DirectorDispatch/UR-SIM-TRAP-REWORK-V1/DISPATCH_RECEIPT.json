@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-SIM-TRAP-REWORK-V1",
+  "work_order_sha256": "0b0c64a42c85e6331f99e2195c04d52d72f73567517e26188e7e033d090c6cf2",
+  "manifest_sha256": "7970b87e8f19e188d3836f7b58f82c6ad75a560497fa5083ce369c0357a098d0",
+  "repository": {
+    "branch": "main",
+    "head": "39354a4c786dc12f4b7489a04d21306f6e142d8d"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Artifacts/Underreign/Evidence/UR-SIM-TRAP-REWORK-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "c963ad58ba95d1891a6568a992c8682e85ec0317cd9b805b708477ee956d61c9",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "ab94a8ef7a9e84e1e3a9f79a4768f6548a675816"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-SIM-TRAP-REWORK-V1",
+      "SimulationCpp"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-SIM-TRAP-REWORK-V1",
+        "SimulationCpp"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "e9e6f54701ddfc8b27cced6e60341f1d5ebbf03202020eba8d6c4f1588d787c5"
+  },
+  "execution_location": "local",
+  "receipt_id": "cf7cb5fe98bb5d0cb5d5a54abdbdd1f5bc6df0c1e392c0227e7fcddd06907ce3"
+}
