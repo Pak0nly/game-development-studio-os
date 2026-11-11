@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-CREATURE-CINDERLING-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a9ebb0b4216c89825",
+  "reviewer_task_id": "aed2a1412672d613d",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "c7c61b3c979109e37401c31849065ebb03016a277e37959c6c793678e12bd868",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

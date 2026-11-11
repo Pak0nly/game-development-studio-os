@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-CREATURE-CINDERLING-V1",
+  "work_order_sha256": "b1243bc931bfb630c6f4d187f690b6f9b81198bee0e5c5ebf27713f157f4f376",
+  "closure_manifest_sha256": "8375d2948d88040ecaf64365fe98391e0ba4ee1f6b2529c7124d7eba45523e84",
+  "dispatch_receipt_id": "db7430736a79c1288f2776aba6fdb542ae2edb4680f3959defff6d2c84cff3f5",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a9ebb0b4216c89825",
+  "reviewer_task_id": "aed2a1412672d613d",
+  "candidate_identity": "c7c61b3c979109e37401c31849065ebb03016a277e37959c6c793678e12bd868",
+  "evidence_state_sha256": "5aa39c59cd7cc918993c9aaf1d15a1ff639bfbbedab1ffe416207dc97c2dfe00",
+  "review_record_sha256": "a91c7434fe19cbdf39ffcf90b6aedf438f2cd53486f2d291baad44d7bd57f189",
+  "verdict": "PASS",
+  "receipt_id": "e007e799df3293b98ec80ecc93cb2120afc15d9a569c2ded7abaf36a892dfe4c"
+}

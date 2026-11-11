@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-CREATURE-CINDERLING-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-CINDERLING-V1/WORK_ORDER.md",
+    "sha256": "b1243bc931bfb630c6f4d187f690b6f9b81198bee0e5c5ebf27713f157f4f376",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-CINDERLING-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "09b0c314fc7bc86b16d20b26e73299a999927db5bf31871f5579303f86086dd3",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-CINDERLING-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "d69eafb5442df8a278a32d93003bc07552f3a7afdba44616b0e04d9043ab4b6a",
+    "receipt_id": "db7430736a79c1288f2776aba6fdb542ae2edb4680f3959defff6d2c84cff3f5",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a9ebb0b4216c89825",
+    "reviewer_task_id": "aed2a1412672d613d"
+  },
+  "candidate": {
+    "identity": "c7c61b3c979109e37401c31849065ebb03016a277e37959c6c793678e12bd868",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-CREATURE-CINDERLING-V1/WORKER_RESULT.md",
+        "sha256": "7a9450ac3122f46dfc05ab6ff3a92b85002c997a1ad3cb3e3e56ba96e58a6c58",
+        "size": 7759
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Animations/A_Cinderling_Idle.fbx",
+        "sha256": "e4173957890d687649f6a7f1f8422d2267dafa255db82b1c0357e3ca469c2952",
+        "size": 1172940
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Animations/A_Cinderling_Walk.fbx",
+        "sha256": "84a3166ce27857be41bf2a95f4777e45862e803bbaaf3a64d6ff2e1e32a9a0b4",
+        "size": 1160172
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Previews/Cinderling_Idle_front34.gif",
+        "sha256": "f0d65f0ad12d6a3ab094d542381d656514e523c77b09054e9a9a579b31d5f6da",
+        "size": 1497570
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Previews/Cinderling_Idle_side.gif",
+        "sha256": "86bc6cc62a8b1443b0b80fc4c7acf87664fe9ffbf349e92fa4b8495c4a247a24",
+        "size": 1035951
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Previews/Cinderling_Walk_front34.gif",
+        "sha256": "a37a88ef09391a305803d08a7ad40ce62d48c3d5a7b216febf511768ec530647",
+        "size": 1858091
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Previews/Cinderling_Walk_side.gif",
+        "sha256": "3dc681bdbf0d85933db2b35e121a379f8c8a1607b349f81f4ed0c48c4ddb938b",
+        "size": 1461097
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Previews/Stills/01_turntable_high_vs_game.png",
+        "sha256": "4f9601370dfd94d7d79496d54f88db0f558b9b9dc2755683b4829c5d5fd88dab",
+        "size": 1112899
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Previews/Stills/02_head_chest_closeup.png",
+        "sha256": "8e96468a63619212032c1d13821a071ce763b61184ccacff62d800eedfc590c3",
+        "size": 766240
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Previews/Stills/03_wireframe.png",
+        "sha256": "1fdce621611c99c462f659ab2433445857dcd433239bfd018ed73795a18b75c1",
+        "size": 912854
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/SK_Cinderling.fbx",
+        "sha256": "373c04dc09c20d3d6cc36c72eb9a1f8cbcae50cc51274ddaf93eb2508a5b9148",
+        "size": 1041180
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/bake.py",
+        "sha256": "16276e01e309fecd7d6778bdfc8fd60bee4e369601cfa8b2fdfb9c95ac4803c7",
+        "size": 3304
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/prep.py",
+        "sha256": "8d413537730ad098ea1055a712b04cc5aa90d32a1c81067731aa14f352fd9544",
+        "size": 4750
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/preview.py",
+        "sha256": "fc3dd25e57aeb3e15f6c05e6a7db40f957fea7f2d493b0c0f451fe3fb13be518",
+        "size": 2892
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/probe_view.py",
+        "sha256": "dd918fe6213ae34495cc1244806f4dca700f455ac980e7bb4c013c2bc850a0bc",
+        "size": 1285
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/rig_anim.py",
+        "sha256": "6cec0cdce1e04078b888f1274ff160232a1bc597cc88375a2d20b3fa3d615a78",
+        "size": 12659
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/slices.py",
+        "sha256": "99817fdda91f48c992f8103f38cf45782ee6c6f8114a20bb633ec62cf5d5ab8a",
+        "size": 1030
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/stills.py",
+        "sha256": "016fe760b7efdd3670f9412554cec80f1233c43622a0e99b8e6a87100328f96b",
+        "size": 4723
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/texproc.py",
+        "sha256": "021818f3df133639c1dfc58a8c0c4ff29a3eefc5534eb5e44597bbc74cbd2247",
+        "size": 3712
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Scripts/verify_fbx.py",
+        "sha256": "7fd2281c90b7703eb7c4690192c525ccb90b780db1143556898df9e8d79aaf92",
+        "size": 727
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Source/Cinderling.blend",
+        "sha256": "10deee1d5b3e73756dce297b3e9ddef4704264709df40f702e4a6bff65436a00",
+        "size": 1465055
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Source/Cinderling_High.blend",
+        "sha256": "2e3f999c2f3b2ee88745eb60d426bbbe12655946407828462106090aab19fdbe",
+        "size": 16770151
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Textures/T_Cinderling_BaseColor.png",
+        "sha256": "c68b777b863c4a9de113fea86b85abcfe27cdc8b31b26e49ced72227d01ee756",
+        "size": 4334160
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Textures/T_Cinderling_Emissive.png",
+        "sha256": "f3bf0fa6a54fc87b968657278e8de011ed0f91ed7285c15513221c77aeefabd2",
+        "size": 90791
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Textures/T_Cinderling_Normal.png",
+        "sha256": "b95dffd60f8c7e1623847b5dbe92b127faa68f26691a5baaf7f2529ea0c99fbc",
+        "size": 3336746
+      },
+      {
+        "path": "ext:StyleSample/Creatures/Cinderling/Textures/T_Cinderling_ORM.png",
+        "sha256": "6700931e2e68ab48a5cffb7d4c5ef559d1823823f6a5e05d99731416a0509c44",
+        "size": 3713401
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-CREATURE-CINDERLING-V1/WORKER_RESULT.md",
+        "sha256": "7a9450ac3122f46dfc05ab6ff3a92b85002c997a1ad3cb3e3e56ba96e58a6c58",
+        "size": 7759
+      },
+      {
+        "path": "Projects/Underreign/References/ArtDirection/cinderling_concept_v1.png",
+        "sha256": "bd6f023746f368cf03daf62fa6693eea5ea7c94d01f7aa52e782f0ef88fa7ab0",
+        "size": 2086310
+      },
+      {
+        "path": "Projects/Underreign/References/ArtDirection/cinderling_idle_pose_v1.webp",
+        "sha256": "e0929e90668df94f1cd2409e8bc27a351e76540405a6d71fbfd30f8ca5c6fe16",
+        "size": 189668
+      },
+      {
+        "path": "Projects/Underreign/References/ArtDirection/PROVENANCE.md",
+        "sha256": "7b5003724a3a86d30c96954b303d06a81472968ab39db07aad41561818f25a1b",
+        "size": 3286
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-CREATURE-CINDERLING-V1/REVIEW.md",
+      "sha256": "17a61167eeeac56ebe9ec5e174b741a467b3e0e6ce8b0a2aecff6072eb6ce143",
+      "size": 1689
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-CREATURE-CINDERLING-V1/review.json",
+    "record_sha256": "a91c7434fe19cbdf39ffcf90b6aedf438f2cd53486f2d291baad44d7bd57f189",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "c7c61b3c979109e37401c31849065ebb03016a277e37959c6c793678e12bd868",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

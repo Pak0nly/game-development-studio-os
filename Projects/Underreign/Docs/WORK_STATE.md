@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-CREATURE-CINDERLING-V1
+
+UR-CREATURE-CINDERLING-V1 (cinderling from the Human's concept and Meshy model: 22k triangles, 2K baked maps, ember and eye glow, 22-bone rig, idle = the Human's crouch pose, walk loop; egg-round head conflicts with the bible's "never round" (sculpt later); Human verdict pending; external commit 27669b8)
+Independent review verdict: PASS
+Worker task: a9ebb0b4216c89825
+Reviewer task: aed2a1412672d613d
+Candidate identity: c7c61b3c979109e37401c31849065ebb03016a277e37959c6c793678e12bd868
+Closure receipt: e007e799df3293b98ec80ecc93cb2120afc15d9a569c2ded7abaf36a892dfe4c
+
+Next (2026-11-12): one Seedance test video with two cameras in one picture (front and side) of the fixed hound, approved by the Human ("Für morgen mit einem Video erstmal testen, ja."), fitted with keypoints plus silhouette in both views (approach from the Can It Code? videos); then decide more videos. Open for the Human: verdicts on style sample 6 (wants to see it live in motion; a viewer starter was offered), hound, cinderling. Stray folders C:/inputs, C:/frames and C:/Source/SurveyV3 for the Human to delete.
+
 ## Closed: UR-CREATURE-VIDEO-V2
 
 UR-CREATURE-VIDEO-V2 (Seedance transfer v2: timing/body/head/tail from the video, leg placement and depth from rig rules; walk paw slide 1.19 -> 0.07 cm, parallel legs, all paws lift; bite in place (8 cm reach); shake split out (weak sideways); death not started (needs body roll in the fit); stray folders C:/inputs and C:/frames for the Human to delete; Human verdict pending; external commit 817147a)
