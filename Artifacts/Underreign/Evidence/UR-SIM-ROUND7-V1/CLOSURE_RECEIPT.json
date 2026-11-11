@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-SIM-ROUND7-V1",
+  "work_order_sha256": "f9d6c6b77a6c12b3ee1a49017c5b90784474330d997946b61d005ac95dfb52ce",
+  "closure_manifest_sha256": "cb7bbc345e3e352e2a9fce2465da21f54eeea3c086c5e6c6a79f39e2e92cfc3b",
+  "dispatch_receipt_id": "afa0a61c7a4fa691cd5f1798802ce21c9c882f017f1af9f2a5059a7fd7b58297",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a0ca9f329d80045b2",
+  "reviewer_task_id": "aaf5cdc281d934056",
+  "candidate_identity": "acdee902ee58bc391ff62d8237973dc81dd3c778ac4511030aa556b3c965920d",
+  "evidence_state_sha256": "57f91dce98439949afb0d17931bfac34c932492e5abb141d82a3b9363d9c4172",
+  "review_record_sha256": "b376a2385f0caf7dc44f01200c22038e98b8db673651c3c31fb2683337477497",
+  "verdict": "PASS",
+  "receipt_id": "02d07d912c13cd0f742582f757b6eef50b42788f2509b9f8fb6ec1ed822543a2"
+}

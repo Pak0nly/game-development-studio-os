@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-SIM-ROUND7-V1
+
+UR-SIM-ROUND7-V1 (rules 23: cinderlings flee after 0.4 s (deaths 0.29 per game), crossbow special flee rule removed, gold batches default, Flame Vent heat halved by the Pavisier's shield, Ember-witch needs a clear line; UD-56..UD-78 and OD-19..OD-22 recorded; Ashthread Drift 45 % -> 23 % under batches (an escaping scout reports traps; expected to change with hidden traps); external commit e54c061)
+Independent review verdict: PASS
+Worker task: a0ca9f329d80045b2
+Reviewer task: aaf5cdc281d934056
+Candidate identity: acdee902ee58bc391ff62d8237973dc81dd3c778ac4511030aa556b3c965920d
+Closure receipt: 02d07d912c13cd0f742582f757b6eef50b42788f2509b9f8fb6ec1ed822543a2
+
+Running: UR-UNREAL-NIGHT2-V1 (Game, rules 22 + night-2 content), UR-STYLE-SAMPLE-V1 (StyleSample). Next: UR-SIM-TRAPS-DOORS-V1 (hidden traps, lockable doors); then resync the game.
+
 ## Closed: UR-NIGHT-02-V1 (night shift 2)
 
 UR-NIGHT-02-V1 (cloud night 2026-11-10/11 on night/2026-11-10, fast-forwarded into main at d8a890a: rules 7 -> 22; four new Ashen Pact creatures (Kiln-ox, Lien-hook, Wax-surgeon, Footnote), five new intruders (Sapper, Pavisier, Crossbowman, Lamplighter, Ferreter) only on new maps, safe flight for cinderlings (deaths 6.9 -> 0.03 per game), cinderlings keep away from live entrances, lava, four new test maps; Cinder Hollow waves unchanged (UD-53); 891 tests, MSVC build and all golden replays checked locally; 35 questions for the Human)
@@ -43,8 +54,6 @@ Reviewer task: a2aaaf00c665f6e22
 Candidate identity: 1638528cca04bb5974f81911b3b99f892929ef9278dfb597a12d91ce6ea7ac65
 Closure receipt: dda0a5628a3c055124dcf90590c4d7eb5eb46ee1e9a5cc18ad58c68285bce0aa
 Night return receipt: d1301dc1ee5cbddf0839e5c4a21f91da75319e62caa5e9702cb27e32ca3d3b5d
-
-Next: the Human answers the night-2 question catalogue; then a local Worker brings rules 22 into the Unreal game (Design/Planning/UNREAL_NEXT_FROM_NIGHT2.md).
 
 ## Closed: UR-NIGHT-PREP-02-V1
 

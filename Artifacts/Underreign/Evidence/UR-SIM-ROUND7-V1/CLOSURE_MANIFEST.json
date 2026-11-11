@@ -1,0 +1,520 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-SIM-ROUND7-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-ROUND7-V1/WORK_ORDER.md",
+    "sha256": "f9d6c6b77a6c12b3ee1a49017c5b90784474330d997946b61d005ac95dfb52ce",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-ROUND7-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "99b5068bc8b632680645132b96833616876d5bf368ea490122e2b3d988d2738a",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-SIM-ROUND7-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "9303e1aea95268c01b8b0aeec5d4ce25021f86fcff393f33e2c28d6d5a50efff",
+    "receipt_id": "afa0a61c7a4fa691cd5f1798802ce21c9c882f017f1af9f2a5059a7fd7b58297",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a0ca9f329d80045b2",
+    "reviewer_task_id": "aaf5cdc281d934056"
+  },
+  "candidate": {
+    "identity": "acdee902ee58bc391ff62d8237973dc81dd3c778ac4511030aa556b3c965920d",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/WORKER_RESULT.md",
+        "sha256": "621ebf438807c8ae5a099052f314f41954dad293337e47f061bc8f7a7d2ef565",
+        "size": 12888
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/SUMMARY_200_SEEDS.txt",
+        "sha256": "5a8a77a10a50ebc23a1b77cd6971edff034c51f5c14d643a1c7ab58f1368d8a0",
+        "size": 6722
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/a2_r1_ch_batch_reasonable.md",
+        "sha256": "df9bd4cfeb82fde02d7c2bffbcd78359d59c98f8aeb3e7b8a121e0b2aabe4236",
+        "size": 4696
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/a2_r1_ck_batch_reasonable.md",
+        "sha256": "012e156b4bd9278d38c947247e5451bc7d55caf4fec1b2e8f6d98ed4918a1eec",
+        "size": 4701
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/a2_r2_ch_batch_reasonable.md",
+        "sha256": "60d4d8997dab5608350142558e32f77bcfd2aa187654523b6dfb52dc7bed46ec",
+        "size": 4723
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/a2_r2_ck_batch_reasonable.md",
+        "sha256": "e53df21d49119f5728a7359c962a9573dee596a02571b9c9dbb3873f8c145df1",
+        "size": 4784
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/after_ad_batch_reasonable.md",
+        "sha256": "b12b1697ade8d851f1fb52e6b61e93882abd168692c30f9c38178735313e0901",
+        "size": 4793
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/after_bg_batch_reasonable.md",
+        "sha256": "2259a4020f320f2ee0205376493abd6b26d49ec443a69996390697f678a39f5c",
+        "size": 4735
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/after_ch_batch_reasonable.md",
+        "sha256": "cb1a7828d27b655be64fbd76656f964508beafacc4fd507a1068151f159bc5e9",
+        "size": 4735
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/after_ck_batch_reasonable.md",
+        "sha256": "7a0f46f8cfdff54c13da51ebfbfc1f269363e59964b0e33979d3ab43d5808e68",
+        "size": 4761
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/after_ik_batch_reasonable.md",
+        "sha256": "d434b6bb9235c672b65180a9ecae08dc47b8025460b16529ed44f753427b6f71",
+        "size": 4664
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/after_ni_batch_reasonable.md",
+        "sha256": "d0f33b4286c739f7f1a82a4ab19399e6e3b19b938147cbe67487ca5c857efc0d",
+        "size": 4779
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/afterv_ch_batch_reasonable-varied.md",
+        "sha256": "e36f5c1130471e6606d2cf655d0b157ee347c7a8634293c43bfff11921888e36",
+        "size": 4774
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/ashthread_seed2_wave1_events_batches.txt",
+        "sha256": "0cb91453d8060a923829b8b7e85707cf84f23f69135288eee1c5e54e32e4fa17",
+        "size": 23790
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/ashthread_seed2_wave1_events_haulprio3.txt",
+        "sha256": "00f5693bf139b2fb7ce3b17297d48bd17acef8d50c910d579c6cf68e5164bc9a",
+        "size": 23162
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/before_ad_batch_reasonable.md",
+        "sha256": "681bbbe514611bcf9d19f435f386864317f1a9caee1f60145499d335cff67dbc",
+        "size": 4767
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/before_bg_batch_reasonable.md",
+        "sha256": "78ef296570e9bb031219a3fb0988eb7bc9bc322170d4058465b7c2bf1348f462",
+        "size": 4744
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/before_ch_batch_reasonable.md",
+        "sha256": "4962bf713774a5b6aa356834cc14aef0ae694a5dbd67ba8ac089e2f0a84e50c6",
+        "size": 4758
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/before_ck_batch_reasonable.md",
+        "sha256": "d8be9c7dda71d8513746281be7eb3c3cf8411196c10dfeaa883810370ea3d917",
+        "size": 4756
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/before_ik_batch_reasonable.md",
+        "sha256": "9afc3ab5f98d617d72315c76d5fb6fa6df5c5551693bd37ccd8025cd5d422cde",
+        "size": 4698
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/before_ni_batch_reasonable.md",
+        "sha256": "6b2a8168df3738d704c35c09d00a5df02d3d3572f53404e532d735933619419a",
+        "size": 4777
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/beforev_ch_batch_reasonable-varied.md",
+        "sha256": "745d685b972bd056944a331b95cfa5430efbf186afe61eb14c6cb932103c5875",
+        "size": 4775
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d0_ad_batch_reasonable.md",
+        "sha256": "91ab1a98f9e9826dfc2bf3f432160e0d920fb43590cda82eaef953946e68788a",
+        "size": 4766
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d0_ch_batch_reasonable.md",
+        "sha256": "7b89e68011bc5898c0dc0eda70b83a5782ae0e9592eaf26be3b7ebae2f1b8afa",
+        "size": 4754
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d0_ck_batch_reasonable.md",
+        "sha256": "e527cacdaf31da5e772c82bc5021651d6f5faec59dda7e27b1017d3dc0c60011",
+        "size": 4798
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d0_ni_batch_reasonable.md",
+        "sha256": "63f5b078ebda0287c1e78e2e900c79eb91794412681406b60cc5bc6135c37eea",
+        "size": 4774
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d3_ad_batch_reasonable.md",
+        "sha256": "1c89f0a9f112a2dbda2c5722b7de45ae9fc8108a022ae378a46c47f48d76e6ce",
+        "size": 4789
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d3_ch_batch_reasonable.md",
+        "sha256": "8aa07cf95af2ca38e1ff8859e6ba95295fe9d4dfb300e5cd3eaf24fb057dd823",
+        "size": 4755
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d3_ck_batch_reasonable.md",
+        "sha256": "7ca0c5aa9060d9547c02911755a5815b56d7028cc41437c33fa4163af8cd9027",
+        "size": 4756
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d3_ni_batch_reasonable.md",
+        "sha256": "b52f2fd9dc51b70f9091b819b8e5e8149d13ce874bb6000cc26fe2fb1940577e",
+        "size": 4774
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d4_ad_batch_reasonable.md",
+        "sha256": "1bf828ff07931f3fac7f5acbcbf9466651f009ff088373c39489a8946c6da426",
+        "size": 4762
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d4_ch_batch_reasonable.md",
+        "sha256": "5dd38b6832f04b83d04cf12bfce8b595118ca173cecf597d9da8b36133f2c28f",
+        "size": 4736
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d4_ck_batch_reasonable.md",
+        "sha256": "684a81a361207fe805b8d8fa484e8031d424d59467106cd34e3dcf69f22cbf7b",
+        "size": 4782
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d4_ni_batch_reasonable.md",
+        "sha256": "7691dfcacadbb9ea93399be6824a03f5c0d6037478a8ec49df3d50d1be769027",
+        "size": 4775
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d5_ch_batch_reasonable.md",
+        "sha256": "cb2ac6ee56b7fa7a98d7047f5f67664c0f0c2ee7e5e1935c682b680b588f1d17",
+        "size": 4753
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d5_ck_batch_reasonable.md",
+        "sha256": "4437ac07da2a4fbda28acd2aa379fa214d6a540f427460370e94687fdc5a1768",
+        "size": 4759
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d5_ni_batch_reasonable.md",
+        "sha256": "b05edce4f873b2c6a7da5fd1279ce82770d4ad87057abd4f9ac5550759832472",
+        "size": 4777
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d8_ch_batch_reasonable.md",
+        "sha256": "cb32c93b23b4ba721c7e4634e47442b49a74a39ca71ad9ae7895b1f380c09a0b",
+        "size": 4722
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d8_ck_batch_reasonable.md",
+        "sha256": "635239b369e2cd37b1593a937de2bf9b41132cfe718c6caad54144005aee1433",
+        "size": 4756
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/d8_ni_batch_reasonable.md",
+        "sha256": "69762d34ae5e8b5c3b1d2bb5368f15efcceb42bfa11e6574313ddf192285d302",
+        "size": 4772
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/hp3_ad_batch_reasonable.md",
+        "sha256": "749acce3e2ba4aac347c05bffc2c433e25e340385e26a5199fd2bc9eaec65460",
+        "size": 4792
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/nb_ad_batch_reasonable.md",
+        "sha256": "49a43584aae14ef54510a1d19d9cdf34a618ef036e4ccf9f1d49f537d63fcf14",
+        "size": 4762
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/nb_ch_batch_reasonable.md",
+        "sha256": "635b54386aa41a9e842c0bd3f293f4dd5c97205c31425695d1e564756fceeb32",
+        "size": 4736
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/nd_ad_batch_reasonable.md",
+        "sha256": "953529800b7730072711b0c16b1ba7cb41202852eb17258f810b58aec1858461",
+        "size": 4788
+      },
+      {
+        "path": "ext:Evidence/UR-SIM-ROUND7-V1/raw/summ.py",
+        "sha256": "e5321366e2f596e79b6be33a7f7142828cb06d0ab17faa21c5ceaec39c4d5ae8",
+        "size": 878
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/prototype.tuning.txt",
+        "sha256": "c77296d4b8bc9d3b83eb910fc16871e37ee9d47693dc29d68bf6fb1276d09691",
+        "size": 6693
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/creatures_tough.tuning.txt",
+        "sha256": "af0737429cbc513d03f21cbdb0d0cbd4e61a237119a357902a928c8a973c9082",
+        "size": 7102
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/gold_batches.tuning.txt",
+        "sha256": "d2c18aea71c4ba84d563c878cd8d2ac9700ba1fd37d939897b3635844c39a9bd",
+        "size": 6477
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/heat_chimneys.tuning.txt",
+        "sha256": "a62ab6b5371886d8eaf9ddf8574a88a2f15615f23fce386fc69251843964c5c4",
+        "size": 7204
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/variants/traps_matter.tuning.txt",
+        "sha256": "b0325590db18299509adc74eeb90e3f4b65a176b7f3a24d2c8cb4a8d936ae706",
+        "size": 7424
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden.tuning.txt",
+        "sha256": "c71416f81e4226663111709a5fd1091bc4d80a2a05c9420db1fc64e54da5ebd3",
+        "size": 4850
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_ashthread_seed1_lost.save.txt",
+        "sha256": "200644d9388273251bf5360b472c7c87f40146db0fa35756a8c2ea29bfb54b63",
+        "size": 4840
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_banner_seed4_lost.save.txt",
+        "sha256": "1d6b4c0629dfc1b371bf309bf21a839e01f7bd5230de70b40edc7a2d6b3151b9",
+        "size": 6834
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_crownkiln_seed1_lost.save.txt",
+        "sha256": "ce08ac5289e42ba55633ee5707c30ba74afcf753ccab38fcd671756e62337da8",
+        "size": 6094
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "4d35b13c7beda163c60fa38f7874aa77bdd589a94a497fc54052b7e0794c3ff8",
+        "size": 750
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_inkdrip_seed3_lost.save.txt",
+        "sha256": "adab593409bad9cda26ada24625dac8bf5c57b7203b4fc642af5125dad7003b7",
+        "size": 7367
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_newintruders_seed1_lost.save.txt",
+        "sha256": "673c87cf2b96df1e35a979b879a7060ce1602b9e83e86d69ce861edd72127498",
+        "size": 6752
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed1_lost.save.txt",
+        "sha256": "502162be254faaa59ca7915ae9781acd65039d0a0be583f9db05fc6655ee1247",
+        "size": 6548
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed5_won.save.txt",
+        "sha256": "55096888ee8722c3accbb34fe5c6ca70a7cfcec1fd63ff3880ba1b97e49d736a",
+        "size": 7048
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/README.md",
+        "sha256": "bbff5a3b054d062487545140615c09e1d10445a45fe5e2069e8a3ce271d1f6ab",
+        "size": 4136
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden.tuning.txt",
+        "sha256": "9ae07e03d5bfeb7f9aa7cd8e366feebce7114432cf442df6583d30b29601c2ae",
+        "size": 3834
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden_ashthread_seed1_lost.save.txt",
+        "sha256": "6d0a84bc477e177eb79af158ff85be7d2300f5fd56ef960ce213427225ddb4ea",
+        "size": 5791
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden_banner_seed4_lost.save.txt",
+        "sha256": "ddad9d3ea743e54ecb5559863ad4fb2dd22a31733db2a3ac1dbad480cb470486",
+        "size": 6879
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden_crownkiln_seed1_won.save.txt",
+        "sha256": "213ec084bd36c7d752ad840bfc2f5e4ff2aaaf1649f93df31007eea9ef765f51",
+        "size": 7077
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden_idle_seed1_lost.save.txt",
+        "sha256": "2f43962dc171c4368a5426d2353a1f7820bede5090d17e216d1142974b19b722",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "2818359a20a71897b7900f5c2828dfba0b25a30e8a72ec1ffc475f983dda638b",
+        "size": 7764
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden_newintruders_seed1_won.save.txt",
+        "sha256": "83b6cce3a6c7d98673dbe940db8697b27835ddd4abc14097599dd82da435e6b8",
+        "size": 7352
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden_reasonable_seed1_won.save.txt",
+        "sha256": "b49decde53935bf05f8b0e4b2926c5231452a59337da1c67706305b1b89f2ca5",
+        "size": 7180
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules22/golden_reasonable_seed5_lost.save.txt",
+        "sha256": "46967b3968d564f5aa039622cd4b87357ca4320b875f27f4eec52e05a5d4f35d",
+        "size": 6864
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Combat/CombatSystem.cpp",
+        "sha256": "3ec41bed77753373b94a855247696080c12e2a9865ae3d9eda9cba903ea25f0b",
+        "size": 7197
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/CreatureBrain.cpp",
+        "sha256": "539ef742ceb4ce832d1b1d8e940dacb851e1179a264503e86b16a032cc48d727",
+        "size": 18966
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/CreatureSystem.cpp",
+        "sha256": "ae31337a0eaceadca9ef75d0c58bbda3c7e9cbd3a765e9a08eb1c541415c07e7",
+        "size": 8155
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/TuningParser.cpp",
+        "sha256": "a4c53d2be1d9c81099542dbe6ddae82fecd9ca8ed302703d9764782311bea71b",
+        "size": 46196
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/IntruderSystem.cpp",
+        "sha256": "48c13be8aeafab7261485d4569113d3607473c8df718c28e99cc4dd6bba4b0e4",
+        "size": 18172
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/JobBoard.cpp",
+        "sha256": "c7f777e27c7d9c6a0674a0e3560d929f6ab8bb2b7d20b1d9dabd7e1885771c63",
+        "size": 15227
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/TrapServiceJobHandler.cpp",
+        "sha256": "9709b30ce753b52f5839a8fea69f30ae8d5e5f7caeb00a61df7ce135851879fb",
+        "size": 2350
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/Worker.cpp",
+        "sha256": "e9db3b198c6f7e687a15864f87f70e7b8bd81e77f5753b8bf7f48abcf21de7cf",
+        "size": 470
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/WorkerSystem.cpp",
+        "sha256": "9e74af65a2eeaa02201e9a4ae9012e09cd4e1d7038ad02596243ff53b3daf7ec",
+        "size": 21732
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Combat/CombatSystem.h",
+        "sha256": "05782827213a887f548f1b08a7d5f21187e80627959fd43f3a1a8d4f7395b666",
+        "size": 2570
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "10c0ab9fc2e8399ad5513eed88f6630467269c3efa1b869c3574849da4747107",
+        "size": 17079
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Jobs/Worker.h",
+        "sha256": "d2f38c0b70e67bf4fdf628e75b5eec60052d71c229ebb4c53042569509a4dc2b",
+        "size": 1699
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Jobs/WorkerSystem.h",
+        "sha256": "6c6579e66a3ec4b3a2f9a3c645190ebdf840b87aa05cd3f604295dd27c4699d5",
+        "size": 4668
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "08a098f304250840bd36e8f63aede43823882d26375ef4542555fa49d32a3772",
+        "size": 4550
+      },
+      {
+        "path": "ext:SimulationCpp/README.md",
+        "sha256": "76446c17787064255737f4f94c03a2d37d4f884be43f23942dc102bf86f2e359",
+        "size": 52834
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeadlessTests.cpp",
+        "sha256": "10498fdcc9befdad7c32e748aa320dce516be174a2f9cfe7d17d694d1d937d7a",
+        "size": 28279
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/LivenessTests.cpp",
+        "sha256": "7334542193eb22fd48a88363fbc2569eed2aacb8ab9cc2ba27478de13815a600",
+        "size": 4007
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/OpeningVariationTests.cpp",
+        "sha256": "112e26c662de3b474fdc2ca0a547f73209a898dc2b9db30b52068adac5f7e8ff",
+        "size": 8283
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Round7Tests.cpp",
+        "sha256": "e0b4c70770f158da1bf34d414047557866c87a5098d4c30c43817000eea3c421",
+        "size": 7154
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules15Tests.cpp",
+        "sha256": "a253c7b59f47b85d4db227520ee338e3e1a4e701ae39f82a2091f62c6c8b2aeb",
+        "size": 8916
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/StyleBotTests.cpp",
+        "sha256": "36b59cb193145716ac34ed8b1120eb9db0ce7a040f4eee3114ad6a9d04242200",
+        "size": 9766
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-SIM-ROUND7-V1/WORKER_RESULT.md",
+        "sha256": "3534821fb31232dc4ff2040ca98ab7a21afc24e8e62e0efe58267a342b5bb618",
+        "size": 3590
+      },
+      {
+        "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+        "sha256": "95b49ff542f7c2b6b9424a6c0cdc25eafc8e0368c4f6f509e290909aff7c7086",
+        "size": 37135
+      },
+      {
+        "path": "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+        "sha256": "87d5252236de7df395141d3dcb5f8ea8118e3a6d21f1aae6fa8d3a42bf48e874",
+        "size": 7230
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-SIM-ROUND7-V1/REVIEW.md",
+      "sha256": "c854a011c36cc45b73c84cfaef3404a0977730be42b8af4621624c462dcfce51",
+      "size": 3370
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-SIM-ROUND7-V1/review.json",
+    "record_sha256": "b376a2385f0caf7dc44f01200c22038e98b8db673651c3c31fb2683337477497",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "acdee902ee58bc391ff62d8237973dc81dd3c778ac4511030aa556b3c965920d",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
