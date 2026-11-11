@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-CREATURE-SAMPLE-V2
+
+UR-CREATURE-SAMPLE-V2 (Brand-hound correction: paws were twisted by a control-bone roll mismatch, fixed; mouth cavity with tongue and 28 teeth, bite 47 deg; walk/trot (new)/gallop rebuilt from canine gait data; new death and bite; emissive mask limited to seams, seal, tail tip; limits: scripted, gallop choppy at 30 fps, joint pinching; Human verdict pending; external commit 683c522)
+Independent review verdict: PASS
+Worker task: ad0ddeacd09fd669a
+Reviewer task: a68e09ae312e53752
+Candidate identity: f0dbbc11e905a13c98d838118cdcddeb32bf9245b06748a681822f5aa9371ead
+Closure receipt: f14558ba4ab8fcda9a032d8054477c22d8c97988073a6956f556f7e57af8a242
+
+Running: UR-STYLE-SAMPLE-V4 (dark charred style), UR-CREATURE-VIDEO-V1 (Seedance motion trial).
+
 ## Closed: UR-CREATURE-SAMPLE-V1
 
 UR-CREATURE-SAMPLE-V1 (Brand-hound benchmark from the Human's ChatGPT concept and Meshy model: game mesh 52k triangles with baked 4K maps and emissive mask, 41-bone rig incl. collar and four ring bones with baked swing, idle/walk/run/bite/hit/death at 30 fps, previews; weak points: shallow bite (no mouth cavity), emissive mask too wide, scripted motion, legs dip in death; Unreal import pending; external commit 51fc690)

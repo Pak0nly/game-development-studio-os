@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-CREATURE-SAMPLE-V2",
+  "assignment_type": {
+    "value": "Brand-hound correction: paws, mouth, gait, death, bite",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Standard",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-SAMPLE-V2/WORK_ORDER.md",
+    "sha256": "40fb3247a0a037e124e02c8aca24979b86a722900c2e59d22039060f4ca157ec",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Underreign",
+    "project_id": "Underreign",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "96b339ef0cdaee350d609cf7ad3c4a151f337fc7f3625f2d19ea3f2fe8167f0c",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Underreign",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "main",
+    "head": "87546bd4cccdc88793780e439101a4a1ea28866a",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-CREATURE-SAMPLE-V2"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-11, Underreign chat): verdict on the hound quoted in the Work Order.",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "a442ee7714ad051d361978b715b2dd0fd157325aa043cce9edd652f2fbed7eeb",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "d372bccc88b2795c31f0b205addc7bdeceab7d1f2811600a4cc64cbb5e93d507",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "781f0f7cd98d6a053c5192f81908b76ba3d636ddf60deaee855890481ca1df6b",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Underreign/Docs/PRODUCTION_PROFILE.md",
+      "sha256": "96b339ef0cdaee350d609cf7ad3c4a151f337fc7f3625f2d19ea3f2fe8167f0c",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-validator",
+        "path": "Tools/UnderreignDispatchGate/validate_underreign_dispatch.py",
+        "method": "file_sha256",
+        "expected_sha256": "bc9d24a1e4a0aa6cf9a08cabe6be1c92cf06f04e23e62747c0457386d119c5f3",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-11, Underreign chat): verdict on the hound quoted in the Work Order.",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Artifacts/Underreign/Evidence/UR-CREATURE-SAMPLE-V2"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs",
+    "Tools",
+    "Projects",
+    "Artifacts/Underreign/DirectorDispatch"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, a need outside the allowed paths, or existing tests that cannot be kept green.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Discovery",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Brand-hound correction: paws, mouth, gait, death, bite",
+      "class": "Standard",
+      "reason": "Brand-hound correction: paws, mouth, gait, death, bite; routed to opus for the needed skill level.",
+      "requested_model": "opus",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Technical Artist",
+    "QA Lead"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "status": "ACTIVATED",
+      "reason": "Director owns scope and Human checkpoint.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Technical Artist",
+      "status": "ACTIVATED",
+      "reason": "Worker builds assets or engine scenes.",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "QA Lead",
+      "status": "ACTIVATED",
+      "reason": "Independent review of the comparison.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Brand-hound correction: paws, mouth, gait, death, bite",
+      "status": "pending"
+    },
+    {
+      "step": "WORKER_RESULT.md and local commit",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "UR-CREATURE-SAMPLE-V2",
+    "rounds": 2,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Underreign Director session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "opus",
+      "reasoning_effort": "high",
+      "reason": "Brand-hound correction: paws, mouth, gait, death, bite; routed to opus for the needed skill level."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": true,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": true,
+      "reviewer_separate_from_worker_and_director": true,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Human judges the side-by-side engine comparison.",
+    "declaration": "HUMAN DECISION"
+  },
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "51fc69078f347b3848551197191acc20b5f68970"
+    },
+    "allowed_mutations": [
+      "StyleSample/Creatures",
+      "Evidence/UR-CREATURE-SAMPLE-V2"
+    ],
+    "protected_paths": [
+      "Design",
+      "Simulation",
+      "SimulationCpp",
+      "Game",
+      "StyleSample/UnderreignStyle",
+      "Night",
+      "EngineComparison",
+      "README.md",
+      ".gitignore",
+      ".gitattributes"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "StyleSample/Creatures",
+        "Evidence/UR-CREATURE-SAMPLE-V2"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "declaration": "VERIFIED"
+  }
+}

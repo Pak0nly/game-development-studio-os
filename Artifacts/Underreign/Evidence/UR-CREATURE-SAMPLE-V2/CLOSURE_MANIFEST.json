@@ -1,0 +1,500 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-CREATURE-SAMPLE-V2",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-SAMPLE-V2/WORK_ORDER.md",
+    "sha256": "40fb3247a0a037e124e02c8aca24979b86a722900c2e59d22039060f4ca157ec",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-SAMPLE-V2/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "0a056575486db35da3b0b8f4c8ffda3eec8c93acf83f14febd227cdf4cd2eabe",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-SAMPLE-V2/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "9c5ae434bb3eb3f467cc452c86f0a67e2bcb795c79c4215a66a64a5a92633f60",
+    "receipt_id": "d37f0110beefaa4a181d7c8ce9bbac08c8934f4dd14f50fdf80ea31d3e66fc74",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "ad0ddeacd09fd669a",
+    "reviewer_task_id": "a68e09ae312e53752"
+  },
+  "candidate": {
+    "identity": "f0dbbc11e905a13c98d838118cdcddeb32bf9245b06748a681822f5aa9371ead",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-CREATURE-SAMPLE-V2/WORKER_RESULT.md",
+        "sha256": "60c7b309b5c6a6919e070553da1a1693de21b2037eb737063e2ddc4e6e59d552",
+        "size": 12467
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-SAMPLE-V2/anim_checks.json",
+        "sha256": "2135fac821eca4db951797334a7b0fff6e95c2e8de5528281d5baf7f66afd52f",
+        "size": 19113
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-SAMPLE-V2/gait_plan.json",
+        "sha256": "22b585bd692bc9d451efb5b13a4fd18e37b463c33a18c287617d7e25cd326ceb",
+        "size": 945
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Animations/A_BrandHound_Bite.fbx",
+        "sha256": "543283b42a1137f5aaf74ee7e890196dd9329ff1c5809bdedec5fede0723f68d",
+        "size": 378076
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Animations/A_BrandHound_Death.fbx",
+        "sha256": "5bbfb9c1ad45eacdc2920d91d7fea7806c2a3b1613f4e78f4678cc74bed2b6cf",
+        "size": 473932
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Animations/A_BrandHound_HitReact.fbx",
+        "sha256": "bb7d2270d8b28d79dbdf110fc8f40ef9ae42e8381f17992f40ce50d736005b07",
+        "size": 342092
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Animations/A_BrandHound_Idle.fbx",
+        "sha256": "c0212882ea72daad416dc56686952a3d972dcb2953eb6577f9c89d90154f4d4e",
+        "size": 589916
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Animations/A_BrandHound_Run.fbx",
+        "sha256": "bba17d4f42b9853499e7d0a4e71bfe0d55b4f4497eaa533b76f01ad0464e9d84",
+        "size": 307324
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Animations/A_BrandHound_Trot.fbx",
+        "sha256": "9fedb1aea3d4ed7114891addb37dc629b0724f5a36c2cc25acef3322ee7107ac",
+        "size": 319036
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Animations/A_BrandHound_Walk.fbx",
+        "sha256": "d9c2c769f1b03df91a5b193d32bb0e890c984fb6960e31d16b7ce03415c64ddb",
+        "size": 365148
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/IMPORT_NOTE.md",
+        "sha256": "1671074d68e8b2c5e3ec8b083f906baf34cf3ef0ca7b6d6a6d0c56272728c69e",
+        "size": 5969
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_closeup_mouth.gif",
+        "sha256": "c5b4f14de7db6dca0a6465e44a55c23d90caad211b4aeb5e99027bfe2646ea28",
+        "size": 4184610
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_closeup_mouth.webp",
+        "sha256": "76e1beafa865d96fadfcd543ab6559a9219baa8b50d0fe631a2b9c29dfcefbc0",
+        "size": 1551034
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_closeup_mouth_side.gif",
+        "sha256": "0c5e5ff9489ce47e8dc9af099043dfa4dd9252eb0b34bfedfd7ce857b6f7bb28",
+        "size": 4153138
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_closeup_mouth_side.webp",
+        "sha256": "b73eef27a1ee480b27a9c79c2885a5708528dc6be686db08f5c934e94cdb0f55",
+        "size": 1373090
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_front.gif",
+        "sha256": "decae4733187004dcc4b05645fc98c2c7421b80e21544dc5bc300e06ba73a919",
+        "size": 2893047
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_front.webp",
+        "sha256": "28602f04cef465ee85032ee92329603e1960951a01482c666c10ce40f7c3ead1",
+        "size": 735122
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_game.gif",
+        "sha256": "5add35731d66f97cd13aed219b7873dc0f113b0c04ab5bc65f9c36f5a41dad29",
+        "size": 3611789
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_game.webp",
+        "sha256": "703a6044e640db8cf4b3bcf57b9a3fcd48b3f3f47acd64ba6c81ff14aea5d4e2",
+        "size": 502856
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_side.gif",
+        "sha256": "4603743773cfd39d4ec4f52f99af90133ea19f008a1304cc43d86e0c4f5369c7",
+        "size": 3045720
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Bite_side.webp",
+        "sha256": "0291db9a459804e7cc8f16326f2d6574719cb28905823846ae87541d1099e2f9",
+        "size": 792050
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Death_front.gif",
+        "sha256": "0c825f2cf00652cdf4810f7baba4faeb884fcff67461b3ce4aa07e7a4cef45a2",
+        "size": 5043194
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Death_front.webp",
+        "sha256": "2885cc0ca7fa1bd43c59193bb306d71cef0f15e219ca473995a9bf6ac6d4433d",
+        "size": 1105268
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Death_game.gif",
+        "sha256": "03489d8b1f6910fcafd2f387af13b6bb6aa780dfc0d6ca2f7ce400ea7e008075",
+        "size": 6515686
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Death_game.webp",
+        "sha256": "c1b4bbe6a568cb01b2b587ad0075abbfe761817da6563665b9532641ce7e2e2e",
+        "size": 811018
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Death_side.gif",
+        "sha256": "244a447e86380a87f8e4f02c6ef03fd82ddfaba48501eecdcab7b713b8dd1309",
+        "size": 4799166
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Death_side.webp",
+        "sha256": "82a2b147824b46a7fd1cc4c6ff7f41aebd26075e963c767c1130f53d7435bada",
+        "size": 1170086
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_HitReact_front.gif",
+        "sha256": "b4825d62d6de1ccabe5f7aa0e03d81cd7fb9bf28ac6c7abc9c7ae430233fef5c",
+        "size": 1823918
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_HitReact_front.webp",
+        "sha256": "3a7f3714fe4e969bb2042557dbfb0f1c9292355dde1dab460e2534157a3c848e",
+        "size": 446984
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_HitReact_game.gif",
+        "sha256": "33a9d9b37e2d1bfb64bde1518d3e492bba86532c09716065b764f93a17ab814b",
+        "size": 2282702
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_HitReact_game.webp",
+        "sha256": "2a43b62edc0f49969bd7ae0706487a1f989ea973489965723870d45e4a50f313",
+        "size": 323130
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_HitReact_side.gif",
+        "sha256": "c3d3e81a3a425659ea73189c520e89deae86f7beda5c856e6ceca97d864ac947",
+        "size": 1927974
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_HitReact_side.webp",
+        "sha256": "efb28a5b1c85d9d95ac1c35d9d5547a2b64fe41822be8da79a9688c7f6e5b400",
+        "size": 505478
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Idle_front.gif",
+        "sha256": "37b6b422c68033e8fe87790460703337bfc9d0dc9047284bb258d43e7af1fe04",
+        "size": 8786456
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Idle_front.webp",
+        "sha256": "6bc57b7c985100cea1469e650fe31a6cc1b73fca38e8c55e7fccd1e295e44b25",
+        "size": 1870100
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Idle_game.gif",
+        "sha256": "a77e14fcc0ca2c3ce688ed38f3061ef05ab1e057c5c52e6622ec724ae44304b0",
+        "size": 10893875
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Idle_game.webp",
+        "sha256": "8f0db6940284448942bc1e3012ea46f5d861b3dd019f3d52a2abb523d7aa0c9d",
+        "size": 1396342
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Idle_side.gif",
+        "sha256": "d11d9f83e66499e68aeb730275807d357d8da1f34d64bc0b952446477c81a11f",
+        "size": 9113255
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Idle_side.webp",
+        "sha256": "0ed483b0da418f153627183adb44e7d5b561eaa376759f2a2a3b6230d6f0dd3b",
+        "size": 2141756
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_closeup_frontpaws.gif",
+        "sha256": "6724e6a712aacdf99ff7fc97d64514ef5fec8396fa3df9ba65bad9b16651e90a",
+        "size": 7137954
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_closeup_frontpaws.webp",
+        "sha256": "f0a8a5295bf953bcca3e444adc15afbf1d0504ce2b477975b32c6f40bc4bcb64",
+        "size": 1639496
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_closeup_hindpaws.gif",
+        "sha256": "8750c8522fec2d10824aec24de27b40d9d4dc7855eb3dac1803efcb159075067",
+        "size": 7021880
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_closeup_hindpaws.webp",
+        "sha256": "e020d4ee40f4c32441fa8cee494eca433bdfbb27595bd8c8b1746a64cf6b6b6d",
+        "size": 1294800
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_front.gif",
+        "sha256": "57a7b616c957806ff36dec13499bd42be3a99b6b948e0f12511575681129cec8",
+        "size": 6166991
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_front.webp",
+        "sha256": "79f8a03621023e91b9d74a62c12937e9d4e764fa1ab5a2108f5b0d68b6559987",
+        "size": 1667422
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_game.gif",
+        "sha256": "07be1f51d8eae978ed98d10c15402cc766141db3fc7b53f5c00fb1eb9ba4ffd4",
+        "size": 8298750
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_game.webp",
+        "sha256": "a121ddac383b27b5647746312990c5acefc3922ea1b9542adadd655c48e5e17a",
+        "size": 1449018
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_side.gif",
+        "sha256": "310e72751371b67a69de2df121be60684b39c1e8769dde176f1a329a144c9599",
+        "size": 6612212
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Run_side.webp",
+        "sha256": "0f4a10288e840aaa287566396ee0d49ae73a3869ab0583c5745fe9b5aa1c3e07",
+        "size": 1791212
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Trot_front.gif",
+        "sha256": "e0cb9a476ee49871a734cc771bc9a19e8b94dde2fd6cfba7463fd9810179146c",
+        "size": 6639008
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Trot_front.webp",
+        "sha256": "e9911a22a6b832d592d6e2be386150819aa91626d160d453552baa97bb2a5030",
+        "size": 1694178
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Trot_game.gif",
+        "sha256": "330a2ef1bff5a334a63c307aec84a57fe16f10b68ec3ccab6724ce395230ef61",
+        "size": 8247383
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Trot_game.webp",
+        "sha256": "46e7188d6943908e24802693baff112657af42060a64d5930c8c81a0a2a9a81f",
+        "size": 1478722
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Trot_side.gif",
+        "sha256": "0105b51b63c731886f78246c75974046f5b86e937abfd13be0ca08596c2908e1",
+        "size": 6605591
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Trot_side.webp",
+        "sha256": "094ecf3fdde885b89b88361395967f04256385153e4088dcf91a487dc8aab9cb",
+        "size": 1842734
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_closeup_frontpaws.gif",
+        "sha256": "483c825b687da46368bf1d5e2a840aa690dcfa6a608a75b5b4004d2b2f6befb9",
+        "size": 7100148
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_closeup_frontpaws.webp",
+        "sha256": "aa034148d60c18332a05d371ade54b6981c15fdcd519e6d3ba8f347a2307c14e",
+        "size": 1565410
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_closeup_hindpaws.gif",
+        "sha256": "36d6075e966ca5fa91e620d14a4677de47192731ab0aa4cb4ad4f005b62f1452",
+        "size": 7123038
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_closeup_hindpaws.webp",
+        "sha256": "0ac05a486c2861f857ecc94ab1e54c17297a2b8ab1cd42023c2ee2fbe2947ac7",
+        "size": 1476126
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_front.gif",
+        "sha256": "0f004b7caa649e741a70bf6075bf64d9a5b5bd8426899ad0621caaf0ccfc0875",
+        "size": 6581261
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_front.webp",
+        "sha256": "d9417f0761de97115942da33960d18074bd9fe2050deecab1111f92b1627cc3a",
+        "size": 1675978
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_game.gif",
+        "sha256": "7cc682cab019c7a04eb7d58c78c8d0861979e2c58cfd15804ed50b40e05c0cd5",
+        "size": 8254200
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_game.webp",
+        "sha256": "04f56a1ee7e83df44fcd5bf291018f28f1b7bb13e19411d09ab1cc43e3b10909",
+        "size": 1472430
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_side.gif",
+        "sha256": "4684fbc6197955de3d7dc774c9afb129e3ef4792b14591573e210fed47fa40f7",
+        "size": 6638573
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/BrandHound_Walk_side.webp",
+        "sha256": "ad8bfb1b8fe41a710ce00511d76497790701b4776a7cf35e1892f63276e19e75",
+        "size": 1869298
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/Footfall/BrandHound_Footfall_Run.png",
+        "sha256": "d7398a3d2ed1ee2861db22bd7e3b1437da5fa8408c56e301acc3fe9e66fe8bdc",
+        "size": 34715
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/Footfall/BrandHound_Footfall_Trot.png",
+        "sha256": "0761831565114a5077c6f222a5eab7f4cf3d625cf0439f49dc3bfaa3a4af51c7",
+        "size": 34483
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/Footfall/BrandHound_Footfall_Walk.png",
+        "sha256": "75fea791fb28ad40fd2bdc49bd51b949de6839f4e717804873ef32b3493b7ae5",
+        "size": 34562
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/Stills/04_paws_v1_vs_v2.png",
+        "sha256": "80c1738f5b31f5e55c023aca5102f1f461b41eca228c6f254c316db70b3eb65e",
+        "size": 2463681
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/Stills/05_paws_gallop.png",
+        "sha256": "f873860b93bd0922de3a99cafedbe85b4c007d1d7962b12fca821e8bc263f189",
+        "size": 1619563
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/Stills/06_mouth_v1_vs_v2.png",
+        "sha256": "471b6d181fbb642680dd5e9a22782061b1a25db0ecb81f953d70dbb1c4acd557",
+        "size": 1374617
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Previews/Stills/07_emissive_v1_vs_v2.png",
+        "sha256": "6f85b0c8b992b3370bf008ba33446b9a8cac880e4768ee5b2efb319e799d7963",
+        "size": 995327
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/SK_BrandHound.fbx",
+        "sha256": "63a66ac03c535d6e4eed540e1a1f3a47e33027b878945782c62df8828392521a",
+        "size": 2438300
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_anim.py",
+        "sha256": "23369cc151ebd51edcf17586977f085a1de5ad64af2e932f303d7116bbb4907c",
+        "size": 28906
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_check.py",
+        "sha256": "f29e6896445f7d494c1170d7a1ee7a6d6289ce9a69c35691587f80e3b7a5f636",
+        "size": 2896
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_export.py",
+        "sha256": "c4f3440a91da66c49477af50a9a3f83299e424fe397687c92efac8ab1008a7ea",
+        "size": 2692
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_footfall.py",
+        "sha256": "a8bbca752df6c5ff9fdc5b8c5b8c186d3dbfdc5800d549b568229b7e1bc072c9",
+        "size": 3296
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_material.py",
+        "sha256": "8542d1b4780a12bd29f2ff3d2dc25850731012466e317e5bb6edcbe5cf9dca9e",
+        "size": 815
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_mkanim.py",
+        "sha256": "3c56659fd0804eb3ca79def80eca63bc6f0a0986d6d7beed864c03114834356f",
+        "size": 1836
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_mouth.py",
+        "sha256": "46514782bea45bdb2c7f706597d67329240ae44d911c2a319b2c4b5eb5414c3d",
+        "size": 14293
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_preview.py",
+        "sha256": "4ef754bd10c33ddcb71b4d10ec4c0599975dd7da7ef5c9d6ee20dbed7bf4123a",
+        "size": 5942
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_rigfix.py",
+        "sha256": "23d258df6e9a8f2efaebef611fdd5c0e8d44668b18c8b5dbf586f36516280e6f",
+        "size": 2665
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Scripts/v2_textures.py",
+        "sha256": "32703ff9ee5842f934fd22d356537a65675f508ac4f94b105d48de8cfbb970ee",
+        "size": 6757
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Source/BrandHound.blend",
+        "sha256": "1dd3ff1bddb00439a64b7e6d400c46a18030d4f7e50efb09c0e980141bc8f871",
+        "size": 3505648
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Textures/T_BrandHound_BaseColor.png",
+        "sha256": "e00384620d4653836f5be651589b9cd2abdf1ed0bde31db8698ef4c9bfebbcf0",
+        "size": 21648354
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Textures/T_BrandHound_Emissive.png",
+        "sha256": "fff2a476ffdc6a2d0d695a4d602f494d725bb167695b95c17af7fd6eb1db2502",
+        "size": 492992
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Textures/T_BrandHound_Normal.png",
+        "sha256": "260d3fbf8f3c92fbec861e631d4bfbde3ea396b79b13eaa13dae327cee8b16ef",
+        "size": 18765784
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHound/Textures/T_BrandHound_ORM.png",
+        "sha256": "2d0cd650218aeec0133a61f814803df9e3acbf3fcc358c72523b16ee9b3a60d3",
+        "size": 19570309
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-CREATURE-SAMPLE-V2/WORKER_RESULT.md",
+        "sha256": "3e424533237c676c7deae6f8408700f3564e76b3c82e426c92ccd5f4be04bbc6",
+        "size": 12718
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-CREATURE-SAMPLE-V2/REVIEW.md",
+      "sha256": "5e028fc896abb40d9484bc94a0cc3424e3d7c382bef9dc65e37f52944ac506b1",
+      "size": 2096
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-CREATURE-SAMPLE-V2/review.json",
+    "record_sha256": "bb4c0cca114f5665dc20164e432e97e1aa2822dc4c9d86ed7c19fadd8c55ad78",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "f0dbbc11e905a13c98d838118cdcddeb32bf9245b06748a681822f5aa9371ead",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

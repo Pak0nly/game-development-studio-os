@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-CREATURE-SAMPLE-V2",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "ad0ddeacd09fd669a",
+  "reviewer_task_id": "a68e09ae312e53752",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "f0dbbc11e905a13c98d838118cdcddeb32bf9245b06748a681822f5aa9371ead",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}
