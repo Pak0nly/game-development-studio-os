@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-SIM-TRAPS-DOORS-V1",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "afe4c46464f0ca683",
+  "reviewer_task_id": "ac9b57bb643275cf2",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "f944427406e5b90d5ca2e0015174fe9941746aeaffd996c833909f2a60975a1a",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

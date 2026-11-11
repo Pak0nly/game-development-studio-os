@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-SIM-TRAPS-DOORS-V1",
+  "work_order_sha256": "4e3d08b1cc3d8faa627e254eef487db7073c6f7b4b1210e8b5f5bbde745392cd",
+  "closure_manifest_sha256": "2d507239996f078200e1913e94f1f6fa5480af672282b20106766243f5832c99",
+  "dispatch_receipt_id": "3a0a32486588b36f48de31e3abad30b3c9758b26584ae720b1ee42c3a2cca89c",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "afe4c46464f0ca683",
+  "reviewer_task_id": "ac9b57bb643275cf2",
+  "candidate_identity": "f944427406e5b90d5ca2e0015174fe9941746aeaffd996c833909f2a60975a1a",
+  "evidence_state_sha256": "91023c4939bff49ff32337ed4fc4c2e56efe0ba49611233257b8a8ebff46ff77",
+  "review_record_sha256": "33afd29fd3ed6c8e24ece0a7e12b05b3ca4827b8deaaa7ccb0b5aee85d2cf963",
+  "verdict": "PASS",
+  "receipt_id": "2d39c7ba73bdb8b5eb0161692d40e228b6725b40f89d4f3d631b7be67a9869e0"
+}

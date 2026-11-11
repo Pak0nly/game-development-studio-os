@@ -159,3 +159,11 @@ Source: the Human's answers of 2026-11-11 to Part A of the night-2 catalogue (`C
 
 
 Open from this round: OD-19 (hidden traps), OD-20 (lockable doors), OD-21 (combat roles and banner stance), OD-22 (army size); the questions in the notes on N2-A6 (tower defence) and N2-A8 (Dungeon Keeper 2 numbers) need plain answers in the next round.
+
+## Direction — 2026-11-11
+
+Source: the Human's statement of 2026-11-11 in the Director chat, relayed exactly in Work Order UR-SIM-TRAPS-DOORS-V1 (section "Human statements"). Quoted exactly, spelling included.
+
+| ID | Topic | Human statement | Decision |
+|---|---|---|---|
+| UD-79 | Core of the game: realm against realm; intruders as an event | Human: "Großer Teil wird sein, dass gegen andere Herzen gekämpft wird und nicht gegen Wellen von Eindringlingen. Eindringlinge könnrn hierbei nur eine temporäre externe Gefahr sein, ein Event welches die Balance des Spiel beeinflussen kann." | Direction: the larger part of the game is fighting other Hearts ("Reich gegen Reich"), not waves of intruders. Intruders are only a temporary outside danger, an event that can shift the game's balance. Recorded as a direction for later design work; no rule, map or wave is changed by this row (the intruder waves of the prototype maps stay; Cinder Hollow's waves unchanged, UD-53). What the realm-against-realm core looks like (rival Hearts, their rules and maps) is open. |

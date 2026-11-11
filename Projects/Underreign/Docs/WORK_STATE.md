@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-SIM-TRAPS-DOORS-V1
+
+UR-SIM-TRAPS-DOORS-V1 (rules 24: trap parts hidden until fired in sight, spotted or reported; Brutes bash only revealed parts on their route, Sapper is the breaker, at most one breaker type per map and none in wave 1; lockable wood/iron doors; entrance keep-out removed; UD-79 realm vs realm; 906 tests; bot: Cinder Hollow 42 % -> 96 %, Crownkiln 66 % -> 14 % (balance after the trap rework and the Human's rounds); external commit bd397f6)
+Independent review verdict: PASS
+Worker task: afe4c46464f0ca683
+Reviewer task: ac9b57bb643275cf2
+Candidate identity: f944427406e5b90d5ca2e0015174fe9941746aeaffd996c833909f2a60975a1a
+Closure receipt: 2d39c7ba73bdb8b5eb0161692d40e228b6725b40f89d4f3d631b7be67a9869e0
+
+Waiting for the Human: trap rework (self-triggering traps, weight plate, count trigger, no chains, more control effects) and the style-sample verdict / Fab login. Then resync the game to the newest rules.
+
 ## Closed: UR-UNREAL-NIGHT2-V1
 
 UR-UNREAL-NIGHT2-V1 (game on rules 22 (d8a890a): placeholders and plain tooltips for the four new creatures, six new intruder types and ferrets, lava, map choice with "Random map" first, no banner hint; parity on four maps; external commit 1b5c82a)
@@ -52,7 +63,7 @@ Reviewer task: aaf5cdc281d934056
 Candidate identity: acdee902ee58bc391ff62d8237973dc81dd3c778ac4511030aa556b3c965920d
 Closure receipt: 02d07d912c13cd0f742582f757b6eef50b42788f2509b9f8fb6ec1ed822543a2
 
-Running: UR-STYLE-SAMPLE-V1 (StyleSample), UR-SIM-TRAPS-DOORS-V1 (SimulationCpp). Next: resync the game to the newest rules; then the Human plays.
+
 
 ## Closed: UR-NIGHT-02-V1 (night shift 2)
 
