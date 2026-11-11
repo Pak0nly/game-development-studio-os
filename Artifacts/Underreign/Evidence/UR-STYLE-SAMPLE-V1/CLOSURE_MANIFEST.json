@@ -1,0 +1,990 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-STYLE-SAMPLE-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V1/WORK_ORDER.md",
+    "sha256": "2fbabd0aa5c3976300b79e913d7a5c3ca7a9c86ea02870dfca48196e9b15b317",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "45bf83aaf486910db14f5178dd13b44ebd5f6059ca9a926108a5f188375f5076",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "a4043ead4bd52d2506626c53d713142f10badd4188ed38e943c70b5e813f5925",
+    "receipt_id": "fcec043aa2d4939427504e2bd19ff267d85c3bcbd1a596efb5fedafdeafc21d7",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "ac728463e59026ef3",
+    "reviewer_task_id": "ae43f3a810ac71ccf"
+  },
+  "candidate": {
+    "identity": "0a9986566e3711caca1967798ceb340c7f8e14069a1abf9f93e9daddd0287906",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V1/WORKER_RESULT.md",
+        "sha256": "124b0a0b0a31a3d244493cc29dc851fa81e9cba39039ec70d7e7a82fe4a2a654",
+        "size": 11149
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V1/contact_sheet.png",
+        "sha256": "a26b88f41ab4483a3e68b4aa665cdf7c8cbc8aa2d63abf662d9a20c3fe3058e7",
+        "size": 3267167
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V1/frame_cap_check.txt",
+        "sha256": "02eff5acaa0f25d7eaf70c64604b0a8236bab5cda2a4d75050df02d83c3bf235",
+        "size": 206
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V1/perf_stats.txt",
+        "sha256": "33a61b3741acef935059648c5527a99fd3afe469971a22fba5278fc429bee925",
+        "size": 1018
+      },
+      {
+        "path": "ext:StyleSample/.gitattributes",
+        "sha256": "b31288ef04806769f380b367c35be6de3f9b5bee18e1693e7335e09d6748de77",
+        "size": 303
+      },
+      {
+        "path": "ext:StyleSample/.gitignore",
+        "sha256": "5e66e0ab395f54aa82d731a46a8ebce5024f89029e6caab204dfeb0b09ca968d",
+        "size": 232
+      },
+      {
+        "path": "ext:StyleSample/Blender/make_meshes.py",
+        "sha256": "925c14e1c27c94bb96ae8023008521e446bced6dc57c3198dfce4babc6f59100",
+        "size": 28710
+      },
+      {
+        "path": "ext:StyleSample/Blender/make_textures.py",
+        "sha256": "c10115350142e512bf2b56f9a919b791b4df7b99e0e511bcecedea94cded630e",
+        "size": 12131
+      },
+      {
+        "path": "ext:StyleSample/Captures/06_camera_move_6s.webp",
+        "sha256": "96b1942448c1a3598b1503a076adf7d4058f59ca9bdd0af859dc11ea4a174154",
+        "size": 10640778
+      },
+      {
+        "path": "ext:StyleSample/Captures/06_camera_move_6s_640.gif",
+        "sha256": "99d1c388ba28439cd7b64526512781e0ea21db8d0786599fc529b05c678133b8",
+        "size": 14458171
+      },
+      {
+        "path": "ext:StyleSample/Captures/Stills/01_game_camera.png",
+        "sha256": "80119ad5e3e9283cc828a3e16efd390d5acb4ea24c4fea80993376a1ca6efef4",
+        "size": 3078107
+      },
+      {
+        "path": "ext:StyleSample/Captures/Stills/02_close_forge.png",
+        "sha256": "5eb96972a31ce6aa178635344266646fb1c5ed55476596271ab69f2e108e6951",
+        "size": 2604250
+      },
+      {
+        "path": "ext:StyleSample/Captures/Stills/03_close_chasm_heart.png",
+        "sha256": "13bfe821ccc0f89c64ef75841dd7bd4bbc2e2ff8255874654a49f04fad70fbc9",
+        "size": 3032777
+      },
+      {
+        "path": "ext:StyleSample/Captures/Stills/04_game_camera_units_plain.png",
+        "sha256": "41f5aa70f0ffe987a9010a21fbd6087d32a91491edbd4de45605c9db063057cc",
+        "size": 3087460
+      },
+      {
+        "path": "ext:StyleSample/Captures/Stills/05_game_camera_units_aids.png",
+        "sha256": "8a94364eb75468a21ecb14da7d7461273e4a2e8795ef26c7feb69f95153fe4cd",
+        "size": 3084152
+      },
+      {
+        "path": "ext:StyleSample/README.md",
+        "sha256": "389e3b5f604209d4811e3aed9a3c3eb253a28e83ca2b3a13796b624c85b5f775",
+        "size": 3249
+      },
+      {
+        "path": "ext:StyleSample/Scripts/build_all.sh",
+        "sha256": "0878da61719e665aac6a1651e0646911a51f67f2286d5885bf846a204b39622d",
+        "size": 787
+      },
+      {
+        "path": "ext:StyleSample/Scripts/build_fx.py",
+        "sha256": "fc7f0e776064797701d049de8f586bc91b97c87607e0d26dfcf73c7f4b9f0395",
+        "size": 4320
+      },
+      {
+        "path": "ext:StyleSample/Scripts/build_level.py",
+        "sha256": "bb280270af2c9b690887a92a51ad97ec57580612f6968d3d207b7afe91d6a210",
+        "size": 19405
+      },
+      {
+        "path": "ext:StyleSample/Scripts/build_materials.py",
+        "sha256": "b9705e1592ee240c9e52ddadb17ee4aa00ccf7cf63d39693571cd1258ff8a85b",
+        "size": 34838
+      },
+      {
+        "path": "ext:StyleSample/Scripts/capture.py",
+        "sha256": "c8468e2212c3909b8f60f2ab2bd4844ec7aca7db7f7c7d82347e9c2238d0b858",
+        "size": 8823
+      },
+      {
+        "path": "ext:StyleSample/Scripts/capture.sh",
+        "sha256": "2746d16be748962d18a5b84e5f3dde58164b636ef83c17d852c00a05796be63a",
+        "size": 1193
+      },
+      {
+        "path": "ext:StyleSample/Scripts/common.sh",
+        "sha256": "6b9cb490b5c4a1e3101e7b140af1a356e0bc8c7e7265653b893c1dbcfcbab9cf",
+        "size": 1187
+      },
+      {
+        "path": "ext:StyleSample/Scripts/import_assets.py",
+        "sha256": "551af4bfd9fdcb0a83b701af2b236db6bf6eec76d6d7b7ad74f84b2a8d76c31f",
+        "size": 5161
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/move.json",
+        "sha256": "d4a534e0e37e799ebd126ccd7484c60131a203f297fd09ae4be26c640b38d149",
+        "size": 250
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/perf.json",
+        "sha256": "ead378a1ea02ed2be3391d03b12c370b0e5bd1c3d304ad9ea1a88e3dffb1c42b",
+        "size": 120
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/stills.json",
+        "sha256": "87e5d243f797c0a89c7a1a955b2833688717d963f26bc404433ce9b0316edbc7",
+        "size": 560
+      },
+      {
+        "path": "ext:StyleSample/Scripts/make_anim.py",
+        "sha256": "5e333b95e2b78c93ea032ce469ca7e41a1795e012fead055f534ec40c64badda",
+        "size": 648
+      },
+      {
+        "path": "ext:StyleSample/Scripts/pacing.py",
+        "sha256": "ebcea42f367f52bc5c31e6e92b7dc600e8e59c229ba54e519725fbe43290a062",
+        "size": 749
+      },
+      {
+        "path": "ext:StyleSample/Scripts/perf_stats.py",
+        "sha256": "19ac8b9b099aedc102c34fca2c257d06e718661a22b3b99ec6066beb24a7fd27",
+        "size": 1759
+      },
+      {
+        "path": "ext:StyleSample/Scripts/probe_api.py",
+        "sha256": "596ba2b97eff3c716b769c3044722142f8a582bfbcc18e7215d05564de52da7b",
+        "size": 802
+      },
+      {
+        "path": "ext:StyleSample/Scripts/probe_niagara.py",
+        "sha256": "6b65f73dc724cdbbec8d6c437c3bd8f7118ab4033a383a3636e00405dc3a1faa",
+        "size": 1241
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Anvil.fbx",
+        "sha256": "19d9df0321f048884546d0e9e43ffcd687e44bb7d4fdf7de2f2c9c25ed6b8148",
+        "size": 23996
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Brazier.fbx",
+        "sha256": "176eaab52ffd39f1f52b3dbb054bfbd8e749d32ac2c6ba2c13eefdadee2e5b6f",
+        "size": 64716
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_BrokenShield.fbx",
+        "sha256": "e15756263a72c8ec10da95d8f7ad7f2860009e792844d8c5f163211db17136d2",
+        "size": 19180
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_ChainHang.fbx",
+        "sha256": "780756a909cc93cb83e8829cda6b07bcf86cc97d9bb0a4c1097fcd737c57efca",
+        "size": 121692
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_ChainPost.fbx",
+        "sha256": "f2483bf5930664b6e6f80128cbbd8a15473f9712ed6b68daccead2d18942d104",
+        "size": 22364
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_ChainSwag.fbx",
+        "sha256": "711db28d2733b03f400f1451884e812b3025e86f7d8310174d4546a5c0f67730",
+        "size": 169020
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Flag_A.fbx",
+        "sha256": "96ee0f6847614cac1455c898a06cb96d1c12e7088dbd50278c797968b3f2c8ab",
+        "size": 626876
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Flag_B.fbx",
+        "sha256": "c961de41828f31826bbc9d642d68952e4cf4cc034b89ec346a07a65679c4d355",
+        "size": 625916
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Flag_C.fbx",
+        "sha256": "4acce64bb4446b4afa6c6d76e1ed7aebe587d19ab76ecb848efa46dd112c7955",
+        "size": 626748
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_FlameCard.fbx",
+        "sha256": "1067bcc2c76a88aa45e0af8318e1486066544397cc1165f75c42c91a0d4dbfdf",
+        "size": 15308
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_FloorUpper.fbx",
+        "sha256": "8700f07e3fa33caf7f2874eee6dc79d3b4da63568f530c696eebfdfcd2bae3f5",
+        "size": 9586940
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Furnace.fbx",
+        "sha256": "5ed7ffa05dc580c0ab860cefd79d533a348fc3abbd58dc1e365eb4c1122788e7",
+        "size": 36444
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Heart.fbx",
+        "sha256": "54ea5d83804e5e562c8e377147dd8c9bbd65e94fc9cbf9163de32eabbe2e87a6",
+        "size": 291916
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Lava.fbx",
+        "sha256": "5609259e20243e3f043936546f10642c0a8aa682400e90d4ec7867872c908455",
+        "size": 143436
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_PField.fbx",
+        "sha256": "9d1025ccda1ccec3549d3a412213f87110c6b66d030a9ace2ffd9fa58cc28c0e",
+        "size": 212268
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_PFieldSmall.fbx",
+        "sha256": "03a0eb03878aec02beeead9546d6ccbf099c1f6588b198ece678eda491eb7f10",
+        "size": 30236
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_RingPillar.fbx",
+        "sha256": "f29101f5ee8f3976df7b9a9f8674c52adeabd64786849b4468bdfadaca132b36",
+        "size": 52556
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_RockMass_A.fbx",
+        "sha256": "e87151176d7eb8a84fa887a438e2e7fe5d1e01231f8b510298673ce1b1c34f08",
+        "size": 3580412
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_RockMass_B.fbx",
+        "sha256": "822c9e851f4708bcce325391d08a82cd86486fb83528e828e3279eafb1722c4e",
+        "size": 3582796
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_RockMass_C.fbx",
+        "sha256": "adfe776e2abdd89a9808576f6c6799cf383ec552dae60917a0c9a73f4623bc37",
+        "size": 3578556
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Rubble_A.fbx",
+        "sha256": "23cd203298bdbf7ecdab131b02fd0737ae46efdb22c2036267ccedba54ebe159",
+        "size": 51548
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Rubble_B.fbx",
+        "sha256": "245dff8335029e06683d6cbe4fd4555499532982ec926823d3e3fa48c9be9e75",
+        "size": 51228
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Torch.fbx",
+        "sha256": "d41351bd484e434579bfe9edcd890a222879f44f55a4cab0cc63c6c81fe55643",
+        "size": 25468
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Unit_Intruder.fbx",
+        "sha256": "79cf21b9b151412aecf139db634efb27f7ac1ce0d076276a700af91c50ce554c",
+        "size": 31228
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Unit_Own.fbx",
+        "sha256": "72a27491369759a90b1d698695ffadc4cc4351354537c4b0b2f3299063fed530",
+        "size": 56188
+      },
+      {
+        "path": "ext:StyleSample/Source/Meshes/SM_Unit_Trap.fbx",
+        "sha256": "63b6db8ec3a6831b5b0dff27f087c31bfc990d17ad54e9b83adbc935e947fb46",
+        "size": 22220
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Blood_0.png",
+        "sha256": "a375d1c7e192004c630ddedfc4ecdbb07dd7b456d377a3d88ac3606e1bc662b0",
+        "size": 726235
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Blood_1.png",
+        "sha256": "26d313ebc1ef455fc1833bce887776863cd0b404dcf4762825767c4dba6e69ea",
+        "size": 712975
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Blood_2.png",
+        "sha256": "a12cd38d032517a09d796539780d702f50a22ed69edc8494ca1b107f64d17b5e",
+        "size": 737215
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Drag.png",
+        "sha256": "03ea2a3d3df9fc305bb561fb1a69c2b7062244f348cc32d5569496d57fae7450",
+        "size": 872272
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_HazeN.png",
+        "sha256": "220d7fa35af93372a7ed18b2622985c512eac2bc5a0ae8505c2a604107fbb2a2",
+        "size": 174810
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_LavaCrust_N.png",
+        "sha256": "0a7c179feb4ab6915afc20ae5774fa89d29e3bd17ca1d0e2897b150ae12b0614",
+        "size": 5378143
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_LavaMask.png",
+        "sha256": "4a0c641c6663244127bbb8059e0d1f86a1cc55e121dcd55a46ad0cc871a7681a",
+        "size": 4009242
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Masks.png",
+        "sha256": "e39b8bdd18f0b48b9e903eb56fe7c4ef8cf67b9edd0cc34e3682185be514127a",
+        "size": 3637393
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_RockFresh_BC.png",
+        "sha256": "cd9c62125eff09944031ca12bad75b4b52fd69ef59f68b7dae438d8eadf4422e",
+        "size": 3972349
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_RockFresh_N.png",
+        "sha256": "6f4805d141f0bcc92666fba4032a1211de14c1573039797275c6e7520fed0581",
+        "size": 6300346
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Rock_BC.png",
+        "sha256": "2b2b85e3a2c2b5a16ff2b162989272e53d72bd44fb3e67722732ee0513d65009",
+        "size": 3455583
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Rock_N.png",
+        "sha256": "e8e540307ffa9a7ba9d9fdae0a8a3dc995b6cf308349aedff98825c6dd3a3b1f",
+        "size": 5101387
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Rock_ORM.png",
+        "sha256": "b4ef436560887c10000a5fb684f40ba438b6e83db82fca95b94de13cf282360f",
+        "size": 4087366
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Scorch.png",
+        "sha256": "4a7800685d1bbcc19ebd7ba188010a720035947afeff4fbb9198aaeea1634184",
+        "size": 844693
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Script.png",
+        "sha256": "49742377833ba1e2f746ad0f7b70f3a5e117c82e94c99f2f5b713aef1224ca0d",
+        "size": 39954
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_SpriteDot.png",
+        "sha256": "b5d44261c0566f4e2c7ed116cba5afffcd88bd06638189c7206ccfdd9f331b3c",
+        "size": 19184
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_SpritePuff.png",
+        "sha256": "e04b6004528f36e37efa4f931325172ebd5718a0dcb7893db87516c82c81e06a",
+        "size": 31204
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Stone_BC.png",
+        "sha256": "75faf2c991f83c1674495febab4dcb64d62e7755ecd0445516a644d1e18b2bde",
+        "size": 2861830
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Stone_N.png",
+        "sha256": "16efb2f8620341ad0192033cb23056fb2e3d1f9f1420c0fb340b3a388e3d3a25",
+        "size": 3107290
+      },
+      {
+        "path": "ext:StyleSample/Source/Textures/T_Stone_ORM.png",
+        "sha256": "30dc603eab55f77b733f9d7b6c1ac81899b6f3d63f6094970c8ab63a674ca46c",
+        "size": 3302299
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Config/DefaultEngine.ini",
+        "sha256": "fdf2335adbe195faea4538c364fdbe24874486aba30d8667ea3319e313b1d84a",
+        "size": 1553
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Config/DefaultGame.ini",
+        "sha256": "aece1ef47582bf706a989c68ec98b52762694848a8899df9d769151c562df629",
+        "size": 120
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Maps/L_StyleSample.umap",
+        "sha256": "6dbe50802e29a4e85ce27e6465e0f8a2698146bf5c2036b95db0dba371d20e90",
+        "size": 557891
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/FX/NS_ForgeSparks.uasset",
+        "sha256": "c968906ae15cf4dc9d59d979f1f48a18ed33ea33d71e3a451e6606b88bb5b42d",
+        "size": 137764
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Ash_Sprite.uasset",
+        "sha256": "8443e38f83abf5f749302560b33d7f3b23f07cd8832cd704086a46cecaa7f0b7",
+        "size": 4994
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Basalt.uasset",
+        "sha256": "88c3804d7851385fa1ec71c2466b944597954bafdd5d49e763a615dd576e66ab",
+        "size": 7497
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Blood_0.uasset",
+        "sha256": "0b8e6516c049f8a6403efdf6e8d47c62049027ec0578e22dda36941439a8ba54",
+        "size": 3379
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Blood_1.uasset",
+        "sha256": "6454fd2d396f1453d6278030c0778948596a489abad808e7e77de5e3a362a589",
+        "size": 3379
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Blood_2.uasset",
+        "sha256": "fe87fb5003ee14ef860207cbc5832f95ff9f844938a96b86bcbcd0d4c1578253",
+        "size": 3379
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Brass.uasset",
+        "sha256": "12c0076a0550def68495946a4ed0876ce421cc38b11d95f9429f4a22d97b8fef",
+        "size": 8791
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Coal.uasset",
+        "sha256": "8cc6dd0526a357070c8b670319693dbb1936fccfc571d6cd010f2653d0fafe52",
+        "size": 5150
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Drag.uasset",
+        "sha256": "d9590f45f5ba43717f11c9936a238e1e65221147c0302e1a394732ca8cdba64e",
+        "size": 4912
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Ember.uasset",
+        "sha256": "bcf93cbc74446437fed6b0e72cc80c7d87e3d4928a6fd22c6a4e8c4a1950ffc4",
+        "size": 4324
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Ember_Sprite.uasset",
+        "sha256": "04ea51bf72731f8782b680e79aa50cb8f5864c165058feb7b9ce23320dc1aef9",
+        "size": 4559
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Flame.uasset",
+        "sha256": "7e5cd3924e84f3cdff2e52bcba86641e462e6797f79d97c8bfce0cac0374cbc4",
+        "size": 3711
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_FlameBig.uasset",
+        "sha256": "a5476c42ed45c45f309b0881ed5266adaf4548bf43753e9aecce1cfe2d2e776f",
+        "size": 4157
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_FurnaceGlow.uasset",
+        "sha256": "df44fc9d4aeb4df9c993e8ac68d521f51353437ed5c3e08478a6003c9a15feb9",
+        "size": 5655
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_GlassHeart.uasset",
+        "sha256": "29e081c126f11e4d55fd31750629b0675dc2d0f4f4c80cf1b8bcf636be46cae1",
+        "size": 3922
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_GlassHorn.uasset",
+        "sha256": "6b25f05797f1f59b22e55d398a6da45cae0c3e286df4f8248489e4127b6aef81",
+        "size": 3446
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Haze.uasset",
+        "sha256": "477b896b95aec04a1d01b77fa17c84c9d62c02425672ae43c87bddc7c4d4ce80",
+        "size": 2590
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_HeartCore.uasset",
+        "sha256": "bc671c8c0353f17720522492a6d01ec04ef9773da47c49f404f1b818a7622a63",
+        "size": 5645
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_IntruderCloth.uasset",
+        "sha256": "47c3109afdd18f0427851bfb7a80bb66366ea39cc0b8895762f0d73ac551e550",
+        "size": 7529
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_IntruderPaint.uasset",
+        "sha256": "319bcb187163e57f152e46540f368e012716b4224b6fdd221496e134d6b6e526",
+        "size": 7529
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Iron.uasset",
+        "sha256": "f8c822207051156583b89c9fbe8958d91c47c5b9d60112a7b32c693d157b7712",
+        "size": 8786
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Lantern.uasset",
+        "sha256": "6034cb52cbd9599c202e14e42358bf9b0f6401d58c965da09f3a9f53f9a1180f",
+        "size": 4334
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Lava.uasset",
+        "sha256": "877ad7a8d5c538c87a111bdf6ffe6f7e40987131907ac80e55741abc6887b130",
+        "size": 2386
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_PF_Ash.uasset",
+        "sha256": "1591e76657a057cb0fdc9ccb2f27ca91b44f856b4638cdc100e8df3251312ef0",
+        "size": 7996
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_PF_Drips.uasset",
+        "sha256": "e98ffc84d95dfc86c73d1768deb61102017e78b6bdf129e0288ed82a022820c7",
+        "size": 7983
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_PF_Embers.uasset",
+        "sha256": "5049da8262cb70fe84cf550900e02797c1412eda5458f4d398b0adb29d7515ca",
+        "size": 7124
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_PF_Smoke.uasset",
+        "sha256": "dbe7b0b1d8cad7e6b71647c5a2ce1bd1886a9aad5a0e8d9d0e5b99688d1e8e1a",
+        "size": 8008
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_PF_SmokeHot.uasset",
+        "sha256": "2b35d013dc2d8e8a2716d968d87294fa87b25ac0e4412dd8623d839c0148f347",
+        "size": 8023
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_PF_Sparks.uasset",
+        "sha256": "804466b66386c00053d3545fb3ab305101b5e4394a7e6acd01f1dd396a9260f4",
+        "size": 7991
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_RingHostile.uasset",
+        "sha256": "8e045ec26e0d5afaf4c5ed76128b84aacdfb066b1c9f24cf6a8dbb4ae3dcb3a4",
+        "size": 3322
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_RingOwn.uasset",
+        "sha256": "7a5501118e75bac4b91a75a54c4456cc6186313b9e7d6f9dc47178e89f8b47b1",
+        "size": 3302
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_RingTrap.uasset",
+        "sha256": "247f044bc73c681d2c27adcea44311f93b20aa0bca079ea0b19fe50a0549861a",
+        "size": 3307
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Rock.uasset",
+        "sha256": "157479d8476cf579d4721d7c48b4489bfe88560376bd5259ec8203c025f2907c",
+        "size": 5587
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_RockChasm.uasset",
+        "sha256": "698719eb33d9d9b83e056147c2fef4d3d6e207afa94a69048d4c07bdc58895ef",
+        "size": 6914
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_RockFloor.uasset",
+        "sha256": "a62421a1dfdeea1a56f67ab67a718160b434522064017545315c40ce15ec7063",
+        "size": 6518
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_RockFresh.uasset",
+        "sha256": "f7f48ea12457b883d6ec2261fd8b7a5c73bc91e389f3473e2f776f68a200c684",
+        "size": 6662
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Scorch.uasset",
+        "sha256": "a714714034c1662e8741ecadd5adeb63f54e133fc1b7663840290db69b593dd2",
+        "size": 5796
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Script.uasset",
+        "sha256": "9874e1685b20c6364910fcc1c4e6407e0e66803263382fac92e059f57105851f",
+        "size": 5531
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_SeamGlow.uasset",
+        "sha256": "523b8480f02081b44461f99cd76eb9ac416b08572bce3248ddaeb6cf9be9fd58",
+        "size": 5640
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Smoke_Sprite.uasset",
+        "sha256": "15db2b6b4c5c20194bc31835141757f52a64e13adda8f4926f822be7912836ff",
+        "size": 5581
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_SootSkin.uasset",
+        "sha256": "bfa4b37703a415144c35925d55208fc7edd0cea037deff22d62544785fb1f41a",
+        "size": 6078
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Spark_Sprite.uasset",
+        "sha256": "7e08f1532081ad581cceeeaea56bbdee3e3822ebe2a0ea4f6a707e7422ea16fc",
+        "size": 4559
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Steel.uasset",
+        "sha256": "1c724b227bf993a493ca67f8beb6247946193e38aa0b7a6cdc5afd34198a41af",
+        "size": 8791
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Stone.uasset",
+        "sha256": "bf2b2c5cccf183a78baf31538860407f294bb9fc374c3b72e8a5e4d6596b7c3a",
+        "size": 7492
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/MI_Wood.uasset",
+        "sha256": "5a8460802592537e5e80f7ee7df34e87781171ec564df29dae2fe5dfda53ca0a",
+        "size": 6637
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_Decal.uasset",
+        "sha256": "f7e3eab83fb38ec472cc91037759a928fefd7967976ac029bcfd10f8c13c6dc5",
+        "size": 11644
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_DecalRing.uasset",
+        "sha256": "01c98bf1356adfc85e99a68fe482c40ff618049811f26e6bcbf18550c22ac14f",
+        "size": 9531
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_Flame.uasset",
+        "sha256": "fcf4fe18665801f4c4f3ee70885ebad934f1a9a3cdc4fdedfba1196278aa66da",
+        "size": 15937
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_Glass.uasset",
+        "sha256": "536a480489206a4cda3693a27df4863232e186e0e6f24536208502193d8fb9b2",
+        "size": 10302
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_Glow.uasset",
+        "sha256": "adb65a1009b1c521126d666a5148d3b2b6b089937c973d58a32d8047dcde8c49",
+        "size": 16165
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_Haze.uasset",
+        "sha256": "95fe01c7af15b687bd023532169e599d4c2908ff6f699161b4a1bd9b25a4511a",
+        "size": 11956
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_Lava.uasset",
+        "sha256": "706ca2aac008c5d04914962bb6f5de924daf398334e2ae3376a360d13c494ec5",
+        "size": 14804
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_PField.uasset",
+        "sha256": "20c20c07b070c5a8f31031eaf4393bbb829ffeedbaced290fae7707310be93b7",
+        "size": 23838
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_PFieldSmoke.uasset",
+        "sha256": "c296f0232604cd756b53714b1292cd41bb6a15e3833d580b67cc1a3acd6a396d",
+        "size": 23990
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_PP_Outline.uasset",
+        "sha256": "103a7b69405cb77e63335b4a1f237b51a753885ceb4ff4997da13c2d4629f4ec",
+        "size": 16030
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_SpriteAdd.uasset",
+        "sha256": "d405fc82eb9029d35cc62a43b239918822ea2a1547c5663808f31fb608cf1bd1",
+        "size": 12525
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_SpriteSmoke.uasset",
+        "sha256": "828b90e37521e97ddb517dcdb4fd8351c801b8649722244d22d57a124ba49c40",
+        "size": 12662
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Materials/M_Surface.uasset",
+        "sha256": "08aabc0e80ef52d242dd4e7a4c8d7dc28b212d21f7b377597932976a1b6dea2c",
+        "size": 24387
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Anvil.uasset",
+        "sha256": "ce3f6f0e766beaa465d8781f5a959cb77ec468423847c1b7e2810fa7be2b44e2",
+        "size": 22458
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Brazier.uasset",
+        "sha256": "da8c283b30d6ac03c9383b93ca5d1e2a7110ab015c63b6da47cb3fa9ffe71ae4",
+        "size": 78357
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_BrokenShield.uasset",
+        "sha256": "d34ff399f095cb6c61fce1463baf355f90d62523d0b1e3daf32f2184a316155b",
+        "size": 15814
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_ChainHang.uasset",
+        "sha256": "cd764e4c97fe86d85b6a6deab2d058c3225bb8f9baae469581a2be546088d913",
+        "size": 160712
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_ChainPost.uasset",
+        "sha256": "4a46ff06cfb65bbfd719f8bbf96f8e7422941ce59901e9eb4afa70cd6a84cabe",
+        "size": 21164
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_ChainSwag.uasset",
+        "sha256": "d6497a7d30cf2c2784c52a4c49b23cc828f564b07c5517c2349dff640a71caca",
+        "size": 216465
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Flag_A.uasset",
+        "sha256": "fc4d2d3e7002f6dd80f1df0942d5f0ed7276b011bdc38f0a8d4b1f1e1aba903e",
+        "size": 773275
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Flag_B.uasset",
+        "sha256": "e2b2b4fad3301342f70001788eb461928347a88130df058a1787ac09bd7e9def",
+        "size": 774024
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Flag_C.uasset",
+        "sha256": "a46a3764b60c343b22cc9e5f5dd9abee07ef980adefcc0ff5ea8fe87a79b239d",
+        "size": 776579
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_FlameCard.uasset",
+        "sha256": "3a118be2e0171537c2c31544039b4ad313027d603ad24f7423861703e2cb4fac",
+        "size": 11530
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_FloorUpper.uasset",
+        "sha256": "bf31af435aa1f45c091253b7d0b8237cc6b31ce9b26ba8fb60d0c1b8f837119f",
+        "size": 7462427
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Furnace.uasset",
+        "sha256": "4442850a012d81d1fe56225ab9672bc843eebc0d0010c2f45c7ebf0f11df5412",
+        "size": 40078
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Heart.uasset",
+        "sha256": "b605e44572b3210b29cfba535bc7da4545f5e814f2792ff68df40814d70847e8",
+        "size": 323571
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Lava.uasset",
+        "sha256": "ed8d6e6ea82e92edc2718a748a461e8c9e63dba0d12e38c12a1ff28e205e590e",
+        "size": 85483
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_PField.uasset",
+        "sha256": "b3774b72d85b0f09982031889e5e7b8578a45aaad644237cdc57fb93601aed1a",
+        "size": 205553
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_PFieldSmall.uasset",
+        "sha256": "0005fcd983588e56ea10fcf331c0dabd53dd50fb897fcb332e90c5fccdbf1da3",
+        "size": 25831
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_RingPillar.uasset",
+        "sha256": "cac31a827c2a68e6935c0e1a488d09365012681a0bcf6e2a34221f237bfb87cb",
+        "size": 61804
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_RockMass_A.uasset",
+        "sha256": "3c04a198fcc3c8d604b57c55dda6b9fbbb0c8f132f12662a1f382e290f18b889",
+        "size": 3806726
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_RockMass_B.uasset",
+        "sha256": "07ad9b77a45c6b09961b537963c458961a994ec79102af07c7b8e8d7d1d8097c",
+        "size": 3829993
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_RockMass_C.uasset",
+        "sha256": "7f0cc87161a07ee1d34b31d3bb490f59d46c5aa17a83ca5925bf4fdedc613371",
+        "size": 3807748
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Rubble_A.uasset",
+        "sha256": "66e1fac1f685b73ee14576b1e7c9e6e73d78b3a92e316c1d2a7081ac3cb48d2c",
+        "size": 54397
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Rubble_B.uasset",
+        "sha256": "cbeaccb49be75246ef09272fa45ef8a38fd62873726845c0e671e5471341eb5f",
+        "size": 54207
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Torch.uasset",
+        "sha256": "5d70e81dfaa519e628b9c48a89c02214ac1505c12f91f07113976595e4bfaa13",
+        "size": 23776
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Unit_Intruder.uasset",
+        "sha256": "df4ce03c96e82cf77b5f11bcb589edeeb21ad50dd27d93a24c6ffe5a2b531210",
+        "size": 30571
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Unit_Own.uasset",
+        "sha256": "9691f8d64592ee6c4b0262a03262194516ed42c657d57b57332ddb5b8160b869",
+        "size": 61597
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Meshes/SM_Unit_Trap.uasset",
+        "sha256": "1d044bb581316c2e8f78fb3202db1b8c5023d5b4815c51d9e0d7e4e0a342895b",
+        "size": 19190
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Blood_0.uasset",
+        "sha256": "ba0ebe13d7e39eafc54fecdb0cc7973ea376f80c583b093cf49384604f2b0533",
+        "size": 502263
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Blood_1.uasset",
+        "sha256": "35a29abfa6bd93cb6b4c15411061966ebc5904cc001a7d6211ac6622c52e24ec",
+        "size": 492004
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Blood_2.uasset",
+        "sha256": "a4b16d8342221a43f02b5f72e81beb5509671233078e8ff34e2a1c7948e66162",
+        "size": 518018
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Drag.uasset",
+        "sha256": "ce7eb760d4151f149e54f5a1173df88d6c1ee4e8e3a6d827af9dff7574e662aa",
+        "size": 641623
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_HazeN.uasset",
+        "sha256": "c7d84b87423cede227b1b34376cd674530aadf86660093f1973c403c6ec0232e",
+        "size": 143134
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_LavaCrust_N.uasset",
+        "sha256": "6b4c4a7860e26c7785c5e469c4303d9eb51b366177702cc31edf59ea87828e2a",
+        "size": 4600886
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_LavaMask.uasset",
+        "sha256": "d24ad4b995bd54764121b085ff9d35bc565dad09bbe6330a0de9709cd17fc432",
+        "size": 3167165
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Masks.uasset",
+        "sha256": "356e0422bbeb105a05fbb27c9165b06f2e2f744da9b085abb6eb62db61702a1b",
+        "size": 2840671
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_RockFresh_BC.uasset",
+        "sha256": "32019c5393496b84f746228f8a6cbb1a1e400c2383200f18616e8ce77c122fc7",
+        "size": 3010790
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_RockFresh_N.uasset",
+        "sha256": "54f60cd60610f449e786d762ca26e3811915c362022f31b47d7dc47e4fa65fe4",
+        "size": 4638514
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Rock_BC.uasset",
+        "sha256": "bdbdd4e36bf93ed32dee232efd8c30b873dbaf78ec8589f4ca8ae51349a7c864",
+        "size": 2700350
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Rock_N.uasset",
+        "sha256": "9fa910deeb6f336174ae83bf07abf84a50c6c03acada54d51c31a1c73fd6c705",
+        "size": 4134038
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Rock_ORM.uasset",
+        "sha256": "d0b0dc3f35f0011538f575d8472773f2a344df046fe7ced85902ebec0ca7a93c",
+        "size": 2983547
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Scorch.uasset",
+        "sha256": "8fef224386cf1727e4d5f814be2865850e6043040e457550b45be0647e3eec88",
+        "size": 618572
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Script.uasset",
+        "sha256": "0dcb81128ac0b142609bddae7ec476765d6eb27f321631e6e40001fac250fd85",
+        "size": 36998
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_SpriteDot.uasset",
+        "sha256": "d8b927c91e3b6b29db2a8cf8b983736c9a930eeb3014c5e6b4dd0d01028c4cb4",
+        "size": 22979
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_SpritePuff.uasset",
+        "sha256": "da729b26403c2dbede63f533fc5e4a938982a820d49993ce2d63d63279a3301f",
+        "size": 31067
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Stone_BC.uasset",
+        "sha256": "fe298d3c4d4b312c2fee9fc979e77f9d172aadb16da78e7c27f35db61c41d224",
+        "size": 2255153
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Stone_N.uasset",
+        "sha256": "23ecd923be2c1562d96b7eec05da2507e520526d741982a963951040d3be8675",
+        "size": 2405523
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Style/Textures/T_Stone_ORM.uasset",
+        "sha256": "ad1b57698a1ff27588697e5f328c13605c2c4a18445a4d1c6c72264fa1f03680",
+        "size": 2410799
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/UnderreignStyle.uproject",
+        "sha256": "cf0c2da8d143676be27d0a75b533779d0c449195ea89bca1469defb2ec92af34",
+        "size": 374
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V1/WORKER_RESULT.md",
+        "sha256": "b71f369a245e6cd9233cb32a6f03ea2ffb7c4e0d03af05dea3e7cea1d96d9ac9",
+        "size": 4042
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V1/REVIEW.md",
+      "sha256": "4b49f54f7fef7e39fe5a8bfd13b333fb3650e6bf2b0ecdae7b66612a1e874d4b",
+      "size": 2158
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V1/review.json",
+    "record_sha256": "3aee41646dac2ae3992bf24045583523bb3a34bad5aa71a471968b227e6a158e",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "0a9986566e3711caca1967798ceb340c7f8e14069a1abf9f93e9daddd0287906",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

@@ -13,6 +13,15 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-STYLE-SAMPLE-V1
+
+UR-STYLE-SAMPLE-V1 (dark realistic style sample, environment only, separate Unreal project StyleSample with own Blender assets, no scans: mood right, surfaces look soft; readability needs outline, ground ring and unit light; GPU 10.6 ms High / 17.2 ms Epic at 30 fps; Megascans list for step 2; Human verdict pending; external commit ab94a8e)
+Independent review verdict: PASS
+Worker task: ac728463e59026ef3
+Reviewer task: ae43f3a810ac71ccf
+Candidate identity: 0a9986566e3711caca1967798ceb340c7f8e14069a1abf9f93e9daddd0287906
+Closure receipt: da45c2ad5abba1b493199872a09357db5ce5abaccf913bed3e2d8f20b4b3ea6f
+
 ## Closed: UR-SIM-TRAPS-DOORS-V1
 
 UR-SIM-TRAPS-DOORS-V1 (rules 24: trap parts hidden until fired in sight, spotted or reported; Brutes bash only revealed parts on their route, Sapper is the breaker, at most one breaker type per map and none in wave 1; lockable wood/iron doors; entrance keep-out removed; UD-79 realm vs realm; 906 tests; bot: Cinder Hollow 42 % -> 96 %, Crownkiln 66 % -> 14 % (balance after the trap rework and the Human's rounds); external commit bd397f6)
