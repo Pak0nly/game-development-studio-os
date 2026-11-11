@@ -13,6 +13,15 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-STYLE-SAMPLE-V4
+
+UR-STYLE-SAMPLE-V4 (dark charred scans chosen by measured albedo; floor of 183 irregular set-in slabs with sooty joints, broken and missing slabs; dark blood pools; braided lava streams; warm light only from fire and lava; overall still too red-orange vs the target's neutral grey-brown; GPU 10.5 ms High / 16.7 ms Epic at 30 fps; Human verdict pending; external commit d19406d)
+Independent review verdict: PASS
+Worker task: acb3e9999611c2655
+Reviewer task: aa7a3f8df7ae1bdc2
+Candidate identity: 08286de591723a35e349662db358f08610d1246eb03e436c180fc485427f28ce
+Closure receipt: dbba93b06fa5e817caee63ce6918c6968fb524cd9c7cf70ebe1401b53065ca06
+
 ## Closed: UR-CREATURE-SAMPLE-V2
 
 UR-CREATURE-SAMPLE-V2 (Brand-hound correction: paws were twisted by a control-bone roll mismatch, fixed; mouth cavity with tongue and 28 teeth, bite 47 deg; walk/trot (new)/gallop rebuilt from canine gait data; new death and bite; emissive mask limited to seams, seal, tail tip; limits: scripted, gallop choppy at 30 fps, joint pinching; Human verdict pending; external commit 683c522)
@@ -22,7 +31,7 @@ Reviewer task: a68e09ae312e53752
 Candidate identity: f0dbbc11e905a13c98d838118cdcddeb32bf9245b06748a681822f5aa9371ead
 Closure receipt: f14558ba4ab8fcda9a032d8054477c22d8c97988073a6956f556f7e57af8a242
 
-Running: UR-STYLE-SAMPLE-V4 (dark charred style), UR-CREATURE-VIDEO-V1 (Seedance motion trial).
+Running: UR-CREATURE-VIDEO-V1 (Seedance motion trial).
 
 ## Closed: UR-CREATURE-SAMPLE-V1
 

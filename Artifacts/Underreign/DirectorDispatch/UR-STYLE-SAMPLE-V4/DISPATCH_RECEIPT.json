@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-STYLE-SAMPLE-V4",
+  "work_order_sha256": "1d71a717f922150ad4b4b70942ef1014b179b903c56b0dcbf9bbedf6d3dc5967",
+  "manifest_sha256": "37a20822c29196c5549e49d4700d6e20de27e065fef95dcb8e2c580834350c57",
+  "repository": {
+    "branch": "main",
+    "head": "87546bd4cccdc88793780e439101a4a1ea28866a"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V4"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "6c64f142d39d33e4fb283396a7fb01a9a904990179fe91ab53415380ff5ddfd3",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "51fc69078f347b3848551197191acc20b5f68970"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-STYLE-SAMPLE-V4",
+      "StyleSample/Blender",
+      "StyleSample/Captures",
+      "StyleSample/README.md",
+      "StyleSample/Scripts",
+      "StyleSample/Source",
+      "StyleSample/UnderreignStyle"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation",
+      "SimulationCpp",
+      "StyleSample/Creatures"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-STYLE-SAMPLE-V4",
+        "StyleSample/Blender",
+        "StyleSample/Captures",
+        "StyleSample/README.md",
+        "StyleSample/Scripts",
+        "StyleSample/Source",
+        "StyleSample/UnderreignStyle"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "81e13b8ee2d55f5ea147a8c1fae419e7c8ad03a8bc31caf7cfca5ba53586f0ea"
+  },
+  "execution_location": "local",
+  "receipt_id": "23be0c9d4ec2a40555f5554d396b4cff5482ee21f7ff6ae0f46742993ee4780f"
+}
