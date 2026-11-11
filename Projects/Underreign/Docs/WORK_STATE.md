@@ -34,6 +34,18 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-NIGHT-02-V1 (night shift 2)
+
+UR-NIGHT-02-V1 (cloud night 2026-11-10/11 on night/2026-11-10, fast-forwarded into main at d8a890a: rules 7 -> 22; four new Ashen Pact creatures (Kiln-ox, Lien-hook, Wax-surgeon, Footnote), five new intruders (Sapper, Pavisier, Crossbowman, Lamplighter, Ferreter) only on new maps, safe flight for cinderlings (deaths 6.9 -> 0.03 per game), cinderlings keep away from live entrances, lava, four new test maps; Cinder Hollow waves unchanged (UD-53); 891 tests, MSVC build and all golden replays checked locally; 35 questions for the Human)
+Independent review verdict: PASS
+Worker task: cloud-task_10252486-underreign-night-2
+Reviewer task: a2aaaf00c665f6e22
+Candidate identity: 1638528cca04bb5974f81911b3b99f892929ef9278dfb597a12d91ce6ea7ac65
+Closure receipt: dda0a5628a3c055124dcf90590c4d7eb5eb46ee1e9a5cc18ad58c68285bce0aa
+Night return receipt: d1301dc1ee5cbddf0839e5c4a21f91da75319e62caa5e9702cb27e32ca3d3b5d
+
+Next: the Human answers the night-2 question catalogue; then a local Worker brings rules 22 into the Unreal game (Design/Planning/UNREAL_NEXT_FROM_NIGHT2.md).
+
 ## Closed: UR-NIGHT-PREP-02-V1
 
 UR-NIGHT-PREP-02-V1 (design snapshot refreshed from Studio b301593; night order placed at Night/UR-NIGHT-02-V1; external commit 498a303)
@@ -51,8 +63,6 @@ Worker task: a99625ac9ecd1301b
 Reviewer task: a5a27cad2165772b8
 Candidate identity: b15cb060cec2bb73525ff7a4196fec459e41b1a3d1d5525cc925a8bcb5a14213
 Closure receipt: 78eafceeaa69d4c1421d49e4a9a04a4dcdf911a5a12a2a8f603112957ba4bc80
-
-Next: night shift 2 (UR-NIGHT-02-V1, cloud, until 08:00 UTC: creatures, intruders, maps, gold carrying, fleeing, question catalogue); PC off during the night. The Human can play the current version before.
 
 ## Closed: UR-SIM-SUMMON-COST-V1
 

@@ -1,0 +1,16 @@
+# Independent review — UR-NIGHT-02-V1
+
+Reviewer task: separate read-only Claude Code subagent, requested model sonnet — not independently attested.
+Verdict: PASS (no high or medium findings).
+
+1. MSVC build (the check the cloud could not do): `git archive origin/night/2026-11-10 SimulationCpp` exported to a scratch folder outside both repositories, built with the documented `build.bat` (MSVC via vcvars64, /MP8). Result: exit 0, 0 compile errors, 0 compiler warnings; `UnderreignSim.lib`, `ur_headless.exe` and `ur_tests.exe` built.
+2. Full test suite with MSVC: `Passed! - Failed: 0, Passed: 891, Skipped: 0, Total: 891` (no leaked objects). Matches the night's claim of 891.
+3. Golden replays: all 8 files in `SimulationCpp/Data/Replays` (ashthread seed1 lost, banner seed4 lost, crownkiln seed1 won, idle seed1 lost, inkdrip seed3 won, newintruders seed1 won, reasonable seed1 won, reasonable seed5 lost) replayed with `ur_headless replay`: every stored `check` hash matched on the way and the final hash matched the save in all 8. So MSVC agrees with clang/gcc (cross-compiler determinism confirmed).
+4. Cinder Hollow unchanged (UD-53): `SimulationCpp/Data/Maps/cinder_hollow.map.txt` and the `campaign/` folder have no diff against 498a303 (the file is not in the changed-path list). The only changed existing data file is `prototype.tuning.txt` (FleeMode 1 to 3, new EntranceKeepOut key); it contains no wave lines. The new `waves` blocks all sit in new map files (test/, variants/). Wave 3 unchanged.
+5. Determinism hygiene: grep of all added C++ lines under `Private/` and `Public/` (60 files, +1264/-39) for float, double, unordered_*, rand, time and std::hash: no match. Biggest new systems (WorkerSystem, CreatureAbilities, CombatSystem) use the existing integer/ordered-collection style; the cross-compiler and MSVC replay hash agreement plus the 891 tests (including liveness tests) back this. Not a line-by-line audit.
+6. Originality: the name-check sections of CREATURES_ASHEN_PACT.md and INTRUDERS.md record web searches; Wax-surgeon and Footnote clean or low risk, "Ash-" prefix dropped because of a card family. No mention or reuse of names from Dungeon Keeper, Warcraft, Evil Genius etc. (grep 0 hits). Intruder classes Sapper, Pavisier, Crossbowman, Lamplighter, Ferreter are ordinary words/roles; map names (Ashthread Drift, Bellows Gallery, Crownkiln, Inkdrip Shelf) are original.
+7. Claims vs evidence: (a) flee deaths 6.9 to 0.03 per play: in ITEM7_CINDERLINGS_FLEEING.md and in the tuning comment, consistent. (b) test count 891: confirmed by my MSVC run. (c) win rates: RULES21_TABLES.md section 1 (Cinder Hollow 42 %, Crownkiln 67 %, Ashthread Drift 46 %) is consistent with the Kurzfassung and section 0 of the same file (Crownkiln 97 % with economy-first plus banner). I did not re-run the bot batches.
+
+- Info: `build.bat` must be started as `.\build.bat` from PowerShell/cmd in that folder; the README line `build.bat` works only where the current folder is on the path.
+- Info: the 1000-seed bot tables were not re-measured by this review (not part of the brief).
+- Info: night reports the MSVC portability review and golden replays as open for the morning; both are now done by this review.
