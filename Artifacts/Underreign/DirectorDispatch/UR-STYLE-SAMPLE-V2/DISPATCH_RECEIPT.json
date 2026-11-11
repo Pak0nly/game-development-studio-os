@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-STYLE-SAMPLE-V2",
+  "work_order_sha256": "88af8d1bdf0974c2f4908315999e8ba6b234052f105a60a9d5cb589cb8edcf90",
+  "manifest_sha256": "9a265f2b0fb26b9eb90b8b4c0bcce5cdc6e38b12a53aa88ddefab9b912771d89",
+  "repository": {
+    "branch": "main",
+    "head": "a05ec3ff43a4f3ca83b883a97c53c0e86d1d88d4"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V2"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "dc0ad4748925a40d95fc5a8be89be131cd913af7c281449180c37c8f52f97254",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "5ebdccbf90655e1c6e33411ab637f9c9605db4c0"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-STYLE-SAMPLE-V2",
+      "StyleSample"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Game",
+      "Night",
+      "README.md",
+      "Simulation",
+      "SimulationCpp"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-STYLE-SAMPLE-V2",
+        "StyleSample"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "34d3a17e8be07b26e1030f9fc2a8952b8944ee2977970b83b7fa2d338b653ffb"
+  },
+  "execution_location": "local",
+  "receipt_id": "436e256b9db8347dd3659a3cd8b79b43490f00c6af62ef498cc1863676d1ce22"
+}

@@ -34,6 +34,15 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-STYLE-SAMPLE-V2
+
+UR-STYLE-SAMPLE-V2 (style sample step 2 with the Human's Megascans: scanned rock and floors, scan decals, Niagara fire/smoke/embers working, props rebuilt; clearly better than step 1 but not the target yet (floor reads blotchy, lava blobby, too orange and dark); GPU 11.9 ms High / 19.3 ms Epic at 30 fps; open: Human verdict, step 3, and whether renders containing third-party assets may be viewed for review; external commit db5c897)
+Independent review verdict: PASS
+Worker task: a0bd87eaaf477445b
+Reviewer task: a47b4963e2776e905
+Candidate identity: e0ec1826a5ffb408cab6f208800c27885ae8060d29408d3af958e966af4d74dc
+Closure receipt: 11b8a4e622ee3f988179fd3bc6e7a0a210e72cab7436116c2e2085de3e9114e0
+
 ## Closed: UR-UNREAL-RULES25-V1
 
 UR-UNREAL-RULES25-V1 (game on rules 25: build menu with Flame Vent, Cinder Charge, Chain Snare, Drop Hatch, Turret, Weight Plate, Count Trigger, wood and iron doors, bridge on lava; door states and lock toggle, revealed-trap eye, control marks, heavy marker; capture runs now capped at 30 fps (fixed-step captures had ignored the cap in earlier orders); style target images archived; OD-23 unit control / soul takeover OPEN; external commit 5ebdccb)
