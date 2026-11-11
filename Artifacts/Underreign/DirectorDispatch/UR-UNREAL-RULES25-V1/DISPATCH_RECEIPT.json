@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-UNREAL-RULES25-V1",
+  "work_order_sha256": "f2f317651de8185156ed4948afec299e29d8e8ef3e0ba8621a85895de076d658",
+  "manifest_sha256": "334bcf7e4a0468d1eb38f76486abba5f741979f669cf9e0c497f336de01a6da8",
+  "repository": {
+    "branch": "main",
+    "head": "b74e608ea03fc3424a5fc545731696aa8b9732bb"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/References/ArtDirection",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Artifacts/Underreign/Evidence/UR-UNREAL-RULES25-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "dc0ad4748925a40d95fc5a8be89be131cd913af7c281449180c37c8f52f97254",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "46653a60141f4a0445d6c7ac879e00855558cf91"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-UNREAL-RULES25-V1",
+      "Game"
+    ],
+    "protected_paths": [
+      ".gitattributes",
+      ".gitignore",
+      "Design",
+      "EngineComparison",
+      "Night",
+      "README.md",
+      "Simulation",
+      "SimulationCpp",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-UNREAL-RULES25-V1",
+        "Game"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "95ef9247997eaba11ba16e316b2173d409c62b49ab336f85266d652ed71ea484"
+  },
+  "execution_location": "local",
+  "receipt_id": "0489c1f48ca841798750e48fa75113c1d3f2f67be1db5a33fc88152b54524cbc"
+}

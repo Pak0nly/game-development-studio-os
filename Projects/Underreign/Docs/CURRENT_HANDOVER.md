@@ -13,6 +13,17 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-UNREAL-RULES25-V1
+
+UR-UNREAL-RULES25-V1 (game on rules 25: build menu with Flame Vent, Cinder Charge, Chain Snare, Drop Hatch, Turret, Weight Plate, Count Trigger, wood and iron doors, bridge on lava; door states and lock toggle, revealed-trap eye, control marks, heavy marker; capture runs now capped at 30 fps (fixed-step captures had ignored the cap in earlier orders); style target images archived; OD-23 unit control / soul takeover OPEN; external commit 5ebdccb)
+Independent review verdict: PASS
+Worker task: a42738bb2d7156d25
+Reviewer task: a5927f2c857bb0601
+Candidate identity: b7ccb484b6d24f4fd394693bc169cc21e1c7a24afb33da14d95dddeb1e5e7668
+Closure receipt: 6b0b9bc2f671e6f1a0aad2cb116f724b3c4c357a069f01ce2b73cdffbcb941f9
+
+Next: the Human plays the rules-25 version (gentle bat); balance after his rounds; style sample step 2 waits for the Human's Fab login.
+
 ## Closed: UR-SIM-TRAP-REWORK-V1
 
 UR-SIM-TRAP-REWORK-V1 (rules 25: traps fire on their own; Weight Plate (heavy intruders) and Count Trigger (Nth, 2-6); plain triggers, chains and lever removed; Turret (range 5, clear line, 10 shots, refill); bridge over lava; control effects (vent panic, longer snare hold, charge knock-back and stun, hatch drop or pit) with less damage; creatures now deal the largest damage share on every map; UD-80..UD-84; 862 tests; balance off both ways (Bellows Gallery 15 %, Inkdrip Shelf 99.7 %), waits for the Human; external commit 46653a6)
@@ -21,8 +32,6 @@ Worker task: a35a94c913ae5794d
 Reviewer task: a09146411a1692231
 Candidate identity: 949f6a6261018157f12203fd5fa680d9bd331f99e56d46eefd44ed41f06471ef
 Closure receipt: cf5a682c530ad01a91afe3f423342276b043fa4f70155afb2e189956b01b7908
-
-Next: UR-UNREAL-RULES25-V1 (game on rules 25 with doors, trigger, turret, bridge UI; target images and the open unit-control question recorded); then the Human plays.
 
 ## Closed: UR-STYLE-SAMPLE-V1
 
