@@ -4,11 +4,11 @@
   "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
   "project_scope": "Underreign",
   "work_order_id": "UR-NIGHT-03-V1",
-  "work_order_sha256": "1dd3b2ac50dc3ca4d5ab1ea0ace391be7e9e16a3d26d6c21cc1087feb789d4e7",
-  "manifest_sha256": "d4e1b167a2b3ef618bbb9ff9d7d02230bafcaab03aa819b780d402a4d376b55f",
+  "work_order_sha256": "197adc00060ea821f36664095a903be8e66d91fc46474dd940215d6fc969cbf6",
+  "manifest_sha256": "0e392f1fc7841bae7054e122bf54123fffbde2d69c299e2c5f2e5920a304ae9d",
   "repository": {
     "branch": "main",
-    "head": "6020ba40468a8a99d2287df10df6357d1a3dca8c"
+    "head": "23b4aa53bc16c3e7cb3bcdd7ae0436e9f4dfaf30"
   },
   "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
   "dirty_state": {
@@ -29,9 +29,10 @@
     "root": "C:/GameDev/Underreign",
     "git": {
       "branch": "main",
-      "head": "6a47e6e61383988ece2e8be5c0ae9b75511828db"
+      "head": "27669b8e6fe6a18271d24f8027dff7070af8df58"
     },
     "allowed_mutations": [
+      "Design/Art",
       "Design/Bible",
       "Design/Planning",
       "Evidence/UR-NIGHT-03-V1",
@@ -51,6 +52,7 @@
     "dirty_state": {
       "mode": "bounded_projection",
       "paths": [
+        "Design/Art",
         "Design/Bible",
         "Design/Planning",
         "Evidence/UR-NIGHT-03-V1",
@@ -58,12 +60,12 @@
       ],
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
-    "state_sha256": "7a0ad52c7a7ac0e67abd852992a7b9a4ae72e71a36547871f8318fecc24e2900"
+    "state_sha256": "2689f13d2b36a5b2c9515dce4426844ddc699a51c73ea282ad7e0cbaeec64856"
   },
   "execution_location": "cloud_night",
   "night_shift": {
     "branch": "night/2026-11-11",
     "evidence_dir": "Evidence/UR-NIGHT-03-V1"
   },
-  "receipt_id": "da74f9128ead05865ebe0dd514102a2fe7ba322506fd096156b439fda92d8256"
+  "receipt_id": "d5ba3aa86ccea914c787ff7f2a1024b362dcd5eb8f4c99a452372d030dd81b0d"
 }

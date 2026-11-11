@@ -15,7 +15,7 @@ Execution location: cloud night. Execution mode: Production. Class: Standard.
 - **Branch.** Work only on branch `night/2026-11-11`, cut from `main` at the
   commit you start on. Commit and push after every finished item. Never a
   merge commit, never force-push, never touch `main`.
-- **Paths.** Write only inside `SimulationCpp`, `Design/Planning`,
+- **Paths.** Write only inside `SimulationCpp`, `Design/Planning`, `Design/Art`,
   `Design/Bible`, `Evidence/UR-NIGHT-03-V1`. Never change `Game`, `StyleSample`,
   `Simulation`, `Design/Snapshot`, `Night`, `EngineComparison`, `README.md`,
   `.gitignore`, `.gitattributes`. No symlinks, no submodules.
@@ -77,8 +77,32 @@ only as an occasional event.
    test maps into a sensible band for the reasonable bot (Cinder Hollow wave 3
    unchanged); report 1000-seed tables; the rival maps measured with the rival
    bot at two difficulty settings.
-6. **Question catalogue** `Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT3.md`.
-7. **Unreal follow-up list** `Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`
+6. **Image prompts** (Human, 2026-11-11: "Was die Nacht ebenfalls machen kann, ist basierend auf dem ersten Kreaturen-prompt, auch Prompts für alles mögliche andere zu erstellen. U.a. weitere Kreaturen, mindestens eine zweite Fraktion, props, Fallen .... was wir eben brauchen können in unserem Stil."):
+   `Design/Art/PROMPTS_NIGHT3.md` with ChatGPT image prompts in the style of
+   the accepted Brand-hound and cinderling prompts (below), each with a short
+   German line saying what it is and a style-reference sentence to attach the
+   hound image: all remaining Ashen Pact creatures, the intruder types, at
+   least one second people (pick from the bible: Mycelid Choir, Drowned Court,
+   Gearbound Kin or Deep Dwarves) with its creatures and workers, props
+   (Forge, Heart, Call-stone, Nest, Pantry, braziers, pillars, doors, bridge),
+   every trap part (Flame Vent, Cinder Charge, Chain Snare, Drop Hatch,
+   Turret, Weight Plate, Count Trigger), floor and wall modules. Full body,
+   neutral pose, plain dark-grey studio background, original designs only.
+   Accepted hound prompt: "Concept art for a game creature, ultra-realistic,
+   dark grim fantasy. A "Brand-hound": a lean, long-legged hound-like beast the
+   size of a large wolf, its body covered in cracked black volcanic crust like
+   cooled lava rock, with thin glowing orange-red ember seams inside the
+   cracks. A glowing brand seal (an original geometric sigil) is burnt into its
+   flank. Its long tail smokes like a lit fuse with a faint ember tip. It wears
+   a heavy collar of dark iron with several brass contract rings hanging from
+   it. … Full body visible, standing in a neutral side-on three-quarter pose …
+   Plain neutral dark-grey studio background, even soft lighting plus a subtle
+   warm rim light, no environment, no other characters, no text, no frame.
+   Photorealistic materials, high detail, sharp focus." (The cinderling prompt
+   followed the same pattern: front view, relaxed A-pose.) This item may write
+   `Design/Art`.
+7. **Question catalogue** `Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT3.md`.
+8. **Unreal follow-up list** `Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`
    (what the game layer needs: rival realm view, stance UI, role tooltips).
 
 ## 4. Open-ended (after section 3, until 07:30 UTC)

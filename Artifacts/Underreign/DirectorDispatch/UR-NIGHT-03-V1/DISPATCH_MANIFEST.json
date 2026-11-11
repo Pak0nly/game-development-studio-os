@@ -4,7 +4,7 @@
   "project_scope": "Underreign",
   "work_order_id": "UR-NIGHT-03-V1",
   "assignment_type": {
-    "value": "Night shift 3: realm against realm, combat roles, army size, balance (cloud)",
+    "value": "Night shift 3: realm against realm, combat roles, army size, balance, image prompts (cloud)",
     "declaration": "VERIFIED"
   },
   "classification": {
@@ -13,7 +13,7 @@
   },
   "work_order": {
     "path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-03-V1/WORK_ORDER.md",
-    "sha256": "1dd3b2ac50dc3ca4d5ab1ea0ace391be7e9e16a3d26d6c21cc1087feb789d4e7",
+    "sha256": "197adc00060ea821f36664095a903be8e66d91fc46474dd940215d6fc969cbf6",
     "declaration": "VERIFIED"
   },
   "repository": {
@@ -31,7 +31,7 @@
       "declaration": "VERIFIED"
     },
     "branch": "main",
-    "head": "6020ba40468a8a99d2287df10df6357d1a3dca8c",
+    "head": "23b4aa53bc16c3e7cb3bcdd7ae0436e9f4dfaf30",
     "declaration": "VERIFIED"
   },
   "dirty_state": {
@@ -43,7 +43,7 @@
     "declaration": "VERIFIED"
   },
   "human_authority": {
-    "statement": "Human (2026-11-11, Underreign chat): 'Nachtschicht wäre möglich, ja.'",
+    "statement": "Human (2026-11-11, Underreign chat): 'starte die nachtschicht'.",
     "declaration": "HUMAN DECISION"
   },
   "required_live_task_tools": [
@@ -97,7 +97,7 @@
     "status_decisions": [
       {
         "id": "human-approval",
-        "statement": "Human (2026-11-11, Underreign chat): 'Nachtschicht wäre möglich, ja.'",
+        "statement": "Human (2026-11-11, Underreign chat): 'starte die nachtschicht'.",
         "declaration": "HUMAN DECISION"
       }
     ]
@@ -122,9 +122,9 @@
   },
   "model_routing": [
     {
-      "task": "Night shift 3: realm against realm, combat roles, army size, balance (cloud)",
+      "task": "Night shift 3: realm against realm, combat roles, army size, balance, image prompts (cloud)",
       "class": "Standard",
-      "reason": "Night shift 3: realm against realm, combat roles, army size, balance (cloud); routed to opus for the needed skill level.",
+      "reason": "Night shift 3: realm against realm, combat roles, army size, balance, image prompts (cloud); routed to opus for the needed skill level.",
       "requested_model": "opus",
       "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
       "attempts": "One candidate; up to three operational recoveries.",
@@ -164,7 +164,7 @@
       "status": "pending"
     },
     {
-      "step": "Night shift 3: realm against realm, combat roles, army size, balance (cloud)",
+      "step": "Night shift 3: realm against realm, combat roles, army size, balance, image prompts (cloud)",
       "status": "pending"
     },
     {
@@ -193,7 +193,7 @@
     "worker_route": {
       "requested_model": "opus",
       "reasoning_effort": "high",
-      "reason": "Night shift 3: realm against realm, combat roles, army size, balance (cloud); routed to opus for the needed skill level."
+      "reason": "Night shift 3: realm against realm, combat roles, army size, balance, image prompts (cloud); routed to opus for the needed skill level."
     },
     "monitoring": {
       "required": true,
@@ -210,19 +210,20 @@
     "maximum_independent_reviewer_tasks": 1
   },
   "human_checkpoint": {
-    "statement": "Morning: night return check, independent review, Human reads the summary and the question catalogue.",
+    "statement": "Morning: night return check, independent review, Human reads the summary, the prompts and the question catalogue.",
     "declaration": "HUMAN DECISION"
   },
   "external_project": {
     "root": "C:/GameDev/Underreign",
     "git": {
       "branch": "main",
-      "head": "6a47e6e61383988ece2e8be5c0ae9b75511828db"
+      "head": "27669b8e6fe6a18271d24f8027dff7070af8df58"
     },
     "allowed_mutations": [
       "SimulationCpp",
       "Design/Planning",
       "Design/Bible",
+      "Design/Art",
       "Evidence/UR-NIGHT-03-V1"
     ],
     "protected_paths": [
@@ -242,6 +243,7 @@
         "SimulationCpp",
         "Design/Planning",
         "Design/Bible",
+        "Design/Art",
         "Evidence/UR-NIGHT-03-V1"
       ],
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
