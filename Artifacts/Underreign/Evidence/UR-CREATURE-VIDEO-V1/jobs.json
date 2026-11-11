@@ -1,0 +1,278 @@
+{
+  "jobs": [
+    {
+      "n": 1,
+      "name": "v1_walk",
+      "submitted": "2026-11-11 19:10:26",
+      "image": "inputs/start_side.png",
+      "prompt_file": "prompts/v1_walk.txt",
+      "prompt": "The black basalt hound in the picture walks forward to the left at a calm, steady pace across a long floor, seen exactly from the side. It faces left and travels to the left in exact side profile. Natural four-beat dog walk: each paw stays firmly planted on the floor while it carries weight, then lifts, swings forward and lands in front; the legs on one side move one after the other, hind leg first, then front leg. Head and neck bob gently with each step, the iron collar and its hanging rings swing, the tail is relaxed and sways. The hound never turns, never walks toward or away from the camera, never walks backwards. Its paws stay sharp and solid where they touch the floor. The camera tracks sideways with the hound at its speed, so it stays in the centre of the picture, always fully visible from nose to tail tip, while the floor joint lines slide past. Smooth tracking shot at constant height and distance, no zoom, no cuts, plain light grey studio background, even soft lighting, the same hound and the same size throughout.",
+      "settings": {
+        "model": "dreamina-seedance-2-5-260628",
+        "ratio": "adaptive",
+        "resolution": "720p",
+        "duration": 5,
+        "generate_audio": false,
+        "watermark": false,
+        "output_format": "mp4"
+      },
+      "submit_http": 200,
+      "id": "cgt-20261112021031-fc85w",
+      "status": "succeeded",
+      "finished": "2026-11-11 19:12:46",
+      "result": {
+        "status": "succeeded",
+        "created_at": 1794420631,
+        "updated_at": 1794420764,
+        "resolution": "720p",
+        "ratio": "16:9",
+        "duration": 5,
+        "framespersecond": 24,
+        "seed": 72019,
+        "usage": {
+          "completion_tokens": 108900,
+          "total_tokens": 108900
+        },
+        "error": null,
+        "generate_audio": false
+      },
+      "download_host": "ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com",
+      "file": "C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V1\\videos\\v1_walk.mp4"
+    },
+    {
+      "n": 2,
+      "name": "v2_trot",
+      "submitted": "2026-11-11 19:10:29",
+      "image": "inputs/start_side.png",
+      "prompt_file": "prompts/v2_trot.txt",
+      "prompt": "The black basalt hound in the picture trots forward to the left at a brisk, steady pace across a long floor, seen exactly from the side. It faces left and travels to the left in exact side profile. Clear two-beat dog trot: diagonal legs move together, the left front with the right hind and the right front with the left hind; each planted paw stays firmly on the floor while it carries weight, then lifts with a bent leg and swings forward. The back stays level, the head is carried forward, the iron collar and its hanging rings bounce with each step, the tail streams behind. The hound never turns, never runs toward or away from the camera, never moves backwards. Its paws stay sharp and solid where they touch the floor. The camera tracks sideways with the hound at its speed, so it stays in the centre of the picture, always fully visible from nose to tail tip, while the floor joint lines slide past. Smooth tracking shot at constant height and distance, no zoom, no cuts, plain light grey studio background, even soft lighting, the same hound and the same size throughout.",
+      "settings": {
+        "model": "dreamina-seedance-2-5-260628",
+        "ratio": "adaptive",
+        "resolution": "720p",
+        "duration": 5,
+        "generate_audio": false,
+        "watermark": false,
+        "output_format": "mp4"
+      },
+      "submit_http": 200,
+      "id": "cgt-20261112021035-wjl3k",
+      "status": "succeeded",
+      "finished": "2026-11-11 19:13:01",
+      "result": {
+        "status": "succeeded",
+        "created_at": 1794420636,
+        "updated_at": 1794420774,
+        "resolution": "720p",
+        "ratio": "16:9",
+        "duration": 5,
+        "framespersecond": 24,
+        "seed": 95298,
+        "usage": {
+          "completion_tokens": 108900,
+          "total_tokens": 108900
+        },
+        "error": null,
+        "generate_audio": false
+      },
+      "download_host": "ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com",
+      "file": "C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V1\\videos\\v2_trot.mp4"
+    },
+    {
+      "n": 3,
+      "name": "v3_gallop",
+      "submitted": "2026-11-11 19:10:34",
+      "image": "inputs/start_side.png",
+      "prompt_file": "prompts/v3_gallop.txt",
+      "prompt": "The black basalt hound in the picture breaks into a fast full gallop to the left across a long floor, seen exactly from the side, like a greyhound. It faces left and runs to the left in exact side profile. Powerful rotary gallop: the spine bunches as the hind legs reach forward under the body, then stretches long as the front legs reach far ahead; a moment of flight with all four paws off the floor in every stride; each paw lands and pushes off firmly. The head stays low and forward, ears flat back, the iron collar and its hanging rings swing hard, the tail streams straight back. The hound never turns, never runs toward or away from the camera. Its paws and legs stay sharp and solid, the same four legs throughout. The camera tracks sideways with the hound at its speed, so it stays in the centre of the picture, always fully visible from nose to tail tip, while the floor joint lines slide past. Smooth tracking shot at constant height and distance, no zoom, no cuts, plain light grey studio background, even soft lighting, the same hound and the same size throughout.",
+      "settings": {
+        "model": "dreamina-seedance-2-5-260628",
+        "ratio": "adaptive",
+        "resolution": "720p",
+        "duration": 5,
+        "generate_audio": false,
+        "watermark": false,
+        "output_format": "mp4"
+      },
+      "submit_http": 200,
+      "id": "cgt-20261112021042-dyhyt",
+      "status": "succeeded",
+      "finished": "2026-11-11 19:13:01",
+      "result": {
+        "status": "succeeded",
+        "created_at": 1794420642,
+        "updated_at": 1794420777,
+        "resolution": "720p",
+        "ratio": "16:9",
+        "duration": 5,
+        "framespersecond": 24,
+        "seed": 78295,
+        "usage": {
+          "completion_tokens": 108900,
+          "total_tokens": 108900
+        },
+        "error": null,
+        "generate_audio": false
+      },
+      "download_host": "ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com",
+      "file": "C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V1\\videos\\v3_gallop.mp4"
+    },
+    {
+      "n": 4,
+      "name": "v4_bite",
+      "submitted": "2026-11-11 19:10:40",
+      "image": "inputs/start_side.png",
+      "prompt_file": "prompts/v4_bite.txt",
+      "prompt": "The black basalt hound in the picture stands facing left in exact side profile, seen exactly from the side. It lowers its head and crouches, then lunges forward to the left with one quick step of its front paws and snaps its jaws hard at something just in front of its muzzle (nothing is visible there), gives a short violent head shake with jaws closed, then steps back and returns to its alert standing pose. The iron collar and its hanging rings jerk and swing with the lunge and the shake. Hind paws stay planted on the floor, the hound never turns toward or away from the camera. Its paws stay sharp and solid where they touch the floor. The camera follows gently so the hound stays centred and always fully visible from nose to tail tip. Constant height and distance, no zoom, no cuts, plain light grey studio background, even soft lighting, the same hound and the same size throughout.",
+      "settings": {
+        "model": "dreamina-seedance-2-5-260628",
+        "ratio": "adaptive",
+        "resolution": "720p",
+        "duration": 5,
+        "generate_audio": false,
+        "watermark": false,
+        "output_format": "mp4"
+      },
+      "submit_http": 200,
+      "id": "cgt-20261112021045-hrepj",
+      "status": "succeeded",
+      "finished": "2026-11-11 19:13:33",
+      "result": {
+        "status": "succeeded",
+        "created_at": 1794420645,
+        "updated_at": 1794420803,
+        "resolution": "720p",
+        "ratio": "16:9",
+        "duration": 5,
+        "framespersecond": 24,
+        "seed": 97671,
+        "usage": {
+          "completion_tokens": 108900,
+          "total_tokens": 108900
+        },
+        "error": null,
+        "generate_audio": false
+      },
+      "download_host": "ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com",
+      "file": "C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V1\\videos\\v4_bite.mp4"
+    },
+    {
+      "n": 5,
+      "name": "v5_death",
+      "submitted": "2026-11-11 19:10:43",
+      "image": "inputs/start_side.png",
+      "prompt_file": "prompts/v5_death.txt",
+      "prompt": "The black basalt hound in the picture stands facing left in exact side profile, seen exactly from the side. It is struck by a fatal blow from the front: it flinches back, staggers, its hind legs buckle and give way, then its front legs fold, and it collapses heavily onto the floor and rolls onto its right side, so its left flank with the glowing brand mark faces up toward the camera side. It lies still with legs limp, head down on the floor, a last small twitch of the tail, then no motion. The iron collar and its hanging rings fall and settle. It never turns its head or body toward or away from the camera. The camera stays steady at the same height and distance and keeps the whole hound centred and fully visible from nose to tail tip at all times, no zoom, no cuts, plain light grey studio background, even soft lighting, the same hound and the same size throughout.",
+      "settings": {
+        "model": "dreamina-seedance-2-5-260628",
+        "ratio": "adaptive",
+        "resolution": "720p",
+        "duration": 5,
+        "generate_audio": false,
+        "watermark": false,
+        "output_format": "mp4"
+      },
+      "submit_http": 200,
+      "id": "cgt-20261112021048-nbpe8",
+      "status": "succeeded",
+      "finished": "2026-11-11 19:19:05",
+      "result": {
+        "status": "succeeded",
+        "created_at": 1794420648,
+        "updated_at": 1794421145,
+        "resolution": "720p",
+        "ratio": "16:9",
+        "duration": 5,
+        "framespersecond": 24,
+        "seed": 82898,
+        "usage": {
+          "completion_tokens": 108900,
+          "total_tokens": 108900
+        },
+        "error": null,
+        "generate_audio": false
+      },
+      "download_host": "ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com",
+      "file": "C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V1\\videos\\v5_death.mp4"
+    },
+    {
+      "n": 6,
+      "name": "v6_walk_tq",
+      "submitted": "2026-11-11 19:10:46",
+      "image": "inputs/start_tq.png",
+      "prompt_file": "prompts/v6_walk_tq.txt",
+      "prompt": "The black basalt hound in the picture walks forward at a calm, steady pace across a long floor, seen from a three-quarter front view, slightly from above. It keeps walking in the direction its nose points, toward the left front of the picture, and never turns. Natural four-beat dog walk: each paw stays firmly planted on the floor while it carries weight, then lifts, swings forward and lands in front; the left legs keep their own track on the left and the right legs keep their own track on the right, they never cross. Head and neck bob gently with each step, the iron collar and its hanging rings swing, the tail is relaxed and sways. Its paws stay sharp and solid where they touch the floor. The camera moves along with the hound at its speed so that the hound stays in the centre of the picture at exactly the same size and the same three-quarter angle, always fully visible from nose to tail tip, while the floor joint lines slide past. Smooth tracking shot, no zoom, no cuts, plain light grey studio background, even soft lighting, the same hound throughout.",
+      "settings": {
+        "model": "dreamina-seedance-2-5-260628",
+        "ratio": "adaptive",
+        "resolution": "720p",
+        "duration": 5,
+        "generate_audio": false,
+        "watermark": false,
+        "output_format": "mp4"
+      },
+      "submit_http": 200,
+      "id": "cgt-20261112021052-k0i6h",
+      "status": "succeeded",
+      "finished": "2026-11-11 19:13:33",
+      "result": {
+        "status": "succeeded",
+        "created_at": 1794420653,
+        "updated_at": 1794420801,
+        "resolution": "720p",
+        "ratio": "16:9",
+        "duration": 5,
+        "framespersecond": 24,
+        "seed": 58211,
+        "usage": {
+          "completion_tokens": 108900,
+          "total_tokens": 108900
+        },
+        "error": null,
+        "generate_audio": false
+      },
+      "download_host": "ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com",
+      "file": "C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V1\\videos\\v6_walk_tq.mp4"
+    },
+    {
+      "n": 7,
+      "name": "v7_death_b",
+      "submitted": "2026-11-11 19:19:57",
+      "image": "inputs/start_side.png",
+      "prompt_file": "prompts/v7_death_b.txt",
+      "prompt": "One continuous shot without any cut: the black basalt hound in the picture stands facing left in exact side profile, seen exactly from the side. It is hit by a fatal blow from the front: it flinches back and staggers one step, its hind legs buckle, then its front legs fold, and its whole body sinks down and tips over sideways, falling heavily onto its right side on the floor, with its legs ending toward the camera and its head on the floor at the left. It lies still on its side, legs limp and slightly bent, the tail gives one last small twitch, then nothing moves. The iron collar and its hanging rings fall and settle. The whole fall takes about three seconds, then it lies still for the rest of the video. The camera stays fixed at the same height, distance and angle for the entire video, always showing the whole hound from nose to tail tip, no zoom, no cuts, no jumps in time, plain light grey studio background, even soft lighting, the same hound and the same size throughout.",
+      "settings": {
+        "model": "dreamina-seedance-2-5-260628",
+        "ratio": "adaptive",
+        "resolution": "720p",
+        "duration": 5,
+        "generate_audio": false,
+        "watermark": false,
+        "output_format": "mp4"
+      },
+      "submit_http": 200,
+      "id": "cgt-20261112022002-n7a1t",
+      "status": "succeeded",
+      "finished": "2026-11-11 19:22:26",
+      "result": {
+        "status": "succeeded",
+        "created_at": 1794421202,
+        "updated_at": 1794421337,
+        "resolution": "720p",
+        "ratio": "16:9",
+        "duration": 5,
+        "framespersecond": 24,
+        "seed": 59774,
+        "usage": {
+          "completion_tokens": 108900,
+          "total_tokens": 108900
+        },
+        "error": null,
+        "generate_audio": false
+      },
+      "download_host": "ark-acg-ap-southeast-1.tos-ap-southeast-1.volces.com",
+      "file": "C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V1\\videos\\v7_death_b.mp4"
+    }
+  ],
+  "stopped": null
+}

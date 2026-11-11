@@ -13,6 +13,15 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-CREATURE-VIDEO-V1
+
+UR-CREATURE-VIDEO-V1 (Seedance trial: 7 videos, 762,300 tokens (~4.90 USD; pack left ~3.1 M tokens); pose finder trained on own rig renders (1.44 px mean); fit baked onto the fixed V2 rig; bite clearly better than hand-built, walk good timing but leg issues, trot noisy, gallop and death fail on the rig; recommendation hybrid; found the hand-built V2 rings jump 84-120 deg per frame (the collar spin); lesson: shorter Seedance clips to save budget; stray folder C:/inputs for the Human to delete; Human verdict pending; external commit 6a47e6e)
+Independent review verdict: PASS
+Worker task: aa5c3afda989d817d
+Reviewer task: a2a974b047890c6db
+Candidate identity: 9a0bc70001306125d949ddf50ecfeda96f52b055540cd18631cdea084437eb4f
+Closure receipt: e019875f841b418429091b4f4a3316a046abdbc04ad045fbc4ea08354cb91e23
+
 ## Closed: UR-STYLE-SAMPLE-V5
 
 UR-STYLE-SAMPLE-V5 (blur cause: world-space materials never streamed beyond 64-128 px; plus chromatic aberration and grain; fixed with full texture load (sample-only), no aberration, little grain, 16x anisotropy; neutral grade per the Human ("neutralerer Ton ist besser"); lossless stills, 1080p MP4; GPU 10.3 ms High / 17.2 ms Epic at 30 fps; Human verdict pending; external commit 569edc4)
@@ -39,8 +48,6 @@ Worker task: ad0ddeacd09fd669a
 Reviewer task: a68e09ae312e53752
 Candidate identity: f0dbbc11e905a13c98d838118cdcddeb32bf9245b06748a681822f5aa9371ead
 Closure receipt: f14558ba4ab8fcda9a032d8054477c22d8c97988073a6956f556f7e57af8a242
-
-Running: UR-CREATURE-VIDEO-V1 (Seedance motion trial).
 
 ## Closed: UR-CREATURE-SAMPLE-V1
 
