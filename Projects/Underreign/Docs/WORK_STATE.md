@@ -34,6 +34,17 @@ Open from the night: balance depends on opening luck (fix proposed), creature
 survival 49 % (target 70 %), heat from below about 3 % of damage, trap-first play
 loses; ready variants exist for heat and traps.
 
+## Closed: UR-STYLE-SAMPLE-V3
+
+UR-STYLE-SAMPLE-V3 (visual survey of all 89 scans (158 previews) before choosing; floor now clean wet slabs, cooler light, forge and anvil rebuilt; lava too regular, slabs too light/reddish, blood a stain; UD-85: third-party assets and renders may and must be viewed locally to choose and review (DEC-025 unchanged); Human verdict pending; external commit c57a221)
+Independent review verdict: PASS
+Worker task: a6e0410188b051134
+Reviewer task: af711f71db916f2b0
+Candidate identity: a3a3776333a8fe8565a1cdcfdedebcba05b01d130b9745e5df24e398831893d4
+Closure receipt: 4409454ccadb28e2544d1c144820eb402fcc4c5b84c7f4cde7a127e31881d7d4
+
+Running: UR-CREATURE-SAMPLE-V1 (Brand-hound in Blender). Next: the hound into the style scene.
+
 ## Closed: UR-STYLE-SAMPLE-V2
 
 UR-STYLE-SAMPLE-V2 (style sample step 2 with the Human's Megascans: scanned rock and floors, scan decals, Niagara fire/smoke/embers working, props rebuilt; clearly better than step 1 but not the target yet (floor reads blotchy, lava blobby, too orange and dark); GPU 11.9 ms High / 19.3 ms Epic at 30 fps; open: Human verdict, step 3, and whether renders containing third-party assets may be viewed for review; external commit db5c897)

@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-STYLE-SAMPLE-V3",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V3/WORK_ORDER.md",
+    "sha256": "70d93b0c762e4a97fac09ad43767bbfe90cafcf902e042a23546c3aa9c44de69",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V3/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "e571259e6fa68d70365c748029ecea4518d04647c6c90a5f3126a77f909a49d0",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-STYLE-SAMPLE-V3/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "9057156769d817ee000808d3ff1851a53b31349e2b400451c59c1092dc2c0376",
+    "receipt_id": "944052947dc89c69a3c525b1135998931f328de4eb3d8b84aa3ee9ab72e8beb7",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a6e0410188b051134",
+    "reviewer_task_id": "af711f71db916f2b0"
+  },
+  "candidate": {
+    "identity": "a3a3776333a8fe8565a1cdcfdedebcba05b01d130b9745e5df24e398831893d4",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V3/WORKER_RESULT.md",
+        "sha256": "1e192ccf27446a5ffc4f6c55c7830ece9327ce39999d9db02066a13d4d74afcb",
+        "size": 11424
+      },
+      {
+        "path": "ext:Evidence/UR-STYLE-SAMPLE-V3/perf_stats.txt",
+        "sha256": "ab78cdc912f06cdbb9fc7836053bbd4fa31ce956e31591f2f5289e3b89aebdf4",
+        "size": 1244
+      },
+      {
+        "path": "ext:StyleSample/.gitignore",
+        "sha256": "28800df5732e3c885fc9e7c6f7531e459215c0b0055db3d3fa817354422e8f53",
+        "size": 396
+      },
+      {
+        "path": "ext:StyleSample/Blender/make_meshes_v3.py",
+        "sha256": "602506fae3f76d50aad42b380d860e726ab894fc2bf4e31ad87cc6995e7b83b8",
+        "size": 24306
+      },
+      {
+        "path": "ext:StyleSample/Blender/preview_props_v3.py",
+        "sha256": "396e76e13ea610f2ee1eec1175465b64647b680fb03a0adb724fcc8109ac32b7",
+        "size": 2410
+      },
+      {
+        "path": "ext:StyleSample/Blender/survey_render_v3.py",
+        "sha256": "409b09793c13fd687d5c81f9e713d8acde69d30010bfa1197c57b5d0b0159120",
+        "size": 9574
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/06_camera_move_6s.webp",
+        "sha256": "fa4cbb3b9e632d8835ef07cae106104d5f83d367c666f240f52074c08fa28200",
+        "size": 22194400
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/06_camera_move_6s_640.gif",
+        "sha256": "01787d67cf35f5658441d774cf8176db5b696091a08d4ea5ae6be62a374aef6c",
+        "size": 15631015
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Stills/01_game_camera.png",
+        "sha256": "dfc3aef19b2730154b1130abb89bc7aa574f1afef3976a347672f900035be7fd",
+        "size": 4025318
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Stills/02_close_forge.png",
+        "sha256": "0df1e3f964f1f2beae5972c175996c53fdc4e50b826ad88d344412d0900f8bcd",
+        "size": 3689062
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Stills/03_close_chasm_heart.png",
+        "sha256": "5c7c7d14c58a3a92f95e2b5c90302cc63d09c7bd45929709be1762331c3288d8",
+        "size": 3773754
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Stills/04_game_camera_units_plain.png",
+        "sha256": "7588d1968b1848df34c885ed747f668fe3417390dd2b5cccf161c99c788da62e",
+        "size": 4644430
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Stills/05_game_camera_units_aids.png",
+        "sha256": "a3ea1068ab2fb6205e8b54706abed3d9a9e1dc2d560cb153edf0cef3a288aced",
+        "size": 4633173
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_debris.png",
+        "sha256": "1e3269ea15fa792201c5bb3504ec21d9af747a6ddb1dfd8fb211d60ae00b1d39",
+        "size": 795244
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_decals.png",
+        "sha256": "42c64b90f8f796e9d241613fa30229d050c61f58896b84f46d4b3c00dc88745b",
+        "size": 3038428
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_floors.png",
+        "sha256": "a34366e4c5d5085f6b1ab511558856bedfe3ec017ad7565bd58903bee22ac7c2",
+        "size": 2710187
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_lava_volcanic.png",
+        "sha256": "288a7d4f0038b0329dc6edec4a0529fed1386d5ff22b9dda7b1698169f1bbe71",
+        "size": 1451832
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_metal.png",
+        "sha256": "ce8dcd87fd79f356e940ba9ac54ce8629b5d8884141b84cbaead41863c61ae76",
+        "size": 790178
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_old_mine.png",
+        "sha256": "70c1257a1673296cb5736ac3613d62cb045d9d5975ba3bf4ed5eb2eafa411b79",
+        "size": 6519660
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_rock_meshes.png",
+        "sha256": "d63675b2d582a800b4f3e9a96c77a5ad98bbf3d5bd164c35d20d79144b590ec0",
+        "size": 2336729
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_walls_cliffs.png",
+        "sha256": "eade4ff92e66b1849c96372744ca76313b7d5056bf0eeb79399efedeabd08f31",
+        "size": 4111170
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/Survey/survey_wet_water.png",
+        "sha256": "7842bedcfc3f8da93c6e5ce7554787cbd6681aecd1b26dba617b3fc1ec326fca",
+        "size": 1950808
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/sidebyside_forge_closeup.png",
+        "sha256": "99dd5c104433024d03c06bf037a77dd91afb39f56ed0f8bddcfda1dddad489bc",
+        "size": 4309022
+      },
+      {
+        "path": "ext:StyleSample/Captures/V3/sidebyside_game_camera.png",
+        "sha256": "cb2ad05314fcc4425bbebf9f17a5f222a9a58cf02c25133f29b72445ab72a814",
+        "size": 4723024
+      },
+      {
+        "path": "ext:StyleSample/README.md",
+        "sha256": "00fe3e5155a0d8c3ca9572903184d0f5ffb8248445c51586afef4390aa1d2be1",
+        "size": 11314
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v3_move.json",
+        "sha256": "5bd15347dd04eba0194f72b16479630c7ca81e21ff712a0c313c6e9f7fb857e9",
+        "size": 332
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v3_perf.json",
+        "sha256": "69f252b553ccfc595043a6b11624bca8d4dbd1191281e6d789158764299ebe1f",
+        "size": 136
+      },
+      {
+        "path": "ext:StyleSample/Scripts/jobs/v3_stills.json",
+        "sha256": "32531f20aee9d9c095acb009c9916e652ad727be54e8a583d9fe0b2b09c981c3",
+        "size": 585
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v3/build_v3.sh",
+        "sha256": "2569787aa779b854bf97eca6fc426ebbc58bcd9bcd66adae71a0b4430e97a73a",
+        "size": 1497
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v3/import_v3.py",
+        "sha256": "8435eff9de794a5b50541d8d993c036e48cad9c1aff4cd81c3092909b5756907",
+        "size": 2468
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v3/level_v3.py",
+        "sha256": "bad0712d080cd0ee4e4ed781ffbd2778686c1279a343bbb2f5a268def211efd1",
+        "size": 28951
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v3/make_sheet_v3.py",
+        "sha256": "af4615928d466a60ed1a34fb4c23f7d0d459d82b12da53c7b7b842097342062c",
+        "size": 1201
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v3/materials_v3.py",
+        "sha256": "e775afb80c7bcc31118bab31c178171a67fc0ee09bd6772e7042d3291d85b455",
+        "size": 12452
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v3/prep_v3.py",
+        "sha256": "c0c0b5ce493e8ec0e187ef19a4f4b63c18bf139b0057a52114212da54ffde695",
+        "size": 2019
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v3/survey_prep.py",
+        "sha256": "cd807f4790975fce84241427d83ac4665646fa0273cabf5b48bb1d62707b56e8",
+        "size": 6268
+      },
+      {
+        "path": "ext:StyleSample/Scripts/v3/survey_sheets.py",
+        "sha256": "55bd74101f09eae5c2a0a93b438d8922bb29f34a4e7adc64ec0714939adaf82d",
+        "size": 2898
+      },
+      {
+        "path": "ext:StyleSample/Source/MeshesV3/SM_V3_Anvil.fbx",
+        "sha256": "fa9bd4c37d070359d93b690fb82ced693e653a977997a8ab9925586fe393840d",
+        "size": 93116
+      },
+      {
+        "path": "ext:StyleSample/Source/MeshesV3/SM_V3_Brazier.fbx",
+        "sha256": "ff9774e5774dd7c9aa290d64b0f266558403335be809d8f7a48cdb1846289c9b",
+        "size": 2689084
+      },
+      {
+        "path": "ext:StyleSample/Source/MeshesV3/SM_V3_Forge.fbx",
+        "sha256": "3585ad7841482ce3d5cb5147186f88cc0310a6d0a9230c73e4ed34b4708f9cd0",
+        "size": 5249340
+      },
+      {
+        "path": "ext:StyleSample/Source/MeshesV3/SM_V3_LavaCrust.fbx",
+        "sha256": "b7664dd749951501968e426ff2fbb1764f1eb29a8a60bf4870f2c0747a74537c",
+        "size": 4705900
+      },
+      {
+        "path": "ext:StyleSample/Source/MeshesV3/SM_V3_Slab_A.fbx",
+        "sha256": "0ed0414975323642b3046a98961bc8d048ccb3bbf86f27ca2f9b934dfe8324a0",
+        "size": 860412
+      },
+      {
+        "path": "ext:StyleSample/Source/MeshesV3/SM_V3_Slab_B.fbx",
+        "sha256": "f7d97c26f2165534c4d10658cc8b54e2304c22e5fb93c857e09b7c74948c3b68",
+        "size": 851212
+      },
+      {
+        "path": "ext:StyleSample/Source/MeshesV3/SM_V3_Slab_C.fbx",
+        "sha256": "d2fa0a9c099a0c44098cc0098182ad490d5e2fa4bb9e896cf13fb7ff880bd672",
+        "size": 852300
+      },
+      {
+        "path": "ext:StyleSample/Source/MeshesV3/SM_V3_Slab_D.fbx",
+        "sha256": "03bd3f44d1fc2aa4b8ec8b5b5dabcc589c22be89979ffed2ebd0639291b08e74",
+        "size": 855596
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/Maps/L_StyleSample_V3.umap",
+        "sha256": "de174b6810cbb621faa6a233e1b3fd4a69d4c11323e36d48ca6fba7a06c7e730",
+        "size": 1044279
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Brass.uasset",
+        "sha256": "4a4b8ec1d57c798b04c2f3b83e15a495f3770b2f1259b09fb31e8c32019796e8",
+        "size": 7969
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Brick.uasset",
+        "sha256": "0d5930f08b7d5c5f8da3078b8cac31277e722106386d727b4f2e175067010317",
+        "size": 7563
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Coal.uasset",
+        "sha256": "819d5d5ba012538ad1e5ad942344e94c541aa8a353d2b9078d3461fd4658b543",
+        "size": 3448
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_D_PoolA.uasset",
+        "sha256": "cd53643d53a3d73c41cda1caf2c018018737b4f1cf0c52f73dd19fdff5b4e975",
+        "size": 7264
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_D_PoolB.uasset",
+        "sha256": "f0e4f6eef79fdcdfa137838ea1f330cc969a4876736570f742230483750e6dea",
+        "size": 7264
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_D_Spray1.uasset",
+        "sha256": "abae3d17580896591602d62abc46ea1b6dee202b0cba4bba355c46d7f7fce1da",
+        "size": 7269
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_D_Spray2.uasset",
+        "sha256": "9532a529be13fdf8dfe1aa62e7582618f670909c00996ef94a21064ff1fe364c",
+        "size": 7269
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_FloorJoint.uasset",
+        "sha256": "22488d53aab61d3c0e13ebe77bd01d2e140c86a2d6a67335b3afa611d7ee9577",
+        "size": 8437
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_FloorSlab.uasset",
+        "sha256": "77f3b56ea0be309a69ed7d23d0a26fbfef2edb63f6a83fb7c8634b8b35f76216",
+        "size": 9300
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_ForgeGlow.uasset",
+        "sha256": "b3462ff31d029ce2422a17efa46a735f9a4a0886493670c0b566daa85d8f402e",
+        "size": 5664
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_GlassHeart.uasset",
+        "sha256": "d5546702cddd75feb296678b239f3bde70abb0be9db6e3185ba5f919de9eb367",
+        "size": 4700
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_HeartCore.uasset",
+        "sha256": "f88b011766ab2dad9e3eab87cb4945f67b44dde8b1754de40da3c5679ea33d4f",
+        "size": 5994
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Iron.uasset",
+        "sha256": "41496f27868af0758103b491a7af82dac07c5067b2e28dec8657d2831379a544",
+        "size": 8399
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_IronFace.uasset",
+        "sha256": "79e11dde18814556005d75feb579ab184d3403266b7ece753f528da9dd5820dc",
+        "size": 8419
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_IronRust.uasset",
+        "sha256": "1836b002e3ec66793e776bd2570a725fb2332083d61d5985d27eec5d9af5078f",
+        "size": 8861
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Lava.uasset",
+        "sha256": "47c5419c3a5719c420c6495d17885515102d8e0305c90f1ec474577a8d6dd8bb",
+        "size": 6924
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Mine_Pickaxe.uasset",
+        "sha256": "4b5073854e8a205612fbaf7c97e194790729d30f9936c1c323fe979e2d666fad",
+        "size": 7172
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Mine_Sledge.uasset",
+        "sha256": "b51295127f2594bcd2bb080a1d04499c479e607b376261fccb5894739c7404ab",
+        "size": 7161
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Obsidian.uasset",
+        "sha256": "ab8d1c5c425bfd31573762a94890a6fcf1ffe38a52e8b24e768f98f076c9f933",
+        "size": 7980
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_CliffA.uasset",
+        "sha256": "8566e747a640eea35f7ab9b56bdb28c74548367821a9da3eba142095eb033350",
+        "size": 7995
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_CliffA_Hot.uasset",
+        "sha256": "dc0a4ecc5dae275c6ee9904ffa8e11406355b6ba50844800227c9e3932a0f539",
+        "size": 8883
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_CliffB.uasset",
+        "sha256": "ad63323c4f6127695ac9a5ffd41309545256645afe57c154278e098956953c1d",
+        "size": 7995
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_CliffB_Hot.uasset",
+        "sha256": "fafcdb6c3cc4c0ef5cb19d019fd21169b28dfa15dcce3974e654c81dfb0e237e",
+        "size": 8883
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_CliffC.uasset",
+        "sha256": "108556a2cc8de4cf6378337197e65d8e57af2a8bdd1f73c9f3b7aaf0a68606a3",
+        "size": 7995
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_CliffC_Hot.uasset",
+        "sha256": "48ab56ccf70c53be42d95d2b507eec73d4095bcef77da04183bc4866bf93fe1b",
+        "size": 8883
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_DolRock.uasset",
+        "sha256": "58b98143a006eb7eaa916c7b3e599f7e0089b42aea4a14fab2441cc125d7d47c",
+        "size": 8006
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_DolRock_Hot.uasset",
+        "sha256": "21e3333d3e253202bbc078b26b919986372ae08fb94d8dda3b1d9708f8082733",
+        "size": 8894
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_DolRocks.uasset",
+        "sha256": "f67cad89beb778218c19dfbde7ff65c0a00290a74df51a1490ec8375f850c4d5",
+        "size": 8017
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_DolRocks_Hot.uasset",
+        "sha256": "08b78f2d10fd8aba94890c3b97e81fd73aee02d90f4e86d2c3489ce4540d0d9b",
+        "size": 8905
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_GraniteRock.uasset",
+        "sha256": "5b34e51938ff24bcea1c7a9710c44ac7e306165daf2798708f2eba5bc5717f70",
+        "size": 8050
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_GraniteRock_Hot.uasset",
+        "sha256": "6490e0fe4209b4bff965dc9cc34e45fadeae4ab018fbf8792bf4abbff4169269",
+        "size": 8938
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_LavaCluster.uasset",
+        "sha256": "f22f7a57f0879fc8ec925e261f3295836ff58fe5459cce71eb892cf788f78816",
+        "size": 8050
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_LavaCluster_Hot.uasset",
+        "sha256": "e670ca549ef94a4336a9da386f7a208d6dcee5def825d98b5b77effc48e7d7a7",
+        "size": 8938
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_RockGranite.uasset",
+        "sha256": "f779f30158479f19cf45d2892e811b813439cd65ffc979520376e44ecbaa8b1b",
+        "size": 8050
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_RockGranite_Hot.uasset",
+        "sha256": "fc2c778ab43364881bdc7254700b630d33e93adde286d03c038aafcdffe36a5c",
+        "size": 8938
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_SharpRock.uasset",
+        "sha256": "f1410e3a0054feb3fc971621ebef1d846cba72053c7231655799c42dde45d3af",
+        "size": 8028
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Scan_SharpRock_Hot.uasset",
+        "sha256": "f3ac7736d7e7abf85d60fec3da58250cb5099e2c626b21f5fed450aa2778feef",
+        "size": 8916
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/MI_V3_Stone.uasset",
+        "sha256": "f7d9f83f179b453e54e5463106c8a83109ad27cc0257c860d85cd5f854eccc73",
+        "size": 7530
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Materials/M_LavaV3.uasset",
+        "sha256": "308b217a78ba0bda778dad4e857bc6130b3743a9c53cdcc84409fbfab86d2b5f",
+        "size": 26208
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Meshes/SM_V3_Anvil.uasset",
+        "sha256": "3f76966e070824013aa592c008aaf78b90971d2799c0c3d57b65dff6d916c7a6",
+        "size": 109920
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Meshes/SM_V3_Brazier.uasset",
+        "sha256": "a95ea7c2fdc88c844c3aa99254bef50b50186eb96a05e44067fb24594260f2b8",
+        "size": 2541339
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Meshes/SM_V3_Forge.uasset",
+        "sha256": "e9cb02115d4c756f94b293658cbaad1b470246287df1b8ffa484955cc63be2a5",
+        "size": 5513010
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Meshes/SM_V3_LavaCrust.uasset",
+        "sha256": "8629169fc9dba1fee2645cd1392bcbe8d1b17d9510950c5a9601fc5f311d20c8",
+        "size": 3608725
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Meshes/SM_V3_Slab_A.uasset",
+        "sha256": "9bba618b6967e991786ae2f5043d15e39123166d9e4b4df1a30a4423bdfa79b8",
+        "size": 959724
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Meshes/SM_V3_Slab_B.uasset",
+        "sha256": "d7e5d035dbbc9954388c9cf5b802241f172c58026e9e1459f942058bd3254865",
+        "size": 950508
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Meshes/SM_V3_Slab_C.uasset",
+        "sha256": "739a9544ec4005b3cbf9588b472da262f625218d609435fe5807dc9b4ea85acf",
+        "size": 960571
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Meshes/SM_V3_Slab_D.uasset",
+        "sha256": "f10841604bec14ece91b90a63471f9def93fe9eeb65cdd25ec4ee533d3892e1d",
+        "size": 961144
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Meshes/SM_Mine_Pickaxe.uasset",
+        "sha256": "5479fedeea4ef8dd0c197a99a206a5c316df620a32d7927a5a7f6967c415f5c5",
+        "size": 412200
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Meshes/SM_Mine_Sledge.uasset",
+        "sha256": "b0b2a6bd1e2c08584893662b98324a02f440163ca887c966a8bcb3830279a9a3",
+        "size": 128626
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/D_Spatter4_BCA.uasset",
+        "sha256": "5f8bbc2fbb31f32f72e0869a3a4d2d21f029b31411b3cfb13d8ed17017ee48dc",
+        "size": 3462858
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/D_Spatter4_N.uasset",
+        "sha256": "b95349575c006ee13876459f56f7b0895a49b0d64c05daf22a1865c55fd7cf1f",
+        "size": 764511
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/D_Spatter4_R.uasset",
+        "sha256": "70faa938b2cc70f89671bc5b3c959fef25a7d9decad186a73bf8468ba3daec17",
+        "size": 715130
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/FloorBlack_BC.uasset",
+        "sha256": "9ab49de9ac5adc40dea2cb1a407835d268554fe351f1131654a8c6c01c635989",
+        "size": 5202089
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/FloorBlack_N.uasset",
+        "sha256": "d84411d2fb7e3f399b5d9a6e692518b2df4bd05f06af2ba18a1584e875218b12",
+        "size": 12951006
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/FloorBlack_ORM.uasset",
+        "sha256": "249b09ca2bc45a714e306236f5c1b0cce8596949ce69b92dd4736f5508974626",
+        "size": 10600274
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/M_Mine_Pickaxe_BC.uasset",
+        "sha256": "7971672130e28cd43c2471a10ced6c99d67c77ebbc918921b70388ebafefa065",
+        "size": 265904
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/M_Mine_Pickaxe_N.uasset",
+        "sha256": "92a5d58a1bde93825bddaebdecb243f434b39fab8e8275674aa5edc9630a2972",
+        "size": 696633
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/M_Mine_Pickaxe_ORM.uasset",
+        "sha256": "888cb449a96933cc9ab69ce773cc022838e707b308f2a412eeeefa3491e9bb62",
+        "size": 307897
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/M_Mine_Sledge_BC.uasset",
+        "sha256": "0de348bb7b75583ebe631674acef3280817721dc6fe6b6dfe57d1a86839bd8c8",
+        "size": 226375
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/M_Mine_Sledge_N.uasset",
+        "sha256": "27737667c74b195ae79a270f995329b6e434b5ce1da0c169ffd043e241dad2d3",
+        "size": 461973
+      },
+      {
+        "path": "ext:StyleSample/UnderreignStyle/Content/StyleV3/Scans/Textures/M_Mine_Sledge_ORM.uasset",
+        "sha256": "568b9e14ed93da87eba66eadc8899ec50ba2d94efd0ef956572370f8191971cc",
+        "size": 219727
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V3/WORKER_RESULT.md",
+        "sha256": "1e192ccf27446a5ffc4f6c55c7830ece9327ce39999d9db02066a13d4d74afcb",
+        "size": 11424
+      },
+      {
+        "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+        "sha256": "781f0f7cd98d6a053c5192f81908b76ba3d636ddf60deaee855890481ca1df6b",
+        "size": 42529
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V3/REVIEW.md",
+      "sha256": "d660dd2ab965db3eeab3bd4f4cb90f3e42b59be7f716e8cb10d11817603cac31",
+      "size": 2037
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-STYLE-SAMPLE-V3/review.json",
+    "record_sha256": "d0c7d63a7e2101af3f3cd92916fc686999a0a48b5a27f029dd2ce0beaacb6607",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "a3a3776333a8fe8565a1cdcfdedebcba05b01d130b9745e5df24e398831893d4",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

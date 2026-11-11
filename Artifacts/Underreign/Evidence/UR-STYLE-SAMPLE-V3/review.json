@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-STYLE-SAMPLE-V3",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "a6e0410188b051134",
+  "reviewer_task_id": "af711f71db916f2b0",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "a3a3776333a8fe8565a1cdcfdedebcba05b01d130b9745e5df24e398831893d4",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}
