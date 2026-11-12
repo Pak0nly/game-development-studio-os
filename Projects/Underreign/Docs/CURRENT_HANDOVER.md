@@ -22,6 +22,14 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
 
 Next for the Human: decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
+## Cell size and graphic walls (2026-11-12, Human, exact)
+
+"Größter Effekt wäre, wenn wir die Wände grafisch anlegen würden. Zumindest schonmal die Standard Wände."
+"Ich überlege auch gerade, ob es Sinn macht, die Blöcke in ihrer Größe zu vergrößern. Also so, dass die Gänge nicht zu eng sind und auch breitere Kreaturen später hineinpassen."
+"Ich glaube 2m wird es sein müssen"
+
+Direction (not yet a formal decision; confirm from the sample): cell 2 m instead of 1 m (presentation only; rules move in cells, so on-screen speeds double). Director proposal: walls about 4 m, cut at about 0.75. Next order (not started, needs the Human's go): one wall sample on a section of the real map at 2 m cells, charred rock from the style sample, rough modular pieces with variants, knife-line cap, next to the greybox from the same camera, hound and a Brute placeholder in the corridor.
+
 ## Human verdict on UR-UNREAL-HOUND-V2 and UR-ANIM-RETARGET-TEST-V1 (2026-11-12, exact)
 
 "Zum Brute: Ich bin erstaunt, dass es so ohne weiteres schon passabel aussieht. Da kann man auf jeden Fall drauf aufbauen. Gerne 1-2 passende Animationspakete raussuchen.
