@@ -1,0 +1,13 @@
+{
+  "kind": "independent_review_record",
+  "work_order_id": "UR-CREATURE-VIDEO-V4",
+  "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+  "worker_task_id": "aaa40c4dcb1b43263",
+  "reviewer_task_id": "a1ad80c02395525ec",
+  "reviewer_role": "QA Lead",
+  "candidate_identity": "d9a7ae08521ee0d374cffafeb269c3ec9c1923fba81c0c76ffd02f35ee7bbd67",
+  "evidence_ids": [
+    "review-report"
+  ],
+  "verdict": "PASS"
+}

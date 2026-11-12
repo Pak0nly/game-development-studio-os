@@ -20,7 +20,7 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-## Next action: hound animation correction (Human verdict on UR-CREATURE-VIDEO-V3, 2026-11-12)
+## Done by UR-CREATURE-VIDEO-V4 (Human verdict on V4 pending): hound animation correction requested after V3
 
 Human, exact: "Gehen: Nicht viel Unterschied zur Vergleichsanimation von vorher. Beide haben
 ein Zucken an Oberarm(sobald der jeweilige Fuß den Boden verlässt) und Oberschenkel.(Sobald
@@ -37,6 +37,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-CREATURE-VIDEO-V4
+
+UR-CREATURE-VIDEO-V4 (hound correction after the Human's V3 verdict: walk twitch cause found (paw snapped flat/bent in one frame at lift-off and touch-down), fixed by rolling over the toe ball over 2-3 frames (upper arm jolt 18-20 -> 5-6, thigh 18 -> 1-4 deg/frame change); full V1 bite without the shake, all paws step, chest drop 29.5 -> 19 cm, reach 27.9 cm; no new video; Human verdict pending; external commit a8a91d9)
+Independent review verdict: PASS
+Worker task: aaa40c4dcb1b43263
+Reviewer task: a1ad80c02395525ec
+Candidate identity: d9a7ae08521ee0d374cffafeb269c3ec9c1923fba81c0c76ffd02f35ee7bbd67
+Closure receipt: d2831bb5eea6f0f3b701a9862c72b427c61223ef613e38d228a127e8e8b94420
 
 ## Closed: UR-CREATURE-VIDEO-V3
 
