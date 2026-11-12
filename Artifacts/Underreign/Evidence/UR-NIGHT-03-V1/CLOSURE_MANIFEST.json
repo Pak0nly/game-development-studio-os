@@ -1,0 +1,1481 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-NIGHT-03-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-03-V1/WORK_ORDER.md",
+    "sha256": "197adc00060ea821f36664095a903be8e66d91fc46474dd940215d6fc969cbf6",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-03-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "0e392f1fc7841bae7054e122bf54123fffbde2d69c299e2c5f2e5920a304ae9d",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-03-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "7e74f698936a77d6b84bd7c98499f319f78e4aba758ef0382578e4c5acf44aec",
+    "receipt_id": "d5ba3aa86ccea914c787ff7f2a1024b362dcd5eb8f4c99a452372d030dd81b0d",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "cloud-task_9ed0c007-underreign-night-3",
+    "reviewer_task_id": "ac70ecebd0128fcde"
+  },
+  "candidate": {
+    "identity": "e8b2d48b9972e2e30fe1485e0796f39151594d21963f06a222ca37c70453e286",
+    "files": [
+      {
+        "path": "ext:Design/Art/PROMPTS_NIGHT3.md",
+        "sha256": "48bc5d1f01a3518209b3e1a8175532a0c9e20fc2aaa50ef9ac7bd186e539f38d",
+        "size": 88374
+      },
+      {
+        "path": "ext:Design/Bible/RIVAL_REALM.md",
+        "sha256": "779ed9dc38eb6c812cdef8dbcde9682e4f4d7328e531fd61c525d198a20a4e92",
+        "size": 15106
+      },
+      {
+        "path": "ext:Design/Planning/BALANCE_NIGHT3.md",
+        "sha256": "390e31e72e44eeef1fdba661047b6cd6935ee5504e6323d674df0730269b7964",
+        "size": 11596
+      },
+      {
+        "path": "ext:Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT3.md",
+        "sha256": "2483eb3ffa654bdd35e0d2fb221fde951846c9817c86d962224cc94df517abc5",
+        "size": 11993
+      },
+      {
+        "path": "ext:Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md",
+        "sha256": "b4ff35dd6a9b6cfd38436044bcff905e2bff97c29f4d25c451eb66b933c5ab68",
+        "size": 9889
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/ITEM1_RIVAL_REALM_DESIGN.md",
+        "sha256": "4bc7601999cc5ff0b6626aaca4c19fc14b8bc1ff40c2f2107e75595e4b0fb766",
+        "size": 692
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/ITEM2_RIVAL_HEART.md",
+        "sha256": "a6610311ba037f8c7c4138c28838f2da2564accf93f07e208cc6f9d8cb4f9938",
+        "size": 4244
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/ITEM3_ROLES_STANCE.md",
+        "sha256": "983984f31d1a085caa4d289658b3c221260a0c25368ff05515332d9219a6497e",
+        "size": 2981
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/ITEM4_LARGER_ARMIES.md",
+        "sha256": "1fb397c0fc83493a3527bbec25e3e304987b7fb5f204855bedaf3e1e2d2ace0d",
+        "size": 2356
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/ITEM5_BALANCE.md",
+        "sha256": "be539ec3ab3bec3b0fa9dc0dc9fcca9e7ac5a3964625799bf0faf9af7378010c",
+        "size": 1497
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/ITEM6_PROMPTS.md",
+        "sha256": "9a84c0af727874dc1302a3f53e718f1d7b4378bb7743e3450db90e359af27551",
+        "size": 991
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/ITEM7_QUESTIONS.md",
+        "sha256": "9af83fbba55ef0f20d76350e312b07e45f7c0c74485d96a35940e84c6895f01c",
+        "size": 527
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/ITEM8_UNREAL_NEXT.md",
+        "sha256": "78a79791e21293d8380d9ea6c8e266a06ba540748078b27c21c3cf866c7c6f69",
+        "size": 481
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/NIGHT_RESULT.md",
+        "sha256": "23fdac68bcaa0542175a4ece7f75fde8a8f4402c959b843846d21f51d6959740",
+        "size": 7015
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/OPEN_ENDED.md",
+        "sha256": "1dfd5ab631f80d121fd3502fe0d8f423d6a2fd0465dd3b88488fcf8040a2beda",
+        "size": 1756
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/REVIEWS.md",
+        "sha256": "af8d69a83dee55e250773e86ce52bd226f0a3fdd7ff1c84497cda2ecb701df08",
+        "size": 11749
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/raw/make_rival_maps.py",
+        "sha256": "0fdc5e62235e01abbb54acb020e6ad6607675d8a332d798d34d9594bcfe71dde",
+        "size": 10374
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-03-V1/raw/rerecord_goldens.py",
+        "sha256": "d9e2134eb8d82011d1fea3cf29dbcf69b4ff2c5b53b3a1fc97568dad3bc54760",
+        "size": 1504
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/proposals_night3/bellows_gallery.map.txt",
+        "sha256": "966f78b2be47b89a7f9a37a8026eb130eb34332215542c6e3ac228908762f1f6",
+        "size": 10693
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/proposals_night3/cinder_hollow_new_intruders.map.txt",
+        "sha256": "f4827f23c546a869b6acf868a4ac80de71990b3de61e0caf4e486ffd5dcd85d3",
+        "size": 11868
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/proposals_night3/crownkiln.map.txt",
+        "sha256": "08bba42ff9fbd88f3c1d2d20e9ea356e15f0ae5c5e1da59fe5cfbefeddd279fa",
+        "size": 12328
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/proposals_night3/inkdrip_shelf.map.txt",
+        "sha256": "76666173c256d4ab53c18df158ba4680b11b95e30a0af3c2291e208b97e405af",
+        "size": 12284
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/proposals_night3/inkdrip_shelf_lava_south.map.txt",
+        "sha256": "8c4c3add0cad1e245911374c9a877b0c95d017c3de98b541faa4229a6be8569c",
+        "size": 12921
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/proposals_night3/prototype_rival_trap50.tuning.txt",
+        "sha256": "675ab99486f258ffc4e0fd2a043858176da87a1990a252d074b41c6e390f77f1",
+        "size": 6596
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/rival/deep_split.map.txt",
+        "sha256": "17256daf27ff5ac1f4e82c64539d613d2a8a6ce6f7fc5c4ccce7d7d326291edf",
+        "size": 6957
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/rival/forked_commons.map.txt",
+        "sha256": "5c362559da0f1a4bd24ffcf8a6c017bb1e3334b7481310973f1e7cfbcb401cd0",
+        "size": 5521
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Maps/rival/twin_hollows.map.txt",
+        "sha256": "0ac6442314a04e85f5e2ef5442bd28e36f0a4616affcd89b854a7701dfdf4e70",
+        "size": 5338
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_ashthread_seed1_won.save.txt",
+        "sha256": "94e398e77c7df859fd6ffc7ce7516a7827a473ac3b30bdaf93d478592050c2b1",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_banner_seed4_won.save.txt",
+        "sha256": "c412a3dc86447a4de2b463aa447d461afe792cf142e022bf7706c6e754573698",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "7eb7c4d46112d1407322f64a27274bc109cf0a7cc2ab14c871e90491518f54f7",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_deepsplit_keeper_seed1_lost.save.txt",
+        "sha256": "a7b7e8c3885adf24144896325552adbc10a4a3e339304d88cb0b27bce8cbf0b2",
+        "size": 4622
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_doors_seed1_won.save.txt",
+        "sha256": "68361983fafe0ab1ee4b7041b02b0904c179b62fc8283392a11f12ed7c3f35cc",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_idle_seed1_lost.save.txt",
+        "sha256": "b0fcb1ce74a852bd6c23022b5476624b00763feae6d21f03fa0b7e61189864c6",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "699d711650e38d44e33a556d8566a4967271e1a0bcf70b80cf7819f7227c3cdc",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_newintruders_seed1_won.save.txt",
+        "sha256": "20d0ea2d8f7050d5ebcfc2482ee011a4e791246587e6c1710322a3cbc33a4741",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed1_won.save.txt",
+        "sha256": "f47951a8542c7ced93384748a567fa2b685e30961c526dc072ea08f61fc1f72f",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "2a809efb0e49cd67d78d7b28c1021b8d40bcd960ad275980f4f8f1b14cbe7d61",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_twinhollows_keeper_seed6_won.save.txt",
+        "sha256": "4ebc17add581d3e7ca193765d77cc4a81dc0e1b16ff7e7a0f1135f2150718bd5",
+        "size": 4183
+      },
+      {
+        "path": "ext:SimulationCpp/Data/Replays/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "0215a45e5f189179505f39ad55ed2bb76574121017f885caed4764ba5bd949bd",
+        "size": 4343
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/README.md",
+        "sha256": "363ee0dcf73c65ce7a44114ebcca63d4b46e063c73993f28760ca3dd7db9f3da",
+        "size": 7840
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_ashthread_seed1_won.save.txt",
+        "sha256": "d971ed551a2552b54bbaf0c0221b16157d2ad13bb24529cbcc783637b088b2ce",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_banner_seed4_won.save.txt",
+        "sha256": "58794ab8c4cf2c7822bbf6cebccc00d9609bd60bf4b5d5ca611e8446fc3ffa9c",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_crownkiln_seed1_lost.save.txt",
+        "sha256": "e490f0de5a536f708a1c942b91fdd7bcf2a7281c34386d3135ad9d5bcc0a1993",
+        "size": 6643
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_doors_seed1_won.save.txt",
+        "sha256": "b42b906ccbddaad4a31ee2b9511a8f80276686f74aa3b78d362c076adfc1b752",
+        "size": 7029
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_idle_seed1_lost.save.txt",
+        "sha256": "374d572d517116325966ac295a0369174fb8589c9ca4480c950bdb58db93a840",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "6564f16df49450996b8515b321636426f8fe27392b19ff0898b2ffc27ab31d08",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_newintruders_seed1_won.save.txt",
+        "sha256": "be63575a3b9d57a11ec56767f7ac12b4a869b6fb2f6c37c8c84832d8cccf1121",
+        "size": 7046
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_reasonable_seed12_lost.save.txt",
+        "sha256": "c76a488558fd9ca360f1787487221854c282a4127561756b56d40166e19406e3",
+        "size": 6020
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules25/golden_reasonable_seed1_won.save.txt",
+        "sha256": "fa3d607e8113256d5e53e4cc2e93da03539778075fbb5e4a8982a61a06ce4006",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_ashthread_seed1_won.save.txt",
+        "sha256": "b6fa482221acb76d789e08abb3323dea55b963352ce6509eef8f82e4d50cf3d1",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_banner_seed4_won.save.txt",
+        "sha256": "84b8150fbf74c47ce54cecc55ee50b921a103d73ac24574768e72b0250ee7ffb",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_crownkiln_seed1_lost.save.txt",
+        "sha256": "7a19cedc4ad5b39fd94541a5a0c9cbf98ba335288fcd0e3fbaa3b28f3545bf96",
+        "size": 6643
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_doors_seed1_won.save.txt",
+        "sha256": "6a0bce1fa49aa77dbe5d798f358cfbfe3f8cdbe4e83c917c52d4aeb63265bedf",
+        "size": 7029
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_idle_seed1_lost.save.txt",
+        "sha256": "aebdd9ad601659d73c928a4ad5da17f0f61011bee98c590a2029af2a3ae115ba",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "7c8b9be980eaacf62dea0103691facece6f1d045a7c9b6d183c70c9978ef9ff7",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_newintruders_seed1_won.save.txt",
+        "sha256": "c978c70905e01e74932821d13268a8400306b75dee9025c108f7ab92c6078679",
+        "size": 7046
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_reasonable_seed12_lost.save.txt",
+        "sha256": "d5044dbd3c6d84fc730f4fb1f5ce6922cbbc6be54f52102c94097dc749432f75",
+        "size": 6020
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_reasonable_seed1_won.save.txt",
+        "sha256": "a7f5116da3c9e2103d3752842c95addb6087936c607dc2b8547e7fe912a52bc6",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_twinhollows_keeper_seed4_lost.save.txt",
+        "sha256": "d011e85727662fd03bd92d84527a43ddc9b24eba45465b86b35a2ad6044824ce",
+        "size": 4587
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules26/golden_twinhollows_seed1_running.save.txt",
+        "sha256": "4f2cf67a1b69d3e681e2363a8c923d628cefb1637772ab0109b365357ee379f9",
+        "size": 4654
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_ashthread_seed1_won.save.txt",
+        "sha256": "3952092ca930abb032de1bf7ddd5c21d1e5e31e48d806a7ed50981e42519c291",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_banner_seed4_won.save.txt",
+        "sha256": "9c717d344ab27b6f7d8bb18cea7fe94cfdda0881aa64bbfc973f56018e334bb7",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "c49f4518af06fd932771233f354067f189f8df76f8905654d6c7e0d4bc9922c6",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_doors_seed1_won.save.txt",
+        "sha256": "564f249ab5afab9aee41191917f277499d42eb918e54927dbf12ab094abe348e",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_idle_seed1_lost.save.txt",
+        "sha256": "9f106d92143a5336f3878d2b0717d34c65f5df2aec99503b2f5925e0fd168ce2",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "72e3ec2ded5b264ae948aa7747ba24e30b2817e922b580aeda1528f68a04bdb5",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_newintruders_seed1_won.save.txt",
+        "sha256": "031f64d0a886ed263c31f45b564a8893a79dca329f5ca0a03397d5ef73564cf1",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_reasonable_seed1_won.save.txt",
+        "sha256": "7a5633eb6fc3e4df56ac5b236177332f5edd3c640be62d46a55df16cf2790e39",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "5146d1e7f2e07a193681bfe15bba763f9e968235c603b67ec6bc478c59386de7",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_twinhollows_keeper_seed4_lost.save.txt",
+        "sha256": "dffa10c322dc87ac4136cb0ad4e5e8f1ec6b6298b35c1c9a84d7926cfe1fb25f",
+        "size": 4613
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules27/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "f43baf66fdb5b4874030b9d8b2c4b4237e2851caf783d4e0f7e51cd160e27a68",
+        "size": 4229
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_ashthread_seed1_won.save.txt",
+        "sha256": "c0f30687d33656503c00341308cb5aebeab362ea3bb1fa9a2cfda72f58077b00",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_banner_seed4_won.save.txt",
+        "sha256": "4809552214bb7f87911513fd3081cfa7532ddff15f4680337b6dc3bc1309db2d",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "dec2d5f89be688686adcf7a7cdae62b7b83ac0aa59074466ceb1a5137b969b17",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_doors_seed1_won.save.txt",
+        "sha256": "1e2284767271d646c48a7a5e557ee481c0dc36d6005a78d799c2e8cb78955418",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_idle_seed1_lost.save.txt",
+        "sha256": "2a5b96cb2687077563691b88a64bc13b5a1a336d8e7e9c1b173b4d3f3a9a8946",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "3d136714470e40d0d06caadd44c0e8dbb97e9efc5ea53f5bfc1c65bc303d149b",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_newintruders_seed1_won.save.txt",
+        "sha256": "5a7cad731af3069056047f545e1db569072ea7d5e829805d42ff148ef4c731f0",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_reasonable_seed1_won.save.txt",
+        "sha256": "44f91c7291a857a89a3133e565687afa91afe621344c7189a37bf85afe4d8561",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "7b5d7d36d65e71a29e99326332e016a002e570dcef117d4c558bc816082ba236",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_twinhollows_keeper_seed4_lost.save.txt",
+        "sha256": "33e4537f9b6b223aa1335cc2fd4256f9da07a94ac0b9a35b51d28112ce38afc5",
+        "size": 4450
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules28/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "8c5c628f3c089ad240367371d633bbcad586fe7cf6b0e1fc87eb75a8c9062d66",
+        "size": 4134
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_ashthread_seed1_won.save.txt",
+        "sha256": "51f73630f3414714c5aa14976cfda076fd1b8c4db4d94146778eba14d62c638d",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_banner_seed4_won.save.txt",
+        "sha256": "aa600a01eee482395ac8a4609906e290cb6627fc046d947d61bb26460f10d6c0",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "165ebbe4ada2d62e4a2164d437e6979d6430dfbd882c8fb87150e0cbe58e167e",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_doors_seed1_won.save.txt",
+        "sha256": "d6f502ca8b054303368276c458860a8c003440f3a32270a747c6954c118548ef",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_idle_seed1_lost.save.txt",
+        "sha256": "d86474d401b9a75e01df4bc37e7e65d8b34eedd2739a6ee022adc045250fd107",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "160d2c156b6a8e0c401509762cc665ac5582e10926bb93ecedfacb93499b2c1b",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_newintruders_seed1_won.save.txt",
+        "sha256": "28d3bf2e10690098001c58cc0d82986071442f21916c40cc2e45ef4fd28f77e2",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_reasonable_seed1_won.save.txt",
+        "sha256": "e2d5726aa19e175ce2e59d355ca5fdec54c23c0f19f0b72e9ef140661cdd10cf",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "532bba74c5a450c6f0042a3418b90cad7ef6fb2e2fb7a7f7905fdbc25d19d330",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_twinhollows_keeper_seed4_lost.save.txt",
+        "sha256": "40cbcf49515e00877cd0b56993fa89f53b4fdd417f0b474a6407fd45ae8dce25",
+        "size": 4942
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules29/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "b01d88c6cec4bb81e8cc913e0ee76559cf73f22fc0bea4014a6b02967b0accce",
+        "size": 4134
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_ashthread_seed1_won.save.txt",
+        "sha256": "ecd7863532de41cd32727e2fcd41d80141438c1adf81d7c3941cab9f1fc1b928",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_banner_seed4_won.save.txt",
+        "sha256": "5988961b50505e766a3f92e234c8a0d08b33484f02f315628eeb81d6e94ef86a",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "0bd5cd9bbc27287288726651bc686d66eb8d0d0fd37a89ed098050a08321d7e7",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_deepsplit_keeper_seed1_lost.save.txt",
+        "sha256": "0fb17e77d2830694202e15eb7a8f6b5c762ec42488158cd1b74805cd8feb2f17",
+        "size": 4622
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_doors_seed1_won.save.txt",
+        "sha256": "b010111be0576c82a5752511f2223e7e86fc77248740ee5778063eb875329e05",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_idle_seed1_lost.save.txt",
+        "sha256": "6886a598a7371003fc6672f8fc2fb14bb88513b87ab9ad1dcf24cd9847d2d005",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "4fbce6011f5a166fe7dbd54634e6f738c18647337de8f41f11c7b41d391869b0",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_newintruders_seed1_won.save.txt",
+        "sha256": "9980713292f7b2e6171b1b2a4d806d6bb35aa5c504140fc9f982002423b7e30b",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_reasonable_seed1_won.save.txt",
+        "sha256": "422e106a379f3e9e9b6ecbf60ae7ca906ac4394d78dad7eecc238cec0ea09717",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "76f054f8bab69fe6eeb75bba91e03c32e3d29519274c40fcb243f78b4a8e323f",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_twinhollows_keeper_seed6_won.save.txt",
+        "sha256": "876d93a8a50cc7e53accfdd93ffbecba9042ec5ecca8abaab385d4120dd5ef9a",
+        "size": 4183
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules30/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "826cda3c25423e02e235ecae4904d154524a8b4096e2725522fe89d112df6ca8",
+        "size": 4343
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_ashthread_seed1_won.save.txt",
+        "sha256": "2cf303a95c4a67a10d2cec1f084d8c2b3d8bfd8297737a2f61cd0b572e9d5c10",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_banner_seed4_won.save.txt",
+        "sha256": "7daa7a6e5b8249caf9d4b8b36a614fdce7638b67c858a9ee545c9d0cbf7658f3",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "d0e5f34b1bd3797fddc20b5ce0aeafd67a1e00718ab3887c5a977bd09a623ae4",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_deepsplit_keeper_seed1_lost.save.txt",
+        "sha256": "b4e1d9106acc3a712cf179be2921c9dab02374671d8aeb67197410773814ecc9",
+        "size": 4622
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_doors_seed1_won.save.txt",
+        "sha256": "fc36b5015fc01eae869a9ff37ad193f946cf4addee7ce9f5f74c8b8ac1119b2d",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_idle_seed1_lost.save.txt",
+        "sha256": "538a3318c801f1f3861990b1ca8f59054958fa5cd5f7e8e9faf400c619a5c373",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "43a8b8e20ba433e381ef524355d3d23f162cd926d010caa9836a33e3489d7b80",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_newintruders_seed1_won.save.txt",
+        "sha256": "4da9a1469ead1aa0ac2b73b33e30e89e0ab4d9a757739fa6f33ed8bca82cf1e6",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_reasonable_seed1_won.save.txt",
+        "sha256": "b9ecf3f45ac891557a55ef0e81e85da63fbe7ea84891be6f0a7e45dc8b55f449",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "7bc2bc968a1d76f32a069f94880eb2ae21b7c37f129fde1525b7f1ba9c9bc661",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_twinhollows_keeper_seed6_won.save.txt",
+        "sha256": "984cb8811a5958b2e20355ece99e13b4aff384a4c329d36e4ff5b17d3c799520",
+        "size": 4183
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules31/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "76ebf68a0239cfae14e92bc325e9a760143f733fca1cd9356d283432bd72e10b",
+        "size": 4343
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_ashthread_seed1_won.save.txt",
+        "sha256": "f3205775d6281936c2de12ded3d1b5821dd2319a7e0c4912736df56689d56ed9",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_banner_seed4_won.save.txt",
+        "sha256": "ea6ba7e017bcd0fc9a8bf510d78b2dc7f2855ca4c81c32b17477238f4541b9f3",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "71743bc453e92ab47507665ba3c2463c72a6155a0af0da97cae73fe759e5790e",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_deepsplit_keeper_seed1_lost.save.txt",
+        "sha256": "0de529f1eb72ea24513878e10adae5986afcd21de560fa9b25c4c1bcb69500f5",
+        "size": 4622
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_doors_seed1_won.save.txt",
+        "sha256": "e3372a39cc664d5e5e80c37a6889577e6c93f717844c850e217798256c9099a3",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_idle_seed1_lost.save.txt",
+        "sha256": "3df6918998d6c08acc3842403ceb0206087992d78582d13fceb01eefc766a3cb",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "0c3233588fcbd86a0cc0dfb7703671a598d70b0f371aac163ef73b852d868498",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_newintruders_seed1_won.save.txt",
+        "sha256": "f122d6933436119f40067b8ce6ffa1654fd2ced7cfccb16b81777b75ee1ab3ec",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_reasonable_seed1_won.save.txt",
+        "sha256": "7b87c8aa22736112328cf4a3cbe614c631a9cc94366826b312dc3c952057555b",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "7e2b5061da659c5e78c9d21467e70a40b75d80df152c1ac4aeff63f3b54c24c2",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_twinhollows_keeper_seed6_won.save.txt",
+        "sha256": "63d65ff8da730b450fbdde1e334de7d9ca2628e7d3f8fa14bcb9bb470cf258f2",
+        "size": 4183
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules32/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "a76519ded13cd188f5d7f4ab4d4e7c71d517611d6ce7895c7ce29a2a163a7e39",
+        "size": 4347
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_ashthread_seed1_won.save.txt",
+        "sha256": "debff4590c7affa7ec2747c8bf9096a0d2951f17a4721bd764c6d8999de0012b",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_banner_seed4_won.save.txt",
+        "sha256": "6c7160b21a8318f666da8f8974f2edf814ef53a31a7d3271345b679c64c61c5c",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "e0f6f50c8240cc145a1ac7dfab2b5355fdadc4e3b07e71a2206d4888bc562219",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_deepsplit_keeper_seed1_lost.save.txt",
+        "sha256": "86cf22592a2d5b7aa8e0086a9fcff4e67f8bc4d084ae994a7183a8b625fcbbc2",
+        "size": 4622
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_doors_seed1_won.save.txt",
+        "sha256": "c3ab8587ed9cc04e8a5ec15ac3373c4309d3263b483357ac278cc9326a0bb13f",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_idle_seed1_lost.save.txt",
+        "sha256": "4847851cdc3e1f6a1ac613dc4a9b23eb4ccc9196660f749d707454b4d8e026aa",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "9c7ced0a9c4e31d04a9cc288766a58832e84fe853247d2d5f001d40247d8e90f",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_newintruders_seed1_won.save.txt",
+        "sha256": "7c2cb631dbb5669b9e94ec830817d39835788d4a0379f2165ffec80cdbfe5bea",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_reasonable_seed1_won.save.txt",
+        "sha256": "e94d57ec6abd4f8c3a4c40c2a25d9bc0f8738bbb4d47fd39867ad11886c5c1e8",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "a7e2cc7c356344795d0510582155caa602e67ad923787f597bd11a745128aa07",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_twinhollows_keeper_seed6_won.save.txt",
+        "sha256": "4c4d755571211c93721e3594818bd4f463bc1bde5145fc08cbc66bee4434ab4c",
+        "size": 4183
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules33/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "c84f68be48eb3321bd52db58201366275b030f31e3d20c5c3704e1d761c3ded1",
+        "size": 4343
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_ashthread_seed1_won.save.txt",
+        "sha256": "8fb618649016ffda9267f17b20dd9ae84068f1b33ba3bb7eff3c8b7f2ee27c82",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_banner_seed4_won.save.txt",
+        "sha256": "227262e8992edacf3beff6f3bfecfb1eff062d7b0a1b73184a0dae9f36fe684f",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "4c3424d6172533ca9cb35a6aabdb97ca733a2d51a1219ffbc54f9a841c02fb8b",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_deepsplit_keeper_seed1_lost.save.txt",
+        "sha256": "a357172abec1c42c102d5fef4da5cf449c0a5f0ed6ef51f348f3b6994ba4a24e",
+        "size": 4622
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_doors_seed1_won.save.txt",
+        "sha256": "93d7d405b533bc03b76efaa8a80a988c2e704a9c15df1a56aa763aee1e156891",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_idle_seed1_lost.save.txt",
+        "sha256": "b0fb98e2664a5a6eb6c2f03b9be7c9f783ddb5af48f1f500119c129c9a0ff0c0",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "0af6c904ad9104c1730ab03ae3ecf43379a858a13650dbc8c009b2d0f334f337",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_newintruders_seed1_won.save.txt",
+        "sha256": "a96aff4fa801b0f86a3335db9881f1fe41b7747b4681be361cb86bc71b092f96",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_reasonable_seed1_won.save.txt",
+        "sha256": "a68dece85e37a9e7553b0474d3c8fff73f8f5f324f27546dd669a3a875c6bd17",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "5de54b95cff0a2637e66ef4b0fd0affc3433cfb1ed433014e47a7434de11d331",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_twinhollows_keeper_seed6_won.save.txt",
+        "sha256": "e8407b7930be520958d27d1d5483512fa736ae1cf056d3374451ce2e9b0c3ef2",
+        "size": 4183
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules34/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "2f3737a75c5ae7a5ddd578ede22863853a772c1239bf743ed7426f1d63006826",
+        "size": 4343
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden.tuning.txt",
+        "sha256": "df6c54fbdeff2b2ffb8be36e18d4432393aa2877d08ab494710d6af4d53daaf6",
+        "size": 4543
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_ashthread_seed1_won.save.txt",
+        "sha256": "322f63f12852c6964fb2dbfabc2c337033cc051cabb8b9ba9b1f881d776d9d3a",
+        "size": 6727
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_banner_seed4_won.save.txt",
+        "sha256": "df425fcd4c55a732314c6443c58a22a674fb5b01fd6b8c22fb99b36b494499bb",
+        "size": 6926
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_crownkiln_seed2_lost.save.txt",
+        "sha256": "1d85c3552d6e7d1d85478551898d09e5f7b9c13dbbedbe6c28c7f432cd44a53d",
+        "size": 6472
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_deepsplit_keeper_seed1_lost.save.txt",
+        "sha256": "27d132eca7e8819cccacd35c06924b3598a8cb3d1265d53397293927508b4eb1",
+        "size": 4622
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_doors_seed1_won.save.txt",
+        "sha256": "bd5297e5ed8d7a4e7391991570d96ea7e869a1f3b4535ffe4019fdf8d9371ff5",
+        "size": 6965
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_idle_seed1_lost.save.txt",
+        "sha256": "dbb5416c8193f4467a8c9ee7246d25815eb4fe75aa191bf1430662b5515272c2",
+        "size": 777
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_inkdrip_seed3_won.save.txt",
+        "sha256": "32cd9aea953834b0547883da4203c88241bc822dbcee7ed2d8357deca359df79",
+        "size": 7398
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_newintruders_seed1_won.save.txt",
+        "sha256": "3a2141208be68713c1b92579c7665251e096bb207e6e459a100a80e9d9fe59a5",
+        "size": 6880
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_reasonable_seed1_won.save.txt",
+        "sha256": "fb195a6b5809f26c7672a86342f422a971059b0f1bcaa316d4ff43c29599bc2c",
+        "size": 6891
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_reasonable_seed40_lost.save.txt",
+        "sha256": "9d608a266172bb7a4a0ea6e0ebe7e16296669fed5885ecdc8248d6e5a3e63df2",
+        "size": 6330
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_twinhollows_keeper_seed6_won.save.txt",
+        "sha256": "92ab251e6e47ac6af07bb75a941c45bd8e938d971daf5315744c481a8e14d36a",
+        "size": 4183
+      },
+      {
+        "path": "ext:SimulationCpp/Data/ReplaysLegacy/rules35/golden_twinhollows_seed1_lost.save.txt",
+        "sha256": "9fc2bdad5b4e5ab4d105e4194a5fd40fea1c21551cc6e8eb29acb72f0d6aa262",
+        "size": 4343
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/BatchRunner.cpp",
+        "sha256": "7fdb42544789caab3256b3acf534c5da17927ac7e4f08ba49b56817dee80c13c",
+        "size": 3982
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/Program.cpp",
+        "sha256": "1071727c1719c58992f0c292f1919856feb9175834e6c8199c51de81c94ed67c",
+        "size": 9037
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/ReportWriter.cpp",
+        "sha256": "72011f7f6ee41ca502bbcb575de3dfa34a090d81ec1b01b0e009d93758ebac2c",
+        "size": 17496
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/RivalTrace.cpp",
+        "sha256": "781ffd2e72ea5cc8149fc5525a76a4af88d22e396c8863ba227fe177a3867fe0",
+        "size": 4299
+      },
+      {
+        "path": "ext:SimulationCpp/Headless/RivalTrace.h",
+        "sha256": "5731a7cbb00cd1aad84dda6b3d20bb1fce6a77a610b8dd49d4f01ca4c38d7840",
+        "size": 522
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/BotFactory.cpp",
+        "sha256": "63cf561f58842ecd45d190217e119720877cb529cf41058c70c7c043f2f342ae",
+        "size": 4758
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/BotPlan.cpp",
+        "sha256": "6e704eadeded770c7f530834e1112b3396075d56a0cd0b8f2a0c7aceee97e4fc",
+        "size": 7714
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/GreedyBot.cpp",
+        "sha256": "fc884f4807be7c156a43419daa07f785bbb53a7afeb03a9d4d3fe66b31bac703",
+        "size": 3387
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/KeeperBot.cpp",
+        "sha256": "388a4dfa20b7ee58dd33df12f18ebf464a57372888485e3f51874736d0617be5",
+        "size": 304
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/ReasonablePlayerBot.cpp",
+        "sha256": "0c2a793c29c6dc2b01f498db437051639b58fc0f7a17cc870b14c718fb86bc44",
+        "size": 32901
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Bots/StyleBotBase.cpp",
+        "sha256": "a1414ec8588ac9b15969ec67e781b294ad62a06b90c0e1f1937092bc42459863",
+        "size": 14388
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/AttackRealmCommand.cpp",
+        "sha256": "024db08cc1eeadc195053c9ca8628851f6c19de8bca39047cc2ec253e3e135d1",
+        "size": 394
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/BridgeRules.cpp",
+        "sha256": "d41f0ee57a86705a99121bc350ea59af93277865ea92d053f476ed08ffbb3b71",
+        "size": 3486
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/BuildLinkRules.cpp",
+        "sha256": "d9b40477fc60eadb0035776d9a2925663300600c80c66cf9b2f1deb484a9b7a6",
+        "size": 2792
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/CancelDigCommand.cpp",
+        "sha256": "cec36c08d5cc4344710597eaf9c0db005c1019ef503b2cac2aa0601cc1a1ad05",
+        "size": 1833
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/DigCommand.cpp",
+        "sha256": "0f582b742c1978fede69ba51586fd11424e301ec8f269e87f3bda9f4d48745ef",
+        "size": 1571
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/LastRouteRule.cpp",
+        "sha256": "5c28361fa75eeb658ca40fbe982e2d854ee3ced44c0e50fa686ed422c1211c50",
+        "size": 2234
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/RemoveLinkCommand.cpp",
+        "sha256": "ff5f4fdaf9e4ed508fd6e723d9a90e2c16c742f17d1daf3bd9542c49157f8166",
+        "size": 2012
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Commands/SetBannerStanceCommand.cpp",
+        "sha256": "f723864f5a53d4614edfc7c91e556d316907a02d9ee5de2143c8e1a895afeef9",
+        "size": 499
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/Creature.cpp",
+        "sha256": "af15fcd3b53b08888d1f7f4079dd6d55f211ea982018d54ef099644b0738f71a",
+        "size": 1599
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/CreatureAbilities.cpp",
+        "sha256": "299dac1378e022252c80d5aafa3b215a9c15aab8f3bb9e2ce36c0e9cf42275c7",
+        "size": 9782
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/CreatureBrain.cpp",
+        "sha256": "342c13d65ee8de9bb2469bdb9dee2f8cba5e434fa6f59ae7f33e64823f522361",
+        "size": 24130
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/CreatureSystem.cpp",
+        "sha256": "d178cfb5c947d743c2b0a3b714e0531755defa5d47110999272bf45583da80b3",
+        "size": 8858
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Creatures/RallySystem.cpp",
+        "sha256": "200b47d16b21c3684c31a5725470ee16e9711b786958e170e5cb2cd836693670",
+        "size": 5841
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/MapData.cpp",
+        "sha256": "c024c31dc6a00f1abbf4ea4fbccd1759900811af2670202ab1ff6369f24e36fd",
+        "size": 6260
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/MapParser.cpp",
+        "sha256": "a7a7933d1804af6b3b6382f647f5b4c0cdb0faffbc98ca9b3241dd616f1564e6",
+        "size": 29951
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/PrototypeContent.cpp",
+        "sha256": "1385f215f3ed516cb9a79ad789b3eebea4976ae0caeaa21e1521b045f5d43fb9",
+        "size": 18830
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Data/TuningParser.cpp",
+        "sha256": "8ab33fb5bbfa001e282dd5e528d82bb9a599be02f22383fcfac045c93b8020e4",
+        "size": 50252
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Diagnostics/AsciiRenderer.cpp",
+        "sha256": "d74bc05e71dff70486d740bfb33b118578c9dd905a02e693df5dbf0f13c65b70",
+        "size": 7728
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Economy/Treasury.cpp",
+        "sha256": "cd26304370c8d3e47940cdd25a56097149942df9c981458b3664a8bb9815180f",
+        "size": 5588
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Heat/HeatSources.cpp",
+        "sha256": "99393031e5b53a13936a582bfae4e3f963bc86f44a7bd063155f586b2bc40e5a",
+        "size": 3321
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Heat/HeatSystem.cpp",
+        "sha256": "66703833d3a9f1f5760cd3053b1a40920fd463f83df0c83c05f9611b75c630fd",
+        "size": 4250
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/Intruder.cpp",
+        "sha256": "c299232115da9b6c08a4169f96ca0ab0d2ef180aa84cfe8eb03191aa504b51e5",
+        "size": 2736
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/IntruderBrain.cpp",
+        "sha256": "17a8d353bd0525ee7833de0b6dfc5ad6b68bcf0336ff9fc913ba154b31358fd1",
+        "size": 19800
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/IntruderFieldSet.cpp",
+        "sha256": "b42ff56608aed36ed87eb819edf546c3a61039bff3c7f921d7a0019cedae2587",
+        "size": 9327
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/IntruderSystem.cpp",
+        "sha256": "fe112a13196f4dd9c88a9793a2f6484d970aa58f99b71e331a574c4b85b133f2",
+        "size": 20122
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/WaveState.cpp",
+        "sha256": "06559b3f0e2c455a416c8dd9b84a21584610092d7c9a55a4bf308336fe3a7019",
+        "size": 2293
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Intruders/WaveSystem.cpp",
+        "sha256": "f4d7d4c0df0431f647bb3e5e71fba490cc24e6eebdbc99fe66d0fc9c7c407592",
+        "size": 6342
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/JobBoard.cpp",
+        "sha256": "df6d2c8d194f51140304517eb3fe164d61aaca814b63dfc46b2b20fd0514e351",
+        "size": 15534
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/LinkJobHandler.cpp",
+        "sha256": "00f08ba3f1f35beb8c5341c9ecfdbd7e7005a300747b4117e21033559800c4e7",
+        "size": 3002
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Jobs/WorkerSystem.cpp",
+        "sha256": "79cb5b0e112220f095b51dc1d7cbaa765518af68a71adcb32c74e910713b372a",
+        "size": 20379
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Metrics/MetricsCollector.cpp",
+        "sha256": "bea70a67b0bf642d97a400d54dede9c53d980f61cba99e6f55d12e35bd6df533",
+        "size": 22204
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Metrics/MetricsFormat.cpp",
+        "sha256": "d2d7842a3dbd93b908bacc1e0fa7a3e57dd55d2d77d8f6cf8481fb6d1b20353a",
+        "size": 12228
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Realms/RealmWar.cpp",
+        "sha256": "765a4561391cc937d52aa5da182242391da43e4a8b85748162590b87fd31240c",
+        "size": 21822
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Realms/RivalKeeper.cpp",
+        "sha256": "213916090c5d5e0d3915278d33789b3510433ff8bfdf45d3acc385f4afaedeb0",
+        "size": 14150
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Rooms/CallStoneSystem.cpp",
+        "sha256": "4cd557a5b094a5b1e4a82774d8e91083dd81062863fc47426a706fb15e739027",
+        "size": 5020
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Rooms/HeartSystem.cpp",
+        "sha256": "6b355366bb4e404016499333f7d8b31be9eaa09f51567d8f36f8969b46fa492b",
+        "size": 2609
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Rooms/RoomSystem.cpp",
+        "sha256": "6de65a0755ddf974e03de674a1bc9bc13bcf75a09cc60232a8632cd10d5635f8",
+        "size": 14997
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Save/CommandFactory.cpp",
+        "sha256": "a182cfe1f348e487ae6a95d8cadc05557c1a2126ee3c64ff7f836912923b6a4a",
+        "size": 8983
+      },
+      {
+        "path": "ext:SimulationCpp/Private/SimGame.cpp",
+        "sha256": "d2b5d860783f0371bf359c58af61f5bb684e0d785842c5c408bb50e6954f7572",
+        "size": 56555
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Traps/TrapEffects.cpp",
+        "sha256": "be08d959b3968a724a7cb73a2158cc98ec1e409a338a6968746dab7251497933",
+        "size": 17262
+      },
+      {
+        "path": "ext:SimulationCpp/Private/Traps/TrapSystem.cpp",
+        "sha256": "f0a7b41813262e0f99b978dfaf0be29b1e63841f7645b2534273ae5867beeda6",
+        "size": 28064
+      },
+      {
+        "path": "ext:SimulationCpp/Private/World/Grid.cpp",
+        "sha256": "e921434cc18ff926d3b34ad9fccb5d3a2bbb949a5ec52caab1970b89d9393df8",
+        "size": 3724
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/BotRoomPlan.h",
+        "sha256": "d92393ec4fc7d02cc0d2e1d5203bd76714890fee9a73dc0c2dc5d104fe6179c8",
+        "size": 615
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/KeeperBot.h",
+        "sha256": "15f76ca403313679640f4415515947ca6d65f1923ca1e784e8fe13e90222fbb9",
+        "size": 991
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Bots/ReasonablePlayerBot.h",
+        "sha256": "581910c910c4393bfb31a58c59a0b90c2b18ec255099ef0f8dd07c69a626794b",
+        "size": 13148
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/AttackRealmCommand.h",
+        "sha256": "6024fa8dc206ad282de05ccbf03f03ae4086624e7d0a90501933d1f1b352fac2",
+        "size": 1022
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Commands/SetBannerStanceCommand.h",
+        "sha256": "c8b13d25e372629db39cfc4174af1abebb963d09f9b5a931e08bc7afe7c2f0eb",
+        "size": 857
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/BannerStance.h",
+        "sha256": "0c10c3f0ee9dbbeeaacdf91e5e95386d6d2ae53544fddb2dc3615e94d84684d8",
+        "size": 1005
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/Creature.h",
+        "sha256": "c6a7e4fccc36c11c2e68dabf493dffb7062ab5e1dd5796ffd402da4f5a9dafa9",
+        "size": 4833
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/CreatureBrain.h",
+        "sha256": "fd6efd152d0a0f739bb8dc6f5afca759a1902ae51f6e3a7a3a91355d5a78d6fa",
+        "size": 3715
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/CreatureRole.h",
+        "sha256": "dd58b7489ad1d6a3bef4e343b0fab6b7401d06ca1c05b50fc1dfd96cc3cf617f",
+        "size": 2179
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Creatures/RallySystem.h",
+        "sha256": "18f28a3a4f8fbcdf8292701e51f90ae5ccd2eca5ce6e271706b6ea9400655b08",
+        "size": 5339
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/CreatureDef.h",
+        "sha256": "062ff9b2b2a9586ef238314ccfc0f5b584e42b7aaf9fe2049ab236eb1cb7d503",
+        "size": 4257
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/MapData.h",
+        "sha256": "5986f4d3c494c9babc41ecda0786942a0e895d0a8979f8235756ac0d9ec53927",
+        "size": 2870
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/MapParser.h",
+        "sha256": "87b8baac15721d367d7caa17ff8e0a0e91349d876ff8b12c6be9fc10c3330654",
+        "size": 3503
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Data/Tuning.h",
+        "sha256": "8c96038048457b90a66823cdfca1fe9df0399cef30ada2f91189b0e73bbfe080",
+        "size": 19765
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Economy/Treasury.h",
+        "sha256": "25efca4400eaa961e8fa6ef76cf5612f03c57ce6de35bfa6697130e4cc2626ad",
+        "size": 3116
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Events/SimEventType.h",
+        "sha256": "dd1cbd0a527710f5fcc4e1460d26f244e2800e970ca57727dbb55db58214c2ec",
+        "size": 21798
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Fwd.h",
+        "sha256": "91d5e2b2c6c0389ddcfe2e86d5763073d520a9f4483a6809e18c494bc0ca506e",
+        "size": 6682
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/ISimView.h",
+        "sha256": "676be6fc17321976ec01f8628fed01cea54eee94899b9497f5fa433046cee689",
+        "size": 7713
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/Intruder.h",
+        "sha256": "e4a19cb7d1b2726bee172ea6fae2f2041ad8762decd1dc31d9bec8c757d5ec20",
+        "size": 5921
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/IntruderSystem.h",
+        "sha256": "da8f9f7b322f8f5058c076b1c483d002c995f31570c591df5ca7476f911a5150",
+        "size": 6315
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Intruders/WaveState.h",
+        "sha256": "7452c369518815e2365d63071f3a2cf27c114ae7f631b00bff50c9909a9572df",
+        "size": 1844
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Jobs/WorkerSystem.h",
+        "sha256": "beca1e319d53ac6b56d74090e6a22d7274e83bb26966a642fb7dbeb22ed422a1",
+        "size": 4663
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Metrics/MetricsCollector.h",
+        "sha256": "b62f8533ba2aae079d9a39bf5822226340c039c893b51cd7022465f2330dbc83",
+        "size": 2672
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Metrics/RunMetrics.h",
+        "sha256": "ce67d65196bd60899e093a534fb21cce1f98005ad922eaa2aacd391c33a82528",
+        "size": 8946
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Realms/Realm.h",
+        "sha256": "e2e2c64990ea347f54bb977911133dff664b07b5d6aa1a7ca930f8ebc046c63e",
+        "size": 3058
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Realms/RealmWar.h",
+        "sha256": "29bafe9e2dcb1f44ada9f2ca79b73066c1b98ba09a43625a06d1756fc1cb4a6e",
+        "size": 5529
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Realms/RivalKeeper.h",
+        "sha256": "61b94c1aaa023b05564461e46c5a0f19d3fc8c44e0ab4d7ca71292a8d5d3f595",
+        "size": 3953
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Rooms/CallStoneSystem.h",
+        "sha256": "d4b1e46fb32f56532cedd2991942e7821d90fe6b104d73676348d6876d66c1f5",
+        "size": 2709
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Rooms/RoomSystem.h",
+        "sha256": "10582fa7580d70fa45c5756c6621606f8e0b10ab4e34bc0a09136cf4e36f6d5c",
+        "size": 4376
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Save/SaveWriter.h",
+        "sha256": "efc070874254d997065e763f3d4afb7134ab9a6b369157aebc283b179639ad4c",
+        "size": 5319
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/SimGame.h",
+        "sha256": "b50479163cdd26fbfd94e9adf7209455ee627250e07620e12a400292f9d7c849",
+        "size": 13931
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/Traps/TrapGraph.h",
+        "sha256": "231765fa23f1ccddb00cc6acb4237beaeb45dd298fca8fd6f21c06e32870b1f1",
+        "size": 1304
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/UnderreignSim.h",
+        "sha256": "562e2061aaed3562ed0137a8af657423701e6644a22197e9bb3ed62ff6487b85",
+        "size": 11007
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/AgentView.h",
+        "sha256": "9b7741e54dd716eb377be7c0f2e0f2715995b488b0559a7e88638e437ae4aaae",
+        "size": 1559
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/CreatureView.h",
+        "sha256": "b031cc62ed118f82bafe6963fce3b6efc20d8a530770b4c37511c93f5dba97a7",
+        "size": 4719
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/IntruderView.h",
+        "sha256": "d9e099aae63594f1c283a2e51ced1042c83f2221d9f0dbce5da5adfcf5e4efc6",
+        "size": 2202
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/RealmView.h",
+        "sha256": "a1bc24e02262620cb6c07fa0ae9fb4a41a9d42a387564b7b10a21810283fb125",
+        "size": 2017
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/RoomView.h",
+        "sha256": "0d21b257df43e09860e752a6342acc8b50e97c70d9e46f3de1e3e7daa794a9c2",
+        "size": 1164
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/View/TrapPartView.h",
+        "sha256": "7a28a22a8bc63c7feb56a3904ccf62f12ecbfc06375c0834baa1b5fb1fa41c65",
+        "size": 2306
+      },
+      {
+        "path": "ext:SimulationCpp/Public/UnderreignSim/World/Grid.h",
+        "sha256": "31edab52f0523b2633631e38c4b72d32bc0abaad51f620f5bc522ca24792ae77",
+        "size": 8389
+      },
+      {
+        "path": "ext:SimulationCpp/README.md",
+        "sha256": "c1141069fd65824ae81b9e932525e565332c7a7527c66689a9b82b5d8ca549ef",
+        "size": 107168
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/HeadlessTests.cpp",
+        "sha256": "7d8e17e172cf7dd26790015ec39ca844c60ab4470847a3052010c096da874146",
+        "size": 31512
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/OpeningVariationTests.cpp",
+        "sha256": "f016d4c64490025e092e09d5e28cc63f1090b141fb5a030a02cd8d6b6d459d6a",
+        "size": 8533
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules26Tests.cpp",
+        "sha256": "ee79ee327556365b5a5057e3ff33a676032bb8928a2a823ee75f21739f2a92ef",
+        "size": 19230
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules27Tests.cpp",
+        "sha256": "65438e4e8293bdf38ceb71d0bc7667f3148e74c5e4fb486dd7ef7d060c8ecfaa",
+        "size": 9722
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules28Tests.cpp",
+        "sha256": "ec2fc6bc02582cdc95d6162f460fd5084901c8ceb6fca46a16f2584d9a03e89e",
+        "size": 4331
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules29Tests.cpp",
+        "sha256": "088ff581950d85a702c11003c34d3fb274cb8dcc0f1b0cc275faba61ff9ef141",
+        "size": 4689
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules30Tests.cpp",
+        "sha256": "56d4471c5f3e6ccb350276db8ff919d5bfaaa2469f819ce6db16a31a54dd3431",
+        "size": 9807
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules31Tests.cpp",
+        "sha256": "1a50f3f2446f7b168300971812721612aaa39f1d41010c53ca4e5a2624ce881e",
+        "size": 3190
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules32Tests.cpp",
+        "sha256": "38508efecbe3b9d6adf941fb5bc73bcf05ebb893d365bfc01a55c599d792eeba",
+        "size": 5185
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules34Tests.cpp",
+        "sha256": "0032650edbe7c01abd199cc6c6faf926d4c160bbbda45b8ff3632062d3e322c8",
+        "size": 2613
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules35Tests.cpp",
+        "sha256": "08ad7123a19e87059cd721c1a0e5c4f7c6e0cce87247d23508ce111c511c2a3a",
+        "size": 2675
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/Rules36Tests.cpp",
+        "sha256": "f180746b8793a92c9b651c7f8e77a14d7aa5e7caa3235ec06ae4544754039287",
+        "size": 2376
+      },
+      {
+        "path": "ext:SimulationCpp/Tests/SaveTests.cpp",
+        "sha256": "d2333d511838c7bcd0123bd850f4a9fc43cad201f3c2d5d261624c7626f5b3cf",
+        "size": 10468
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-NIGHT-03-V1/WORKER_RESULT.md",
+        "sha256": "23fdac68bcaa0542175a4ece7f75fde8a8f4402c959b843846d21f51d6959740",
+        "size": 7015
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-NIGHT-03-V1/REVIEW.md",
+      "sha256": "f788cc09d12b3d52c37830413459fc7a1b197bfc827d19d07ea5a6c86a2da68c",
+      "size": 5036
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-NIGHT-03-V1/review.json",
+    "record_sha256": "b0bed1ed7cd50c404b944e50b87014d7ea246cab16d6253f0f3639503e2bb356",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "e8b2d48b9972e2e30fe1485e0796f39151594d21963f06a222ca37c70453e286",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED",
+  "night_return": {
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-03-V1/NIGHT_RETURN_RECEIPT.json",
+    "receipt_sha256": "edad81fe69eae1dc0697ba63807a9602d0659d181b3933f41bd62f7054d92044",
+    "receipt_id": "f3b8c2601949cce734b0fe2b79b8d9fcc1d374e27b1a627dbe43b1f8ebc84ffc",
+    "declaration": "VERIFIED"
+  }
+}

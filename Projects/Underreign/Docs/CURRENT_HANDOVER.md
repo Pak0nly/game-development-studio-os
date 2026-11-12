@@ -13,6 +13,16 @@
 - Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
   Crime99.
 
+## Closed: UR-NIGHT-03-V1 (night shift 3)
+
+UR-NIGHT-03-V1 (cloud night 2026-11-11/12 on night/2026-11-11, fast-forwarded into main at 4a061d2: rules 25 -> 36; rival Heart and rival keeper bot (easy/normal/hard, careful/furious) on three new maps Twin Hollows, Deep Split, Forked Commons; intruder waves become events that hit the richer realm; creature roles and rally-banner stance (attack/hold/fall back); second and third Nest raise the cap 8 -> 12 -> 16; balance proposals incl. traps at half strength against creatures; Cinder Hollow wave 3 unchanged (UD-53); 76 image prompts; 14 questions; 920 tests, MSVC build and 12 golden replays checked locally; night idle about 6.4 h after 01:08 UTC)
+Independent review verdict: PASS
+Worker task: cloud-task_9ed0c007-underreign-night-3
+Reviewer task: ac70ecebd0128fcde
+Candidate identity: e8b2d48b9972e2e30fe1485e0796f39151594d21963f06a222ca37c70453e286
+Closure receipt: 20e42893fba64679a3d81ef22e1050becda6a67a6541a3a13aefe5f17be51c86
+Night return receipt: f3b8c2601949cce734b0fe2b79b8d9fcc1d374e27b1a627dbe43b1f8ebc84ffc
+
 ## Closed: UR-CREATURE-CINDERLING-V1
 
 UR-CREATURE-CINDERLING-V1 (cinderling from the Human's concept and Meshy model: 22k triangles, 2K baked maps, ember and eye glow, 22-bone rig, idle = the Human's crouch pose, walk loop; egg-round head conflicts with the bible's "never round" (sculpt later); Human verdict pending; external commit 27669b8)
