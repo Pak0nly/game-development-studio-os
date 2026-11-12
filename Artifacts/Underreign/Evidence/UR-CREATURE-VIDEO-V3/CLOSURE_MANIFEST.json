@@ -1,0 +1,335 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-CREATURE-VIDEO-V3",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-VIDEO-V3/WORK_ORDER.md",
+    "sha256": "1fd4c90935519dc4bbb9801e579407a24a1682befb686d0e13535eb255559d3f",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-VIDEO-V3/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "054d9e97a5eae6234860db30f84ffbc2912a3cfebaebfea0b933823411eabfeb",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-CREATURE-VIDEO-V3/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "5706c190d75e0ca4fd2fa8c42d2605c94d7145a1277ef54263308029d1526c8f",
+    "receipt_id": "af8258fad2c86788be9bb6e453dbd10308bf5bb2217930322b715dc6f5e9f831",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-cc340d82-47d3-46c9-8b8c-d61ca88c10be",
+    "worker_task_id": "a0108ffc41969b6d8",
+    "reviewer_task_id": "af96485ba058c7c34"
+  },
+  "candidate": {
+    "identity": "56be9ccd3e3d3359f416b4336ae75b972c829e7fda90a73f9fc79cf8a4dc814e",
+    "files": [
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/WORKER_RESULT.md",
+        "sha256": "3d0949c4bacb8f11336df6e397c40ffc1cc5101420bfb9b8d7fce69919bb1d3d",
+        "size": 12082
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/anim_stats.json",
+        "sha256": "c51ac32fdb06c575fc453749b7b154fd5b34dafe3254243d741181cf7cda427c",
+        "size": 21178
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/endpoints.log",
+        "sha256": "226db1dec159b2267c9645ceae4c1eaddbfe788bf9d0fc3b2d5aab8cd2b0a03b",
+        "size": 2545
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/finder_exam.json",
+        "sha256": "83317409a3079fe0c5805d45bee5d9d01155006ed9b65aff75577be7d45e10ab",
+        "size": 1955
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/finder_train.log",
+        "sha256": "e663a2b038692f45858eff86515d398162cacaa05958aee9975941ef98f71c1b",
+        "size": 609
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/fit_walk3_summary.json",
+        "sha256": "081a5c47d620acb335dc5104f1317fdef86aaffa5b0446a0c8a660258b5bcfd2",
+        "size": 653
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/jobs.json",
+        "sha256": "1eadd69ddffd75b789a815a03e01c14d4f2a323c5192032fab3eec61a0d01145",
+        "size": 2492
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/check_labels.jpg",
+        "sha256": "aa5479a0c48f7c94eca6dd00435ebdf602b72cd5ceb12e0880ca9e241673020b",
+        "size": 113222
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/gait_bite3.txt",
+        "sha256": "b233c9ae8d1b6b81f0d455cc79dd446ef917f6df2d98f1d40bded7d2ecb4c41a",
+        "size": 861
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/gait_walk3.txt",
+        "sha256": "0c644b766b6ad345a8408ab491080c9bf2af8608b8cc307795f9d8c91e8e9b11",
+        "size": 921
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/lm_v3_walk_split.jpg",
+        "sha256": "ed28510ffe1ff81a2d0b28cd6f8e1773ed84ee7ad8bf8fc56bd1760192529798",
+        "size": 430466
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/post_bite3.txt",
+        "sha256": "7fbca6f5f21db7a3c6195e20825769d5e759d5960a63684a7539197898569558",
+        "size": 479
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/post_walk3.txt",
+        "sha256": "36f51c9c6e447cb288ac096f704ae4450cfc6b825ca9a3aa1cf2aeb3d8582a95",
+        "size": 541
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/sheet_bite_side.jpg",
+        "sha256": "e499d4c3d5f53b0a230d820caa0fa111671949ed4799c227c061bbe320f74c9e",
+        "size": 205457
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/sheet_walk_side.jpg",
+        "sha256": "c6afd5c46f9371b4c290df2a6bb55b511b10819c4697ebd2235de4cb91128d54",
+        "size": 141469
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/video_sheet.jpg",
+        "sha256": "da1a789473f3dde71fe00936a4c5d1d9a7875d910a4ad947b910a0cb97aa557c",
+        "size": 235165
+      },
+      {
+        "path": "ext:Evidence/UR-CREATURE-VIDEO-V3/lanes/video_sheet_zoom.jpg",
+        "sha256": "a7a505431f695fb1b0a0f700fe72cec8e0f8d49a25d9aaa47379bc4f6796e695",
+        "size": 463592
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Footfall/BrandHoundVideo3_Footfall_Walk.png",
+        "sha256": "b612a540f6d3bffbbdd65b86a81eb58b40c3469d3c6d2f63a5a8f7afe19d225c",
+        "size": 68874
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Bite_game.gif",
+        "sha256": "a79facefe57cf741bee9812944e60705a0677820c5cdc640947f0a24da64015e",
+        "size": 4709509
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Bite_game.mp4",
+        "sha256": "0c05aa7812366ceb729dc31b5eb313cd517bf3a3dc42238a0fd25998af75b737",
+        "size": 308636
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Bite_side.gif",
+        "sha256": "4bcf2ccb6ec26d25529a76efa692eabf67a4ab1313fa38fb78fd7ca1497a01ef",
+        "size": 4180779
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Bite_side.mp4",
+        "sha256": "dbd0a48ac7f6b32c280a7afcc0de2484146dee032d477b25d74170f6f8ac1d83",
+        "size": 432616
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Walk_front_lower_half.png",
+        "sha256": "435609a5a4eff1c619b3dc2f38ddce6ff7b2ef4fb560a2fa905b36e890e19117",
+        "size": 2069190
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Walk_game.gif",
+        "sha256": "ffd2f68ef1bea70768dee01879feb009f1c08e198029912efd4a3d157693e434",
+        "size": 4070937
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Walk_game.mp4",
+        "sha256": "eeda3f778217189aaa62d9ce78b49d993913f41fcf1d4f861efe21a449f218d9",
+        "size": 449492
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Walk_side.gif",
+        "sha256": "bb9c163f66d25d3d0b49fc54d8068731329febcaa3599adc86840e177e41907d",
+        "size": 3690717
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Previews/BrandHoundVideo3_Walk_side.mp4",
+        "sha256": "86fcde5c061280f2b7961b3d91286054178bc59199cc6e988c522d6373a3819c",
+        "size": 499477
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/apply_fit3.py",
+        "sha256": "c4dcac27b6f8a69d155e3a736dc9d88d8a670b77d4af59df21c7ccd96575c70f",
+        "size": 10829
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/bite3.py",
+        "sha256": "cdada6e6fbc562a24897f3a11217ac4dba04dd48b7f09d0462b81937bbbd26a6",
+        "size": 7646
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/check_labels.py",
+        "sha256": "8059232a43d954bda389221a07d839f76f70ffefe6dee4407e6592286b86392f",
+        "size": 741
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/comp3.py",
+        "sha256": "88b894eb04b1aa9f1ed8ceee2235f4e6afe63abbe4cd6c83a4a414d0b6174f6f",
+        "size": 1151
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/compose3.py",
+        "sha256": "4ec6fc1eb271886e64dea503d5d353ddda413f979c1a5dc393e90a6f4725adc3",
+        "size": 6986
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/dump_mesh.py",
+        "sha256": "1468fffe00170d4679b45ac82f00aa11559cbb17914a206646feff8111311fc7",
+        "size": 1642
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/finder3.py",
+        "sha256": "f228470200807660d3ae227c0f677e753f600e3965bc333b6b7283f9609514b5",
+        "size": 13373
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/fit3.py",
+        "sha256": "0c90a5ec05a50173e8725e1c72d1ea0cd2ade35bd60207ed0600071ab7f65295",
+        "size": 12876
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/gait3.py",
+        "sha256": "7e5f97533fb6a3dd5646ee4bacdfe41cb489c11d97839748235d18aae4fedb4c",
+        "size": 11714
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/houndfk3.py",
+        "sha256": "88ae07f017e515517082192a7e73cf9b7261be68f32b92459180e67d0a9cb5b4",
+        "size": 5401
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/post3.py",
+        "sha256": "0830bb8e7f29c52382a04de3691019b1519b9660a2312ce877d7245b187ae745",
+        "size": 8296
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/preview3.py",
+        "sha256": "254a6168be88bb21fbeaa45f183fbc7f072302a2c3d9d8efd57b7c57c1cd30c8",
+        "size": 6133
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/render_pv.sh",
+        "sha256": "34b966df36d704e03b823b041cffe16de84ff5c1dbb2293b65ecb9bb9248bdee",
+        "size": 420
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/render_set3.py",
+        "sha256": "4ebd0b7fd804cf33c58e0b3704a68d23ba8356cffd3ead84f156ecfb5def0275",
+        "size": 6418
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/render_train.sh",
+        "sha256": "ed44248a515ffbd7b3b4373b660328c366ba1eb51be8fd76cab8eb65b97425ab",
+        "size": 703
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/run_finder.sh",
+        "sha256": "0e6b269b0cd5c3acd6e91a8a92a0a1957e8bf0e02405b527a456dd64b73bafe4",
+        "size": 1118
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/scene3.py",
+        "sha256": "734cd03baf9c2de043d6a042c732d6d9943c02851c54e6386ecc399b72677424",
+        "size": 6050
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/seedance_client.py",
+        "sha256": "519af1dc4c2ca1012af2dbcd10abfc8cb98fd5ef28da48cb920de2282b16d422",
+        "size": 9055
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/segment3.py",
+        "sha256": "adc2cb5de005fbcf1c9cf81c906f41ebc72124c866de94fc976a5b62fb2f6a10",
+        "size": 2424
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Scripts/V3/start_split.py",
+        "sha256": "681c706c4953788404bfbeefac0985d40ebf929e8dc3e37ddfdd827dadfd2315",
+        "size": 1474
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/SideBySide/BrandHoundVideo3_Bite_vs_V2fit_side.mp4",
+        "sha256": "b38b6870d26ac0fa53a671101c1dbfed34ae98beb43b00c87b3fbb9e433bd574",
+        "size": 1128301
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/SideBySide/BrandHoundVideo3_Walk_vs_V2fit_front.mp4",
+        "sha256": "c06d50f4028e898f7e83c5f57ca94b75b9e44aec7c28d3af56bde73fe0bc81bf",
+        "size": 809164
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/SideBySide/BrandHoundVideo3_Walk_vs_V2fit_side.mp4",
+        "sha256": "3297081443aade1be2b3be17555c04bcc41a8fe22e0245097b0ae55cdaca1ab9",
+        "size": 1139342
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Source/BrandHoundVideo.blend",
+        "sha256": "fafc5aa50d83fe4c091dc88e6245fa2ec4f23788bcd5b66c380afdf287f2f2b8",
+        "size": 5023654
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Videos/Prompts/v3_walk_split.txt",
+        "sha256": "86616b460b0c547e327e71b6d0720b6ebede3286da00d3fd9bab8a10dc789c36",
+        "size": 1145
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Videos/StartImages/start_split_v3.png",
+        "sha256": "10bf96805f98133b9e449165abacb7a9b2feca2a517ab6c80a166e179788c328",
+        "size": 130666
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Videos/StartImages/start_split_v3_camera.json",
+        "sha256": "ebd24ae3bd6c71ff0564d0c3132ea64b50a43932012980dcbf257d77e76164a7",
+        "size": 511
+      },
+      {
+        "path": "ext:StyleSample/Creatures/BrandHoundVideo/Videos/v3_walk_split.mp4",
+        "sha256": "34c7f10e6b71cb7c5075bf30ace2629f6ef3644c24022ee42307919feb9a9301",
+        "size": 2263318
+      },
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-CREATURE-VIDEO-V3/WORKER_RESULT.md",
+        "sha256": "3d0949c4bacb8f11336df6e397c40ffc1cc5101420bfb9b8d7fce69919bb1d3d",
+        "size": 12082
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-CREATURE-VIDEO-V3/REVIEW.md",
+      "sha256": "2887f84398cf88a179b7aa05dd4ff8e46a9a12c31bad3e12f1baada9e6258926",
+      "size": 1743
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-CREATURE-VIDEO-V3/review.json",
+    "record_sha256": "595122a5a3c65addec78dbdc217eee19935bedc9c4147b591f6ff206ab790500",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "56be9ccd3e3d3359f416b4336ae75b972c829e7fda90a73f9fc79cf8a4dc814e",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

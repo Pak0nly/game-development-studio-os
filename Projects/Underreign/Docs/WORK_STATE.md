@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-CREATURE-VIDEO-V3
+
+UR-CREATURE-VIDEO-V3 (one 4 s two-camera Seedance walk video (side + front, 87,300 tokens); two-view keypoint fit plus silhouette check (IoU side 0.920, front 0.907); walk keeps the rig's anatomical stance width per the Human (front 36.9 / hind 38.7 cm vs video 43.9 / 58.8), body sway, collar change <= 3 deg/frame; bite re-transferred with a real lunge (head reach 24.9 cm, V2 8.2 cm); CPU only; Human verdict on the motion pending; external commit cedc3aa)
+Independent review verdict: PASS
+Worker task: a0108ffc41969b6d8
+Reviewer task: af96485ba058c7c34
+Candidate identity: 56be9ccd3e3d3359f416b4336ae75b972c829e7fda90a73f9fc79cf8a4dc814e
+Closure receipt: 8a203f825ac6f59366d239fb5f61dace953f5c2ff9c9d597827d6c0accff259c
+
 ## Closed: UR-NIGHT-03-V1 (night shift 3)
 
 UR-NIGHT-03-V1 (cloud night 2026-11-11/12 on night/2026-11-11, fast-forwarded into main at 4a061d2: rules 25 -> 36; rival Heart and rival keeper bot (easy/normal/hard, careful/furious) on three new maps Twin Hollows, Deep Split, Forked Commons; intruder waves become events that hit the richer realm; creature roles and rally-banner stance (attack/hold/fall back); second and third Nest raise the cap 8 -> 12 -> 16; balance proposals incl. traps at half strength against creatures; Cinder Hollow wave 3 unchanged (UD-53); 76 image prompts; 14 questions; 920 tests, MSVC build and 12 golden replays checked locally; night idle about 6.4 h after 01:08 UTC)
