@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-UNREAL-HOUND-V2",
+  "work_order_sha256": "bbbc13463db8fb73c873eb5b1b5a40d43aaa7025bd13b158ec02087ffa508a32",
+  "manifest_sha256": "07bcc96966c93d29ed8b51f73031f497ef7e1dc48a24c26582d20b764ae834e0",
+  "repository": {
+    "branch": "main",
+    "head": "534c13f3a9fb94f9d8e7ef2457f30d5d3b7c4775"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-UNREAL-HOUND-V2"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "6c64f142d39d33e4fb283396a7fb01a9a904990179fe91ab53415380ff5ddfd3",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "3e45b4e3ecb36d69b60b478866dff23ea2ae2c7e"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-UNREAL-HOUND-V2",
+      "Game/Art/Creatures/BrandHound",
+      "Game/Captures",
+      "Game/README.md",
+      "Game/SPIELANLEITUNG.md",
+      "Game/Scripts",
+      "Game/Underreign/Config",
+      "Game/Underreign/Content/Creatures",
+      "Game/Underreign/Source/Underreign"
+    ],
+    "protected_paths": [
+      "Design",
+      "Game/Underreign/Source/UnderreignSim",
+      "SimulationCpp",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-UNREAL-HOUND-V2",
+        "Game/Art/Creatures/BrandHound",
+        "Game/Captures",
+        "Game/README.md",
+        "Game/SPIELANLEITUNG.md",
+        "Game/Scripts",
+        "Game/Underreign/Config",
+        "Game/Underreign/Content/Creatures",
+        "Game/Underreign/Source/Underreign"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "0499e9d7aebe9ac21e781618dcdd8d13592220b5a99c49f0710915eec320fa74"
+  },
+  "execution_location": "local",
+  "receipt_id": "373713539bc49447743efb6248a1af59bf4e8986429ee0cc0a8fa65f65b0849c"
+}

@@ -4,7 +4,7 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `3e45b4e`, pushed.
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `83ba176`, pushed.
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -20,7 +20,7 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Next: the Human's choice on the hound's travel gait, bite length and size (see UR-UNREAL-HOUND-V1 below), then that order. Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+Next for the Human: verdict on the repaired run and short bites (UR-UNREAL-HOUND-V2); decision on a medieval melee animation pack (UR-ANIM-RETARGET-TEST-V1; Director offered to shortlist 2-3 packs with prices); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
 ## Hound animations: Human verdict on UR-CREATURE-VIDEO-V4 (2026-11-12, exact)
 
@@ -45,6 +45,24 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-UNREAL-HOUND-V2
+
+UR-UNREAL-HOUND-V2 (hound in the game: old V2 run repaired with the V4 contact rules (toe-ball roll, no slide 5.55 -> 0 cm, no one-frame jolts; contact jolts now ~2-2.5x the cycle median) and used for travel (play rate 0.83 at 1x), walk only when slow; first attack = full V4 bite, then 1.0 s short bites synced to the rules' 1 s hits, smooth loop; scale 0.55 unchanged; open: bites hidden by the intruder placeholder, short-bite reach 12.8 cm (can be raised), Human verdict on the motion pending; external commit 83ba176)
+Independent review verdict: PASS
+Worker task: a48108f934b76af01
+Reviewer task: reviewer-UR-UNREAL-HOUND-V2
+Candidate identity: 8474a7f7fba60e77ff23a072bed0387978c0f7c9d877992f0803bf3d8848d5fc
+Closure receipt: 4f2c64fe704e35dd3d53fab779d6cab9efefd5f331e75a80f1141f1299e90419
+
+## Closed: UR-ANIM-RETARGET-TEST-V1
+
+UR-ANIM-RETARGET-TEST-V1 (free humanoid animation test in StyleSample: the Human's Meshy Brute reduced 2.1 M -> 48k triangles, rigged with the UE5 mannequin bone names, Unreal IK Retargeter; template idle, walk, jog, 3 unarmed attacks, 2 deaths play without hand correction; repeatable scripts, only a landmark file per humanoid (about 1-2 h each); limits of the free set: deaths end crouched (ragdoll handover), unarmed attacks only; missing for our humanoids: one-hand weapon + shield, two-hand weapons, hit reactions/knockdown, full deaths, crossbow, casting/healing, armed idles; Fab library holds no animations; Epic mannequin content and captures local use only (DEC-025); pack purchase is the Human's decision; external commit 9be5d1a)
+Independent review verdict: PASS
+Worker task: a59d93e29fda11bd1
+Reviewer task: reviewer-UR-ANIM-RETARGET-TEST-V1
+Candidate identity: 6a905f0c918f8ca650f7d9cc123cf2657ecd8b7078435a169196c450b69009e2
+Closure receipt: 25d42da440fcdda0026c137a11cc335ad16b2fcff23355025f98ada560836215
 
 ## Closed: UR-UNREAL-HOUND-V1
 

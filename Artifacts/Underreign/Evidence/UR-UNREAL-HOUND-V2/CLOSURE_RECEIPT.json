@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-UNREAL-HOUND-V2",
+  "work_order_sha256": "bbbc13463db8fb73c873eb5b1b5a40d43aaa7025bd13b158ec02087ffa508a32",
+  "closure_manifest_sha256": "615c70653302139b3098117243d04b9d6c2ce546275953a7b739a27f8a1536c9",
+  "dispatch_receipt_id": "373713539bc49447743efb6248a1af59bf4e8986429ee0cc0a8fa65f65b0849c",
+  "director_task_id": "director-bceed6ba-13b6-4571-9e53-b31f678dc83e",
+  "worker_task_id": "a48108f934b76af01",
+  "reviewer_task_id": "reviewer-UR-UNREAL-HOUND-V2",
+  "candidate_identity": "8474a7f7fba60e77ff23a072bed0387978c0f7c9d877992f0803bf3d8848d5fc",
+  "evidence_state_sha256": "3762cd55568271d54db0e34476e8cad116f904a0274b5abbbebfc5848d70fd10",
+  "review_record_sha256": "fe12adcb2f27c2bbeb831eef026a3de0a54e296b0e98f8d76a0d2382b026d7c6",
+  "verdict": "PASS",
+  "receipt_id": "4f2c64fe704e35dd3d53fab779d6cab9efefd5f331e75a80f1141f1299e90419"
+}

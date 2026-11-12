@@ -17,6 +17,24 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-UNREAL-HOUND-V2
+
+UR-UNREAL-HOUND-V2 (hound in the game: old V2 run repaired with the V4 contact rules (toe-ball roll, no slide 5.55 -> 0 cm, no one-frame jolts; contact jolts now ~2-2.5x the cycle median) and used for travel (play rate 0.83 at 1x), walk only when slow; first attack = full V4 bite, then 1.0 s short bites synced to the rules' 1 s hits, smooth loop; scale 0.55 unchanged; open: bites hidden by the intruder placeholder, short-bite reach 12.8 cm (can be raised), Human verdict on the motion pending; external commit 83ba176)
+Independent review verdict: PASS
+Worker task: a48108f934b76af01
+Reviewer task: reviewer-UR-UNREAL-HOUND-V2
+Candidate identity: 8474a7f7fba60e77ff23a072bed0387978c0f7c9d877992f0803bf3d8848d5fc
+Closure receipt: 4f2c64fe704e35dd3d53fab779d6cab9efefd5f331e75a80f1141f1299e90419
+
+## Closed: UR-ANIM-RETARGET-TEST-V1
+
+UR-ANIM-RETARGET-TEST-V1 (free humanoid animation test in StyleSample: the Human's Meshy Brute reduced 2.1 M -> 48k triangles, rigged with the UE5 mannequin bone names, Unreal IK Retargeter; template idle, walk, jog, 3 unarmed attacks, 2 deaths play without hand correction; repeatable scripts, only a landmark file per humanoid (about 1-2 h each); limits of the free set: deaths end crouched (ragdoll handover), unarmed attacks only; missing for our humanoids: one-hand weapon + shield, two-hand weapons, hit reactions/knockdown, full deaths, crossbow, casting/healing, armed idles; Fab library holds no animations; Epic mannequin content and captures local use only (DEC-025); pack purchase is the Human's decision; external commit 9be5d1a)
+Independent review verdict: PASS
+Worker task: a59d93e29fda11bd1
+Reviewer task: reviewer-UR-ANIM-RETARGET-TEST-V1
+Candidate identity: 6a905f0c918f8ca650f7d9cc123cf2657ecd8b7078435a169196c450b69009e2
+Closure receipt: 25d42da440fcdda0026c137a11cc335ad16b2fcff23355025f98ada560836215
+
 ## Closed: UR-UNREAL-HOUND-V1
 
 UR-UNREAL-HOUND-V1 (Brand-hound in the Unreal game: real mesh, material and emissive; V4 walk (accepted), V4 bite (development), V2 idle; walk driven by distance moved (no paw slide), pauses with the game; bite once per fight facing the intruder; start scale 0.55 (1.18 m, about cinderling height; `-URHoundScale=` to try sizes); headless repeatable import (`Game/Scripts/setup_hound.*`; FBX need scale 100, the StyleSample import note's 1.0 is wrong); all other units greybox, rules unchanged; GPU 3.6 ms with 11 hounds at 30 fps. Open for the Human: walk plays ~6.5x too fast because the rules move the hound at 2.5 m/s (proposed: a run made by the two-camera Seedance method, the hand-built V2 run meanwhile); bite 3.47 s vs hits every 1 s (proposed: full lunge on the first attack, then short ~1 s bites); size; captures in `Game/Captures/hound/`; external commit 3e45b4e)
