@@ -96,6 +96,19 @@ the Unreal game to 2 m cells and to real models.
    basalt, gold vein (ore inserts in the face), bedrock edge; wall damage
    stages for breakable walls (intact, cracked, about to break) and a
    freshly dug face; rubble pile for a broken wall.
+   **Crumbling by material** (Human, 2026-11-12: "Können wir die Wände
+   physics based zusammenbröseln lassen abhängig von ihrem Material? Das wäre
+   nochmal ein grafischer push."): for each stratum, pre-fractured versions of
+   the wall pieces for Unreal's Chaos physics (Geometry Collection from
+   pre-cut pieces), with a different break character per material: soil
+   crumbles into soft clumps and dust, stone breaks into angular chunks,
+   basalt splits into columnar shards, gold vein drops ore pieces, bedrock
+   does not break. Keep piece counts low (game budget, many walls), add the
+   cut cap and inner break faces as their own material slot, and render a
+   short CPU physics preview per material in Blender (rigid-body collapse,
+   MP4/GIF). Write the Unreal setup (fracture levels, damage thresholds,
+   debris lifetime, performance limits, which hits trigger it) into
+   `ENVIRONMENT_KIT_2M.md`.
 4. **Floor kit:** unclaimed rough floor, claimed floor slabs (2 m cell, 2–4
    variants), dug-out rubble floor, edges where floor meets wall.
 5. **Proof scene:** read `SimulationCpp/Data/Maps/cinder_hollow.map.txt` and

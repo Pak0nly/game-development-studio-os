@@ -13,7 +13,7 @@
   },
   "work_order": {
     "path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-04-V1/WORK_ORDER.md",
-    "sha256": "faffd1703bfd643fe8ad809635594fd6dcb1065801d882e028e1fcea2670cb52",
+    "sha256": "e58d2e45df4f04c2005ca99b87b8ba11c4c7f5b98eea1f8b7ec2901fa7324b68",
     "declaration": "VERIFIED"
   },
   "repository": {
@@ -31,7 +31,7 @@
       "declaration": "VERIFIED"
     },
     "branch": "main",
-    "head": "c9ff1e574109d44493098dc7e34b929f2690bfd4",
+    "head": "ef27d1ec0c403d7b9af7b7b6f18250d84b24316e",
     "declaration": "VERIFIED"
   },
   "dirty_state": {
@@ -43,7 +43,7 @@
     "declaration": "VERIFIED"
   },
   "human_authority": {
-    "statement": "Human (2026-11-12, Underreign chat): 'Jetzt wäre Zeit für eine Nachtschicht wenn du etwas hast.' then on the shown night content 'ja, go'",
+    "statement": "Human (2026-11-12, Underreign chat): 'Jetzt wäre Zeit für eine Nachtschicht wenn du etwas hast.' then on the shown night content 'ja, go'; addition: 'Können wir die Wände physics based zusammenbröseln lassen abhängig von ihrem Material?'",
     "declaration": "HUMAN DECISION"
   },
   "required_live_task_tools": [
@@ -97,7 +97,7 @@
     "status_decisions": [
       {
         "id": "human-approval",
-        "statement": "Human (2026-11-12, Underreign chat): 'Jetzt wäre Zeit für eine Nachtschicht wenn du etwas hast.' then on the shown night content 'ja, go'",
+        "statement": "Human (2026-11-12, Underreign chat): 'Jetzt wäre Zeit für eine Nachtschicht wenn du etwas hast.' then on the shown night content 'ja, go'; addition: 'Können wir die Wände physics based zusammenbröseln lassen abhängig von ihrem Material?'",
         "declaration": "HUMAN DECISION"
       }
     ]
