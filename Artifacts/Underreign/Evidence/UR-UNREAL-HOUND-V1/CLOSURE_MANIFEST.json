@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-UNREAL-HOUND-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-HOUND-V1/WORK_ORDER.md",
+    "sha256": "9eddf87aaf0c4d435e0399dfcfcf895c06996575928120968beab730972eeb2a",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-HOUND-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "b71187fc13f556ed9c9471c72f82ee7e9cdcb8cf7598691b338bfde03378bc62",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-HOUND-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "77ebc0c23cffbf8274bd79ba01f87a9266613ea267aa69003935ab002f21d3ef",
+    "receipt_id": "b506770504efa65149caffdab86232695f288044d950f1ec16f7d9ec1f699f28",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-bceed6ba-13b6-4571-9e53-b31f678dc83e",
+    "worker_task_id": "a83a485c18d385c7d",
+    "reviewer_task_id": "reviewer-UR-UNREAL-HOUND-V1"
+  },
+  "candidate": {
+    "identity": "b534647af379b87d1c5570a0498ee180e376fb9054db78ae759bf3893ffdcdbf",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-UNREAL-HOUND-V1/WORKER_RESULT.md",
+        "sha256": "9eee1a5b5af90851b861fbd99378a893aaabed7a58e62106a8766d2a1d161ef2",
+        "size": 12184
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-HOUND-V1/bite_760_900.png",
+        "sha256": "54808300877c1042d7380ef7dc7db3ec8d1b2624a0fea1b21419ae0b39df4009",
+        "size": 3048854
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-HOUND-V1/close_60_71.png",
+        "sha256": "d85bd302de1775674a1b3725ebfa562f63fae210eaef2c579832ec187f94b798",
+        "size": 2060708
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-HOUND-V1/WORKER_RESULT.md",
+        "sha256": "825aaa2ce48f1ebae16992ab04eed426797f92d5ec3f3cb0db55f863c89fc2b6",
+        "size": 12021
+      },
+      {
+        "path": "ext:Game/Art/Creatures/BrandHound/A_BrandHound_Bite_V4.fbx",
+        "sha256": "0670180b2aa24d649ae1cf595a2c83b4c09ee7190d6f656885e2c118a6bced1c",
+        "size": 557916
+      },
+      {
+        "path": "ext:Game/Art/Creatures/BrandHound/A_BrandHound_Walk_V4.fbx",
+        "sha256": "99da68ca0882b8f7132550e218cb3ad2dd20e03c5c5ea6121edad0b5ebca2ea3",
+        "size": 365116
+      },
+      {
+        "path": "ext:Game/Art/Creatures/BrandHound/export_v4_anims.json",
+        "sha256": "87a8ca9bde3eb775c94ddcafb3c590125ca8f65749527f936911133f4f1af000",
+        "size": 1173
+      },
+      {
+        "path": "ext:Game/Art/Creatures/BrandHound/export_v4_anims.py",
+        "sha256": "0b090c3bddd6aafabde5ab7a20ff57c6ae6aaabf3062ec419d75b0c042add341",
+        "size": 4731
+      },
+      {
+        "path": "ext:Game/Captures/hound/UR_Hound_Game_1x.mp4",
+        "sha256": "62fbd480191931b50e6669ac7b19ab679254f03551f9fc2336221791e1a994a0",
+        "size": 5883251
+      },
+      {
+        "path": "ext:Game/Captures/hound/UR_Hound_Game_1x_Bite.gif",
+        "sha256": "d79b57a1c63ea88a943b1654b63ef0afffa512ebe6d94628db75ef0744e3e722",
+        "size": 14941061
+      },
+      {
+        "path": "ext:Game/Captures/hound/UR_Hound_Game_4x.mp4",
+        "sha256": "5737688d87a104a35fd28706906f6531de18b134d0983e681f3a3d2447fae9cb",
+        "size": 1097835
+      },
+      {
+        "path": "ext:Game/Captures/hound/UR_Hound_Scale_GameZoom.png",
+        "sha256": "3bcda0b668bbae0935079dad18304890df8c257a6014a315f7f79a17180a5337",
+        "size": 848044
+      },
+      {
+        "path": "ext:Game/Captures/hound/UR_Hound_Scale_Lineup.png",
+        "sha256": "9b1ed232275fdf8f8d7dfc1078c3a929abef487b16ffe5e43e7c3f720959ee4e",
+        "size": 861999
+      },
+      {
+        "path": "ext:Game/Captures/hound/UR_Hound_Walk_Closeup_1x.gif",
+        "sha256": "ecb5bfd3e344655264b8b5449d48b993e3158831b55f74396723ab65b11216ee",
+        "size": 10382091
+      },
+      {
+        "path": "ext:Game/Captures/hound/UR_Hound_Walk_Closeup_1x.mp4",
+        "sha256": "0338dc7656832cb90b88916d9e370b19d02f1bf098967a4292b3bcfc67a864d3",
+        "size": 2295676
+      },
+      {
+        "path": "ext:Game/README.md",
+        "sha256": "8f70ee2a68372219b2972b65dc9b5a6c02766c9d444c746e1e786318ae4f386b",
+        "size": 49088
+      },
+      {
+        "path": "ext:Game/Scripts/capture.sh",
+        "sha256": "ed6b54f38fa0fdd060681974b02e50e9285bdbd0bbbe2e0d16be4382f793159b",
+        "size": 4676
+      },
+      {
+        "path": "ext:Game/Scripts/setup_hound.py",
+        "sha256": "7d25c8f37befc7ce683362862e204e2670b4d34e8554eae503eba57638d9c391",
+        "size": 11852
+      },
+      {
+        "path": "ext:Game/Scripts/setup_hound.sh",
+        "sha256": "f7d649533f3e58331710d03bb7e16c43329a1fc58a23c95d36b5b6286b9f3cec",
+        "size": 670
+      },
+      {
+        "path": "ext:Game/SPIELANLEITUNG.md",
+        "sha256": "79223dedcefab5aebaf41635f36d34127c5300a60826fdcb2926e29e813752f0",
+        "size": 15737
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/A_BrandHound_Bite.uasset",
+        "sha256": "93aa4002346fbc455324c43db8730f056e220126069934b7cd77e78868b6f95b",
+        "size": 407772
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/A_BrandHound_Idle.uasset",
+        "sha256": "e5f4a707373c2b5aa842b2acf31489eeeed9850e84429bb3372f2794d4e985fd",
+        "size": 416626
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/A_BrandHound_Walk.uasset",
+        "sha256": "0d7aa9d4c02fa1c99f9f509844a3ad6c423c3d778423c1712953133299ab34ff",
+        "size": 163929
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/M_BrandHound.uasset",
+        "sha256": "60f20ab46a8017a0e92dd8656d611484c363b8220c5a4a216c38f38f46fb715d",
+        "size": 11537
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/SK_BrandHound.uasset",
+        "sha256": "510bfb79662052b95cc5ca94a19fcc253b19167ec9e4902816402e6c6ee96823",
+        "size": 7841152
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/SK_BrandHound_Skeleton.uasset",
+        "sha256": "055822069ecf4c90244b18e18a971af929e0bafe282f6956265ae9485c1a5340",
+        "size": 9752
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/Textures/T_BrandHound_BaseColor.uasset",
+        "sha256": "cb47779f765eacf00b8b381ef6366ac75587b9336f2b7a2723311cd511ecaa85",
+        "size": 22822789
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/Textures/T_BrandHound_Emissive.uasset",
+        "sha256": "5ebd3701dac428d51e08f549b6e23649795f2b09f6d9d64fa6481e218ebd7b28",
+        "size": 395976
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/Textures/T_BrandHound_Normal.uasset",
+        "sha256": "1bb66fa9467db3a57a436fe3b12bf96022dc54d691c1dbdf25791e66382897c7",
+        "size": 19429398
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Creatures/BrandHound/Textures/T_BrandHound_ORM.uasset",
+        "sha256": "fdef3d4133265eb21cddf6c7970b8c43b3946cff7b005cebbe5f902b4deb5880",
+        "size": 17833877
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URCaptureDirector.cpp",
+        "sha256": "03d7a99dc2df8b0b12ca1e935f3f787fd4cc8015c2eae88fa7c5c14d1636f102",
+        "size": 108544
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URHoundAnim.cpp",
+        "sha256": "61514b61400951bbe8f22a9a612a7d575674b768ce88b42f7ebb0b6c516f4da4",
+        "size": 1604
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URLayerCameraPawn.cpp",
+        "sha256": "4914b3ee0d2693e8387c0fc322b9d0306268535d5742b3c89543183fdd4ba960",
+        "size": 10945
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayView.cpp",
+        "sha256": "c700ac8cf39e50c35f5dace601fe410772a951d67465087628091b54e4255127",
+        "size": 59250
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URCaptureDirector.h",
+        "sha256": "98905eca5daa34a704d09e8da030299a16424bc66cb49f85cc133a835a41bd58",
+        "size": 10228
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URHoundAnim.h",
+        "sha256": "9d9189a77e6be408c6e6b3b577a59b3274e9efcec87c3411e4efa58025a6fcde",
+        "size": 1838
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URLayerCameraPawn.h",
+        "sha256": "2637965630cfb692cb6e0cce7c0e4bf04a68818fa51fccf2e77013beefcede92",
+        "size": 3806
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayView.h",
+        "sha256": "c632117c5997480f9af177272c9dc4d08c5c7ebc5287a952ee9c3c0ae58403ce",
+        "size": 12320
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-UNREAL-HOUND-V1/REVIEW.md",
+      "sha256": "9e18cb3e5998cdb978b7df2b3c5307c918977d000811d57f77558a13e9d755a2",
+      "size": 2038
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-UNREAL-HOUND-V1/review.json",
+    "record_sha256": "340f6ac916f0f30ff4e75939e4ff62598aee0e0f15026eb47f62c937c7c002e2",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "b534647af379b87d1c5570a0498ee180e376fb9054db78ae759bf3893ffdcdbf",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

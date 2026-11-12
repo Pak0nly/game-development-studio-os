@@ -4,7 +4,7 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `a8a91d9`, pushed.
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `3e45b4e`, pushed.
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -20,7 +20,7 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Running: UR-UNREAL-HOUND-V1 (hound with the accepted walk, development bite and idle into the Unreal game; Worker started 2026-11-12).
+Next: the Human's choice on the hound's travel gait, bite length and size (see UR-UNREAL-HOUND-V1 below), then that order. Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
 ## Hound animations: Human verdict on UR-CREATURE-VIDEO-V4 (2026-11-12, exact)
 
@@ -45,6 +45,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-UNREAL-HOUND-V1
+
+UR-UNREAL-HOUND-V1 (Brand-hound in the Unreal game: real mesh, material and emissive; V4 walk (accepted), V4 bite (development), V2 idle; walk driven by distance moved (no paw slide), pauses with the game; bite once per fight facing the intruder; start scale 0.55 (1.18 m, about cinderling height; `-URHoundScale=` to try sizes); headless repeatable import (`Game/Scripts/setup_hound.*`; FBX need scale 100, the StyleSample import note's 1.0 is wrong); all other units greybox, rules unchanged; GPU 3.6 ms with 11 hounds at 30 fps. Open for the Human: walk plays ~6.5x too fast because the rules move the hound at 2.5 m/s (proposed: a run made by the two-camera Seedance method, the hand-built V2 run meanwhile); bite 3.47 s vs hits every 1 s (proposed: full lunge on the first attack, then short ~1 s bites); size; captures in `Game/Captures/hound/`; external commit 3e45b4e)
+Independent review verdict: PASS
+Worker task: a83a485c18d385c7d
+Reviewer task: reviewer-UR-UNREAL-HOUND-V1
+Candidate identity: b534647af379b87d1c5570a0498ee180e376fb9054db78ae759bf3893ffdcdbf
+Closure receipt: bf1919ade105cf5f4b9f8d25296acb99922a5834cd4d23a54343d986e47bff18
 
 ## Closed: UR-MESHY-PREP-V1
 

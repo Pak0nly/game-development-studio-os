@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-UNREAL-HOUND-V1
+
+UR-UNREAL-HOUND-V1 (Brand-hound in the Unreal game: real mesh, material and emissive; V4 walk (accepted), V4 bite (development), V2 idle; walk driven by distance moved (no paw slide), pauses with the game; bite once per fight facing the intruder; start scale 0.55 (1.18 m, about cinderling height; `-URHoundScale=` to try sizes); headless repeatable import (`Game/Scripts/setup_hound.*`; FBX need scale 100, the StyleSample import note's 1.0 is wrong); all other units greybox, rules unchanged; GPU 3.6 ms with 11 hounds at 30 fps. Open for the Human: walk plays ~6.5x too fast because the rules move the hound at 2.5 m/s (proposed: a run made by the two-camera Seedance method, the hand-built V2 run meanwhile); bite 3.47 s vs hits every 1 s (proposed: full lunge on the first attack, then short ~1 s bites); size; captures in `Game/Captures/hound/`; external commit 3e45b4e)
+Independent review verdict: PASS
+Worker task: a83a485c18d385c7d
+Reviewer task: reviewer-UR-UNREAL-HOUND-V1
+Candidate identity: b534647af379b87d1c5570a0498ee180e376fb9054db78ae759bf3893ffdcdbf
+Closure receipt: bf1919ade105cf5f4b9f8d25296acb99922a5834cd4d23a54343d986e47bff18
+
 ## Closed: UR-MESHY-PREP-V1
 
 UR-MESHY-PREP-V1 (ChatGPT instruction file for Meshy-ready images: `C:/GameDev/Underreign_Assets/Prompts/MESHY_PREP_BATCH.jsonl` (70 image-edit jobs: remove effects and shadows, held weapons/tools/shields as separate items, Forge and Drill hall split into single objects, optional back views) and `MESHY_PREP_README.md` (German overview); Healer, Scout, Ferret and Brute bodies already modelled by the Human in Meshy (Brute keeps the shield on its back); priority 1 = Oath-warden body + shield, Brute hammer, Turret, Iron door; fur painted on smooth bodies, thin threads/veils later as Blender cards; output folder `Concepts/Meshy_Prep`; outside both Git repositories)
