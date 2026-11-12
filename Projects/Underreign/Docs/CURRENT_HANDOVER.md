@@ -20,7 +20,13 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-## Done by UR-CREATURE-VIDEO-V4 (Human verdict on V4 pending): hound animation correction requested after V3
+## Hound animations: Human verdict on UR-CREATURE-VIDEO-V4 (2026-11-12, exact)
+
+"Gehen ist jetzt gut. Würde ich so im finalen Spiel sehen. Angriff kann auch für die Entwicklung ins Spiel rein, später nochmal angepasst werden um es energischer, gefährlicher zu gestalten. Jetzt wirkt es etwas "lustlos. Vom Ablauf her aber flüßig und nachvollziehbar."
+
+So: V4 walk accepted (final quality); V4 bite accepted for development, to be made more energetic and dangerous later. Method of record for quadrupeds: two-camera Seedance video, two-view fit with silhouette check, rig rules, paw roll over the toe ball at contacts. Not yet in the Unreal game (needs its own order).
+
+### Earlier request (V3 verdict, done by V4)
 
 Human, exact: "Gehen: Nicht viel Unterschied zur Vergleichsanimation von vorher. Beide haben
 ein Zucken an Oberarm(sobald der jeweilige Fuß den Boden verlässt) und Oberschenkel.(Sobald
