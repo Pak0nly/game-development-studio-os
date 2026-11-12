@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-MESHY-PREP-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-MESHY-PREP-V1/WORK_ORDER.md",
+    "sha256": "9dd481a03f70ecf7f938ee63c2157e86c9271d4f12ea604931d97a7d1ff607fc",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-MESHY-PREP-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "0a29997ebfc0570e3042cc44b8931c99c2aa234e0f4fdb535f458890eb5fbfdb",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-MESHY-PREP-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "133c12b6b5840adfafe8f8a77b1726855221fea882a7ae2af1e1ff1e308d91ea",
+    "receipt_id": "a48185f5d85f0aafc6938e47ef4b2ed80ef73a2c59e13d5e68cbb58448113acc",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-bceed6ba-13b6-4571-9e53-b31f678dc83e",
+    "worker_task_id": "a10e18d483c2723b6",
+    "reviewer_task_id": "reviewer-UR-MESHY-PREP-V1"
+  },
+  "candidate": {
+    "identity": "79ae962a086e65f0709f1daac664ecbc75acaf30d549a3cf70694f5a84f15b1b",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-MESHY-PREP-V1/WORKER_RESULT.md",
+        "sha256": "2d134cca4f583462e1f5e7cbaa6ba53cb5dc5de2c5311f79989ae5aa27b014c5",
+        "size": 7155
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-MESHY-PREP-V1/REVIEW.md",
+      "sha256": "6a9fdf4622837385fcb5ce322383d5d9fa9ba4c2fd8c85309f51753785003f18",
+      "size": 1923
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-MESHY-PREP-V1/review.json",
+    "record_sha256": "f0f5d953e9e12bc95aa7c4ed54fb986ba9a2f39149f1d8679412e8ff1940278a",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "79ae962a086e65f0709f1daac664ecbc75acaf30d549a3cf70694f5a84f15b1b",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

@@ -4,7 +4,7 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `cedc3aa`, pushed.
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `a8a91d9`, pushed.
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -12,13 +12,15 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   (localStorage key `underreign-n3-v1`).
 - Image prompts: 22 phone packages https://claude.ai/artifact/2tSKc7sfaBcX8JZ22FhXVe;
   batch for Codex `C:/GameDev/Underreign_Assets/Prompts/IMAGE_BATCH_NIGHT3.jsonl` + README
-  (49 todo, 8.1 rival heart on hold until question 12). Human's concept images so far:
+  (the 49 images are made: named copies in `Concepts/Batch_Night3`, names checked against the content; the JSONL still says todo; 8.1 rival heart on hold until question 12). Human's concept images so far:
   `C:/GameDev/Underreign_Assets/Concepts/Aschenbund_Runde1` (19), `Myzelchor_Runde1` (8).
   Meshy advice given: separate shield/hammer/hook, flame as VFX, moth wings as planes;
-  proposed first Meshy test = Oath-warden without shield + shield alone (not yet answered).
+  Meshy prep file done (UR-MESHY-PREP-V1, below). Human's Meshy models so far: Healer, Scout, Ferret (too much strand fur: advised smooth body with painted fur), Brute (shield on the back, no hammer); Spore-matron in progress (veil of threads: advised Blender cards later).
 - Dispatches go through `Tools/UnderreignDispatchGate`. Do not touch Hearthlands, other
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
+
+Running: UR-UNREAL-HOUND-V1 (hound with the accepted walk, development bite and idle into the Unreal game; Worker started 2026-11-12).
 
 ## Hound animations: Human verdict on UR-CREATURE-VIDEO-V4 (2026-11-12, exact)
 
@@ -43,6 +45,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-MESHY-PREP-V1
+
+UR-MESHY-PREP-V1 (ChatGPT instruction file for Meshy-ready images: `C:/GameDev/Underreign_Assets/Prompts/MESHY_PREP_BATCH.jsonl` (70 image-edit jobs: remove effects and shadows, held weapons/tools/shields as separate items, Forge and Drill hall split into single objects, optional back views) and `MESHY_PREP_README.md` (German overview); Healer, Scout, Ferret and Brute bodies already modelled by the Human in Meshy (Brute keeps the shield on its back); priority 1 = Oath-warden body + shield, Brute hammer, Turret, Iron door; fur painted on smooth bodies, thin threads/veils later as Blender cards; output folder `Concepts/Meshy_Prep`; outside both Git repositories)
+Independent review verdict: PASS
+Worker task: a10e18d483c2723b6
+Reviewer task: reviewer-UR-MESHY-PREP-V1
+Candidate identity: 79ae962a086e65f0709f1daac664ecbc75acaf30d549a3cf70694f5a84f15b1b
+Closure receipt: f27ac4f113f95ec62749913685df21c46b35d2e399e3e62f2814096c9a3d4979
 
 ## Closed: UR-CREATURE-VIDEO-V4
 

@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-MESHY-PREP-V1
+
+UR-MESHY-PREP-V1 (ChatGPT instruction file for Meshy-ready images: `C:/GameDev/Underreign_Assets/Prompts/MESHY_PREP_BATCH.jsonl` (70 image-edit jobs: remove effects and shadows, held weapons/tools/shields as separate items, Forge and Drill hall split into single objects, optional back views) and `MESHY_PREP_README.md` (German overview); Healer, Scout, Ferret and Brute bodies already modelled by the Human in Meshy (Brute keeps the shield on its back); priority 1 = Oath-warden body + shield, Brute hammer, Turret, Iron door; fur painted on smooth bodies, thin threads/veils later as Blender cards; output folder `Concepts/Meshy_Prep`; outside both Git repositories)
+Independent review verdict: PASS
+Worker task: a10e18d483c2723b6
+Reviewer task: reviewer-UR-MESHY-PREP-V1
+Candidate identity: 79ae962a086e65f0709f1daac664ecbc75acaf30d549a3cf70694f5a84f15b1b
+Closure receipt: f27ac4f113f95ec62749913685df21c46b35d2e399e3e62f2814096c9a3d4979
+
 ## Closed: UR-CREATURE-VIDEO-V4
 
 UR-CREATURE-VIDEO-V4 (hound correction after the Human's V3 verdict: walk twitch cause found (paw snapped flat/bent in one frame at lift-off and touch-down), fixed by rolling over the toe ball over 2-3 frames (upper arm jolt 18-20 -> 5-6, thigh 18 -> 1-4 deg/frame change); full V1 bite without the shake, all paws step, chest drop 29.5 -> 19 cm, reach 27.9 cm; no new video; Human verdict pending; external commit a8a91d9)
