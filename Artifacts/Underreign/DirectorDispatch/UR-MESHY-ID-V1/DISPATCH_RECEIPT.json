@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-MESHY-ID-V1",
+  "work_order_sha256": "9008c601c03d2acf2c357dcfdbf13cd49c678a8a25aa2835741216396ae4bf34",
+  "manifest_sha256": "6a4e31e6b7f049f1068fa606f9f8e0e240d033e6e2c1388a5e8133a0d5ba6f23",
+  "repository": {
+    "branch": "main",
+    "head": "580056c56bb36504c73ad828551a93a1f577fa1b"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-MESHY-ID-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "6c64f142d39d33e4fb283396a7fb01a9a904990179fe91ab53415380ff5ddfd3",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "receipt_id": "23e110acc55f723a0eb9cf1dfa1065436ba15aa5e6ef5d48f991bc8d2b6463af"
+}

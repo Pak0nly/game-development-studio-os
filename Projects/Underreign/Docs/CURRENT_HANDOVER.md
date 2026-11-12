@@ -54,6 +54,15 @@ only the shake cut out (lunge, land, step back), hind paws allowed to move with 
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
 
+## Closed: UR-MESHY-ID-V1
+
+UR-MESHY-ID-V1 (all 38 Meshy zips in `C:/GameDev/Underreign_Assets/Meshy/` rendered on the CPU and mapped to their prep jobs: 35 sure, 3 likely (Healer staff, Ember-witch body, cinderling), 0 unclear; list and contact sheets in `Meshy/_Overview/MESHY_ZUORDNUNG.md`; 25 prep parts still without a model; heavy models: Spore-matron and ferret basket 7.8 M triangles, ferret 3.8 M, moth 3.4 M, Brute 2.1 M; Meshy normalises every model to about 1.9 m; zips unchanged)
+Independent review verdict: PASS
+Worker task: aef20a99481ed1227
+Reviewer task: reviewer-UR-MESHY-ID-V1
+Candidate identity: 935016a6eb20733385ca35228649be23e68cd9b4e366a3fe9d63355b820044b6
+Closure receipt: 3d1294ca3263dfcb033892effde271bd74fc83bde6cb920a120870aa4523509f
+
 ## Closed: UR-UNREAL-HOUND-V2
 
 UR-UNREAL-HOUND-V2 (hound in the game: old V2 run repaired with the V4 contact rules (toe-ball roll, no slide 5.55 -> 0 cm, no one-frame jolts; contact jolts now ~2-2.5x the cycle median) and used for travel (play rate 0.83 at 1x), walk only when slow; first attack = full V4 bite, then 1.0 s short bites synced to the rules' 1 s hits, smooth loop; scale 0.55 unchanged; open: bites hidden by the intruder placeholder, short-bite reach 12.8 cm (can be raised), Human verdict 2026-11-12: run acceptable in the game, quality behind the walk; short bites good; external commit 83ba176)
