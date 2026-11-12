@@ -1,17 +1,42 @@
 # Underreign Current Handover
 
-- Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md`
-  (UD-01 to UD-33), `Docs/OPEN_DECISIONS.md` and DEC-041.
-- Night shift 1 results live in `C:/GameDev/Underreign` (`main` = `f94ca38`,
-  fast-forwarded and pushed to `Pak0nly/underreign`): `Design/Planning`, `Design/Bible`,
-  `Design/Art`, `Simulation`, `Evidence/UR-NIGHT-01-V1`. The Studio repository
-  holds only the gate artifacts and review for the night.
-- Catalogue round 5 (German): https://claude.ai/artifact/TfyGXsaWnvENLpK3cY5dxq
-  ("ja" = recommendation as written; localStorage key `underreign-nacht1-v5`).
-  Source questions: `Design/Planning/QUESTIONS_FOR_HUMAN.md`.
-- Dispatches go through `Tools/UnderreignDispatchGate`.
-- Do not touch Hearthlands files, other `C:/GameDev/*` folders, MobileArc or
-  Crime99.
+State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no codes.
+
+- Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
+  `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `cedc3aa`, pushed.
+  Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
+  Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
+  (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
+- Question page night 3 (14 questions, unanswered): https://claude.ai/artifact/TfyGXsaWnvENLpK3cY5dxq
+  (localStorage key `underreign-n3-v1`).
+- Image prompts: 22 phone packages https://claude.ai/artifact/2tSKc7sfaBcX8JZ22FhXVe;
+  batch for Codex `C:/GameDev/Underreign_Assets/Prompts/IMAGE_BATCH_NIGHT3.jsonl` + README
+  (49 todo, 8.1 rival heart on hold until question 12). Human's concept images so far:
+  `C:/GameDev/Underreign_Assets/Concepts/Aschenbund_Runde1` (19), `Myzelchor_Runde1` (8).
+  Meshy advice given: separate shield/hammer/hook, flame as VFX, moth wings as planes;
+  proposed first Meshy test = Oath-warden without shield + shield alone (not yet answered).
+- Dispatches go through `Tools/UnderreignDispatchGate`. Do not touch Hearthlands, other
+  `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
+  only at partial load (AMD card).
+
+## Next action: hound animation correction (Human verdict on UR-CREATURE-VIDEO-V3, 2026-11-12)
+
+Human, exact: "Gehen: Nicht viel Unterschied zur Vergleichsanimation von vorher. Beide haben
+ein Zucken an Oberarm(sobald der jeweilige Fuß den Boden verlässt) und Oberschenkel.(Sobald
+der jeweilige Fuß den Boden berührt und Initialen Druck aufbaut.) Dies müsste
+nachbearbeitet/behoben werden. Das neue läuft dabei leicht ruhiger und allgemein passend von
+Form und Muskelspiel. Beißen: Besser als vorher. Hier geht er allerdings aktuell vorne etwas
+zu tief runter und die Hinterpfosten kleben wieder am Boden fest. Was mich interessieren
+würde ist, die gesamte Animation wie im Video, nur das das Schütteln selbst rausgeschnitten
+wird. Also beißend nach vorne schnellen, absetzen und zurück setzen."
+
+Proposed order (no new Seedance video): walk V3 = base, remove the upper-arm twitch at
+lift-off and the thigh twitch at touch-down (likely the forced-lift / foot-lock blend
+switching; smooth IK-FK and contact transitions); bite = full V1 bite video motion with
+only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
+less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
+holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
 
 ## Closed: UR-CREATURE-VIDEO-V3
 
