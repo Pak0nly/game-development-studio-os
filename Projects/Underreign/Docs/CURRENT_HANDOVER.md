@@ -20,7 +20,15 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Next for the Human: verdict on the repaired run and short bites (UR-UNREAL-HOUND-V2); decision on a medieval melee animation pack (UR-ANIM-RETARGET-TEST-V1; Director offered to shortlist 2-3 packs with prices); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+Next for the Human: decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+
+## Human verdict on UR-UNREAL-HOUND-V2 and UR-ANIM-RETARGET-TEST-V1 (2026-11-12, exact)
+
+"Zum Brute: Ich bin erstaunt, dass es so ohne weiteres schon passabel aussieht. Da kann man auf jeden Fall drauf aufbauen. Gerne 1-2 passende Animationspakete raussuchen.
+Hund: Laufen: Ich sehe keinen Unterschied zwischen den beiden Versionen im Video. Im Spiel ist er jetzt akzeptabel schnell und es sieht nicht all zu fehl am Platze aus. Lediglich bleiten es qualitativ etwas zurück.
+Beißen: Finde ich gut. Es könnte später noch ein paar besser sichtbare Zähne bekommen oder glühenden Atem."
+
+So: retargeting free mannequin animations onto Meshy humanoids is a base to build on. Hound run in the game acceptable for now, quality behind the walk (the repair made no visible difference to the Human); a better run is later work. Short bites accepted; later ideas (not ordered): more visible teeth, glowing breath.
 
 ## Hound animations: Human verdict on UR-CREATURE-VIDEO-V4 (2026-11-12, exact)
 
@@ -48,7 +56,7 @@ holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the H
 
 ## Closed: UR-UNREAL-HOUND-V2
 
-UR-UNREAL-HOUND-V2 (hound in the game: old V2 run repaired with the V4 contact rules (toe-ball roll, no slide 5.55 -> 0 cm, no one-frame jolts; contact jolts now ~2-2.5x the cycle median) and used for travel (play rate 0.83 at 1x), walk only when slow; first attack = full V4 bite, then 1.0 s short bites synced to the rules' 1 s hits, smooth loop; scale 0.55 unchanged; open: bites hidden by the intruder placeholder, short-bite reach 12.8 cm (can be raised), Human verdict on the motion pending; external commit 83ba176)
+UR-UNREAL-HOUND-V2 (hound in the game: old V2 run repaired with the V4 contact rules (toe-ball roll, no slide 5.55 -> 0 cm, no one-frame jolts; contact jolts now ~2-2.5x the cycle median) and used for travel (play rate 0.83 at 1x), walk only when slow; first attack = full V4 bite, then 1.0 s short bites synced to the rules' 1 s hits, smooth loop; scale 0.55 unchanged; open: bites hidden by the intruder placeholder, short-bite reach 12.8 cm (can be raised), Human verdict 2026-11-12: run acceptable in the game, quality behind the walk; short bites good; external commit 83ba176)
 Independent review verdict: PASS
 Worker task: a48108f934b76af01
 Reviewer task: reviewer-UR-UNREAL-HOUND-V2

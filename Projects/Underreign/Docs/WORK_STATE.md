@@ -19,7 +19,7 @@ heat rises, greybox.
 
 ## Closed: UR-UNREAL-HOUND-V2
 
-UR-UNREAL-HOUND-V2 (hound in the game: old V2 run repaired with the V4 contact rules (toe-ball roll, no slide 5.55 -> 0 cm, no one-frame jolts; contact jolts now ~2-2.5x the cycle median) and used for travel (play rate 0.83 at 1x), walk only when slow; first attack = full V4 bite, then 1.0 s short bites synced to the rules' 1 s hits, smooth loop; scale 0.55 unchanged; open: bites hidden by the intruder placeholder, short-bite reach 12.8 cm (can be raised), Human verdict on the motion pending; external commit 83ba176)
+UR-UNREAL-HOUND-V2 (hound in the game: old V2 run repaired with the V4 contact rules (toe-ball roll, no slide 5.55 -> 0 cm, no one-frame jolts; contact jolts now ~2-2.5x the cycle median) and used for travel (play rate 0.83 at 1x), walk only when slow; first attack = full V4 bite, then 1.0 s short bites synced to the rules' 1 s hits, smooth loop; scale 0.55 unchanged; open: bites hidden by the intruder placeholder, short-bite reach 12.8 cm (can be raised), Human verdict 2026-11-12: run acceptable in the game, quality behind the walk; short bites good; external commit 83ba176)
 Independent review verdict: PASS
 Worker task: a48108f934b76af01
 Reviewer task: reviewer-UR-UNREAL-HOUND-V2
