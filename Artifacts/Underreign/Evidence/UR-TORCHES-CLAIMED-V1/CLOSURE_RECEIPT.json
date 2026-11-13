@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-TORCHES-CLAIMED-V1",
+  "work_order_sha256": "9e2f92e27cd281e1426939a84e1c53daafd62e6696ee8c61f872b895198ec326",
+  "closure_manifest_sha256": "18c487cfb761ea4b0b2ee20fad72c934618f9a70d7bf6e3aa55a65d6c6ee1a93",
+  "dispatch_receipt_id": "cb983d3a0ef7fba3eea28697ca9f1ebae032c112b82b96e5b04f90492797e241",
+  "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+  "worker_task_id": "ae139045ab9f0b025",
+  "reviewer_task_id": "reviewer-UR-TORCHES-CLAIMED-V1",
+  "candidate_identity": "282ac4d69710d7ac7496a011f6727c18bf2ea9fe4279394110df9ab428ab9c15",
+  "evidence_state_sha256": "62addc4e8343598211d8f92494a5d87b2275bf6e0d79cdcce6e129bb9609b2b7",
+  "review_record_sha256": "69c609c829d2b7e1534fb34469ba00606a3c6f9eb22df219ec8444005340e869",
+  "verdict": "PASS",
+  "receipt_id": "7ad9e2aa1663677f08f7e50159e86abb352c07f7b9b897cdd5e88c4e00785dde"
+}

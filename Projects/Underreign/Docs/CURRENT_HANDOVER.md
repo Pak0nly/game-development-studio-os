@@ -4,12 +4,11 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `b5e1886`, pushed.
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `f651188` (local; `b5e1886` pushed).
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
-- Question page night 3 (14 questions, unanswered): https://claude.ai/artifact/TfyGXsaWnvENLpK3cY5dxq
-  (localStorage key `underreign-n3-v1`).
+- All open questions in one page (2026-11-13, 37 questions: chat leftovers, night 4 Q4-7, night 3 all 14, night 2 parts B (without B2, superseded) and C, later basics): https://claude.ai/artifact/FDobgLMRoyBN3MUhpM4y92 (localStorage key `underreign-alle-v1`); it supersedes the night-3 and night-4 pages for answering. Stale entries in OPEN_DECISIONS: OD-15 and OD-17 are done in practice (Blender in use, C++ simulation in Unreal); OD-14 is in the page.
 - Image prompts: 22 phone packages https://claude.ai/artifact/2tSKc7sfaBcX8JZ22FhXVe;
   batch for Codex `C:/GameDev/Underreign_Assets/Prompts/IMAGE_BATCH_NIGHT3.jsonl` + README
   (the 49 images are made: named copies in `Concepts/Batch_Night3`, names checked against the content; the JSONL still says todo; 8.1 rival heart on hold until question 12). Human's concept images so far:
@@ -20,7 +19,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Next action (one): show the Human the two proposed orders, natural ground texture test and torches on claimed ground (spacing X, rules job or presentation only), and ask for a go; the continuous walls (UR-KIT-WALL-CONTINUOUS-V1, closed below) are in the game, captures `C:/GameDev/Underreign/Game/Captures/wallcontinuous/`; ask whether to discard the stray re-save of `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset`. Also open for the Human: play the wall sample (both starters; Q/E or Alt+middle drag turn, V low walls) and look at `C:/GameDev/Underreign/Game/Captures/wallsample/` locally, then judge camera, walls, see-through and the 2 m pier rhythm; answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+Running (Human 2026-11-13: "Beide starten"): UR-GROUND-TEXTURE-TEST-V1 (Blender only, natural textures per stratum, 3 variants each, contrast natural vs claimed) and UR-TORCHES-CLAIMED-V1 (closed below, external commit f651188, not pushed). Next action (one): when both Workers report, check their images by eye, run one independent Reviewer each, then show the Human the sheets and captures; the continuous walls (UR-KIT-WALL-CONTINUOUS-V1, closed below) are in the game, captures `C:/GameDev/Underreign/Game/Captures/wallcontinuous/`; ask whether to discard the stray re-save of `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset`. Also open for the Human: play the wall sample (both starters; Q/E or Alt+middle drag turn, V low walls) and look at `C:/GameDev/Underreign/Game/Captures/wallsample/` locally, then judge camera, walls, see-through and the 2 m pier rhythm; answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
 ## Natural ground textures vs the faction look (2026-11-13, Human, exact)
 
@@ -112,6 +111,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-TORCHES-CLAIMED-V1
+
+UR-TORCHES-CLAIMED-V1 (wall torches along claimed ground, presentation only: placement in URGreyboxMap reads the claimed flag, writes nothing back; every wall face next to a claimed open cell, natural or dug caves alike, spacing 3 cells (`-URTorchSpacing=N`, 1-8), opposite wall offset by half a spacing, cover pass for short walls and dead ends, none by stairs, shafts, doors, entrance, Heart, Call-stone; own Blender torch (866 triangles, iron arm into the rock, flame 2.2 m), camera-facing flame card with flicker; 16 nearest torches lit, 4 shadowed (`TorchShadowBudget`); 75 torches at spacing 3; GPU about +0.3 to +1.5 ms (measured while Blender ran; 2 shadowed lights nearly free, decision open, re-measure on a quiet GPU); rules and golden hashes unchanged, 8/8 tests; images checked by eye by Worker, Reviewer and Director; open: Heart room never captured close, bright coal disk close up, one-off rock-plane glitch in a run without torches; captures `Game/Captures/torches/`; external commit f651188)
+Independent review verdict: PASS
+Worker task: ae139045ab9f0b025
+Reviewer task: reviewer-UR-TORCHES-CLAIMED-V1
+Candidate identity: 282ac4d69710d7ac7496a011f6727c18bf2ea9fe4279394110df9ab428ab9c15
+Closure receipt: 7ad9e2aa1663677f08f7e50159e86abb352c07f7b9b897cdd5e88c4e00785dde
 
 ## Closed: UR-KIT-WALL-CONTINUOUS-V1
 

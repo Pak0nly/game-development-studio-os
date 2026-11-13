@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-TORCHES-CLAIMED-V1
+
+UR-TORCHES-CLAIMED-V1 (wall torches along claimed ground, presentation only: placement in URGreyboxMap reads the claimed flag, writes nothing back; every wall face next to a claimed open cell, natural or dug caves alike, spacing 3 cells (`-URTorchSpacing=N`, 1-8), opposite wall offset by half a spacing, cover pass for short walls and dead ends, none by stairs, shafts, doors, entrance, Heart, Call-stone; own Blender torch (866 triangles, iron arm into the rock, flame 2.2 m), camera-facing flame card with flicker; 16 nearest torches lit, 4 shadowed (`TorchShadowBudget`); 75 torches at spacing 3; GPU about +0.3 to +1.5 ms (measured while Blender ran; 2 shadowed lights nearly free, decision open, re-measure on a quiet GPU); rules and golden hashes unchanged, 8/8 tests; images checked by eye by Worker, Reviewer and Director; open: Heart room never captured close, bright coal disk close up, one-off rock-plane glitch in a run without torches; captures `Game/Captures/torches/`; external commit f651188)
+Independent review verdict: PASS
+Worker task: ae139045ab9f0b025
+Reviewer task: reviewer-UR-TORCHES-CLAIMED-V1
+Candidate identity: 282ac4d69710d7ac7496a011f6727c18bf2ea9fe4279394110df9ab428ab9c15
+Closure receipt: 7ad9e2aa1663677f08f7e50159e86abb352c07f7b9b897cdd5e88c4e00785dde
+
 ## Closed: UR-KIT-WALL-CONTINUOUS-V1
 
 UR-KIT-WALL-CONTINUOUS-V1 (rock walls as one continuous natural surface: faces end on a shared rough seam column at the relief's mean depth, about 0.2 m behind the cell edge, so the 0.44 m seam piers of INSET-V1 are gone; face ends at outer corners 0.42 m shorter (new kinds WallFaceL/R/LR), WallOuter a rounded rock corner, new WallDiag for diagonal rock cells, wide inner-corner fillet, neighbouring faces never repeat a variant; max into open cell 0.030-0.050 m, mean 1-cell corridor 2.32-2.42 m, narrowest 1.90 m, seam gaps <= 0.00004 mm; kit re-imported (600 meshes, UR_KIT PASS), placement in URGreyboxMap.cpp, two new close stills in the capture director; rules and golden hashes unchanged, 8/8 tests; Blender and game images checked by eye by Worker, Reviewer and Director; open: slight waviness of Basalt columns near seams, a calmer vertical line in smooth Soil at arm's length, game scene still dark with full walls, scree strips not placed in the game, setup_kit re-saves `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset` (left uncommitted and modified in the working tree; discard needs the Human's yes); evidence `Evidence/UR-KIT-WALL-CONTINUOUS-V1/`, captures `Game/Captures/wallcontinuous/`; external commit b5e1886)

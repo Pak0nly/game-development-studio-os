@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-TORCHES-CLAIMED-V1",
+  "work_order_sha256": "9e2f92e27cd281e1426939a84e1c53daafd62e6696ee8c61f872b895198ec326",
+  "manifest_sha256": "72a830ce8acb9c5937fc032a5b31c8ca0f954e63d3a5dbd3ef9f8a4a374a61be",
+  "repository": {
+    "branch": "main",
+    "head": "ad54fb05bf0699d3be424a4315315886badb8462"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-TORCHES-CLAIMED-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "6c64f142d39d33e4fb283396a7fb01a9a904990179fe91ab53415380ff5ddfd3",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "b5e1886b528638e53d77b160107ebdd2f23f9882"
+    },
+    "allowed_mutations": [
+      "ArtSource/Torch",
+      "Evidence/UR-TORCHES-CLAIMED-V1",
+      "Game/Captures",
+      "Game/README.md",
+      "Game/Scripts",
+      "Game/Underreign/Content/Environment/Torch",
+      "Game/Underreign/Source/Underreign"
+    ],
+    "protected_paths": [
+      "ArtSource/EnvironmentKit",
+      "ArtSource/GroundTextureTest",
+      "Design",
+      "Game/Underreign/Source/UnderreignSim",
+      "SimulationCpp",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "ArtSource/Torch",
+        "Evidence/UR-TORCHES-CLAIMED-V1",
+        "Game/Captures",
+        "Game/README.md",
+        "Game/Scripts",
+        "Game/Underreign/Content/Environment/Torch",
+        "Game/Underreign/Source/Underreign"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "98390bd8b8b691150cb0f4f125a44377cbea272427baa5484a00fdcdc1ae86dc"
+  },
+  "execution_location": "local",
+  "receipt_id": "cb983d3a0ef7fba3eea28697ca9f1ebae032c112b82b96e5b04f90492797e241"
+}

@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-TORCHES-CLAIMED-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-TORCHES-CLAIMED-V1/WORK_ORDER.md",
+    "sha256": "9e2f92e27cd281e1426939a84e1c53daafd62e6696ee8c61f872b895198ec326",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-TORCHES-CLAIMED-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "72a830ce8acb9c5937fc032a5b31c8ca0f954e63d3a5dbd3ef9f8a4a374a61be",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-TORCHES-CLAIMED-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "55663ea946ce261c527894ba77b088ce5a186c9d1eb8831dee14b3881ea63fca",
+    "receipt_id": "cb983d3a0ef7fba3eea28697ca9f1ebae032c112b82b96e5b04f90492797e241",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "ae139045ab9f0b025",
+    "reviewer_task_id": "reviewer-UR-TORCHES-CLAIMED-V1"
+  },
+  "candidate": {
+    "identity": "282ac4d69710d7ac7496a011f6727c18bf2ea9fe4279394110df9ab428ab9c15",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-TORCHES-CLAIMED-V1/WORKER_RESULT.md",
+        "sha256": "2e4592de44bd0137551c304227142d4c5d7301b01754c39511c620db2d8bc768",
+        "size": 10176
+      },
+      {
+        "path": "ext:ArtSource/Torch/blend/torch.blend",
+        "sha256": "e1a69f879bba2a74ea7c918fcfc3d73e3f57b9b7064975a45ff7676dae5c5c4e",
+        "size": 109180
+      },
+      {
+        "path": "ext:ArtSource/Torch/fbx/SM_UR_Torch.fbx",
+        "sha256": "86dc26e50fa4499fdf1cb4d63ab1525d0d8246b66d83133eb64dfdc2b335ba9c",
+        "size": 39292
+      },
+      {
+        "path": "ext:ArtSource/Torch/fbx/SM_UR_TorchFlameCard.fbx",
+        "sha256": "b1a9a750b6cd13c64f43164fcc8e6c46ccc1d4ed4635359c23d9f278f80086ef",
+        "size": 15244
+      },
+      {
+        "path": "ext:ArtSource/Torch/scripts/build_torch.py",
+        "sha256": "f85d812ab7f62ab06b6c081ea40d4d3823f8167a2936aa4a8fd1b987c45439f7",
+        "size": 9798
+      },
+      {
+        "path": "ext:Evidence/UR-TORCHES-CLAIMED-V1/images/blender_torch_workbench_oblique.png",
+        "sha256": "9384dad78484d079cf24f686aa835eae134146c7f05a9ffe402b0ed42121a352",
+        "size": 605293
+      },
+      {
+        "path": "ext:Evidence/UR-TORCHES-CLAIMED-V1/images/blender_torch_workbench_side.png",
+        "sha256": "598242c0a12fb5ec07dbb506bb9abd01de9566cd309da3968f0b6d482969c33c",
+        "size": 389469
+      },
+      {
+        "path": "ext:Evidence/UR-TORCHES-CLAIMED-V1/images/boundary_L1_t2400_off_s2_s3_s4.png",
+        "sha256": "b63ad804ec4b1d8bcee07721b28b5408dec70d17b3f6094391356bfbd48924c9",
+        "size": 2427036
+      },
+      {
+        "path": "ext:Evidence/UR-TORCHES-CLAIMED-V1/images/game_flame_frames_0_7.png",
+        "sha256": "cb14e32908042f4f06b8f6533115c135fc8ecf66604313808bd8dfbf736f109c",
+        "size": 226034
+      },
+      {
+        "path": "ext:Evidence/UR-TORCHES-CLAIMED-V1/images/game_torch_closeup_corridor.png",
+        "sha256": "549edcfc3a53f781d6726776f66fe688aa1745af8b6e10d11d465cc65ecfa2b0",
+        "size": 281360
+      },
+      {
+        "path": "ext:Evidence/UR-TORCHES-CLAIMED-V1/images/game_torch_closeup_lowwalls.png",
+        "sha256": "35abd641f853fb7fc865d40560566d76c33edddb0232b53a99d1a4863b98c678",
+        "size": 112914
+      },
+      {
+        "path": "ext:Evidence/UR-TORCHES-CLAIMED-V1/WORKER_RESULT.md",
+        "sha256": "bb97632c7f9a3dbc9858273eb02512798075d462eac9d46dfcf52eda33875c85",
+        "size": 9906
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_boundary_s2.png",
+        "sha256": "a46b8cc5ebdfe50a1fb3898790af34373a83b89e98e55658fab0494c342c8106",
+        "size": 2454099
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_boundary_s3.png",
+        "sha256": "afc1e1095c9c91f2c86cde3f60388ac634dd1bd77d327b868dc3adaab25d5c6d",
+        "size": 2435806
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_boundary_s4.png",
+        "sha256": "4f5e6bc944e452cd56df730859d88b567ac85fd266a0962a67134a903c4051d1",
+        "size": 2408505
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_close_corridor.png",
+        "sha256": "d10330107254c165d21e24b36ae73967583c20aec1bbc82ba8641fc674cd1ac2",
+        "size": 2723542
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_close_long_wall_full.png",
+        "sha256": "3bc3e1e448d3dfc8e864c208eb54eac2482fca45043605dd9eb3f351c57f3d36",
+        "size": 2383281
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_close_long_wall_low.png",
+        "sha256": "001f8364ed74cf006af09f09b55778937079eb7e8e272bdb5b960f883e8b36e0",
+        "size": 2340836
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_close_outer_corner_full.png",
+        "sha256": "53817c7de153dc504e00ebadf39eab9dacbada31050a791cb1acec79d515eda7",
+        "size": 2171125
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_close_outer_corner_low.png",
+        "sha256": "22e7b6b13758a407c365254c0e0621a72f6f4694bedd29c3d9277c9312abd373",
+        "size": 2233894
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_l2_full.png",
+        "sha256": "929f0288fdd1630ee9701ea85bec0784aa07d08074bd7392cdd43bc166ff6843",
+        "size": 2629899
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_l2_full_after.png",
+        "sha256": "c6646109f21d83a90e0f77eb6fca9b38706bf529b75f986cefc40ca5d224590c",
+        "size": 2639553
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_l2_low.png",
+        "sha256": "f964f1d77d23282922e75daad84d6617a2182413902e2cec8e325c130d11c93a",
+        "size": 2442373
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/kit_l2_overview.png",
+        "sha256": "6174dabd265dedacffe257b609d95355f5df70d072ecc85ae4a129afeec4758c",
+        "size": 1260750
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/UR_Torches_Turn360_6s_after.gif",
+        "sha256": "63a33cac202ddabb75cdb3281876e193e29d02f7bf0f9d21095ba14ae62c4054",
+        "size": 25362565
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/UR_Torches_Turn360_6s_after.mp4",
+        "sha256": "80a6023ee575ee7c144b18c0f219857dd16bd7951fd6c59f59374215f1a5b188",
+        "size": 13033383
+      },
+      {
+        "path": "ext:Game/Captures/torches/after/UR_Torches_Turn360_frames_0_30_60_90_120_150_after.jpg",
+        "sha256": "7be86c9914f6dfe38e222cd6e882f99a2c58201b34f0a3dd3824a3ff0d92ebe2",
+        "size": 349833
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_boundary_off.png",
+        "sha256": "60a08e5f47ae10a1a313016dc88937e16f27784a46c15a9d05e83ef187c181db",
+        "size": 2321409
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_close_corridor.png",
+        "sha256": "e961ea96133630c61114a3f72d89d3a38f39cd5d3677939a11568d838dafccd0",
+        "size": 2160789
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_close_long_wall_full.png",
+        "sha256": "81c1270c9d8759e6c3af9824c6a0a53dc9e4d1c4b1d64cb2f1ad79f82b9fae3c",
+        "size": 2171061
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_close_long_wall_low.png",
+        "sha256": "3041c2b59741eaeccf2ebf60f5ac671acfdf28d991f146b94164b4f0b02621fa",
+        "size": 2184405
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_close_outer_corner_full.png",
+        "sha256": "a60127157c117042527e9a2bdcd141ebe407aa3e41853b171877e9b0c262b0bc",
+        "size": 1871607
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_close_outer_corner_low.png",
+        "sha256": "1ce6dc70bebe2f591816734f2d15b130e30bd1ceabf98d043911006ca5ebc6b7",
+        "size": 2107471
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_l2_full.png",
+        "sha256": "9ffb4994e13e75a07a4abbe967f779164498794ee44cb0d2b70433213dee17f8",
+        "size": 2415893
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_l2_full_after.png",
+        "sha256": "eb6a55bfd2b53d50a468102700275fb272c5f7b9026e53dc9062c7dbd67bd50d",
+        "size": 2435092
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_l2_low.png",
+        "sha256": "7b2db7067fb3d305b5d021aa7cd267c5c39aafdf26ad87e1e34a4876fc58c9c9",
+        "size": 2337838
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/kit_l2_overview.png",
+        "sha256": "f64e9a8e9c119258664a63b97a70d325c9f14733f1d2c792dce672d6a3ef8074",
+        "size": 1251703
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/UR_Torches_Turn360_6s_before.gif",
+        "sha256": "8cacfffe228034b7c790ca734533bd6306c6810fdc237d960e9419d1573984f3",
+        "size": 24467498
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/UR_Torches_Turn360_6s_before.mp4",
+        "sha256": "e7bff75422e4e568d6b56f1cc86e69219bc3d09b0e9f0aa3525e933bc1ce7628",
+        "size": 11838271
+      },
+      {
+        "path": "ext:Game/Captures/torches/before/UR_Torches_Turn360_frames_0_30_60_90_120_150_before.jpg",
+        "sha256": "49f03cc6b8c43b238bcd353493d21282d4bba78cf462e58593d37870f2e5fdc3",
+        "size": 332296
+      },
+      {
+        "path": "ext:Game/Captures/torches/early_t2400/kit_boundary_s2.png",
+        "sha256": "c1d504fa4aaba451d9c4e3133dce9ab4586be8cf8e8f5ca91c70f204ba30c0ae",
+        "size": 2645848
+      },
+      {
+        "path": "ext:Game/Captures/torches/early_t2400/kit_boundary_s3.png",
+        "sha256": "c2462f339f67ee467938ba7ec39e1153abeccff2245356116c80d26dce176417",
+        "size": 2592364
+      },
+      {
+        "path": "ext:Game/Captures/torches/early_t2400/kit_boundary_s4.png",
+        "sha256": "76265b9c5b791f1b1ca5c41de7d27a3ab91280db6e210ba41aeb9ac83e870586",
+        "size": 2552207
+      },
+      {
+        "path": "ext:Game/Captures/torches/early_t2400_off/kit_boundary_off.png",
+        "sha256": "1afc45992a9670e62c236a89ab4cb3fa8642ae1b9bd8cea95f1de1318582f8cb",
+        "size": 2506392
+      },
+      {
+        "path": "ext:Game/README.md",
+        "sha256": "776fdabb503527534fbff42acc567a746455e40eebb3f135f94febf118c5add6",
+        "size": 65351
+      },
+      {
+        "path": "ext:Game/Scripts/setup_torch.py",
+        "sha256": "96a787da914a9d30090cd8256008c7954051a31ae8652ccad02d16681f527376",
+        "size": 13690
+      },
+      {
+        "path": "ext:Game/Scripts/setup_torch.sh",
+        "sha256": "b50a3ae967632719988016df610f9ee2ba26f1b4ab9bcfe1708b33fa15f83613",
+        "size": 681
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Torch/M_UR_TorchFlame.uasset",
+        "sha256": "5bdc8479544f4ae8bde1badf6beb16ee2074515911e5ec6a1531b4e79dab88ac",
+        "size": 17415
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Torch/M_UR_TorchSurface.uasset",
+        "sha256": "e29cfdb81c21bc80afe649fb79b7f1758a19fc330487a31b2c0a443b7123d1e1",
+        "size": 10185
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Torch/MI_UR_TorchCoal.uasset",
+        "sha256": "6cf966588dff7f68740630ba528bd0ea8c47471f5f73f1779bfbbf9546eef364",
+        "size": 4794
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Torch/MI_UR_TorchIron.uasset",
+        "sha256": "7115dfc0a7efbbf7099d1452bbea1b3ff2d682f1b6e94169457aaf7e9582d1de",
+        "size": 4467
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Torch/MI_UR_TorchWood.uasset",
+        "sha256": "7da4ddc53a38ed045dcacdfd80c1695e0d7ce96d565f53bb960702f8e7e78aeb",
+        "size": 4467
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Torch/SM_UR_Torch.uasset",
+        "sha256": "cd0e83a2334c5020b74efb3c526174450276a48826599d9ada50c64080cf27c2",
+        "size": 41693
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Torch/SM_UR_TorchFlameCard.uasset",
+        "sha256": "a79380ad9405659aeb01693ddd334521c33a723d39446969b0ae8258ff182863",
+        "size": 11510
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URCaptureDirector.cpp",
+        "sha256": "6f98764bff8783d82bfec28bf4cdb51dc31959fd8d56731ec8ac674382db16be",
+        "size": 127893
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URGreyboxMap.cpp",
+        "sha256": "83c31e8c1939e5d19cc35b03ba3964e66abcddcef870a6f581594161e3bbca51",
+        "size": 59652
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URCaptureDirector.h",
+        "sha256": "16f1496a09760d153da31536bba7a055fafe5d996bfd75a5efdf8858611ca04a",
+        "size": 11988
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URGreyboxMap.h",
+        "sha256": "2b855b2ee3261dcc04cf840184810f2b7d64fa9c0647893b62269f809feccbab",
+        "size": 18781
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-TORCHES-CLAIMED-V1/REVIEW.md",
+      "sha256": "ad32dd9011a616488e51777cc73c37b83c3a992daf988b4a26e1309fd2793f03",
+      "size": 3770
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-TORCHES-CLAIMED-V1/review.json",
+    "record_sha256": "69c609c829d2b7e1534fb34469ba00606a3c6f9eb22df219ec8444005340e869",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "282ac4d69710d7ac7496a011f6727c18bf2ea9fe4279394110df9ab428ab9c15",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
