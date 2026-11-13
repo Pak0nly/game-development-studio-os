@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-CAMERA-STUDY-V1-GPU-CONTINUATION01",
+  "work_order_sha256": "a0ad86eb53c93b86775fc9ecda8bbea187b9dacef3e00713a695d97de65c14d8",
+  "manifest_sha256": "94f588204fa1cd0f97378db2ef69e2b57efbf1c81c9453e85e6049249b5bab62",
+  "repository": {
+    "branch": "main",
+    "head": "c3386e3c1ad47ebd5170964d55d6835a9c825bb8"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-CAMERA-STUDY-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "6c64f142d39d33e4fb283396a7fb01a9a904990179fe91ab53415380ff5ddfd3",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "60425821ae05d65ae51cd634da8c7de7afd7b3e2"
+    },
+    "allowed_mutations": [
+      "ArtSource/EnvironmentKit/previews/camera_study",
+      "ArtSource/EnvironmentKit/scripts/camera_study",
+      "Evidence/UR-CAMERA-STUDY-V1"
+    ],
+    "protected_paths": [
+      "Design",
+      "Game",
+      "SimulationCpp",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "ArtSource/EnvironmentKit/previews/camera_study",
+        "ArtSource/EnvironmentKit/scripts/camera_study",
+        "Evidence/UR-CAMERA-STUDY-V1"
+      ],
+      "sha256": "f9b90c5d70ff3cffbfed4b99339a4b78ec0ad270f9091457150011191150108b"
+    },
+    "state_sha256": "919f3bf3a2aa080c0d1ca04f98450662c7b05301b6da2d0328fff08610b6096a"
+  },
+  "execution_location": "local",
+  "receipt_id": "dbd5bb1cd9cd885c3a13f8b764d88607e89aa8e75e85556c1b0af68af2ef1d04"
+}

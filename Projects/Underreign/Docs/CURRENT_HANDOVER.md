@@ -22,6 +22,13 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
 
 Next for the Human: answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
+## Walls and camera (2026-11-13, Human, exact)
+
+"1,5m hohe Wände sehen doof aus. Gerade wenn man später an 1st Person Ansicht denkt und über alles drüber schauen könnte."
+"Volle Drehung wie in DK2. Ja"
+
+So: walls stay full height (4 m); no low cut walls. The overview camera turns freely (full 360°, not only the present 90° steps on Q/E). Under study (UR-CAMERA-STUDY-V1 + EXT01): hiding only camera-facing walls where they cover something, outlines for hidden units, a steeper adjustable pitch.
+
 ## Human answers to the night-4 questions (2026-11-13, exact)
 
 "1 Wie tief sollen die Wände abgeschnitten werden?: Anders | Notiz: Kamera Steuerung in DK2 researchen.  Quergang zeigt keinen Unterschied bei 3 oder 1,5m. Dies liegt an falscher Kamerastellung.
