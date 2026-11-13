@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-GREYBOX-RESAVE-FIX-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-GREYBOX-RESAVE-FIX-V1/WORK_ORDER.md",
+    "sha256": "1b20c0566721b1e3adc109b20d6ff4d2cf03a77b0c0e3f198dc81fd0b4252eb6",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-GREYBOX-RESAVE-FIX-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "0275ae3f8f1b4588399a51f1722f02ed5426faa9c1d67fed2fdfc9d976d6ca61",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-GREYBOX-RESAVE-FIX-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "e1bfadf11f1ae9c2a858a90ecd9c543ea6d8d792d0f7e9e924ada88192e0476b",
+    "receipt_id": "ca2325049c2ceb42a25fb8215bdade8490a0baec100ef3b6c7c304afdc0b7a38",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "aa58600dd74e7cee0",
+    "reviewer_task_id": "reviewer-UR-GREYBOX-RESAVE-FIX-V1"
+  },
+  "candidate": {
+    "identity": "9873de13acc07454f5035064f3f480237e8e26bd67c915de410438913cfd045d",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-GREYBOX-RESAVE-FIX-V1/WORKER_RESULT.md",
+        "sha256": "e8a651038ffa3d7636d61d0a7f0dfaeb175a5a82615239cde53d7c8c7f9be971",
+        "size": 1996
+      },
+      {
+        "path": "ext:Evidence/UR-GREYBOX-RESAVE-FIX-V1/WORKER_RESULT.md",
+        "sha256": "e8a651038ffa3d7636d61d0a7f0dfaeb175a5a82615239cde53d7c8c7f9be971",
+        "size": 1996
+      },
+      {
+        "path": "ext:Game/Scripts/setup_kit.py",
+        "sha256": "3c67c22289e22d905a25cd10b0cb1fce8982e4fb84ef7246f99273b8e4485524",
+        "size": 27545
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-GREYBOX-RESAVE-FIX-V1/REVIEW.md",
+      "sha256": "cb07225c518b933d038ee17c9b7edc9a5491d79983efd9c650b599c3e2449320",
+      "size": 1723
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-GREYBOX-RESAVE-FIX-V1/review.json",
+    "record_sha256": "1f3a356a02daea466068954a1e7f054e61399bb28b99b038f5c4c5fa6d060d32",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "9873de13acc07454f5035064f3f480237e8e26bd67c915de410438913cfd045d",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

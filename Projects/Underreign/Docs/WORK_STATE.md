@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-GREYBOX-RESAVE-FIX-V1
+
+UR-GREYBOX-RESAVE-FIX-V1 (Human answer 1 of 2026-11-13: the stray change on `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset` was re-save noise only: committed and working files both carry used_with_nanite and used_with_instanced_static_meshes, differing only in GUID and save data; `setup_kit.py` step 6 now sets, recompiles and saves only when a flag is missing; change discarded, proof run of setup_kit (materials only) leaves the file clean, its 618 rebuilt kit files restored; build and Sim tests pass; info: two short read-only Unreal runs at normal priority; external commit ec66525)
+Independent review verdict: PASS
+Worker task: aa58600dd74e7cee0
+Reviewer task: reviewer-UR-GREYBOX-RESAVE-FIX-V1
+Candidate identity: 9873de13acc07454f5035064f3f480237e8e26bd67c915de410438913cfd045d
+Closure receipt: 43ff0aa7750b80e22dcbb5b14534cca7590abb27f5dce6a323a65c37179d487c
+
 ## Closed: UR-MELEE-PACKS-RESEARCH-V1
 
 UR-MELEE-PACKS-RESEARCH-V1 (research only, Human answer 2 of 2026-11-13: shortlist of Fab melee animation packs for the UE5 mannequin; sword and shield: recommended Sword And Shield Animation V3 by GameDevHero, about 18 EUR, 355 animations, no reviews yet (V1 fallback); two-handed: Two Handed Sword Animations V2 by GameDevHero, about 14 EUR, weak reviews, best-reviewed alternative Essential Great Sword Animation Pack by space.bar.anim, about 36 EUR, UE5.3+; licence text and fit for non-human creatures not confirmed; prices excl. tax may change; Human decides and buys; result `Artifacts/Underreign/Evidence/UR-MELEE-PACKS-RESEARCH-V1/WORKER_RESULT.md`; external commit 60176bf)

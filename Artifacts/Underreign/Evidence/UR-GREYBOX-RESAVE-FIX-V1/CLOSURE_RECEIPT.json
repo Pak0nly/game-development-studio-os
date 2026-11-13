@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-GREYBOX-RESAVE-FIX-V1",
+  "work_order_sha256": "1b20c0566721b1e3adc109b20d6ff4d2cf03a77b0c0e3f198dc81fd0b4252eb6",
+  "closure_manifest_sha256": "62dbe68254b81d340e1b1b3683d414a7ef245580c59edb2c57c19790b2c09944",
+  "dispatch_receipt_id": "ca2325049c2ceb42a25fb8215bdade8490a0baec100ef3b6c7c304afdc0b7a38",
+  "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+  "worker_task_id": "aa58600dd74e7cee0",
+  "reviewer_task_id": "reviewer-UR-GREYBOX-RESAVE-FIX-V1",
+  "candidate_identity": "9873de13acc07454f5035064f3f480237e8e26bd67c915de410438913cfd045d",
+  "evidence_state_sha256": "98d71aed0830742b60ddf6d4b61c8396bebaa74987083315cec6403723c2d0ba",
+  "review_record_sha256": "1f3a356a02daea466068954a1e7f054e61399bb28b99b038f5c4c5fa6d060d32",
+  "verdict": "PASS",
+  "receipt_id": "43ff0aa7750b80e22dcbb5b14534cca7590abb27f5dce6a323a65c37179d487c"
+}

@@ -4,7 +4,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `60176bf` (local; `b5e1886` pushed).
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `ec66525` (local; `b5e1886` pushed).
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -111,6 +111,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-GREYBOX-RESAVE-FIX-V1
+
+UR-GREYBOX-RESAVE-FIX-V1 (Human answer 1 of 2026-11-13: the stray change on `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset` was re-save noise only: committed and working files both carry used_with_nanite and used_with_instanced_static_meshes, differing only in GUID and save data; `setup_kit.py` step 6 now sets, recompiles and saves only when a flag is missing; change discarded, proof run of setup_kit (materials only) leaves the file clean, its 618 rebuilt kit files restored; build and Sim tests pass; info: two short read-only Unreal runs at normal priority; external commit ec66525)
+Independent review verdict: PASS
+Worker task: aa58600dd74e7cee0
+Reviewer task: reviewer-UR-GREYBOX-RESAVE-FIX-V1
+Candidate identity: 9873de13acc07454f5035064f3f480237e8e26bd67c915de410438913cfd045d
+Closure receipt: 43ff0aa7750b80e22dcbb5b14534cca7590abb27f5dce6a323a65c37179d487c
 
 ## Closed: UR-MELEE-PACKS-RESEARCH-V1
 
