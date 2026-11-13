@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-ROLES-TIERS-OVERVIEW-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-ROLES-TIERS-OVERVIEW-V1/WORK_ORDER.md",
+    "sha256": "bdc5e9b5c8119c32bc4ceae61c2fd2af7765a4f1bd6eef52645559cd721cfdcb",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-ROLES-TIERS-OVERVIEW-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "9e72b5a62fc99e20be72f235e10e853fede688cafff5d54f7c6b978062740db9",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-ROLES-TIERS-OVERVIEW-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "10eeea3585a567649de03bb533212a50e73e08e676de66258d3cbed412daa935",
+    "receipt_id": "e49c6f9917bbedb56ce5df6ec70a7c196d5c860c3f3a6f2414edfe77aa57550e",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "ace5ad8293bc46af5",
+    "reviewer_task_id": "reviewer-UR-ROLES-TIERS-OVERVIEW-V1"
+  },
+  "candidate": {
+    "identity": "669fa2e07220a7c748638e1d4433b7210d562ecb1d3dbfc2f8f402455d8294d1",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-ROLES-TIERS-OVERVIEW-V1/WORKER_RESULT.md",
+        "sha256": "a4dc684148469f541cb6644f0f7008d396b12333041d6b2457ba33198bf231f8",
+        "size": 2137
+      },
+      {
+        "path": "ext:Design/Planning/CREATURE_ROLES_AND_TIERS.md",
+        "sha256": "3e1250fbeec771e12e4235ccefd29e13e5aff107a44a4e73e1453beca9faa841",
+        "size": 31537
+      },
+      {
+        "path": "ext:Evidence/UR-ROLES-TIERS-OVERVIEW-V1/WORKER_RESULT.md",
+        "sha256": "7665d0e1501fa3bfe04540931bf523e59df92b441be7754145d3ecdf66e5eed7",
+        "size": 3080
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-ROLES-TIERS-OVERVIEW-V1/REVIEW.md",
+      "sha256": "5e3f48e148344d260574e5212ab8298ebbba82bbaa03fff2ea668eab52feab9b",
+      "size": 2660
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-ROLES-TIERS-OVERVIEW-V1/review.json",
+    "record_sha256": "5c379dc2564844c153f571106b6e7f6e812a4f1300a8e78a0eb65383387b1dfe",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "669fa2e07220a7c748638e1d4433b7210d562ecb1d3dbfc2f8f402455d8294d1",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

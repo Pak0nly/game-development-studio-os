@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-DECISIONS-R9-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R9-V1/WORK_ORDER.md",
+    "sha256": "cfddc672c5507406cdb7a5953f4d832930332f64fd113955e79a22415b875005",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R9-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "a4290167b92aeb70e850807772b375e0544716142cc8094af814d9de7c6a8fa9",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R9-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "733da152a30e92bf2e96e42e2085fff537226987919e30d8b1d08e6fc70a2d62",
+    "receipt_id": "db4bfd997f2c81e326e6bf4fbd32704282454953f48203ff54df42447e89ea42",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "a90048e2b68157096",
+    "reviewer_task_id": "reviewer-UR-DECISIONS-R9-V1"
+  },
+  "candidate": {
+    "identity": "4a12b932dbb2e275b071705dcf2effc24c2591e2219494e7e6d1f2ab34662383",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-DECISIONS-R9-V1/WORKER_RESULT.md",
+        "sha256": "4dd7fe4fd31696e6103fe7783af6bb9ac769318210d321fff7490c93b362f110",
+        "size": 959
+      },
+      {
+        "path": "ext:Evidence/UR-DECISIONS-R9-V1/WORKER_RESULT.md",
+        "sha256": "4dd7fe4fd31696e6103fe7783af6bb9ac769318210d321fff7490c93b362f110",
+        "size": 959
+      },
+      {
+        "path": "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+        "sha256": "780422354e601d6bf92acf0717809cb82d84b063c64b7865760b452f553c841f",
+        "size": 62044
+      },
+      {
+        "path": "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+        "sha256": "fb5c79087a0bbffa4035a8ee360595bd802ba003512d0f3ecb2e1bdf9db1e494",
+        "size": 15696
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-DECISIONS-R9-V1/REVIEW.md",
+      "sha256": "5e3dc74850b48a99113353137721994d1373cbf395af482d5b7ce20134029788",
+      "size": 975
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-DECISIONS-R9-V1/review.json",
+    "record_sha256": "c9597eedb3ad5bce9bdc9e423dd866f02ad526d9edfa1890c5d293febba68ab8",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "4a12b932dbb2e275b071705dcf2effc24c2591e2219494e7e6d1f2ab34662383",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

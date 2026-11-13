@@ -17,6 +17,24 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-ROLES-TIERS-OVERVIEW-V1
+
+UR-ROLES-TIERS-OVERVIEW-V1 (design proposal only, `Design/Planning/CREATURE_ROLES_AND_TIERS.md`: genre reference had tanks, chargers, flankers, ranged, scout, worker, economic specialists, levels 1-10, about 15-30 creatures per player, max 128 x 128 tiles and 4 players; gaps in Underreign: no cheap fodder, no attacking sapper, Kiln-ox door breaking not shown, no thief, no answer to a cannon ring at transitions; proposal: 12 Ashen Pact roles in 3 tiers incl. new fodder creature and sapper (UD-47 kept), promotion at contract renewal; 6-8 players need about 160 x 160 cells with 4-5 layers, 8-realm load unmeasured; 7 questions for the Human; info: `DoorsBarCreatures` defaults to 0 in Tuning.h although UD-97 decided doors stop enemy creatures (rules not yet built); external commit 4eea98a)
+Independent review verdict: PASS
+Worker task: ace5ad8293bc46af5
+Reviewer task: reviewer-UR-ROLES-TIERS-OVERVIEW-V1
+Candidate identity: 669fa2e07220a7c748638e1d4433b7210d562ecb1d3dbfc2f8f402455d8294d1
+Closure receipt: e29b28a6219547878b1a610c760ef2f65a0b014e467bf3781eb8258613ff9386
+
+## Closed: UR-DECISIONS-R9-V1
+
+UR-DECISIONS-R9-V1 (follow-up statements of 2026-11-13 evening recorded: UD-114 renders with licensed assets are checked visually and shown to the Human, not training (clarifies UD-85, DEC-025 unchanged); UD-115 cut cap may be lighter, gold stays readable; UD-116 naturally open spaces stay hidden until dug to, ruins and dangers from unusable places as approved direction; UD-117/118 go for the roles overview and the sharpness test; OD-25 and OD-26 notes updated, both OPEN; external commit 4eea98a)
+Independent review verdict: PASS
+Worker task: a90048e2b68157096
+Reviewer task: reviewer-UR-DECISIONS-R9-V1
+Candidate identity: 4a12b932dbb2e275b071705dcf2effc24c2591e2219494e7e6d1f2ab34662383
+Closure receipt: 1d325fbc253c3805d600149a6a2a60db36a0820217155090f604d5aa0e434190
+
 ## Closed: UR-DECISIONS-R8-V1
 
 UR-DECISIONS-R8-V1 (answers to the open-questions page of 2026-11-13 recorded: UD-86..UD-113 in `DISCOVERY_DECISIONS.md`, new OPEN rows OD-24 taking over enemy ground and room destruction (option B excluded, UD-96), OD-25 rival realm look with neutral player-colour banners for 6-8 players, OD-26 anti-bottleneck design for layer connections (points at UD-47, unchanged), OD-27 Ashen Pact campaign; OD-20/21/22/14 updated, OD-02/05/23 stay OPEN ("later"); Human notes kept as notes, not decisions; night question files point to the answers; info: OD-21/22 keep older sentences, UD-103/113 borrow small context phrases; external commit 231d0aa)

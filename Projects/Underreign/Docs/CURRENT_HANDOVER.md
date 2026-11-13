@@ -2,9 +2,9 @@
 
 State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fresh Director chat. Talk to the Human in German, plain words, no codes.
 
-- Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-113),
+- Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-118),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `231d0aa` (local; `b5e1886` pushed).
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `4eea98a` (local; `b5e1886` pushed).
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -19,7 +19,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Closed today (2026-11-13, all below, external commits up to 231d0aa, none pushed): UR-TORCHES-CLAIMED-V1, UR-GROUND-TEXTURE-TEST-V1, UR-MELEE-PACKS-RESEARCH-V1, UR-GREYBOX-RESAVE-FIX-V1, UR-DECISIONS-R8-V1 (the Human's answers to the open-questions page). Director gave the Human in chat: texture sheet paths with recommendation (Soil A, Stone A, Basalt A, Gold vein A, Bedrock C) and the question whether the dark cut cap on untouched rock should be lighter; thoughts on the bottleneck problem (OD-26: no-build zone around layer transitions, several transitions per layer some found by digging, attacker sapper unit digging new shafts with warning, threats from the map edge; teleporters later); a proposal for room takeover (OD-24: furnishings with hit points, smashed only on order or when undefended); offered a roles-and-tiers overview order (Human note on card 14). Human 2026-11-13 on the texture sheets (exact): "bei allen, außer vielleicht beim Basalt, die 3D Oberfläche abgerundet und geschliffen ist und so den Texturen die \"Schärfe\" nimmt. Also Kanten, Ritzen, Löscher und Risse die in solchen Wänden natürlicherweise drin wären." Cause found: the Blender test used no scan normal maps, only a weak bump from the height map (2K, 3 cm, strength 0.5-0.8) under soft ambient light. Texture question page (16 questions, image paths only, no images): https://claude.ai/artifact/YMrYHs64jPTzS3v7r4uoQK (localStorage key `underreign-boden-v1`). Images of the sheets are now on that page (Human: visual checking is mandatory, showing scan renders is not training use; memory updated). Running (Human go 2026-11-13 evening): UR-GROUND-TEXTURE-SHARP-V1 (Blender, normal maps, cavity, torch light, displacement, lighter cut cap with gold readable), UR-ROLES-TIERS-OVERVIEW-V1 (roles, tiers, map scale vs the genre reference), UR-DECISIONS-R9-V1 (records the follow-up statements). Not started, to propose: an Unreal test of Runtime Virtual Texture blending for floor-to-wall transitions and rubble (Human's video link https://www.youtube.com/watch?v=GSJFuoerkaw, only its title was readable). Next action (one): when the Workers report, check images by eye, one Reviewer each, close, show the Human the sheets.
+Closed today (2026-11-13, all below, external commits up to 231d0aa, none pushed): UR-TORCHES-CLAIMED-V1, UR-GROUND-TEXTURE-TEST-V1, UR-MELEE-PACKS-RESEARCH-V1, UR-GREYBOX-RESAVE-FIX-V1, UR-DECISIONS-R8-V1 (the Human's answers to the open-questions page). Director gave the Human in chat: texture sheet paths with recommendation (Soil A, Stone A, Basalt A, Gold vein A, Bedrock C) and the question whether the dark cut cap on untouched rock should be lighter; thoughts on the bottleneck problem (OD-26: no-build zone around layer transitions, several transitions per layer some found by digging, attacker sapper unit digging new shafts with warning, threats from the map edge; teleporters later); a proposal for room takeover (OD-24: furnishings with hit points, smashed only on order or when undefended); offered a roles-and-tiers overview order (Human note on card 14). Human 2026-11-13 on the texture sheets (exact): "bei allen, außer vielleicht beim Basalt, die 3D Oberfläche abgerundet und geschliffen ist und so den Texturen die \"Schärfe\" nimmt. Also Kanten, Ritzen, Löscher und Risse die in solchen Wänden natürlicherweise drin wären." Cause found: the Blender test used no scan normal maps, only a weak bump from the height map (2K, 3 cm, strength 0.5-0.8) under soft ambient light. Texture question page (16 questions, image paths only, no images): https://claude.ai/artifact/YMrYHs64jPTzS3v7r4uoQK (localStorage key `underreign-boden-v1`). Images of the sheets are now on that page (Human: visual checking is mandatory, showing scan renders is not training use; memory updated). Running (Human go 2026-11-13 evening): UR-GROUND-TEXTURE-SHARP-V1 (Blender, normal maps, cavity, torch light, displacement, lighter cut cap with gold readable); UR-ROLES-TIERS-OVERVIEW-V1 closed below (its 7 questions on https://claude.ai/artifact/FgcMfi4QVneKUjerqg8G5L, localStorage key `underreign-rollen-v1`); UR-DECISIONS-R9-V1 closed below. Not started, to propose: an Unreal test of Runtime Virtual Texture blending for floor-to-wall transitions and rubble (Human's video link https://www.youtube.com/watch?v=GSJFuoerkaw, only its title was readable). Next action (one): when the Workers report, check images by eye, one Reviewer each, close, show the Human the sheets.
 
 ## Natural ground textures vs the faction look (2026-11-13, Human, exact)
 
@@ -111,6 +111,24 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-ROLES-TIERS-OVERVIEW-V1
+
+UR-ROLES-TIERS-OVERVIEW-V1 (design proposal only, `Design/Planning/CREATURE_ROLES_AND_TIERS.md`: genre reference had tanks, chargers, flankers, ranged, scout, worker, economic specialists, levels 1-10, about 15-30 creatures per player, max 128 x 128 tiles and 4 players; gaps in Underreign: no cheap fodder, no attacking sapper, Kiln-ox door breaking not shown, no thief, no answer to a cannon ring at transitions; proposal: 12 Ashen Pact roles in 3 tiers incl. new fodder creature and sapper (UD-47 kept), promotion at contract renewal; 6-8 players need about 160 x 160 cells with 4-5 layers, 8-realm load unmeasured; 7 questions for the Human; info: `DoorsBarCreatures` defaults to 0 in Tuning.h although UD-97 decided doors stop enemy creatures (rules not yet built); external commit 4eea98a)
+Independent review verdict: PASS
+Worker task: ace5ad8293bc46af5
+Reviewer task: reviewer-UR-ROLES-TIERS-OVERVIEW-V1
+Candidate identity: 669fa2e07220a7c748638e1d4433b7210d562ecb1d3dbfc2f8f402455d8294d1
+Closure receipt: e29b28a6219547878b1a610c760ef2f65a0b014e467bf3781eb8258613ff9386
+
+## Closed: UR-DECISIONS-R9-V1
+
+UR-DECISIONS-R9-V1 (follow-up statements of 2026-11-13 evening recorded: UD-114 renders with licensed assets are checked visually and shown to the Human, not training (clarifies UD-85, DEC-025 unchanged); UD-115 cut cap may be lighter, gold stays readable; UD-116 naturally open spaces stay hidden until dug to, ruins and dangers from unusable places as approved direction; UD-117/118 go for the roles overview and the sharpness test; OD-25 and OD-26 notes updated, both OPEN; external commit 4eea98a)
+Independent review verdict: PASS
+Worker task: a90048e2b68157096
+Reviewer task: reviewer-UR-DECISIONS-R9-V1
+Candidate identity: 4a12b932dbb2e275b071705dcf2effc24c2591e2219494e7e6d1f2ab34662383
+Closure receipt: 1d325fbc253c3805d600149a6a2a60db36a0820217155090f604d5aa0e434190
 
 ## Closed: UR-DECISIONS-R8-V1
 
