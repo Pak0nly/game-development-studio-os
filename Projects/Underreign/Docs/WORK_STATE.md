@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-UNREAL-WALLSAMPLE-V1
+
+UR-UNREAL-WALLSAMPLE-V1 (wall sample in the game: 2 m cells from single constants (1 m override reproduces the old map); kit import `Game/Scripts/setup_kit.*` (440 Nanite meshes, all strata, Full and Low, UR_KIT RESULT PASS) with the style sample's dark charred scanned rock (scans git-ignored in Content/Environment/Scans, never committed); wall placement from neighbour masks behind `-URKit` (default on; 4,799 pieces Cinder Hollow, rebuild mean 2.1 ms); free 360 deg camera (Q/E hold, Alt+middle drag; pitch -70, horizontal FOV 65, default 8.5 cells); see-through fill+outline for hidden creatures (orange own, blue intruders); wall-height option V / HUD / `-URWallLow=1`, overview only, close and first-person views forced full (WallRules test); hound 0.75 (1.6 m); GPU kit 4.93 ms vs greybox 4.45 ms at 30 fps gentle; rules and golden hashes unchanged; open: dark full-wall corridors, low-wall corner loops, faint-layer block-top pattern, outlines on cinderlings in the Heart, other capture modes still at 1 m distances, kit floors and fracture not yet in; process finding: the order told the Worker to view its captures although they show licensed scans (UD-85), fixed for future orders; captures `Game/Captures/wallsample/` for the Human to view locally; external commit 3c8cac0)
+Independent review verdict: PASS
+Worker task: a0a7a8bbdc044b829
+Reviewer task: reviewer-UR-UNREAL-WALLSAMPLE-V1
+Candidate identity: b2d5c619061a4081ad646813513929b0a7f6f136a7ab495edebec50caa9e23b3
+Closure receipt: 7da8f2ea4fad97d5f291a46a14dcef70c1c5c93e30dc177ea09e1c6c3acd95b4
+
 ## Closed: UR-KIT-WALL-INSET-V1
 
 UR-KIT-WALL-INSET-V1 (local Blender 5.2 CPU rebuild of the night-4 rock wall kit: same relief moved 0.37 m behind the cell edge; max protrusion into the open cell 0.034-0.050 m; mean clear width of a 1-cell corridor 2.27-2.37 m (was 1.61-1.72 m), narrowest 1.92 m; seams 2e-6 mm; caps close; look changes for the Human: a calm 0.44 m pier at every cell edge (2 m rhythm), smaller corner bulge and fillet, floor-edge scree moved back; new trimmed block-top classes Open0-Open4 so Unreal placement needs class and yaw per rock cell; cap strips may flicker at outer corners in Unreal; fracture and old pan previews not refreshed (no ffmpeg); Unreal setup script still untested; external commit bf9f213)

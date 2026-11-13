@@ -1,0 +1,2545 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-UNREAL-WALLSAMPLE-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-WALLSAMPLE-V1/WORK_ORDER.md",
+    "sha256": "83897b026603fed2b624bdafd01554d24227a3f5e8ea1a9249ea3afcdf1788a5",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-WALLSAMPLE-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "4e6df630a93af857b99eda91c07954fb964895e1d7ca953463dd0cc2557cb900",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-UNREAL-WALLSAMPLE-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "4583fff5ddeb7c087401bd97424a603ab09d586c92b9f4f64ff450aa833cf67d",
+    "receipt_id": "6726861daf6bb78644253b57f8e344254a6f2482d9834c0fd1ab1368d30b4b73",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-bceed6ba-13b6-4571-9e53-b31f678dc83e",
+    "worker_task_id": "a0a7a8bbdc044b829",
+    "reviewer_task_id": "reviewer-UR-UNREAL-WALLSAMPLE-V1"
+  },
+  "candidate": {
+    "identity": "b2d5c619061a4081ad646813513929b0a7f6f136a7ab495edebec50caa9e23b3",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-UNREAL-WALLSAMPLE-V1/WORKER_RESULT.md",
+        "sha256": "2b21a1e3dd91e306aa835c81daa292cb1e41fee11d60b7da6711105b366a0eb1",
+        "size": 11308
+      },
+      {
+        "path": "ext:Evidence/UR-UNREAL-WALLSAMPLE-V1/WORKER_RESULT.md",
+        "sha256": "193e1301d5469f553e4aa927dce1e74f081433009134398896b7eba42cb11d73",
+        "size": 10948
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/gentle_start_running.png",
+        "sha256": "84e835fe570dc8e8ec702d758fda26cd570d5fa2c5427716be5849d865412652",
+        "size": 1410348
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/grey_1m_override_play_view_layer2.png",
+        "sha256": "dab77faebb83c6480b091b6f2b54eb80e419ce78e7293587ff31b64e1d89df68",
+        "size": 1751884
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/grey_close_corridor.png",
+        "sha256": "e9168c5c02f4ff437450c9462a761a354fa0343535cc5aa021f0036b5c5d7a58",
+        "size": 1895242
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/grey_l2_full.png",
+        "sha256": "cab0573e7184cd80f56d1fb6bbc634bb8afa89724837f128022c31803f340184",
+        "size": 1697621
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/grey_l2_full_after.png",
+        "sha256": "05c36dbbc16d9a8ff27a75f8714ff2e17b7450d925af335f715e10419f94c642",
+        "size": 1679058
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/grey_l2_low.png",
+        "sha256": "3c5a1d6a9768b849b458e9cf5184d591ea598a187e6f2719008fc97ca096f008",
+        "size": 1872517
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/grey_l2_overview.png",
+        "sha256": "8e5346b8e19850f649788ef659028d838e0b34eede3a331389f00890a8953b21",
+        "size": 1062542
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/kit_close_corridor.png",
+        "sha256": "dcc81ca115219ad6ec51c14aa503129d84e9b5d39d1058f5bd7ac06fb1ea49fd",
+        "size": 2119299
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/kit_l2_full.png",
+        "sha256": "1570b0594499fc86f835dda87adce77823826eaccdb328e08261cbc111f0038e",
+        "size": 2395035
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/kit_l2_full_after.png",
+        "sha256": "3d52ac214e40b54c4d22a52ecfe5b2efb1c85558b2b51db19eb06702dfa024cd",
+        "size": 2415170
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/kit_l2_low.png",
+        "sha256": "2c90bb757b14ec7fc4f2a9ba4a432fed7671763d24f5585c6bc95da521d35081",
+        "size": 2351167
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/kit_l2_overview.png",
+        "sha256": "c547b8471bae42b48b15ee50cf3383f006bab85eb23185c828c4476bb49201cc",
+        "size": 1251562
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/UR_WallSample_Sheet_kit_grey_full_low.png",
+        "sha256": "45221b1cd8cf0137fa30d309f3796a0071935160edb8a08d9f77647fe4185c00",
+        "size": 1913786
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/UR_WallSample_Turn360_6s.gif",
+        "sha256": "bf76885b903eb257c42b6ad442232df3d871bd4d46bd46526b8eced7ca2c467e",
+        "size": 10804168
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/UR_WallSample_Turn360_6s.mp4",
+        "sha256": "85175663bebd33dcb0c0d35eae40fcae3bccb6cbd4ae045ef7bdfb4f9f31a353",
+        "size": 11775637
+      },
+      {
+        "path": "ext:Game/Captures/wallsample/UR_WallSample_Turn360_frames_0_30_60_90_120_150.jpg",
+        "sha256": "e95c4217b9f1062ee42c1f6cd487f2508e55a6db81bb072fb5563dcafde1841b",
+        "size": 602630
+      },
+      {
+        "path": "ext:Game/Play Underreign (Schonmodus).bat",
+        "sha256": "47f23a8590d8612472081d462b83550e19848c46ca5c24ec99849db769845305",
+        "size": 1570
+      },
+      {
+        "path": "ext:Game/Play Underreign.bat",
+        "sha256": "af8a8cceab978b82990b272dd9db8be080c78c782fec36152cf68faa09e8ca76",
+        "size": 1469
+      },
+      {
+        "path": "ext:Game/README.md",
+        "sha256": "091d9d5c8d03489a3f6794009be5f2ba399aeaaad1396f4a09f9637e17b216fa",
+        "size": 60643
+      },
+      {
+        "path": "ext:Game/Scripts/capture.sh",
+        "sha256": "e7e8f002708401c11f0f8948e4c4a42d63ec3b3b0a97e7ba161674354650f9a2",
+        "size": 5089
+      },
+      {
+        "path": "ext:Game/Scripts/setup_kit.py",
+        "sha256": "e5c6431c684200c3576de89a5c5a660d63ab046889cacfa6e76c3603eac8791a",
+        "size": 26686
+      },
+      {
+        "path": "ext:Game/Scripts/setup_kit.sh",
+        "sha256": "6c3616090a0982fcae41e817cce5e84c11257666948b1b3e8764f34f3a6e4a57",
+        "size": 805
+      },
+      {
+        "path": "ext:Game/SPIELANLEITUNG.md",
+        "sha256": "137a637f4af4df674fb7158c918251da558730a4369ae2ec9a4c0b5aad0e8926",
+        "size": 17031
+      },
+      {
+        "path": "ext:Game/Underreign/.gitignore",
+        "sha256": "8713c5969cddc2dba2a947c65379b125d3b704d3ba7942d67c2281758ac93c05",
+        "size": 234
+      },
+      {
+        "path": "ext:Game/Underreign/Config/DefaultEngine.ini",
+        "sha256": "a52bc1256592a0b6bd33d8d161b17f0c5aa69a9f248d9787c207b48f4bc924c4",
+        "size": 2202
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Full_HI.uasset",
+        "sha256": "a21eed64267923eb565668d4d9edee8a9741e474499c2ec237e05d32507dc96d",
+        "size": 52777
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Full_Open1_HI.uasset",
+        "sha256": "748c6895565e1cc4308339124589736e0254e88e82dbaed5d814b20380d8001f",
+        "size": 37783
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Full_Open2c_HI.uasset",
+        "sha256": "b8802c86e142069b59df7cb96f605872f93f8a2dbcfdc3c751e00a34317c66ff",
+        "size": 37744
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Full_Open2o_HI.uasset",
+        "sha256": "6ac9a88d95da9a483f4825d01100a26d4ff10d4dcc83616a39eef3cc8741a27d",
+        "size": 36220
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Full_Open3_HI.uasset",
+        "sha256": "285397c4daf094dcd55ba860575c0fa8076aace6587a909b582cd536b4825775",
+        "size": 30593
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Full_Open4_HI.uasset",
+        "sha256": "967be0575a8b105fd88024eb5c2b60c3f2ed4238d5748fc11ba8f1c83f2ace18",
+        "size": 27003
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Low_HI.uasset",
+        "sha256": "63c0ee9d0e943a23ccd0f57b5ca48ca52c1f136c8f7aaafc6ea3ff7f952ab08c",
+        "size": 12769
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Low_Open1_HI.uasset",
+        "sha256": "4ee449aea42824067b47ea88610caf7c9b8c14ced99fd39fd692b455aa1f5ef2",
+        "size": 12899
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Low_Open2c_HI.uasset",
+        "sha256": "9c1db99207e39e58f09630409a33cde78721bbde0ac132213d1aa2e11efd09f9",
+        "size": 12879
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Low_Open2o_HI.uasset",
+        "sha256": "36add6dc46c55b6f83e7d68c720b64b3f3e70f9280cbe1096363e26ff7309d71",
+        "size": 12912
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Low_Open3_HI.uasset",
+        "sha256": "c00c1cfe6373d44bd83597b4be13e13d14c674af1edd0923c4c9736b8ffc3879",
+        "size": 12874
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_A_Low_Open4_HI.uasset",
+        "sha256": "d047e491847a2397b6372b7107d7b22d9373e279c1733fea6c33f3cc88790ba3",
+        "size": 12876
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Full_HI.uasset",
+        "sha256": "90cf91b62f739e7422f03d91e05072ae7c44662229dc71df163490482447478e",
+        "size": 52740
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Full_Open1_HI.uasset",
+        "sha256": "3020c2360b2264481d6c54461d502eb9c836a8a52d89f54495a873f1e95bbdc4",
+        "size": 37774
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Full_Open2c_HI.uasset",
+        "sha256": "8e7d43192aee8bf13ac3091d7a8debfddfcd1a44a8683eee3b3ece72d10040de",
+        "size": 37775
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Full_Open2o_HI.uasset",
+        "sha256": "9f13743aab4bc3d4e998d1d39f6c68bca0ae27bc63c46dc5e9d0cb4479de11ef",
+        "size": 35948
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Full_Open3_HI.uasset",
+        "sha256": "69e16c8d639d0532d30d7f1dc5e3db5f3e9b5f66657d13b0d4195154b3488989",
+        "size": 30557
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Full_Open4_HI.uasset",
+        "sha256": "00575e5518ea495b24da8846ab49832cecefb4b14eb733e5adcf50528a87233c",
+        "size": 26976
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Low_HI.uasset",
+        "sha256": "cc22cf13ffc67b26a00931160d8c2c6f7f5564d89ee480295f69362c7240eb52",
+        "size": 12800
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Low_Open1_HI.uasset",
+        "sha256": "0f6acaac9322ba6743a9cfc75adcd99ba8e6d89ed0e18d07e73093ad2f95a0bd",
+        "size": 12903
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Low_Open2c_HI.uasset",
+        "sha256": "8d902fd0a3fd810701074543ae19a51d6934ffe31ce8e51657c925e9552b6ff2",
+        "size": 12865
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Low_Open2o_HI.uasset",
+        "sha256": "98965c76e4383de107d646f92e3a1b980352dc09967d0c579fd9a0cb6edb9b61",
+        "size": 12902
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Low_Open3_HI.uasset",
+        "sha256": "76c5a7fc23c07b86316bb82bf2455f11c40f95510a8bcc8547a114f7292e82be",
+        "size": 12880
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_B_Low_Open4_HI.uasset",
+        "sha256": "552c3b7b1fe1c3a49cc2f8e652086a606c91c748dd6e8f8212cbc48d2333860e",
+        "size": 12878
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Full_HI.uasset",
+        "sha256": "33f54ede3234fd522a6709c3b128da1f438243689e17089e8b7e925800e16bd5",
+        "size": 52750
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Full_Open1_HI.uasset",
+        "sha256": "5f71347df6abd575e506a89629137ba03759a4d98405f9002f2fac900af0da18",
+        "size": 37742
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Full_Open2c_HI.uasset",
+        "sha256": "e26877ce4ca369830f401fb49a91668932d4fdf659a4e1e06f2a379325b2c6ba",
+        "size": 37730
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Full_Open2o_HI.uasset",
+        "sha256": "be4e15b24ce2bc2b275b5ba1b4dcfbcb531d229da50e42e3b0917b616a8b287d",
+        "size": 35916
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Full_Open3_HI.uasset",
+        "sha256": "20ad4dead3131faa6540963c2cba600525f58c03fea13238331c35328c0ac775",
+        "size": 30601
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Full_Open4_HI.uasset",
+        "sha256": "d5d6346e751e4f3efd7ac05e882e12c42d92452cfe1b657cf9c522a5d40f86d7",
+        "size": 27011
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Low_HI.uasset",
+        "sha256": "6d3c55b0178822d899e54efd14a3188336c13d241b5a40be3416c5a8480e1d2e",
+        "size": 12805
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Low_Open1_HI.uasset",
+        "sha256": "45539e2a55175f0c147686915461a985ce94a3d38964d9c4775efcfcb17d6c51",
+        "size": 12896
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Low_Open2c_HI.uasset",
+        "sha256": "e8f956b06d67f95c90d8ecb4cc54c20f11842cfeea123f55a6b2a0b29a2009a8",
+        "size": 12871
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Low_Open2o_HI.uasset",
+        "sha256": "05b5f3aba3788f62a178cc6773b59efd11e70d45d1130ccb596e9b6cc246f12c",
+        "size": 12916
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Low_Open3_HI.uasset",
+        "sha256": "4fe559071d140054752ce1b7ccb7c25e69bdce909d3c87cc053c77c67ddbda89",
+        "size": 12872
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_C_Low_Open4_HI.uasset",
+        "sha256": "103d19bc94edec1caa02b52a070c72a5717e0d5506377b6e2994ae771c6c3c86",
+        "size": 12872
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Full_HI.uasset",
+        "sha256": "5478c5864d08c8aa6179032e841ea2945c3a8d3a50bcc31e79cd6f83cfcd6cd9",
+        "size": 52760
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Full_Open1_HI.uasset",
+        "sha256": "f9e730ca4fc24b6c33c14bdd86bb31f1aa4d3ba813301abde5ad25fd9b0e0b21",
+        "size": 37728
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Full_Open2c_HI.uasset",
+        "sha256": "2dbef5ca8ddfa8389fcd00e7c89b25adc5eb6d9a24d1f1d1b0ed712cc30c1eb5",
+        "size": 37670
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Full_Open2o_HI.uasset",
+        "sha256": "54f9b1e832ed0e0a7f608e92a295b17a454820f94187ce7c01d9a1e054ef0005",
+        "size": 35931
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Full_Open3_HI.uasset",
+        "sha256": "51ceb7be55d610242fad3e7cbb6e9cd694ef1d7d3c4c8078ba40916e34077223",
+        "size": 30493
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Full_Open4_HI.uasset",
+        "sha256": "e891a96629d21e4a2bc2c67516b54597124360cf875478f671ce0b6ac62f188b",
+        "size": 26934
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Low_HI.uasset",
+        "sha256": "c31f2831734ae864e0b15d4f1f072f188b93649a0c208e37f778c4ad2e4e6537",
+        "size": 12770
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Low_Open1_HI.uasset",
+        "sha256": "b366be7b9a498786fb6a0e1725e6c760277fd29d411eaac7c43a95a3a8c26638",
+        "size": 12869
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Low_Open2c_HI.uasset",
+        "sha256": "dc86285c54324dd74f16f30a4e33572c5bf95e24bf92508b6305e818815067c2",
+        "size": 12857
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Low_Open2o_HI.uasset",
+        "sha256": "f7cc4483f4bd6b3bd539b73abfa0752f335b3d51d3629ee25659577fe4870d14",
+        "size": 12877
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Low_Open3_HI.uasset",
+        "sha256": "95259e0ec74ee01db493089db6fa642f22a991c4dd3cfd13b3d2f36abf40decf",
+        "size": 12875
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_BlockTop_Basalt_D_Low_Open4_HI.uasset",
+        "sha256": "bc4f7dd6b3fbcbab92a5268212e8e617f748d6fd528a6ff134f646f9cfe73645",
+        "size": 12878
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallEnd_Basalt_A_Full_HI.uasset",
+        "sha256": "99709e4821137495a5dc9c4dab4b11c1a1b57ba55b1cc4545735fbce7e13ba77",
+        "size": 595001
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallEnd_Basalt_A_Low_HI.uasset",
+        "sha256": "c1dacd023cfe3a6c5280fd106a66a443aedfa9380f31bf03d3fbd511f84c7c6e",
+        "size": 296642
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallEnd_Basalt_B_Full_HI.uasset",
+        "sha256": "d87d076fc7a5b861f467af76edc0cc56df82be41700aa604667dec9b56567e83",
+        "size": 603336
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallEnd_Basalt_B_Low_HI.uasset",
+        "sha256": "87187cabd63479603bfe7e793e488417b74a63e8657476ab2cef4d8f8b938146",
+        "size": 300915
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallEnd_Basalt_C_Full_HI.uasset",
+        "sha256": "52554a3234af06c76bfdefe724133fad4f33f2021fddb612f2344251cef3d413",
+        "size": 594790
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallEnd_Basalt_C_Low_HI.uasset",
+        "sha256": "1d3bd2b5444b2dbb962687ebd72a4acb8741e4eb4655346a0ff4f02f170d1ea3",
+        "size": 296840
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallEnd_Basalt_D_Full_HI.uasset",
+        "sha256": "2234d40d3d82edc60bae72e4d2965330d3daac6aa56287dc86538e472d384aa5",
+        "size": 601010
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallEnd_Basalt_D_Low_HI.uasset",
+        "sha256": "acf572f0bfa8ff4f70d5ead07dae67976e51850dc84c9d6239871274bb6cc877",
+        "size": 300240
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallFace_Basalt_A_Full_HI.uasset",
+        "sha256": "137dc998e83e178052e980d2d1fc03ff8bb7cb049cca68eddfb25d6f228933b0",
+        "size": 151160
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallFace_Basalt_A_Low_HI.uasset",
+        "sha256": "4160b89f4ece741df628bdaff9d9e916f9dd0d08ae38acc7295a1f02eb804301",
+        "size": 90782
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallFace_Basalt_B_Full_HI.uasset",
+        "sha256": "f319a971d9112e9a7c01f3bde4514a1dbe310f3ceeb2d185377b987215798010",
+        "size": 154802
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallFace_Basalt_B_Low_HI.uasset",
+        "sha256": "2db0a6b6a488b9475f6c101b04f12cffaa190e8cee6adde63651c5e98d147a25",
+        "size": 92629
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallFace_Basalt_C_Full_HI.uasset",
+        "sha256": "61685f454727f553cceaaf39969ba09a838816097cb8e57c4bfb39e647bc6962",
+        "size": 153479
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallFace_Basalt_C_Low_HI.uasset",
+        "sha256": "0dd81bb64b97e5afe13c21792fcb6f99c25c2fddfddce1bc89ef91a57cebdd9e",
+        "size": 91164
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallFace_Basalt_D_Full_HI.uasset",
+        "sha256": "168962dbd44ea7a13b82ad70026964906a68c4e15a4515bf040f3e571eedf5f2",
+        "size": 152560
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallFace_Basalt_D_Low_HI.uasset",
+        "sha256": "4673d1bb9de729fd6909825ac01641a04ddfc296616f79a28e37287ebf97fe30",
+        "size": 91179
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallInner_Basalt_A_Full_HI.uasset",
+        "sha256": "e6e3369d7cba47e014c74f6e0e19e9ef078972c74aa3c71720334971966a7f33",
+        "size": 73704
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallInner_Basalt_A_Low_HI.uasset",
+        "sha256": "fd38b8bfe05f448d4852ae583f268fbe172a64679b759ff57b2f5db7dd3fe572",
+        "size": 44825
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallInner_Basalt_B_Full_HI.uasset",
+        "sha256": "c9a1a338582f073320e6d16facac6589ef2423ac2cc97252549722f82cd63e98",
+        "size": 74113
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallInner_Basalt_B_Low_HI.uasset",
+        "sha256": "c5ad593f10b57045e81de11a400f7a84807e0971dfd8c4ac7e12344bfb704158",
+        "size": 45272
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallInner_Basalt_C_Full_HI.uasset",
+        "sha256": "43f3954646e4e06e6962fe564e6c9f39a1286a14a1b3d7e773723a178c4e9dba",
+        "size": 73583
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallInner_Basalt_C_Low_HI.uasset",
+        "sha256": "384874c176a25eb30b509e4b03949bcfb41f2c954b0260a4891bde86aa27f7a1",
+        "size": 44773
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallInner_Basalt_D_Full_HI.uasset",
+        "sha256": "e3946ed3e70cb56c1d782fbdea04dcf7b9aab5f7d26ca6be12ac17c3c0c92a24",
+        "size": 74376
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallInner_Basalt_D_Low_HI.uasset",
+        "sha256": "0cc9b4385b66277dc7fb2ba68aa28f4d6147ab9f5fe6a7b419e9ff55876f74e0",
+        "size": 45491
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallOuter_Basalt_A_Full_HI.uasset",
+        "sha256": "02d1ee6c150233fd6a562cf75d1a80bcff02b36506aeb5b1bd28e87aa66f4fc6",
+        "size": 79484
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallOuter_Basalt_A_Low_HI.uasset",
+        "sha256": "7381af4cd5487ca43607520200cbeb52d6de079c4ef613b3792c1367648a9aa5",
+        "size": 39657
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallOuter_Basalt_B_Full_HI.uasset",
+        "sha256": "cf07cd37021ddf0fd4da5d419050a4cd81fca0a181566670cfb263624a61189f",
+        "size": 79484
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallOuter_Basalt_B_Low_HI.uasset",
+        "sha256": "470a9663cca142927e6e89e57d039571b8967daae620bc52887f77be13bb4f65",
+        "size": 39657
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallOuter_Basalt_C_Full_HI.uasset",
+        "sha256": "b600365682fc2cc2d7ccbe8d20fac34570d2b5a199bf58e95c06c6fff4a4cc8e",
+        "size": 79484
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallOuter_Basalt_C_Low_HI.uasset",
+        "sha256": "d25329650a41a46d7333e3f31666e2033593e4c0e88c26cf54626ff9e951cd56",
+        "size": 39657
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallOuter_Basalt_D_Full_HI.uasset",
+        "sha256": "5580cfda22df338cc657083df243013c621bce05118c05b44f6ef2860444e688",
+        "size": 79484
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallOuter_Basalt_D_Low_HI.uasset",
+        "sha256": "787b729e6f4c4e2fee14d7407894856e69188b6405f1007dc4c7356fabb459d5",
+        "size": 39657
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallPillar_Basalt_A_Full_HI.uasset",
+        "sha256": "41b9c0b58e659e86d949555b6dcaec6fe156dbff70bfcf589ab843db2803585a",
+        "size": 750227
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallPillar_Basalt_A_Low_HI.uasset",
+        "sha256": "e04d53ddcb66e9e18523890e2070136afdc2e4ab8f4f0fee9e9254f4d50b38eb",
+        "size": 300351
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallPillar_Basalt_B_Full_HI.uasset",
+        "sha256": "de20993db8512aa3519983e059b71b560889b55e92d3d88b059751c64e1671c6",
+        "size": 760627
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallPillar_Basalt_B_Low_HI.uasset",
+        "sha256": "1d479576c7d2028c98ff7655f91eca8e87f95ecb2f063aacf61b589956724510",
+        "size": 304768
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallPillar_Basalt_C_Full_HI.uasset",
+        "sha256": "f77dae9f8a177c9758f980310b9839d3b94d15fbf9ee632544fdd4d0088bb08f",
+        "size": 749894
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallPillar_Basalt_C_Low_HI.uasset",
+        "sha256": "faae0b2bfd10ddb78368b0d5532d8b12f51e70c499ca00c900431022f7815ff0",
+        "size": 299750
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallPillar_Basalt_D_Full_HI.uasset",
+        "sha256": "c52f832deda4b3a2d709471303720a6767cf9f3fbbc2ff36f43d2408a954382c",
+        "size": 758420
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Basalt/SM_UR_WallPillar_Basalt_D_Low_HI.uasset",
+        "sha256": "1ce0ed86d088cb7b5d5c4891561c58cac2e94f5ede0b3d3cbe050fe43650f1cd",
+        "size": 303962
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Full_HI.uasset",
+        "sha256": "e23c6b2cd41c5f3c76f56223eec0c088ac1900b3428eb9b3aeb095608b20fffd",
+        "size": 52257
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Full_Open1_HI.uasset",
+        "sha256": "2d0adeaa493d97c7df309574a618e818ca0660df5b3a9853f39da98089e29f63",
+        "size": 37311
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Full_Open2c_HI.uasset",
+        "sha256": "9167e499dbe5dcc3bd24d7106327d427e6b2131ea3406635bf43605ab1098009",
+        "size": 37411
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Full_Open2o_HI.uasset",
+        "sha256": "ef5991ecba4480919f377ff6547d55bb528bc1f3f3a376da2ca5fbdad866410f",
+        "size": 35530
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Full_Open3_HI.uasset",
+        "sha256": "3ab3428a3edfefacc3967feeb1579757033b8a7a1d107cdeced02f745bfd0cbb",
+        "size": 30355
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Full_Open4_HI.uasset",
+        "sha256": "916c02e64eebc77e4e9fdf6d74f464c5af31ac7edb1f16b7c32a6e5a5c031a1a",
+        "size": 26783
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Low_HI.uasset",
+        "sha256": "66b787cd82333b4e7acbfcc193827a00cd3bda1605dd2c324a226b82e817c982",
+        "size": 12814
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Low_Open1_HI.uasset",
+        "sha256": "419e0d5fc5530e2da76feb085e5210d618062d15916bb088133e5d891971e959",
+        "size": 12910
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Low_Open2c_HI.uasset",
+        "sha256": "6f4b422de4e15641fb63474a61787cc6397116542f024b86ef0b7c263ced988a",
+        "size": 12883
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Low_Open2o_HI.uasset",
+        "sha256": "cf4d97e403274bc04f4943d0ae4e71c5e4558d7e4a6c5b99ab41141157678d37",
+        "size": 12930
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Low_Open3_HI.uasset",
+        "sha256": "e6fce3026303784c1375ef611c16d4852dfc88c2ca5c84780bd118a25a203e0d",
+        "size": 12886
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_A_Low_Open4_HI.uasset",
+        "sha256": "215add034762bb40171bf55fde04cd11e3d10550e8dfbe1fc9ffe86990b03187",
+        "size": 12884
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Full_HI.uasset",
+        "sha256": "81850df52aedfd471774a90b83ef20a05e3bb8560cd17cbc50f0cb337f2b8fb9",
+        "size": 52269
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Full_Open1_HI.uasset",
+        "sha256": "14093bbae8272874a11378f31dcad4b9464931ac93225d95253e5b3000069cf8",
+        "size": 37306
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Full_Open2c_HI.uasset",
+        "sha256": "d1880626df748ffd95fc3cabdbc6f1c0f2e18622a3fe5921f6d9439d5ef0940f",
+        "size": 37431
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Full_Open2o_HI.uasset",
+        "sha256": "fdff0494a9bdc4412e4b09bea1c15e017e53dca58f5d3927e23d650ab135a756",
+        "size": 35588
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Full_Open3_HI.uasset",
+        "sha256": "848c69a91fc18c8c80c983e9a7150094db8bc0175261a063c6db9bcd01ebed85",
+        "size": 30308
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Full_Open4_HI.uasset",
+        "sha256": "1740af0700530a0093b6e5f8d30f15f84684828e9160695b77f468fcef8bd600",
+        "size": 26798
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Low_HI.uasset",
+        "sha256": "f327553249a97c1aa0fd42f316daffb594f5d1e76e806c9e5f2690d08e879767",
+        "size": 12789
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Low_Open1_HI.uasset",
+        "sha256": "ca474d902b8bbc095d97a6d269efb9d71dfa7786a78c706fe46f8054ad14130d",
+        "size": 12877
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Low_Open2c_HI.uasset",
+        "sha256": "afe7561e342dbfb670df14299c096864756ae81f2fa55fea6304b9466c95e84c",
+        "size": 12883
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Low_Open2o_HI.uasset",
+        "sha256": "5c366c3c89b8b0d64499a0571dc27843aac9f4f40e057759f159eacc7dc109ac",
+        "size": 12879
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Low_Open3_HI.uasset",
+        "sha256": "605a860215f5e2ed66e211536dd2c0f48e26a98f86ed868ee692d5181162d93e",
+        "size": 12895
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_B_Low_Open4_HI.uasset",
+        "sha256": "25795717198f9179b8b9c673f0ca5ee153d71e48e671bb13030e117734a19598",
+        "size": 12888
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Full_HI.uasset",
+        "sha256": "024f2b688145bd32a24210bc552420cca7c253704b4a86bdef687518023209c5",
+        "size": 52250
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Full_Open1_HI.uasset",
+        "sha256": "04f676d776dae682ca08a441b19cfc12c1204bcf176424d7d32920e608c5b8c3",
+        "size": 37316
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Full_Open2c_HI.uasset",
+        "sha256": "395c7c516e706951ec083853469ce654790145fbf85d92a41c48613ba1d82b40",
+        "size": 37388
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Full_Open2o_HI.uasset",
+        "sha256": "fb22f1ea5c700cf24cac4beb37afc88ad7507eb3c08e96d734a3de4996b3cc2b",
+        "size": 35541
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Full_Open3_HI.uasset",
+        "sha256": "301df1138e5422e43ccb18199985816a45f94ae1d14c661b86c9d18befc0b8d8",
+        "size": 30286
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Full_Open4_HI.uasset",
+        "sha256": "51075bda2f653c29381d114a137a0ada5189a8996b753224e1b8280967b088a0",
+        "size": 26794
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Low_HI.uasset",
+        "sha256": "1f5695a67e7eb8fd94c68b683dc5cbefe0570d85c21d06573d3553c6c71c7961",
+        "size": 12784
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Low_Open1_HI.uasset",
+        "sha256": "79671d3842ca9619e5a4f9cc85fbddf9a46cd786918892bae842491339bc47e8",
+        "size": 12907
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Low_Open2c_HI.uasset",
+        "sha256": "8e1fd447ede72cdd8e433cf575fb7d6a0eaeb4d3a4a35e4e25dbdfb01d761281",
+        "size": 12897
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Low_Open2o_HI.uasset",
+        "sha256": "13c4e56e31a6f338b8976c9d1d768fdc2de9188dbcb8cd8298b2ccca04e0cce8",
+        "size": 12885
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Low_Open3_HI.uasset",
+        "sha256": "4acbce07b0bf67fddb363c605e2714305f59112b89d3fb72ee391131c7262208",
+        "size": 12890
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_C_Low_Open4_HI.uasset",
+        "sha256": "645aad6d82cdfe3dce7ac89ef429a1727b14dadc9731140f25eb561006a3e9b6",
+        "size": 12876
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Full_HI.uasset",
+        "sha256": "2e9fcea076af977252918a3127252583e64112e31400bbe9180b631801361312",
+        "size": 52225
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Full_Open1_HI.uasset",
+        "sha256": "5e84eff29bee49aa469c2a2ce4ea6d16870fef74a581e9444bd029105cad7e1d",
+        "size": 37332
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Full_Open2c_HI.uasset",
+        "sha256": "fd415c008a6e91b2ec6a1031c8a559f8ea114d5780a061bfeca7b7c85101b352",
+        "size": 37406
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Full_Open2o_HI.uasset",
+        "sha256": "e292e7cf6f8cb0bc85fc51a4693916edda24e5be935ca40aeaef4ec688006318",
+        "size": 35550
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Full_Open3_HI.uasset",
+        "sha256": "d8657ee4ef3d52f73bc41623b5422f9541b80103500d89de46e38a74ad7efef9",
+        "size": 30348
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Full_Open4_HI.uasset",
+        "sha256": "8a3c452c6cbe5912324ee5d43fa862ba3c55dd2c6fe3d9d2e396e288ef70dbd2",
+        "size": 26783
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Low_HI.uasset",
+        "sha256": "9a61a1ff993b3140ef204d0049be4de6fe4dc9ffa7b848032216555e02df7139",
+        "size": 12830
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Low_Open1_HI.uasset",
+        "sha256": "42eeb58c92c9feaf6edb35b53d6ff58e475d91205b758c45ec78a8dbb48d7488",
+        "size": 12878
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Low_Open2c_HI.uasset",
+        "sha256": "cda5b1b8f3da1d34f49cec21a75f6904cc465e4c791b14fd10b6d1078d181283",
+        "size": 12883
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Low_Open2o_HI.uasset",
+        "sha256": "9a173629de1033193fe9407d81bb22a8a9f156a3fed01da42cbacdd769cd5024",
+        "size": 12897
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Low_Open3_HI.uasset",
+        "sha256": "f05c73f6587e13d60426bf88281726d35cf3946e173f2605caa14066716dfac4",
+        "size": 12890
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_BlockTop_Bedrock_D_Low_Open4_HI.uasset",
+        "sha256": "2ad0c31f040d02e9496727467e4b47b197476177d6e34001609e05a27e96dc85",
+        "size": 12867
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallEnd_Bedrock_A_Full_HI.uasset",
+        "sha256": "e08a7c54f8b7fa0cd2e3944edf8beda0433fff6a15b255e7bd460e0ac84860dd",
+        "size": 591588
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallEnd_Bedrock_A_Low_HI.uasset",
+        "sha256": "40f3d2cc209f728217f3fa22e36cbdf98610d3b022e4ccd36b20be33fdaa02cf",
+        "size": 295848
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallEnd_Bedrock_B_Full_HI.uasset",
+        "sha256": "0d6e3b34041c5a96034c059c62bf7b133355b905b5cd40594e0ab990e3ba84b8",
+        "size": 593358
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallEnd_Bedrock_B_Low_HI.uasset",
+        "sha256": "0f0163bb7c8e354ccfdda128e9b3fab8588ca21e683decdff220f2715abc4f8a",
+        "size": 297215
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallEnd_Bedrock_C_Full_HI.uasset",
+        "sha256": "f8ba92cc4fcda789ddc346acdde9a85840cda43218f2b5fa062efed1cfa874f1",
+        "size": 592828
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallEnd_Bedrock_C_Low_HI.uasset",
+        "sha256": "fe4cb8d9b10256937c2dc9d6999ebd2e2f226e9106672c8b430f96dd6ccb6280",
+        "size": 297200
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallEnd_Bedrock_D_Full_HI.uasset",
+        "sha256": "cf4754d3eeb81942858eb72cbba65230fb1b076d91df7c47112804d65e606f07",
+        "size": 593653
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallEnd_Bedrock_D_Low_HI.uasset",
+        "sha256": "0d1197bc5772c16c0cd228081eccae08afacb19685b6e86af6a44261e4f58d5a",
+        "size": 296296
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallFace_Bedrock_A_Full_HI.uasset",
+        "sha256": "b6a47c05ee1f9a6a309c3b7f54337ffe1752341fee8297de05fac70d1a52d131",
+        "size": 149904
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallFace_Bedrock_A_Low_HI.uasset",
+        "sha256": "004e557635578e1e43b0425302d60daf45130ee5b31f4736de685c5a1e8272e3",
+        "size": 89900
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallFace_Bedrock_B_Full_HI.uasset",
+        "sha256": "45d37b9efa270cb0a1e569689fefe1f4c564ce4b971f171f2cbcc695581bd614",
+        "size": 150603
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallFace_Bedrock_B_Low_HI.uasset",
+        "sha256": "9943467191341080d9434a260482eb02e7101371c9240409022cb254aab38e1c",
+        "size": 90521
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallFace_Bedrock_C_Full_HI.uasset",
+        "sha256": "5c283f67da1bd44550d4de4a6a07d08b4a47abbccdf45d1e7783bf3a63df564b",
+        "size": 150846
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallFace_Bedrock_C_Low_HI.uasset",
+        "sha256": "5d7d7d87482a862381262e47558aaad0c6b3ad37fd67b8f3759baba1bed9c9d2",
+        "size": 90865
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallFace_Bedrock_D_Full_HI.uasset",
+        "sha256": "7b47e68dae2d8b4f6ef00e5d89c2644bcb1df0c329f59da22fd5188a6ca0939a",
+        "size": 150073
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallFace_Bedrock_D_Low_HI.uasset",
+        "sha256": "8226c50a3074001b72aa543d2c49c50d104a38e05f639fc044287861448e0f20",
+        "size": 90223
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallInner_Bedrock_A_Full_HI.uasset",
+        "sha256": "0a2e7cd305cb2984b0e3e997385eef6e73a84a2c66f8dbb50fd4c592bd51fe4b",
+        "size": 75009
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallInner_Bedrock_A_Low_HI.uasset",
+        "sha256": "6097f49cd1ed8ef0c19721957cd1e4763a064a0d9077fa5a763ec74c2e81b19e",
+        "size": 45829
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallInner_Bedrock_B_Full_HI.uasset",
+        "sha256": "c985ab0ca16d72d09c1c8b447a6b0fec22b558681cc2106e21ffa512f8107244",
+        "size": 74322
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallInner_Bedrock_B_Low_HI.uasset",
+        "sha256": "8db0c845e986418d2b421c7f9428e5778ba0098a666c9fdca148c8ba4b0b7997",
+        "size": 45480
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallInner_Bedrock_C_Full_HI.uasset",
+        "sha256": "916f5b6ef39231dff4acd4b9790424a53b2da1f02f6f63861c366ade54776c46",
+        "size": 74276
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallInner_Bedrock_C_Low_HI.uasset",
+        "sha256": "bb3eeda676351dbe1c15e4bebd451dc5f13979fbfa58024a32f0616460f5e3e3",
+        "size": 45527
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallInner_Bedrock_D_Full_HI.uasset",
+        "sha256": "79823c9803006670cb1c0198f236660f9c47d6a2b76f4192b01bf34bc968aa6b",
+        "size": 74905
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallInner_Bedrock_D_Low_HI.uasset",
+        "sha256": "4f2c017e7c75de956f988ec95ffdf6522793c8d6c187e0af00bff25739d4d6d3",
+        "size": 45577
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallOuter_Bedrock_A_Full_HI.uasset",
+        "sha256": "e3beef8d5ef6e752ee2682af998d1d757522d0bf2964aa25c0cdc4b8757dd66f",
+        "size": 79557
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallOuter_Bedrock_A_Low_HI.uasset",
+        "sha256": "fba545695e625d1dedaddf81d4459a41ceb298a0e69d40c191f434f0305e6d6b",
+        "size": 39803
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallOuter_Bedrock_B_Full_HI.uasset",
+        "sha256": "8844972833ba13713fb667a930c7d482bf9addc27196ccb52d8d96cac70ce860",
+        "size": 79787
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallOuter_Bedrock_B_Low_HI.uasset",
+        "sha256": "a4c3799b4fcdef2e46dd2816258b0da8e1780043621e29024e8d837acce6e39d",
+        "size": 40023
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallOuter_Bedrock_C_Full_HI.uasset",
+        "sha256": "724cf6d2354a75c68741f960020d5e2e0ebc066fa4c18452b1c60051cdfbf7c7",
+        "size": 80168
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallOuter_Bedrock_C_Low_HI.uasset",
+        "sha256": "02fceca817617c19fb34ddf858b78a2dca09f21e85780a1f828ac571dd38fd2b",
+        "size": 39728
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallOuter_Bedrock_D_Full_HI.uasset",
+        "sha256": "bf403747cefb99d7eb74d1bc03f59f76b48c9a4d6c7b1c6c84e9027df4646c30",
+        "size": 80286
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallOuter_Bedrock_D_Low_HI.uasset",
+        "sha256": "43d7857cf5e1f85a14284737ad3d738579481530b3db1f844f6fdd8d8f098c3e",
+        "size": 39790
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallPillar_Bedrock_A_Full_HI.uasset",
+        "sha256": "d339a154fb3cd09c74a3d39077139155cb543fd57f0b5ec91576f6a341766e69",
+        "size": 754870
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallPillar_Bedrock_A_Low_HI.uasset",
+        "sha256": "5545070ac0e82556031004bdd499753249c00553dbcd81b69f9ffd0ea8dbb673",
+        "size": 300124
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallPillar_Bedrock_B_Full_HI.uasset",
+        "sha256": "5ff9796544bfe951ac39bc68d5a23dc0a45fc130abc0ed7c73899b7886a8e413",
+        "size": 756681
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallPillar_Bedrock_B_Low_HI.uasset",
+        "sha256": "8f374f6192815191b107cf656d05611073fc65778c0471f7c811f9b30e96fc21",
+        "size": 301637
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallPillar_Bedrock_C_Full_HI.uasset",
+        "sha256": "f9fe8bb142d77a7ed3672c94ccd295fd11e15367ec4fe2d711a06d43069ac66f",
+        "size": 754748
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallPillar_Bedrock_C_Low_HI.uasset",
+        "sha256": "7ca230ebc377c87e214968afc4a16d4c52960ae9cfbc6172f215e56ddd240b06",
+        "size": 300716
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallPillar_Bedrock_D_Full_HI.uasset",
+        "sha256": "e79c00b101f854ba852adca771db9ab60909ed912f25d5ff179142bd4066b957",
+        "size": 754696
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Bedrock/SM_UR_WallPillar_Bedrock_D_Low_HI.uasset",
+        "sha256": "44a173ca8891c149141051a47dba830c3811b41e7fe515568a8f35e8e4bcdaea",
+        "size": 300781
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Full_HI.uasset",
+        "sha256": "8b928c7c816da1722f060cc30020d17eb3b8dc21d429463e3a7253e959cb9a2e",
+        "size": 52704
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Full_Open1_HI.uasset",
+        "sha256": "b81399494e8bb202ea8e47fe3bca44c5380689c388b647dc6bf7109b5ba263a6",
+        "size": 37770
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Full_Open2c_HI.uasset",
+        "sha256": "07e16b86bc0a9b70868a5cf3bf1787b6a9dab635e0bdc17e7f1c9713fa571649",
+        "size": 37743
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Full_Open2o_HI.uasset",
+        "sha256": "17294f92684bd21852f6e78ecbb8f5cf3ef192fd6380d7fe3d43baefa0e06288",
+        "size": 35896
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Full_Open3_HI.uasset",
+        "sha256": "ee88e8421e15ab38211e55f2154e3489cc04127471ef67e5463269ba536a578a",
+        "size": 30517
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Full_Open4_HI.uasset",
+        "sha256": "3949c5c9bbfea3bca09e59690c1ce604b5bab8af001931819899382655c63008",
+        "size": 26951
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Low_HI.uasset",
+        "sha256": "95d1f582d5d49e94e7f431322c3a25a2d215b55e97bdb41f4a2742b810c93a51",
+        "size": 12744
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Low_Open1_HI.uasset",
+        "sha256": "08a803db950ff9b789fc9b77c1a1f7c0801b60fd3f00edbbe4e4f25cfb3325c6",
+        "size": 12835
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Low_Open2c_HI.uasset",
+        "sha256": "ff10c95cd4ad39a2a84bf14e289611b98b6070f55a4674527cfb6563c73041fc",
+        "size": 12840
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Low_Open2o_HI.uasset",
+        "sha256": "bc85a1404c466ad9eb2465f69bec70cde8ca3ef8f7825060562b9227e50a1f2d",
+        "size": 12842
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Low_Open3_HI.uasset",
+        "sha256": "2589ea326025f6b020d3a47e229635b6a8991b5edfb607cf21d1f472a4012156",
+        "size": 12840
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_A_Low_Open4_HI.uasset",
+        "sha256": "b883866e6cad44ebc0ed93a4b1a7f8a05c2a2742763e2963d4757a0ed31b9d09",
+        "size": 12845
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Full_HI.uasset",
+        "sha256": "43fc1f1b939ce0c0e33b09e2e37eb4837ea73eb148f94165c2e870b138d7677b",
+        "size": 52664
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Full_Open1_HI.uasset",
+        "sha256": "a74fc982bcc8c6a08242afd300cb01e8ccf6e2c868ed9e8c9c445c403e1c4525",
+        "size": 37677
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Full_Open2c_HI.uasset",
+        "sha256": "928df82a647def26e4a071adc7f652f3d7416e58000bd63511dfcd9c68a60829",
+        "size": 37673
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Full_Open2o_HI.uasset",
+        "sha256": "94b74e04cc2d7b2bd166679059907b0b1ad48bbf275b4443c49ab288135d235d",
+        "size": 35944
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Full_Open3_HI.uasset",
+        "sha256": "def1735855bfc1cd5d0bf40baee17306d613947b21d7a6857eef9186fc99a100",
+        "size": 30508
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Full_Open4_HI.uasset",
+        "sha256": "b7b9a44d561349e0abdaecab9e93342a2e826d1a0afab956775a7f19c711d6bd",
+        "size": 26937
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Low_HI.uasset",
+        "sha256": "6d7af74b66b91576f6e0cec65831c167ffaabc57e4e62843226f6a7b0e7db43f",
+        "size": 12746
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Low_Open1_HI.uasset",
+        "sha256": "c0846614cd4ff7d2678ac91ad03ae49cdfddf1474c901c21b49d725601672f70",
+        "size": 12816
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Low_Open2c_HI.uasset",
+        "sha256": "2e8c4b7bd2d99812c2d29cfdfdcbea5024ab40b5b0a1f7232b5a948cadbc3ece",
+        "size": 12837
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Low_Open2o_HI.uasset",
+        "sha256": "4886549b2d9d499d2c99dfee6db9317daf19ec1ed3fe769882788a77069b35c2",
+        "size": 12880
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Low_Open3_HI.uasset",
+        "sha256": "ed8cc0ce93289c8c53f18ddd0280a18b1b14610902c8b0cb099658fd33a0e363",
+        "size": 12823
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_B_Low_Open4_HI.uasset",
+        "sha256": "110d06b4d5229d5e76e1a55101610c7d0829635b5784b44a97531e170b47adf5",
+        "size": 12826
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Full_HI.uasset",
+        "sha256": "367565e06a5536a265a9cb1342cb1d954d5c5f91305073d365eafcc875bc64d4",
+        "size": 52648
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Full_Open1_HI.uasset",
+        "sha256": "0407f24807cc8cc197cb15db4c34856c3e76ec6f336cebd2f4fa9cbffd5d7113",
+        "size": 37609
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Full_Open2c_HI.uasset",
+        "sha256": "b0776b1aba30a7d997a17626b7453be89d6d88d883f83e38ebb0416d086c1091",
+        "size": 37699
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Full_Open2o_HI.uasset",
+        "sha256": "acc599d7a839b3d343dbd572cf5da7b45ef9d39f991da1c1903bf0dfe287fba1",
+        "size": 35851
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Full_Open3_HI.uasset",
+        "sha256": "cedda56aa0188778067cb5a257a5c3b075bdc6099dd09054456b1b4aa25939cc",
+        "size": 30478
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Full_Open4_HI.uasset",
+        "sha256": "cea6fd92e4eee977d943db0c56b2ec5007cf45f73706d8f49857cfe91ea78d1c",
+        "size": 26884
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Low_HI.uasset",
+        "sha256": "0b88da00e493348a3d2b92f035e145bf6b7d921ec4e92abade6a95733a720c92",
+        "size": 12747
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Low_Open1_HI.uasset",
+        "sha256": "193b872333abb4cd23e9c4dda25e2f6f9779cb7291ffd20a2021c8ec6918ef7c",
+        "size": 12821
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Low_Open2c_HI.uasset",
+        "sha256": "2d8de8253b6fa02cdcc031487e6256a661b4ae5d18f46b955f9f058b996e56cb",
+        "size": 12816
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Low_Open2o_HI.uasset",
+        "sha256": "c936c08c02c5b858149f67cb452ad5373a234ef4a6d68ce95e9f0878c83b91af",
+        "size": 12873
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Low_Open3_HI.uasset",
+        "sha256": "eae7d5d0dc6b5c9372e592f1485d3c1d36fe13459134fcacdd1c27df65e8358b",
+        "size": 12843
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_C_Low_Open4_HI.uasset",
+        "sha256": "c077a123c22b0f137890888988439daf955068dbc51dc8d9681db89bbb404c65",
+        "size": 12831
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Full_HI.uasset",
+        "sha256": "ba0865dfde154bd406d8616d4797f02396909e69a4d2d438b5a5367de2e2875e",
+        "size": 52769
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Full_Open1_HI.uasset",
+        "sha256": "5c5fbe9709b81ccbb49b6f5bebbeb1248da2e1d86fb1bc025dd374b172071eb4",
+        "size": 37795
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Full_Open2c_HI.uasset",
+        "sha256": "f469231e4b5cb9071755fd5b3d2e5304c83a3e3cd94402fcfcf1082af45a1ad4",
+        "size": 37746
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Full_Open2o_HI.uasset",
+        "sha256": "9b4d1483d5902623eef3f71ee97fafb3ad9af8495dfcc6214a2ebbd0747af048",
+        "size": 35904
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Full_Open3_HI.uasset",
+        "sha256": "790af5b5d5968a925e34755c7f56a50c57708670243d013518d56994032e7946",
+        "size": 30582
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Full_Open4_HI.uasset",
+        "sha256": "d976a3674d2f313c76dc2ae06574c146458f099d1bbdc448d1b17eb781ab7593",
+        "size": 26993
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Low_HI.uasset",
+        "sha256": "084a89a044e1d588164f4455ca36d36a80ae5cbb147a9064878fdbec4f1147c1",
+        "size": 12734
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Low_Open1_HI.uasset",
+        "sha256": "896f86be3b7a6edbd73a461819a8d8b9496e05f6a512f15b250921108cd07e45",
+        "size": 12828
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Low_Open2c_HI.uasset",
+        "sha256": "7f63cf28bc4943365eb695751ebd560c5659fccf02b244fca3982ce60a1c3a68",
+        "size": 12835
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Low_Open2o_HI.uasset",
+        "sha256": "892d2c8415b1e4ec2dcf6060ea8caecdec3a4787a2a2a830c885d95c6d995ef8",
+        "size": 12878
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Low_Open3_HI.uasset",
+        "sha256": "91035f2fa01be1677dc789c32b01ceb4447b9b4c21e403859580c0abced4d937",
+        "size": 12843
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_BlockTop_Gold_D_Low_Open4_HI.uasset",
+        "sha256": "287edbb511bd71cb3adbdf5340d1fbdfa9b42e347c76c6376df44e151b08f5fa",
+        "size": 12841
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallEnd_Gold_A_Full_HI.uasset",
+        "sha256": "aeb0c2c57fdd7a48702e13f435eb83ebb925b7fb76730c95604e52f936fe1215",
+        "size": 602747
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallEnd_Gold_A_Low_HI.uasset",
+        "sha256": "64035c17d525b4e1de67cc1099237987829cb26697c14265eb600fa6e390d2f7",
+        "size": 289393
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallEnd_Gold_B_Full_HI.uasset",
+        "sha256": "1000a4af31b6cc6aff24a8ea102ae4fe584aa29784295667732cac557c61d0cc",
+        "size": 586898
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallEnd_Gold_B_Low_HI.uasset",
+        "sha256": "1a5c5e7fa74ff96fd8303e2c8a926e5ac4bd2ebea97685ea5cb131c1bf3dcc2b",
+        "size": 289137
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallEnd_Gold_C_Full_HI.uasset",
+        "sha256": "dce9fc17b7c26294868fd327d06f99d8be0fff7ef2d0251c48cb8eaf89dbe00b",
+        "size": 586581
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallEnd_Gold_C_Low_HI.uasset",
+        "sha256": "f64150e4bf22925a8f820bae48ce78fcf82bd187ce68f61281ff5ef3098e8124",
+        "size": 290661
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallEnd_Gold_D_Full_HI.uasset",
+        "sha256": "1468ac672ff0541a6f23c479ceab005d445ed5aecb4e1a99a6c032a307581cfb",
+        "size": 590049
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallEnd_Gold_D_Low_HI.uasset",
+        "sha256": "b858bd0148937d217dc4bc24a7dd3680bac6d09dc8a7c3c29b041b721a615a3a",
+        "size": 293324
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallFace_Gold_A_Full_HI.uasset",
+        "sha256": "7a6d1bc98135cdd508ed9d7c6eb256e7f2d1bf044878a390edb08f11ed3b0b27",
+        "size": 206231
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallFace_Gold_A_Low_HI.uasset",
+        "sha256": "e617e99f9307c95ad1958089f1867ea4ead4e418836b8a46b63ea3295663016b",
+        "size": 100095
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallFace_Gold_B_Full_HI.uasset",
+        "sha256": "9476890cd5763c6a3523f7ba5c411f83c13b8a5623a9b89a9d40869b0f315a43",
+        "size": 204682
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallFace_Gold_B_Low_HI.uasset",
+        "sha256": "5b8d5350cadc79c6b038c57298e467b2681f05fad811c5a4456cc475f03b0628",
+        "size": 100470
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallFace_Gold_C_Full_HI.uasset",
+        "sha256": "41769b724347ae69ea2519d23ba936d6d637a3d5af9470f1198fc3b8d298df3d",
+        "size": 205377
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallFace_Gold_C_Low_HI.uasset",
+        "sha256": "963c842cabd5a254efc05223ed141e63dba88715d06dd6417018f399eb20bee8",
+        "size": 100858
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallFace_Gold_D_Full_HI.uasset",
+        "sha256": "98d317fbc08ad8b3bcb8f2f59d2f70b4152bc5e429713f5d5d824976adef5722",
+        "size": 206525
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallFace_Gold_D_Low_HI.uasset",
+        "sha256": "0ef9e389135ebce423950178418d6bf6472e79dcb5fb4d55f62e7187bc6264a4",
+        "size": 100053
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallInner_Gold_A_Full_HI.uasset",
+        "sha256": "9742eb416af17be1d47194337a06d73555d2f5c8837ff234acb1a5fbd719d3ea",
+        "size": 73808
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallInner_Gold_A_Low_HI.uasset",
+        "sha256": "a1d347c7dd41fff117ae968f575fc41b5e52f7c83986138169d94c68b0e8af47",
+        "size": 45071
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallInner_Gold_B_Full_HI.uasset",
+        "sha256": "28e45a3774deb3d54bfa5ca2b9d9a0fe89a91a57aff20e16df338e5e2438d5f2",
+        "size": 73865
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallInner_Gold_B_Low_HI.uasset",
+        "sha256": "2e5deb39ec49983e67daf10b2059fca215c31130f3886d99afb4ca40bd1f2a89",
+        "size": 44760
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallInner_Gold_C_Full_HI.uasset",
+        "sha256": "33b54f8eb89b99ff023a4fa0ba1403880e73ae11714b917889b6ddbf63df2bb0",
+        "size": 73797
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallInner_Gold_C_Low_HI.uasset",
+        "sha256": "6682d18b63f3e028f7ebe8c7b6638304a3a4a268683e19f248887c64079c532f",
+        "size": 44612
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallInner_Gold_D_Full_HI.uasset",
+        "sha256": "ff791a8bae37755ef69ecfe5f310dbcd36995da99e84762e3176e4823094a771",
+        "size": 73466
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallInner_Gold_D_Low_HI.uasset",
+        "sha256": "0ed10b2dbd92bd25512067aee131ece26d16262f6d3d1a4a0debfde0d0385807",
+        "size": 44814
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallOuter_Gold_A_Full_HI.uasset",
+        "sha256": "3f8c2c1590a366037095d941969c79b8a5e275dadd29403f31b3293f5f87e7e5",
+        "size": 81245
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallOuter_Gold_A_Low_HI.uasset",
+        "sha256": "d88bd729f75c8a37525ec33367306a969142c9284fe35519f4d2f4d5ca1326ac",
+        "size": 41081
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallOuter_Gold_B_Full_HI.uasset",
+        "sha256": "931231d948bdce4a64e784bfda604a781f4bc40b0a7e214d8f5b5d5346e0f981",
+        "size": 80746
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallOuter_Gold_B_Low_HI.uasset",
+        "sha256": "b619939a92395847577972c1caede980542301c9a2b985b3628af2857f5a7264",
+        "size": 40540
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallOuter_Gold_C_Full_HI.uasset",
+        "sha256": "e9945f6bf4d1d1343a0e8d38cabb6098bbb8882c3c729f071945162b766a1ce8",
+        "size": 81754
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallOuter_Gold_C_Low_HI.uasset",
+        "sha256": "0bb3f528988157408ccd32a8fa9aa95ca11f012c1f5965bc09d769a819b7b680",
+        "size": 41147
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallOuter_Gold_D_Full_HI.uasset",
+        "sha256": "ff5c5e8152f191ec3158fbd640957090ae8b76332e0b790c18ef850e231f402b",
+        "size": 79357
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallOuter_Gold_D_Low_HI.uasset",
+        "sha256": "a594b9b8921cb76daef8559c89c4db5ebf49ebbaa79b6b0b4fd90594affc6d1a",
+        "size": 39083
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallPillar_Gold_A_Full_HI.uasset",
+        "sha256": "0a20588e33d4f7cdc316661d15e53f6670f867003c421e844fd17b8e735e0513",
+        "size": 837943
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallPillar_Gold_A_Low_HI.uasset",
+        "sha256": "289289b686851dfa5cf953fe499c9e15248b73a725ad01d09e2016bc1e0b10c3",
+        "size": 447693
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallPillar_Gold_B_Full_HI.uasset",
+        "sha256": "a066ab5ac8edd096b75627fad16f7c3a304b852283dd50a45a0dd4d92a982048",
+        "size": 834753
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallPillar_Gold_B_Low_HI.uasset",
+        "sha256": "3b4fc2bbac8d350a74f659e8619602074e3b8a754c0046e53edf2e01d292faef",
+        "size": 443856
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallPillar_Gold_C_Full_HI.uasset",
+        "sha256": "6388b4cab413a21a7c09522668fbc4e22593d75386e341e2dc60e94724737e3b",
+        "size": 837268
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallPillar_Gold_C_Low_HI.uasset",
+        "sha256": "8f3283d0dd5accbcd2154abfb1fa2fed8ed96766fc9fc0e1b3db147fe6f0bcd6",
+        "size": 447269
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallPillar_Gold_D_Full_HI.uasset",
+        "sha256": "e33a4d9099540844fa0603f7f48ce49ea9f69d276d8540d820a0ad17abfa8cc7",
+        "size": 835815
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Gold/SM_UR_WallPillar_Gold_D_Low_HI.uasset",
+        "sha256": "62b3c3b4cf67dc8aec6b53be6ebb5f3b9a3c60fb0f928bd8f919a131119c799d",
+        "size": 446354
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/M_UR_KitRock.uasset",
+        "sha256": "a5fd7758b64efe4fb1bcbe81a6af3ede80bcf88a39600509ba894d416bc39a4d",
+        "size": 22924
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/M_UR_SeeThrough.uasset",
+        "sha256": "ff4eb4329561ca6c695026f94f5ed6c1b8fc939dbdfec2478a4c5dd1a55eef7c",
+        "size": 13608
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitBreak_Basalt.uasset",
+        "sha256": "2441cdb48e98cf25e5814653aa8896a6f16e93d5a45b79c65779e563000368c1",
+        "size": 5323
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitBreak_Bedrock.uasset",
+        "sha256": "94b12f6bfdce673d148e6fe83af626979a31e2140c6716e458d7e7a4a117fef2",
+        "size": 5328
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitBreak_Gold.uasset",
+        "sha256": "76442d483f544f1dd5aa62b9b2d3d88af177ec81d649f7e84b283dec6ced2507",
+        "size": 5313
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitBreak_Soil.uasset",
+        "sha256": "c8ffc47f8f660d8983190cd7ee4341158003b5e39cfbb5f8ffca65892d587d63",
+        "size": 5313
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitBreak_Stone.uasset",
+        "sha256": "bd794a1f2953d6f04d407c20b3b77d17037ca7e16476441b5e97a39ff007a159",
+        "size": 5318
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitCap_Basalt.uasset",
+        "sha256": "17142f5be800f4aa72e4179cb4933a48c0f087d3d1f5c8b4ea56d629f78215ca",
+        "size": 5314
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitCap_Bedrock.uasset",
+        "sha256": "41dbaf027fc2626d85ccd14806332e0e293a0feff14288939bd6f68d9c700988",
+        "size": 5319
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitCap_Gold.uasset",
+        "sha256": "fbd4fe4ed2aa20ce855f6b05cfc802714a2bcb442a7126ab2ebbf45b6e1c8b88",
+        "size": 5304
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitCap_Soil.uasset",
+        "sha256": "8b4b86b2657d754f6a11edda4d9ad426bf68280003549d75d4b42a7691a5a89c",
+        "size": 5304
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitCap_Stone.uasset",
+        "sha256": "b6326596b5d41dbc0ac295fb75bdad99f6c2c4db010f1e6ed3d695ff552654f3",
+        "size": 5309
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitOre.uasset",
+        "sha256": "754bdfeb1c05d63113f36e63fd5c947b8f9006d334b85d5ab0257818a1770857",
+        "size": 6034
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitRock_Basalt.uasset",
+        "sha256": "1da7ef7ce0e2ca901d67d3b46d9abbf2445104929b11b9aa28e31fdea72c7563",
+        "size": 4887
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitRock_Bedrock.uasset",
+        "sha256": "d876ec830827b9fb51a6f040a1991314f8f2c8d8b204fa2d4b0d9ce7192c90a3",
+        "size": 4892
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitRock_Gold.uasset",
+        "sha256": "1e304238b22944d30ee1d47f32104a894c65cb1bfd4dd1e814a8d3f7072ae67d",
+        "size": 4877
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitRock_Soil.uasset",
+        "sha256": "989a19dc6a7d36cc33ef9e11b3ebf0bea3cfce8096283da4d91b54802efe83cf",
+        "size": 4877
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Materials/MI_UR_KitRock_Stone.uasset",
+        "sha256": "da127a314e0684d8150bb4c88e8ced66f9cc4735675a4afcd1338691694205f8",
+        "size": 4882
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Full_HI.uasset",
+        "sha256": "0aa7619c6fc355f623db62374fd4f024512c24549702e487ade7b880c5808774",
+        "size": 52702
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Full_Open1_HI.uasset",
+        "sha256": "e4b5f519cc03118e1ef27369933a54b863b54a778e9746869dc1fb3de4f7143c",
+        "size": 37730
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Full_Open2c_HI.uasset",
+        "sha256": "cd1dc22c81909ddaabeb9a0a9bf81559f37d4297eb2b96ee35c3ed242b4566c6",
+        "size": 37769
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Full_Open2o_HI.uasset",
+        "sha256": "9827a381edfed0d059b9d3d57802d2b69d57436287e4f3bfeab8730532833721",
+        "size": 35852
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Full_Open3_HI.uasset",
+        "sha256": "26b653e9605594be21eb5910fb4a070bf7d353ed65654af536d4b086d9025209",
+        "size": 30515
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Full_Open4_HI.uasset",
+        "sha256": "6787ad29d87a5bb6ff0171e52ee1b6ea9249e869006da35587fa458dee542c02",
+        "size": 26884
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Low_HI.uasset",
+        "sha256": "5c5855fc3e1be11bbf79ea975676a9aa67f925de092cb2792eef725a41cb9943",
+        "size": 12730
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Low_Open1_HI.uasset",
+        "sha256": "cf6ec8fd77903eeaeb29d8b583bbcd5a284eee7725863b78e7cf3aa52fc1c85a",
+        "size": 12834
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Low_Open2c_HI.uasset",
+        "sha256": "cee521aa3ffea9c636eb833e0d5be7af5c0c1ddaf05e27ca5d61e5356eaebdc0",
+        "size": 12847
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Low_Open2o_HI.uasset",
+        "sha256": "86c22016e84b4177bb2e397ccd20953cb2fdccd1c023581dd04e276ac45bf147",
+        "size": 12838
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Low_Open3_HI.uasset",
+        "sha256": "3f7954bff43e11aecaeee052ce658b11c4c0a1c2a6e7870805755dd2971d290a",
+        "size": 12839
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_A_Low_Open4_HI.uasset",
+        "sha256": "de976c5c5c9ccc4b106856429abb33e506e525b7909ef140a7bb6cc1bee1c878",
+        "size": 12837
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Full_HI.uasset",
+        "sha256": "6c69ccfbc7a3c291959413285cb1cb57e5fb2cb4c93fa4a47f2dbf026a901fef",
+        "size": 52693
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Full_Open1_HI.uasset",
+        "sha256": "cd4686b53b2f01464546bb415319d502f683309d6619dd1d33268fe6d94d7358",
+        "size": 37708
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Full_Open2c_HI.uasset",
+        "sha256": "9c7cdbf26229c89d55ee15a71f3112d6d7e27d0e25dd9ca7ab5cdaa787aeadd9",
+        "size": 37710
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Full_Open2o_HI.uasset",
+        "sha256": "dde93635520f162ef6d84141523add7bbffd841119d9eaf80f7612dc33a2d614",
+        "size": 35853
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Full_Open3_HI.uasset",
+        "sha256": "ccc1f8f05879eba61b5eb593d97f4ac5fdffc273b546eaa86d97da01d487f014",
+        "size": 30534
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Full_Open4_HI.uasset",
+        "sha256": "9ea737bf842052a1423a3ce8806cedc0e8ddcedcd78f72e1646af0637dddc9ae",
+        "size": 26924
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Low_HI.uasset",
+        "sha256": "287742c23b8de3c33994767a6e7ce54315611495dbb4e34b6965995cb7830a72",
+        "size": 12773
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Low_Open1_HI.uasset",
+        "sha256": "df193637aab326c22263952a31764d91363278cd19104f98601be39a9549f437",
+        "size": 12827
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Low_Open2c_HI.uasset",
+        "sha256": "da7b81c39f680b4d46b170689e1e32ee27a13ec8d1ea0a19ae54344157889be6",
+        "size": 12818
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Low_Open2o_HI.uasset",
+        "sha256": "9606311f6c1e6d8207d37f4006a79fb2b6987b014c167a6839615a10afcb2f58",
+        "size": 12850
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Low_Open3_HI.uasset",
+        "sha256": "9ee1c0301da9dde82d2a420c4578baa9bad7a714c98703e919608b042e1a758f",
+        "size": 12822
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_B_Low_Open4_HI.uasset",
+        "sha256": "b50bcaa1fa5104c487efb1980adebec9a1ac4681a22590137232e66ac1d10025",
+        "size": 12827
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Full_HI.uasset",
+        "sha256": "fb7fd8f146c92b09f8c367ddac932df5960c1954cc0a4b9a962c2fc81d781e68",
+        "size": 52764
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Full_Open1_HI.uasset",
+        "sha256": "8a2fb34e4ed0c1c2eb7bbc430395aee875ea46581794d663f02c103460b3c78b",
+        "size": 37664
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Full_Open2c_HI.uasset",
+        "sha256": "cc2559eb88e06ae5f986b8c584bc8d542152cd3b6edff2a06be13cc7c10585a6",
+        "size": 37700
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Full_Open2o_HI.uasset",
+        "sha256": "cbcd7eaa905b34d1d596cf95b7ca605faccd3760a526a42d5f646a7d943471ec",
+        "size": 35795
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Full_Open3_HI.uasset",
+        "sha256": "7e245d6991660a22a95f60669a9631b0efd8dd5f8fc7e24ef428026744f5ddaa",
+        "size": 30461
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Full_Open4_HI.uasset",
+        "sha256": "0a58533bbd2dad61a9c39055ce6716df0e53a187cd26528430d298d4124c844f",
+        "size": 26854
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Low_HI.uasset",
+        "sha256": "f4d6d8880d619b43023de386ada1c93963bf7b54c329489b37b62570a91f6501",
+        "size": 12768
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Low_Open1_HI.uasset",
+        "sha256": "48f3fccb2f78a4e93029fb063829d392ae6b92f9c514186c10b96aaec5c8a66b",
+        "size": 12832
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Low_Open2c_HI.uasset",
+        "sha256": "e0a401496a8f93edbf6621c30bb243620155c00c07f1e5c290265bb31683103c",
+        "size": 12833
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Low_Open2o_HI.uasset",
+        "sha256": "5fb9b6dd5a50b40d4436a1f1bcfd6adc986a0e556f9cd6a321c913cab4fab86f",
+        "size": 12878
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Low_Open3_HI.uasset",
+        "sha256": "dd9ca60e64f85588a7b7111755f8d292074ae09a3b39cf568a2887be05929363",
+        "size": 12837
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_C_Low_Open4_HI.uasset",
+        "sha256": "9956aeb133d9fd7eea9abd4cf7aef22fce6a3b5ccb8d01dd05efde153140b1f1",
+        "size": 12830
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Full_HI.uasset",
+        "sha256": "317169f245658ecae0f5a7c4bf9b7aa5fadbeb1cac67cacd6f0a22937ff6575c",
+        "size": 52670
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Full_Open1_HI.uasset",
+        "sha256": "d2a453d48c88a4de61afafa3a54a3c7fe15eade5349946b1792a8f43a130a218",
+        "size": 37683
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Full_Open2c_HI.uasset",
+        "sha256": "998220f92c4912b53b8957c699c1a728cd97387782c54aa6d836798d042cc43b",
+        "size": 37690
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Full_Open2o_HI.uasset",
+        "sha256": "f13c8cb3ba315438f346be6c47e04da5d3690e7a0aa691e126c09624e4c21410",
+        "size": 35908
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Full_Open3_HI.uasset",
+        "sha256": "8fe888028bbe40fc88445d45e6abdcb5b59b4017c15cc8227df1bb84144e9e87",
+        "size": 30456
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Full_Open4_HI.uasset",
+        "sha256": "aa2503bb7d0bba1e886e77c4f92ae0ed334e389943ebbee895137705beb2584b",
+        "size": 26914
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Low_HI.uasset",
+        "sha256": "9ea808fc982509bd9d89149afee4e4952c6041d7b33e64fccbcb4ed78dac4c47",
+        "size": 12721
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Low_Open1_HI.uasset",
+        "sha256": "dfa25d075ac961971a06615836cc86c2fede05a766797fd9140a9d0b639ec4ec",
+        "size": 12823
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Low_Open2c_HI.uasset",
+        "sha256": "1fd167f0f4475af49c7d149951ac5e8eed806beeabddd6cff2b088e5987b420f",
+        "size": 12829
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Low_Open2o_HI.uasset",
+        "sha256": "db831660077d1acdb1d6a6dbdb544ef9c5affd763320963c93ce4eff99a1e53b",
+        "size": 12838
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Low_Open3_HI.uasset",
+        "sha256": "ece009989c88356eaf8245da1267d7d7fb33bee5310bacbcb9340a84912ba228",
+        "size": 12836
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_BlockTop_Soil_D_Low_Open4_HI.uasset",
+        "sha256": "e16981bfdc2816c28527eac391e6da10349fc596e74f57717723f65fd1fbf62b",
+        "size": 12842
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallEnd_Soil_A_Full_HI.uasset",
+        "sha256": "c3860b12579e6bb935529da3ad24320c3361523a7953df39cb80dd02ce6897b8",
+        "size": 562086
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallEnd_Soil_A_Low_HI.uasset",
+        "sha256": "37d25a6a348d3c6d81ba6a9c82e2222851adf726d6ae55e87ab22440e9094709",
+        "size": 270739
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallEnd_Soil_B_Full_HI.uasset",
+        "sha256": "44e6046b35a419c28b808c03272e40d74b2a1fe7d395cbf30816abde4cebe116",
+        "size": 561209
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallEnd_Soil_B_Low_HI.uasset",
+        "sha256": "687dab24c17af50f16a943461add18ca3603b6113cd699f1ec9f9461e5fbdc45",
+        "size": 271223
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallEnd_Soil_C_Full_HI.uasset",
+        "sha256": "aa0125ad44ff2b9644617eb53726e709274a5013cebcf47a0f1a940b67491c04",
+        "size": 559544
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallEnd_Soil_C_Low_HI.uasset",
+        "sha256": "7bf773b1a6502925b49487c43c79600f8f1cc43e2f702c65949c3570daceb331",
+        "size": 270496
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallEnd_Soil_D_Full_HI.uasset",
+        "sha256": "bb6f870954990f61e5c04534bca763e0f9e80cf3bd83c3371c1b29e35b40e54e",
+        "size": 561231
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallEnd_Soil_D_Low_HI.uasset",
+        "sha256": "1f835e4970b68284f53fe66027e84fba9ec75f7f1d41c0abc43e58250b23a863",
+        "size": 271143
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallFace_Soil_A_Full_HI.uasset",
+        "sha256": "863ff88e7b3e997d5341d9479641fc4e267ed34ea1866f11dcc0fab6db3f1c52",
+        "size": 192845
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallFace_Soil_A_Low_HI.uasset",
+        "sha256": "edb529c823390ef1183f9d064c74b1beac1d26b45108b3c13cb5fd57a62dc79a",
+        "size": 100319
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallFace_Soil_B_Full_HI.uasset",
+        "sha256": "660cc5c596d5d5a9cae02684ae98bc6fcbd0d53b4d056b5f8b6484789ba9715a",
+        "size": 186075
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallFace_Soil_B_Low_HI.uasset",
+        "sha256": "d24a73b11e0fccea8aa38c15b869258e6401cfcdd74e5cf5fc825a71f88692a6",
+        "size": 102092
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallFace_Soil_C_Full_HI.uasset",
+        "sha256": "1db12adfdd7189ca7b08cbbbab18a641a52860bc285e76332f5edf73ebe0d4ab",
+        "size": 200983
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallFace_Soil_C_Low_HI.uasset",
+        "sha256": "321b3b7ac9b1f012a086694a0347992e5db3d9e3a523b2c5b42b92f15a369c60",
+        "size": 97667
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallFace_Soil_D_Full_HI.uasset",
+        "sha256": "8623aff118c38c8d3eccdcce12ccd15e20af1f71f5bb78629914d1f7a8be7f0c",
+        "size": 192293
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallFace_Soil_D_Low_HI.uasset",
+        "sha256": "07695ab22dd0dc77495e9940739624faae32b4550d1b1ad4f6bf5559e7465912",
+        "size": 100396
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallInner_Soil_A_Full_HI.uasset",
+        "sha256": "5df8f02f69913f494f5228cbd038aad89513494245c29508cf7e78a74f4dce8f",
+        "size": 73574
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallInner_Soil_A_Low_HI.uasset",
+        "sha256": "9637a5f465b0510745a9110fd2e3a445c4ab8108f20595084d499af66f5a9091",
+        "size": 45132
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallInner_Soil_B_Full_HI.uasset",
+        "sha256": "2010fbe0a5c3599cbffb947d8f764389fe1a6f636245efc70cd95abd22e68198",
+        "size": 73573
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallInner_Soil_B_Low_HI.uasset",
+        "sha256": "3a8f9c4cd4ee8adcc10c13572c4d4ef8f7f3635a951c6210ed3d63b0815dfb1f",
+        "size": 44857
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallInner_Soil_C_Full_HI.uasset",
+        "sha256": "54b4c287fda4ad126a57b771223c7f5d76b65bf046ff50aff17eda51d58d9f33",
+        "size": 74206
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallInner_Soil_C_Low_HI.uasset",
+        "sha256": "ee10119e3a33570dd389c8f0e85e4d82fb9694e71e529ecbbd6ba1394b17023d",
+        "size": 45528
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallInner_Soil_D_Full_HI.uasset",
+        "sha256": "6a2f1176b5d16cf67030e4ceb71d4736a7cd4e4056e72bccc88e50425d2f6402",
+        "size": 73649
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallInner_Soil_D_Low_HI.uasset",
+        "sha256": "a136e01b7eb66b1195f6c1af014700fdcd57be93e65ef2e4418d016b178b312a",
+        "size": 44924
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallOuter_Soil_A_Full_HI.uasset",
+        "sha256": "60345b18f884ff61e9a1264d477bf862885018c9a021926d3b3b401c7e185066",
+        "size": 80552
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallOuter_Soil_A_Low_HI.uasset",
+        "sha256": "8f3d4b93b348e4b34e312f69be39b2c672a7fc6c03e1af8cd8fa9954783cc20d",
+        "size": 39679
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallOuter_Soil_B_Full_HI.uasset",
+        "sha256": "72088a1ae86e4c061e4331646725df7d64e143e1e8841120502295849d7b9b76",
+        "size": 81212
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallOuter_Soil_B_Low_HI.uasset",
+        "sha256": "c42b9a65c2efb1ad0346586bdc6b27baccab35a5384be0a4b5c8ac9957b235ce",
+        "size": 39721
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallOuter_Soil_C_Full_HI.uasset",
+        "sha256": "54c6a92d7c8540815728fc3c94819df7772d9612552bfe2182779b7167089c9f",
+        "size": 80274
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallOuter_Soil_C_Low_HI.uasset",
+        "sha256": "82648227a82957148d882dafb43cb73579bab78a907870c82b6ff4b862e97179",
+        "size": 40461
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallOuter_Soil_D_Full_HI.uasset",
+        "sha256": "d98cb2a30b1deb96ebbdc780509b1fdfe0006d840806c8ddeb784e43b3b5dc89",
+        "size": 80747
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallOuter_Soil_D_Low_HI.uasset",
+        "sha256": "a3786cb4c540acd64e68b389f939b977fafb73edb28aa5baece2476e0e8bda55",
+        "size": 41050
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallPillar_Soil_A_Full_HI.uasset",
+        "sha256": "1d014be4c815ab9654743a84d395d16258e309792c7ded7cf0cb3d15a4178c0a",
+        "size": 824052
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallPillar_Soil_A_Low_HI.uasset",
+        "sha256": "f51ea7ed4a4142cdad9514609336f1d0dd900a78ebf030d43f73850dd1704bc3",
+        "size": 347103
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallPillar_Soil_B_Full_HI.uasset",
+        "sha256": "a31b48ddf13d4f6159e61003bac27d017b6d6f5958a201ef1521874da4eef617",
+        "size": 811505
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallPillar_Soil_B_Low_HI.uasset",
+        "sha256": "73c5867506a3f8988ee9c8f3c4f0ca371659f2b018c2abcacb963cd3061cf75b",
+        "size": 341825
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallPillar_Soil_C_Full_HI.uasset",
+        "sha256": "5ee80ad19eee2f8ea60573fdfea1d989806e4739af299cab82920cebfcd76755",
+        "size": 827722
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallPillar_Soil_C_Low_HI.uasset",
+        "sha256": "747460dddd300e07b1a349c639935d48ed6b1fdbf207d2dd5a6a432da124f2d9",
+        "size": 356069
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallPillar_Soil_D_Full_HI.uasset",
+        "sha256": "7d67a4311c509747a70f08f600eaade52cd4a51898caf117a2c7e629b2188b80",
+        "size": 826852
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Soil/SM_UR_WallPillar_Soil_D_Low_HI.uasset",
+        "sha256": "2f267308a24896cac1687382c33886cdf8f3950cb4be315a1c3326ad042ba71e",
+        "size": 348420
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Full_HI.uasset",
+        "sha256": "acc1bc4fb7f09cd19cf4206d767c9295b60065910ed830523c7e13412dc4c13e",
+        "size": 52794
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Full_Open1_HI.uasset",
+        "sha256": "37c564c21ddb9f3de1d93526ca388752d5f11f03caa77e4c214bbeb69385229e",
+        "size": 37760
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Full_Open2c_HI.uasset",
+        "sha256": "6ccb7e4e298d94685953a1afddd96ff05b2a0fedaefa07894a3e06a82982c6b0",
+        "size": 37733
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Full_Open2o_HI.uasset",
+        "sha256": "f5a1ac2ec24f111a19ceed55214fcb6db4c71d4f913bdf256945707df7c0b491",
+        "size": 35911
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Full_Open3_HI.uasset",
+        "sha256": "4af9bb8e6f83593f98682bace7d3dabf85ebc2f74d65a8d12b8dca97390d3670",
+        "size": 30523
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Full_Open4_HI.uasset",
+        "sha256": "1a1c43bed1a35475bd4f47a737c44019f751a0a4c6f62682ae5fe9e9894a9565",
+        "size": 26943
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Low_HI.uasset",
+        "sha256": "93d4719478d16f887b36320f327c660c639eab7b7e8f425af8da0020892183d1",
+        "size": 12734
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Low_Open1_HI.uasset",
+        "sha256": "20fb23b3de8ba2c7dda385ce3787f90ae4ed4e248a505ab29f66f7613e2566c9",
+        "size": 12845
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Low_Open2c_HI.uasset",
+        "sha256": "6726a735b8ff8000c2c68dbfacbe71e34bea4238bab5fd0fcac3e3f8cf7b9e87",
+        "size": 12846
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Low_Open2o_HI.uasset",
+        "sha256": "a73f1015ed31e1320015e437184bc0b88dcca52cc57f3884876af29d398af635",
+        "size": 12846
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Low_Open3_HI.uasset",
+        "sha256": "4c955bbd81f473ec5588f6c7e0b275053a9839d5b582464580de3ee32cfedfdd",
+        "size": 12857
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_A_Low_Open4_HI.uasset",
+        "sha256": "d28ff25b039455e9e97b8906786ad97ac9b8b992c1d7ccce9eea90547f173c0e",
+        "size": 12857
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Full_HI.uasset",
+        "sha256": "a3ac736a35b4a7039692e4d388a68b5f27013d91c10fd0eb83aa860571de32e0",
+        "size": 52715
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Full_Open1_HI.uasset",
+        "sha256": "6433eb34d64494c4b00341b6c8d0a7a87ff75bbb7ed63615e2f5bcdabee1cd2e",
+        "size": 37849
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Full_Open2c_HI.uasset",
+        "sha256": "6e803d50f09fbec3aa08a159107d62646f6f02b814f0ba7c0be95da00ce9ab19",
+        "size": 37780
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Full_Open2o_HI.uasset",
+        "sha256": "d2722844565b109513052da3b2de36727b97c450bc1ce7bfbb7458b9d452ca6b",
+        "size": 35892
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Full_Open3_HI.uasset",
+        "sha256": "bc278810fd2468489e8a72ea24eb263f1ed78077b7369efc609fcf5a9ad94597",
+        "size": 30543
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Full_Open4_HI.uasset",
+        "sha256": "c41b18b49bf0d779e31b1f53dd1e523747bf7a6edfb4c117e9512b7da1239926",
+        "size": 26961
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Low_HI.uasset",
+        "sha256": "783926a99e2fe581d9fed4530ab0abfb5a3761f6e5bee70f07a1a5b4f148b423",
+        "size": 12740
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Low_Open1_HI.uasset",
+        "sha256": "5ad3d1acf50138c318fcf07bd52e5c2bc89fd1c1c82970b9f34bfde53311c0d2",
+        "size": 12845
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Low_Open2c_HI.uasset",
+        "sha256": "08aab9eac73d1de4d47e493a5509b0e3ee7181e62c93e5255717ec29ee8a12e4",
+        "size": 12855
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Low_Open2o_HI.uasset",
+        "sha256": "aa13292181fc2044059f1f12c8185d70bf3171f98ffaf5f21f7775232b67a80d",
+        "size": 12848
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Low_Open3_HI.uasset",
+        "sha256": "2c452ad378a3cfcba7d48ed92e08af0926296a4764f53d9269b294b4f48eb686",
+        "size": 12854
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_B_Low_Open4_HI.uasset",
+        "sha256": "469ee74eb1570cb411db4bda7eb08cd404fb4df6bcc226f081074b2ea8957d46",
+        "size": 12853
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Full_HI.uasset",
+        "sha256": "b1ac72036bc0fce0de51fcea4ca592617bf9d1a122646c2f94ba1c4f0dfaa745",
+        "size": 52702
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Full_Open1_HI.uasset",
+        "sha256": "6ade3ca05997afb3413a064a8044372129ac206b3b5920c0c1bdf8b25c6cb398",
+        "size": 37719
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Full_Open2c_HI.uasset",
+        "sha256": "6cee808cc7abdf76954c3440902e7e26855bfcb82f3e48c82aa8ad6d1cb6516a",
+        "size": 37754
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Full_Open2o_HI.uasset",
+        "sha256": "2f697c68eaf674b437b2d90572849cd46f5bc6ba09a4afd093ef83dde3a68a9e",
+        "size": 35899
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Full_Open3_HI.uasset",
+        "sha256": "6603db7514d0e3d80ae240e915d75cdc484efee8f792e7316edcb3c17f78a2e2",
+        "size": 30514
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Full_Open4_HI.uasset",
+        "sha256": "11e3e4162befd20af8ab8afe9f1e7ada17a49f2e74d65a8fda117cd0f149c9a9",
+        "size": 26918
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Low_HI.uasset",
+        "sha256": "61d403ff55c2578fe45a8f4b7597bc1a044698f498294b2495cd565315fb3982",
+        "size": 12789
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Low_Open1_HI.uasset",
+        "sha256": "9dc78c9c4f5a129a36d834d7ed7ef9b7779767543543e51498c9318ad82a9bde",
+        "size": 12881
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Low_Open2c_HI.uasset",
+        "sha256": "d4970c6e95aa5f2b8b8919177e7b4d5dda776bd1a89fdf8d68c694916e6a6c40",
+        "size": 12837
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Low_Open2o_HI.uasset",
+        "sha256": "103232bcc59b3cedf4acd58781164d9982576f3f3537f5c5d8d29651aa73fa57",
+        "size": 12887
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Low_Open3_HI.uasset",
+        "sha256": "252e5dc40ba863e364360dabb64aab946f266345878d3ceceb67c0987c920f68",
+        "size": 12856
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_C_Low_Open4_HI.uasset",
+        "sha256": "d6dbc094b605aeb33ef3c9734489a01b65bbccb96b6295a13c62a0dc3651771b",
+        "size": 12840
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Full_HI.uasset",
+        "sha256": "4a991a4178f5d81b5abac1f33f1c1d330e672a0ec991cc5ff15afe624d7cf25b",
+        "size": 52788
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Full_Open1_HI.uasset",
+        "sha256": "daa52818f846e05e2e5375848c26a3f59f262eef053d3c73538a547de1b87c12",
+        "size": 37715
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Full_Open2c_HI.uasset",
+        "sha256": "d0e278f0628c53cf441673f384bd14c830fe03d7a5a4168bc4e134aaf881b581",
+        "size": 37719
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Full_Open2o_HI.uasset",
+        "sha256": "70ab1ab56b2dc0f967f793df592068005c5ed4703def774eefdeaeabb478f868",
+        "size": 35901
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Full_Open3_HI.uasset",
+        "sha256": "e4762c447bcdcf2bb3dfa8ef75a2addc8e76c3e46d90004a898e373089727350",
+        "size": 30518
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Full_Open4_HI.uasset",
+        "sha256": "882c21a7d3136c3c34be1587e09aa1c245a339ef7ec4aaf73bed70f57dbb09e1",
+        "size": 27005
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Low_HI.uasset",
+        "sha256": "d975b6fb424dce4cc27fd807f3d9bb3c5591def6d0e589bb3dad9a38012fdf98",
+        "size": 12754
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Low_Open1_HI.uasset",
+        "sha256": "3d1db51e78f34e64a915244ff0378abc5038d0c881a8e971dce3e158c21c72d3",
+        "size": 12845
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Low_Open2c_HI.uasset",
+        "sha256": "6693200383a92262d5a7679be81de13ea6d283b6bfeb0414d5c68770567441b9",
+        "size": 12841
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Low_Open2o_HI.uasset",
+        "sha256": "265ea96ca8bc03fbc92414b6015ab8f217bafecdc8bf6390211660a00c170aa9",
+        "size": 12866
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Low_Open3_HI.uasset",
+        "sha256": "1f33f66f15365dd048b533acb39fbb61e1313c2cfc579a2ec5d4c2211c699e7b",
+        "size": 12850
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_BlockTop_Stone_D_Low_Open4_HI.uasset",
+        "sha256": "0752388e07c7e8fae2b93bc371d4e428dd5f7d148dee6882fbcad5902fb24b49",
+        "size": 12827
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallEnd_Stone_A_Full_HI.uasset",
+        "sha256": "b845aaf6d596b43ffaeca89bbea3c0b5be26ab2303656e7b163cf0c92e1f0a75",
+        "size": 609475
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallEnd_Stone_A_Low_HI.uasset",
+        "sha256": "d82e8f0ec5b09e09c0e7774eab3c7b81d5e02861e3f7d1c917c7064c6342f140",
+        "size": 300653
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallEnd_Stone_B_Full_HI.uasset",
+        "sha256": "14f60905d280f3e86a6cd017edbab9d20384932cce9d1893df4fc4cae23db5df",
+        "size": 616840
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallEnd_Stone_B_Low_HI.uasset",
+        "sha256": "57e4e97d8a784a5cbac5a36d30154af3e772f162b8a883e6a2345309a133a13d",
+        "size": 303869
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallEnd_Stone_C_Full_HI.uasset",
+        "sha256": "fa1212e882800d51fe6fbed58f386b82b66e1d1d4da6110a3c787ef9d594dbd0",
+        "size": 607474
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallEnd_Stone_C_Low_HI.uasset",
+        "sha256": "b219e338edcd9e37cfb9b73b75c7ebb50db909b2fd24af27cf3b5041d58517b6",
+        "size": 303765
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallEnd_Stone_D_Full_HI.uasset",
+        "sha256": "d32a875fcdd5664f6da4b8f3a8869546a1e1508b5f0cf0c9bca6edf0cfc09440",
+        "size": 614371
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallEnd_Stone_D_Low_HI.uasset",
+        "sha256": "65030376267cb83f645a89ed8554e000bdbf45cb047a1cc27ea4cb62f943218c",
+        "size": 302938
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallFace_Stone_A_Full_HI.uasset",
+        "sha256": "8888425793cbeb5b05918782a01756f39a5274f1875fed0626f8d2be220c8f5b",
+        "size": 156604
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallFace_Stone_A_Low_HI.uasset",
+        "sha256": "682cab091f08938c9d4df53aab637fa9119e387097f73a10de6d0d8a72e3d955",
+        "size": 91617
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallFace_Stone_B_Full_HI.uasset",
+        "sha256": "6e6a7c2bdb2361684f3484f9ab4c25d204e615ec4f8f58782d725192046ef453",
+        "size": 155598
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallFace_Stone_B_Low_HI.uasset",
+        "sha256": "a3cafe7a4e4433b4105e7182883c1d98cf87d1a2d5f43c82532eb5fecd20255c",
+        "size": 93097
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallFace_Stone_C_Full_HI.uasset",
+        "sha256": "64d9a622f0e33d1dcdc79e1a81473b822f8568dfdcc23b6b0f68a21045b68c24",
+        "size": 156095
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallFace_Stone_C_Low_HI.uasset",
+        "sha256": "60418af81d60b025f3be4e8adff20bc95c99b7c05b1b0e7d632bbb5d393a4534",
+        "size": 91912
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallFace_Stone_D_Full_HI.uasset",
+        "sha256": "1e58f0344abe378bccd7c1cbe70c2c9bdc50c5ee25dc8a2bddac60e7528af915",
+        "size": 155443
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallFace_Stone_D_Low_HI.uasset",
+        "sha256": "b98cefc199781ff165ec51f5639e02894b6eee06e06a99a70e85ccd79d5154c6",
+        "size": 91630
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallInner_Stone_A_Full_HI.uasset",
+        "sha256": "01f6266c1c54f00d02890f38bbfacdbe38728a5f0ed545a7f7fad5d397e5193e",
+        "size": 73502
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallInner_Stone_A_Low_HI.uasset",
+        "sha256": "189a12598886f7818519603f61eb28b12a96affd6cc0966a73dd1389ca4c75b8",
+        "size": 45074
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallInner_Stone_B_Full_HI.uasset",
+        "sha256": "aa319a6fb755412808bdaaefdbd70800c5c5101a4350435f19ceda58f76fdf14",
+        "size": 73949
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallInner_Stone_B_Low_HI.uasset",
+        "sha256": "31dbf6fc6bf33bb9fecef9127d105c574161dcfe1e22928b048ed80d43f0bf63",
+        "size": 45307
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallInner_Stone_C_Full_HI.uasset",
+        "sha256": "4dc991bdb98909050a325360cb0da53cdeca761f22dae3b3131b47c1252e16c1",
+        "size": 74466
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallInner_Stone_C_Low_HI.uasset",
+        "sha256": "349436512048a9e1fa4ad1b98b8ef90ae2dcb6b2b5f457adc05bae7ad15c9afa",
+        "size": 45629
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallInner_Stone_D_Full_HI.uasset",
+        "sha256": "d5e5f65d9a80e1f1a811138665408632c34cae7f8340d1be8567d40454ff4d57",
+        "size": 73444
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallInner_Stone_D_Low_HI.uasset",
+        "sha256": "1efb15750c7b9d259cd98a8a481edb901ebfd248b12d5dc4836a5f90765728e4",
+        "size": 44881
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallOuter_Stone_A_Full_HI.uasset",
+        "sha256": "40bfe1ba237323344213ee4c306d92091d93ce46ffa6f75ac5e1c312d7021972",
+        "size": 80784
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallOuter_Stone_A_Low_HI.uasset",
+        "sha256": "0a3d9f27e1c5f7d45426b8341b46c56eb2e48bf60fc73c27331a09e72910a5f0",
+        "size": 41045
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallOuter_Stone_B_Full_HI.uasset",
+        "sha256": "4c50315422c81dd33b02ead950ef5d906fcf9ece569f48b444c516039e312c48",
+        "size": 80435
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallOuter_Stone_B_Low_HI.uasset",
+        "sha256": "37299ec1f9825451abee4030eb84cd2d31f3ad8b8658753705be72fbf4096b34",
+        "size": 41298
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallOuter_Stone_C_Full_HI.uasset",
+        "sha256": "d3179ed8cf85723dcae1a26e08b92a3a0535cad8e873a4c972b72399d09b5913",
+        "size": 81466
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallOuter_Stone_C_Low_HI.uasset",
+        "sha256": "ba94a1406f056a606d3db39a9032d5f6082f17a0b3c1769e0e62cbeae2054848",
+        "size": 41242
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallOuter_Stone_D_Full_HI.uasset",
+        "sha256": "9de479ea4299ee514f3ed533df98d5a95cd508cb5113c4c846ce65222b025d12",
+        "size": 81810
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallOuter_Stone_D_Low_HI.uasset",
+        "sha256": "7b0ef491198d4006610aa772d7f782e46c31aa30c7cf47dee0163619e3dccfc6",
+        "size": 41389
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallPillar_Stone_A_Full_HI.uasset",
+        "sha256": "3613dfd18cf888fdd7bbf7fa4039a604172c5a904ddde0d37516003cb9d2dd17",
+        "size": 779207
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallPillar_Stone_A_Low_HI.uasset",
+        "sha256": "1463a575609c765c2d0eeefa2c80eb8615c2ff2b0c9d3bf13a3795ba20b2b534",
+        "size": 309362
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallPillar_Stone_B_Full_HI.uasset",
+        "sha256": "7c721753ba7131b4373f4b249aad571aef8b087a03e7d50202e5b52568e0f950",
+        "size": 773784
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallPillar_Stone_B_Low_HI.uasset",
+        "sha256": "1d6b8754849a7f35ea5747a5ade00738bf7db857ce94d22f2ae46fdc2fdc21c8",
+        "size": 346765
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallPillar_Stone_C_Full_HI.uasset",
+        "sha256": "e8f57a213b8dc9d5c24e9da792b537d5faf903cf85c91f6a604cd122b2c0d1c2",
+        "size": 777761
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallPillar_Stone_C_Low_HI.uasset",
+        "sha256": "e23bc71afd55944241a567926eb8f02344df7c83f08daac10a626a34205d6079",
+        "size": 347220
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallPillar_Stone_D_Full_HI.uasset",
+        "sha256": "512715727604e35bf0569c1f7eff52ae5e2052189f417c3f8cd6e7e30ea68727",
+        "size": 777883
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Kit/Stone/SM_UR_WallPillar_Stone_D_Low_HI.uasset",
+        "sha256": "80e4298a320890ae84babedeaf9c6128b53fcc906172cfd9477ccc379fd4a4a6",
+        "size": 345385
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Greybox/M_UR_Greybox.uasset",
+        "sha256": "8321585de30e4dbc956022a2c78d6220a6482aed620aaaa4ca944377527c04ea",
+        "size": 7317
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URCaptureDirector.cpp",
+        "sha256": "04a806d4d707432475052dcee72d36e91a1f3cffa176fcf4c80936c2e4df6c70",
+        "size": 121066
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URGreyboxMap.cpp",
+        "sha256": "50f4b106af415d38b745d98c6f60b1cf26a331ba206ff6513c9f913b7948e15f",
+        "size": 46624
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URHUD.cpp",
+        "sha256": "009de1df0674e05bb6d965688c315ae69a97c38d847908234caabfdf79d29dce",
+        "size": 56529
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URLayerCameraPawn.cpp",
+        "sha256": "a90f0670fa3fd39bd2b2ab9efbc0766bf84ae5a069a6ba1aafec65261dd6a2ce",
+        "size": 13560
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayerController.cpp",
+        "sha256": "1dfc2ffb713c4b4fe55f3bfe648cd5fd22fe96c2651ada332bef3e314949b3e4",
+        "size": 79713
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URPlayView.cpp",
+        "sha256": "889bb547498528a23aa41cd671377b312a59fa8b9880a3bdf57d97595e8a2315",
+        "size": 72799
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URWallRulesTest.cpp",
+        "sha256": "c3ec97a5ae2f54352572a245598cb53da98b3c57e7543e3c960c1dbe247a6768",
+        "size": 2997
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URCaptureDirector.h",
+        "sha256": "d70f029494ec8fb624605880f30e66e66df55757f26e02ac31ea41486b7dc54f",
+        "size": 11463
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URGreyboxMap.h",
+        "sha256": "073c29f8839a81c37fe6b62b44b3eb78cbe2e36bd0bbefa28ab2eb8b9e1f9c73",
+        "size": 15217
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URLayerCameraPawn.h",
+        "sha256": "bf5ec1ecc442297d341e17e2dece754cd49dd9b5ad922862db1892c60ae3e620",
+        "size": 5875
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayerController.h",
+        "sha256": "75137adb4deb628d6a210f207b20169adbd39df2aa770e4660284f80765477a8",
+        "size": 15507
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URPlayView.h",
+        "sha256": "2b4f9ccff07c9d2817e35ec5778116c2c12596fbc59dee82b2efd80f5ec5e914",
+        "size": 15671
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-UNREAL-WALLSAMPLE-V1/REVIEW.md",
+      "sha256": "aabdcc28f8c46edb4bf2e6558c24a52872d9db35ffaaa36a5bdb8452d80a36a6",
+      "size": 3162
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-UNREAL-WALLSAMPLE-V1/review.json",
+    "record_sha256": "230a992f0c7307138a485496cb4f5425242a9ec7b176e1ce03ad71610ad9412f",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "b2d5c619061a4081ad646813513929b0a7f6f136a7ab495edebec50caa9e23b3",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

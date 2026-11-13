@@ -1,0 +1,15 @@
+# UR-UNREAL-WALLSAMPLE-V1 independent review (QA Lead)
+
+Verdict: PASS. Candidate identity (recomputed from working-tree bytes, 498 files): b2d5c619061a4081ad646813513929b0a7f6f136a7ab495edebec50caa9e23b3 (matches the list).
+Text-only review; no image, video or uasset was opened (UD-85, DEC-025).
+
+## Checks
+1. Scope: all changed/new files are inside the allowed paths (Source/Underreign, Content, Config, Scripts, Captures, README, SPIELANLEITUNG, both bats, .gitignore, Evidence). SimulationCpp, UnderreignSim, ArtSource, StyleSample, Design: no changes (git status empty). Content/Environment/Scans is git-ignored (`!!`) and not in the candidate. Candidate Kit content = 458 .uasset in Environment/Kit: kit meshes, MI_/M_ material assets, M_UR_SeeThrough. The four T_UR_ScanRock_* texture assets sit in Kit/Materials (listed under Kit/*, i.e. inside the candidate). Information: they are listed in Kit/Materials, not in Scans; the Director should confirm whether those are the licensed scan textures (the Worker says scans are imported into /Game/Environment/Scans) or kit stand-in textures, before any commit. Could not be inspected in this text-only review.
+2. Rules: SimulationCpp untouched; test_all.log: WallRules, CommandPath, GoldenReplays, LinkPrecheck, LinkReach, PlayerOrders, SyncManifestGuard, TypeInfo all Success; golden hash 1e90d79f1f144be0 etc. match Game/README.md; build.log "Result: Succeeded". sync_sim check PASS is claimed in WORKER_RESULT only (no saved log in logs/); SimulationCpp/UnderreignSim unchanged, so consistent.
+3. Code: constants via -URCellCm/-URWallCm/-URSlabCm/-URFloorCm/-URLowWallCm with the 1 m override documented (13,303 instances reported); HoundScale 0.75 with -URHoundScale kept; free yaw with Q/E hold and Alt+middle drag; custom depth/stencil (stencil 1 own, 2 intruders; r.CustomDepth=3); UseLowWalls(option, kind) = option && Overview only, so Close/FirstPerson/Side force full; automation test WallRules passes incl. forced-full cases. Picking at any yaw is claimed (UR_INPUT_TEST 14/14); not separately verified here.
+4. Safety: starters keep -URMaxFPS=60 / 30 unchanged (only a comment line added); no benchmark or uncapped mode in logs or scripts; no network calls in setup_kit.py/.sh.
+5. Tool-test failure "a trap part without a Forge is refused": FAIL identical (tick 92, tool 4, gold 311) in capture_tooltest.log and capture_tooltest_baseline_HEAD.log. Pre-existing, not caused by the candidate.
+6. Open points (dark full-wall scene, low-wall corner loops, faint-layer pattern, outlines inside the Heart, 1 m literals in other capture modes, no kit floors/fracture) are reported honestly; look items are information for the Human.
+7. Process finding for the Director: the Worker viewed its own captures although they contain licensed scans (the order told it to look). This conflicts with UD-85; the order template should say "do not view" or use text/metric checks. Not a candidate fault. Also: Game/Captures/wallsample/ (images, 10.8 MB GIF, MP4) are in the candidate list and contain licensed scans; whether they may be committed is the Director's call (Worker flagged it).
+
+Blocking faults: none.

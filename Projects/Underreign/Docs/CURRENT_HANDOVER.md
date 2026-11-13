@@ -20,7 +20,7 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Next for the Human: answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+Next for the Human: play the wall sample (both starters; Q/E or Alt+middle drag turn, V low walls) and look at `C:/GameDev/Underreign/Game/Captures/wallsample/` locally, then judge camera, walls, see-through and the 2 m pier rhythm; answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
 ## Wall height option, corridor width, see-through (2026-11-13, Human, exact)
 
@@ -88,6 +88,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-UNREAL-WALLSAMPLE-V1
+
+UR-UNREAL-WALLSAMPLE-V1 (wall sample in the game: 2 m cells from single constants (1 m override reproduces the old map); kit import `Game/Scripts/setup_kit.*` (440 Nanite meshes, all strata, Full and Low, UR_KIT RESULT PASS) with the style sample's dark charred scanned rock (scans git-ignored in Content/Environment/Scans, never committed); wall placement from neighbour masks behind `-URKit` (default on; 4,799 pieces Cinder Hollow, rebuild mean 2.1 ms); free 360 deg camera (Q/E hold, Alt+middle drag; pitch -70, horizontal FOV 65, default 8.5 cells); see-through fill+outline for hidden creatures (orange own, blue intruders); wall-height option V / HUD / `-URWallLow=1`, overview only, close and first-person views forced full (WallRules test); hound 0.75 (1.6 m); GPU kit 4.93 ms vs greybox 4.45 ms at 30 fps gentle; rules and golden hashes unchanged; open: dark full-wall corridors, low-wall corner loops, faint-layer block-top pattern, outlines on cinderlings in the Heart, other capture modes still at 1 m distances, kit floors and fracture not yet in; process finding: the order told the Worker to view its captures although they show licensed scans (UD-85), fixed for future orders; captures `Game/Captures/wallsample/` for the Human to view locally; external commit 3c8cac0)
+Independent review verdict: PASS
+Worker task: a0a7a8bbdc044b829
+Reviewer task: reviewer-UR-UNREAL-WALLSAMPLE-V1
+Candidate identity: b2d5c619061a4081ad646813513929b0a7f6f136a7ab495edebec50caa9e23b3
+Closure receipt: 7da8f2ea4fad97d5f291a46a14dcef70c1c5c93e30dc177ea09e1c6c3acd95b4
 
 ## Closed: UR-KIT-WALL-INSET-V1
 
