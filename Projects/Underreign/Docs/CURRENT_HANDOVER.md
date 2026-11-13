@@ -22,6 +22,14 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
 
 Next for the Human: answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
+## Wall height option, corridor width, see-through (2026-11-13, Human, exact)
+
+"Wir können die Option, die Wandhöhe auf 1,5m zu reduzieren ins Spiel einbauen. Wichtig dabei nur, dass der Spiel nicht drüber schauen kann wenn er in 1st Person geht. Also dort wieder auf Höhe Wände gestellt wird.
+Allgemein sehe ich, dass die Gänge trotz der 2m breite, recht schmal sind. Kann es sein, dass die Musterung und Details der Wände oben drauf gesetzt wurde anstatt in dieser 2m Grenze zu bleiben?
+Mit der Option die Kamera frei zu drehen, wird den Spielern die Möglichkeit gegeben alles sehen zu können. Dazu ein passender see through shader für Kreaturen und wir können es erstmal so testen."
+
+So: an option to draw walls at 1.5 m in the overview; any first-person view always uses full-height walls. Free camera rotation plus a see-through effect for creatures hidden by walls; test in the game like that. Corridor width: confirmed, the night kit pushes the rock relief 0.03-0.42 m INTO the open cell (`Design/Art/ENVIRONMENT_KIT_2M.md` line 41; clear width 1.61-1.72 m); the Human wants the relief to stay within the 2 m boundary, i.e. behind the cell edge (this supersedes answer 3 "wie jetzt").
+
 ## Walls and camera (2026-11-13, Human, exact)
 
 "1,5m hohe Wände sehen doof aus. Gerade wenn man später an 1st Person Ansicht denkt und über alles drüber schauen könnte."
@@ -80,6 +88,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-CAMERA-STUDY-V1
+
+UR-CAMERA-STUDY-V1 with EXT01 (GPU-CONTINUATION01 issued, only one GPU test frame: Cycles HIP on the RX 6800 XT works, not faster than CPU for this scene): Blender CPU camera study at 2 m cells; the near-side wall hides wall height / tan(pitch) of floor, so a left-right corridor is 0 % visible at 3 m and 58 deg, cut height alone never helps; pitch is the lever, FOV barely matters; full 4 m walls hide cross corridors from every tested camera; outlines for hidden units work; the view-following cutaway helps (22 % / 65 %) but looks blotchy as a height squash; recommendation: pitch about 70-72 deg, FOV about 65 deg, 17 m default; Human direction since: full walls, free 360 deg rotation, see-through for creatures, optional 1.5 m walls in the overview only; external commit fc71613)
+Independent review verdict: PASS
+Worker task: ae46d77670568c58b
+Reviewer task: reviewer-UR-CAMERA-STUDY-V1
+Candidate identity: 569905c96d3f16e969c72c22ec6d5a8c26a3ae5aee9440cfbc1daef89f0e3e32
+Closure receipt: 72e94238aaaaffaa26357b3444d084e9f61ee008fdf59e62f63fa5fc7394ed86
 
 ## Closed: UR-NIGHT-04-V1 (night shift 4)
 

@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-CAMERA-STUDY-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-CAMERA-STUDY-V1/WORK_ORDER.md",
+    "sha256": "10a393a8ad3918e20a212182da9d828d2ec7d395586ec9c0c25cf7082ebd7fdf",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-CAMERA-STUDY-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "f5b9637bda9743d37eb8b5d74a5d801978f0ea400bbfe81facfeb27c0e5b3a45",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-CAMERA-STUDY-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "5cc80985d7fe62d3971d5234c01312f8892a4799a17fe6b43c63c7fcf79c456c",
+    "receipt_id": "90e3758b145298e6cb0d20a04f95e11b7ca3f1fad3f177f8843a3ef24a538d5c",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-bceed6ba-13b6-4571-9e53-b31f678dc83e",
+    "worker_task_id": "ae46d77670568c58b",
+    "reviewer_task_id": "reviewer-UR-CAMERA-STUDY-V1"
+  },
+  "candidate": {
+    "identity": "569905c96d3f16e969c72c22ec6d5a8c26a3ae5aee9440cfbc1daef89f0e3e32",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-CAMERA-STUDY-V1/WORKER_RESULT.md",
+        "sha256": "c1adf86f795339c74527fe641b6cd46435f653891060a7f241fa3dd177c912c2",
+        "size": 12125
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/contact_sheet.png",
+        "sha256": "92beebbf62cfb9003a597a65c6832d94ec5cefdc48b5d34482ebacc38110735c",
+        "size": 3856666
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/contact_sheet_ext.png",
+        "sha256": "7fc04378adc0a9f03f4ab1f7f4c337e24ab8c887822bc5d1c2f9659e8ecb0d19",
+        "size": 3094022
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan360_E_schnitt_folgt.gif",
+        "sha256": "c6998e93d5da8dab8fc9d191be6006c0a7698646ac08d1aeee34392729280b21",
+        "size": 57161081
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan360_E_schnitt_folgt.mp4",
+        "sha256": "44be5a7c665359b356b87b684a2e1865ad61cb1f206a689c02f410c2e04ecc23",
+        "size": 3441908
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan360_EF_schnitt_und_umriss.gif",
+        "sha256": "ff13c0e20e63d8534bce06dbf1e376fe0e0ececba2fdebf64519672aa873260f",
+        "size": 57163004
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan360_EF_schnitt_und_umriss.mp4",
+        "sha256": "99aa4da08e612f73ff4f5d3b77c38b9f44cc310bb11b5ed131998e9b563730dd",
+        "size": 3447317
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan_A_heute_3m.gif",
+        "sha256": "d58e5cd4a71ba4a8f3a1a3231b7fcc0a018a53aca49c85d2941442d6a6dc7e96",
+        "size": 54866845
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan_A_heute_3m.mp4",
+        "sha256": "a214ebe5af376abb47edfd49473ad40ee84ad006a5c3ee78cb2ab869af8d4527",
+        "size": 1649861
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan_B_nah_weit_1.5m.gif",
+        "sha256": "c464b28034531ac2362b8b38e7560d5a801249a63005cb56faec21a75ea59bf6",
+        "size": 42203509
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan_B_nah_weit_1.5m.mp4",
+        "sha256": "14cc35e3d88c5ef6e9c6a5e48153a42d6efdce0a86c9477ee3959f1e94f9061d",
+        "size": 1722735
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan_C_volle_wand_4m.gif",
+        "sha256": "28bc1ac9b94dc0a65b243868e0cb2b950571eea89675f5072b853da6dc93d26b",
+        "size": 53933022
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/pan_C_volle_wand_4m.mp4",
+        "sha256": "7430ce61467c083680fb5e9ecc245b166c9a9a864aa90e8a5f8dd60291971003",
+        "size": 1760561
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_1.5_dark.png",
+        "sha256": "33e8a013a77624b9639ab95fd419639f7c69baad0f91e3100a1a16693c561ba9",
+        "size": 1144931
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_1.5_lit.png",
+        "sha256": "3696b8a1065b8ced31e4be12dde8bdc8175e4c31351c0c43623ea50161d0ff03",
+        "size": 1336769
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_3_dark.png",
+        "sha256": "8895d2f4d770f6a996663d43c9292b02d24521a7a7f788f3db8919e15feeb504",
+        "size": 1161429
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_3_lit.png",
+        "sha256": "954b21303e8a657449268ee5f9e781810dbd131ddb157316d0a7bd0cac60bacd",
+        "size": 1319809
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_4_plain.png",
+        "sha256": "90441c07134f4f2b44e4cc5ac67c5a254e176c1188902c35761b840877f72032",
+        "size": 1308542
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_E.png",
+        "sha256": "586408a0186dd891921dce3f860009a50c34fc5929435ccabdf32f7ee117ee6b",
+        "size": 1338660
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_EF.png",
+        "sha256": "f4aa75968d394d81b6a02a92949eee8cbcec54125c3ee5a82e2e73bb9576b205",
+        "size": 1344375
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_EF45.png",
+        "sha256": "642e1dd50ff8bf980e6d1b4e92cb06a4158543d46a6f527b5f7c1bf265e7b1bb",
+        "size": 1306332
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_F.png",
+        "sha256": "b2814aca9b12cc2aaa6f6ce23c6cc6609246a98802dc8751bca95423eb249c56",
+        "size": 1325104
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_A_G.png",
+        "sha256": "3dcb20bce25697202111066c5539d54a3d615965ad4aa6abe257f715dc04b690",
+        "size": 1337394
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_B_1.5_dark.png",
+        "sha256": "dbcad44e878f2afc409ee5abcd70186749c4553ce57da787e63f248ec9044d14",
+        "size": 1157581
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_B_1.5_lit.png",
+        "sha256": "7d98d44b222eeb623ff7a7c44ba45ce84ed743a4b29b0831f3efe4e62de04f71",
+        "size": 1349638
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_B_3_dark.png",
+        "sha256": "8f3102a2886f0780ebfd0a155c4b97723f9b47c294575afa687a4fc695c68d53",
+        "size": 1210813
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_B_3_lit.png",
+        "sha256": "62e3db7a3644bcc422d803bedca1e8d987ea57126ffde8632db7686d74aaadd3",
+        "size": 1348893
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_C_4_dark.png",
+        "sha256": "9b59da0ea855d68f380a0f475698c2762714eead75fe6227a031a9c0241d6de1",
+        "size": 1221906
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_C_4_lit.png",
+        "sha256": "d52a774a1c2a3bc775b3c4daf427b7447c1384fd4cca97962596e9e9efe54ee2",
+        "size": 1352759
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_1.5_dark.png",
+        "sha256": "3f46d11848d31c1b4e43ef5208aa5f27b5fdf14ee63db3d56aef3485a7860037",
+        "size": 1174604
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_1.5_lit.png",
+        "sha256": "695822be79c377e0ba36214c6b0d5bd184192cbf55b6f0f57fcaeb7912bfc95d",
+        "size": 1360684
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_3_dark.png",
+        "sha256": "64a60d65b509a8d94ae20852713c4947c4d977a1fe87f38e278b9dfc5726aeee",
+        "size": 1219484
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_3_lit.png",
+        "sha256": "e80cd34bd0eb345093c0a847b2981651454f2e6b4b2c23ee7065af44e0c4a952",
+        "size": 1365736
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_4_plain.png",
+        "sha256": "10e0714277aae549eb84d2938827063ff58b4aa403a63abaae75f7a55792f492",
+        "size": 1364563
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_E.png",
+        "sha256": "e0c529f30c2a3112b83d7892eb0e55ae3909adaaec7ade240ac2f6253328ed13",
+        "size": 1342695
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_EF.png",
+        "sha256": "b64df0f01838ea6dbd80f10cacc95b48f4cc7704987f33bd47e78ebb64d8891a",
+        "size": 1342308
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_EF45.png",
+        "sha256": "2fc374d66168cf563910bfcaa1da42f541b6db88288d4b569435b4cb2807ebde",
+        "size": 1324028
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_F.png",
+        "sha256": "c2b75af8234a4e941fb8c1232e52211c9dac7e7954dd89b4cfe86ef8ecb91b8f",
+        "size": 1378564
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/still_D_G.png",
+        "sha256": "a41d128079c1549c7917f53b3271042ee0362f362f3adc02697987de5eb2e292",
+        "size": 1390657
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/sweep.json",
+        "sha256": "afe8ec79d75fbf0bd041c1abc8c53df1519d52538e2634745798140d5a4648fe",
+        "size": 15122
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/visibility.json",
+        "sha256": "c720783b1eb97aef5a3e2860bac3b597be8420032a0f37173bfeefe4a67839b2",
+        "size": 3992
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/camera_study/visibility_ext.json",
+        "sha256": "ed35b5b520ba0692e2cd5e2cfcb2278ed76505eb2c35bfd863f0a0c603078342",
+        "size": 3640
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/camera_study/assemble_mp4.py",
+        "sha256": "7a217546945981c7a7b4d8bfa0b98dccc6529075955add7f0c731df310596d69",
+        "size": 1058
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/camera_study/camera_study.py",
+        "sha256": "0af59ce0c785374fb69658fd7cf957968519ab4bc81a76f307a3abe20baf1efe",
+        "size": 13211
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/camera_study/camera_study_ext.py",
+        "sha256": "4a6a03068334aac3da5c4390b60ac4ea2a879af95fde32e549f5d8ecc522b882",
+        "size": 11371
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/camera_study/make_gif.py",
+        "sha256": "1a4c54766de0275069516d4c016f9d786fb7be070bc68bf506c96b8dca453755",
+        "size": 789
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/camera_study/make_sheet.py",
+        "sha256": "ec50e7de130d512a3728021c6a82d46fc232546fbc0804d7c7019420c4b6523b",
+        "size": 2438
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/camera_study/make_sheet_ext.py",
+        "sha256": "45aa2bda194807a93660849142bec76a6f71db16f5f55bd201606baab91d044b",
+        "size": 2377
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/camera_study/run_ext.py",
+        "sha256": "cf667b66679e8dabfca25621b57da2b31aa059a9ff7875be50c9caab5fa3bf78",
+        "size": 525
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/camera_study/run_study.py",
+        "sha256": "fe200cd8f74f82ff5ab80031678b99aa8f5f224c3feb7c4431346536ea4ed1e2",
+        "size": 521
+      },
+      {
+        "path": "ext:Evidence/UR-CAMERA-STUDY-V1/WORKER_RESULT.md",
+        "sha256": "c1adf86f795339c74527fe641b6cd46435f653891060a7f241fa3dd177c912c2",
+        "size": 12125
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-CAMERA-STUDY-V1/REVIEW.md",
+      "sha256": "1c83f24ec00a8c5c79b42fbac22173e624ab3eef43d12124cc116d8dfb13eea0",
+      "size": 1757
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-CAMERA-STUDY-V1/review.json",
+    "record_sha256": "18b8662e3f50fa38be5908b62c4b005b62e45f6c68fc6cc84905ced7c84b2ec7",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "569905c96d3f16e969c72c22ec6d5a8c26a3ae5aee9440cfbc1daef89f0e3e32",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

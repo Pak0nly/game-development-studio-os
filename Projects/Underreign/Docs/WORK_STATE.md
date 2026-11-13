@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-CAMERA-STUDY-V1
+
+UR-CAMERA-STUDY-V1 with EXT01 (GPU-CONTINUATION01 issued, only one GPU test frame: Cycles HIP on the RX 6800 XT works, not faster than CPU for this scene): Blender CPU camera study at 2 m cells; the near-side wall hides wall height / tan(pitch) of floor, so a left-right corridor is 0 % visible at 3 m and 58 deg, cut height alone never helps; pitch is the lever, FOV barely matters; full 4 m walls hide cross corridors from every tested camera; outlines for hidden units work; the view-following cutaway helps (22 % / 65 %) but looks blotchy as a height squash; recommendation: pitch about 70-72 deg, FOV about 65 deg, 17 m default; Human direction since: full walls, free 360 deg rotation, see-through for creatures, optional 1.5 m walls in the overview only; external commit fc71613)
+Independent review verdict: PASS
+Worker task: ae46d77670568c58b
+Reviewer task: reviewer-UR-CAMERA-STUDY-V1
+Candidate identity: 569905c96d3f16e969c72c22ec6d5a8c26a3ae5aee9440cfbc1daef89f0e3e32
+Closure receipt: 72e94238aaaaffaa26357b3444d084e9f61ee008fdf59e62f63fa5fc7394ed86
+
 ## Closed: UR-NIGHT-04-V1 (night shift 4)
 
 UR-NIGHT-04-V1 (cloud night 2026-11-12/13 on night/2026-11-12, fast-forwarded into main at 6042582: Blender 5.3 bpy wheel in the cloud (CPU); rock wall kit for 2 m cells in `ArtSource/EnvironmentKit` (6 piece kinds x 5 strata x 4 variants x heights 4 m / cut 3 m / cut 1.5 m, Nanite + 3 LODs, seams < 0.1 mm, procedural stand-in textures, warm brown not yet charred grey), damage states, material fracture sets with films (pieces still coarse), floors, doors, spiral stair, ladder lift, shaft rim, brazier; proof render of Cinder Hollow layer 2; key finding: a 3 m cut hides about 2 m of floor, 1.5 m recommended; plans: sizes, speeds, humanoid motion list, 11 Unreal changeover orders; 7 questions (page https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX); Unreal import script untested; rules and game untouched)
