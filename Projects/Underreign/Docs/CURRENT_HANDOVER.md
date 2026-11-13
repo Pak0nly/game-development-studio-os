@@ -4,7 +4,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `c0788be` (local; `b5e1886` pushed).
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `60176bf` (local; `b5e1886` pushed).
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -19,7 +19,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Closed today (Human 2026-11-13: "Beide starten"): UR-GROUND-TEXTURE-TEST-V1 and UR-TORCHES-CLAIMED-V1 (both below, external commits c0788be and f651188, not pushed). The Human answered the open-questions page on 2026-11-13 (exact answers in `Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R8-V1/WORK_ORDER.md`). Next action (one): dispatch and close UR-DECISIONS-R8-V1 (record the answers), UR-GREYBOX-RESAVE-FIX-V1 (answer 1: discard the stray greybox re-save and repair the script; note setup_kit step 6 sets the Nanite flag on purpose, so the Worker first proves whether the change is noise) and UR-MELEE-PACKS-RESEARCH-V1 (answer 2: shortlist packs, Human buys); show the Human the texture sheets (local paths) for a direction per stratum; re-measure the torch shadow budget (4 vs 2) on a quiet GPU; Director owes the Human thoughts on the bottleneck question (answer 29).
+Closed today (Human 2026-11-13: "Beide starten"): UR-GROUND-TEXTURE-TEST-V1 and UR-TORCHES-CLAIMED-V1 (both below, external commits c0788be and f651188, not pushed). The Human answered the open-questions page on 2026-11-13 (exact answers in `Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R8-V1/WORK_ORDER.md`). Next action (one): dispatch and close UR-DECISIONS-R8-V1 (record the answers), UR-GREYBOX-RESAVE-FIX-V1 (answer 1: discard the stray greybox re-save and repair the script; note setup_kit step 6 sets the Nanite flag on purpose, so the Worker first proves whether the change is noise); UR-MELEE-PACKS-RESEARCH-V1 is closed below (Human decides on a pack and buys); show the Human the texture sheets (local paths) for a direction per stratum; re-measure the torch shadow budget (4 vs 2) on a quiet GPU; Director owes the Human thoughts on the bottleneck question (answer 29).
 
 ## Natural ground textures vs the faction look (2026-11-13, Human, exact)
 
@@ -111,6 +111,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-MELEE-PACKS-RESEARCH-V1
+
+UR-MELEE-PACKS-RESEARCH-V1 (research only, Human answer 2 of 2026-11-13: shortlist of Fab melee animation packs for the UE5 mannequin; sword and shield: recommended Sword And Shield Animation V3 by GameDevHero, about 18 EUR, 355 animations, no reviews yet (V1 fallback); two-handed: Two Handed Sword Animations V2 by GameDevHero, about 14 EUR, weak reviews, best-reviewed alternative Essential Great Sword Animation Pack by space.bar.anim, about 36 EUR, UE5.3+; licence text and fit for non-human creatures not confirmed; prices excl. tax may change; Human decides and buys; result `Artifacts/Underreign/Evidence/UR-MELEE-PACKS-RESEARCH-V1/WORKER_RESULT.md`; external commit 60176bf)
+Independent review verdict: PASS
+Worker task: a15828ace78cefdc8
+Reviewer task: reviewer-UR-MELEE-PACKS-RESEARCH-V1
+Candidate identity: 14f71dd7ea50f839d232f9fbd90b49a279391c6edacc751c05b5dd56e5e4c56f
+Closure receipt: 7c84957cb69c7eab700466cb2ecc0f9a2fe603674e132a874f96429c628da32a
 
 ## Closed: UR-GROUND-TEXTURE-TEST-V1
 

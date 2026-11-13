@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-MELEE-PACKS-RESEARCH-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-MELEE-PACKS-RESEARCH-V1/WORK_ORDER.md",
+    "sha256": "7409cfd69ef09e54e71c516700423752dba3b56bdda5d0bf648abdfc17a4ae7f",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-MELEE-PACKS-RESEARCH-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "1d7b5b8dd2a6c1dce527c701fbaa88ce01da268e927e00f16365b944b4b7579e",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-MELEE-PACKS-RESEARCH-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "6e5560bde8b408a650b3d74349467bd380ebdd764fc020686dc3b831a1a9e788",
+    "receipt_id": "b289d85cf2b32b33bec174d748ef96e468ff7ab631b30bde41ccb3b22b70cc80",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "a15828ace78cefdc8",
+    "reviewer_task_id": "reviewer-UR-MELEE-PACKS-RESEARCH-V1"
+  },
+  "candidate": {
+    "identity": "14f71dd7ea50f839d232f9fbd90b49a279391c6edacc751c05b5dd56e5e4c56f",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-MELEE-PACKS-RESEARCH-V1/WORKER_RESULT.md",
+        "sha256": "6cad9878e88542e18ae7da08e6a3641256754cf99095f3edd28a067c5d6422c0",
+        "size": 4861
+      },
+      {
+        "path": "ext:Evidence/UR-MELEE-PACKS-RESEARCH-V1/WORKER_RESULT.md",
+        "sha256": "6cad9878e88542e18ae7da08e6a3641256754cf99095f3edd28a067c5d6422c0",
+        "size": 4861
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-MELEE-PACKS-RESEARCH-V1/REVIEW.md",
+      "sha256": "7a353fad7677556ad81c831b8f1fa7aed9f084b2b2c35669cc7c0cb3a0abcf8a",
+      "size": 2036
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-MELEE-PACKS-RESEARCH-V1/review.json",
+    "record_sha256": "ffe057f120999fb3230a31a365def3b743024cff0f821d76fad1089bf07f0489",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "14f71dd7ea50f839d232f9fbd90b49a279391c6edacc751c05b5dd56e5e4c56f",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

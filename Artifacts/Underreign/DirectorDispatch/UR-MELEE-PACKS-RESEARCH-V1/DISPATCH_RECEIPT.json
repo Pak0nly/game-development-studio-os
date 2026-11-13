@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-MELEE-PACKS-RESEARCH-V1",
+  "work_order_sha256": "7409cfd69ef09e54e71c516700423752dba3b56bdda5d0bf648abdfc17a4ae7f",
+  "manifest_sha256": "1d7b5b8dd2a6c1dce527c701fbaa88ce01da268e927e00f16365b944b4b7579e",
+  "repository": {
+    "branch": "main",
+    "head": "70de6e0bc4e6ebf3b26aee6e4f2806c344efcb3f"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-MELEE-PACKS-RESEARCH-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "6c64f142d39d33e4fb283396a7fb01a9a904990179fe91ab53415380ff5ddfd3",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "c0788bee696b53cc0272d5d7c2506dd4f0a6507e"
+    },
+    "allowed_mutations": [
+      "Evidence/UR-MELEE-PACKS-RESEARCH-V1"
+    ],
+    "protected_paths": [
+      "ArtSource",
+      "Design",
+      "Game",
+      "SimulationCpp",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Evidence/UR-MELEE-PACKS-RESEARCH-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "bd179dedf61adefd7e05b5e8d5ff502a86a69000dca936276cde7772e3188a52"
+  },
+  "execution_location": "local",
+  "receipt_id": "b289d85cf2b32b33bec174d748ef96e468ff7ab631b30bde41ccb3b22b70cc80"
+}

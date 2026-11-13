@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-MELEE-PACKS-RESEARCH-V1",
+  "work_order_sha256": "7409cfd69ef09e54e71c516700423752dba3b56bdda5d0bf648abdfc17a4ae7f",
+  "closure_manifest_sha256": "916816251c7c9efa5d7d9d8d710389cc641639e9511dd7cd0d7c80e55b59435c",
+  "dispatch_receipt_id": "b289d85cf2b32b33bec174d748ef96e468ff7ab631b30bde41ccb3b22b70cc80",
+  "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+  "worker_task_id": "a15828ace78cefdc8",
+  "reviewer_task_id": "reviewer-UR-MELEE-PACKS-RESEARCH-V1",
+  "candidate_identity": "14f71dd7ea50f839d232f9fbd90b49a279391c6edacc751c05b5dd56e5e4c56f",
+  "evidence_state_sha256": "173c616ea8dab2f418beec21e41aef10a1243e03678355578756366811c39d46",
+  "review_record_sha256": "ffe057f120999fb3230a31a365def3b743024cff0f821d76fad1089bf07f0489",
+  "verdict": "PASS",
+  "receipt_id": "7c84957cb69c7eab700466cb2ecc0f9a2fe603674e132a874f96429c628da32a"
+}

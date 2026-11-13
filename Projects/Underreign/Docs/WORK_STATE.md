@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-MELEE-PACKS-RESEARCH-V1
+
+UR-MELEE-PACKS-RESEARCH-V1 (research only, Human answer 2 of 2026-11-13: shortlist of Fab melee animation packs for the UE5 mannequin; sword and shield: recommended Sword And Shield Animation V3 by GameDevHero, about 18 EUR, 355 animations, no reviews yet (V1 fallback); two-handed: Two Handed Sword Animations V2 by GameDevHero, about 14 EUR, weak reviews, best-reviewed alternative Essential Great Sword Animation Pack by space.bar.anim, about 36 EUR, UE5.3+; licence text and fit for non-human creatures not confirmed; prices excl. tax may change; Human decides and buys; result `Artifacts/Underreign/Evidence/UR-MELEE-PACKS-RESEARCH-V1/WORKER_RESULT.md`; external commit 60176bf)
+Independent review verdict: PASS
+Worker task: a15828ace78cefdc8
+Reviewer task: reviewer-UR-MELEE-PACKS-RESEARCH-V1
+Candidate identity: 14f71dd7ea50f839d232f9fbd90b49a279391c6edacc751c05b5dd56e5e4c56f
+Closure receipt: 7c84957cb69c7eab700466cb2ecc0f9a2fe603674e132a874f96429c628da32a
+
 ## Closed: UR-GROUND-TEXTURE-TEST-V1
 
 UR-GROUND-TEXTURE-TEST-V1 (Blender-only sample of natural ground textures per stratum from the game camera: three licensed Fab scan variants per stratum chosen by eye, recommendation Soil A, Stone A, Basalt A, Gold vein A, Bedrock C; overview with today's dark scan, contrast Stone A natural vs claimed and charred, close views; all strata mid-bright and distinguishable, no visible tiling; info: rock floors share one calm scan so variants differ mainly on walls, Soil C renders pinkish, bedrock soft up close, ember dashes look drawn on, the dark cut cap covers much of each view; sheets `C:/GameDev/Underreign_Assets/AnimWork/UR-GROUND-TEXTURE-TEST-V1/sheets/` (licensed scans: local viewing only); scripts `ArtSource/GroundTextureTest/scripts`; images checked by eye by Worker, Reviewer and Director; Human picks a direction per stratum; external commit c0788be)
