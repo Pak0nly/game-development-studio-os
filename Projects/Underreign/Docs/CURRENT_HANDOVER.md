@@ -20,9 +20,9 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Next for the Human: decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+Next for the Human: answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
-## Night shift 4 requested (2026-11-12 21:42 UTC)
+## Night shift 4 (requested 2026-11-12 21:42 UTC, closed 2026-11-13; see Closed block)
 
 UR-NIGHT-04-V1 (cloud, branch `night/2026-11-12` from Underreign main 83ba176, until 08:00 UTC): rock wall kit for 2 m cells in Blender (installed in the cloud), strata, damage stages, material-based crumbling for Chaos ("Können wir die Wände physics based zusammenbröseln lassen abhängig von ihrem Material?"), floor kit, proof render of a Cinder Hollow section, size/speed/humanoid-motion tables, Unreal changeover plan, questions. Human: "ja, go". Dispatch receipt 96d839a9b5ffab6d6ceeaedb2c7c77e9eb397c29e367d20649f883614d17910d. Morning: fetch the night branch, verify-night-return, review, closure; a no-start or a Blender install failure must be reported.
 
@@ -65,6 +65,16 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-NIGHT-04-V1 (night shift 4)
+
+UR-NIGHT-04-V1 (cloud night 2026-11-12/13 on night/2026-11-12, fast-forwarded into main at 6042582: Blender 5.3 bpy wheel in the cloud (CPU); rock wall kit for 2 m cells in `ArtSource/EnvironmentKit` (6 piece kinds x 5 strata x 4 variants x heights 4 m / cut 3 m / cut 1.5 m, Nanite + 3 LODs, seams < 0.1 mm, procedural stand-in textures, warm brown not yet charred grey), damage states, material fracture sets with films (pieces still coarse), floors, doors, spiral stair, ladder lift, shaft rim, brazier; proof render of Cinder Hollow layer 2; key finding: a 3 m cut hides about 2 m of floor, 1.5 m recommended; plans: sizes, speeds, humanoid motion list, 11 Unreal changeover orders; 7 questions (page https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX); Unreal import script untested; rules and game untouched)
+Independent review verdict: PASS
+Worker task: cloud-task_67eb3c59-underreign-night-4
+Reviewer task: reviewer-UR-NIGHT-04-V1
+Candidate identity: 101279fd70a35e46812e49aa7b37f4510cfb2b89aadd9f79f248a6bafe3196a6
+Closure receipt: fe073fe0bcc8b414348bf2bce9ad9313147e22449e7524ee4960ed336fbf1a7f
+Night return receipt: bd0599ba4c3054560c4e458d6cf62b5e8f2d16aa0a3143d79323e1ce69e02964
 
 ## Closed: UR-MESHY-ID-V1
 

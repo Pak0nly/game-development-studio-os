@@ -1,0 +1,1541 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-NIGHT-04-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-04-V1/WORK_ORDER.md",
+    "sha256": "e58d2e45df4f04c2005ca99b87b8ba11c4c7f5b98eea1f8b7ec2901fa7324b68",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-04-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "833c26705ad538bcb0528f429b7317f8f338abc34c8c56fe1eaea9dddb1de9d6",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-04-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "461e290c354f231e13240df730bbaf01495e207e88b970f473ec54fa996356bc",
+    "receipt_id": "96d839a9b5ffab6d6ceeaedb2c7c77e9eb397c29e367d20649f883614d17910d",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-bceed6ba-13b6-4571-9e53-b31f678dc83e",
+    "worker_task_id": "cloud-task_67eb3c59-underreign-night-4",
+    "reviewer_task_id": "reviewer-UR-NIGHT-04-V1"
+  },
+  "candidate": {
+    "identity": "101279fd70a35e46812e49aa7b37f4510cfb2b89aadd9f79f248a6bafe3196a6",
+    "files": [
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Kit_Floors.blend",
+        "sha256": "a2e449553e8ccba47d60f75cb9ae4b8f796e48efe1ea3acfc652e104408dca88",
+        "size": 516834
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Kit_Fracture.blend",
+        "sha256": "f5edb766c8c12999598957da530c442c78392f3ea1f401e9b9e93cb29b13d412",
+        "size": 611570
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Kit_Props.blend",
+        "sha256": "cf08ed6f074d5b507bfe7c21f80e19dc98b42aac2858a94e39f5970ca69a7e66",
+        "size": 623123
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Kit_Walls_Basalt.blend",
+        "sha256": "1b3a669907aefe7bb370678cb5ea24a14b61cbf1404e64ca868f0a7239d527e8",
+        "size": 16095026
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Kit_Walls_Bedrock.blend",
+        "sha256": "1be55d4e74f420ec2abc6d2c3bb9e60c10bcf5299fd885ee4412ebd94b138a9e",
+        "size": 14043320
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Kit_Walls_Gold.blend",
+        "sha256": "f838729b9578fe8a05de22e8e0d3389a8392c0f94bb34784de6721799b45b92c",
+        "size": 17504323
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Kit_Walls_Soil.blend",
+        "sha256": "47593540ed3b373a580d6bcd0f17112fd9dc876f6df985f68f58dbdc3430bb61",
+        "size": 17185660
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Kit_Walls_Stone.blend",
+        "sha256": "fff7a86e62af38b515bdb0759f7c304859fe3ed2264f70fb066594de7885e965",
+        "size": 16248927
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/blend/UR_Proof_CinderHollow_L2.blend",
+        "sha256": "8ac0ef5f99cd44f89099c9ed40bb52426f12540c3895fb0f7521748d07446d46",
+        "size": 1085615
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_BlockTop_Basalt_Cut.fbx",
+        "sha256": "9383051d25883dfe418f56009b0962d3222fa1c442478cbda0f5889262cc8c6a",
+        "size": 84860
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_BlockTop_Basalt_Full.fbx",
+        "sha256": "3e2b64f364feb3822dbb21c1b18f2299c1c2fc17cbc42afe1bb74a5a72db2dae",
+        "size": 233052
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_BlockTop_Basalt_Low.fbx",
+        "sha256": "1070e0d03e2e0da0fd7ae0020a91ef2b85267e827d1efd330e24cd014d301648",
+        "size": 84892
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallEnd_Basalt_Cut.fbx",
+        "sha256": "17e0143784c0fae236b192911048d8b522eb31661cd7be5d48040a4fe332ebb8",
+        "size": 2545292
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallEnd_Basalt_Full.fbx",
+        "sha256": "5423522b0d9414cd76434bddb29d088a2941b3513e4f27fa725789a29d0e6a63",
+        "size": 3279788
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallEnd_Basalt_Low.fbx",
+        "sha256": "0558e4fef5217fdf05e8d906287a02b9fdeb90fb7022d3108ad45d305271a789",
+        "size": 1448716
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Cut.fbx",
+        "sha256": "7fac40534002f23ce28ee8c8f33249e3f6776c12849a5e9cc43a23e105df3746",
+        "size": 824300
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Cut_Crack1.fbx",
+        "sha256": "cc46987eeb8f0c963d2209c36efcb63ead6b5690a01f1dfd1ab43abc11cf75d7",
+        "size": 813308
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Cut_Crack2.fbx",
+        "sha256": "223c148cd10f6488e17208b4fd7415bed4c8e604198d65d9de8abc4e7b839d1f",
+        "size": 841404
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Cut_Dug.fbx",
+        "sha256": "93a3a37bf3f9f81165f8e5d425e48d6178e101892ca1b271f78980b71938318d",
+        "size": 813212
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Full.fbx",
+        "sha256": "26698e48c9dd866b6b88312815a275de2ecef7f1030922a07bcceb0aa7e544da",
+        "size": 1044732
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Full_Crack1.fbx",
+        "sha256": "f84deeb6088f1ca1b13a7faf3ff8a8f693c88006f811b8e4a1f3769820e9949b",
+        "size": 1033164
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Full_Crack2.fbx",
+        "sha256": "c10016be3406787babd26df513d0ba969498dbee048794b7b512492260a0069b",
+        "size": 1071852
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Full_Dug.fbx",
+        "sha256": "cee54efce96cb2577899a7186e5ef918647d0d01adf24771b8c0a20cd563e25e",
+        "size": 1035708
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Low.fbx",
+        "sha256": "3938b939762f769d295431612a85d9d3f54d945149ffeccae0cb8b58d524b1a1",
+        "size": 493628
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Low_Crack1.fbx",
+        "sha256": "2b4e6d41a0f8645d7eed2613464986beb1dab4fa3191f4dabdb73432ea64ebbb",
+        "size": 480412
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Low_Crack2.fbx",
+        "sha256": "d9b8aca44ed4000387f07716f4bc3154422d41aeb48a0bdee4455d9f197afc15",
+        "size": 495404
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallFace_Basalt_Low_Dug.fbx",
+        "sha256": "2e415c384eaf54028a750a608d9bcdd3f06211f34f090283031fae3c400c7945",
+        "size": 480044
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallInner_Basalt_Cut.fbx",
+        "sha256": "4d66ae7cf97378bd4947bc8c51e7197ac4655b4bd2d2dc1662679e1d3362690a",
+        "size": 298268
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallInner_Basalt_Full.fbx",
+        "sha256": "1dfc036113c59bedfec6abcb75298f526ad10c8fcb610cc704c66c6163ecdc30",
+        "size": 361212
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallInner_Basalt_Low.fbx",
+        "sha256": "729f118e605d943d356e8733d4e3e94c961a60476d1c7f2497f7126e6ec7f5d3",
+        "size": 204284
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallOuter_Basalt_Cut.fbx",
+        "sha256": "ca93a283e0347c5faef3e0c2ab598038367dee224691ba777a7c9842e425639b",
+        "size": 279372
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallOuter_Basalt_Full.fbx",
+        "sha256": "58ea2b4616f51855f191e98f60e3327786a388642068b86dace5fb8074d67acb",
+        "size": 336012
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallOuter_Basalt_Low.fbx",
+        "sha256": "162f993621541557013e9492571191c0cee4425b546164371833c77b3c6a9106",
+        "size": 193756
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallPillar_Basalt_Cut.fbx",
+        "sha256": "9b9be700ec5d260a5f2822cc261f229206aeeb651b2f03bcbe7d41a58f71315f",
+        "size": 3549484
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallPillar_Basalt_Full.fbx",
+        "sha256": "fcb96a547ab33cd2571299fa10612c64877e2802e812e21ce89d9c67539bc0d8",
+        "size": 4585804
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Basalt/SM_UR_WallPillar_Basalt_Low.fbx",
+        "sha256": "fb4495994d81bc71553f15484f9452446683c1c721c1b4ea0618b66f9ab34e56",
+        "size": 1999276
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_BlockTop_Bedrock_Cut.fbx",
+        "sha256": "65e2080dff53bda20fdee958edbf8a701a46e31aed7e0513f78637aaa3cb960d",
+        "size": 85004
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_BlockTop_Bedrock_Full.fbx",
+        "sha256": "3449c4618e5c138371fa36a7c87ca74bb8c70068fe6d3465903e423a12a1aae8",
+        "size": 231100
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_BlockTop_Bedrock_Low.fbx",
+        "sha256": "954749ae4a8d8915d4091752ec86ed266afbf54f55f606d0c4ec7af58f69b7e4",
+        "size": 85036
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallEnd_Bedrock_Cut.fbx",
+        "sha256": "8dd38f3d8995a1d93ed77178185008aa7927fd5ec4714d2ad0563216dc456522",
+        "size": 2591468
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallEnd_Bedrock_Full.fbx",
+        "sha256": "c394e49412ed164613f52cc9395ce5d196773a3729f082b6ad9339b875be4026",
+        "size": 3355564
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallEnd_Bedrock_Low.fbx",
+        "sha256": "0283a6a9fbe7eb5dac7c0d4a2a19e8a8bd6c2f1e540b4cbc62f676c6876b5fb5",
+        "size": 1463820
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallFace_Bedrock_Cut.fbx",
+        "sha256": "cd1b8ffd5c6e5c1a34f796f696366a0a53aaf50f8d08a585b499135dcf26cc47",
+        "size": 825676
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallFace_Bedrock_Full.fbx",
+        "sha256": "be12b536dbf2477e0f6ac9cad09e7651c822f5c8041253e4241db9f3cd2d9402",
+        "size": 1052028
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallFace_Bedrock_Low.fbx",
+        "sha256": "d4a7f1ed7503f4de4a6dbf2c2b215a276a03254d543523f87bb54fd2bbce77e6",
+        "size": 490140
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallInner_Bedrock_Cut.fbx",
+        "sha256": "42a9759ae57e894c96fdb430c97da4b3a164a46ae85af1084fe48e8672208508",
+        "size": 298060
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallInner_Bedrock_Full.fbx",
+        "sha256": "64f55b08ad329a3ea378c1dc5009f2c23c8f99e6222e1f153c4f370fab7234ff",
+        "size": 360764
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallInner_Bedrock_Low.fbx",
+        "sha256": "e819ce748a107b9fab02f9fd227e0d408d89a856cf8f7539995cb83fcededc99",
+        "size": 203996
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallOuter_Bedrock_Cut.fbx",
+        "sha256": "e7419d3ba326f06f3ad042ac1ed460443fa1f51203492b93b60ddb8220ad6993",
+        "size": 282012
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallOuter_Bedrock_Full.fbx",
+        "sha256": "89570b4031323636d10542aac160499db7ed5ed29b8796207a409966c20c2572",
+        "size": 339404
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallOuter_Bedrock_Low.fbx",
+        "sha256": "5ba6b6d9545767af3f8142c5de53b0b413041ab6c709c363704c6635388a5369",
+        "size": 195532
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallPillar_Bedrock_Cut.fbx",
+        "sha256": "f4d0f77a59b58f63b0fdd927bbf7e23eeed012e1675fe36f2116816ca9269688",
+        "size": 3644012
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallPillar_Bedrock_Full.fbx",
+        "sha256": "21c4083c1763304bdec262b422fb411e3dd80da78366dc431978c806eb1f7689",
+        "size": 4721612
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Bedrock/SM_UR_WallPillar_Bedrock_Low.fbx",
+        "sha256": "44c4c2f3e2df7c0c303860a98905d118147f82ec0807a8bbc4e88c8a35e32e73",
+        "size": 2039404
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Floors/SM_UR_FloorClaimed.fbx",
+        "sha256": "9f2ca4bead1d5afbb73067c5432e3f7db410d5db4557964cb34f4169ffe988e2",
+        "size": 109980
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Floors/SM_UR_FloorEdge_Basalt.fbx",
+        "sha256": "d5f5f17ed7af260d32b03f705cbd884106f57eff112783fcb1133d6fb00b943a",
+        "size": 228860
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Floors/SM_UR_FloorEdge_Bedrock.fbx",
+        "sha256": "80d4172d493a214dbc900434828749ac4e0ab353b059f7967152b68fef07da55",
+        "size": 228844
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Floors/SM_UR_FloorEdge_Gold.fbx",
+        "sha256": "ededc8906cafd642d0f717ba0fb93f140a45b594143f2182e81d961c5281d803",
+        "size": 228732
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Floors/SM_UR_FloorEdge_Soil.fbx",
+        "sha256": "1b4bb06728d709d32c06f5f6a881d5ca8e453753fea5cd7004dec1bbfa8389b8",
+        "size": 228796
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Floors/SM_UR_FloorEdge_Stone.fbx",
+        "sha256": "8acfd3e4088562ceb2505ab1133987bed135023bddfaa7f582c60f097bd724bf",
+        "size": 228636
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Floors/SM_UR_FloorRubble.fbx",
+        "sha256": "9fafd712daf4852d3d105d1dd590a963a6c89b8dcd675f6c02475beb0dc9a50e",
+        "size": 161516
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Floors/SM_UR_FloorUnclaimed.fbx",
+        "sha256": "720e4a1f7703c4129795e762fab29332ca13e2ecbb66e846870e906753d69fca",
+        "size": 329932
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Basalt_Cut.fbx",
+        "sha256": "dc50cef7d77fc5c1cb08284ea7d7fadb25662ce968e84ace83523d74e8fae326",
+        "size": 62508
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Basalt_Full.fbx",
+        "sha256": "c8f054a36df11c27b6b2eff9fcb4f6ec52f0587eeb25f360434008761bb4fd73",
+        "size": 67804
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Basalt_Low.fbx",
+        "sha256": "275f2937834ad717170ecd2966e80ecceea13f16359a846373b694dbbd0b6215",
+        "size": 53660
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Gold_Cut.fbx",
+        "sha256": "d302594f45064b48ce5af32e6f1ff47f6d602733e2815d4686b323db0db4b8df",
+        "size": 86444
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Gold_Full.fbx",
+        "sha256": "2e132bb2c4f9d9354f67ec5027b652b831571ed1e5f231caee321cd6797353a3",
+        "size": 91548
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Gold_Low.fbx",
+        "sha256": "69c6017b20c76cf0f25097cb0b459b2fe462096ee864ebbab6d459f5a89de8e8",
+        "size": 78812
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Soil_Cut.fbx",
+        "sha256": "f1c6bf4ed242681b756c33abed593480d9687aa037d2c94c7e2b991ae321b66d",
+        "size": 170092
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Soil_Full.fbx",
+        "sha256": "08fe1bf25c5fe87bae3821d9ca504fdd7f5c4ab7a4a3ff72e916da1d329b36e2",
+        "size": 187212
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Soil_Low.fbx",
+        "sha256": "cb402a7e9855b994c1275706e3d3e517529edcbab37b3cbf86b2071fde84cc6b",
+        "size": 162316
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Stone_Cut.fbx",
+        "sha256": "0a4f3e83c04c657176e5cfb79b0c3f22ae5c67a15eea759e37ee09b422408917",
+        "size": 74764
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Stone_Full.fbx",
+        "sha256": "a75fd3fd099d4924f8841abfa0c5427bb3e6ff863160d1153865001721a135fc",
+        "size": 80332
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Fracture/SM_UR_Frac_Stone_Low.fbx",
+        "sha256": "c625bb331182d96f742b9148e8a338c49ad7353f80d311bbda6510c6f8f7bd9b",
+        "size": 67372
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_BlockTop_Gold_Cut.fbx",
+        "sha256": "293084116a2f70f506c5cc8fca0591ecbe4d1528958879ccee07bfe29c2dc40e",
+        "size": 84860
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_BlockTop_Gold_Full.fbx",
+        "sha256": "4743d50efb8433aee0e7e8e4927235f846e63d4474773f0a12e06542a2b0de75",
+        "size": 232892
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_BlockTop_Gold_Low.fbx",
+        "sha256": "d4ab35e354c8d355644cf7d7a9d898901f7f5144dd4c736f39ed9d30f9d70160",
+        "size": 84892
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallEnd_Gold_Cut.fbx",
+        "sha256": "8184e74076adcf51895938f2c355619fa782d759916d2286d4ecd5c287d743cd",
+        "size": 2758204
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallEnd_Gold_Full.fbx",
+        "sha256": "21bf26cddf7bc6909812f9a328ef4a2790f39fea48f6454daea1967de22628bb",
+        "size": 3515836
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallEnd_Gold_Low.fbx",
+        "sha256": "08ce615da7cdccfb4fe9456a67c9f82ceee07eb6b66c4efccfebf907f6ce0c5d",
+        "size": 1615196
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Cut.fbx",
+        "sha256": "a272330c79734f62c10976cef221a255c690cfce29cbb8a8933041f8348e57a6",
+        "size": 884124
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Cut_Crack1.fbx",
+        "sha256": "53445b93ea34deab50c04efbf011594267c6e625745c6acfc94e7c54f297805c",
+        "size": 874044
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Cut_Crack2.fbx",
+        "sha256": "644a66435ef7ac3124ca826cdfcaa6ae9f6b05c3844b6432ae07b81a0ed9aa80",
+        "size": 894668
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Cut_Dug.fbx",
+        "sha256": "11b828b9d83f82cc52f6d7dace24ff7daead0931f2c5ce1eff1045023e0a2e10",
+        "size": 866028
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Full.fbx",
+        "sha256": "a26c2de1750ac49ea0373fd5b0dfe90cd12ef24b05affaa44561fd8256ec05d2",
+        "size": 1110908
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Full_Crack1.fbx",
+        "sha256": "8a7da413fb5530542d2e6ca0307a49259842ebb1f7960ea68a624c75190f1901",
+        "size": 1102492
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Full_Crack2.fbx",
+        "sha256": "dddf0cec1900f49212a37e2fc0d340aca31af217779bde6bf995be36fbcb01ae",
+        "size": 1128828
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Full_Dug.fbx",
+        "sha256": "213d15460de548348291408b8e480c98c4485b5b1c610c05b346d0ef456e4655",
+        "size": 1091116
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Low.fbx",
+        "sha256": "4f0d2822e268d8ccc65196e535a4b83ae24e820cf2597eb6b1bba7f469b22a7d",
+        "size": 543692
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Low_Crack1.fbx",
+        "sha256": "a1daefca9acc17af84316fe7ae40a571636b9ec7a48230d512958ab422feb8a2",
+        "size": 531276
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Low_Crack2.fbx",
+        "sha256": "c3041fe949c288cd2884f62ba54d92555237738590c0e5daaaced8b96b328f56",
+        "size": 540396
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallFace_Gold_Low_Dug.fbx",
+        "sha256": "9d8005c2205519641b91636aac8f355b246b743b3e367a2d956f2937eeb83428",
+        "size": 529644
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallInner_Gold_Cut.fbx",
+        "sha256": "e846db4feed5db3d94c992ecdf73418760d750223187df0f4cee85aadc9c2a5a",
+        "size": 297308
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallInner_Gold_Full.fbx",
+        "sha256": "5c93ba43ef271d9f47f2c29b0bec2a17afc270aff3f527bc98303ee5e47b2ee0",
+        "size": 359916
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallInner_Gold_Low.fbx",
+        "sha256": "a18381b29800a1c5f1391ef095d871fbcb25c86d21834b09f9119b65084fd194",
+        "size": 203532
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallOuter_Gold_Cut.fbx",
+        "sha256": "223c9b96a0f6fdcdb4c5e247bcf6a9c8bf96f7db8588fd259f060c60105705a7",
+        "size": 283228
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallOuter_Gold_Full.fbx",
+        "sha256": "993374e483dec3a4db6088df9d2b62b89d049bca1687e2bd7f4cd0dd4a8463fc",
+        "size": 341260
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallOuter_Gold_Low.fbx",
+        "sha256": "3dfa3c05522a3a4304241c4408e502ff5211ff003e769c618a04009a3bd2b271",
+        "size": 195804
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallPillar_Gold_Cut.fbx",
+        "sha256": "b3b7465c84fc65e4df22876c230c8922215c2b44d2ee9bec3bfb0b6b41fa19bf",
+        "size": 3858444
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallPillar_Gold_Full.fbx",
+        "sha256": "6c4f988522e6823f579bf6e847fbde5d03d8efc75ac62920437c04b275b71a10",
+        "size": 4933212
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Gold/SM_UR_WallPillar_Gold_Low.fbx",
+        "sha256": "8c48101c240e4ca9e29d4ad196bf359fb6322b5c0882b09fe685114cee7e6cb1",
+        "size": 2241564
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_Brazier.fbx",
+        "sha256": "f1918fb389859001c0fd887357508e9d964013529c380968badfc11480bb4ce9",
+        "size": 30668
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_DoorFrameIron.fbx",
+        "sha256": "a031ade898ec65fbe980038ca6c82df6e12307c0779d46e8b19a0cb06ac8d296",
+        "size": 48444
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_DoorFrameWood.fbx",
+        "sha256": "2bac2738e59abec75f25defaa627a4eb0c77b3d35d511ef10930b6d8784376a8",
+        "size": 35260
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_PillarWorked.fbx",
+        "sha256": "16eac2e10a29f3c02907ee6752775cdf925b382adb61cbfe74a9aea2c6a48626",
+        "size": 25308
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_Rubble_Basalt.fbx",
+        "sha256": "85ea4a096183aa440962854570cd1c83b03e335990771efbd6b5a77fc4360673",
+        "size": 139996
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_Rubble_Gold.fbx",
+        "sha256": "79583635fc0b264563cc74a98c684deeaa871f2e107c6edadc9ffc98b398ebe4",
+        "size": 213804
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_Rubble_Soil.fbx",
+        "sha256": "53b5a8ce4679f74b310ce56ccb2d6c76304683530529ef695ceab9c23ffd4883",
+        "size": 162316
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_Rubble_Stone.fbx",
+        "sha256": "ce5dbb1bb1116b8109de892496a7e8d808a436149885017b809b0f9aeb45aae0",
+        "size": 190076
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_ShaftRim.fbx",
+        "sha256": "d0bd471aad5f26cc786e351f7d60b8bc9f9b2b7017e5a2f18949210e030ecd35",
+        "size": 138732
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_StairLift.fbx",
+        "sha256": "9dc00098de3b44ab123a77ef9d1868556b898007bde60db18eaa3189a8769448",
+        "size": 154188
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Props/SM_UR_StairSpiral.fbx",
+        "sha256": "04fd77cf4a07e3bf2e3497224fbe6bc3f1b6bda5835190fbc562995a9a35ffab",
+        "size": 163708
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/SM_UR_AxisTest.fbx",
+        "sha256": "8e0c802fe7f5d9a1f91fda14c6a4b48734d8ddc7db76ba3263d9b055c13cc732",
+        "size": 24028
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_BlockTop_Soil_Cut.fbx",
+        "sha256": "3b5380dbb8764426a9076a9287c8c8e1a813e041b09a1b07930b0b042d268975",
+        "size": 84748
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_BlockTop_Soil_Full.fbx",
+        "sha256": "b6acea7f51c6f12b804e2063a7417c4c27d6500138f1136d0233bfcadd0bb836",
+        "size": 234252
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_BlockTop_Soil_Low.fbx",
+        "sha256": "f07386cc4d5b078235e099ede30b57c7e1d2cac7424dd0436c760d38c0c9be4b",
+        "size": 84780
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallEnd_Soil_Cut.fbx",
+        "sha256": "4ba1baed095bf78300297ff6ae26de56cb5f7393a6c81bdefe971035d00322df",
+        "size": 2700764
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallEnd_Soil_Full.fbx",
+        "sha256": "6acbc86f9871d2c1a450cfd5112f0032a9d37c322146c443ed369862f3323d6b",
+        "size": 3459676
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallEnd_Soil_Low.fbx",
+        "sha256": "476de9d07d57bf3cf60cd993f7815ca3a9cd55384d1bb00cbd5dbba50efb07bd",
+        "size": 1567164
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Cut.fbx",
+        "sha256": "c00996701d29baafbaf3948948da53dcc5dbfa97db032bc32417b08d19c3bc15",
+        "size": 860092
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Cut_Crack1.fbx",
+        "sha256": "f3f40d3810ba7a0bec80e2bc809b17a89d455cbf161086d5c1a8d7f43963f9ac",
+        "size": 818060
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Cut_Crack2.fbx",
+        "sha256": "83c129aaf2ef0bd10c917fb435d585cf29959b52a9473b08d30f52d3cd298b2b",
+        "size": 838636
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Cut_Dug.fbx",
+        "sha256": "4fb422137a8ffe20aa3f9c675a19e9e88f93235eea573de6ae18064a638e6da2",
+        "size": 803564
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Full.fbx",
+        "sha256": "f28927e01f068b4034bfc868b6932aef192fd66dd0bb0063d6c396140b30aabd",
+        "size": 1085100
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Full_Crack1.fbx",
+        "sha256": "126f59bf5958f9d839e56e9516b7fe5b93ac4568bac1c1436616d27ec6933408",
+        "size": 1044012
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Full_Crack2.fbx",
+        "sha256": "a3cffb6b4db3da8ee96b452165652ac2ee9b3bb718684eda1f3d6fe12b576f40",
+        "size": 1071772
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Full_Dug.fbx",
+        "sha256": "298b173746d739fed91a6997e4c785484283366128b6d60e45474f38f79a91bb",
+        "size": 1028124
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Low.fbx",
+        "sha256": "71ca2bd6103ea03e519ee8230c2a025d01985fb62215fe5540815eb0a807de3e",
+        "size": 526172
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Low_Crack1.fbx",
+        "sha256": "0ebfe5ca7bc93b9a6c9602106b68a3b1aab3524bfaccaab46b968be3494f2f9c",
+        "size": 481340
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Low_Crack2.fbx",
+        "sha256": "2477094eefc802ef76b4936481c9bcafe3e2c926de39ba0508fa8adc95b8c132",
+        "size": 492172
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallFace_Soil_Low_Dug.fbx",
+        "sha256": "3e3396a9dbd3bcb40c8c764627cac9e514f1c4dfb57b3f4f4042931f362f72de",
+        "size": 472172
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallInner_Soil_Cut.fbx",
+        "sha256": "6b1db5a84e1196301e12635ac5961000d93f847db2d21371ad2130dd7ae1bb9f",
+        "size": 300940
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallInner_Soil_Full.fbx",
+        "sha256": "19a1e08e70849626f9b05d648d419b69631de6b210fab0c29ae4f31577bf9f6d",
+        "size": 364700
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallInner_Soil_Low.fbx",
+        "sha256": "978671497dd46b895d48a62cd75fcb03484abf3958523b3c4ac15b8223c1cfe5",
+        "size": 206364
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallOuter_Soil_Cut.fbx",
+        "sha256": "d721e1f64d4ee9f738d034eee694151380e3b9decf1af82b7f978020bbc1a745",
+        "size": 286604
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallOuter_Soil_Full.fbx",
+        "sha256": "7e859520d3c097ca01b6a7e1adac1fecc62d6f94f3a7bcbb2de2e1f5c5e00484",
+        "size": 345388
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallOuter_Soil_Low.fbx",
+        "sha256": "64381da220050c826945978bf580239c8eb95da712a9ac1a6261e0edb5892965",
+        "size": 198076
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallPillar_Soil_Cut.fbx",
+        "sha256": "6b2b12a2891620ba776d4ce5c561db0f96fdfee71749a0f3491bbf28c6a2c93b",
+        "size": 3801692
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallPillar_Soil_Full.fbx",
+        "sha256": "fa33e788dd6a2a7ae53f52dcd633cc7eb82798a4817537a9dd5087af6fd3cedb",
+        "size": 4879916
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Soil/SM_UR_WallPillar_Soil_Low.fbx",
+        "sha256": "96f86d12604ca81c394c2e4aa1695327eaf663918de0bec0985bd4d86be74554",
+        "size": 2186764
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_BlockTop_Stone_Cut.fbx",
+        "sha256": "61df1bb1bf566841205bb769dca5eb137a9dbde1374ef96e4a3e045a756fac83",
+        "size": 84812
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_BlockTop_Stone_Full.fbx",
+        "sha256": "3a30ab418f7cb37af9802a8b0f48c2f717fb65e06065482e4e9b94d8181e874e",
+        "size": 233004
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_BlockTop_Stone_Low.fbx",
+        "sha256": "7e100d3a09e999847195d7b24ab095d2f4ac5670c419707506e105e72342e6f1",
+        "size": 84844
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallEnd_Stone_Cut.fbx",
+        "sha256": "9a437b50b0b115834acc461b628767212f8174db902d614ea21c2b6658a8cd84",
+        "size": 2564652
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallEnd_Stone_Full.fbx",
+        "sha256": "63ca925bcecec1929f979033486d7762a7364de1925b17bbbc403a6a49f84275",
+        "size": 3316988
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallEnd_Stone_Low.fbx",
+        "sha256": "f31bba6b1efb676a210bb2970e830ffec92602109bfb7a39d9504c14ce12f225",
+        "size": 1455388
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Cut.fbx",
+        "sha256": "9b0b53cad1588873b8ff8104fefd673e177edb2c304640ecec1d8587a7d56bd6",
+        "size": 821964
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Cut_Crack1.fbx",
+        "sha256": "a2fde975dd4d1d2fbf2684b01ef16baf6a055a5b8e946b52ca498bb3b2c5ff98",
+        "size": 813820
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Cut_Crack2.fbx",
+        "sha256": "c5c13bf0a8c42b4575d08f1364552605aea651f74b3629f9d0c41382fa6303a9",
+        "size": 840108
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Cut_Dug.fbx",
+        "sha256": "d5aa1db7794c29d2a98ec58fc53b668e0e2a70cd3ef436f1a16bee82c9a982e7",
+        "size": 808284
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Full.fbx",
+        "sha256": "1087091b4e50da1898d1c9655cbe4cabf97df2976b147e300e785d2c627d5946",
+        "size": 1041932
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Full_Crack1.fbx",
+        "sha256": "84f04c714960f0a0ad4c11f2428d98aa92a183995a9b5632090420f1a5feae62",
+        "size": 1038076
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Full_Crack2.fbx",
+        "sha256": "f75e9b3998521a971de0b397def98e4e696199c133c7ba981a35c3f1f3e273a6",
+        "size": 1073740
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Full_Dug.fbx",
+        "sha256": "f5fd5ed19d6be2d7f2defd16d4e5761d5e53afd976cae84aea28e0f5c3c687b3",
+        "size": 1032524
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Low.fbx",
+        "sha256": "5e87032dc93c1e9bd05303aae43d405e62fc920c65482d76ae7c07b8cab50422",
+        "size": 491596
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Low_Crack1.fbx",
+        "sha256": "49d2a697108b8d72732ebf6bafef855a2ac480669c3df0c3aef1cfdac61c480a",
+        "size": 479420
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Low_Crack2.fbx",
+        "sha256": "b22f05e0e4e726d565ee8273cde63023e1d039b317f897b51e0599a9b4f73c34",
+        "size": 492876
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallFace_Stone_Low_Dug.fbx",
+        "sha256": "15c3bdd0a974e5ae3b9aaa4856aa27d72f253c36be14440b3b7cb2038dc808ab",
+        "size": 476412
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallInner_Stone_Cut.fbx",
+        "sha256": "9791cfd5a34f878b64f86daf1940abc8b495ec47787201a06f2f87488c1f7c94",
+        "size": 297564
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallInner_Stone_Full.fbx",
+        "sha256": "79721df2248b6efa78b10e673f51bd25325944c794d1258fcc78760a254985e0",
+        "size": 360188
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallInner_Stone_Low.fbx",
+        "sha256": "6749434811b07fe45a0fd975f73cd94771acb6b6d1952b41b506b7cbc3fb5d42",
+        "size": 203804
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallOuter_Stone_Cut.fbx",
+        "sha256": "aee12a12278c02bd149386d502b561c5eca9340f26b357815defb02800826435",
+        "size": 283164
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallOuter_Stone_Full.fbx",
+        "sha256": "b4202e17b9d30eab29b07fa264501dc1f113f8db383bb88e635fcfa7106a9a4b",
+        "size": 341260
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallOuter_Stone_Low.fbx",
+        "sha256": "c79b863cb753ef2c695a87f15b7d76b7de2757b9d98a4c3cf0b6229a6f3339dd",
+        "size": 195868
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallPillar_Stone_Cut.fbx",
+        "sha256": "e66dcc2cf470e479bb03a33a1e29b44ccfd0356084127359747e7e93e865a503",
+        "size": 3612364
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallPillar_Stone_Full.fbx",
+        "sha256": "43403f03591ad086cbc5c7ab37aa037f0ced49ecfa88d06a4a19f290533467aa",
+        "size": 4674076
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/fbx/Stone/SM_UR_WallPillar_Stone_Low.fbx",
+        "sha256": "9c0be4a314cfc30fe55d8b4196b07a32564dc6a0a2501971f14dcb2859e19082",
+        "size": 2031900
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/placement/cinder_hollow_layer1.json",
+        "sha256": "254ab12d1c896b587ad451b214ab8f0d741f19bde85af8d099726feffe09cab1",
+        "size": 266437
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/placement/cinder_hollow_layer2.json",
+        "sha256": "a3ff6eb53c65eab91af33321353d265d1473eb3b64cb277cd6182b19b6742e1e",
+        "size": 262573
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/placement/cinder_hollow_layer3.json",
+        "sha256": "893c5924764ac23083eb64b2fdc6a754e575d162884e402cf1bd8382563a5f53",
+        "size": 258196
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/placement/SUMMARY.md",
+        "sha256": "bfd51d192e2b822f22a113720f8ecb89ed58371c1d7e4c480afd4dd49682c840",
+        "size": 1286
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/floors_sheet.png",
+        "sha256": "8b3276206074f199dc5e9e9fa6d7106fe240708b4911514c5be11c80cac2371d",
+        "size": 1093893
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Basalt.gif",
+        "sha256": "106dc7163f8fc8b6d25f7cafe3b667d4727317181c8396f523c56d0b065f534d",
+        "size": 1241633
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Basalt.mp4",
+        "sha256": "70745cf56e6d218607116f0d763b0108e67057527e27f6077317d7485abc1ae5",
+        "size": 257931
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Basalt_end.png",
+        "sha256": "7f8c3f30fcbb1285e8aad788eb2e338f14214732e56cc8b85f9df9db9d348b11",
+        "size": 711153
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Basalt_start.png",
+        "sha256": "1b43cfc1cbe4328ce7a79cbc43eff11d2b4f5192671ff53206c7df630376fe9d",
+        "size": 694944
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Gold.gif",
+        "sha256": "d550d3e8aa8f46fba549d6ca266b07b1b4c480588f154e4e74a32dc721436ee5",
+        "size": 1373440
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Gold.mp4",
+        "sha256": "c9ddcd5b19a749bf54f723b342247975325432f98ed0ee9c073f7770804146d5",
+        "size": 289228
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Gold_end.png",
+        "sha256": "344d2536cd16125f7eb12c7210ffdbeaa2636a2f28a8aad532a20d29c755c518",
+        "size": 740489
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Gold_start.png",
+        "sha256": "1427e08b12ba25c492bd42e7969ef796cb558624e2191fb0ace9b7d8f20e1089",
+        "size": 738707
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Soil.gif",
+        "sha256": "ebd8b7b26ec4d0cefda9fbc80b9c3af61f355f75770d510f323ceede122d4e20",
+        "size": 1095020
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Soil.mp4",
+        "sha256": "3b9556c9bbad968efec778706c3333937540e628fea5cdaf6cdc4620973831d6",
+        "size": 273981
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Soil_end.png",
+        "sha256": "c83b64a999394cddf5b30fb326507de7180adb956960dba64672365fbe24b17f",
+        "size": 725876
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Soil_start.png",
+        "sha256": "7e72273dfaeec44cbf15419f5649fcbbce51207ee96ef92a198def8c33903967",
+        "size": 716419
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Stone.gif",
+        "sha256": "89061b28857bd518741622191196ad5ba2974c384c474cfc3d85741121606d5d",
+        "size": 1807860
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Stone.mp4",
+        "sha256": "8853ea84bf5e2b7dc1f50332f2c80f2c724fd3da725c1c21ff10360a080f8adf",
+        "size": 433701
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Stone_end.png",
+        "sha256": "02ee818f5e6f038f3329850646e604414dd3b89e7465a93ab9ee37841ab70c33",
+        "size": 757852
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/fracture_Stone_start.png",
+        "sha256": "aa363cea49e89000a84f2fcbc37ca495e1e70a2d921f33acea17d335ccb77809",
+        "size": 738169
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_game_cam.png",
+        "sha256": "6f8b3e58ffaccff42d5d45d5fd3361f5cec56ab1b2f1e5a842d321fb7d7ef7dc",
+        "size": 1444399
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_game_close.png",
+        "sha256": "618bfbcc3c97e5cce1082fe2bbcd029d1f33beb87f9daeccb163dff01dac361c",
+        "size": 1204873
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_greybox_1m.png",
+        "sha256": "30be8899f1fbce87ec6e07e8ebcdc0b842e246fcc61837c009552dc537f7e3f1",
+        "size": 1068010
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_greybox_1m_close.png",
+        "sha256": "b278255b857a714666dce818304a795d2532263f5acdf6c944573f0f1fdff777",
+        "size": 805470
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_layer1_over_cave_faint.png",
+        "sha256": "04b4c08275d486c20300bb79380244417b0e7f9f1450179be3ef5fba90e9611d",
+        "size": 1441267
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_layer_below_faint.png",
+        "sha256": "aeaf58e755e91f987780103aafe49b8d0dc95d99bf7fe5b6502ea3f832ab50d0",
+        "size": 1480266
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_low_angle.png",
+        "sha256": "51a5169fb82bc2fdac42ab17302414185f624fea3186ba679a5934f0c6403d51",
+        "size": 1199429
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_low_cut.png",
+        "sha256": "e7461b6cf6758ecca1db4c073b6922892a401584b38ec7918c0fd69db321ecc5",
+        "size": 1194454
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_pan.gif",
+        "sha256": "f89c86c20b6a69f8eb6b26e2a7ee5be37cba7ac981196fafdd1b1c1be64b4f7c",
+        "size": 5953195
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_pan.mp4",
+        "sha256": "903bb4e583bda84ed04abb6668131fd51606c383850e93f715a2fabd990ba5e6",
+        "size": 1732307
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/proof/proof_recommended_look.png",
+        "sha256": "e7e263e132eeec4907525e75a93c156787cdc0e955dcf7ce06a8fb271976d3fb",
+        "size": 1570831
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/props_sheet.png",
+        "sha256": "2f735316b5a9c879f976de8eee9c118ee484faa12d9ab941c31e720437570cb6",
+        "size": 1154168
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_BlockTop_Cut.png",
+        "sha256": "3bee7e4ac2313e1806bdfd7a3b379c5a4be0a38f213eb11d607eee95c1e21b48",
+        "size": 1287626
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_BlockTop_Full.png",
+        "sha256": "f50581f5e069279ead8a5ba0cc9f59f61b56a7610c3432a60e8e06c0403f0ad3",
+        "size": 1343483
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_lods.png",
+        "sha256": "0e4d7201e5c8ee033fc0cb72ec82b4a53311a0911266b4354a34ba1fac9b770c",
+        "size": 1171253
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_seamrow_Basalt.png",
+        "sha256": "bdc04bdb44b7bf8058812289ed53cb6d4c4dfcd3ac67c565c7b37b3519d70bb1",
+        "size": 1095190
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_seamrow_Bedrock.png",
+        "sha256": "1299c98da1ed92c25176fbd13ee801af29b9905ef6361da9237733fd5fa58950",
+        "size": 1094638
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_seamrow_Gold.png",
+        "sha256": "6cf48f38430a0c5c7fad416d2defbfa26f5eff199e56b6dda8e38042e0c670ba",
+        "size": 1155379
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_seamrow_Soil.png",
+        "sha256": "ab0f8c23d2556fcca8eb06a4018c6203cc4ff76ca81de6388a55a52b5025d887",
+        "size": 1126081
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_seamrow_Stone.png",
+        "sha256": "ee58be4222d90c6caace7c8442c86ab54d3f825af92ad9c99800e95d91b8a72c",
+        "size": 1144138
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_states_Cut.png",
+        "sha256": "9b281003eca321c2e2f9e4911f59eb12d442c4d68acc89dee0f73d44420a068b",
+        "size": 1383810
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_WallEnd_Cut.png",
+        "sha256": "5f88ce9d8ddf8d11f0c98663652bc01cc240621d7ce13904c599af32472dbd94",
+        "size": 1387874
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_WallFace_Cut.png",
+        "sha256": "c6f3fc57c24ba5f9fa07c1b67f4fbc38fb80aba76edac4002f483c44e0f98373",
+        "size": 1376394
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_WallFace_Full.png",
+        "sha256": "313b99468638501ca78f4e8072e39fda91ce036ca5bbd356f208e037b1d62e9d",
+        "size": 1414805
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_WallInner_Cut.png",
+        "sha256": "b2472d46d949d28a6b4664ca412a790fc8faeccbf4fc0b5f685b69c48fc9c332",
+        "size": 1322128
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_WallOuter_Cut.png",
+        "sha256": "cf06bd5eea4fdc1c8fe2114bbfcae3b8d4091c4bc182b6bc85a5e3f543bd181e",
+        "size": 1387257
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_WallPillar_Cut.png",
+        "sha256": "ecb487764cc48c0fbf3c3eee8ca6b36a9da20b1db6efd80d3fcef8c20b5d91b8",
+        "size": 1423655
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/previews/walls_WallPillar_Full.png",
+        "sha256": "44a0b36b5a43cae40c4aca21a7678fd957ae684df59754c0d292e7a353abd80f",
+        "size": 1435915
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/README.md",
+        "sha256": "268ca5032e685fb5789e9d146d0b73a4388abf4a99b862516ecd822910aa2803",
+        "size": 5908
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/build_floors.py",
+        "sha256": "18077f481098b44fc98a3fb03d9cef41b8f6ad09c094b976a1fef107f9f059d3",
+        "size": 14738
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/build_fracture.py",
+        "sha256": "4919d6cb7809e974dd78e509e8c08c04cbe16dee8e47ec9f65d3fe6f622727c5",
+        "size": 16626
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/build_proof_scene.py",
+        "sha256": "348220429aaed0949e7284aa3993dcf57f36943a8d049f9b2dd62b0c224d6828",
+        "size": 28944
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/build_props.py",
+        "sha256": "1a42d7587b1c47abbe0674de1ec73fc294de4d91f6a2df4532d9e543a209b27c",
+        "size": 18620
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/build_walls.py",
+        "sha256": "7563aa2243edf547ec20c7d699985c3b970e9e44c5bf8e155ef9bbea4d09fcc4",
+        "size": 7413
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/export_placement.py",
+        "sha256": "4f6e4201ebb11c066e3d47d52ebf78b12cdbd7560232ce4434529231f2497eb5",
+        "size": 6518
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/make_textures.py",
+        "sha256": "3ed0bb23d6e0f57bdd0af243ab601d80ef8bd7bdfb17d44590b4db1534c5fa35",
+        "size": 12808
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/render_previews.py",
+        "sha256": "8e5fe1d36d40486d213603c1c205e83777f91796173bff2856232f973bfa3876",
+        "size": 9492
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/summarize_stats.py",
+        "sha256": "80cedadb356e218430687b90b7dba329ece5af7a4a1079e3821487c1da177372",
+        "size": 3619
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/scripts/ur_kit.py",
+        "sha256": "383746f90d186c11a3a6fc16807d04c3becfcf0b042112acc17709420082c848",
+        "size": 41169
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/floors.json",
+        "sha256": "7c602c4ae9068d9250dd31fc57c0ec15d20b198569add5675095426d217a3723",
+        "size": 4502
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/fracture.json",
+        "sha256": "4a279ef7f1498679e563a306c6610bfb4e4a8d0dcfd8846e3f1501859c5a81c8",
+        "size": 5054
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/props.json",
+        "sha256": "b73e7ad57e8ccadc02352eeb5d3a40b11e56a923899a31aa750f07a21267b6aa",
+        "size": 1875
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/SUMMARY.md",
+        "sha256": "6aff938b7ee9300c5e9e6d38aa93a02d135693bcfc7cde1d3e5bcc4dc9a97f00",
+        "size": 2714
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/walls_Basalt.json",
+        "sha256": "35ffbd51317981b94b53a10080333b24cedb08869964e2c526ad2830944fcff7",
+        "size": 19039
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/walls_Bedrock.json",
+        "sha256": "561889132ca80e4644d9bbc97040fae9d2aca33755daca976611c8910c3f514b",
+        "size": 12451
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/walls_Gold.json",
+        "sha256": "5a609845004c74e4b7ad8e63689fd1cca4ba83aef7308eb39d74df2218bae78b",
+        "size": 18195
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/walls_Soil.json",
+        "sha256": "fc9ff58d5b645a45e03b6b74ab88710d9038deeb93d8939bd0a63f554bae751e",
+        "size": 18175
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/stats/walls_Stone.json",
+        "sha256": "74f26d5fbef3d1e714ee9c000df9b9725f4c4a5f8326deb54ba2d03df431bf27",
+        "size": 18607
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Basalt/T_UR_Basalt_AO.png",
+        "sha256": "282f4f4979915a0b56eb42ceb073ee3b3191393077f7c85775c384fde92a76e1",
+        "size": 2258061
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Basalt/T_UR_Basalt_BaseColor.jpg",
+        "sha256": "f35c64e775a12eaabbc1b93c8ece25695dc92e373003b0ae191d453a1fbe77e2",
+        "size": 767396
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Basalt/T_UR_Basalt_Height.png",
+        "sha256": "3f2cdef317f6e3d4f4e7e5dc3e77049673bb00cea6209312904b27891b243447",
+        "size": 2473111
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Basalt/T_UR_Basalt_Normal.png",
+        "sha256": "9484e3ff204803b768d66a3d1d30c353feaf4da31244bf54ce42ec337c6b8895",
+        "size": 10547164
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Basalt/T_UR_Basalt_Roughness.png",
+        "sha256": "4dbabacdea593a6afe8046c79fd77953d6a218a1bf4bec5d0b5d059f0f74f6c6",
+        "size": 1872094
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Bedrock/T_UR_Bedrock_AO.png",
+        "sha256": "108d8115ecf13338b2e2ae1d5f75dfb8677f674d6bb7f0b941ce5348ebb83ea9",
+        "size": 796377
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Bedrock/T_UR_Bedrock_BaseColor.jpg",
+        "sha256": "cbfb62790e6b4ac87f0a55a7f2ba7c96c897cf612eca613158335de1e9a58668",
+        "size": 170300
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Bedrock/T_UR_Bedrock_Height.png",
+        "sha256": "d59de1becb01003f5e7ff7301933ad4f39c459feffb7ac8cce8679cbdbca7bc3",
+        "size": 588036
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Bedrock/T_UR_Bedrock_Normal.png",
+        "sha256": "24a908b412fdcd9a22bca7e9434cf7c6172bdc1b0e8ff3c2682965c7e8bb9821",
+        "size": 1603851
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Bedrock/T_UR_Bedrock_Roughness.png",
+        "sha256": "3afd5d44138da269593b8a315dc8c8807c092f8f55208f3e0eee5c6406c4c1b4",
+        "size": 1139022
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/CutCap/T_UR_CutCap_AO.png",
+        "sha256": "1f079ff277ce995ef57369d761b38c04e0777786ccdf7e497023a3788189e416",
+        "size": 815984
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/CutCap/T_UR_CutCap_BaseColor.jpg",
+        "sha256": "8b244a31dcf0b6382082cb04c1f8b6c478f4fa0085133369f574ddc94a48e83f",
+        "size": 151075
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/CutCap/T_UR_CutCap_Height.png",
+        "sha256": "86aea6f6806ab5b414ae550a76fdb0f3a7de3936dbfda5a68ae3ee5b182ac982",
+        "size": 662907
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/CutCap/T_UR_CutCap_Normal.png",
+        "sha256": "d97faf0761e65a5bf088b8b41ad9eb5618b02c3b4883a31d7f82b90b6a178a03",
+        "size": 1430713
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/CutCap/T_UR_CutCap_Roughness.png",
+        "sha256": "c0965b0f8553027182b15a531fd591ac404f2d501e93246761437b02460e6795",
+        "size": 398972
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/FloorRaw/T_UR_FloorRaw_AO.png",
+        "sha256": "8f4b8518ac9268f67f39cad59541b294f76be8851d54be4e7b76fb65fdf7aa0a",
+        "size": 2871180
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/FloorRaw/T_UR_FloorRaw_BaseColor.jpg",
+        "sha256": "91c5076d03cd0d1b636d5b56529d2ec1826ce9519f6d0d85f239c0e27e628d37",
+        "size": 1036953
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/FloorRaw/T_UR_FloorRaw_Height.png",
+        "sha256": "6139a3d224977ff089bc8a2de708888d2464a6f027f4fff24bdae25338ba8e0a",
+        "size": 2836920
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/FloorRaw/T_UR_FloorRaw_Normal.png",
+        "sha256": "09691d0fc96e0f9651791699b147876c5cff0671b45e156014dca497a8ced844",
+        "size": 10901602
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/FloorRaw/T_UR_FloorRaw_Roughness.png",
+        "sha256": "04decc2f3950d0af50a06931ce6d8c756eea335c58847d4b8d17b90898439002",
+        "size": 585548
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Fresh/T_UR_Fresh_AO.png",
+        "sha256": "8953a15850945ec243cfa3c47a42d7c7a45fe8085e058fbfc87db5fadf3c2412",
+        "size": 773564
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Fresh/T_UR_Fresh_BaseColor.jpg",
+        "sha256": "3c0fa08d1e188b13b119b468aee663bfc4c5e2476feab9205ad16de5f5e50797",
+        "size": 363435
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Fresh/T_UR_Fresh_Height.png",
+        "sha256": "6ddcf0ce2925fc97e2c5b613644f8d12fc352cea93d6ed0b707dd370fae93728",
+        "size": 703351
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Fresh/T_UR_Fresh_Normal.png",
+        "sha256": "3700e508f344bf5b13d8afa488abfeaac40c18fa18e29d23c8c1dd01a9ef6227",
+        "size": 2497317
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Fresh/T_UR_Fresh_Roughness.png",
+        "sha256": "b0bdb21995e1ae6389601f12836de87c197e6da476367c48a6ef5d6e12469035",
+        "size": 354915
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Slab/T_UR_Slab_AO.png",
+        "sha256": "0a76e90fd65bfbca657716bcf0fc7401e6827484ee2a07fb2c6bda767dfdfcda",
+        "size": 2404891
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Slab/T_UR_Slab_BaseColor.jpg",
+        "sha256": "bd4a1c96a7dc832a1576608036d019407639941f10e548a8233e19b1297c3fde",
+        "size": 951577
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Slab/T_UR_Slab_Height.png",
+        "sha256": "6ebcf0ab7eceec939077a5c004cc0a8dec42a19282c087e1d608826d2df1783a",
+        "size": 3049409
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Slab/T_UR_Slab_Normal.png",
+        "sha256": "75e9b7fdf693f8f35fde91523dd604c5a8582308a829908cf81fb082f3bbda37",
+        "size": 11051793
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Slab/T_UR_Slab_Roughness.png",
+        "sha256": "a709788db6b1df95c2a3f5b7567e1bc83c7516cb7fc99c8f68dae96daf44f644",
+        "size": 1544780
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Soil/T_UR_Soil_AO.png",
+        "sha256": "574948004a8937d33746c2c82ac96bab1286b4dc886b3eb804009347fa41bb92",
+        "size": 2521291
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Soil/T_UR_Soil_BaseColor.jpg",
+        "sha256": "d09cfa876d3be13146c09849f4c26cca3508473e379c663410ba6959996f24d0",
+        "size": 1422801
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Soil/T_UR_Soil_Height.png",
+        "sha256": "cd6dfcb4e8860ada107c9b08aafd4f876cf5d046499fbe145948b7d8d098629e",
+        "size": 2941757
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Soil/T_UR_Soil_Normal.png",
+        "sha256": "7ac89b29701643a07e220bdeac7f29688d14f275f21f3de11eb21618648b420e",
+        "size": 11380443
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Soil/T_UR_Soil_Roughness.png",
+        "sha256": "8e7d2ee71181d4c59f0d301a05201b48de19154f482dd649971f2cee291eec13",
+        "size": 1501299
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Stone/T_UR_Stone_AO.png",
+        "sha256": "9457124493bb2cf3521ff8b47430bf038310c8bed84932449e991bd77960308d",
+        "size": 2597276
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Stone/T_UR_Stone_BaseColor.jpg",
+        "sha256": "bf0729cdf2fd2188b4abe3d42d4b1f9b8a5c6263d07e26b2d85e305191f3ec10",
+        "size": 1195092
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Stone/T_UR_Stone_Height.png",
+        "sha256": "4c6f8ba23472afd0ee3b0c4e47111d2ed26d6b704c3e3e4e3a6db3bf8993c01f",
+        "size": 2799159
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Stone/T_UR_Stone_Normal.png",
+        "sha256": "cb8a4b0e968a54804f794f757c9be17370159cd6746dca86950180079a5ee28d",
+        "size": 10992750
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/textures/Stone/T_UR_Stone_Roughness.png",
+        "sha256": "4262c7a00d36a8b71c695b1d9ab052727540d4b6b6daaaefe5d7069c29e8a566",
+        "size": 1760073
+      },
+      {
+        "path": "ext:ArtSource/EnvironmentKit/unreal/setup_kit_proposal.py",
+        "sha256": "9d77c0d83e14a9d6e7dd78a6db8e7ffb2daac5e57a381fff4eaa72e0856dfc08",
+        "size": 7545
+      },
+      {
+        "path": "ext:Design/Art/ENVIRONMENT_KIT_2M.md",
+        "sha256": "aa0a05731ae65eb407324492b0a3dd3c3a2efdb52d6d3d8045ea58290c8f0769",
+        "size": 21150
+      },
+      {
+        "path": "ext:Design/Planning/HUMANOID_MOTION_LIST.md",
+        "sha256": "c3581c6645eac3b8b2c2116a56b24b3f048fffca258dfb0daa7587a0212ebc93",
+        "size": 43770
+      },
+      {
+        "path": "ext:Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT4.md",
+        "sha256": "c0b40c10c8bfaee1f6496aa53b0816b65c5773c6acfd302001e0ecfc0d30d407",
+        "size": 7957
+      },
+      {
+        "path": "ext:Design/Planning/SIZES_2M_CELLS.md",
+        "sha256": "01739ba42973dd6abc1dfb654835df795b139a41e1832440fd90d22f13eb405a",
+        "size": 16387
+      },
+      {
+        "path": "ext:Design/Planning/SPEEDS_2M_CELLS.md",
+        "sha256": "d86d0216ffbc225aa2f7422561450e973fc7f3c0d901c37c9426bd32cba27a5b",
+        "size": 16794
+      },
+      {
+        "path": "ext:Design/Planning/UNREAL_2M_AND_KIT_PLAN.md",
+        "sha256": "ad9ab70306f89f936d4dc3fd3f8a89308695061ae42366b0d416fae2343b0029",
+        "size": 47774
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_01_KIT_STANDARD.md",
+        "sha256": "f44f4f82dc4f36024708c0c130c90c4f99e660ed438bd251b18fc311ed1d2b43",
+        "size": 901
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_02_WALL_KIT.md",
+        "sha256": "93498b1117886c4ac4198c08da2952c4055997a6eac83d4d656bf1cb1f6a3877",
+        "size": 2830
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_03_STRATA_STATES_FRACTURE.md",
+        "sha256": "0de507e68d7b25f23f75c5c3c406e87cb8772830c7fc9105a1bf031dc76fc8d2",
+        "size": 2530
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_04_FLOOR_KIT.md",
+        "sha256": "53750459cb7ab28cfd7efea9ef2ef62b551fab646dc737ca777bdd092c95cfc3",
+        "size": 925
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_05_PROOF_SCENE.md",
+        "sha256": "3b909e17c5d7ea2d00179656fe2cc9bfeb9749a9488af5999f6d0f7e7b080014",
+        "size": 3608
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_06_07_SIZES_SPEEDS.md",
+        "sha256": "795afd2b23ae68565aec8fb851feb8507d7ca8b3138052837f66f46fb31cd0c3",
+        "size": 3572
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_08_MOTION_LIST.md",
+        "sha256": "84ee93f083afb11ff8209e47e96147872bffc14d755e76f2ca609c5fdff6cc01",
+        "size": 4209
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_09_UNREAL_PLAN.md",
+        "sha256": "31c8dd3b39ff9858e9468310ae0208de59fa0da7d87156c0a01b325f65af327d",
+        "size": 1858
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/ITEM_10_QUESTIONS.md",
+        "sha256": "bc15fec3ad29f79683c2a8f3b599ba3aa6e413b5337e5d99d8ba1e802678de5d",
+        "size": 904
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/NIGHT_RESULT.md",
+        "sha256": "6a9286bb3f6778d9ae6341833674db2a3274725527220eb5a024298822f4dc4b",
+        "size": 15525
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/REVIEW_PASS_1.md",
+        "sha256": "0fbab773c452367395cbc0a6378cfe81bfc686be4b406e7980e78e3384ae643c",
+        "size": 2823
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/REVIEW_PASS_2.md",
+        "sha256": "5622e120067cc786fb7c21cbecbd6d45c6c8a34ef2d80e08067b44d68a1736f0",
+        "size": 2027
+      },
+      {
+        "path": "ext:Evidence/UR-NIGHT-04-V1/REVIEW_PASS_3.md",
+        "sha256": "33ae8f4b543c63bf8c584f93d5f3559c9ac681f96658d38dbb7e023cd0750d56",
+        "size": 2130
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-NIGHT-04-V1/REVIEW.md",
+      "sha256": "783816c3fb120999dac450ba72d93bc2f2f5e45e645d40b76dff18802a288b3c",
+      "size": 2909
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-NIGHT-04-V1/review.json",
+    "record_sha256": "3d2253e9c6927a6c8d4ac0333bcdb7fcf6bb5ebd9304fb7b8563b6b2c32cbcf9",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "101279fd70a35e46812e49aa7b37f4510cfb2b89aadd9f79f248a6bafe3196a6",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED",
+  "night_return": {
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-NIGHT-04-V1/NIGHT_RETURN_RECEIPT.json",
+    "receipt_sha256": "438480a1a03d04f5345d3e3744b2aed33610751416543578bdde3cf0763d9f6a",
+    "receipt_id": "bd0599ba4c3054560c4e458d6cf62b5e8f2d16aa0a3143d79323e1ce69e02964",
+    "declaration": "VERIFIED"
+  }
+}

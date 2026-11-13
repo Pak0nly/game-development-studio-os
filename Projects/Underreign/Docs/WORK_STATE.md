@@ -17,6 +17,16 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-NIGHT-04-V1 (night shift 4)
+
+UR-NIGHT-04-V1 (cloud night 2026-11-12/13 on night/2026-11-12, fast-forwarded into main at 6042582: Blender 5.3 bpy wheel in the cloud (CPU); rock wall kit for 2 m cells in `ArtSource/EnvironmentKit` (6 piece kinds x 5 strata x 4 variants x heights 4 m / cut 3 m / cut 1.5 m, Nanite + 3 LODs, seams < 0.1 mm, procedural stand-in textures, warm brown not yet charred grey), damage states, material fracture sets with films (pieces still coarse), floors, doors, spiral stair, ladder lift, shaft rim, brazier; proof render of Cinder Hollow layer 2; key finding: a 3 m cut hides about 2 m of floor, 1.5 m recommended; plans: sizes, speeds, humanoid motion list, 11 Unreal changeover orders; 7 questions (page https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX); Unreal import script untested; rules and game untouched)
+Independent review verdict: PASS
+Worker task: cloud-task_67eb3c59-underreign-night-4
+Reviewer task: reviewer-UR-NIGHT-04-V1
+Candidate identity: 101279fd70a35e46812e49aa7b37f4510cfb2b89aadd9f79f248a6bafe3196a6
+Closure receipt: fe073fe0bcc8b414348bf2bce9ad9313147e22449e7524ee4960ed336fbf1a7f
+Night return receipt: bd0599ba4c3054560c4e458d6cf62b5e8f2d16aa0a3143d79323e1ce69e02964
+
 ## Closed: UR-MESHY-ID-V1
 
 UR-MESHY-ID-V1 (all 38 Meshy zips in `C:/GameDev/Underreign_Assets/Meshy/` rendered on the CPU and mapped to their prep jobs: 35 sure, 3 likely (Healer staff, Ember-witch body, cinderling), 0 unclear; list and contact sheets in `Meshy/_Overview/MESHY_ZUORDNUNG.md`; 25 prep parts still without a model; heavy models: Spore-matron and ferret basket 7.8 M triangles, ferret 3.8 M, moth 3.4 M, Brute 2.1 M; Meshy normalises every model to about 1.9 m; zips unchanged)

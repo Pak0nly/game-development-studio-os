@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-NIGHT-04-V1",
+  "work_order_sha256": "e58d2e45df4f04c2005ca99b87b8ba11c4c7f5b98eea1f8b7ec2901fa7324b68",
+  "closure_manifest_sha256": "1f1cb3c5a6358dd7e5f49a5658f93c95a8fb308f47d6e9d7899204a600c62a92",
+  "dispatch_receipt_id": "96d839a9b5ffab6d6ceeaedb2c7c77e9eb397c29e367d20649f883614d17910d",
+  "director_task_id": "director-bceed6ba-13b6-4571-9e53-b31f678dc83e",
+  "worker_task_id": "cloud-task_67eb3c59-underreign-night-4",
+  "reviewer_task_id": "reviewer-UR-NIGHT-04-V1",
+  "candidate_identity": "101279fd70a35e46812e49aa7b37f4510cfb2b89aadd9f79f248a6bafe3196a6",
+  "evidence_state_sha256": "eb84d6424d3d6c47bae519dc846069f4587d40788c162167a5c62df6b5f09c10",
+  "review_record_sha256": "3d2253e9c6927a6c8d4ac0333bcdb7fcf6bb5ebd9304fb7b8563b6b2c32cbcf9",
+  "verdict": "PASS",
+  "night_return_receipt_id": "bd0599ba4c3054560c4e458d6cf62b5e8f2d16aa0a3143d79323e1ce69e02964",
+  "receipt_id": "fe073fe0bcc8b414348bf2bce9ad9313147e22449e7524ee4960ed336fbf1a7f"
+}
