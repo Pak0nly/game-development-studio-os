@@ -4,7 +4,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `f651188` (local; `b5e1886` pushed).
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `c0788be` (local; `b5e1886` pushed).
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -19,7 +19,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Running (Human 2026-11-13: "Beide starten"): UR-GROUND-TEXTURE-TEST-V1 (Blender only, natural textures per stratum, 3 variants each, contrast natural vs claimed) and UR-TORCHES-CLAIMED-V1 (closed below, external commit f651188, not pushed). Next action (one): when both Workers report, check their images by eye, run one independent Reviewer each, then show the Human the sheets and captures; the continuous walls (UR-KIT-WALL-CONTINUOUS-V1, closed below) are in the game, captures `C:/GameDev/Underreign/Game/Captures/wallcontinuous/`; ask whether to discard the stray re-save of `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset`. Also open for the Human: play the wall sample (both starters; Q/E or Alt+middle drag turn, V low walls) and look at `C:/GameDev/Underreign/Game/Captures/wallsample/` locally, then judge camera, walls, see-through and the 2 m pier rhythm; answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+Closed today (Human 2026-11-13: "Beide starten"): UR-GROUND-TEXTURE-TEST-V1 and UR-TORCHES-CLAIMED-V1 (both below, external commits c0788be and f651188, not pushed). The Human answered the open-questions page on 2026-11-13 (exact answers in `Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R8-V1/WORK_ORDER.md`). Next action (one): dispatch and close UR-DECISIONS-R8-V1 (record the answers), UR-GREYBOX-RESAVE-FIX-V1 (answer 1: discard the stray greybox re-save and repair the script; note setup_kit step 6 sets the Nanite flag on purpose, so the Worker first proves whether the change is noise) and UR-MELEE-PACKS-RESEARCH-V1 (answer 2: shortlist packs, Human buys); show the Human the texture sheets (local paths) for a direction per stratum; re-measure the torch shadow budget (4 vs 2) on a quiet GPU; Director owes the Human thoughts on the bottleneck question (answer 29).
 
 ## Natural ground textures vs the faction look (2026-11-13, Human, exact)
 
@@ -111,6 +111,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-GROUND-TEXTURE-TEST-V1
+
+UR-GROUND-TEXTURE-TEST-V1 (Blender-only sample of natural ground textures per stratum from the game camera: three licensed Fab scan variants per stratum chosen by eye, recommendation Soil A, Stone A, Basalt A, Gold vein A, Bedrock C; overview with today's dark scan, contrast Stone A natural vs claimed and charred, close views; all strata mid-bright and distinguishable, no visible tiling; info: rock floors share one calm scan so variants differ mainly on walls, Soil C renders pinkish, bedrock soft up close, ember dashes look drawn on, the dark cut cap covers much of each view; sheets `C:/GameDev/Underreign_Assets/AnimWork/UR-GROUND-TEXTURE-TEST-V1/sheets/` (licensed scans: local viewing only); scripts `ArtSource/GroundTextureTest/scripts`; images checked by eye by Worker, Reviewer and Director; Human picks a direction per stratum; external commit c0788be)
+Independent review verdict: PASS
+Worker task: abdaf5c7b7fbe09cd
+Reviewer task: reviewer-UR-GROUND-TEXTURE-TEST-V1
+Candidate identity: ac417abfc9b4b4419260c7078cc545dc148983399fa5e5dbad5e9e77133e8f78
+Closure receipt: 78357720f2ac86d6f9a47d222583969f004abe0c2336bfb95a7c674a280d6524
 
 ## Closed: UR-TORCHES-CLAIMED-V1
 

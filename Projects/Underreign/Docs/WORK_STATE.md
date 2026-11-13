@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-GROUND-TEXTURE-TEST-V1
+
+UR-GROUND-TEXTURE-TEST-V1 (Blender-only sample of natural ground textures per stratum from the game camera: three licensed Fab scan variants per stratum chosen by eye, recommendation Soil A, Stone A, Basalt A, Gold vein A, Bedrock C; overview with today's dark scan, contrast Stone A natural vs claimed and charred, close views; all strata mid-bright and distinguishable, no visible tiling; info: rock floors share one calm scan so variants differ mainly on walls, Soil C renders pinkish, bedrock soft up close, ember dashes look drawn on, the dark cut cap covers much of each view; sheets `C:/GameDev/Underreign_Assets/AnimWork/UR-GROUND-TEXTURE-TEST-V1/sheets/` (licensed scans: local viewing only); scripts `ArtSource/GroundTextureTest/scripts`; images checked by eye by Worker, Reviewer and Director; Human picks a direction per stratum; external commit c0788be)
+Independent review verdict: PASS
+Worker task: abdaf5c7b7fbe09cd
+Reviewer task: reviewer-UR-GROUND-TEXTURE-TEST-V1
+Candidate identity: ac417abfc9b4b4419260c7078cc545dc148983399fa5e5dbad5e9e77133e8f78
+Closure receipt: 78357720f2ac86d6f9a47d222583969f004abe0c2336bfb95a7c674a280d6524
+
 ## Closed: UR-TORCHES-CLAIMED-V1
 
 UR-TORCHES-CLAIMED-V1 (wall torches along claimed ground, presentation only: placement in URGreyboxMap reads the claimed flag, writes nothing back; every wall face next to a claimed open cell, natural or dug caves alike, spacing 3 cells (`-URTorchSpacing=N`, 1-8), opposite wall offset by half a spacing, cover pass for short walls and dead ends, none by stairs, shafts, doors, entrance, Heart, Call-stone; own Blender torch (866 triangles, iron arm into the rock, flame 2.2 m), camera-facing flame card with flicker; 16 nearest torches lit, 4 shadowed (`TorchShadowBudget`); 75 torches at spacing 3; GPU about +0.3 to +1.5 ms (measured while Blender ran; 2 shadowed lights nearly free, decision open, re-measure on a quiet GPU); rules and golden hashes unchanged, 8/8 tests; images checked by eye by Worker, Reviewer and Director; open: Heart room never captured close, bright coal disk close up, one-off rock-plane glitch in a run without torches; captures `Game/Captures/torches/`; external commit f651188)

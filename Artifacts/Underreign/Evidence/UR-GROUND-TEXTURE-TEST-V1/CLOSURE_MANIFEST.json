@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-GROUND-TEXTURE-TEST-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-GROUND-TEXTURE-TEST-V1/WORK_ORDER.md",
+    "sha256": "767718ea343cfe9828e093262e8fedf3f8b4674437b03bd60335604cf19c89fa",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-GROUND-TEXTURE-TEST-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "7bb2b39ced72f703c83a46f76a34f5eeb78d348841e689b44a62e1c3c7b8e448",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-GROUND-TEXTURE-TEST-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "774c8441caec8c89d2b1911afc2faac1a7704e0269509e672c603554bd73f0a7",
+    "receipt_id": "3e65223c9548ba190ae7ab1b0dcbe45727da3761d207776c4cc18a4341b6e06b",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "abdaf5c7b7fbe09cd",
+    "reviewer_task_id": "reviewer-UR-GROUND-TEXTURE-TEST-V1"
+  },
+  "candidate": {
+    "identity": "ac417abfc9b4b4419260c7078cc545dc148983399fa5e5dbad5e9e77133e8f78",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-GROUND-TEXTURE-TEST-V1/WORKER_RESULT.md",
+        "sha256": "28765507779103961019e4c1667b47072ac8251dc033396d8c65cdf4206be8b8",
+        "size": 11196
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/make_sheets.py",
+        "sha256": "c93521951284f2c455876c81950407b6518b43863d0cc646acbbeb406396794b",
+        "size": 3991
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/prep_textures.py",
+        "sha256": "b4a6ee85f6cd61f8155c1c4df767a0cd88a17e26b7fe3ac984fd4d5a4e042e1d",
+        "size": 2172
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/run_blender.py",
+        "sha256": "e4b00be40391f7870dbcee171d42b52952e16883cc83d2727ddc3de98062a4cf",
+        "size": 902
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/scene.py",
+        "sha256": "7213bf9eea549435a2612f153ea994d6bc014d38e9f5b6cabaa1a30d67ff4f2d",
+        "size": 19134
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/sets.py",
+        "sha256": "62350ca6d1c47ec2dc21d712bc39b87602e0524fd6053a7debe8ba488ac84b35",
+        "size": 4389
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/shim.py",
+        "sha256": "f75ff8fcf055985f96628847d8a730001dede0d19b1781ccae62b57c9320ae23",
+        "size": 439
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/survey.py",
+        "sha256": "4488c4da31d8ce355b1a46de3ef86e22da1b2cc736fb0525d68ae67761b2b2f5",
+        "size": 2904
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/survey_common.py",
+        "sha256": "68b4150520b14824149623447564b6f09a3c9e89350f33e4951a9be14f80c35a",
+        "size": 1058
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/survey_detail.py",
+        "sha256": "002ecdf33dcf30f1a3f50cfbdc88474341bdd5ae5bf488f4f6c883740e541847",
+        "size": 1730
+      },
+      {
+        "path": "ext:Evidence/UR-GROUND-TEXTURE-TEST-V1/WORKER_RESULT.md",
+        "sha256": "e05f1f01ab1570d62162290f3262d290b4ee24233bc2bdbd65dd6b4e4f45ba3e",
+        "size": 10765
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-GROUND-TEXTURE-TEST-V1/REVIEW.md",
+      "sha256": "b616344d7a632c17c4c247fe15632326812b134c98e8413e5a509fc8330a3c10",
+      "size": 5167
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-GROUND-TEXTURE-TEST-V1/review.json",
+    "record_sha256": "e5ab66b007ea90889db37324b407ac934f827b65453fee0203a8f4d837ca812b",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "ac417abfc9b4b4419260c7078cc545dc148983399fa5e5dbad5e9e77133e8f78",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
