@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-KIT-WALL-CONTINUOUS-V1
+
+UR-KIT-WALL-CONTINUOUS-V1 (rock walls as one continuous natural surface: faces end on a shared rough seam column at the relief's mean depth, about 0.2 m behind the cell edge, so the 0.44 m seam piers of INSET-V1 are gone; face ends at outer corners 0.42 m shorter (new kinds WallFaceL/R/LR), WallOuter a rounded rock corner, new WallDiag for diagonal rock cells, wide inner-corner fillet, neighbouring faces never repeat a variant; max into open cell 0.030-0.050 m, mean 1-cell corridor 2.32-2.42 m, narrowest 1.90 m, seam gaps <= 0.00004 mm; kit re-imported (600 meshes, UR_KIT PASS), placement in URGreyboxMap.cpp, two new close stills in the capture director; rules and golden hashes unchanged, 8/8 tests; Blender and game images checked by eye by Worker, Reviewer and Director; open: slight waviness of Basalt columns near seams, a calmer vertical line in smooth Soil at arm's length, game scene still dark with full walls, scree strips not placed in the game, setup_kit re-saves `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset` (left uncommitted and modified in the working tree; discard needs the Human's yes); evidence `Evidence/UR-KIT-WALL-CONTINUOUS-V1/`, captures `Game/Captures/wallcontinuous/`; external commit b5e1886)
+Independent review verdict: PASS
+Worker task: ab13d2602370b899f
+Reviewer task: reviewer-UR-KIT-WALL-CONTINUOUS-V1
+Candidate identity: b3280677b38741c677cfa1bcf427a224e30ca2c44f81edd140314fda6da86480
+Closure receipt: e86928721a5007bbf01fd66e38dba54207786c6675901f5e4e99a37f9398aba6
+
 ## Closed: UR-UNREAL-WALLSAMPLE-V1
 
 UR-UNREAL-WALLSAMPLE-V1 (wall sample in the game: 2 m cells from single constants (1 m override reproduces the old map); kit import `Game/Scripts/setup_kit.*` (440 Nanite meshes, all strata, Full and Low, UR_KIT RESULT PASS) with the style sample's dark charred scanned rock (scans git-ignored in Content/Environment/Scans, never committed); wall placement from neighbour masks behind `-URKit` (default on; 4,799 pieces Cinder Hollow, rebuild mean 2.1 ms); free 360 deg camera (Q/E hold, Alt+middle drag; pitch -70, horizontal FOV 65, default 8.5 cells); see-through fill+outline for hidden creatures (orange own, blue intruders); wall-height option V / HUD / `-URWallLow=1`, overview only, close and first-person views forced full (WallRules test); hound 0.75 (1.6 m); GPU kit 4.93 ms vs greybox 4.45 ms at 30 fps gentle; rules and golden hashes unchanged; open: dark full-wall corridors, low-wall corner loops, faint-layer block-top pattern, outlines on cinderlings in the Heart, other capture modes still at 1 m distances, kit floors and fracture not yet in; process finding: the order told the Worker to view its captures although they show licensed scans (UD-85), fixed for future orders; captures `Game/Captures/wallsample/` for the Human to view locally; external commit 3c8cac0)

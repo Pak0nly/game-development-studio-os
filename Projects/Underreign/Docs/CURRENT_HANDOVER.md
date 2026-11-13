@@ -1,10 +1,10 @@
 # Underreign Current Handover
 
-State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no codes.
+State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fresh Director chat. Talk to the Human in German, plain words, no codes.
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `83ba176`, pushed.
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `b5e1886`, pushed.
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -20,7 +20,15 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Next for the Human: play the wall sample (both starters; Q/E or Alt+middle drag turn, V low walls) and look at `C:/GameDev/Underreign/Game/Captures/wallsample/` locally, then judge camera, walls, see-through and the 2 m pier rhythm; answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+Next action (one): show the Human the two proposed orders, natural ground texture test and torches on claimed ground (spacing X, rules job or presentation only), and ask for a go; the continuous walls (UR-KIT-WALL-CONTINUOUS-V1, closed below) are in the game, captures `C:/GameDev/Underreign/Game/Captures/wallcontinuous/`; ask whether to discard the stray re-save of `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset`. Also open for the Human: play the wall sample (both starters; Q/E or Alt+middle drag turn, V low walls) and look at `C:/GameDev/Underreign/Game/Captures/wallsample/` locally, then judge camera, walls, see-through and the 2 m pier rhythm; answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
+
+## Natural ground textures vs the faction look (2026-11-13, Human, exact)
+
+On the intermediate Blender images: "Ich denke, wir sind auf dem richtigen Weg."
+
+"Was wir auch schauen sollten: Du sprichst von der dunklen scan Textur, wir sollten für normales Erdreich auch andere Texturen testen und nicht etwas nur dunkles nutzen. Fraktionspassend soll in erster Linie ja der eigene Ausbau sein und nicht von vorn herein alles drum herum."
+
+Direction for a later order (not yet dispatched, needs the Human's go): untouched soil and rock get natural, varied textures per stratum at normal brightness; the dark charred faction look (soot, embers, dressed walls) only appears where the player has claimed and built. Proposed first step: a texture test for natural ground, several variants side by side from the same game camera, with the claimed/built look next to it as contrast. Fits the torch direction below (claim floor -> torch -> later wall dressing).
 
 ## Torches on claimed ground, wall dressing later (2026-11-13, Human, exact)
 
@@ -36,7 +44,7 @@ On the correction proposal (whole wall recedes as one continuous surface, corner
 
 "Ansehen ist nicht gleichzusetzen mit "eine generative KI damit trainieren". Es muss visuell geprüft werden. Nicht nur rechnerisch. Das hatten wir bereits als großes Problem festgestellt und besprochen."
 
-So: Workers and Reviewers look at renders and captures (also those with licensed scans) and check them visually; only training or generative use stays forbidden. The 0.44 m seam piers of UR-KIT-WALL-INSET-V1 are rejected; the whole wall must recede as one continuous natural surface, corners included (correction order proposed, not yet dispatched).
+So: Workers and Reviewers look at renders and captures (also those with licensed scans) and check them visually; only training or generative use stays forbidden. The 0.44 m seam piers of UR-KIT-WALL-INSET-V1 are rejected; the whole wall must recede as one continuous natural surface, corners included (correction done: UR-KIT-WALL-CONTINUOUS-V1, closed below).
 
 ## Wall height option, corridor width, see-through (2026-11-13, Human, exact)
 
@@ -104,6 +112,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-KIT-WALL-CONTINUOUS-V1
+
+UR-KIT-WALL-CONTINUOUS-V1 (rock walls as one continuous natural surface: faces end on a shared rough seam column at the relief's mean depth, about 0.2 m behind the cell edge, so the 0.44 m seam piers of INSET-V1 are gone; face ends at outer corners 0.42 m shorter (new kinds WallFaceL/R/LR), WallOuter a rounded rock corner, new WallDiag for diagonal rock cells, wide inner-corner fillet, neighbouring faces never repeat a variant; max into open cell 0.030-0.050 m, mean 1-cell corridor 2.32-2.42 m, narrowest 1.90 m, seam gaps <= 0.00004 mm; kit re-imported (600 meshes, UR_KIT PASS), placement in URGreyboxMap.cpp, two new close stills in the capture director; rules and golden hashes unchanged, 8/8 tests; Blender and game images checked by eye by Worker, Reviewer and Director; open: slight waviness of Basalt columns near seams, a calmer vertical line in smooth Soil at arm's length, game scene still dark with full walls, scree strips not placed in the game, setup_kit re-saves `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset` (left uncommitted and modified in the working tree; discard needs the Human's yes); evidence `Evidence/UR-KIT-WALL-CONTINUOUS-V1/`, captures `Game/Captures/wallcontinuous/`; external commit b5e1886)
+Independent review verdict: PASS
+Worker task: ab13d2602370b899f
+Reviewer task: reviewer-UR-KIT-WALL-CONTINUOUS-V1
+Candidate identity: b3280677b38741c677cfa1bcf427a224e30ca2c44f81edd140314fda6da86480
+Closure receipt: e86928721a5007bbf01fd66e38dba54207786c6675901f5e4e99a37f9398aba6
 
 ## Closed: UR-UNREAL-WALLSAMPLE-V1
 
