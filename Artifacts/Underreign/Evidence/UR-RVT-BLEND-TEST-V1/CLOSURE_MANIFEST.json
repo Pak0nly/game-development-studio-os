@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-RVT-BLEND-TEST-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-RVT-BLEND-TEST-V1/WORK_ORDER.md",
+    "sha256": "e00f131a246be9054e78369646dadb9df57064d3470b6bafb2c195f67589a4c0",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-RVT-BLEND-TEST-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "739ad9c455c99d499dd0c6ebb6f28523175efb097293978dad668c1698a4140a",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-RVT-BLEND-TEST-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "12131331b8d0f8e71947c1b53967f91af194899e50b71cd965b805e849f6ed34",
+    "receipt_id": "5be484a0d283a0fe6056d6cddd787daacb8d681e672cd7924c714fccd5227efd",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "a1b82265b56762ea1",
+    "reviewer_task_id": "reviewer-UR-RVT-BLEND-TEST-V1"
+  },
+  "candidate": {
+    "identity": "399c7d0e5978fb7294f774bd398d76ae9492cbcc388f14255c1c6d1ecc5d734d",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-RVT-BLEND-TEST-V1/WORKER_RESULT.md",
+        "sha256": "51d9a59d48cf3a5f6317d0faabfe608a5cf3798a430f33079a47630fad578db2",
+        "size": 10037
+      },
+      {
+        "path": "ext:ArtSource/Rubble/blend/rubble.blend",
+        "sha256": "031bdcf7be5505fb7d17c54a36fc8955369b7715b9d3832fd094306894a159f0",
+        "size": 154206
+      },
+      {
+        "path": "ext:ArtSource/Rubble/fbx/SM_UR_Rubble_Scree.fbx",
+        "sha256": "782ac5fe71b947bf49cce8fdf57625d678502aef7a1ba5fa9ec4fcd17c8d5889",
+        "size": 76972
+      },
+      {
+        "path": "ext:ArtSource/Rubble/fbx/SM_UR_Rubble_Slab.fbx",
+        "sha256": "e2994ba967a783623ee9ad98650a0aad6fd8b2ab3fbeb1c4148472f49d226a5a",
+        "size": 27564
+      },
+      {
+        "path": "ext:ArtSource/Rubble/fbx/SM_UR_Rubble_StoneA.fbx",
+        "sha256": "4b773cbbdaf42650e14717c22f86fc3d5bbdc396ea1f1bff1913296400c47652",
+        "size": 24412
+      },
+      {
+        "path": "ext:ArtSource/Rubble/fbx/SM_UR_Rubble_StoneB.fbx",
+        "sha256": "42c949a95213b0adfed56f0eaa3eb7c9dc2c885df810d5009ee829103235aab0",
+        "size": 29196
+      },
+      {
+        "path": "ext:ArtSource/Rubble/fbx/SM_UR_Rubble_StoneC.fbx",
+        "sha256": "34fb3a7c87c3c29b13c295088901a06bbec4ca1d1c36ae53f0651237ca83d6e7",
+        "size": 17564
+      },
+      {
+        "path": "ext:ArtSource/Rubble/scripts/build_rubble.py",
+        "sha256": "3be2e6cbfc70deba2ef1c46f13656e422cdf51041e6a89cb793f1d638fcc299b",
+        "size": 9977
+      },
+      {
+        "path": "ext:Evidence/UR-RVT-BLEND-TEST-V1/WORKER_RESULT.md",
+        "sha256": "b6d3e54983d032b07161aff3b38c11a9e94d3dd987e0a9a46d84962149c8d6df",
+        "size": 9825
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_boundary_s2.png",
+        "sha256": "47a9a58befd3c9959e9c56a4847e94b05981bea4443083691f9d1379658d68c7",
+        "size": 2456413
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_boundary_s3.png",
+        "sha256": "0ff88992e5e6730aa60909dcfccab273b4d403feffb16a1cf9131a3b82a57168",
+        "size": 2432524
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_boundary_s4.png",
+        "sha256": "480fac3805b2546729f6d766390307708f9e3055536a3abe1300089a65067936",
+        "size": 2399933
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_close_corridor.png",
+        "sha256": "646bb4d4801b3b978c16e3f3ecf0d8ad79623c025022a54cc55fa78ae6b53e78",
+        "size": 2715026
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_close_long_wall_full.png",
+        "sha256": "d91be814f344d3374b50ddc36381933dc3fb8be723fb64846b9987c274e8f51e",
+        "size": 2364446
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_close_long_wall_low.png",
+        "sha256": "c2adb4c8b3f0132e2275f6c0dfd8113d9448c03f792560690cffd1bf5b523506",
+        "size": 2330513
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_close_outer_corner_full.png",
+        "sha256": "26548f356675aaf508df5e9c4ab8abae5a2335fcdf853cbb4c3720ac4e0d6a09",
+        "size": 2127039
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_close_outer_corner_low.png",
+        "sha256": "adcec6f56a649f541109e6019a56622445ac42b0280f96c21e7274becfc54332",
+        "size": 2298742
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_close_rubble_corner_1.png",
+        "sha256": "91e30dfdeba17c25ea2cf75335b01d0a9a4940d4a6268daa43472f6471d407c0",
+        "size": 2463559
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_close_rubble_corner_2.png",
+        "sha256": "3c4cdc0b06fc612bc98252a9c4a7cdbfce25c25bcf1d0bb7b4fb67ab8f7be617",
+        "size": 2368192
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_close_wall_foot.png",
+        "sha256": "a94d6515764fa06fe1bf6205b90ec3cae3de9d49b451073c2ada58fe79767df7",
+        "size": 2459660
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_l2_full.png",
+        "sha256": "688d69849fb4ccb383fca764035cfd11d355a0dd4a7483b5927d58d7c770327d",
+        "size": 2632169
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_l2_full_after.png",
+        "sha256": "23b015cdbe305c085709a077169d8ce0ddb906222e135db3d21e2d4f0fd2cd53",
+        "size": 2622572
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_l2_low.png",
+        "sha256": "b453993a10a207decc762a329209a11705feed695120e1490f8e432bc4f8306b",
+        "size": 2455769
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/after/kit_l2_overview.png",
+        "sha256": "5b29833b43320fa41ad20ac4263de169996f3c697a08afe3fb426b1536bbd246",
+        "size": 1263951
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_boundary_s2.png",
+        "sha256": "24a813ec5898951b4af4627faf9c79da2af02273202201c2f959552638ca1c75",
+        "size": 2457687
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_boundary_s3.png",
+        "sha256": "193136857c094987f03611827f33ce42415bf9ab8c52bf899bc0cb68effb2a54",
+        "size": 2431600
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_boundary_s4.png",
+        "sha256": "a339f96fa4dfbf92035562df0a9ef0984f27261e87b449fc33317b8548a14504",
+        "size": 2411452
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_close_corridor.png",
+        "sha256": "6e7f1b4ef0636e3cc6564ecdbc6d4995d09f38e5395446fffa4dd1d84a988a84",
+        "size": 2724255
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_close_long_wall_full.png",
+        "sha256": "bd0abe49bab908b44ce17c0ab9eb87e2313f69e6f32875f8818d5c1eadbeda95",
+        "size": 2383007
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_close_long_wall_low.png",
+        "sha256": "c334059c113929d8b2eb87a3475856d58e94dd4c15a18713f6218eedddcc9e19",
+        "size": 2340401
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_close_outer_corner_full.png",
+        "sha256": "edd94618c47a738b7df75638cfabaac7a5338373498468b47f83def5c2cc5dbb",
+        "size": 2169393
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_close_outer_corner_low.png",
+        "sha256": "b7723ee0304f3b5e7a314e0b3413c357cf5159a5dccd801da992e81bc0ab624b",
+        "size": 2234700
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_close_rubble_corner_1.png",
+        "sha256": "607b22bf8e40deb565e154115103b1cd61fbafb5ec4a3df935d950df3d337fd0",
+        "size": 2483701
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_close_rubble_corner_2.png",
+        "sha256": "91b78e693bff855660b1f3f470e65eef0d726dd6a807aaffbf5900e5ee0e79de",
+        "size": 2357536
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_close_wall_foot.png",
+        "sha256": "7e47c72a559d56e34e36a635a37b20c432128db3ff29cde43586c2431f95503f",
+        "size": 2485325
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_l2_full.png",
+        "sha256": "042a5b55f7d08bb18c306c8e02fe027677b44388e9f55c4f137a6aebeea8c627",
+        "size": 2630317
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_l2_full_after.png",
+        "sha256": "a92913b2ab0ba7eb924c178da63f4adfab73544b8821eef9560ae40388f29088",
+        "size": 2617647
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_l2_low.png",
+        "sha256": "a009696bd73b6db4efb683c8f678b2831ded6785162bf02a498f47d01f5d3dab",
+        "size": 2440185
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/before/kit_l2_overview.png",
+        "sha256": "e88abf4b8197f6dd45368ef230b3557be0c3958145b18c2e3aae5ae03ce737b8",
+        "size": 1260528
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_boundary_s2.png",
+        "sha256": "c9cb580346905b67f5eff6f61c1d20b6224c05a44b8c5e005148e60a09c69d6b",
+        "size": 2470855
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_boundary_s3.png",
+        "sha256": "e3807822af1558d4a254ebebf051a073410ce91896a9ee364370b239017bec6f",
+        "size": 2445171
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_boundary_s4.png",
+        "sha256": "3b1230a040ac8a1c73490b5d67008aa71140b1944eaa0216249e753866f78867",
+        "size": 2421407
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_close_corridor.png",
+        "sha256": "165524e615ffb0d6718d3a12d2c8c2110b659b48c7583c880156337fc96dbb95",
+        "size": 2725621
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_close_long_wall_full.png",
+        "sha256": "be08da129a12f3c1e77aa4993e29383fdc66f2171fbde80c782c433dc296ee83",
+        "size": 2389783
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_close_long_wall_low.png",
+        "sha256": "b95f2ddfa1d471bc308febe011da78bc157b7ac19508ab64cd6e7bd6c8d04ae9",
+        "size": 2348357
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_close_outer_corner_full.png",
+        "sha256": "1a9b727864f81c0b4641b73f8c41832a8c959490026e4dff0daabcdd562ad88e",
+        "size": 2175663
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_close_outer_corner_low.png",
+        "sha256": "ce70fb51cd4c363a1660f11e0533ac8a5151ff4f980002f68fac233342c27f31",
+        "size": 2247822
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_close_rubble_corner_1.png",
+        "sha256": "9f575609a5128916914068b03b2b08bedd6ffeff749622875b0fad2039bd56b8",
+        "size": 2496485
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_close_rubble_corner_2.png",
+        "sha256": "3edee603d8e3dc2b099ec269e544257fba4e2499ba83e2278af6152d1b5b6e21",
+        "size": 2400125
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_close_wall_foot.png",
+        "sha256": "91082ef33c687a38e1dc2aec102a862b2303dd9bd432c5601333c5dcdeaae150",
+        "size": 2493589
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_l2_full.png",
+        "sha256": "569e3baee1f738bf36f95aca0774d1e1e5e053ccf51059982e115965e8089c91",
+        "size": 2634552
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_l2_full_after.png",
+        "sha256": "0f685a4edc986f71c6600fd1fc641cdec51143b2cf9944ad471ea11788ee922a",
+        "size": 2624734
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_l2_low.png",
+        "sha256": "0d95b25cd8ad278755b8a28edaed70f85bfd46e681f43626190e52f57d30b783",
+        "size": 2460745
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/rubble_noblend/kit_l2_overview.png",
+        "sha256": "497cf4c45e93564b490d54dece4a3561cf2beccf1ba6241c972c2d2c9262ddb6",
+        "size": 1263176
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/sheets/corridor_before_after.png",
+        "sha256": "5790237891cfa3021b784ddece5df0b2de51f044f211d8d2821d98652e7a4acc",
+        "size": 547880
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/sheets/corridor_wall_foot_zoom.png",
+        "sha256": "880f565c47ffd3b12f7216eb10fae6a60ca87c9e1ff7efdac7f351411e3c835b",
+        "size": 296894
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/sheets/l2_game_camera_before_after.png",
+        "sha256": "a4fbfcf651d719299042d4b10d5dfd0ac5eff740217c4a655c4f4c2931d74ed9",
+        "size": 1244949
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/sheets/outer_corner_before_after.png",
+        "sha256": "5eb2f39622f7317333aa315a4d84fc3a632dc1a13f15beff7947e5ac35d947b0",
+        "size": 787449
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/sheets/rubble_corner1_before_noblend_after.png",
+        "sha256": "a56e5341fae457b4d9ad5405da9a124df0ddf73c79d057b0abe1d4c13cf9252a",
+        "size": 582606
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/sheets/rubble_corner2_before_noblend_after.png",
+        "sha256": "29835c85cb978a0cb021b0a72e566a90b1e509d1dc5e3d4cd8ee8cf00270a0da",
+        "size": 706371
+      },
+      {
+        "path": "ext:Game/Captures/rvt_blend/sheets/rubble_pieces_blender.png",
+        "sha256": "f3211f2a92e424ec5154766c1f7c5e20bc5727108cd9b0b249dab0685064920e",
+        "size": 982997
+      },
+      {
+        "path": "ext:Game/README.md",
+        "sha256": "ac6f8c317deb2c4bfc1c48df8f20c76fb9b7b3c788ad5b79d9a3db28beec9a2d",
+        "size": 68393
+      },
+      {
+        "path": "ext:Game/Scripts/setup_blend.py",
+        "sha256": "987bc53f6421c62c694df361edf49b0b2cc350c5bc61f9d790b4b12920b87f96",
+        "size": 13781
+      },
+      {
+        "path": "ext:Game/Scripts/setup_blend.sh",
+        "sha256": "e8c2805bfc9eec7c4d90be0bdceb2c91352dff9288b301a0ecb5326ce2d82c79",
+        "size": 808
+      },
+      {
+        "path": "ext:Game/Underreign/Config/DefaultEngine.ini",
+        "sha256": "181bfc1db9fbeea937d561f8ea48f8dbb5113d2473da046f3d6f4062b8789c6c",
+        "size": 2337
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/M_UR_KitRockBlend.uasset",
+        "sha256": "9557bbde70bdbf6286b6ed08dcc355e4c9c311055326224eb9e4e857c8e050d1",
+        "size": 31543
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/M_UR_RVTFloorWriter.uasset",
+        "sha256": "e5b6c12ef830488d2867bb60659ea9755758f171f447c458bf8db308a3307ee7",
+        "size": 9247
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/MI_UR_RubbleRock.uasset",
+        "sha256": "f5ed2b99cb050ad53603046712b69fe6cfed01f6fe765dd557eb4be102853c3d",
+        "size": 5713
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/RVT_UR_FloorColor.uasset",
+        "sha256": "cec25fea22c9a9a55ca1aec547c9f398205e45dd06ec777a5bdc309e57c25b73",
+        "size": 1555
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/RVT_UR_FloorHeight.uasset",
+        "sha256": "7e2ac9fa4c097fc818183d6816cd33fcb616ab3b008fb5547be5d19e539f3db5",
+        "size": 1529
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/SM_UR_Rubble_Scree.uasset",
+        "sha256": "4e4c3073f1fff477f30800ce93d6b23d70f1f96a640ff7a2ec2955324ec72813",
+        "size": 72664
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/SM_UR_Rubble_Slab.uasset",
+        "sha256": "f758096c080632bbe03195e2a9dcb370abc8ddef9f96906c7e1dbe95acf2da2d",
+        "size": 24867
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/SM_UR_Rubble_StoneA.uasset",
+        "sha256": "db214f92c3bc17decc9b162ee363b294962b74569e9df2a8a0c469458b0b56a2",
+        "size": 20380
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/SM_UR_Rubble_StoneB.uasset",
+        "sha256": "f767d670ffc18a84a7df27c100596a23235228cee1fa56ec16f35f180bb68b84",
+        "size": 25005
+      },
+      {
+        "path": "ext:Game/Underreign/Content/Environment/Blend/SM_UR_Rubble_StoneC.uasset",
+        "sha256": "3f6f0a0503aa9f19349eaed9ab8a0aaace435459a9010a49defc976f44f444af",
+        "size": 14613
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URCaptureDirector.cpp",
+        "sha256": "33a8e4e07b596775230017b031f273a7bb1f001c42d7b255cd7cf413f62f8ea9",
+        "size": 130386
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Private/URGreyboxMap.cpp",
+        "sha256": "dd9cf116971c4a15d8257d72f96965b9e5f2eb98c31f7710c9b66fc044aa29f4",
+        "size": 74108
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URCaptureDirector.h",
+        "sha256": "048be3e2fe077a494baf7add517bc11957072e345cac16d2aae0694aa1ff9dc5",
+        "size": 12363
+      },
+      {
+        "path": "ext:Game/Underreign/Source/Underreign/Public/URGreyboxMap.h",
+        "sha256": "44e23e51e3e5f435b6a094863440cd6c191e2c8d9dba5e7321794a73837d4e1a",
+        "size": 21842
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-RVT-BLEND-TEST-V1/REVIEW.md",
+      "sha256": "28f0c736d22749ded7aabd53fc4a7445ff50f4331fe7a1e34816471329873f1b",
+      "size": 5027
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-RVT-BLEND-TEST-V1/review.json",
+    "record_sha256": "46ab1caf1d036df42425bfba44f14e2636aff30e840298c64fdc2738d4d412bb",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "399c7d0e5978fb7294f774bd398d76ae9492cbcc388f14255c1c6d1ecc5d734d",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

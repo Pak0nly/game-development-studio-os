@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-RVT-BLEND-TEST-V1
+
+UR-RVT-BLEND-TEST-V1 (Runtime Virtual Texture blend test in Unreal, from the Human's video: `r.VirtualTextures=True` always on; `-URRVTBlend=1` adds two RVTs written by invisible 1 cm writer plates under floor and wall-foot cells (the translucent floors stop at the cell edge, so they cannot write under the wall foot), wall material copy `M_UR_KitRockBlend` blends the lowest 40 cm (`-URBlendFootCm`, tint `-URBlendTint` 0.35); `-URRubble=1` places five own rubble pieces (`ArtSource/Rubble`) deterministically, away from rooms, traps, doors, stairs, Heart; both off by default; GPU about +0.1 ms (6.48 -> 6.58 ms, Blender running), +124 MB texture memory mostly unused pool; tests 8/8, golden hashes unchanged; wall-foot gain subtle with flat greybox floors, rubble sits in the ground but the mound outline stays visible; recommendation: adopt together with real ground textures, shrink the pools; captures `Game/Captures/rvt_blend/`; images checked by eye by Worker, Reviewer and Director; external commit d732498)
+Independent review verdict: PASS
+Worker task: a1b82265b56762ea1
+Reviewer task: reviewer-UR-RVT-BLEND-TEST-V1
+Candidate identity: 399c7d0e5978fb7294f774bd398d76ae9492cbcc388f14255c1c6d1ecc5d734d
+Closure receipt: d0cc66f72b674e01735086d5602b75d82ca5221d0fb184b09e00274613cdbffb
+
 ## Closed: UR-ROLES-TIERS-OVERVIEW-V1
 
 UR-ROLES-TIERS-OVERVIEW-V1 (design proposal only, `Design/Planning/CREATURE_ROLES_AND_TIERS.md`: genre reference had tanks, chargers, flankers, ranged, scout, worker, economic specialists, levels 1-10, about 15-30 creatures per player, max 128 x 128 tiles and 4 players; gaps in Underreign: no cheap fodder, no attacking sapper, Kiln-ox door breaking not shown, no thief, no answer to a cannon ring at transitions; proposal: 12 Ashen Pact roles in 3 tiers incl. new fodder creature and sapper (UD-47 kept), promotion at contract renewal; 6-8 players need about 160 x 160 cells with 4-5 layers, 8-realm load unmeasured; 7 questions for the Human; info: `DoorsBarCreatures` defaults to 0 in Tuning.h although UD-97 decided doors stop enemy creatures (rules not yet built); external commit 4eea98a)

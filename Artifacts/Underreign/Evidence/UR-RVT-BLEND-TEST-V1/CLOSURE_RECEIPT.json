@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-RVT-BLEND-TEST-V1",
+  "work_order_sha256": "e00f131a246be9054e78369646dadb9df57064d3470b6bafb2c195f67589a4c0",
+  "closure_manifest_sha256": "3565aaccc5e36ecfdc3b97840ab228a60bfa588e7aace02b5bdc8aee01568d47",
+  "dispatch_receipt_id": "5be484a0d283a0fe6056d6cddd787daacb8d681e672cd7924c714fccd5227efd",
+  "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+  "worker_task_id": "a1b82265b56762ea1",
+  "reviewer_task_id": "reviewer-UR-RVT-BLEND-TEST-V1",
+  "candidate_identity": "399c7d0e5978fb7294f774bd398d76ae9492cbcc388f14255c1c6d1ecc5d734d",
+  "evidence_state_sha256": "3eb844921471a13dc00d93268ed9d7bd2db0fe1a29f5f35941298f9dc8180e7d",
+  "review_record_sha256": "46ab1caf1d036df42425bfba44f14e2636aff30e840298c64fdc2738d4d412bb",
+  "verdict": "PASS",
+  "receipt_id": "d0cc66f72b674e01735086d5602b75d82ca5221d0fb184b09e00274613cdbffb"
+}
