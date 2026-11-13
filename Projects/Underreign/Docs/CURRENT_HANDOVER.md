@@ -89,6 +89,15 @@ only the shake cut out (lunge, land, step back), hind paws allowed to move with 
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
 
+## Closed: UR-KIT-WALL-INSET-V1
+
+UR-KIT-WALL-INSET-V1 (local Blender 5.2 CPU rebuild of the night-4 rock wall kit: same relief moved 0.37 m behind the cell edge; max protrusion into the open cell 0.034-0.050 m; mean clear width of a 1-cell corridor 2.27-2.37 m (was 1.61-1.72 m), narrowest 1.92 m; seams 2e-6 mm; caps close; look changes for the Human: a calm 0.44 m pier at every cell edge (2 m rhythm), smaller corner bulge and fillet, floor-edge scree moved back; new trimmed block-top classes Open0-Open4 so Unreal placement needs class and yaw per rock cell; cap strips may flicker at outer corners in Unreal; fracture and old pan previews not refreshed (no ffmpeg); Unreal setup script still untested; external commit bf9f213)
+Independent review verdict: PASS
+Worker task: af5b7c9511a5b44f1
+Reviewer task: reviewer-UR-KIT-WALL-INSET-V1
+Candidate identity: 09bac3ebc5df76664a127f8d9e0dc2713addbe194d9f31e4f555e58c440a41d5
+Closure receipt: 5e27389ff10bf71fbc51a8597f99e5272a6417dc3cd4d2dd53c10f5f4539b968
+
 ## Closed: UR-CAMERA-STUDY-V1
 
 UR-CAMERA-STUDY-V1 with EXT01 (GPU-CONTINUATION01 issued, only one GPU test frame: Cycles HIP on the RX 6800 XT works, not faster than CPU for this scene): Blender CPU camera study at 2 m cells; the near-side wall hides wall height / tan(pitch) of floor, so a left-right corridor is 0 % visible at 3 m and 58 deg, cut height alone never helps; pitch is the lever, FOV barely matters; full 4 m walls hide cross corridors from every tested camera; outlines for hidden units work; the view-following cutaway helps (22 % / 65 %) but looks blotchy as a height squash; recommendation: pitch about 70-72 deg, FOV about 65 deg, 17 m default; Human direction since: full walls, free 360 deg rotation, see-through for creatures, optional 1.5 m walls in the overview only; external commit fc71613)
