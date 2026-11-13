@@ -22,6 +22,14 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
 
 Next for the Human: play the wall sample (both starters; Q/E or Alt+middle drag turn, V low walls) and look at `C:/GameDev/Underreign/Game/Captures/wallsample/` locally, then judge camera, walls, see-through and the 2 m pier rhythm; answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
+## Human verdict on the kit inset and the visual-check rule (2026-11-13, Human, exact)
+
+"Die Pfeiler alle 2m stören natürlich. Denn so ist es keine natürliche Wand mehr. Warum wurde nicht einfach die gesamte Wand gekürzt sondern jeder einzelne Block bis auf die Ecken die jetzt doof aussehen?"
+
+"Ansehen ist nicht gleichzusetzen mit "eine generative KI damit trainieren". Es muss visuell geprüft werden. Nicht nur rechnerisch. Das hatten wir bereits als großes Problem festgestellt und besprochen."
+
+So: Workers and Reviewers look at renders and captures (also those with licensed scans) and check them visually; only training or generative use stays forbidden. The 0.44 m seam piers of UR-KIT-WALL-INSET-V1 are rejected; the whole wall must recede as one continuous natural surface, corners included (correction order proposed, not yet dispatched).
+
 ## Wall height option, corridor width, see-through (2026-11-13, Human, exact)
 
 "Wir können die Option, die Wandhöhe auf 1,5m zu reduzieren ins Spiel einbauen. Wichtig dabei nur, dass der Spiel nicht drüber schauen kann wenn er in 1st Person geht. Also dort wieder auf Höhe Wände gestellt wird.
