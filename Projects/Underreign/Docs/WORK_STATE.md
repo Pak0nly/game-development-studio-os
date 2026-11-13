@@ -17,6 +17,24 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-MESHY-UPLOAD-V1
+
+UR-MESHY-UPLOAD-V1 (Human: "Lad alles was mit der Aschenbrut zu tun hat hoch was wir haben. Und gerne auch die Eindringlinge."; 37 raw Meshy zips (5.29 GB, all except the Mycelia queen) in `ArtSource/Meshy/Raw` via LFS plus 2 concept images and a README table; checksums equal the sources; info: README category column keyword-matched, wrong for ferret handler, ferret cage and coin pouch; external commit df81d87, pushed for the cloud night)
+Independent review verdict: PASS
+Worker task: a8862732449f7d90e
+Reviewer task: reviewer-UR-MESHY-UPLOAD-V1
+Candidate identity: 759c7f56a641a5db3715c43ab0f65ad4f3f19838e627d97139dabc6abb3797c3
+Closure receipt: 30e126789d67572bd088bdc0e23d7f3de465f9ff8be5940264a676c25421b285
+
+## Closed: UR-GROUND-TEXTURE-SHARP-V1
+
+UR-GROUND-TEXTURE-SHARP-V1 (Blender test of the four sharpness levers on Soil A, Stone A, Basalt A, Gold vein A, Bedrock C: scan normal maps (OpenGL, flip green for Unreal) at 1.0 on walls, 0.6 on floors give the biggest gain; scan AO and cavity at 0.6 deepen cracks but darken walls 10-15 %; torch side light is decisive for the relief; real displacement (adaptive subdivision, 1.8x the scan's height range, mostly inward) adds real ledges, clear at 3 m, small from the game camera, about 40k triangles per wall cell at 2 cm edges, Nanite only; new cut cap brightness x1.4, tinted per stratum, gold x1.1 readable; Human on the Stone A interim render: "Das ist Top release Qualität."; info: Basalt, Gold and Bedrock caps only 10-15 % darker than the floor, caps near black under torches, kit gold nuggets stand out; sheets `C:/GameDev/Underreign_Assets/AnimWork/UR-GROUND-TEXTURE-SHARP-V1/sheets/`; images checked by eye by Worker, Reviewer and Director; external commit 2df551c)
+Independent review verdict: PASS
+Worker task: ade8bbdef2f7e853a
+Reviewer task: reviewer-UR-GROUND-TEXTURE-SHARP-V1
+Candidate identity: 484ce7d5b69b9ecc5f9b0aa3c0e0f9f3b6ce1d519538b461eecb94a30df11fe5
+Closure receipt: fdb5a6cb0d9db24bbfcaa3b42d437a0da2de615da12bba8369f2cd4bf05cfc05
+
 ## Closed: UR-RVT-BLEND-TEST-V1
 
 UR-RVT-BLEND-TEST-V1 (Runtime Virtual Texture blend test in Unreal, from the Human's video: `r.VirtualTextures=True` always on; `-URRVTBlend=1` adds two RVTs written by invisible 1 cm writer plates under floor and wall-foot cells (the translucent floors stop at the cell edge, so they cannot write under the wall foot), wall material copy `M_UR_KitRockBlend` blends the lowest 40 cm (`-URBlendFootCm`, tint `-URBlendTint` 0.35); `-URRubble=1` places five own rubble pieces (`ArtSource/Rubble`) deterministically, away from rooms, traps, doors, stairs, Heart; both off by default; GPU about +0.1 ms (6.48 -> 6.58 ms, Blender running), +124 MB texture memory mostly unused pool; tests 8/8, golden hashes unchanged; wall-foot gain subtle with flat greybox floors, rubble sits in the ground but the mound outline stays visible; recommendation: adopt together with real ground textures, shrink the pools; captures `Game/Captures/rvt_blend/`; images checked by eye by Worker, Reviewer and Director; external commit d732498)

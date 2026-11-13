@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-MESHY-UPLOAD-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-MESHY-UPLOAD-V1/WORK_ORDER.md",
+    "sha256": "e1ce6a9356ca1d09d27841ac04e1cd021750d1f1acaf158aac16bd92f3b29148",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-MESHY-UPLOAD-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "407a80e3e1b02cfdcebeaabf7ab68781eb378fefa6f82f5f184ef57e457ac02b",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-MESHY-UPLOAD-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "4922fa52804ffb4116cb76569decc2d613acae0556c5fec7b0e9d27795f9e50f",
+    "receipt_id": "d9549076f1b3fdfa841d447dd7bb44b23a53b03cc55ea318f07f5589ff56918b",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "a8862732449f7d90e",
+    "reviewer_task_id": "reviewer-UR-MESHY-UPLOAD-V1"
+  },
+  "candidate": {
+    "identity": "759c7f56a641a5db3715c43ab0f65ad4f3f19838e627d97139dabc6abb3797c3",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-MESHY-UPLOAD-V1/WORKER_RESULT.md",
+        "sha256": "902b003997e6037d0409085705510b588f7d249f2b88d9af3d202743bcd8a025",
+        "size": 452
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Concepts/Basalthund mit glühendem Brandmal.png",
+        "sha256": "a1eba94d5cd89beaef4ad9076bce796c27a3df0c93975959bd3a2bdf66921c86",
+        "size": 2079412
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Concepts/Kleiner Aschengeist mit Glutherz.png",
+        "sha256": "bd6f023746f368cf03daf62fa6693eea5ea7c94d01f7aa52e782f0ef88fa7ab0",
+        "size": 2086310
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Brute_Meshy_AI_The_Iron_Bulwark_20261112_texture_fbx.zip",
+        "sha256": "6f6556e8306635f01902a437cf4c4d63bc2d8726c8d7893abe5b90413d88d212",
+        "size": 165297931
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Antique_Crossbow_20261112_texture_fbx.zip",
+        "sha256": "25a506e23e979e13d606ffe40b7fe4e8b896c942932e504d4eabcee7f4c779d4",
+        "size": 95640899
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Arcane_Pressure_Plate_20261112_texture_fbx.zip",
+        "sha256": "a2961bd702bead6b88dbfb6f6de4808f567229ed828e3c384e508e3cccbde5d8",
+        "size": 124106210
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Azure_Plumed_Halberdier_20261112_texture_fbx.zip",
+        "sha256": "bf0171dd8a81d9e7e5c1a9b9f3de18d82620a854641c99ca7bcdcf2683f89c11",
+        "size": 143928806
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Basket_of_Curious_Ferrets_20261112_texture_fbx.zip",
+        "sha256": "5fd7a929f0d739bcb5bd4a44a1f6199ce14c48d68670039605cc85b6cd487597",
+        "size": 409122287
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Bound_Wanderstaff_20261112_texture_fbx.zip",
+        "sha256": "f8c9f1a723fe28f83aa6d0265275e845bc5785e0de231ed3d7595e179df77922",
+        "size": 69648964
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberborn_Cinderling_20261111_texture_fbx.zip",
+        "sha256": "d78a334ceb5cda86b9487fb4af0d7a537344471564eeefbab8e8afa534d63d46",
+        "size": 88708160
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberbound_Coffer_20261112_texture_fbx.zip",
+        "sha256": "9f56f2c135997066961ed19bb233eb3b7dfe6d1db68d2ae362a676175fc83c45",
+        "size": 170053856
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberbound_Door_20261112_texture_fbx.zip",
+        "sha256": "5266a4aa750a0f97b85447d552b9a19ec8dec40aef1a4cf592ad34bd24acb296",
+        "size": 119713786
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberbound_Reliquary_20261112_texture_fbx.zip",
+        "sha256": "ed5820cbcd9d87d6cfc1e1e775530bdb66aa92ace678fcc6cfab08e6221a5014",
+        "size": 119469880
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberclaw_Brazier_20261112_texture_fbx.zip",
+        "sha256": "e12137860fa884f12754fcf47ec1a027c77d6c073a32e749884f3a4fee9f31b8",
+        "size": 146355321
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberfang_20261111_texture_fbx.zip",
+        "sha256": "8e437c541838d1a692853dd274b4818e8374d0f83809013af0414ffcdcaf8c15",
+        "size": 114194110
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberhorn_Colossus_20261112_texture_fbx.zip",
+        "sha256": "d26c348f05d0c303d0e7966a23fc5755673c9bcd418f43d3e3cda21f4913a9b2",
+        "size": 171947788
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberhorn_Oracle_20261112_texture_fbx.zip",
+        "sha256": "f14273a19107f2e3a41ed7a3641a8efaa27ce20c7c86fde94f13abb326fea9f3",
+        "size": 124326815
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberhorn_Warden_20261112_texture_fbx.zip",
+        "sha256": "dc2df78c11db24449831bb348ab194215d2ffa8d548c9148fc394284c0420754",
+        "size": 154330211
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberstone_Cradle_20261112_texture_fbx.zip",
+        "sha256": "d01e7cc9a04359703cb4f29a62ef6e7f67425bfdd7748d07b797023f11def202",
+        "size": 122686619
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Emberwing_Moth_20261112_texture_fbx.zip",
+        "sha256": "18938de59ac1b525c7e36013171b0d97be43130456b8538075b2f97368277676",
+        "size": 227599049
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Forged_Chain_Hoist_20261112_texture_fbx.zip",
+        "sha256": "0bf368c8c82adcd4589d3eae4a14642bc503f02e814638bfcaeb552ff8ada842",
+        "size": 121197625
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Infernal_Apothecary_20261112_texture_fbx.zip",
+        "sha256": "2dfbf8e935c5fc4f3f6a238fff0bfd2cd0bb2451681365fa5cbd9d5abeefebe9",
+        "size": 111124158
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Infernal_Ballista_20261112_texture_fbx.zip",
+        "sha256": "46a66d2245475da91a6f4c07c681224c0ead94640c8bcc71bf665ec87ea0bfb6",
+        "size": 167359794
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Infernal_Ember_Cask_20261112_texture_fbx.zip",
+        "sha256": "ad472a334522bb9dfaef65024803bf7dccbfb5cce939f88314105dad2c31da10",
+        "size": 188725354
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Ironbound_Warhammer_20261112_texture_fbx.zip",
+        "sha256": "daf1b9f50c098ddc76f9c03e426f7a01d7b63e4bb24733a35a10c84c6523eae9",
+        "size": 95258622
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Molten_Fortune_Chest_20261112_texture_fbx.zip",
+        "sha256": "c1facb950a184a88d5edf35595c1b0a92eefe1236966a9da765a9cc8759e0776",
+        "size": 194274498
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Molten_Warlord_20261112_texture_fbx.zip",
+        "sha256": "5939602a7fbee88b013a6eef6b5222d07d55426c5f5a2aca237fa98f10024b6f",
+        "size": 189522996
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Patchwork_Grin_20261112_texture_fbx.zip",
+        "sha256": "7704b92b7beb89b99d3a78e30e75ec604ad21316f1e6d0864acb2e708fcb0a3b",
+        "size": 148079936
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Runebound_Obelisk_20261112_texture_fbx.zip",
+        "sha256": "a0c52c97d6ea70151b6873e7d9bc9db97e72777d5c5822cdfc16e1db427b7bb0",
+        "size": 110226152
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Rustic_Garden_Spade_20261112_texture_fbx.zip",
+        "sha256": "9a2bab5ccaeb28a5d6a45d54133f225d9dd6ab13d6ab9af966362d0006df86d5",
+        "size": 68347961
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Sunlit_Sentinel_20261112_texture_fbx.zip",
+        "sha256": "bd484fd1f5adb9bdd8f5beb8316ed39e47cecd55aa64781b7f9bc08401d2985f",
+        "size": 90499636
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_The_Crimson_Ranger_20261112_texture_fbx.zip",
+        "sha256": "822784ab6adf829777da4cdf110d497df572dac4f221614b7bdec19b52db61c6",
+        "size": 136036695
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_The_Jolly_Tinker_20261112_texture_fbx.zip",
+        "sha256": "c43f83367d8437d192d4b79c9674790c2737010452e82e514301e7b26992755d",
+        "size": 151548398
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_The_Saffron_Wanderer_20261112_texture_fbx.zip",
+        "sha256": "138bd3f1f8027d461c694cd00867e42fa36ecf0cb33c70d96739958d6e7b7dd5",
+        "size": 128292331
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Victorian_Street_Lamp_20261112_texture_fbx.zip",
+        "sha256": "489a846b3fcebb4cb89e520ea9024fa855ed7d90f35863a77908240946922831",
+        "size": 89051013
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Vintage_Pickaxe_20261112_texture_fbx.zip",
+        "sha256": "a14ae85c9d3a29f24802b7a28e94c3da534734511172d89b2a96e94b4575243c",
+        "size": 74643580
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_Weathered_Coin_Pouch_20261112_texture_fbx.zip",
+        "sha256": "801fdd70bec06192b30961a4eb8c82138bce711f670d32e3822572053423a215",
+        "size": 111127332
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Meshy_AI_White_Ferret_in_Harness_20261112_texture_fbx.zip",
+        "sha256": "235ec6b6889a11b7665ea8048eaa8c759153eb30c40e2028437b8f4ffecf608d",
+        "size": 241734501
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Priestess_Meshy_AI_Candlelit_Pilgrim_20261112_texture_fbx.zip",
+        "sha256": "515ed968a167d5cb511a08c9c22078c323d2e270f9561ecb2eadad190c0d0db2",
+        "size": 168281878
+      },
+      {
+        "path": "ext:ArtSource/Meshy/Raw/Scout_Meshy_AI_The_Wandering_Wayfarer_20261112_texture_fbx.zip",
+        "sha256": "08f5bde0d3bbfaaf8a76acabc6d7e41645dc8d2f9e5eb08c7f343d646428fa04",
+        "size": 138211512
+      },
+      {
+        "path": "ext:ArtSource/Meshy/README.md",
+        "sha256": "0fc15c7d834f7efbed977ac654a37719c75058fe16c6144b69433ca45949899e",
+        "size": 7186
+      },
+      {
+        "path": "ext:Evidence/UR-MESHY-UPLOAD-V1/WORKER_RESULT.md",
+        "sha256": "7dc39d6d04022f071a44bb7a3408dca2356d346337b98ad5be4e8a900409b1ae",
+        "size": 5711
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-MESHY-UPLOAD-V1/REVIEW.md",
+      "sha256": "7ea3d4fb21a3ac7b4f61ef47ec99027b0fcfccb60149b85c548f4166c5eebafc",
+      "size": 999
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-MESHY-UPLOAD-V1/review.json",
+    "record_sha256": "35ff81dcf08be394f2bc1cd3270d890cfcadd286bd3c9d84ebd6cf2b2ca26fac",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "759c7f56a641a5db3715c43ab0f65ad4f3f19838e627d97139dabc6abb3797c3",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

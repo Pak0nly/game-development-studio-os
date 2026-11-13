@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Underreign",
+  "work_order": {
+    "id": "UR-GROUND-TEXTURE-SHARP-V1",
+    "path": "Artifacts/Underreign/DirectorDispatch/UR-GROUND-TEXTURE-SHARP-V1/WORK_ORDER.md",
+    "sha256": "54e2657d22a888aa1678ce0a79a5f4111ec99c5d55dd2de26c253c3053a9e9e8",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Underreign/DirectorDispatch/UR-GROUND-TEXTURE-SHARP-V1/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "9288fbf8bd7e73543c610cbe2b93fbf9f5cb9d0c5b1cf7f0ebbb42578fb111be",
+    "receipt_path": "Artifacts/Underreign/DirectorDispatch/UR-GROUND-TEXTURE-SHARP-V1/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "284274ac60c7662be537bc368a45a9d5ec9d2908127a297271dc8a8adc2237f0",
+    "receipt_id": "28e41acf819282ec1146f83b743bc80b2091e566e46057e2a4107b7356fa6028",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-a2d273b2-0c07-4053-b2e9-3e5d4dd7fd5b",
+    "worker_task_id": "ade8bbdef2f7e853a",
+    "reviewer_task_id": "reviewer-UR-GROUND-TEXTURE-SHARP-V1"
+  },
+  "candidate": {
+    "identity": "484ce7d5b69b9ecc5f9b0aa3c0e0f9f3b6ce1d519538b461eecb94a30df11fe5",
+    "files": [
+      {
+        "path": "Artifacts/Underreign/Evidence/UR-GROUND-TEXTURE-SHARP-V1/WORKER_RESULT.md",
+        "sha256": "bb7c4355c75420a6f00803f33935769a88bb80075af4d44b77d98c1000431dc8",
+        "size": 11097
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/sharp_prep.py",
+        "sha256": "af866df8228096650ac2a693179a2217ad18819a12ad2e36f9269d6ec270b138",
+        "size": 4151
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/sharp_run_all.py",
+        "sha256": "54c80898329e1787d1abc90e457b5eeef02fb6b0ffe9e8c19a38baaafc83bc07",
+        "size": 644
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/sharp_scene.py",
+        "sha256": "56678f6bf6eb8e834bbdc173b2b53296f6d2ce44359ece2ed29fbac9cb0d12b1",
+        "size": 25576
+      },
+      {
+        "path": "ext:ArtSource/GroundTextureTest/scripts/sharp_sheets.py",
+        "sha256": "b8587c0ddd6c1b3d64ea805400d0dffc03bc98b820d3e6b6ff7053c0c6615615",
+        "size": 4479
+      },
+      {
+        "path": "ext:Evidence/UR-GROUND-TEXTURE-SHARP-V1/WORKER_RESULT.md",
+        "sha256": "bb7c4355c75420a6f00803f33935769a88bb80075af4d44b77d98c1000431dc8",
+        "size": 11097
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Underreign/Evidence/UR-GROUND-TEXTURE-SHARP-V1/REVIEW.md",
+      "sha256": "41dc5898e2c370a6306d18809bd48a55a74627238655976f24b31e6b48234f08",
+      "size": 3592
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Underreign/Evidence/UR-GROUND-TEXTURE-SHARP-V1/review.json",
+    "record_sha256": "7a7da91ea75ef456f8ace511907821759b1b90b01b45b17cf1f6124f1c4d4a09",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "484ce7d5b69b9ecc5f9b0aa3c0e0f9f3b6ce1d519538b461eecb94a30df11fe5",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Underreign/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Underreign/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-MESHY-UPLOAD-V1",
+  "work_order_sha256": "e1ce6a9356ca1d09d27841ac04e1cd021750d1f1acaf158aac16bd92f3b29148",
+  "manifest_sha256": "407a80e3e1b02cfdcebeaabf7ab68781eb378fefa6f82f5f184ef57e457ac02b",
+  "repository": {
+    "branch": "main",
+    "head": "80556a8730f1ce2b2833b50e21c9d305cd87a157"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-MESHY-UPLOAD-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "c299cbc45b5bf65ead96f649918aa8e41ec78eb06e031e84b8604f18feadfc5d",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "d7324985e372ee75d3a5f96aabcb12f35688445c"
+    },
+    "allowed_mutations": [
+      ".gitattributes",
+      "ArtSource/Meshy",
+      "Evidence/UR-MESHY-UPLOAD-V1"
+    ],
+    "protected_paths": [
+      "ArtSource/EnvironmentKit",
+      "ArtSource/GroundTextureTest",
+      "Design",
+      "Game",
+      "SimulationCpp",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        ".gitattributes",
+        "ArtSource/Meshy",
+        "Evidence/UR-MESHY-UPLOAD-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "defc1f94c7b554b07af73449133f3dbfcb882dc29861668d692fd55971df2de8"
+  },
+  "execution_location": "local",
+  "receipt_id": "d9549076f1b3fdfa841d447dd7bb44b23a53b03cc55ea318f07f5589ff56918b"
+}

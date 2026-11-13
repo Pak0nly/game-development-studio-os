@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-GROUND-TEXTURE-SHARP-V1",
+  "work_order_sha256": "54e2657d22a888aa1678ce0a79a5f4111ec99c5d55dd2de26c253c3053a9e9e8",
+  "manifest_sha256": "9288fbf8bd7e73543c610cbe2b93fbf9f5cb9d0c5b1cf7f0ebbb42578fb111be",
+  "repository": {
+    "branch": "main",
+    "head": "351bbde1b11d77dd161c59af95649ed163c2e354"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Artifacts/Underreign/Evidence/UR-GROUND-TEXTURE-SHARP-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "c299cbc45b5bf65ead96f649918aa8e41ec78eb06e031e84b8604f18feadfc5d",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "231d0aaa1470969bb013f0a9fbd835fc38586f56"
+    },
+    "allowed_mutations": [
+      "ArtSource/GroundTextureTest",
+      "Evidence/UR-GROUND-TEXTURE-SHARP-V1"
+    ],
+    "protected_paths": [
+      "ArtSource/EnvironmentKit",
+      "Design",
+      "Game",
+      "SimulationCpp",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "ArtSource/GroundTextureTest",
+        "Evidence/UR-GROUND-TEXTURE-SHARP-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "b3bd0e4b499dac04caa259bbfa38e4480005d4c46fb21da902bd6f0a59de4796"
+  },
+  "execution_location": "local",
+  "receipt_id": "28e41acf819282ec1146f83b743bc80b2091e566e46057e2a4107b7356fa6028"
+}

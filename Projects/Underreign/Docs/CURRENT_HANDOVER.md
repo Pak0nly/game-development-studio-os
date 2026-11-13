@@ -4,7 +4,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
 
 - Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-118),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `d732498` (local; `b5e1886` pushed).
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `2df551c` (local; `b5e1886` pushed).
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -111,6 +111,24 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-MESHY-UPLOAD-V1
+
+UR-MESHY-UPLOAD-V1 (Human: "Lad alles was mit der Aschenbrut zu tun hat hoch was wir haben. Und gerne auch die Eindringlinge."; 37 raw Meshy zips (5.29 GB, all except the Mycelia queen) in `ArtSource/Meshy/Raw` via LFS plus 2 concept images and a README table; checksums equal the sources; info: README category column keyword-matched, wrong for ferret handler, ferret cage and coin pouch; external commit df81d87, pushed for the cloud night)
+Independent review verdict: PASS
+Worker task: a8862732449f7d90e
+Reviewer task: reviewer-UR-MESHY-UPLOAD-V1
+Candidate identity: 759c7f56a641a5db3715c43ab0f65ad4f3f19838e627d97139dabc6abb3797c3
+Closure receipt: 30e126789d67572bd088bdc0e23d7f3de465f9ff8be5940264a676c25421b285
+
+## Closed: UR-GROUND-TEXTURE-SHARP-V1
+
+UR-GROUND-TEXTURE-SHARP-V1 (Blender test of the four sharpness levers on Soil A, Stone A, Basalt A, Gold vein A, Bedrock C: scan normal maps (OpenGL, flip green for Unreal) at 1.0 on walls, 0.6 on floors give the biggest gain; scan AO and cavity at 0.6 deepen cracks but darken walls 10-15 %; torch side light is decisive for the relief; real displacement (adaptive subdivision, 1.8x the scan's height range, mostly inward) adds real ledges, clear at 3 m, small from the game camera, about 40k triangles per wall cell at 2 cm edges, Nanite only; new cut cap brightness x1.4, tinted per stratum, gold x1.1 readable; Human on the Stone A interim render: "Das ist Top release Qualität."; info: Basalt, Gold and Bedrock caps only 10-15 % darker than the floor, caps near black under torches, kit gold nuggets stand out; sheets `C:/GameDev/Underreign_Assets/AnimWork/UR-GROUND-TEXTURE-SHARP-V1/sheets/`; images checked by eye by Worker, Reviewer and Director; external commit 2df551c)
+Independent review verdict: PASS
+Worker task: ade8bbdef2f7e853a
+Reviewer task: reviewer-UR-GROUND-TEXTURE-SHARP-V1
+Candidate identity: 484ce7d5b69b9ecc5f9b0aa3c0e0f9f3b6ce1d519538b461eecb94a30df11fe5
+Closure receipt: fdb5a6cb0d9db24bbfcaa3b42d437a0da2de615da12bba8369f2cd4bf05cfc05
 
 ## Closed: UR-RVT-BLEND-TEST-V1
 
