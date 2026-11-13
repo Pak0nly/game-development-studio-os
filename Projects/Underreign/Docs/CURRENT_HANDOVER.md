@@ -22,6 +22,14 @@ State 2026-11-12 ~13:00 local. Talk to the Human in German, plain words, no code
 
 Next for the Human: answer the 7 night-4 questions (https://claude.ai/artifact/9BrF3N9GY2taMC6mBS7rXX; cut height first); decision whether to buy a melee animation pack (Director shortlisted two in chat on 2026-11-12: a sword-and-shield pack and a two-handed pack for the UE5 mannequin; prices to be checked on Fab; purchase is the Human's); Meshy prep: 64 of 66 images made, Ember-witch front blocked by ChatGPT's filter (retry, or long-robe variant given in chat), anvil blocked (neutral prompt given in chat); Pavisier back frame still on the body (two prompts given: body without frame, frame alone). Later, not now (Human): "Jede Kreatur braucht zu Testzwecken einen Skalierungsregler in den Optionen. Aber das erst, wenn mehr Grafik im Spiel ist". New Meshy models in `C:/GameDev/Underreign_Assets/Meshy/` (zips): Brute, Healer (Candlelit Pilgrim), Scout, Ferret (FBX 184 MB: strand fur), Spore-matron (FBX 353 MB; Human: face never visible from the game camera under the huge cap; a ChatGPT redesign prompt was given in chat). Work folder `C:/GameDev/Underreign_Assets/AnimWork/UR-UNREAL-HOUND-V1/cap1` (about 1.1 GB capture PNGs) may be deleted.
 
+## Human answers to the night-4 questions (2026-11-13, exact)
+
+"1 Wie tief sollen die Wände abgeschnitten werden?: Anders | Notiz: Kamera Steuerung in DK2 researchen.  Quergang zeigt keinen Unterschied bei 3 oder 1,5m. Dies liegt an falscher Kamerastellung.
+2 Wie groß soll der Brandhund sein?: A: 1,6 m lang (Empfehlung)
+3 Wie rau dürfen die Gangwände sein?: A: wie jetzt (Empfehlung)"
+
+So: hound 1.6 m long (scale 0.75) at 2 m cells; corridor walls as built (about 1.65 m clear on average). Cut height open: the Human sees no difference between the 3 m and 1.5 m renders and attributes it to the camera; a camera study comes first (genre camera conventions). Questions 4-7 (crumbling frequency, stairs, floor grid, fighter spacing) unanswered.
+
 ## Night shift 4 (requested 2026-11-12 21:42 UTC, closed 2026-11-13; see Closed block)
 
 UR-NIGHT-04-V1 (cloud, branch `night/2026-11-12` from Underreign main 83ba176, until 08:00 UTC): rock wall kit for 2 m cells in Blender (installed in the cloud), strata, damage stages, material-based crumbling for Chaos ("Können wir die Wände physics based zusammenbröseln lassen abhängig von ihrem Material?"), floor kit, proof render of a Cinder Hollow section, size/speed/humanoid-motion tables, Unreal changeover plan, questions. Human: "ja, go". Dispatch receipt 96d839a9b5ffab6d6ceeaedb2c7c77e9eb397c29e367d20649f883614d17910d. Morning: fetch the night branch, verify-night-return, review, closure; a no-start or a Blender install failure must be reported.
