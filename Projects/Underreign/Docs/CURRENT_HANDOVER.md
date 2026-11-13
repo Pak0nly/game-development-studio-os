@@ -2,9 +2,9 @@
 
 State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fresh Director chat. Talk to the Human in German, plain words, no codes.
 
-- Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-85),
+- Read `README.md`, `Docs/GAME_CONCEPT.md`, `Docs/DISCOVERY_DECISIONS.md` (UD-01..UD-113),
   `Docs/OPEN_DECISIONS.md`, DEC-041..DEC-043, and the Claude memory index.
-- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `ec66525` (local; `b5e1886` pushed).
+- External repo `C:/GameDev/Underreign` (`Pak0nly/underreign`), `main` = `231d0aa` (local; `b5e1886` pushed).
   Rules version 36 (night 3: rival Heart and keeper bot, creature roles, banner stance,
   Nests 8/12/16). The Unreal game is still on rules 25; resync only by its own order
   (`Design/Planning/UNREAL_NEXT_FROM_NIGHT3.md`), after the Human's answers.
@@ -19,7 +19,7 @@ State 2026-11-13 evening. The Director chat of 2026-11-13 ended here; start a fr
   `C:/GameDev/*` projects, MobileArc or Crime99. GPU: frame caps; training may use the GPU
   only at partial load (AMD card).
 
-Closed today (Human 2026-11-13: "Beide starten"): UR-GROUND-TEXTURE-TEST-V1 and UR-TORCHES-CLAIMED-V1 (both below, external commits c0788be and f651188, not pushed). The Human answered the open-questions page on 2026-11-13 (exact answers in `Artifacts/Underreign/DirectorDispatch/UR-DECISIONS-R8-V1/WORK_ORDER.md`). Next action (one): dispatch and close UR-DECISIONS-R8-V1 (record the answers), UR-GREYBOX-RESAVE-FIX-V1 (answer 1: discard the stray greybox re-save and repair the script; note setup_kit step 6 sets the Nanite flag on purpose, so the Worker first proves whether the change is noise); UR-MELEE-PACKS-RESEARCH-V1 is closed below (Human decides on a pack and buys); show the Human the texture sheets (local paths) for a direction per stratum; re-measure the torch shadow budget (4 vs 2) on a quiet GPU; Director owes the Human thoughts on the bottleneck question (answer 29).
+Closed today (2026-11-13, all below, external commits up to 231d0aa, none pushed): UR-TORCHES-CLAIMED-V1, UR-GROUND-TEXTURE-TEST-V1, UR-MELEE-PACKS-RESEARCH-V1, UR-GREYBOX-RESAVE-FIX-V1, UR-DECISIONS-R8-V1 (the Human's answers to the open-questions page). Director gave the Human in chat: texture sheet paths with recommendation (Soil A, Stone A, Basalt A, Gold vein A, Bedrock C) and the question whether the dark cut cap on untouched rock should be lighter; thoughts on the bottleneck problem (OD-26: no-build zone around layer transitions, several transitions per layer some found by digging, attacker sapper unit digging new shafts with warning, threats from the map edge; teleporters later); a proposal for room takeover (OD-24: furnishings with hit points, smashed only on order or when undefended); offered a roles-and-tiers overview order (Human note on card 14). Next action (one): wait for the Human's texture direction and answers to these discussion points; then propose the in-game texture order. Also open: re-measure the torch shadow budget (4 vs 2) on a quiet GPU; Human decides on a melee pack; push only on the Human's word.
 
 ## Natural ground textures vs the faction look (2026-11-13, Human, exact)
 
@@ -111,6 +111,15 @@ switching; smooth IK-FK and contact transitions); bite = full V1 bite video moti
 only the shake cut out (lunge, land, step back), hind paws allowed to move with the body,
 less front drop. Workspace `C:/GameDev/Underreign_Assets/AnimWork/UR-CREATURE-VIDEO-V3`
 holds the trained two-view finder (reusable). Stray folder `C:/inputs` for the Human to delete.
+
+## Closed: UR-DECISIONS-R8-V1
+
+UR-DECISIONS-R8-V1 (answers to the open-questions page of 2026-11-13 recorded: UD-86..UD-113 in `DISCOVERY_DECISIONS.md`, new OPEN rows OD-24 taking over enemy ground and room destruction (option B excluded, UD-96), OD-25 rival realm look with neutral player-colour banners for 6-8 players, OD-26 anti-bottleneck design for layer connections (points at UD-47, unchanged), OD-27 Ashen Pact campaign; OD-20/21/22/14 updated, OD-02/05/23 stay OPEN ("later"); Human notes kept as notes, not decisions; night question files point to the answers; info: OD-21/22 keep older sentences, UD-103/113 borrow small context phrases; external commit 231d0aa)
+Independent review verdict: PASS
+Worker task: a13a48b7826a793da
+Reviewer task: reviewer-UR-DECISIONS-R8-V1
+Candidate identity: 6351df97270a627159f10e72d3386ecf1567000abacbf083e064dd61e89d32b3
+Closure receipt: 673dcd2395a22f5c039fca3e69a8731e47ef65ce4bcda9360d90c2f25d94699f
 
 ## Closed: UR-GREYBOX-RESAVE-FIX-V1
 

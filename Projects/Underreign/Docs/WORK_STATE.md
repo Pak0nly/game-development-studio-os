@@ -17,6 +17,15 @@ heat rises, greybox.
 - Reference images of the peoples (rough, orientation only) in
   `Projects/Underreign/References/ArtDirection/`.
 
+## Closed: UR-DECISIONS-R8-V1
+
+UR-DECISIONS-R8-V1 (answers to the open-questions page of 2026-11-13 recorded: UD-86..UD-113 in `DISCOVERY_DECISIONS.md`, new OPEN rows OD-24 taking over enemy ground and room destruction (option B excluded, UD-96), OD-25 rival realm look with neutral player-colour banners for 6-8 players, OD-26 anti-bottleneck design for layer connections (points at UD-47, unchanged), OD-27 Ashen Pact campaign; OD-20/21/22/14 updated, OD-02/05/23 stay OPEN ("later"); Human notes kept as notes, not decisions; night question files point to the answers; info: OD-21/22 keep older sentences, UD-103/113 borrow small context phrases; external commit 231d0aa)
+Independent review verdict: PASS
+Worker task: a13a48b7826a793da
+Reviewer task: reviewer-UR-DECISIONS-R8-V1
+Candidate identity: 6351df97270a627159f10e72d3386ecf1567000abacbf083e064dd61e89d32b3
+Closure receipt: 673dcd2395a22f5c039fca3e69a8731e47ef65ce4bcda9360d90c2f25d94699f
+
 ## Closed: UR-GREYBOX-RESAVE-FIX-V1
 
 UR-GREYBOX-RESAVE-FIX-V1 (Human answer 1 of 2026-11-13: the stray change on `Game/Underreign/Content/Greybox/M_UR_Greybox.uasset` was re-save noise only: committed and working files both carry used_with_nanite and used_with_instanced_static_meshes, differing only in GUID and save data; `setup_kit.py` step 6 now sets, recompiles and saves only when a flag is missing; change discarded, proof run of setup_kit (materials only) leaves the file clean, its 618 rebuilt kit files restored; build and Sim tests pass; info: two short read-only Unreal runs at normal priority; external commit ec66525)

@@ -1,0 +1,290 @@
+<title>Underreign Offene Fragen</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Alegreya+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one reading column. Short status first, then grouped question cards; answer bar fixed at the bottom */
+:root{
+  --bg:#eeece8; --surface:#f8f7f4; --fg:#221f1c; --muted:#635c55; --line:#d2ccc4;
+  --accent:#5e4630; --accent-soft:#e8ddd0; --warn:#8b4a1c; --warn-soft:#f1dcc9; --ok:#2f6b4f; --ok-soft:#d8e8de;
+  --display:"Cinzel", Georgia, serif;
+  --body:"Alegreya Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171513; --surface:#211e1b; --fg:#ebe6e0; --muted:#a69d93; --line:#3a352f;
+  --accent:#d7a77a; --accent-soft:#33281e; --warn:#e6a275; --warn-soft:#3d2a1d; --ok:#8fcaa9; --ok-soft:#1f3329; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171513; --surface:#211e1b; --fg:#ebe6e0; --muted:#a69d93; --line:#3a352f;
+  --accent:#d7a77a; --accent-soft:#33281e; --warn:#e6a275; --warn-soft:#3d2a1d; --ok:#8fcaa9; --ok-soft:#1f3329; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 120px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-size:2.1rem;font-weight:700;letter-spacing:.02em}
+h2{font-size:1.3rem;font-weight:700;margin-top:2.4rem;letter-spacing:.02em}
+h3{font-family:var(--body);font-size:1.08rem;font-weight:700}
+p{max-width:68ch;margin:.5rem 0}
+ul{max-width:68ch;padding-left:1.2rem;margin:.4rem 0}
+li{margin:.25rem 0}
+.lede{color:var(--muted)}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.check{background:var(--ok-soft);border-radius:6px;padding:10px 14px;margin-top:1rem;font-size:.95rem;max-width:68ch}
+.check b{color:var(--ok)}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-top:1rem}
+.toc a{font-family:var(--mono);font-size:.74rem;padding:3px 9px;border:1px solid var(--line);border-radius:999px;color:var(--fg);text-decoration:none}
+.toc a:hover{border-color:var(--accent)}
+.toc a.prio{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;margin-top:12px;display:grid;gap:8px;min-width:0}
+.q.top{border-color:var(--warn)}
+.qhead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px}
+.qhead h3{flex:1 1 320px;min-width:0}
+.num{font-family:var(--mono);font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;padding:2px 8px;border-radius:999px;white-space:nowrap;background:var(--warn-soft);color:var(--warn)}
+.ctx{color:var(--muted);font-size:.95rem;max-width:68ch}
+.rec{font-size:.95rem;max-width:68ch}
+.rec b{color:var(--accent);font-weight:700}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{display:flex;gap:6px;align-items:center;padding:6px 12px;border:1px solid var(--line);border-radius:999px;cursor:pointer;font-size:.93rem}
+.opt:hover{border-color:var(--accent)}
+.opt input{accent-color:var(--accent)}
+textarea{width:100%;box-sizing:border-box;min-height:40px;font:inherit;font-size:.93rem;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);resize:vertical}
+textarea:focus-visible,.opt:focus-within,button:focus-visible,.toc a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+.bar span{font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;background:var(--accent);color:var(--surface);border:0;border-radius:6px;padding:8px 16px;cursor:pointer}
+button.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+#out{width:100%;min-height:180px;font-family:var(--mono);font-size:.8rem}
+code{font-family:var(--mono);font-size:.82rem;overflow-wrap:anywhere}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<div class="wrap">
+  <div class="eyebrow">Underreign · alle offenen Fragen · Stand 13.11.2026</div>
+  <h1>Was noch auf dich wartet</h1>
+  <p class="lede">Alle Fragen, die noch nicht beantwortet sind, an einer Stelle: aus der dritten und vierten Nacht, aus der zweiten Nacht (großes Spiel und Kampagne) und was im Chat offen blieb. Bei jeder Frage steht eine Empfehlung. „Empfehlung“ heißt: genau so, wie sie dasteht. Die Fragen „zuerst“ bremsen gerade die Arbeit.</p>
+  <div class="check"><b>Geprüft und herausgenommen:</b> die Schnitthöhe der Wände, die Größe des Brandhunds und die Rauheit der Gangwände (alle schon beantwortet), die Raubzüge ohne Kreaturensteuerung (überholt durch das gegnerische Herz und die Banner-Haltung), die Grafik für den Engine-Vergleich und die Übertragung der Regeln nach Unreal (beides erledigt). Texturtest und Fackeln laufen schon, dazu gibt es hier keine Frage.</div>
+  <nav class="toc" id="toc" aria-label="Gruppen"></nav>
+  <div id="secs"></div>
+</div>
+<div class="bar">
+  <span id="count">0 von 0 beantwortet</span>
+  <button id="copy" type="button">Antworten kopieren</button>
+  <button id="show" type="button" class="ghost">Als Text anzeigen</button>
+</div>
+<div class="wrap" style="padding-block:0 140px" id="outwrap" hidden>
+  <textarea id="out" readonly aria-label="Antworten als Text"></textarea>
+</div>
+<script>
+(function(){
+  var A='anders',ANDERS=[A,'Anders'];
+  // [title, intro, [[title, context, recommendation, options, top]]]
+  var S=[
+  ["Gerade offen","Kleine Punkte, die im Chat liegen geblieben sind.",[
+    ["Die nebenbei neu gespeicherte Grau-Material-Datei",
+     "Das Skript, das die Wandteile ins Spiel lädt, speichert die Material-Datei der grauen Platzhalter bei jedem Lauf neu ab. Gewollt geändert wurde daran nichts. Sie liegt als Änderung im Spielordner und wird nicht mitgespeichert.",
+     "A: Verwerfen. Der nächste passende Auftrag ändert das Skript so, dass es die Datei nicht mehr anfasst.",
+     [["a","A: Verwerfen und Skript reparieren (Empfehlung)"],["b","B: Verwerfen, Skript so lassen"],["c","C: Behalten"],ANDERS],1],
+    ["Pakete mit Nahkampf-Animationen kaufen?",
+     "Die kostenlosen Animationen können nur waffenlos kämpfen. Für Schwert und Schild und für Zweihandwaffen hatte ich zwei Pakete für die Unreal-Standardfigur vorgeschlagen. Kaufen kannst nur du.",
+     "A: Ich suche beide Pakete mit Preis und kurzer Vorschau auf Fab heraus, du entscheidest und kaufst selbst.",
+     [["a","A: Raussuchen, ich entscheide dann (Empfehlung)"],["b","B: Jetzt noch nicht, erst wenn mehr Kreaturen im Spiel sind"],ANDERS],0],
+    ["Wie wirken die durchgehenden Felswände?",
+     "Die Pfeiler alle 2 m sind weg, die Wand ist eine durchgehende Felsfläche. Die Bilder liegen bei dir unter C:/GameDev/Underreign/Game/Captures/wallcontinuous/. Kleinigkeiten, die uns aufgefallen sind: die Basaltsäulen sind nahe den Übergängen leicht wellig, im glatten Erdreich sieht man aus der Nähe eine senkrechte Linie.",
+     "A: Gut so. Die zwei Kleinigkeiten nehmen wir beim Einbau der neuen Erdreich-Texturen mit.",
+     [["a","A: Gut so, Kleinigkeiten später (Empfehlung)"],["b","B: Die Kleinigkeiten stören, zuerst nachbessern"],["c","C: Noch nicht angesehen"],ANDERS],0],
+    ["Kamera und Durchsicht im Wandmuster",
+     "Im Wandmuster dreht sich die Kamera frei um 360° (Q/E halten oder Alt plus mittlere Maustaste), schaut mit 70° schräg von oben, und Kreaturen hinter Wänden werden als Fläche mit Umriss gezeigt (orange deine, blau Eindringlinge). Mit V lassen sich die Wände in der Übersicht niedrig zeichnen.",
+     "A: So weiter testen, wie gebaut.",
+     [["a","A: Passt so (Empfehlung)"],["b","B: Kamera noch steiler"],["c","C: Die Durchsicht soll anders aussehen (bitte Notiz)"],["d","D: Noch nicht angespielt"],ANDERS],0]
+  ]],
+  ["Wände, Böden und Kampf im Bild","Offen aus der vierten Nacht. Die ersten drei Fragen von dort hast du beantwortet.",[
+    ["Wann sollen Wände mit Physik zerbröseln?",
+     "Jeder Zerfall kostet etwas Rechenzeit. Die Frage ist, wie oft.",
+     "A: Groß, wenn Eindringlinge eine Wand durchbrechen; klein und ohne Wackeln, wenn deine Cinderlings ein Feld graben. Graben passiert ständig, Durchbrüche selten.",
+     [["a","A: Groß beim Durchbruch, klein beim Graben (Empfehlung)"],["b","B: Nur beim Durchbruch im Kampf; Graben entfernt das Feld mit Staub"],["c","C: Immer der volle Einsturz, auch bei jedem gegrabenen Feld"],ANDERS],0],
+    ["Wie sollen Figuren von Ebene zu Ebene kommen?",
+     "Die Regeln bringen eine Figur in 0,7 bis 2,5 Sekunden eine ganze Ebene hoch oder runter, bei 2-m-Feldern sind das 6 m. Eine echte Treppe so schnell zu gehen, sähe aus wie ein Aufzug.",
+     "A: Leiter oder Kettenaufzug. Ein schneller Aufstieg wirkt dort glaubwürdig und passt dazu, wie die Regeln eine Figur bewegen. Eine Kletterbewegung pro Figur.",
+     [["a","A: Leiter oder Kettenaufzug (Empfehlung)"],["b","B: Wendeltreppe in einem gemauerten Schacht, die Figur ist kurz verdeckt"],["c","C: Treppen in den Regeln langsamer machen (später)"],ANDERS],0],
+    ["Soll man auf deinem Boden das Feldraster sehen?",
+     "Dein eingenommener Boden besteht aus dunklen Basaltplatten. Jetzt hat jedes 2-m-Feld sein eigenes Plattenmuster, also sieht man das Raster als Fugenlinien in deinen Räumen.",
+     "A: Raster zeigen. Hilft, Räume und Fallen Feld für Feld zu planen, und liest sich als „dein Boden“.",
+     [["a","A: Raster zeigen (Empfehlung)"],["b","B: Raster verstecken, die Platten laufen über die Feldgrenzen"],["c","C: Raster nur beim Bauen einblenden"],ANDERS],0],
+    ["Wie nah sollen Kämpfer beieinander stehen?",
+     "In den Regeln trifft ein Nahkampfschlag aus demselben oder dem Nachbarfeld. Bei 2-m-Feldern stehen zwei Kämpfer dann 2 m auseinander und schlagen scheinbar in die Luft.",
+     "A: Im Bild rückt jeder Kämpfer während des Kampfes etwa 0,6 m auf sein Ziel zu. Sieht nach echtem Kampf aus, die Regeln bleiben gleich.",
+     [["a","A: Im Kampf aufeinander zurücken (Empfehlung)"],["b","B: Auf ihren Feldern bleiben, dafür längere Reichweite (Speere, Ausfallschritte)"],["c","C: Beides: zurücken und längere Reichweite für die Großen"],ANDERS],0]
+  ]],
+  ["Kampf zwischen den Reichen","Offen aus der dritten Nacht. Ein Computergegner baut sein eigenes Herz; du gewinnst, wenn sein Herz fällt. Karten: Twin Hollows, Deep Split, Forked Commons.",[
+    ["Wie stark sollen Fallen gegen gegnerische Kreaturen sein?",
+     "Heute verletzen und bremsen Fallen eine gegnerische Kreatur genauso wie einen Eindringling. Dann ist ein Angriff auf eine verteidigte Tür fast immer ein Verlust: Auf den Spiegelkarten bleibt bis zu ein Drittel der Partien nach 45 Minuten unentschieden. Mit halbem Schaden und halber Haltezeit sind sie nach 13 bis 22 Minuten entschieden, höchstens 6 % bleiben offen.",
+     "A: Halbe Stärke gegen Kreaturen. Fallen bleiben eine Verstärkung der Verteidigung, wie du es gesagt hast, aber sie sperren das Spiel nicht zu.",
+     [["a","A: Halbe Stärke gegen Kreaturen (Empfehlung)"],["b","B: Volle Stärke wie jetzt (Verteidigung sehr stark, lange Partien)"],["c","C: Voller Schaden, aber halbe Haltezeit"],["d","D: Erst nach deiner eigenen Testrunde auf Twin Hollows entscheiden"],ANDERS],1],
+    ["Welches Reich besuchen die Eindringlings-Ereignisse?",
+     "Jetzt geht eine Welle zum reicheren Reich (mehr gelagertes Gold). Liegen beide innerhalb von 100 Gold, geht sie zum Reich, dessen Herz näher am Einsturzloch liegt; ist auch das gleich, wechseln die Wellen sich ab. Die Idee: Ereignisse bestrafen den Führenden und geben dem Zurückliegenden Luft.",
+     "A: Reicher, sonst näher, sonst abwechselnd. Du kannst es lenken: Gib dein Gold vor einer Welle aus.",
+     [["a","A: Reicher, sonst näher, sonst abwechselnd (Empfehlung)"],["b","B: Immer das nähere Reich (die Karte entscheidet, nicht das Gold)"],["c","C: Beide Reiche gleichzeitig (jede Welle teilt sich in zwei Hälften)"],["d","D: Das Reich, das auf andere Art vorne liegt (mehr Kreaturen, mehr Boden)"],ANDERS],1],
+    ["Kannst du den Boden des Gegners übernehmen?",
+     "Jetzt kann niemand Boden beanspruchen, den ein anderes Reich hält; deine Cinderlings bleiben an der Grenze stehen.",
+     "A: Erst nachdem seine Räume dort zerstört sind. Boden ohne Raum wird neutral und kann beansprucht werden.",
+     [["a","A: Erst nach Zerstörung seiner Räume (Empfehlung)"],["b","B: Nie, die Grenzen bleiben wie gegraben"],["c","C: Jeder gegnerische Boden, der an deinen grenzt, kann langsam beansprucht werden (eine schleichende Front)"],ANDERS],1],
+    ["Sollen deine verschlossenen Türen gegnerische Kreaturen aufhalten?",
+     "Heute halten Türen nur Eindringlinge auf, gegnerische Kreaturen gehen hindurch. Die Regeln haben es als Schalter (aus): Eingeschaltet müssen gegnerische Kreaturen die Tür aufbrechen, ein Kiln-ox dreimal so schnell. In den Computerspielen ändert es wenig, weil sie nur eine Tür pro Weg bauen. Dein eigener Test würde mehr zeigen.",
+     "A: Ja, aber gegnerische Kreaturen können sie wie ein Brute aufbrechen. Eine Tür verschafft Zeit, der Kiln-ox bricht sie schnell.",
+     [["a","A: Ja, aufbrechbar wie bei einem Brute (Empfehlung)"],["b","B: Nein, Türen gelten nur gegen Eindringlinge"],["c","C: Ja, und nur eine schwere Kreatur kann sie aufbrechen"],ANDERS],0],
+    ["Sollen Cinderlings vor gegnerischen Kreaturen fliehen?",
+     "Normalerweise fliehen Cinderlings vor Eindringlingen, nicht vor gegnerischen Kreaturen; ein Überfall auf die Adern des Gegners tötet daher viele Arbeiter. Die Regeln haben die Flucht als Schalter (aus): In den Computerspielen ändert es wenig (verlorene Cinderlings pro Spiel 4,2 auf 3,9).",
+     "A: Ja, dieselbe Flucht wie vor Eindringlingen.",
+     [["a","A: Ja, dieselbe Flucht (Empfehlung)"],["b","B: Nein, Arbeiter überfallen ist eine starke, einfache Taktik"],["c","C: Sie fliehen nur vor Kreaturen mit den Aufgaben Stürmer oder Späher (den Überfällern)"],ANDERS],0]
+  ]],
+  ["Kreaturen, Banner und Heer","Offen aus der dritten Nacht.",[
+    ["Stimmen die Kampfaufgaben der Kreaturen?",
+     "Brand-hound = Stürmer (zuerst die hintere Reihe), Oath-warden = Wächter (bewacht das Herz), Ember-witch = Fernkampf (erledigt den Schwächsten), Soot-moth = Späher, Kiln-ox = Schwer (zuerst die Schweren, zerschlägt ausgelöste gegnerische Fallen), Lien-hook = Zieher, Wax-surgeon = Heiler, Footnote = Hinterhalt.",
+     "A: Die Aufgaben wie gebaut lassen.",
+     [["a","A: Wie gebaut (Empfehlung)"],["b","B: Der Oath-warden zerschlägt auch gegnerische Fallen (zwei Schwere)"],["c","C: Die Soot-moth entdeckt gegnerische Fallen (zeigt versteckte gegnerische Teile in ihrer Nähe)"],ANDERS],0],
+    ["Wie sollen größere Heere entstehen?",
+     "Jetzt erlaubt ein Nest 8 Kreaturen, zwei Nester 12, drei Nester 16; die Betten (eins pro 4 Nestfelder) begrenzen weiter. Ein großes Heer braucht also viel Nestboden und kostet viel Lohn.",
+     "A: Nester heben das Limit, wie gebaut.",
+     [["a","A: Nester heben das Limit, wie gebaut (Empfehlung)"],["b","B: Ein großes Nest genügt: weniger Felder pro Bett (3 statt 4), Limit 12 für alle"],["c","C: Beides"],ANDERS],0],
+    ["Die Zahlen der Banner-Haltung",
+     "Angriff: Kreaturen im Umkreis von 8 Feldern um das Banner greifen jeden Feind in 8 Feldern um es an (Wächter und Heiler bleiben zurück). Rückzug: Kreaturen verlassen den Kampf bei 50 % Gesundheit statt bei 30 %, solange das Banner steht.",
+     "A: 8 Felder und 50 % lassen.",
+     [["a","A: 8 Felder und 50 % (Empfehlung)"],["b","B: Kleinerer Angriffsbereich (5 Felder), damit das Banner ein Sammelpunkt bleibt"],["c","C: Rückzug schon bei 70 % (sehr vorsichtig)"],ANDERS],0]
+  ]],
+  ["Computergegner und Balance","Offen aus der dritten Nacht.",[
+    ["Was soll die Schwierigkeitsstufe des Computers bedeuten?",
+     "Die Stufen unterscheiden sich darin, wann sie angreifen: Leicht greift blind an; normal wartet, bis sein Heer so groß ist wie deins; schwer wartet auf eine Kreatur mehr, bleibt zu Hause, solange dein Heer unterwegs ist, und schlägt zurück, sobald du abbrichst. Gemessen: Du gewinnst 57 / 54 / 14 % gegen leicht / normal / schwer auf Twin Hollows. Keine Stufe bekommt mehr Gold.",
+     "A: Klügeres Spiel, gleiche Wirtschaft, wie gebaut. Später schickt der schwere Gegner auch seine Schweren zuerst gegen eine Falle an der Tür.",
+     [["a","A: Klügeres Spiel, gleiche Wirtschaft (Empfehlung)"],["b","B: Gleiches Spiel, aber mehr Gold für höhere Stufen (offen im Stufentext gezeigt)"],["c","C: Beides: klügeres Spiel und nur auf der schwersten Stufe ein offener Wirtschaftsbonus"],ANDERS],1],
+    ["Die Charaktere des Gegners: vorsichtig und wütend",
+     "Ein vorsichtiger Gegner wartet auf einen klaren Vorteil und baut mehr Fallen. Ein wütender baut keine Drill Hall (also nur Nahkämpfer und schwere Kreaturen), greift früh an und kämpft bis zum Ende. Gemessen: Vorsichtig ist am stärksten, wütend am schwächsten.",
+     "A: Beide wie gebaut lassen und damit den Gegnern einen Charakter geben; wütend ist der leicht lesbare Gegner.",
+     [["a","A: Beide wie gebaut (Empfehlung)"],["b","B: Wütend stärken, damit alle Charaktere gleich stark sind"],["c","C: Keine Charaktere, vorerst ein einziger Gegner"],ANDERS],0],
+    ["Die Wellen-Vorschläge für die Testkarten",
+     "Der Computerspieler gewinnt Bellows Gallery zu 20 % und Crownkiln zu 29 %, aber Inkdrip Shelf zu 100 % und die Cinder-Hollow-Variante mit neuen Eindringlingen zu 97 %. Die Vorschläge bringen alle auf 64 bis 85 %. Cinder Hollow selbst bleibt, wie du entschieden hast.",
+     "A: Die Vorschläge für die Testkarten übernehmen.",
+     [["a","A: Vorschläge für alle Testkarten übernehmen (Empfehlung)"],["b","B: Testkarten lassen, wie sie sind"],["c","C: Nur für Bellows Gallery und Crownkiln übernehmen (die zu schweren)"],ANDERS],0]
+  ]],
+  ["Rivalenvolk und Aussehen","Offen aus der dritten Nacht. Das Bild für das gegnerische Herz wartet auf die zweite Frage.",[
+    ["Welches zweite Volk soll als Rivale zuerst kommen?",
+     "Der Rivale in den Regeln ist vorerst ein zweiter Herrscher des Aschenbunds. Bilder gibt es schon für die Tiefzwerge und den Myzelchor.",
+     "A: Die Tiefzwerge. Sie graben als Rivalen von der Seite ein, wie du es gesagt hast, und das passt am besten zu den Karten mit zwei Reichen.",
+     [["a","A: Die Tiefzwerge (Empfehlung)"],["b","B: Der Myzelchor (sehr anderes Aussehen und Spiel)"],["c","C: Beim Aschenbund-Rivalen bleiben, bis der Prototyp gut spielt"],ANDERS],1],
+    ["Wie sieht das gegnerische Reich anders aus als deins?",
+     "Beide Reiche sind Aschenbund. Der Bildvorschlag für das gegnerische Herz zeigt kalte elfenbeinweiße Wachssiegel und Stoffe statt Rot. Das liegt nah am Weiß der Eindringlinge und könnte verwirren.",
+     "A: Eine kalte blaugrüne Glutfarbe für den Rivalen (Glut, Siegel und Banner), deutlich nicht Eindringlings-Weiß.",
+     [["a","A: Kaltes Blaugrün (Empfehlung)"],["b","B: Elfenbeinweißes Wachs, wie im Bildvorschlag"],["c","C: Dieselben Farben, nur eine Randlinie auf seinem Boden"],ANDERS],1],
+    ["Nebel über dem gegnerischen Reich",
+     "Heute siehst du alles. Im Entwurf des Spiels ist das gegnerische Reich dunkel, bis ein Späher oder ein Lauschposten es sieht.",
+     "A: Später, nach der ersten Testrunde mit Rivalen.",
+     [["a","A: Später (Empfehlung)"],["b","B: Jetzt: Du siehst nur, was deine Kreaturen und dein Boden sehen"],ANDERS],0]
+  ]],
+  ["Das große Spiel","Richtungsfragen für das fertige Spiel, nicht für den Prototyp. Gestellt nach der ersten und zweiten Nacht, nie beantwortet.",[
+    ["Wie viel von der Kristallbrut zeigt sich vor ihrer eigenen Veröffentlichung?",
+     "Die Kristallbrut ist das spätere sechste Volk.",
+     "A: Nur Andeutungen: eine singende Kristallsäule als Kulisse in einer Tiefzwerge-Mission, keine Kreaturen und kein Computergegner der Brut. Das weckt Neugier, ohne ein unfertiges Volk zu versprechen.",
+     [["a","A: Nur Andeutungen (Empfehlung)"],["b","B: Ein Computernachbar der Kristallbrut im freien Spiel"],["c","C: Gar keine Spur"],ANDERS],0],
+    ["Kann das Erwachen dessen, was unten schläft, dich die Karte kosten?",
+     "Tief unten schläft etwas, das aufwachen kann, wenn man zu viel gräbt oder zu heiß wird.",
+     "A: Nein. Es ist eine Krise, die du überstehen musst; verlieren tust du nur, wenn dein Herz fällt. Eine einzige Verlustregel ist klar.",
+     [["a","A: Nein, eine Krise (Empfehlung)"],["b","B: Ja, ein volles Erwachen verliert die Karte"],["c","C: Nur als Ende im freien Spiel"],ANDERS],0],
+    ["Ist die tiefste Felsschicht, die Stille, je spielbar?",
+     "Unter allen Ebenen liegt eine letzte, tiefste Schicht.",
+     "A: Nur in der letzten Karte jeder Kampagne und in einer Einstellung im freien Spiel. Selten fühlt es sich besonders an.",
+     [["a","A: Nur im Finale und als eine Einstellung (Empfehlung)"],["b","B: Nie, sie bleibt Kulisse"],["c","C: Eine volle sechste Schicht auf vielen Karten"],ANDERS],0],
+    ["Wie viel Diplomatie mit anderen Völkern?",
+     "",
+     "A: Leicht: Waffenruhe, Tribut, Handel und zwei Bündnisse gegen gemeinsame Feinde. Das Spiel dreht sich um dein Reich, nicht um Menüs.",
+     [["a","A: Leicht (Empfehlung)"],["b","B: Keine"],["c","C: Tiefe Bündnisse und Ruf"],ANDERS],0],
+    ["Der Hoftag des Drowned Court",
+     "Der Drowned Court hat Ränge, Audienzen und einen regelmäßigen Hoftag mit eigenen Regeln.",
+     "A: Eine volle Spielmechanik. So bekommt dieses Volk seine eigene Spielweise.",
+     [["a","A: Volle Spielmechanik (Empfehlung)"],["b","B: Nur Ränge"],["c","C: Nur Atmosphäre"],ANDERS],0],
+    ["Die „Eine Stimme“ des Myzelchors",
+     "Alle Kreaturen des Myzelchors teilen einen Geist.",
+     "A: Sie teilen Stimmung und Wissen. Dann spielt sich der Chor sehr anders als die anderen Völker.",
+     [["a","A: Stimmung und Wissen (Empfehlung)"],["b","B: Nur Wissen"],["c","C: Nur Stimmung"],ANDERS],0],
+    ["Kann man ein Reich je perfekt gegen Angriffe abdichten?",
+     "Du hast entschieden: Seitenwände lassen sich immer brechen, nur unterschiedlich schwer, und Ebenen verbinden sich nur an festen Durchbruchstellen.",
+     "A: Nein. Jede Durchbruchstelle lässt sich bewachen, mit Fallen sichern und verstärken, aber nie endgültig schließen. Abdichten ist eine Frage von Kosten und Unterhalt.",
+     [["a","A: Keine perfekte Abdichtung (Empfehlung)"],["b","B: Jede Karte hat genau eine Stelle, die man nie schließen oder verstärken kann"],["c","C: Angreifer bringen immer ein Gegenmittel mit (zum Beispiel Mineure)"],ANDERS],0]
+  ]],
+  ["Die Kampagne des Aschenbunds","Entwurf aus der zweiten Nacht, nicht für den Prototyp. Die Prozentzahlen stammen von damals; die Regeln haben sich seitdem geändert.",[
+    ["Bedrohung von unten in der Aschenbund-Kampagne",
+     "Die erste Nacht hatte dem Aschenbund drei Missionen mit der Bedrohung von unten gegeben.",
+     "A: 10 Missionen wie im Entwurf; die Bedrohung von unten nur als leichtes Rumoren im Finale. Die Kampagnen der anderen Völker zeigen sie ganz. So bleibt diese Kampagne bei Verträgen und Angreifern von oben.",
+     [["a","A: 10 Missionen, unten nur im Finale (Empfehlung)"],["b","B: 12 Missionen, zwei Missionen von unten wieder vor dem Finale"],["c","C: 10 Missionen, aber zwei Missionen von unten ersetzen die Geleit- und die Gerüchte-Mission"],ANDERS],0],
+    ["Wem gehört das Herz, das du in der Kampagne zerstörst?",
+     "In der neunten Mission zerstörst du ein gegnerisches Herz.",
+     "A: Einem zweiten Haus des Aschenbunds. So stirbt kein Held aus der Kampagne eines anderen Volkes.",
+     [["a","A: Einem zweiten Aschenbund-Haus (Empfehlung)"],["b","B: Einem anderen Volk (stärkere Geschichte, aber dessen Held verliert in fremder Kampagne sein Herz)"],["c","C: In Kampagnen werden keine Herzen zerstört, nur Lager und Außenposten"],ANDERS],0],
+    ["Lagerangriffe schon in den ersten drei Missionen?",
+     "Jede Karte endet mit einem Angriff auf ein Lager. In der zweiten Mission geht das nicht zusammen mit ihrem Ziel „600 Gold in den Schatzkammern“.",
+     "A: Alle drei ersten Missionen enden mit einem Lagerangriff. In der zweiten Mission ersetzt das Lager das Gold-Ziel, oder eine kleine Regeländerung lässt das Lager erst zählen, wenn das Gold liegt.",
+     [["a","A: Alle drei mit Lagerangriff (Empfehlung)"],["b","B: Erst ab der dritten Mission; die ersten zwei bringen nur die Wirtschaft bei"],["c","C: Alle drei so lassen wie jetzt"],ANDERS],0],
+    ["Die Geleit-Mission",
+     "Die sechste Mission braucht eine neue Art Einheit, die du begleitest. Das ist ein mittlerer bis großer Regelauftrag.",
+     "A: Behalten. Es ist die einzige Mission, in der Fallen auch deiner Seite schaden können. Sie kann warten, bis der Regelauftrag geplant ist.",
+     [["a","A: Behalten (Empfehlung)"],["b","B: Durch eine zweite Mission „Lager einnehmen“ auf der weiten Karte ersetzen"],ANDERS],0],
+    ["Die zweite Mission ist schwerer als die dritte",
+     "Damals gemessen: Der Computerspieler gewinnt die erste Mission zu 100 %, die zweite zu 65 %, die dritte zu 91 %. Die zweite geht meist in ihren Wellen 3 und 4 verloren. Ein Brute weniger in Welle 4 bringt sie auf 81 %.",
+     "A: Ein Brute weniger in Welle 4 der zweiten Mission, bevor die Kampagne ausbalanciert wird.",
+     [["a","A: Ein Brute weniger in Welle 4 (Empfehlung)"],["b","B: Zweite und dritte Mission tauschen"],["c","C: So lassen; der Computerspieler ist kein Maßstab für eine Kampagne"],ANDERS],0]
+  ]],
+  ["Grundsätzliches für später","Offen, aber nichts davon bremst die Arbeit.",[
+    ["Einzelne Kreaturen selbst steuern?",
+     "Du hast gesagt: Eine Nahansicht kann nötig werden, wenn man Einheiten selbst steuern kann, vielleicht über eine zeitlich begrenzte Seelenübernahme, die die Kreatur opfert. Bis du entscheidest, steuerst du keine einzelnen Kreaturen.",
+     "A: Später entscheiden, nach den ersten Testrunden gegen einen Rivalen.",
+     [["a","A: Später entscheiden (Empfehlung)"],["b","B: Ja, als seltene Seelenübernahme, die die Kreatur opfert"],["c","C: Nein, nie einzelne Kreaturen steuern"],ANDERS],0],
+    ["Wie soll das Spiel verkauft werden?",
+     "Noch nie gefragt.",
+     "A: Später, wenn der Prototyp gut spielt.",
+     [["a","A: Später (Empfehlung)"],["b","B: Einmalkauf"],["c","C: Einmalkauf, weitere Völker als Erweiterungen"],ANDERS],0],
+    ["Der Name „Underreign“",
+     "Underreign ist ein Arbeitstitel. Vor einer öffentlichen Nutzung muss geprüft werden, ob der Name im Store und als Marke frei ist.",
+     "A: Arbeitstitel behalten, die Prüfung erst vor dem ersten öffentlichen Zeigen.",
+     [["a","A: Später prüfen (Empfehlung)"],["b","B: Jetzt prüfen lassen"],ANDERS],0]
+  ]]
+  ];
+  function esc(s){return String(s).replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m];});}
+  var n=0;
+  function card(q){
+    n++; var id=String(n), top=q[4];
+    return '<div class="q'+(top?' top':'')+'" data-id="'+id+'" data-title="'+esc(q[0])+'" data-rec="'+esc(q[2])+'"><div class="qhead"><span class="num">'+id+'</span><h3>'+esc(q[0])+'</h3>'+(top?'<span class="chip">zuerst</span>':'')+'</div>'+(q[1]?'<div class="ctx">'+esc(q[1])+'</div>':'')+'<div class="rec"><b>Empfehlung:</b> '+esc(q[2])+'</div><div class="opts">'+
+      q[3].map(function(o){return '<label class="opt"><input type="radio" name="q'+id+'" value="'+o[0]+'">'+esc(o[1])+'</label>';}).join('')+
+      '</div><textarea id="note-'+id+'" placeholder="Notiz (optional)" aria-label="Notiz zu Frage '+id+'"></textarea></div>';
+  }
+  document.getElementById('secs').innerHTML=S.map(function(s,i){return '<h2 id="g'+i+'">'+esc(s[0])+'</h2>'+(s[1]?'<p class="lede">'+esc(s[1])+'</p>':'')+s[2].map(card).join('');}).join('');
+  document.getElementById('toc').innerHTML=S.map(function(s,i){var p=s[2].some(function(q){return q[4];});return '<a href="#g'+i+'"'+(p?' class="prio"':'')+'>'+esc(s[0])+' ('+s[2].length+')</a>';}).join('');
+  var KEY='underreign-alle-v1', state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){state={};}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+  var cards=[].slice.call(document.querySelectorAll('.q[data-id]'));
+  cards.forEach(function(q){
+    var id=q.dataset.id, s=state[id]||{};
+    if(s.v){var r=q.querySelector('input[value="'+s.v+'"]'); if(r) r.checked=true;}
+    var t=q.querySelector('textarea'); if(s.n) t.value=s.n;
+    q.addEventListener('change',function(e){if(e.target.type==='radio'){(state[id]=state[id]||{}).v=e.target.value;save();upd();}});
+    t.addEventListener('input',function(){(state[id]=state[id]||{}).n=t.value;save();upd();});
+  });
+  function text(){
+    var L=['Underreign, alle offenen Fragen (13.11.), Antworten:'];
+    cards.forEach(function(q){var s=state[q.dataset.id]||{}; if(!s.v&&!(s.n&&s.n.trim())) return;
+      var lab=s.v?(q.querySelector('input[value="'+s.v+'"]').parentNode.textContent):'(keine Wahl)';
+      L.push(q.dataset.id+' '+q.dataset.title+': '+lab+(s.n&&s.n.trim()?' | Notiz: '+s.n.trim():''));});
+    return L.join('\n');
+  }
+  function upd(){
+    var c=cards.filter(function(q){var s=state[q.dataset.id];return s&&(s.v||(s.n&&s.n.trim()));}).length;
+    document.getElementById('count').textContent=c+' von '+cards.length+' beantwortet';
+    document.getElementById('out').value=text();
+  }
+  document.getElementById('show').addEventListener('click',function(){var w=document.getElementById('outwrap');w.hidden=!w.hidden;upd();if(!w.hidden)w.scrollIntoView({block:'start'});});
+  document.getElementById('copy').addEventListener('click',function(){
+    var b=this,t=text();
+    var done=function(){b.textContent='Kopiert';setTimeout(function(){b.textContent='Antworten kopieren';},1600);};
+    var fb=function(){var w=document.getElementById('outwrap');w.hidden=false;upd();var o=document.getElementById('out');o.focus();o.select();b.textContent='Text markiert, bitte kopieren';};
+    try{navigator.clipboard.writeText(t).then(done,fb);}catch(e){fb();}
+  });
+  upd();
+})();
+</script>

@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_UNDERREIGN_CLAUDE",
+  "project_scope": "Underreign",
+  "work_order_id": "UR-DECISIONS-R8-V1",
+  "work_order_sha256": "1d70a0a627ee9d7324f25d812924949ec1f33df721bdc6b385148d477d7540c9",
+  "manifest_sha256": "45135eb3d987e64c07ad035c25853c68f76b7ec1b1f20835f3a04a002b94e0e3",
+  "repository": {
+    "branch": "main",
+    "head": "70de6e0bc4e6ebf3b26aee6e4f2806c344efcb3f"
+  },
+  "project_identity_sha256": "1c2a857f3649c59a9eacf19b863e59b706006cdc8152ba6e61c50f3ea02f0a6b",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Underreign/Docs/DISCOVERY_DECISIONS.md",
+      "Projects/Underreign/Docs/OPEN_DECISIONS.md",
+      "Artifacts/Underreign/Evidence/UR-DECISIONS-R8-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "6c64f142d39d33e4fb283396a7fb01a9a904990179fe91ab53415380ff5ddfd3",
+  "baseline_state_sha256": "5266304a2182ad1fa9fd6194613f9cc94b829c2170f20ceb265cce3b01771542",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "external_project": {
+    "root": "C:/GameDev/Underreign",
+    "git": {
+      "branch": "main",
+      "head": "c0788bee696b53cc0272d5d7c2506dd4f0a6507e"
+    },
+    "allowed_mutations": [
+      "Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT2.md",
+      "Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT3.md",
+      "Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT4.md",
+      "Evidence/UR-DECISIONS-R8-V1"
+    ],
+    "protected_paths": [
+      "ArtSource",
+      "Game",
+      "SimulationCpp",
+      "StyleSample"
+    ],
+    "dirty_state": {
+      "mode": "bounded_projection",
+      "paths": [
+        "Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT2.md",
+        "Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT3.md",
+        "Design/Planning/QUESTIONS_FOR_HUMAN_NIGHT4.md",
+        "Evidence/UR-DECISIONS-R8-V1"
+      ],
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "state_sha256": "a9ce4dd167dccb9e3b2108f1b577659d806f6cec72253053beedd9aa6bd85e6f"
+  },
+  "execution_location": "local",
+  "receipt_id": "9c8818c73a9e78f186e4d9a75ee3473c0d749087a1a2c32b97aa7083ec0ae64e"
+}
