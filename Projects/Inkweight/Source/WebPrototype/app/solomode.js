@@ -145,6 +145,8 @@ function soloFightConfig(run, fightName) {
     isOver: () => run.phase !== 'fight',
     bodyInfo: (i) => (i === 0 ? { tag: '', human: true, bar: true } : null),
     dashBody: () => run.world.bodies[0],
+    follow: () => run.world.bodies[0],
+    minCellPx: 5,
     controlHint: coarsePointer() ? 'Ziehen lenkt · Knopf sprintet · geworfen wird von selbst' : 'W A S D oder Pfeile · Leertaste sprintet · geworfen wird von selbst',
     extraDraw: (g, cam, t, layer) => {
       if (layer === 'under') {

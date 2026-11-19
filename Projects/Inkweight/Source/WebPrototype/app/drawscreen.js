@@ -258,7 +258,7 @@ $('toolPick').addEventListener('click', () => {
     const use = cells.map((v) => (v !== 0 && !S.allowed[v] ? 1 : v));
     const st = core.computeStats(use, W, H, tuning, S.kind, S.budget);
     if (!st.valid) return;
-    const card = el('button', { class: 'card', type: 'button' }, [
+    const card = el('button', { class: 'card', type: 'button', id: 'pick' + grid.childElementCount }, [
       thumbCanvas(use, 80),
       el('span', { class: 'card-name', text: name }),
       placeholder ? el('span', { class: 'badge', text: 'Platzhalter' }) : null,

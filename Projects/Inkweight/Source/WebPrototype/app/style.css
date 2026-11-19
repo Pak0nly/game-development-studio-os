@@ -247,9 +247,9 @@ select {
 /* desktop: canvas left, tools right */
 @media (min-width: 820px) {
   .draw-main { flex-direction: row; gap: 20px; }
-  .draw-side { flex: 0 0 360px; justify-content: center; gap: 9px; }
+  .draw-side { flex: 0 0 410px; justify-content: center; gap: 9px; }
   .stats li { min-height: 26px; font-size: 0.88rem; grid-template-columns: 66px 44px 70px 1fr; }
-  .s-why { font-size: 0.8rem; }
+  .s-why { font-size: 0.8rem; white-space: normal; }
   .preview { width: 72px; height: 72px; }
   .dash { display: none; }
   .chip { flex: 0 1 190px; }

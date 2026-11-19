@@ -23,20 +23,43 @@ function speed() {
   return d && d.speed > 0 ? d.speed : 1;
 }
 
+// World to screen: screen = (cam.cx + x * cam.s, cam.cy + y * cam.s).
+// The Ring always shows the whole ring. The Solo Arena zooms in on small
+// screens (at least cfg.minCellPx CSS pixels per cell) and follows the hero.
+const STAIN_PX = 5; // stain layer resolution, pixels per cell
 function camera() {
+  const f = F;
   const w = canvas.width;
   const h = canvas.height;
-  return { w, h, cx: w / 2, cy: h / 2, s: Math.min(w, h) / (2 * F.cfg.viewRadius) };
+  const R = f.cfg.viewRadius;
+  let s = Math.min(w, h) / (2 * R);
+  const min = (f.cfg.minCellPx || 0) * f.dpr;
+  let fx = 0;
+  let fy = 0;
+  if (s < min) {
+    s = min;
+    const b = f.cfg.follow ? f.cfg.follow() : null;
+    if (b) {
+      if (!f.camInit) { f.camInit = true; f.camX = b.x; f.camY = b.y; }
+      // only as far as needed: the view never looks past the arena edge
+      const mx = Math.max(0, R - w / (2 * s));
+      const my = Math.max(0, R - h / (2 * s));
+      fx = Math.max(-mx, Math.min(mx, f.camX));
+      fy = Math.max(-my, Math.min(my, f.camY));
+    }
+  }
+  return { w, h, cx: w / 2 - fx * s, cy: h / 2 - fy * s, s };
 }
 
 function layout() {
   const w = stage.clientWidth;
   const h = stage.clientHeight;
   F.dpr = fitCanvas(canvas, w, h);
-  if (!stains || stains.width !== canvas.width || stains.height !== canvas.height) {
+  const size = Math.ceil(F.cfg.viewRadius * 2 * STAIN_PX);
+  if (!stains || stains.width !== size) {
     stains = document.createElement('canvas');
-    stains.width = canvas.width;
-    stains.height = canvas.height;
+    stains.width = size;
+    stains.height = size;
   }
 }
 if (typeof ResizeObserver === 'function') new ResizeObserver(() => { if (F) layout(); }).observe(stage);
@@ -118,7 +141,8 @@ function splash(x, y, colour, count, power, dirX, dirY) {
 
 function stain(x, y, colour, size) {
   if (!stains) return;
-  const cam = camera();
+  const R = F.cfg.viewRadius;
+  const cam = { cx: R * STAIN_PX, cy: R * STAIN_PX, s: STAIN_PX };
   const g = stains.getContext('2d');
   g.fillStyle = colours().cell[colour];
   g.globalAlpha = 0.16;
@@ -134,6 +158,10 @@ function stain(x, y, colour, size) {
 }
 
 function floatText(x, y, text, big, colour) {
+  if (!big) {
+    // small numbers do not pile up on one spot
+    for (const o of F.floats) if (o.age < 0.3 && Math.abs(o.x - x) < 4 && Math.abs(o.y - y) < 4) return;
+  }
   F.floats.push({ x, y, text, big, colour: colour || 0, age: 0 });
   if (F.floats.length > 24) F.floats.shift();
 }
@@ -268,7 +296,7 @@ function render(t) {
   for (let y = cam.cy % step; y < cam.h; y += step) { g.moveTo(0, y); g.lineTo(cam.w, y); }
   g.stroke();
   g.globalAlpha = 1;
-  if (stains) g.drawImage(stains, 0, 0);
+  if (stains) { const sr = cfg.viewRadius * cam.s; g.drawImage(stains, cam.cx - sr, cam.cy - sr, sr * 2, sr * 2); }
   g.restore();
 
   if (cfg.extraDraw) cfg.extraDraw(g, cam, t, 'under');
@@ -387,6 +415,30 @@ function render(t) {
   }
   g.globalAlpha = 1;
 
+  // small arrows at the edge for enemies outside the view
+  if (cfg.follow) {
+    g.fillStyle = col.ink;
+    const pad = 10 * f.dpr;
+    for (let i = 1; i < bodies.length; i++) {
+      const b = bodies[i];
+      if (!b.alive) continue;
+      const x = cam.cx + b.x * cam.s;
+      const y = cam.cy + b.y * cam.s;
+      if (x >= 0 && x <= cam.w && y >= 0 && y <= cam.h) continue;
+      const ex = Math.max(pad, Math.min(cam.w - pad, x));
+      const ey = Math.max(pad, Math.min(cam.h - pad, y));
+      const a = Math.atan2(y - ey, x - ex);
+      g.globalAlpha = 0.7;
+      g.beginPath();
+      g.moveTo(ex + Math.cos(a) * pad * 0.8, ey + Math.sin(a) * pad * 0.8);
+      g.lineTo(ex + Math.cos(a + 2.5) * pad * 0.8, ey + Math.sin(a + 2.5) * pad * 0.8);
+      g.lineTo(ex + Math.cos(a - 2.5) * pad * 0.8, ey + Math.sin(a - 2.5) * pad * 0.8);
+      g.closePath();
+      g.fill();
+    }
+    g.globalAlpha = 1;
+  }
+
   // touch stick
   if (touch.on) {
     const r = canvas.getBoundingClientRect();
@@ -410,6 +462,12 @@ function render(t) {
 
 function advanceVisuals(dt) {
   const f = F;
+  const fb = f.cfg.follow ? f.cfg.follow() : null;
+  if (fb && f.camInit) {
+    const k = reducedMotion() ? 1 : 1 - Math.pow(0.002, dt);
+    f.camX += (fb.x - f.camX) * k;
+    f.camY += (fb.y - f.camY) * k;
+  }
   const bodies = f.cfg.world().bodies;
   for (let i = 0; i < bodies.length; i++) {
     const b = bodies[i];
@@ -523,6 +581,7 @@ export function runFight(cfg) {
     F = {
       cfg, resolve, vis, parts: [], floats: [], shake: 0,
       phase: 'count', count: 3, countShown: 4, bannerUntil: 0,
+      camInit: false, camX: 0, camY: 0,
       acc: 0, tick: 0, time: 0, last: performance.now(), endAt: 0, hudCount: 0, dpr: 1,
       controlHint: cfg.controlHint || '',
       font: getComputedStyle(document.body).fontFamily,

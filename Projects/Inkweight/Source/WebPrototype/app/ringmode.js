@@ -140,7 +140,7 @@ async function playRing(seats, drawTime) {
         title: (humans.length === 1 ? 'Zeichne deine Figur' : name(s) + ': zeichne deine Figur'),
         sub: 'Runde ' + (match.round + 1) + ' · ' + budget + ' Tinte' + (bonus > 0 ? ' (Aufholtinte +' + bonus + ')' : '')
           + (drawTime > 0 ? ' · Uhr startet beim ersten Strich' : ''),
-        kind: 'figure', budget, timeLimit: drawTime, initial: drawings[s],
+        kind: 'figure', budget, timeLimit: drawTime, initial: source[s] === 'own' ? drawings[s] : null,
         backLabel: 'Ende', backConfirm: true, doneLabel: 'Fertig, in den Ring',
       });
       if (!res) { goHome(); return; }
@@ -176,7 +176,7 @@ async function playRing(seats, drawTime) {
     const hud = makeHud(match, seats, name);
     const result = await runFight({
       mode: 'ring',
-      viewRadius: tuning.ring.startRadius[n] + 4,
+      viewRadius: tuning.ring.startRadius[n] + 3,
       startRadius: tuning.ring.startRadius[n],
       ringRadius: () => match.ringRadius,
       sudden: () => match.tick > tuning.ring.suddenDeathTick,
