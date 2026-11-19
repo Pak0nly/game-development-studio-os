@@ -1,7 +1,10 @@
 {
   "version": "ink-tuning-1",
   "note": "All durations are whole ticks at physics.tickRate. All distances are canvas cells. Values marked in RULES_AS_BUILT.md as proposals are prototype numbers, not Human decisions.",
-  "canvas": { "width": 32, "height": 32 },
+  "canvas": {
+    "width": 32,
+    "height": 32
+  },
   "ink": {
     "figureBudget": 220,
     "weaponBudget": 60,
@@ -10,37 +13,51 @@
   },
   "stats": {
     "sharpMinEmptyNeighbours": 5,
-    "armourBase": 20,
+    "armourBase": 55,
     "armourPerCore": 2,
-    "armourPerCell": 0.25,
-    "sharpBase": 3,
-    "sharpPerSharpCell": 0.12,
-    "speedBase": 9,
-    "speedWeightRef": 160,
-    "bluntDamage": 1
+    "armourPerCell": 0,
+    "sharpBase": 1,
+    "sharpPerSharpCell": 0,
+    "sharpPerSharpShare": 0,
+    "sharpPerSharpShareSquared": 5.5,
+    "speedBase": 38,
+    "speedWeightRef": 70,
+    "bluntDamage": 1.2
   },
   "element": {
     "minColouredPercent": 30,
     "strongMult": 1.5,
     "weakMult": 0.75,
-    "beats": [0, 0, 4, 2, 3]
+    "beats": [
+      0,
+      0,
+      4,
+      2,
+      3
+    ]
   },
   "physics": {
     "tickRate": 60,
     "hitCooldownTicks": 24,
-    "restitution": 0.3,
+    "restitution": 0.79,
     "accelBase": 6,
-    "accelWeightRef": 160,
+    "accelWeightRef": 400,
     "turnBase": 8,
     "turnInertiaRef": 6000,
-    "dashSpeedMult": 2.5,
+    "dashSpeedMult": 3.8,
     "dashTicks": 12,
     "dashCooldownTicks": 120,
     "dashAccel": 1,
-    "hitKnockbackPerDamage": 0
+    "hitKnockbackPerDamage": 39
   },
   "ring": {
-    "startRadius": [0, 0, 44, 50, 56],
+    "startRadius": [
+      0,
+      0,
+      44,
+      50,
+      56
+    ],
     "endRadius": 16,
     "shrinkStartTick": 300,
     "shrinkEndTick": 2700,
@@ -59,20 +76,34 @@
     "dashRange": 10,
     "dashChancePercent": 6,
     "wobbleTicks": 45,
-    "wobbleStrength": 0.35
+    "wobbleStrength": 0.35,
+    "lightRetreatFraction": 0.45,
+    "roundaboutDot": 0.5,
+    "roundaboutStrength": 1
   },
   "solo": {
     "arenaRadius": 60,
-    "waveBudgets": [120, 170, 230, 300, 380],
-    "stakes": [1, 1.5, 2],
+    "waveBudgets": [
+      120,
+      170,
+      230,
+      300,
+      380
+    ],
+    "stakes": [
+      1,
+      1.5,
+      2
+    ],
     "maxCopies": 20,
     "enemyInkBudget": 220,
     "enemySpawnInset": 6,
-    "enemySpeedMult": 0.7,
+    "enemySpeedMult": 0.45,
     "enemyArmourMult": 0.35,
+    "enemyDamageMult": 0.2,
     "enemyDashRange": 8,
     "enemyDashChancePercent": 2,
-    "throwIntervalBaseTicks": 24,
+    "throwIntervalBaseTicks": 18,
     "throwIntervalTicksPerInk": 0.5,
     "throwSpeedBase": 60,
     "throwSpeedWeightRef": 60,
@@ -81,12 +112,18 @@
     "weaponKnockbackPerInk": 12,
     "dropLifeTicks": 600,
     "pickupRange": 3,
-    "waveMaxTicks": 7200,
-    "upgradeCost": [60, 90, 120, 150, 180],
+    "waveMaxTicks": 10800,
+    "upgradeCost": [
+      60,
+      90,
+      120,
+      150,
+      180
+    ],
     "upgradeHeroInk": 40,
     "upgradeWeaponInk": 15,
     "upgradeHealPercent": 50,
-    "bossArmourMult": 3,
+    "bossArmourMult": 1.5,
     "bossEscortCopies": 1,
     "botFleeDistance": 14,
     "botWallMargin": 10

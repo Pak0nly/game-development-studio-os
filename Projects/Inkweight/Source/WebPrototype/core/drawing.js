@@ -183,7 +183,8 @@ export function computeStats(cells, W, H, tuning, kind, budget) {
     valid: bigEnough && withinBudget,
     weight: N,
     armour: st.armourBase + st.armourPerCore * C + st.armourPerCell * N,
-    sharpness: st.sharpBase + st.sharpPerSharpCell * S,
+    sharpness: st.sharpBase + st.sharpPerSharpCell * S
+      + (N > 0 ? st.sharpPerSharpShare * S / N + st.sharpPerSharpShareSquared * (S / N) * (S / N) : 0),
     topSpeed: st.speedBase / (1 + N / st.speedWeightRef),
     cx, cy, radius, inertia,
   };
