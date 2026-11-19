@@ -791,3 +791,23 @@ authority boundaries.
 **Human confirmation source:** Human Developer, Underreign chat, 2026-11-10. After the comparison: "Für mein Verständnis: Es wurde jetzt nur die Blender Scene in beide Engines eingebaut und Standard Einstellungen verwendet richtig? Also keine Grafik Optimierungen in irgend einer Form? Ich gehe gerade davon aus, dass wir eine weit höhere Grafikqualität in Unreal erreichen als in Unity und das bei gleicher, wenn nicht besserer Performance. Das wäre für mich ausschlaggebend." Asked "Which engine do you want?" the Human answered: "Unreal". Royalty: "Wenn ich es schaffen sollte, damit über 1m $ zu verdienen bin ich glücklich. 5% ist dann ok."
 
 **Supersedes:** Only DEC-041's engine clause ("Engine: Unity 6000.6.4f1 ...") and UD-04/UD-36 for Underreign; DEC-041's text is not changed.
+
+### DEC-044 — Inkweight Project and Claude Director
+
+**Status:** Confirmed
+
+**Scope:** Project Inkweight (working title); Studio Operating System pointers only
+
+**Confirmed decision:**
+
+- The Human Developer started a new project (working title Inkweight, chosen by the Director and open for change): a fast, uncomplicated original game in which the players draw all graphics themselves, built on an ink mechanic that derives a figure's properties from its drawing, with a solo arena mode and a local party mode on one shared core. Only general genre mechanics may be used; no existing game is copied or recreated. The game ships no generated images or sounds.
+- The project is set up like Underreign: Claude acts as the Director for Inkweight, orchestration only under the Director Non-Execution Gate in `AGENTS.md`. DEC-007 remains in force outside the projects that name Claude as Director.
+- Platform: PC (Windows, Steam) is the main goal; mobile and web stay possible. Engine: Unity as the target engine. The Unity version stays the Studio baseline of DEC-002 until the Human chooses otherwise.
+- Inkweight keeps its own operational state in `Projects/Inkweight/Docs/WORK_STATE.md` and `Projects/Inkweight/Docs/CURRENT_HANDOVER.md`. The standing maintenance permission in `AGENTS.md` covers these two files for Inkweight work. The root operational state files are not used for Inkweight.
+- All other projects and their tools are out of Inkweight scope and are not changed. The initial project skeleton, concept documents and the gate copy `Tools/InkweightDispatchGate` were written on the Human's direct setup approval; this creates no standing exception.
+
+**Implications:** Downloads, installations, purchases and Steam fees still need their own Human approval (DEC-013, DEC-014, DEC-023); the Human allowed installing Blender if needed. Player drawings and all project content follow DEC-025. Shared documents are changed only additively. Project design decisions and the Director's readings of the Human's setup statement are recorded in `Projects/Inkweight/Docs/DISCOVERY_DECISIONS.md`.
+
+**Human confirmation source:** Human Developer, Inkweight concept chat, 2026-11-19. Asked "Soll ich das als neues Projekt anlegen, so wie Underreign, mit diesen beiden Konzepten als Startdokumenten?" the Human answered: "Ja. Du hast bis 9 Uhr Zeit daran zu arbeiten. Gerne mit Unity3D als Zielplattform um es auch mobile und Webtauglich zu bekommen wenn nötig. Hauptziel bleibt Steam. Nutze die Zeit bis 9 Uhr voll aus und suche dir selbst passende Aufgaben. Ziel ist ein spielbarer Prototyp, oder zumindest die Vorbereitung dessen. Wenn nötig oder für visuelle Unterstützung, installiere die Blender."
+
+**Supersedes:** None

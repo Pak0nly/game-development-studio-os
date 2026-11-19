@@ -191,3 +191,13 @@ Project README at [`Projects/Underreign/README.md`](../Projects/Underreign/READM
 ### Tools/UnderreignDispatchGate
 
 An independent, cooperative dispatch and closure gate for Claude Code directed Underreign work (DEC-041, UD-25), copied from the Claude-directed gate design and sharing nothing with other projects. See [`Tools/UnderreignDispatchGate/README.md`](../Tools/UnderreignDispatchGate/README.md).
+
+## Inkweight
+
+### Projects/Inkweight
+
+Project README at [`Projects/Inkweight/README.md`](../Projects/Inkweight/README.md) (DEC-044). Inkweight keeps its own operational state ([`WORK_STATE.md`](../Projects/Inkweight/Docs/WORK_STATE.md), [`CURRENT_HANDOVER.md`](../Projects/Inkweight/Docs/CURRENT_HANDOVER.md)), [`GAME_CONCEPT.md`](../Projects/Inkweight/Docs/GAME_CONCEPT.md), [`INK_RULES_V1.md`](../Projects/Inkweight/Docs/INK_RULES_V1.md), [`DISCOVERY_DECISIONS.md`](../Projects/Inkweight/Docs/DISCOVERY_DECISIONS.md) and [`OPEN_DECISIONS.md`](../Projects/Inkweight/Docs/OPEN_DECISIONS.md).
+
+### Tools/InkweightDispatchGate
+
+An independent, cooperative dispatch and closure gate for Claude Code directed Inkweight work (DEC-044), copied from `Tools/UnderreignDispatchGate` and sharing nothing with other projects. See [`Tools/InkweightDispatchGate/README.md`](../Tools/InkweightDispatchGate/README.md).
