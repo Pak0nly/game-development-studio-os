@@ -108,7 +108,17 @@ scope: `Projects/Inkweight/Source/Shared`,
   latest after 100 minutes, with an honest list of what is unfinished. Fixes
   and golden coverage come before balance; a clear measured verdict comes
   before a perfect number.
-- Do NOT commit or push.
+- Isolated work copy: another Worker is still building the browser app on the
+  version 1 core in the main checkout, so you work in your own Git worktree
+  (the task tooling gives you one, based on the dispatch HEAD). Run the
+  verify-worker command in the main checkout
+  `/home/user/game-development-studio-os` (read-only there), then change files
+  only inside your worktree, at the same relative paths. When you are done,
+  commit your result once on your worktree branch (local commit, message
+  "Inkweight: INK-CORE-V2 Worker result"), report the branch name and commit,
+  and never push, merge or touch the main checkout. The Director merges.
+  The browser app sources in your worktree are an older snapshot; read them
+  only to see how the core API is used.
 
 ## Success
 
