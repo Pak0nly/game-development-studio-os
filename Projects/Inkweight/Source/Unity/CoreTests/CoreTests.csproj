@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Plain console test runner for the engine-free Inkweight core.
+       It compiles the very same source files Unity compiles (no copy).
+       No NuGet package is referenced, so no package download is needed. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <!-- Unity 6 compiles C# 9; a newer language feature in the core fails here. -->
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>Inkweight.CoreTests</RootNamespace>
+    <AssemblyName>Inkweight.CoreTests</AssemblyName>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="../Inkweight/Assets/Inkweight/Core/**/*.cs" LinkBase="Core" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,151 @@
+// Built-in test scribbles. Hand-written cell data, deliberately rough: they
+// are placeholders so that bots have something to fight with before the
+// player has drawn anything. The game shows them with a "Platzhalter" badge.
+// '.' empty, 1 Black, 2 Ember, 3 Tide, 4 Moss. The art is centred on the
+// 32 x 32 canvas; the top is the front.
+
+import { W, H } from './tuning.js';
+
+const BLOCK = [
+  '..111111111..',
+  '.11111111111.',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '.11111111111.',
+  '..111111111..',
+];
+
+const SPEAR = [
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '1111111',
+  '..111..',
+  '..111..',
+  '..111..',
+];
+
+const URCHIN = [
+  '...1...1...1...',
+  '...1...1...1...',
+  '...1...1...1...',
+  '...333333333...',
+  '...333333333...',
+  '111333333333111',
+  '...333333333...',
+  '111333333333111',
+  '...333333333...',
+  '...333333333...',
+];
+
+const WORM = [
+  '4444444444....',
+  '.........4....',
+  '.........4....',
+  '....444444....',
+  '....4.........',
+  '....4.........',
+  '....4444444444',
+  '.............4',
+  '.............4',
+  '...44444444444',
+];
+
+const RAM = [
+  '1111111111111111111',
+  '1111111111111111111',
+  '1111111111111111111',
+  '....22222222222....',
+  '.....222222222.....',
+  '......2222222......',
+  '.......22222.......',
+  '........222........',
+  '........222........',
+  '........222........',
+];
+
+const SQUID = [
+  '..4444444..',
+  '.444444444.',
+  '44444444444',
+  '44444444444',
+  '44444444444',
+  '.444444444.',
+  '.1..1.1..1.',
+  '.1..1.1..1.',
+  '.1..1.1..1.',
+  '.1..1.1..1.',
+  '.1..1.1..1.',
+];
+
+const NEEDLE = ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'];
+
+const PEBBLE = [
+  '.1111.',
+  '111111',
+  '111111',
+  '111111',
+  '111111',
+  '.1111.',
+];
+
+const CROSS = [
+  '....1....',
+  '....1....',
+  '....1....',
+  '....1....',
+  '111111111',
+  '....1....',
+  '....1....',
+  '....1....',
+  '....1....',
+];
+
+function place(art) {
+  const cells = new Array(W * H);
+  for (let i = 0; i < W * H; i++) cells[i] = 0;
+  const h = art.length;
+  const w = art[0].length;
+  const ox = Math.floor((W - w) / 2);
+  const oy = Math.floor((H - h) / 2);
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const ch = art[y].charCodeAt(x) - 48;
+      if (ch >= 1 && ch <= 4) cells[(oy + y) * W + ox + x] = ch;
+    }
+  }
+  return cells;
+}
+
+export const SCRIBBLE_FIGURES = [
+  { name: 'Klotz', cells: place(BLOCK) },
+  { name: 'Speer', cells: place(SPEAR) },
+  { name: 'Stachel', cells: place(URCHIN) },
+  { name: 'Wurm', cells: place(WORM) },
+  { name: 'Ramme', cells: place(RAM) },
+  { name: 'Qualle', cells: place(SQUID) },
+];
+
+export const SCRIBBLE_WEAPONS = [
+  { name: 'Nadel', cells: place(NEEDLE) },
+  { name: 'Kiesel', cells: place(PEBBLE) },
+  { name: 'Kreuz', cells: place(CROSS) },
+];

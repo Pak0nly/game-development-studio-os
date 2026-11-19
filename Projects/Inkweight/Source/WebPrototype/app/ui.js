@@ -1,0 +1,88 @@
+// Small DOM helpers shared by all screens.
+
+export const $ = (id) => document.getElementById(id);
+
+export function el(tag, props, children) {
+  const n = document.createElement(tag);
+  if (props) {
+    for (const k of Object.keys(props)) {
+      if (k === 'class') n.className = props[k];
+      else if (k === 'text') n.textContent = props[k];
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), props[k]);
+      else n.setAttribute(k, props[k]);
+    }
+  }
+  if (children) for (const c of children) if (c) n.append(c);
+  return n;
+}
+
+const SCREENS = ['scrStart', 'scrRingSetup', 'scrPass', 'scrDraw', 'scrFight', 'scrSoloIntro', 'scrShop', 'scrGallery'];
+let current = 'scrStart';
+const leaveHooks = {};
+
+export function onLeave(id, fn) { leaveHooks[id] = fn; }
+export function currentScreen() { return current; }
+export function showScreen(id) {
+  if (current !== id && leaveHooks[current]) leaveHooks[current]();
+  for (const s of SCREENS) $(s).hidden = s !== id;
+  current = id;
+  $(id).scrollTop = 0;
+}
+
+const motionQuery = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : null;
+export function reducedMotion() { return !!(motionQuery && motionQuery.matches); }
+
+// Colour tokens are defined once in the stylesheet; canvases read them here.
+let tokens = null;
+export function colours() {
+  if (tokens) return tokens;
+  const cs = getComputedStyle(document.documentElement);
+  const g = (n) => cs.getPropertyValue(n).trim();
+  tokens = {
+    paper: g('--paper'), paperLight: g('--paper-light'), paperDeep: g('--paper-deep'),
+    speck: g('--paper-speck'), rule: g('--rule-line'),
+    ink: g('--ink'), inkSoft: g('--ink-soft'), inkFaint: g('--ink-faint'),
+    ember: g('--ember'), tide: g('--tide'), moss: g('--moss'), onInk: g('--on-ink'),
+  };
+  tokens.cell = [null, tokens.ink, tokens.ember, tokens.tide, tokens.moss];
+  return tokens;
+}
+
+export const ELEMENT_NAMES = ['Neutral', 'Schwarz', 'Glut', 'Flut', 'Moos'];
+
+// A button that needs a second tap within a short time ("Sicher?").
+export function twoTap(button, action, askText) {
+  let armed = false;
+  let timer = 0;
+  let label = '';
+  button.addEventListener('click', () => {
+    if (armed) {
+      clearTimeout(timer);
+      armed = false;
+      button.textContent = label;
+      action();
+      return;
+    }
+    armed = true;
+    label = button.textContent;
+    button.textContent = askText || 'Sicher?';
+    timer = setTimeout(() => { armed = false; button.textContent = label; }, 2500);
+  });
+}
+
+// Small deterministic hash for jitter (visual only, not the core generator).
+export function hash3(a, b, c) {
+  let h = Math.imul(a | 0, 374761393) ^ Math.imul(b | 0, 668265263) ^ Math.imul(c | 0, 2147483647);
+  h = Math.imul(h ^ (h >>> 13), 1274126177);
+  h ^= h >>> 16;
+  return (h >>> 0) / 4294967296;
+}
+
+export function fitCanvas(canvas, cssW, cssH) {
+  const dpr = Math.min(3, window.devicePixelRatio || 1);
+  const w = Math.max(1, Math.round(cssW * dpr));
+  const h = Math.max(1, Math.round(cssH * dpr));
+  if (canvas.width !== w) canvas.width = w;
+  if (canvas.height !== h) canvas.height = h;
+  return dpr;
+}

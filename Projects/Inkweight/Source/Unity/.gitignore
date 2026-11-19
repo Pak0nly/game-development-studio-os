@@ -1,0 +1,17 @@
+# The repository root ignores *.csproj because Unity generates such files.
+# These are hand-written and must be kept:
+!CoreTests/CoreTests.csproj
+!EngineStubs/RuntimeStubCheck.csproj
+
+# .NET build output of the two projects above
+CoreTests/bin/
+CoreTests/obj/
+EngineStubs/bin/
+EngineStubs/obj/
+
+# Unity generated folders inside the project (also ignored by the root file)
+Inkweight/Library/
+Inkweight/Temp/
+Inkweight/Logs/
+Inkweight/UserSettings/
+Inkweight/obj/
