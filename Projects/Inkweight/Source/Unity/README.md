@@ -4,7 +4,8 @@ Work Order INK-UNITY-V1. Everything in this folder was written and tested
 **without the Unity Editor** (it is not available in the cloud container). The
 rules core is proven against the golden files outside Unity. The Unity
 presentation layer has only been compiled and smoke-run against hand-written
-stand-ins for the engine, which says nothing about real engine behaviour. The
+stubs of the engine (not against Unity), which says nothing about real engine
+behaviour. The
 first opening in the Editor is therefore the real test, and this page says what
 to look at and what to report back.
 
@@ -18,7 +19,7 @@ to look at and what to report back.
 | `Inkweight/Assets/Inkweight/Runtime/` | the Unity presentation layer; assembly `Inkweight.Runtime` |
 | `Inkweight/Packages/manifest.json` | two built-in modules: immediate-mode GUI and the old Input Manager |
 | `CoreTests/` | .NET console test runner for the core (no Unity needed) |
-| `EngineStubs/`, `check_runtime_against_stubs.sh` | compile and smoke check of the Runtime files against engine stand-ins (not Unity) |
+| `EngineStubs/`, `check_runtime_against_stubs.sh` | compile and smoke check of the Runtime files against engine stubs (not Unity) |
 
 There are no scenes, prefabs, imported assets, `.meta` files, `ProjectSettings`
 or `ProjectVersion.txt`. Unity creates all of these on first opening. Commit the
@@ -37,8 +38,19 @@ or `ProjectVersion.txt`. Unity creates all of these on first opening. Commit the
 4. Look at the **Console** window first. It must show no red compile errors.
 5. Press **Play**. No scene has to be saved or set up.
 
-If Unity asks about the Input System or "active input handling", either answer
-works; see "Input" below.
+If Unity Hub refuses the folder because it has no `ProjectSettings` (not
+tested here): create a new empty project with the chosen Unity version, best
+with a Built-in Render Pipeline 2D template (a Universal 2D template should
+also work but is one more untested variable), copy the folder
+`Inkweight/Assets/Inkweight` into its `Assets` folder, check that its
+`Packages/manifest.json` contains the two lines of this project's manifest
+(`com.unity.modules.imgui`, `com.unity.modules.inputlegacy`; the templates
+normally have them), and press Play in any scene. The code needs nothing else
+from the project.
+
+If Unity asks about the Input System or "active input handling", every answer
+is meant to work (old, new or both, with or without the Input System package);
+see "Input" below. This is checked against stubs only.
 
 ## What should happen on Play
 
@@ -118,6 +130,10 @@ Human has not chosen yet, so `InkInputReader.cs` does this:
   define in the assembly definition only when the package is installed) uses
   `UnityEngine.InputSystem`.
 
+Type names that exist in both `UnityEngine` and `UnityEngine.InputSystem` (for
+example `TouchPhase`) are written fully qualified in that file; the short name
+is a compile error (CS0104) when both backends are active.
+
 The package manifest does not add the Input System package: the prototype does
 not need it, and adding it triggers a restart dialogue.
 
@@ -129,8 +145,17 @@ Needs the .NET 8 SDK (`dotnet`), nothing else; no package is downloaded.
 cd Projects/Inkweight/Source/Unity
 dotnet run --project CoreTests                  # golden vectors and traces, bit for bit
 dotnet run --project CoreTests -- --generate    # after a tuning or golden change
-./check_runtime_against_stubs.sh                # Runtime files against engine stand-ins
+./check_runtime_against_stubs.sh                # Runtime files against engine stubs (not Unity)
 ```
+
+What `check_runtime_against_stubs.sh` can and cannot find: it compiles the
+Runtime files against `EngineStubs/UnityEngineStubs.cs` in four input variants
+and runs a headless smoke test, so it finds C# errors, wrong use of the core
+and errors in the game's own flow. It cannot find a wrong engine member name
+(the stubs were written from memory), wrong engine behaviour, or a name clash
+with a real engine or package type that the stubs do not list. The first
+review found exactly such a clash (`TouchPhase`); the stubs now list the
+clashing names known to us, but not the full namespaces.
 
 `CoreTests` compiles the very same source files that Unity compiles (no copy),
 with the C# language version limited to 9. It checks every field of the 43

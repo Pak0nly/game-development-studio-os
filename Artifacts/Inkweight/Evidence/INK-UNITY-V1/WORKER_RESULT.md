@@ -120,7 +120,8 @@ STUB CHECK: PASS (4 variants compiled and smoke-run against stubs, not against U
 ```
 
 (Frame counts differ per run because the game seeds matches from the clock.)
-Each variant builds with 0 warnings, warnings as errors. Negative check: with
+"Build succeeded" here always means: built against the hand-written stubs, not
+against Unity. Each variant builds with 0 warnings, warnings as errors. Negative check: with
 `Cam.orthographic` misspelled the script printed `BUILD FAILED` for all four
 variants and `STUB CHECK: FAIL`; the file was restored and the check passes.
 
@@ -138,7 +139,7 @@ boss.
 | Core has no engine reference, no `float`, only `Math.Sqrt` / `Math.Floor` | Yes, by a test over the source text and by compiling without any engine | - |
 | Core compiles as C# 9 | Yes (`LangVersion` 9.0) | That every library call exists in Unity's .NET Standard 2.1 profile: not compiled against it (the reference pack would be a download). Used: `System`, `System.Collections.Generic`, `System.Text`, `System.Globalization` basics only |
 | Tuning read from the shared file, nothing hard-coded | Yes; stale generated file is detected | - |
-| Runtime layer: C# syntax, use of the core API | Yes, compiled in 4 input variants against stand-ins | Compilation against the real engine |
+| Runtime layer: C# syntax, use of the core API | Yes, compiled in 4 input variants against stubs only | Compilation against the real engine; name clashes with real engine or package types that the stubs do not list (see Correction round 1) |
 | Runtime layer: own control flow (menus, rounds, shop, boss, end screens) | Yes, headless smoke run without exceptions | Everything visible: layout, text size, colours, sprite orientation, camera framing |
 | Engine member names and signatures | No (stand-ins were written from memory, an error made twice would pass) | Needs the Editor |
 | Start without a scene (`RuntimeInitializeOnLoadMethod`) | No | Needs the Editor |
@@ -263,3 +264,62 @@ for the Director or the Reviewer, none of them changed by this order:
   without an Editor; its limit is exactly the list in section 4.
 - `Docs/WORK_STATE.md` and `Docs/CURRENT_HANDOVER.md` were not touched (outside
   the allowed paths of this order; left to the Director).
+
+## Correction round 1 (after independent review FAIL, 2026-11-19 about 23:45 UTC)
+
+Review: `REVIEW.md` in this folder (not edited). Same Work Order, same allowed
+paths, no commit, no push. Core files, `CoreTests` and the generated file are
+unchanged.
+
+| Finding | Change |
+|---|---|
+| B1 blocker | `Runtime/InkInputReader.cs` lines 111-117: `UnityEngine.Touch`, `UnityEngine.TouchPhase.Ended` / `.Canceled` and `UnityEngine.Input.touchCount` / `.GetTouch` are now fully qualified, with a comment why. Lines 100-101 and 109-110: `UnityEngine.Input.GetAxisRaw` / `.GetKey` qualified as well. Line 72 and 84-88: the private helper `Key(...)` was renamed `Held(...)`, because the Input System package has a type `UnityEngine.InputSystem.Key` (it compiled against the extended stubs either way; renamed to leave no doubt). Search of all Runtime files for other names that exist in both namespaces: only `InkInputReader.cs` imports `UnityEngine.InputSystem`; the type names it uses unqualified are `Vector2`, `Screen`, `KeyCode`, `Event`, `EventType`, `HashSet`, `List`, `InkPointer`, plus `Keyboard`, `Gamepad`, `Touchscreen`. To my knowledge none of the first group exists in `UnityEngine.InputSystem`; this is from memory, not from the package source. |
+| I1 | `EngineStubs/UnityEngineStubs.cs`: `UnityEngine.InputSystem` now also declares `TouchPhase`, `InputControl`, `InputDevice`, `Pointer`, `Mouse`, `Pen`, `Joystick`, `Sensor`, `Accelerometer`, `Gyroscope`, `Key`, `InputAction`, `InputActionAsset`, `InputBinding`, `InputValue`, `PlayerInput`, `InputSystem`; `UnityEngine` now also declares `Gyroscope` (exists in both). The header comment says the list is from memory and incomplete. |
+| I2 | `README.md`, section "Open the project": fallback when Unity Hub refuses a folder without `ProjectSettings` (new empty project, copy `Assets/Inkweight`, check the two manifest lines). |
+| I3, M6 | `README.md`: "against stubs (not Unity)" wording; the input sentence now says every answer is meant to work and that this is checked against stubs only; new paragraph on what the stub check can and cannot find (member names, engine behaviour, name clashes with unlisted types). This file: section 3 and the table in section 4 corrected in the same sense. |
+| M3 | `Runtime/InkArenaView.cs` lines 63-66 and 132: `Sprite.Create(texture, rect, pivot, pixelsPerUnit, 0, SpriteMeshType.FullRect)` for the disc and the figure sprites. I am sure of this six-argument overload and of `SpriteMeshType.FullRect`; it is still unverified against the engine like every other member. Stub updated to exactly this overload. |
+| M5 | `Runtime/InkArenaView.cs` lines 221-224: comment that `WorldToGui` assumes a camera centred on the origin. |
+| M1, M2, M4 | no change (already named as unverified in the README). |
+
+Proof that the extended stubs catch the blocker: scratch copy outside the
+repository with the **new** stubs and the **old** line 113
+(`if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled) continue;`),
+`./check_runtime_against_stubs.sh`:
+
+```text
+== input variant: Legacy
+RESULT: PASS (stub smoke test, 1567 frames)
+== input variant: InputSystem
+RESULT: PASS (stub smoke test, 1536 frames)
+== input variant: Both
+Inkweight/Assets/Inkweight/Runtime/InkInputReader.cs(113,32): error CS0104: 'TouchPhase' is an ambiguous reference between 'UnityEngine.InputSystem.TouchPhase' and 'UnityEngine.TouchPhase'
+Inkweight/Assets/Inkweight/Runtime/InkInputReader.cs(113,63): error CS0104: 'TouchPhase' is an ambiguous reference between 'UnityEngine.InputSystem.TouchPhase' and 'UnityEngine.TouchPhase'
+BUILD FAILED for Both
+== input variant: None
+RESULT: PASS (stub smoke test, 1411 frames)
+STUB CHECK: FAIL
+```
+
+After the fix, from a clean build (full text in `core_tests_output_round1.txt`
+and `stub_check_output_round1.txt`):
+
+```text
+dotnet run --project CoreTests
+  self check passed, 111 checkpoints bit-identical
+ok    self check as run inside Unity (embedded tuning and hashes)
+RESULT: PASS (10694 checks, 0 failed)
+exit code: 0
+
+./check_runtime_against_stubs.sh
+== input variant: Legacy        0 Warning(s)  Build succeeded.  RESULT: PASS (stub smoke test, 1572 frames)
+== input variant: InputSystem   0 Warning(s)  Build succeeded.  RESULT: PASS (stub smoke test, 1608 frames)
+== input variant: Both          0 Warning(s)  Build succeeded.  RESULT: PASS (stub smoke test, 1511 frames)
+== input variant: None          0 Warning(s)  Build succeeded.  RESULT: PASS (stub smoke test, 1510 frames)
+STUB CHECK: PASS (4 variants compiled and smoke-run against stubs, not against Unity)
+exit code: 0
+```
+
+(The stub check lines are condensed to one line per variant.) `bin` and `obj`
+were deleted afterwards. Still true: nothing was compiled against Unity, and the
+stub list of clashing names is incomplete, so a further clash of this kind
+cannot be ruled out before the first opening in the Editor.

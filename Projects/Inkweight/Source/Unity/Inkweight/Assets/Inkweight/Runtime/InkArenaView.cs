@@ -60,7 +60,10 @@ namespace Inkweight.Runtime
             }
             discTexture.SetPixels32(px);
             discTexture.Apply(false);
-            discSprite = Sprite.Create(discTexture, new Rect(0f, 0f, DiscSize, DiscSize), new Vector2(0.5f, 0.5f), DiscSize);
+            // FullRect: a plain quad. The default (Tight) would trace an outline
+            // mesh from the alpha channel at run time and could trim the soft edge.
+            discSprite = Sprite.Create(discTexture, new Rect(0f, 0f, DiscSize, DiscSize), new Vector2(0.5f, 0.5f), DiscSize,
+                0, SpriteMeshType.FullRect);
 
             rim = NewRenderer("Rim", -30);
             rim.sprite = discSprite;
@@ -126,7 +129,7 @@ namespace Inkweight.Runtime
             tex.SetPixels32(px);
             tex.Apply(false);
             Vector2 pivot = new Vector2((float)(fig.Cx / fig.W), 1f - (float)(fig.Cy / fig.H));
-            s = Sprite.Create(tex, new Rect(0f, 0f, fig.W, fig.H), pivot, 1f);
+            s = Sprite.Create(tex, new Rect(0f, 0f, fig.W, fig.H), pivot, 1f, 0, SpriteMeshType.FullRect);
             figureSprites[fig] = s;
             figureTextures.Add(tex);
             return s;
@@ -215,6 +218,10 @@ namespace Inkweight.Runtime
         }
 
         // Core position to virtual GUI coordinates (for bars over figures).
+        // Assumes the camera is centred on the world origin and not rotated,
+        // which holds because both arenas are centred at (0, 0) in the core.
+        // If the camera ever moves or zooms around another point, subtract its
+        // position here (or use Camera.WorldToScreenPoint).
         public Vector2 WorldToGui(double x, double y, float guiScale)
         {
             float halfH = Cam.orthographicSize;

@@ -7,8 +7,10 @@
 // API. A successful build against these stubs proves C# syntax, the use of the
 // Inkweight core API and the game's own control flow. It proves NOTHING about
 // real engine behaviour, and a member that is spelled wrong here in the same
-// way as in the Runtime code would not be noticed. This folder is outside
-// Assets and is never compiled by Unity.
+// way as in the Runtime code would not be noticed. The stubs also do not model
+// the full contents of the real namespaces: a name clash with a real type that
+// is missing here (see the list in UnityEngine.InputSystem below) would not be
+// noticed either. This folder is outside Assets and is never compiled by Unity.
 using System;
 using System.Collections.Generic;
 
@@ -181,9 +183,11 @@ namespace UnityEngine
         public void Apply(bool updateMipmaps) { }
     }
 
+    public enum SpriteMeshType { FullRect = 0, Tight = 1 }
+
     public sealed class Sprite : Object
     {
-        public static Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit)
+        public static Sprite Create(Texture2D texture, Rect rect, Vector2 pivot, float pixelsPerUnit, uint extrude, SpriteMeshType meshType)
         {
             if (texture == null) throw new ArgumentNullException("texture");
             return new Sprite();
@@ -296,6 +300,9 @@ namespace UnityEngine
         public TouchPhase phase;
     }
 
+    // Exists in UnityEngine and (as another type) in UnityEngine.InputSystem.
+    public sealed class Gyroscope { }
+
     public static class Input
     {
         public static int touchCount { get { return 0; } }
@@ -339,6 +346,29 @@ namespace UnityEngine.InputSystem
 {
     using UnityEngine.InputSystem.Controls;
     using UnityEngine.InputSystem.Utilities;
+
+    // Public names of the real namespace that the Runtime does NOT use. They
+    // are here only so that an unqualified name which also exists in
+    // UnityEngine (TouchPhase, Gyroscope) or in the game's own code produces
+    // the same CS0104 ambiguity error against the stubs as against the real
+    // package. The list is from memory and is not complete.
+    public enum TouchPhase { None, Began, Moved, Ended, Canceled, Stationary }
+    public class InputControl { }
+    public class InputDevice : InputControl { }
+    public class Pointer : InputDevice { }
+    public class Mouse : Pointer { }
+    public class Pen : Pointer { }
+    public class Joystick : InputDevice { }
+    public class Sensor : InputDevice { }
+    public class Accelerometer : Sensor { }
+    public class Gyroscope : Sensor { }
+    public enum Key { None }
+    public class InputAction { }
+    public class InputActionAsset { }
+    public class InputBinding { }
+    public class InputValue { }
+    public class PlayerInput { }
+    public static class InputSystem { }
 
     public class Keyboard
     {

@@ -69,7 +69,7 @@ namespace Inkweight.Runtime
             Dash = false;
         }
 
-        private bool Key(KeyCode k) { return keys.Contains(k); }
+        private bool Held(KeyCode k) { return keys.Contains(k); }
 
         // Call once per Update. guiScale = screen pixels per virtual GUI unit.
         public void Poll(float guiScale)
@@ -81,11 +81,11 @@ namespace Inkweight.Runtime
             float x = 0f;
             float y = 0f;
             bool dash = false;
-            if (Key(KeyCode.A) || Key(KeyCode.LeftArrow)) x -= 1f;
-            if (Key(KeyCode.D) || Key(KeyCode.RightArrow)) x += 1f;
-            if (Key(KeyCode.W) || Key(KeyCode.UpArrow)) y -= 1f;
-            if (Key(KeyCode.S) || Key(KeyCode.DownArrow)) y += 1f;
-            if (Key(KeyCode.Space) || Key(KeyCode.LeftShift)) dash = true;
+            if (Held(KeyCode.A) || Held(KeyCode.LeftArrow)) x -= 1f;
+            if (Held(KeyCode.D) || Held(KeyCode.RightArrow)) x += 1f;
+            if (Held(KeyCode.W) || Held(KeyCode.UpArrow)) y -= 1f;
+            if (Held(KeyCode.S) || Held(KeyCode.DownArrow)) y += 1f;
+            if (Held(KeyCode.Space) || Held(KeyCode.LeftShift)) dash = true;
 
             float h = Screen.height;
             if (guiScale <= 0f) guiScale = 1f;
@@ -97,8 +97,8 @@ namespace Inkweight.Runtime
                 {
                     // The default Input Manager axes cover the arrow keys, WASD
                     // and the first stick of every joystick.
-                    float ax = Input.GetAxisRaw("Horizontal");
-                    float ay = Input.GetAxisRaw("Vertical");
+                    float ax = UnityEngine.Input.GetAxisRaw("Horizontal");
+                    float ay = UnityEngine.Input.GetAxisRaw("Vertical");
                     if (ax * ax + ay * ay > 0.04f) { x += ax; y -= ay; }
                 }
                 catch (System.Exception)
@@ -106,11 +106,15 @@ namespace Inkweight.Runtime
                     legacyAxesBroken = true; // the project renamed or removed the default axes
                 }
             }
-            if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.JoystickButton0)) dash = true;
-            for (int i = 0; i < Input.touchCount; i++)
+            if (UnityEngine.Input.GetKey(KeyCode.Space) || UnityEngine.Input.GetKey(KeyCode.LeftShift)
+                || UnityEngine.Input.GetKey(KeyCode.JoystickButton0)) dash = true;
+            // Fully qualified on purpose: the Input System package has its own
+            // UnityEngine.InputSystem.TouchPhase, so the short name is ambiguous
+            // (CS0104) when both backends are active and the package is installed.
+            for (int i = 0; i < UnityEngine.Input.touchCount; i++)
             {
-                Touch t = Input.GetTouch(i);
-                if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled) continue;
+                UnityEngine.Touch t = UnityEngine.Input.GetTouch(i);
+                if (t.phase == UnityEngine.TouchPhase.Ended || t.phase == UnityEngine.TouchPhase.Canceled) continue;
                 InkPointer p;
                 p.Id = t.fingerId;
                 p.Pos = new Vector2(t.position.x / guiScale, (h - t.position.y) / guiScale);
