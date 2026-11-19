@@ -31,6 +31,8 @@ body {
   font-size: 16px;
   line-height: 1.35;
   overflow-x: hidden;
+  overscroll-behavior: none;
+  -webkit-touch-callout: none;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
@@ -181,7 +183,8 @@ select {
 @keyframes pop { 0% { transform: scale(1.35); } 100% { transform: scale(1); } }
 .draw-extra:empty { display: none; }
 .stakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.stakes .tool { min-height: 40px; white-space: normal; line-height: 1.1; font-size: 0.78rem; }
+.stakes .tool { min-height: 44px; white-space: normal; line-height: 1.15; font-size: 0.85rem; }
+.stakes .tool small { display: block; font-family: var(--font-body); font-size: 0.7rem; }
 
 /* overlays */
 .layer {

@@ -307,7 +307,7 @@ function render(t) {
     const b = bodies[i];
     const v = f.vis[i];
     if (!b.alive) continue;
-    const sr = Math.sqrt(b.fig.count) * 0.62 + 0.8;
+    const sr = Math.sqrt(b.fig.count) * 0.5 + 0.8;
     g.globalAlpha = 0.1;
     g.beginPath();
     g.ellipse(cam.cx + (b.x + 0.4 + v.lift * 0.6) * cam.s, cam.cy + (b.y + 0.7 + v.lift * 1.3) * cam.s,

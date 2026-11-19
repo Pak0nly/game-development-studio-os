@@ -19,7 +19,17 @@ Reviewer task: a1f80370da7e859da
 Candidate identity: 96e1ed3753243700978ade41a4aad5d691044344e90f039b2cc52501ff3e9352
 Closure receipt: d5f182ca846753b80e3b714055e8a13ea39673c9205fe73f88e9aba2cb0e0d73
 
-Running: INK-WEB-V1 and INK-UNITY-V1 (dispatched, Workers not yet returned).
+Closed: INK-UNITY-V1
+Independent review verdict: PASS
+Worker task: a72806bdd69b8c7ae
+Reviewer task: ac672cd011c46a137
+Candidate identity: 0421bd209dd886824dcdf3ea8f769a2f2d3a4765bfe2a79e6f4f7ff60a334c3f
+Closure receipt: 47cec3eb698ed0930bcf1f8a4d34c5396e5c2315ef6934090b72dcbea9ddb4df
 
-Next action: wait for both Workers, review and close them; then the core
+The Unity layer was never compiled against Unity (stubs only); the Human opens
+it first, guide in `Source/Unity/README.md`.
+
+Running: INK-WEB-V1 (dispatched, Worker not yet returned).
+
+Next action: wait for the browser prototype Worker, review and close it; then the core
 correction and balance order.

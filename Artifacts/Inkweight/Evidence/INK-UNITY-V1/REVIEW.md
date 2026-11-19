@@ -1,6 +1,118 @@
 # INK-UNITY-V1 Independent Review
 
-Independent review verdict: FAIL
+Independent review verdict: PASS
+
+## Re-review after correction round 1
+
+The same independent Reviewer (QA Lead) did this re-review on 2026-11-19,
+about 23:50 UTC, by inspection and runs only. I changed no candidate file.
+Candidate: commit `c05a89c` ("INK-UNITY-V1 correction round 1"). The working
+tree has no further changes under `Projects/Inkweight/Source/Unity`. Compared
+with `7ae33cd`, the diff touches only `Runtime/InkInputReader.cs`,
+`Runtime/InkArenaView.cs`, `EngineStubs/UnityEngineStubs.cs` and `README.md`,
+plus the evidence files `WORKER_RESULT.md`, `core_tests_output_round1.txt` and
+`stub_check_output_round1.txt`. The core, `CoreTests` and the generated file
+are unchanged.
+
+### Reruns (real output)
+
+```text
+dotnet run --project CoreTests
+ok    solo trace solo_brawl_full_run (51 checkpoints, bit for bit)
+  self check passed, 111 checkpoints bit-identical
+ok    self check as run inside Unity (embedded tuning and hashes)
+RESULT: PASS (10694 checks, 0 failed)
+
+./check_runtime_against_stubs.sh
+== input variant: Legacy       0 Warning(s)  RESULT: PASS (stub smoke test, 1475 frames)
+== input variant: InputSystem  0 Warning(s)  RESULT: PASS (stub smoke test, 1475 frames)
+== input variant: Both         0 Warning(s)  RESULT: PASS (stub smoke test, 1542 frames)
+== input variant: None         0 Warning(s)  RESULT: PASS (stub smoke test, 1575 frames)
+STUB CHECK: PASS (4 variants compiled and smoke-run against stubs, not against Unity)
+exit 0
+```
+
+I deleted `bin`/`obj` afterwards.
+
+### Corrections checked
+
+- **B1 closed.** In `InkInputReader.cs` lines 100-117, the legacy block now
+  uses `UnityEngine.Input`, `UnityEngine.Touch` and
+  `UnityEngine.TouchPhase.Ended/.Canceled`, fully qualified. Inside
+  `namespace Inkweight.Runtime`, the name `UnityEngine` resolves to the global
+  namespace, because no `Inkweight.UnityEngine` exists. The helper was renamed
+  from `Key` to `Held`, which avoids any confusion with
+  `UnityEngine.InputSystem.Key`. A member named `Key` would not have clashed
+  anyway, so this is defensive.
+- **Remaining unqualified names in the file that imports both namespaces:**
+  `Vector2`, `Screen`, `KeyCode`, `Event`, `EventType`, `HashSet`, `List`,
+  `InkPointer`, `Keyboard`, `Gamepad`, `Touchscreen`. To my knowledge none of
+  the `UnityEngine` ones has a twin directly in `UnityEngine.InputSystem`
+  (input events live in `UnityEngine.InputSystem.LowLevel`, which is not
+  imported). The other Runtime files do not import `UnityEngine.InputSystem`.
+  I see no remaining certain clash. A clash with a public package type unknown
+  to me cannot be ruled out without the Editor, and the README now says so.
+- **I1 closed.** The stubs now declare `UnityEngine.InputSystem.TouchPhase`
+  and other package names, plus `UnityEngine.Gyroscope`. The header comment
+  says the list is incomplete. The Worker's scratch proof (old line 113 plus
+  the new stubs gives CS0104 in the Both variant) matches my own reproduction
+  from the first review.
+- **M3: the six-argument `Sprite.Create(texture, rect, pivot, pixelsPerUnit,
+  0, SpriteMeshType.FullRect)` call is correct.**
+  - Lines 65-66 and 132 make this call. The Scripting API documents this
+    overload (search snippets of the 2018.4/2019.x pages show
+    `Create(Texture2D, Rect, Vector2, float, uint, SpriteMeshType)`; the
+    Unity 6 pages list the longer form with `Vector4 border, bool
+    generateFallbackPhysicsShape`).
+  - Whether Unity 6 declares the shorter forms as separate overloads or as
+    optional parameters, the six-argument call binds either way.
+  - The literal `0` converts to `uint` implicitly as a constant.
+  - `SpriteMeshType.FullRect` is in `UnityEngine`. The stub values
+    (FullRect = 0, Tight = 1) match.
+  - Status: confirmed by documentation snippets for the signature;
+    page-level confirmation for 6000.3 was not possible, because
+    docs.unity3d.com and docs.unity.com are blocked in this session.
+- **M5 closed.** `InkArenaView.cs` lines 221-224 now carry the comment on the
+  camera-at-origin assumption.
+- **I2, I3, M6 closed.**
+  - `README.md` now has the Hub fallback: a new empty project, copy
+    `Assets/Inkweight`, check the two manifest lines.
+  - The input sentence now says it is "checked against stubs only".
+  - A new paragraph says what the stub check can and cannot find, including
+    name clashes with types it does not list.
+  - Section 4 of `WORKER_RESULT.md` was corrected in the same sense.
+
+### Remaining findings
+
+- **Minor R1:** `WORKER_RESULT.md` section 5 (engine API list) still names
+  `Sprite.Create(Texture2D, Rect, Vector2, float)` and does not list
+  `SpriteMeshType.FullRect`. It should name the six-argument overload. This is
+  a documentation precision issue and changes no verdict.
+- **Minor, unchanged:** M1 (possible yellow Console warning for the absent
+  `Unity.InputSystem` reference), M2 (mouse position under scaled
+  `GUI.matrix`) and M4 (minimal module set). All three are honestly named as
+  unverified.
+- Still true, and honestly stated:
+  - Nothing was compiled against the real engine.
+  - Bit-exactness is proven on .NET 8 x64 only. The in-game self check shows
+    it per build.
+
+### Basis of PASS
+
+- The C# core port is proven bit for bit against the golden files. The first
+  review's negative probes showed the comparison reacts to a one-ulp golden
+  change and to rounding-order changes alone. The core is unchanged since.
+- I can identify no certain compile error or first-Play failure in the Unity
+  layer, in any of the four input configurations.
+- Every unverified part is named in the README and in the Worker result.
+
+The first review follows below as history.
+
+---
+
+# History: first review (before correction round 1)
+
+First review verdict (superseded): FAIL
 
 Reviewer: separate Claude Code subagent, role QA Lead. I did not build this
 work. Review time 2026-11-19, about 23:15 to 23:45 UTC. Candidate: working tree

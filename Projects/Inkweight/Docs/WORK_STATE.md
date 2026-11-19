@@ -28,13 +28,28 @@ through each other while dashing (I1); golden traces miss some branches (I2);
 a sharp touch by a heavy figure does less damage than a blunt one (I3); eight
 minor points.
 
+The Unity project exists under `Source/Unity`: the C# core port matches the
+JavaScript core bit for bit on .NET 8 (10694 checks against the golden files).
+The Unity presentation layer was compiled only against hand-written engine
+stubs, never against Unity; the first review failed on a name clash with the
+Input System package, which correction round 1 fixed. Nothing has been opened
+in the Unity Editor yet: that is the Human's first check
+(`Source/Unity/README.md`).
+
+INK-UNITY-V1
+Independent review verdict: PASS
+Worker task: a72806bdd69b8c7ae
+Reviewer task: ac672cd011c46a137
+Candidate identity: 0421bd209dd886824dcdf3ea8f769a2f2d3a4765bfe2a79e6f4f7ff60a334c3f
+Closure receipt: 47cec3eb698ed0930bcf1f8a4d34c5396e5c2315ef6934090b72dcbea9ddb4df
+Requested model — not independently attested.
+
 ## Running
 
 - INK-WEB-V1: playable browser prototype on the core (Worker running).
-- INK-UNITY-V1: Unity project with a C# port of the core (Worker running).
 
 ## Exact Next Step
 
-Wait for both Workers, review and close them, then dispatch a core correction
+Wait for the browser prototype Worker, review and close it, then dispatch a core correction
 and balance order (I1, I3, golden coverage, balance toward the target) followed
 by small update orders for the browser prototype and the C# port.

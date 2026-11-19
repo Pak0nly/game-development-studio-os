@@ -75,7 +75,8 @@ async function playSolo(startColour) {
             if (stats) lastN = stats.N;
             for (let i = 0; i < buttons.length; i++) {
               const copies = lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0;
-              buttons[i].textContent = 'Einsatz ' + stakeLabel(i) + (copies > 0 ? ': ' + copies + (copies === 1 ? ' Gegner' : ' Gegner') + ', ' + copies * lastN + ' Beute' : '');
+              buttons[i].textContent = 'Einsatz ' + stakeLabel(i);
+              buttons[i].append(el('small', { text: copies > 0 ? copies + ' Gegner · ' + copies * lastN + ' Beute' : 'erst zeichnen' }));
               buttons[i].classList.toggle('on', i === stake);
               buttons[i].setAttribute('aria-pressed', i === stake ? 'true' : 'false');
             }
