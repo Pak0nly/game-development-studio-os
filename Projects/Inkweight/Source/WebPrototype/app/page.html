@@ -1,0 +1,195 @@
+<div id="app">
+
+  <!-- Start -->
+  <section id="scrStart" class="screen">
+    <div class="start-top">
+      <button id="sndStart" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </div>
+    <div class="start-body">
+      <canvas id="startDoodle" class="doodle" aria-hidden="true"></canvas>
+      <h1 class="title">Inkweight</h1>
+      <p class="rule">Menge ist Gewicht, gefüllte Flächen sind Panzer, dünne Linien sind Klingen, Farbe ist das Element.</p>
+      <div class="menu">
+        <button id="btnRing" class="btn primary big" type="button">Der Ring<small>2 bis 4 Figuren, wer fliegt raus?</small></button>
+        <button id="btnSolo" class="btn big" type="button">Solo-Arena<small>Held, Wurfwaffe und deine eigenen Gegner</small></button>
+        <button id="btnFree" class="btn big" type="button">Frei zeichnen<small>ausprobieren, was Tinte kann</small></button>
+        <button id="btnGallery" class="btn" type="button">Galerie</button>
+      </div>
+      <p class="fine">Deine Zeichnungen bleiben auf diesem Gerät. Nichts wird hochgeladen.</p>
+      <p id="startBest" class="fine" hidden></p>
+    </div>
+  </section>
+
+  <!-- Ring setup -->
+  <section id="scrRingSetup" class="screen" hidden>
+    <header class="head">
+      <button id="ringSetupBack" class="btn small" type="button">Zurück</button>
+      <h2>Der Ring</h2>
+      <button id="sndRing" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </header>
+    <div class="panel">
+      <p>Alle zeichnen eine Figur, dann wird geschubst. Wer aus dem Ring fliegt oder keinen Panzer mehr hat, ist raus. Wer zuerst 3 Runden holt, gewinnt.</p>
+      <div id="seatList" class="seats"></div>
+      <div class="row">
+        <label for="ringTime">Zeit zum Zeichnen</label>
+        <select id="ringTime">
+          <option value="30">30 Sekunden</option>
+          <option value="60">60 Sekunden</option>
+          <option value="0">ohne Uhr</option>
+        </select>
+      </div>
+      <p id="ringSetupNote" class="fine"></p>
+      <button id="ringGo" class="btn primary big" type="button">Los, zeichnen!</button>
+    </div>
+  </section>
+
+  <!-- Hand the device over / generic notice -->
+  <section id="scrPass" class="screen" hidden>
+    <div class="panel center">
+      <h2 id="passTitle"></h2>
+      <p id="passText"></p>
+      <div id="passExtra" class="pass-extra"></div>
+      <button id="passGo" class="btn primary big" type="button">Weiter</button>
+      <button id="passBack" class="btn small" type="button">Zum Menü</button>
+    </div>
+  </section>
+
+  <!-- Drawing -->
+  <section id="scrDraw" class="screen" hidden>
+    <header class="head draw-head">
+      <button id="drawBack" class="btn small" type="button">Zurück</button>
+      <div class="draw-title">
+        <h2 id="drawTitle"></h2>
+        <p id="drawSub"></p>
+      </div>
+      <div id="drawTimer" class="timer" hidden>30</div>
+      <canvas id="drawPreview" class="preview" aria-hidden="true"></canvas>
+    </header>
+    <div class="draw-main">
+      <div id="drawBoard" class="draw-board">
+        <canvas id="drawCanvas" class="draw-canvas" aria-label="Zeichenfläche, 32 mal 32 Kästchen"></canvas>
+        <div id="drawHint" class="hint" hidden>
+          <p><b>Zeichne mit dem Finger oder der Maus.</b> Oben ist vorne. Dünne Striche werden Klingen, volle Flächen werden Panzer.</p>
+          <button id="drawHintOk" class="btn small primary" type="button">Alles klar</button>
+        </div>
+      </div>
+      <div class="draw-side">
+        <div class="tools" role="toolbar" aria-label="Werkzeuge">
+          <button id="toolC1" class="tool swatch c1" type="button" aria-label="Schwarz" title="Schwarz"></button>
+          <button id="toolC2" class="tool swatch c2" type="button" aria-label="Glut, rot" title="Glut"></button>
+          <button id="toolC3" class="tool swatch c3" type="button" aria-label="Flut, blau" title="Flut"></button>
+          <button id="toolC4" class="tool swatch c4" type="button" aria-label="Moos, grün" title="Moos"></button>
+          <button id="toolErase" class="tool" type="button">Radierer</button>
+          <button id="toolBrush" class="tool" type="button" aria-pressed="false">Dünn</button>
+        </div>
+        <div class="inkrow">
+          <button id="toolUndo" class="tool flat" type="button">Zurück</button>
+          <button id="toolClear" class="tool flat" type="button">Leeren</button>
+          <button id="toolPick" class="tool flat" type="button">Vorlage</button>
+          <div class="inkmeter" id="inkMeter">
+            <span>Tinte</span>
+            <div class="bar"><i id="inkFill"></i></div>
+            <b id="inkNum">0</b>
+          </div>
+        </div>
+        <ul class="stats" id="statList">
+          <li><span class="s-name">Gewicht</span><b id="stWeight" class="s-val">0</b><span class="s-bar"><i id="stWeightBar"></i></span><span class="s-why">schwer schiebt, ist aber träge</span></li>
+          <li><span class="s-name">Panzer</span><b id="stArmour" class="s-val">0</b><span class="s-bar"><i id="stArmourBar"></i></span><span class="s-why">volle Flächen halten mehr aus</span></li>
+          <li><span class="s-name">Schärfe</span><b id="stSharp" class="s-val">0</b><span class="s-bar"><i id="stSharpBar"></i></span><span class="s-why">dünne Linien schneiden</span></li>
+          <li><span class="s-name">Tempo</span><b id="stSpeed" class="s-val">0</b><span class="s-bar"><i id="stSpeedBar"></i></span><span class="s-why">wenig Tinte ist flink</span></li>
+          <li><span class="s-name">Element</span><b id="stElement" class="s-val wide">–</b><span id="stElementWhy" class="s-why"></span></li>
+        </ul>
+        <p id="drawMsg" class="msg"></p>
+        <div id="drawExtra" class="draw-extra"></div>
+        <button id="drawDone" class="btn primary" type="button">Fertig</button>
+      </div>
+    </div>
+    <div id="pickLayer" class="layer" hidden>
+      <div class="panel">
+        <header class="head">
+          <h2>Vorlage laden</h2>
+          <button id="pickClose" class="btn small" type="button">Schließen</button>
+        </header>
+        <div id="pickGrid" class="cards"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fight -->
+  <section id="scrFight" class="screen" hidden>
+    <header class="head fight-head">
+      <button id="fightQuit" class="btn small" type="button">Ende</button>
+      <div id="fightHud" class="hud"></div>
+      <button id="sndFight" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </header>
+    <div id="fightStage" class="stage">
+      <canvas id="fightCanvas" class="fight-canvas" aria-label="Spielfeld"></canvas>
+      <button id="dashBtn" class="dash" type="button">Sprint</button>
+      <div id="fightBanner" class="banner" hidden></div>
+      <div id="fightOverlay" class="layer" hidden>
+        <div class="panel center">
+          <h2 id="ovTitle"></h2>
+          <div id="ovBody" class="ov-body"></div>
+          <div class="ov-buttons">
+            <button id="ovPrimary" class="btn primary big" type="button">Weiter</button>
+            <button id="ovSecondary" class="btn" type="button">Zum Menü</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solo intro -->
+  <section id="scrSoloIntro" class="screen" hidden>
+    <header class="head">
+      <button id="soloIntroBack" class="btn small" type="button">Zurück</button>
+      <h2>Solo-Arena</h2>
+      <button id="sndSolo" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </header>
+    <div class="panel">
+      <p>Du zeichnest einen Helden und seine Wurfwaffe. Vor jeder Welle zeichnest du auch den Gegner und bestimmst den Einsatz: mehr Tinte heißt mehr Gegner und mehr Beute. Nach 5 Wellen kommt der Endgegner aus allen deinen Gegnern.</p>
+      <p><b>Wähle deine Startfarbe.</b> Schwarz hast du immer.</p>
+      <div class="colour-pick">
+        <button id="soloC2" class="btn big c2" type="button">Glut<small>schlägt Moos</small></button>
+        <button id="soloC3" class="btn big c3" type="button">Flut<small>schlägt Glut</small></button>
+        <button id="soloC4" class="btn big c4" type="button">Moos<small>schlägt Flut</small></button>
+      </div>
+      <p id="soloBest" class="fine"></p>
+    </div>
+  </section>
+
+  <!-- Solo shop -->
+  <section id="scrShop" class="screen" hidden>
+    <header class="head">
+      <button id="shopQuit" class="btn small" type="button">Ende</button>
+      <h2 id="shopTitle"></h2>
+      <button id="sndShop" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </header>
+    <div class="panel">
+      <p id="shopInfo"></p>
+      <div id="shopList" class="shop"></div>
+      <div id="shopColours" class="colour-pick" hidden></div>
+      <p id="shopMsg" class="msg"></p>
+      <button id="shopNext" class="btn primary big" type="button">Weiter</button>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="scrGallery" class="screen" hidden>
+    <header class="head">
+      <button id="galBack" class="btn small" type="button">Zurück</button>
+      <h2>Galerie</h2>
+      <button id="galClear" class="btn small" type="button">Alle löschen</button>
+    </header>
+    <div class="panel">
+      <p class="fine">Deine Zeichnungen bleiben auf diesem Gerät. Bots im Ring benutzen sie als Gegner.</p>
+      <p id="galNote" class="fine" hidden></p>
+      <h3>Deine Zeichnungen</h3>
+      <div id="galGrid" class="cards"></div>
+      <h3>Platzhalter</h3>
+      <p class="fine">Schnell hingekritzelte Testfiguren, damit Bots etwas haben. Sie verschwinden, sobald es echte Zeichnungen gibt, nicht von selbst, werden aber seltener gewählt.</p>
+      <div id="galBuiltin" class="cards"></div>
+    </div>
+  </section>
+
+</div>
