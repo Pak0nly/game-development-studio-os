@@ -22,11 +22,11 @@
 
   <!-- Ring setup -->
   <section id="scrRingSetup" class="screen" hidden>
-    <header class="head">
+    <div class="head">
       <button id="ringSetupBack" class="btn small" type="button">Zurück</button>
       <h2>Der Ring</h2>
       <button id="sndRing" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
-    </header>
+    </div>
     <div class="panel">
       <p>Alle zeichnen eine Figur, dann wird geschubst. Wer aus dem Ring fliegt oder keinen Panzer mehr hat, ist raus. Wer zuerst 3 Runden holt, gewinnt.</p>
       <div id="seatList" class="seats"></div>
@@ -56,7 +56,7 @@
 
   <!-- Drawing -->
   <section id="scrDraw" class="screen" hidden>
-    <header class="head draw-head">
+    <div class="head draw-head">
       <button id="drawBack" class="btn small" type="button">Zurück</button>
       <div class="draw-title">
         <h2 id="drawTitle"></h2>
@@ -64,7 +64,7 @@
       </div>
       <div id="drawTimer" class="timer" hidden>30</div>
       <canvas id="drawPreview" class="preview" aria-hidden="true"></canvas>
-    </header>
+    </div>
     <div class="draw-main">
       <div id="drawBoard" class="draw-board">
         <canvas id="drawCanvas" class="draw-canvas" aria-label="Zeichenfläche, 32 mal 32 Kästchen"></canvas>
@@ -106,10 +106,10 @@
     </div>
     <div id="pickLayer" class="layer" hidden>
       <div class="panel">
-        <header class="head">
+        <div class="head">
           <h2>Vorlage laden</h2>
           <button id="pickClose" class="btn small" type="button">Schließen</button>
-        </header>
+        </div>
         <div id="pickGrid" class="cards"></div>
       </div>
     </div>
@@ -117,11 +117,11 @@
 
   <!-- Fight -->
   <section id="scrFight" class="screen" hidden>
-    <header class="head fight-head">
+    <div class="head fight-head">
       <button id="fightQuit" class="btn small" type="button">Ende</button>
       <div id="fightHud" class="hud"></div>
       <button id="sndFight" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
-    </header>
+    </div>
     <div id="fightStage" class="stage">
       <canvas id="fightCanvas" class="fight-canvas" aria-label="Spielfeld"></canvas>
       <button id="dashBtn" class="dash" type="button">Sprint</button>
@@ -141,11 +141,11 @@
 
   <!-- Solo intro -->
   <section id="scrSoloIntro" class="screen" hidden>
-    <header class="head">
+    <div class="head">
       <button id="soloIntroBack" class="btn small" type="button">Zurück</button>
       <h2>Solo-Arena</h2>
       <button id="sndSolo" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
-    </header>
+    </div>
     <div class="panel">
       <p>Du zeichnest einen Helden und seine Wurfwaffe. Vor jeder Welle zeichnest du auch den Gegner und bestimmst den Einsatz: mehr Tinte heißt mehr Gegner und mehr Beute. Nach 5 Wellen kommt der Endgegner aus allen deinen Gegnern.</p>
       <p><b>Wähle deine Startfarbe.</b> Schwarz hast du immer.</p>
@@ -160,11 +160,11 @@
 
   <!-- Solo shop -->
   <section id="scrShop" class="screen" hidden>
-    <header class="head">
+    <div class="head">
       <button id="shopQuit" class="btn small" type="button">Ende</button>
       <h2 id="shopTitle"></h2>
       <button id="sndShop" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
-    </header>
+    </div>
     <div class="panel">
       <p id="shopInfo"></p>
       <div id="shopList" class="shop"></div>
@@ -176,11 +176,11 @@
 
   <!-- Gallery -->
   <section id="scrGallery" class="screen" hidden>
-    <header class="head">
+    <div class="head">
       <button id="galBack" class="btn small" type="button">Zurück</button>
       <h2>Galerie</h2>
       <button id="galClear" class="btn small" type="button">Alle löschen</button>
-    </header>
+    </div>
     <div class="panel">
       <p class="fine">Deine Zeichnungen bleiben auf diesem Gerät. Bots im Ring benutzen sie als Gegner.</p>
       <p id="galNote" class="fine" hidden></p>

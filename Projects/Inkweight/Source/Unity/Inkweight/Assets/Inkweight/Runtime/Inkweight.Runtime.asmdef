@@ -1,0 +1,23 @@
+{
+    "name": "Inkweight.Runtime",
+    "rootNamespace": "Inkweight.Runtime",
+    "references": [
+        "Inkweight.Core",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.0.0",
+            "define": "INKWEIGHT_INPUT_SYSTEM"
+        }
+    ],
+    "noEngineReferences": false
+}

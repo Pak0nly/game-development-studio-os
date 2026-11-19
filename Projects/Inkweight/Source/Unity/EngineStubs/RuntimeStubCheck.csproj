@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Compiles the Unity Runtime sources and the core against hand-written
+       engine stubs (UnityEngineStubs.cs) and runs a headless smoke test.
+       This proves syntax and the game's own control flow only; it says
+       nothing about real engine behaviour. Never compiled by Unity. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>Inkweight.RuntimeStubCheck</AssemblyName>
+    <RootNamespace>Inkweight.RuntimeStubCheck</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- CS0649: stub fields that are never assigned -->
+    <NoWarn>$(NoWarn);CS0649</NoWarn>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!-- input variant: Legacy | InputSystem | Both | None -->
+    <InkInput Condition="'$(InkInput)' == ''">Legacy</InkInput>
+    <DefineConstants Condition="'$(InkInput)' == 'Legacy'">$(DefineConstants);ENABLE_LEGACY_INPUT_MANAGER</DefineConstants>
+    <DefineConstants Condition="'$(InkInput)' == 'InputSystem'">$(DefineConstants);ENABLE_INPUT_SYSTEM;INKWEIGHT_INPUT_SYSTEM</DefineConstants>
+    <DefineConstants Condition="'$(InkInput)' == 'Both'">$(DefineConstants);ENABLE_LEGACY_INPUT_MANAGER;ENABLE_INPUT_SYSTEM;INKWEIGHT_INPUT_SYSTEM</DefineConstants>
+    <!-- the Input System backend is active but the package is not installed -->
+    <DefineConstants Condition="'$(InkInput)' == 'None'">$(DefineConstants);ENABLE_INPUT_SYSTEM</DefineConstants>
+    <IntermediateOutputPath>obj/$(InkInput)/</IntermediateOutputPath>
+    <OutputPath>bin/$(InkInput)/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="UnityEngineStubs.cs" />
+    <Compile Include="SmokeProgram.cs" />
+    <Compile Include="../Inkweight/Assets/Inkweight/Core/**/*.cs" LinkBase="Core" />
+    <Compile Include="../Inkweight/Assets/Inkweight/Runtime/**/*.cs" LinkBase="Runtime" />
+  </ItemGroup>
+
+</Project>

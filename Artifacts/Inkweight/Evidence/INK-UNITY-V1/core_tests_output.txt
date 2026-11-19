@@ -1,0 +1,29 @@
+8.0.134
+Inkweight core tests
+shared files: /home/user/game-development-studio-os/Projects/Inkweight/Source/Shared
+runtime: .NET 8.0.34, X64
+ok    generated file is up to date
+ok    tuning and golden versions
+ok    core source rules (12 files: no engine reference, no float, only Math.Sqrt and Math.Floor)
+ok    random generator and hash basics
+ok    stat vectors (43 drawings, every field exact)
+  4 rounds, 6537 ticks
+ok    ring trace ring_1v1_disc_lance (60 checkpoints, bit for bit)
+  3 rounds, 2017 ticks
+ok    ring trace ring_1v1_cross_block (22 checkpoints, bit for bit)
+  1 rounds, 615 ticks
+ok    ring trace ring_1v1_scripted (7 checkpoints, bit for bit)
+  3 rounds, 2894 ticks
+ok    ring trace ring_3_star_wedge_needle (28 checkpoints, bit for bit)
+  4 rounds, 7514 ticks
+ok    ring trace ring_4_disc_star_comb_dot (69 checkpoints, bit for bit)
+  2 rounds, 2100 ticks
+ok    ring trace ring_4_one_scripted_seat (20 checkpoints, bit for bit)
+  2 fights, 2198 ticks
+ok    solo trace solo_kite_two_waves (19 checkpoints, bit for bit)
+  6 fights, 5683 ticks
+ok    solo trace solo_brawl_full_run (51 checkpoints, bit for bit)
+  self check passed, 111 checkpoints bit-identical
+ok    self check as run inside Unity (embedded tuning and hashes)
+RESULT: PASS (10694 checks, 0 failed)
+exit code: 0

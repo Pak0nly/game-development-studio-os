@@ -1,0 +1,4489 @@
+<title>Inkweight</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root {
+  --paper: #f3ead3;
+  --paper-light: #fbf6e6;
+  --paper-deep: #e4d8b8;
+  --paper-speck: #d9cba6;
+  --rule-line: #b9c4cf;
+  --ink: #1c1a2b;
+  --ink-soft: #5d586b;
+  --ink-faint: #a39c93;
+  --ember: #d9442c;
+  --tide: #2c6ed1;
+  --moss: #3b9647;
+  --on-ink: #fbf6e6;
+  --shadow: #1c1a2b33;
+  --veil: #f3ead3e6;
+  --font-hand: "Chalkboard SE", "Segoe Print", "Bradley Hand", "Comic Sans MS", ui-rounded, system-ui, sans-serif;
+  --font-body: ui-rounded, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --blob: 14px 18px 12px 20px / 18px 12px 20px 14px;
+}
+
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--paper);
+  background-image:
+    radial-gradient(var(--paper-speck) 1px, transparent 1.6px),
+    radial-gradient(var(--paper-deep) 1px, transparent 1.4px);
+  background-size: 37px 41px, 53px 47px;
+  background-position: 0 0, 19px 23px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.35;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+#app {
+  height: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.screen {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3 { font-family: var(--font-hand); margin: 0; line-height: 1.1; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.05rem; margin-top: 14px; }
+p { margin: 8px 0; }
+.fine { font-size: 0.82rem; color: var(--ink-soft); }
+.msg { font-size: 0.8rem; color: var(--ink-soft); margin: 2px 0; min-height: 1.1em; }
+.msg.warn { color: var(--ember); font-weight: 600; }
+
+/* buttons */
+.btn, .tool, .dash {
+  font: inherit;
+  font-family: var(--font-hand);
+  color: var(--ink);
+  background: var(--paper-light);
+  border: 2px solid var(--ink);
+  border-radius: var(--blob);
+  padding: 9px 14px;
+  min-height: 44px;
+  cursor: pointer;
+  box-shadow: 2px 3px 0 var(--shadow);
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.btn:active, .tool:active { transform: translate(1px, 2px); box-shadow: 1px 1px 0 var(--shadow); }
+.btn.primary { background: var(--ink); color: var(--on-ink); }
+.btn.small { padding: 4px 10px; min-height: 36px; font-size: 0.85rem; white-space: nowrap; flex: 0 0 auto; }
+.btn.big { font-size: 1.15rem; padding: 12px 16px; }
+.btn small { display: block; font-family: var(--font-body); font-size: 0.78rem; font-weight: 400; opacity: 0.85; margin-top: 2px; }
+.btn:disabled, .tool:disabled { opacity: 0.4; cursor: default; box-shadow: none; }
+.btn.c2 { border-color: var(--ember); box-shadow: 2px 3px 0 var(--ember); }
+.btn.c3 { border-color: var(--tide); box-shadow: 2px 3px 0 var(--tide); }
+.btn.c4 { border-color: var(--moss); box-shadow: 2px 3px 0 var(--moss); }
+:focus-visible { outline: 3px solid var(--tide); outline-offset: 2px; }
+select {
+  font: inherit; color: var(--ink); background: var(--paper-light);
+  border: 2px solid var(--ink); border-radius: 10px; padding: 6px 8px; min-height: 40px;
+}
+
+.head { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; margin-bottom: 6px; }
+.head h2 { flex: 1 1 auto; min-width: 0; }
+.panel { width: 100%; max-width: 640px; margin: 0 auto; }
+.panel.center { text-align: center; margin: auto; }
+.row { display: flex; align-items: center; gap: 10px; margin: 10px 0; flex-wrap: wrap; }
+
+/* start */
+.start-top { display: flex; justify-content: flex-end; flex: 0 0 auto; }
+.start-body { margin: auto; width: 100%; max-width: 460px; text-align: center; padding-bottom: 12px; }
+.doodle { width: 100%; height: 110px; display: block; }
+.title { font-size: clamp(2.6rem, 13vw, 4rem); letter-spacing: 0.01em; transform: rotate(-2deg); }
+.rule { font-family: var(--font-hand); font-size: 1.02rem; margin: 10px 0 16px; }
+.menu { display: flex; flex-direction: column; gap: 10px; }
+
+/* seats */
+.seats { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+.seat { display: flex; align-items: center; gap: 8px; }
+.seat .tag { flex: 0 0 auto; }
+.seat .seat-name { flex: 1 1 auto; min-width: 0; font-family: var(--font-hand); }
+.seat .seat-keys { display: block; font-family: var(--font-body); font-size: 0.75rem; color: var(--ink-soft); }
+.seat select { flex: 0 0 auto; }
+.tag {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%;
+  border: 2px solid var(--ink); font-family: var(--font-hand); font-size: 0.9rem; font-weight: 700;
+  background: var(--paper-light); color: var(--ink);
+}
+.tag.human { background: var(--ink); color: var(--on-ink); }
+
+/* drawing */
+.draw-head { margin-bottom: 4px; }
+.draw-title { flex: 1 1 auto; min-width: 0; }
+.draw-title h2 { font-size: 1.05rem; }
+.draw-title p { margin: 0; font-size: 0.76rem; color: var(--ink-soft); line-height: 1.2; }
+.timer {
+  flex: 0 0 auto; min-width: 44px; text-align: center;
+  font-family: var(--font-hand); font-size: 1.4rem; font-weight: 700;
+  border: 2px solid var(--ink); border-radius: var(--blob); padding: 2px 8px; background: var(--paper-light);
+}
+.timer.low { background: var(--ember); color: var(--on-ink); border-color: var(--ember); }
+.preview { flex: 0 0 auto; width: 60px; height: 60px; }
+.draw-main { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; gap: 6px; }
+.draw-board { flex: 1 1 auto; min-height: 180px; position: relative; display: flex; align-items: center; justify-content: center; }
+.draw-canvas {
+  display: block; touch-action: none; cursor: crosshair;
+  border: 2px solid var(--ink); border-radius: 6px 9px 5px 10px / 9px 5px 10px 6px;
+  box-shadow: 3px 4px 0 var(--shadow); background: var(--paper-light);
+}
+.hint {
+  position: absolute; left: 8%; right: 8%; bottom: 10%;
+  background: var(--veil); border: 2px dashed var(--ink); border-radius: var(--blob);
+  padding: 10px 12px; text-align: center; font-size: 0.92rem;
+}
+.hint p { margin: 0 0 8px; }
+.draw-side { flex: 0 0 auto; display: flex; flex-direction: column; gap: 5px; }
+.tools { display: grid; grid-template-columns: repeat(4, 1fr) 1.6fr 1.3fr; gap: 6px; }
+.tool { padding: 4px 6px; min-height: 42px; font-size: 0.85rem; white-space: nowrap; }
+.tool.flat { min-height: 36px; box-shadow: none; padding: 2px 9px; font-size: 0.8rem; border-width: 1.5px; }
+.tool.swatch.c1 { background: var(--ink); }
+.tool.swatch.c2 { background: var(--ember); }
+.tool.swatch.c3 { background: var(--tide); }
+.tool.swatch.c4 { background: var(--moss); }
+.tool.on { outline: 3px solid var(--ink); outline-offset: 2px; transform: translateY(-2px); }
+.tool.swatch.on { box-shadow: 0 0 0 3px var(--paper-light) inset, 2px 3px 0 var(--shadow); }
+.inkrow { display: flex; align-items: center; gap: 6px; }
+.inkmeter { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; }
+.inkmeter .bar { flex: 1 1 auto; height: 14px; border: 2px solid var(--ink); border-radius: 8px; background: var(--paper-light); overflow: hidden; }
+.inkmeter .bar i { display: block; height: 100%; width: 100%; background: var(--ink); transition: width 0.12s; }
+.inkmeter b { min-width: 2.2em; text-align: right; font-family: var(--font-hand); }
+.inkmeter.empty .bar { border-color: var(--ember); }
+.inkmeter.empty b { color: var(--ember); }
+.stats { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+.stats li { display: grid; grid-template-columns: 58px 40px 54px 1fr; align-items: center; gap: 6px; font-size: 0.8rem; min-height: 20px; }
+.s-name { font-family: var(--font-hand); font-weight: 700; }
+.s-val { text-align: right; font-family: var(--font-hand); font-variant-numeric: tabular-nums; }
+.s-val.wide { text-align: left; grid-column: 2 / span 2; padding-left: 6px; }
+.s-val.e2 { color: var(--ember); } .s-val.e3 { color: var(--tide); } .s-val.e4 { color: var(--moss); }
+.s-bar { height: 9px; border: 1.5px solid var(--ink); border-radius: 6px; overflow: hidden; background: var(--paper-light); }
+.s-bar i { display: block; height: 100%; width: 0; background: var(--ink); transition: width 0.15s; }
+.s-why { color: var(--ink-soft); font-size: 0.74rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pop { animation: pop 0.25s; }
+@keyframes pop { 0% { transform: scale(1.35); } 100% { transform: scale(1); } }
+.draw-extra:empty { display: none; }
+.stakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.stakes .tool { min-height: 40px; white-space: normal; line-height: 1.1; font-size: 0.78rem; }
+
+/* overlays */
+.layer {
+  position: absolute; inset: 0; z-index: 5; background: var(--veil);
+  display: flex; flex-direction: column; overflow-y: auto; padding: 10px;
+}
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 10px; margin: 8px 0; }
+.card {
+  border: 2px solid var(--ink); border-radius: var(--blob); background: var(--paper-light);
+  padding: 6px; text-align: center; font-size: 0.74rem; display: flex; flex-direction: column; align-items: center; gap: 3px;
+}
+.card canvas { width: 80px; height: 80px; }
+.card .card-name { font-family: var(--font-hand); font-size: 0.85rem; }
+.card .btn.small { min-height: 30px; font-size: 0.75rem; padding: 2px 8px; }
+.badge {
+  display: inline-block; border: 1.5px dashed var(--ink-soft); border-radius: 8px; padding: 0 6px;
+  font-size: 0.68rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.04em;
+}
+.empty-note { color: var(--ink-soft); font-size: 0.85rem; grid-column: 1 / -1; }
+
+/* fight */
+.fight-head { margin-bottom: 4px; align-items: flex-start; }
+.hud { flex: 1 1 auto; min-width: 0; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; font-size: 0.78rem; }
+.chip { display: flex; align-items: center; gap: 4px; min-width: 0; flex: 1 1 110px; }
+.chip .tag { width: 20px; height: 20px; font-size: 0.72rem; border-width: 1.5px; }
+.chip .chip-body { flex: 1 1 auto; min-width: 0; }
+.chip .chip-name { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--font-hand); line-height: 1.1; }
+.chip .hpbar { display: block; height: 7px; border: 1.5px solid var(--ink); border-radius: 5px; overflow: hidden; background: var(--paper-light); }
+.chip .hpbar i { display: block; height: 100%; background: var(--ink); width: 100%; }
+.chip.out { opacity: 0.4; }
+.pips { letter-spacing: 1px; font-size: 0.7rem; }
+.hud-line { flex: 1 1 100%; display: flex; gap: 10px; justify-content: space-between; font-family: var(--font-hand); }
+.stage { flex: 1 1 auto; min-height: 0; position: relative; }
+.fight-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none;
+  border-radius: 8px;
+}
+.dash {
+  position: absolute; right: 6px; bottom: 10px; z-index: 3;
+  width: 84px; height: 84px; border-radius: 50%; padding: 0; font-size: 1rem; font-weight: 700;
+  background: var(--ink); color: var(--on-ink); opacity: 0.92; touch-action: none;
+}
+.dash.cool { opacity: 0.35; }
+.banner {
+  position: absolute; left: 0; right: 0; top: 30%; z-index: 4; text-align: center; pointer-events: none;
+  font-family: var(--font-hand); font-size: 3.2rem; font-weight: 700;
+}
+.banner small { display: block; font-size: 0.95rem; font-weight: 400; font-family: var(--font-body); }
+.ov-body { margin: 10px 0; }
+.ov-body p { margin: 4px 0; }
+.ov-buttons { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.lineup { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 8px 0; }
+.lineup .card { width: 108px; }
+.lineup .card canvas { width: 64px; height: 64px; }
+.score-big { font-family: var(--font-hand); font-size: 2.4rem; font-weight: 700; }
+
+/* solo */
+.colour-pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 0; }
+.shop { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+.shop .btn { text-align: left; }
+.pass-extra:empty { display: none; }
+
+/* desktop: canvas left, tools right */
+@media (min-width: 820px) {
+  .draw-main { flex-direction: row; gap: 20px; }
+  .draw-side { flex: 0 0 360px; justify-content: center; gap: 9px; }
+  .stats li { min-height: 26px; font-size: 0.88rem; grid-template-columns: 66px 44px 70px 1fr; }
+  .s-why { font-size: 0.8rem; }
+  .preview { width: 72px; height: 72px; }
+  .dash { display: none; }
+  .chip { flex: 0 1 190px; }
+  .hud { justify-content: center; }
+}
+@media (pointer: coarse) { .dash { display: block; } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+<div id="app">
+
+  <!-- Start -->
+  <section id="scrStart" class="screen">
+    <div class="start-top">
+      <button id="sndStart" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </div>
+    <div class="start-body">
+      <canvas id="startDoodle" class="doodle" aria-hidden="true"></canvas>
+      <h1 class="title">Inkweight</h1>
+      <p class="rule">Menge ist Gewicht, gefüllte Flächen sind Panzer, dünne Linien sind Klingen, Farbe ist das Element.</p>
+      <div class="menu">
+        <button id="btnRing" class="btn primary big" type="button">Der Ring<small>2 bis 4 Figuren, wer fliegt raus?</small></button>
+        <button id="btnSolo" class="btn big" type="button">Solo-Arena<small>Held, Wurfwaffe und deine eigenen Gegner</small></button>
+        <button id="btnFree" class="btn big" type="button">Frei zeichnen<small>ausprobieren, was Tinte kann</small></button>
+        <button id="btnGallery" class="btn" type="button">Galerie</button>
+      </div>
+      <p class="fine">Deine Zeichnungen bleiben auf diesem Gerät. Nichts wird hochgeladen.</p>
+      <p id="startBest" class="fine" hidden></p>
+    </div>
+  </section>
+
+  <!-- Ring setup -->
+  <section id="scrRingSetup" class="screen" hidden>
+    <div class="head">
+      <button id="ringSetupBack" class="btn small" type="button">Zurück</button>
+      <h2>Der Ring</h2>
+      <button id="sndRing" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </div>
+    <div class="panel">
+      <p>Alle zeichnen eine Figur, dann wird geschubst. Wer aus dem Ring fliegt oder keinen Panzer mehr hat, ist raus. Wer zuerst 3 Runden holt, gewinnt.</p>
+      <div id="seatList" class="seats"></div>
+      <div class="row">
+        <label for="ringTime">Zeit zum Zeichnen</label>
+        <select id="ringTime">
+          <option value="30">30 Sekunden</option>
+          <option value="60">60 Sekunden</option>
+          <option value="0">ohne Uhr</option>
+        </select>
+      </div>
+      <p id="ringSetupNote" class="fine"></p>
+      <button id="ringGo" class="btn primary big" type="button">Los, zeichnen!</button>
+    </div>
+  </section>
+
+  <!-- Hand the device over / generic notice -->
+  <section id="scrPass" class="screen" hidden>
+    <div class="panel center">
+      <h2 id="passTitle"></h2>
+      <p id="passText"></p>
+      <div id="passExtra" class="pass-extra"></div>
+      <button id="passGo" class="btn primary big" type="button">Weiter</button>
+      <button id="passBack" class="btn small" type="button">Zum Menü</button>
+    </div>
+  </section>
+
+  <!-- Drawing -->
+  <section id="scrDraw" class="screen" hidden>
+    <div class="head draw-head">
+      <button id="drawBack" class="btn small" type="button">Zurück</button>
+      <div class="draw-title">
+        <h2 id="drawTitle"></h2>
+        <p id="drawSub"></p>
+      </div>
+      <div id="drawTimer" class="timer" hidden>30</div>
+      <canvas id="drawPreview" class="preview" aria-hidden="true"></canvas>
+    </div>
+    <div class="draw-main">
+      <div id="drawBoard" class="draw-board">
+        <canvas id="drawCanvas" class="draw-canvas" aria-label="Zeichenfläche, 32 mal 32 Kästchen"></canvas>
+        <div id="drawHint" class="hint" hidden>
+          <p><b>Zeichne mit dem Finger oder der Maus.</b> Oben ist vorne. Dünne Striche werden Klingen, volle Flächen werden Panzer.</p>
+          <button id="drawHintOk" class="btn small primary" type="button">Alles klar</button>
+        </div>
+      </div>
+      <div class="draw-side">
+        <div class="tools" role="toolbar" aria-label="Werkzeuge">
+          <button id="toolC1" class="tool swatch c1" type="button" aria-label="Schwarz" title="Schwarz"></button>
+          <button id="toolC2" class="tool swatch c2" type="button" aria-label="Glut, rot" title="Glut"></button>
+          <button id="toolC3" class="tool swatch c3" type="button" aria-label="Flut, blau" title="Flut"></button>
+          <button id="toolC4" class="tool swatch c4" type="button" aria-label="Moos, grün" title="Moos"></button>
+          <button id="toolErase" class="tool" type="button">Radierer</button>
+          <button id="toolBrush" class="tool" type="button" aria-pressed="false">Dünn</button>
+        </div>
+        <div class="inkrow">
+          <button id="toolUndo" class="tool flat" type="button">Zurück</button>
+          <button id="toolClear" class="tool flat" type="button">Leeren</button>
+          <button id="toolPick" class="tool flat" type="button">Vorlage</button>
+          <div class="inkmeter" id="inkMeter">
+            <span>Tinte</span>
+            <div class="bar"><i id="inkFill"></i></div>
+            <b id="inkNum">0</b>
+          </div>
+        </div>
+        <ul class="stats" id="statList">
+          <li><span class="s-name">Gewicht</span><b id="stWeight" class="s-val">0</b><span class="s-bar"><i id="stWeightBar"></i></span><span class="s-why">schwer schiebt, ist aber träge</span></li>
+          <li><span class="s-name">Panzer</span><b id="stArmour" class="s-val">0</b><span class="s-bar"><i id="stArmourBar"></i></span><span class="s-why">volle Flächen halten mehr aus</span></li>
+          <li><span class="s-name">Schärfe</span><b id="stSharp" class="s-val">0</b><span class="s-bar"><i id="stSharpBar"></i></span><span class="s-why">dünne Linien schneiden</span></li>
+          <li><span class="s-name">Tempo</span><b id="stSpeed" class="s-val">0</b><span class="s-bar"><i id="stSpeedBar"></i></span><span class="s-why">wenig Tinte ist flink</span></li>
+          <li><span class="s-name">Element</span><b id="stElement" class="s-val wide">–</b><span id="stElementWhy" class="s-why"></span></li>
+        </ul>
+        <p id="drawMsg" class="msg"></p>
+        <div id="drawExtra" class="draw-extra"></div>
+        <button id="drawDone" class="btn primary" type="button">Fertig</button>
+      </div>
+    </div>
+    <div id="pickLayer" class="layer" hidden>
+      <div class="panel">
+        <div class="head">
+          <h2>Vorlage laden</h2>
+          <button id="pickClose" class="btn small" type="button">Schließen</button>
+        </div>
+        <div id="pickGrid" class="cards"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fight -->
+  <section id="scrFight" class="screen" hidden>
+    <div class="head fight-head">
+      <button id="fightQuit" class="btn small" type="button">Ende</button>
+      <div id="fightHud" class="hud"></div>
+      <button id="sndFight" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </div>
+    <div id="fightStage" class="stage">
+      <canvas id="fightCanvas" class="fight-canvas" aria-label="Spielfeld"></canvas>
+      <button id="dashBtn" class="dash" type="button">Sprint</button>
+      <div id="fightBanner" class="banner" hidden></div>
+      <div id="fightOverlay" class="layer" hidden>
+        <div class="panel center">
+          <h2 id="ovTitle"></h2>
+          <div id="ovBody" class="ov-body"></div>
+          <div class="ov-buttons">
+            <button id="ovPrimary" class="btn primary big" type="button">Weiter</button>
+            <button id="ovSecondary" class="btn" type="button">Zum Menü</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solo intro -->
+  <section id="scrSoloIntro" class="screen" hidden>
+    <div class="head">
+      <button id="soloIntroBack" class="btn small" type="button">Zurück</button>
+      <h2>Solo-Arena</h2>
+      <button id="sndSolo" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </div>
+    <div class="panel">
+      <p>Du zeichnest einen Helden und seine Wurfwaffe. Vor jeder Welle zeichnest du auch den Gegner und bestimmst den Einsatz: mehr Tinte heißt mehr Gegner und mehr Beute. Nach 5 Wellen kommt der Endgegner aus allen deinen Gegnern.</p>
+      <p><b>Wähle deine Startfarbe.</b> Schwarz hast du immer.</p>
+      <div class="colour-pick">
+        <button id="soloC2" class="btn big c2" type="button">Glut<small>schlägt Moos</small></button>
+        <button id="soloC3" class="btn big c3" type="button">Flut<small>schlägt Glut</small></button>
+        <button id="soloC4" class="btn big c4" type="button">Moos<small>schlägt Flut</small></button>
+      </div>
+      <p id="soloBest" class="fine"></p>
+    </div>
+  </section>
+
+  <!-- Solo shop -->
+  <section id="scrShop" class="screen" hidden>
+    <div class="head">
+      <button id="shopQuit" class="btn small" type="button">Ende</button>
+      <h2 id="shopTitle"></h2>
+      <button id="sndShop" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
+    </div>
+    <div class="panel">
+      <p id="shopInfo"></p>
+      <div id="shopList" class="shop"></div>
+      <div id="shopColours" class="colour-pick" hidden></div>
+      <p id="shopMsg" class="msg"></p>
+      <button id="shopNext" class="btn primary big" type="button">Weiter</button>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="scrGallery" class="screen" hidden>
+    <div class="head">
+      <button id="galBack" class="btn small" type="button">Zurück</button>
+      <h2>Galerie</h2>
+      <button id="galClear" class="btn small" type="button">Alle löschen</button>
+    </div>
+    <div class="panel">
+      <p class="fine">Deine Zeichnungen bleiben auf diesem Gerät. Bots im Ring benutzen sie als Gegner.</p>
+      <p id="galNote" class="fine" hidden></p>
+      <h3>Deine Zeichnungen</h3>
+      <div id="galGrid" class="cards"></div>
+      <h3>Platzhalter</h3>
+      <p class="fine">Schnell hingekritzelte Testfiguren, damit Bots etwas haben. Sie verschwinden, sobald es echte Zeichnungen gibt, nicht von selbst, werden aber seltener gewählt.</p>
+      <div id="galBuiltin" class="cards"></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function () {
+'use strict';
+var __INK_TUNING__ = {"version":"ink-tuning-1","note":"All durations are whole ticks at physics.tickRate. All distances are canvas cells. Values marked in RULES_AS_BUILT.md as proposals are prototype numbers, not Human decisions.","canvas":{"width":32,"height":32},"ink":{"figureBudget":220,"weaponBudget":60,"minBodyCells":12,"weaponMinBodyCells":12},"stats":{"sharpMinEmptyNeighbours":5,"armourBase":55,"armourPerCore":2,"armourPerCell":0,"sharpBase":1,"sharpPerSharpCell":0,"sharpPerSharpShare":0,"sharpPerSharpShareSquared":5.5,"speedBase":38,"speedWeightRef":70,"bluntDamage":1.2},"element":{"minColouredPercent":30,"strongMult":1.5,"weakMult":0.75,"beats":[0,0,4,2,3]},"physics":{"tickRate":60,"hitCooldownTicks":24,"restitution":0.79,"accelBase":6,"accelWeightRef":400,"turnBase":8,"turnInertiaRef":6000,"dashSpeedMult":3.8,"dashTicks":12,"dashCooldownTicks":120,"dashAccel":1,"hitKnockbackPerDamage":39},"ring":{"startRadius":[0,0,44,50,56],"endRadius":16,"shrinkStartTick":300,"shrinkEndTick":2700,"suddenDeathTick":3600,"suddenDeathShrinkPerTick":0.05,"startDistanceFraction":0.55,"winsToTakeMatch":3,"catchUpPercentPerLostRound":15,"catchUpMaxSteps":4,"drawTimeSeconds":30},"bots":{"edgeMargin":5,"edgeBlend":6,"insideBias":0.6,"dashRange":10,"dashChancePercent":6,"wobbleTicks":45,"wobbleStrength":0.35,"lightRetreatFraction":0.45,"roundaboutDot":0.5,"roundaboutStrength":1},"solo":{"arenaRadius":60,"waveBudgets":[120,170,230,300,380],"stakes":[1,1.5,2],"maxCopies":20,"enemyInkBudget":220,"enemySpawnInset":6,"enemySpeedMult":0.45,"enemyArmourMult":0.35,"enemyDamageMult":0.2,"enemyDashRange":8,"enemyDashChancePercent":2,"throwIntervalBaseTicks":18,"throwIntervalTicksPerInk":0.5,"throwSpeedBase":60,"throwSpeedWeightRef":60,"projectileLifeTicks":120,"projectileRadiusMax":3,"weaponKnockbackPerInk":12,"dropLifeTicks":600,"pickupRange":3,"waveMaxTicks":10800,"upgradeCost":[60,90,120,150,180],"upgradeHeroInk":40,"upgradeWeaponInk":15,"upgradeHealPercent":50,"bossArmourMult":1.5,"bossEscortCopies":1,"botFleeDistance":14,"botWallMargin":10}};
+var __mods = {}, __cache = {};
+function __req(id) { var e = __cache[id]; if (e) return e; e = __cache[id] = {}; __mods[id](e); return e; }
+
+// ---- core/rng.js
+__mods["core/rng.js"] = function (__exp) {
+// Seeded integer random generator (xorshift32). State is one unsigned 32-bit
+// integer held in an object { s }. Port to C# with `uint` arithmetic.
+
+function rngCreate(seed) {
+  let s = (seed ^ 0x9e3779b9) >>> 0;
+  if (s === 0) s = 0x1234567;
+  const r = { s };
+  // warm up so that neighbouring seeds diverge
+  rngU32(r); rngU32(r); rngU32(r); rngU32(r);
+  return r;
+}
+
+// Seed for a sub-stream (for example one per seat).
+function rngDerive(seed, index) {
+  return rngCreate(((seed >>> 0) + Math.imul(index + 1, 0x85ebca6b)) >>> 0);
+}
+
+function rngU32(r) {
+  let x = r.s;
+  x = (x ^ (x << 13)) >>> 0;
+  x = (x ^ (x >>> 17)) >>> 0;
+  x = (x ^ (x << 5)) >>> 0;
+  r.s = x;
+  return x;
+}
+
+// Integer in [0, n). n must be 1..65536.
+function rngInt(r, n) {
+  return (rngU32(r) >>> 8) % n;
+}
+
+// Double in [0, 1) with 24 random bits (exact in binary).
+function rngFloat(r) {
+  return (rngU32(r) >>> 8) / 16777216;
+}
+
+__exp.rngCreate = rngCreate;
+__exp.rngDerive = rngDerive;
+__exp.rngU32 = rngU32;
+__exp.rngInt = rngInt;
+__exp.rngFloat = rngFloat;
+};
+
+// ---- core/drawing.js
+__mods["core/drawing.js"] = function (__exp) {
+// Drawing grid, body extraction and stats (INK_RULES_V1 sections 1 to 4).
+// A drawing is a flat array of W*H integers, index = y * W + x.
+// 0 empty, 1 Black, 2 Ember (red), 3 Tide (blue), 4 Moss (green).
+
+const ELEMENT_NEUTRAL = 0;
+const COLOUR_BLACK = 1;
+const COLOUR_EMBER = 2;
+const COLOUR_TIDE = 3;
+const COLOUR_MOSS = 4;
+
+// rows: array of H strings of W characters, '.' empty, '1'..'4' colours.
+function parseDrawing(rows) {
+  const H = rows.length;
+  const W = rows[0].length;
+  const cells = new Array(W * H);
+  for (let y = 0; y < H; y++) {
+    const row = rows[y];
+    if (row.length !== W) throw new Error('row ' + y + ' has wrong length');
+    for (let x = 0; x < W; x++) {
+      const ch = row.charCodeAt(x);
+      let v = 0;
+      if (ch >= 49 && ch <= 52) v = ch - 48;
+      else if (ch !== 46) throw new Error('bad character in row ' + y);
+      cells[y * W + x] = v;
+    }
+  }
+  return { cells, W, H };
+}
+
+function drawingToRows(cells, W, H) {
+  const rows = [];
+  for (let y = 0; y < H; y++) {
+    let s = '';
+    for (let x = 0; x < W; x++) {
+      const v = cells[y * W + x];
+      s += v === 0 ? '.' : String(v);
+    }
+    rows.push(s);
+  }
+  return rows;
+}
+
+function emptyDrawing(W, H) {
+  const cells = new Array(W * H);
+  for (let i = 0; i < W * H; i++) cells[i] = 0;
+  return { cells, W, H };
+}
+
+// Largest 4-connected group. Groups are found by scanning cell indices upward,
+// so the first group found contains the lowest cell index; a later group only
+// replaces it when it is strictly larger (rule 2.1 tie-break).
+// Returns { body, N, filled, drips }: body is a W*H array with the colour of
+// body cells and 0 elsewhere.
+function extractBody(cells, W, H) {
+  const total = W * H;
+  const label = new Array(total);
+  for (let i = 0; i < total; i++) label[i] = -1;
+  const stack = new Array(total);
+  let filled = 0;
+  let bestLabel = -1;
+  let bestSize = 0;
+  let nextLabel = 0;
+  for (let i = 0; i < total; i++) {
+    if (cells[i] === 0) continue;
+    filled++;
+    if (label[i] !== -1) continue;
+    let sp = 0;
+    let size = 0;
+    stack[sp++] = i;
+    label[i] = nextLabel;
+    while (sp > 0) {
+      const k = stack[--sp];
+      size++;
+      const x = k % W;
+      const y = (k - x) / W;
+      if (x > 0 && cells[k - 1] !== 0 && label[k - 1] === -1) { label[k - 1] = nextLabel; stack[sp++] = k - 1; }
+      if (x < W - 1 && cells[k + 1] !== 0 && label[k + 1] === -1) { label[k + 1] = nextLabel; stack[sp++] = k + 1; }
+      if (y > 0 && cells[k - W] !== 0 && label[k - W] === -1) { label[k - W] = nextLabel; stack[sp++] = k - W; }
+      if (y < H - 1 && cells[k + W] !== 0 && label[k + W] === -1) { label[k + W] = nextLabel; stack[sp++] = k + W; }
+    }
+    if (size > bestSize) { bestSize = size; bestLabel = nextLabel; }
+    nextLabel++;
+  }
+  const body = new Array(total);
+  for (let i = 0; i < total; i++) body[i] = (bestLabel !== -1 && label[i] === bestLabel) ? cells[i] : 0;
+  return { body, N: bestSize, filled, drips: filled - bestSize };
+}
+
+// Number of the 8 neighbours of (x, y) that are body cells. Outside = empty.
+function countNeighbours(body, W, H, x, y) {
+  let n = 0;
+  for (let oy = -1; oy <= 1; oy++) {
+    const yy = y + oy;
+    if (yy < 0 || yy >= H) continue;
+    for (let ox = -1; ox <= 1; ox++) {
+      if (ox === 0 && oy === 0) continue;
+      const xx = x + ox;
+      if (xx < 0 || xx >= W) continue;
+      if (body[yy * W + xx] !== 0) n++;
+    }
+  }
+  return n;
+}
+
+// Damage multiplier of an attacker element against a defender element.
+function elementMultiplier(tuning, attacker, defender) {
+  const e = tuning.element;
+  if (attacker < 2 || defender < 2) return 1;
+  if (e.beats[attacker] === defender) return e.strongMult;
+  if (e.beats[defender] === attacker) return e.weakMult;
+  return 1;
+}
+
+// All derived values of a drawing. kind is 'figure' or 'weapon' (only the
+// default budget and minimum size differ). budget may override the default.
+function computeStats(cells, W, H, tuning, kind, budget) {
+  const st = tuning.stats;
+  const isWeapon = kind === 'weapon';
+  const inkBudget = budget !== undefined && budget !== null ? budget
+    : (isWeapon ? tuning.ink.weaponBudget : tuning.ink.figureBudget);
+  const minCells = isWeapon ? tuning.ink.weaponMinBodyCells : tuning.ink.minBodyCells;
+  const ex = extractBody(cells, W, H);
+  const body = ex.body;
+  const N = ex.N;
+  let C = 0;
+  let S = 0;
+  let sumX = 0;
+  let sumY = 0;
+  const colourCounts = [0, 0, 0, 0, 0];
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const v = body[y * W + x];
+      if (v === 0) continue;
+      colourCounts[v]++;
+      sumX += x;
+      sumY += y;
+      const nb = countNeighbours(body, W, H, x, y);
+      if (nb === 8) C++;
+      if (8 - nb >= st.sharpMinEmptyNeighbours) S++;
+    }
+  }
+  // centroid of cell centres
+  const cx = N > 0 ? sumX / N + 0.5 : 0;
+  const cy = N > 0 ? sumY / N + 0.5 : 0;
+  let maxD2 = 0;
+  let inertia = 0;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      if (body[y * W + x] === 0) continue;
+      const dx = x + 0.5 - cx;
+      const dy = y + 0.5 - cy;
+      const d2 = dx * dx + dy * dy;
+      inertia += d2;
+      if (d2 > maxD2) maxD2 = d2;
+    }
+  }
+  const radius = N > 0 ? Math.sqrt(maxD2) + 0.5 : 0;
+  // element
+  const coloured = colourCounts[2] + colourCounts[3] + colourCounts[4];
+  let element = ELEMENT_NEUTRAL;
+  if (N > 0 && coloured * 100 >= tuning.element.minColouredPercent * N) {
+    let best = 0;
+    let bestCount = 0;
+    let tie = false;
+    for (let c = 2; c <= 4; c++) {
+      if (colourCounts[c] > bestCount) { bestCount = colourCounts[c]; best = c; tie = false; }
+      else if (colourCounts[c] === bestCount) tie = true;
+    }
+    if (!tie && bestCount > 0) element = best;
+  }
+  const withinBudget = ex.filled <= inkBudget;
+  const bigEnough = N >= minCells;
+  return {
+    kind: isWeapon ? 'weapon' : 'figure',
+    budget: inkBudget,
+    filled: ex.filled,
+    drips: ex.drips,
+    N, C, S,
+    colourCounts: [colourCounts[1], colourCounts[2], colourCounts[3], colourCounts[4]],
+    element,
+    bigEnough,
+    withinBudget,
+    valid: bigEnough && withinBudget,
+    weight: N,
+    armour: st.armourBase + st.armourPerCore * C + st.armourPerCell * N,
+    sharpness: st.sharpBase + st.sharpPerSharpCell * S
+      + (N > 0 ? st.sharpPerSharpShare * S / N + st.sharpPerSharpShareSquared * (S / N) * (S / N) : 0),
+    topSpeed: st.speedBase / (1 + N / st.speedWeightRef),
+    cx, cy, radius, inertia,
+  };
+}
+
+__exp.parseDrawing = parseDrawing;
+__exp.drawingToRows = drawingToRows;
+__exp.emptyDrawing = emptyDrawing;
+__exp.extractBody = extractBody;
+__exp.countNeighbours = countNeighbours;
+__exp.elementMultiplier = elementMultiplier;
+__exp.computeStats = computeStats;
+__exp.ELEMENT_NEUTRAL = ELEMENT_NEUTRAL;
+__exp.COLOUR_BLACK = COLOUR_BLACK;
+__exp.COLOUR_EMBER = COLOUR_EMBER;
+__exp.COLOUR_TIDE = COLOUR_TIDE;
+__exp.COLOUR_MOSS = COLOUR_MOSS;
+};
+
+// ---- core/physics.js
+__mods["core/physics.js"] = function (__exp) {
+// Figure templates (collision shape) and the deterministic top-down step.
+//
+// Determinism contract: the simulation uses only + - * / and Math.sqrt on
+// doubles, plus Math.floor (exact) and integer arithmetic. No sin/cos/atan2.
+// Loop orders in this file are part of the contract (see RULES_AS_BUILT.md).
+//
+// World axes are the canvas axes: x to the right, y downward. A figure's front
+// is the canvas top, so with front vector (fx, fy) = (0, -1) the figure is
+// drawn exactly as on the canvas. Local cell (lx, ly) maps to the world as
+//   wx = x + (-fy) * lx - fx * ly
+//   wy = y +   fx  * lx + (-fy) * ly
+
+const { computeStats, extractBody, countNeighbours, elementMultiplier } = __req("core/drawing.js");
+
+// Build the immutable template of a drawing: stats plus collision cells.
+// Cells are listed in ascending cell index (y * W + x).
+function buildFigure(cells, W, H, tuning, kind, budget) {
+  const stats = computeStats(cells, W, H, tuning, kind, budget);
+  const body = extractBody(cells, W, H).body;
+  const ph = tuning.physics;
+  const lx = [];
+  const ly = [];
+  const sharp = [];
+  const colour = [];
+  const boundary = [];
+  const grid = new Array(W * H);
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const i = y * W + x;
+      const v = body[i];
+      if (v === 0) { grid[i] = -1; continue; }
+      const k = lx.length;
+      grid[i] = k;
+      lx.push(x + 0.5 - stats.cx);
+      ly.push(y + 0.5 - stats.cy);
+      colour.push(v);
+      const nb = countNeighbours(body, W, H, x, y);
+      sharp.push(8 - nb >= tuning.stats.sharpMinEmptyNeighbours);
+      if (nb < 8) boundary.push(k);
+    }
+  }
+  const turnRate = ph.turnBase / (1 + stats.inertia / ph.turnInertiaRef); // radians per second (small-angle)
+  const t = turnRate / (2 * ph.tickRate); // tan(half step angle), approximated by the half angle
+  let accelK = ph.accelBase / (1 + stats.N / ph.accelWeightRef) / ph.tickRate;
+  if (accelK > 1) accelK = 1;
+  return {
+    stats, W, H,
+    cx: stats.cx, cy: stats.cy,
+    count: lx.length,
+    lx, ly, sharp, colour, boundary, grid,
+    radius: stats.radius,
+    mass: stats.N,
+    accelK,
+    turnRate,
+    turnCos: (1 - t * t) / (1 + t * t),
+    turnSin: (2 * t) / (1 + t * t),
+  };
+}
+
+// A body is one moving instance of a figure template.
+// armourMult, speedMult and damageMult default to 1 (the solo mode weakens
+// enemy copies with them).
+function createBody(fig, x, y, fx, fy, team, armourMult, speedMult, damageMult) {
+  const am = armourMult === undefined ? 1 : armourMult;
+  const sm = speedMult === undefined ? 1 : speedMult;
+  const dm = damageMult === undefined ? 1 : damageMult;
+  const hp = fig.stats.armour * am;
+  return {
+    fig, team,
+    x, y, vx: 0, vy: 0, fx, fy,
+    hp, maxHp: hp,
+    alive: true,
+    topSpeed: fig.stats.topSpeed * sm,
+    damageMult: dm,
+    dashTicks: 0, dashCd: 0, dashDx: 0, dashDy: 0,
+  };
+}
+
+// world: { bodies, cd, events, wallRadius }
+// cd[i * n + j] = ticks until body i may damage body j again.
+function createWorld(bodies, wallRadius) {
+  const n = bodies.length;
+  const cd = new Array(n * n);
+  for (let i = 0; i < n * n; i++) cd[i] = 0;
+  return { bodies, cd, events: [], wallRadius: wallRadius === undefined ? 0 : wallRadius };
+}
+
+const NO_INPUT = { mx: 0, my: 0, dash: false };
+
+// One fixed tick. inputs[i] = { mx, my, dash } for body i (missing = idle).
+// Order: 1 control (index order), 2 integrate, 3 pairs (i < j, index order),
+// 4 wall. Elimination rules belong to the mode modules.
+function stepWorld(world, inputs, tuning) {
+  const ph = tuning.physics;
+  const bodies = world.bodies;
+  const n = bodies.length;
+  const dt = 1 / ph.tickRate;
+  world.events.length = 0;
+
+  // 1. control
+  for (let i = 0; i < n; i++) {
+    const b = bodies[i];
+    if (!b.alive) continue;
+    const inp = inputs[i] || NO_INPUT;
+    let mx = inp.mx;
+    let my = inp.my;
+    let len2 = mx * mx + my * my;
+    let dx = 0;
+    let dy = 0;
+    if (len2 > 0) {
+      const len = Math.sqrt(len2);
+      dx = mx / len;
+      dy = my / len;
+      if (len2 > 1) { mx = dx; my = dy; }
+      turnToward(b, dx, dy);
+    }
+    if (b.dashCd > 0) b.dashCd--;
+    if (inp.dash && b.dashCd === 0 && b.dashTicks === 0) {
+      if (len2 > 0) { b.dashDx = dx; b.dashDy = dy; } else { b.dashDx = b.fx; b.dashDy = b.fy; }
+      b.dashTicks = ph.dashTicks;
+      b.dashCd = ph.dashCooldownTicks;
+    }
+    let tvx;
+    let tvy;
+    let k;
+    if (b.dashTicks > 0) {
+      b.dashTicks--;
+      const sp = b.topSpeed * ph.dashSpeedMult;
+      tvx = b.dashDx * sp;
+      tvy = b.dashDy * sp;
+      k = ph.dashAccel;
+    } else {
+      tvx = mx * b.topSpeed;
+      tvy = my * b.topSpeed;
+      k = b.fig.accelK;
+    }
+    b.vx += (tvx - b.vx) * k;
+    b.vy += (tvy - b.vy) * k;
+  }
+
+  // 2. integrate
+  for (let i = 0; i < n; i++) {
+    const b = bodies[i];
+    if (!b.alive) continue;
+    b.x += b.vx * dt;
+    b.y += b.vy * dt;
+  }
+
+  // 3. pairs
+  for (let i = 0; i < n * n; i++) if (world.cd[i] > 0) world.cd[i]--;
+  for (let i = 0; i < n; i++) {
+    const a = bodies[i];
+    if (!a.alive) continue;
+    for (let j = i + 1; j < n; j++) {
+      const b = bodies[j];
+      if (!b.alive) continue;
+      collidePair(world, i, j, a, b, tuning);
+    }
+  }
+
+  // 4. wall (solo arena only)
+  if (world.wallRadius > 0) {
+    const lim = world.wallRadius;
+    for (let i = 0; i < n; i++) {
+      const b = bodies[i];
+      if (!b.alive) continue;
+      const d2 = b.x * b.x + b.y * b.y;
+      if (d2 > lim * lim) {
+        const d = Math.sqrt(d2);
+        const nx = b.x / d;
+        const ny = b.y / d;
+        b.x = nx * lim;
+        b.y = ny * lim;
+        const vn = b.vx * nx + b.vy * ny;
+        if (vn > 0) { b.vx -= nx * vn; b.vy -= ny * vn; }
+      }
+    }
+  }
+}
+
+// Rotate the front vector toward the unit direction (dx, dy) by at most one
+// turn step, then renormalise.
+function turnToward(b, dx, dy) {
+  const fig = b.fig;
+  const dot = b.fx * dx + b.fy * dy;
+  if (dot >= fig.turnCos) { b.fx = dx; b.fy = dy; return; }
+  const cross = b.fx * dy - b.fy * dx;
+  const cs = fig.turnCos;
+  const sn = cross >= 0 ? fig.turnSin : -fig.turnSin;
+  const nx = b.fx * cs - b.fy * sn;
+  const ny = b.fx * sn + b.fy * cs;
+  const len = Math.sqrt(nx * nx + ny * ny);
+  b.fx = nx / len;
+  b.fy = ny / len;
+}
+
+// Scratch result of scanCells.
+const scan = { sx: 0, sy: 0, maxDepth: 0, hits: 0, pSharp: false, qSharp: false };
+
+// Every boundary cell of p (a circle of radius 0.5) is tested against the
+// cells of q in the 3 x 3 block around it in q's grid. Adds depth-weighted
+// normals pointing from q toward p (world space) to scan.sx / scan.sy.
+function scanCells(p, q, sign) {
+  const pf = p.fig;
+  const qf = q.fig;
+  const pc = -p.fy; // cos of p
+  const ps = p.fx;  // sin of p
+  const qc = -q.fy;
+  const qs = q.fx;
+  const bl = pf.boundary;
+  const W = qf.W;
+  const H = qf.H;
+  for (let bi = 0; bi < bl.length; bi++) {
+    const k = bl[bi];
+    const lx = pf.lx[k];
+    const ly = pf.ly[k];
+    const wx = p.x + pc * lx - ps * ly - q.x;
+    const wy = p.y + ps * lx + pc * ly - q.y;
+    // into q's local frame (inverse rotation)
+    const qx = qc * wx + qs * wy;
+    const qy = qc * wy - qs * wx;
+    const gx = Math.floor(qx + qf.cx);
+    const gy = Math.floor(qy + qf.cy);
+    if (gx < -1 || gy < -1 || gx > W || gy > H) continue;
+    for (let oy = -1; oy <= 1; oy++) {
+      const yy = gy + oy;
+      if (yy < 0 || yy >= H) continue;
+      for (let ox = -1; ox <= 1; ox++) {
+        const xx = gx + ox;
+        if (xx < 0 || xx >= W) continue;
+        const m = qf.grid[yy * W + xx];
+        if (m < 0) continue;
+        const ex = qx - qf.lx[m];
+        const ey = qy - qf.ly[m];
+        const d2 = ex * ex + ey * ey;
+        if (d2 >= 1) continue;
+        scan.hits++;
+        if (pf.sharp[k]) { if (sign > 0) scan.pSharp = true; else scan.qSharp = true; }
+        if (qf.sharp[m]) { if (sign > 0) scan.qSharp = true; else scan.pSharp = true; }
+        let depth = 1;
+        if (d2 > 0) {
+          const d = Math.sqrt(d2);
+          depth = 1 - d;
+          // normal q -> p in q-local, weighted by depth, rotated to the world
+          const nx = ex / d * depth;
+          const ny = ey / d * depth;
+          scan.sx += sign * (qc * nx - qs * ny);
+          scan.sy += sign * (qs * nx + qc * ny);
+        }
+        if (depth > scan.maxDepth) scan.maxDepth = depth;
+      }
+    }
+  }
+}
+
+function collidePair(world, i, j, a, b, tuning) {
+  const ph = tuning.physics;
+  const rx = a.x - b.x;
+  const ry = a.y - b.y;
+  const reach = a.fig.radius + b.fig.radius;
+  if (rx * rx + ry * ry >= reach * reach) return;
+  scan.sx = 0; scan.sy = 0; scan.maxDepth = 0; scan.hits = 0;
+  scan.pSharp = false; scan.qSharp = false;
+  scanCells(a, b, 1);   // a's boundary against b's cells; pSharp = a, qSharp = b
+  scanCells(b, a, -1);  // b's boundary against a's cells; flags are swapped back by sign
+  if (scan.hits === 0) return;
+  const aSharp = scan.pSharp;
+  const bSharp = scan.qSharp;
+
+  // contact normal: pushes a away from b
+  let nx = scan.sx;
+  let ny = scan.sy;
+  let l2 = nx * nx + ny * ny;
+  if (l2 < 1e-12) { nx = rx; ny = ry; l2 = nx * nx + ny * ny; }
+  if (l2 < 1e-12) { nx = 1; ny = 0; l2 = 1; }
+  const l = Math.sqrt(l2);
+  nx = nx / l;
+  ny = ny / l;
+
+  const invA = 1 / a.fig.mass;
+  const invB = 1 / b.fig.mass;
+  const invSum = invA + invB;
+  const depth = scan.maxDepth;
+  a.x += nx * depth * invA / invSum;
+  a.y += ny * depth * invA / invSum;
+  b.x -= nx * depth * invB / invSum;
+  b.y -= ny * depth * invB / invSum;
+  const rel = (a.vx - b.vx) * nx + (a.vy - b.vy) * ny;
+  if (rel < 0) {
+    const imp = -(1 + ph.restitution) * rel / invSum;
+    a.vx += nx * imp * invA;
+    a.vy += ny * imp * invA;
+    b.vx -= nx * imp * invB;
+    b.vy -= ny * imp * invB;
+  }
+
+  // damage, once per direction per cooldown; never inside one team
+  if (a.team === b.team) return;
+  const n = world.bodies.length;
+  if (world.cd[i * n + j] === 0) {
+    const dmg = (aSharp ? a.fig.stats.sharpness : tuning.stats.bluntDamage)
+      * a.damageMult * elementMultiplier(tuning, a.fig.stats.element, b.fig.stats.element);
+    b.hp -= dmg;
+    world.cd[i * n + j] = ph.hitCooldownTicks;
+    const kb = dmg * ph.hitKnockbackPerDamage * invB;
+    b.vx -= nx * kb;
+    b.vy -= ny * kb;
+    world.events.push({ type: 'hit', from: i, to: j, damage: dmg, sharp: aSharp });
+  }
+  if (world.cd[j * n + i] === 0) {
+    const dmg = (bSharp ? b.fig.stats.sharpness : tuning.stats.bluntDamage)
+      * b.damageMult * elementMultiplier(tuning, b.fig.stats.element, a.fig.stats.element);
+    a.hp -= dmg;
+    world.cd[j * n + i] = ph.hitCooldownTicks;
+    const kb = dmg * ph.hitKnockbackPerDamage * invA;
+    a.vx += nx * kb;
+    a.vy += ny * kb;
+    world.events.push({ type: 'hit', from: j, to: i, damage: dmg, sharp: bSharp });
+  }
+}
+
+// World position of local cell k of body b (for drawing and tests).
+function cellWorldX(b, k) { return b.x + (-b.fy) * b.fig.lx[k] - b.fx * b.fig.ly[k]; }
+function cellWorldY(b, k) { return b.y + b.fx * b.fig.lx[k] + (-b.fy) * b.fig.ly[k]; }
+
+__exp.buildFigure = buildFigure;
+__exp.createBody = createBody;
+__exp.createWorld = createWorld;
+__exp.stepWorld = stepWorld;
+__exp.cellWorldX = cellWorldX;
+__exp.cellWorldY = cellWorldY;
+};
+
+// ---- core/ring.js
+__mods["core/ring.js"] = function (__exp) {
+// Mode B "Ring": 2 to 4 figures, shrinking ring, rounds, first to N wins,
+// catch-up ink. The match object is plain data plus figure templates.
+
+const { createBody, createWorld, stepWorld } = __req("core/physics.js");
+const { rngDerive } = __req("core/rng.js");
+
+// Start slots as unit vectors from the ring centre (exact values, no trig).
+const H3 = Math.sqrt(3) / 2;
+const SLOTS = [
+  null, null,
+  [[-1, 0], [1, 0]],
+  [[0, -1], [H3, 0.5], [-H3, 0.5]],
+  [[-1, 0], [1, 0], [0, -1], [0, 1]],
+];
+
+function ringCreateMatch(tuning, seatCount, seed) {
+  if (seatCount < 2 || seatCount > 4) throw new Error('seatCount must be 2..4');
+  const wins = [];
+  const lost = [];
+  const botRng = [];
+  for (let i = 0; i < seatCount; i++) {
+    wins.push(0);
+    lost.push(0);
+    botRng.push(rngDerive(seed, i));
+  }
+  return {
+    mode: 'ring',
+    seed, seatCount,
+    round: 0,            // rounds started so far
+    wins, lost,
+    phase: 'draw',       // 'draw' | 'fight' | 'roundOver' | 'matchOver'
+    tick: 0,             // ticks since the round started
+    ringRadius: tuning.ring.startRadius[seatCount],
+    world: null,
+    roundWinner: -1,
+    matchWinner: -1,
+    outTick: [],         // per seat: tick of elimination in this round, -1 while in
+    outReason: [],       // per seat: '' | 'ring' | 'armour'
+    botRng,
+    botWobble: [],       // per seat: current sideways wobble of the bot (-1, 0, 1)
+  };
+}
+
+// Ink budget of a seat for its next drawing (catch-up rule 6).
+function ringInkBudget(tuning, match, seat) {
+  let steps = match.lost[seat];
+  if (steps > tuning.ring.catchUpMaxSteps) steps = tuning.ring.catchUpMaxSteps;
+  return Math.floor(tuning.ink.figureBudget * (100 + tuning.ring.catchUpPercentPerLostRound * steps) / 100);
+}
+
+// Ring radius at a tick of the round.
+function ringRadiusAt(tuning, seatCount, tick) {
+  const r = tuning.ring;
+  const start = r.startRadius[seatCount];
+  if (tick <= r.shrinkStartTick) return start;
+  if (tick < r.shrinkEndTick) {
+    return start + (r.endRadius - start) * (tick - r.shrinkStartTick) / (r.shrinkEndTick - r.shrinkStartTick);
+  }
+  if (tick <= r.suddenDeathTick) return r.endRadius;
+  const rad = r.endRadius - (tick - r.suddenDeathTick) * r.suddenDeathShrinkPerTick;
+  return rad > 0 ? rad : 0;
+}
+
+// Start the next round with one figure template per seat (see buildFigure).
+// Seats rotate through the start slots from round to round.
+function ringStartRound(tuning, match, figures) {
+  if (match.phase === 'matchOver') throw new Error('match is over');
+  if (figures.length !== match.seatCount) throw new Error('one figure per seat');
+  const n = match.seatCount;
+  const slots = SLOTS[n];
+  const R = tuning.ring.startRadius[n];
+  const d = R * tuning.ring.startDistanceFraction;
+  const bodies = [];
+  match.outTick = [];
+  match.outReason = [];
+  match.botWobble = [];
+  for (let seat = 0; seat < n; seat++) {
+    const slot = slots[(seat + match.round) % n];
+    // position on the slot direction, front toward the centre
+    bodies.push(createBody(figures[seat], slot[0] * d, slot[1] * d, -slot[0], -slot[1], seat, 1, 1, 1));
+    match.outTick.push(-1);
+    match.outReason.push('');
+    match.botWobble.push(0);
+  }
+  match.world = createWorld(bodies, 0);
+  match.tick = 0;
+  match.ringRadius = R;
+  match.roundWinner = -1;
+  match.round++;
+  match.phase = 'fight';
+}
+
+// One tick of the fight. inputs[seat] = { mx, my, dash }.
+function ringStep(tuning, match, inputs) {
+  if (match.phase !== 'fight') return;
+  const world = match.world;
+  const bodies = world.bodies;
+  const n = bodies.length;
+  stepWorld(world, inputs, tuning);
+  match.tick++;
+  const R = ringRadiusAt(tuning, n, match.tick);
+  match.ringRadius = R;
+  // eliminations, seat order
+  let aliveCount = 0;
+  let lastAlive = -1;
+  let outNow = 0;
+  for (let i = 0; i < n; i++) {
+    const b = bodies[i];
+    if (!b.alive) continue;
+    let reason = '';
+    if (b.hp <= 0) reason = 'armour';
+    else if (b.x * b.x + b.y * b.y > R * R) reason = 'ring';
+    if (reason !== '') {
+      b.alive = false;
+      match.outTick[i] = match.tick;
+      match.outReason[i] = reason;
+      world.events.push({ type: 'out', seat: i, reason });
+      outNow++;
+    } else {
+      aliveCount++;
+      lastAlive = i;
+    }
+  }
+  if (aliveCount > 1) return;
+  let winner = lastAlive;
+  if (aliveCount === 0) {
+    // everyone left went out in the same tick: the one closest to the centre
+    // wins, lowest seat on an exact tie
+    let best = -1;
+    for (let i = 0; i < n; i++) {
+      if (match.outTick[i] !== match.tick) continue;
+      const b = bodies[i];
+      const d2 = b.x * b.x + b.y * b.y;
+      if (winner === -1 || d2 < best) { winner = i; best = d2; }
+    }
+  }
+  match.roundWinner = winner;
+  match.wins[winner]++;
+  for (let i = 0; i < n; i++) if (i !== winner) match.lost[i]++;
+  if (match.wins[winner] >= tuning.ring.winsToTakeMatch) {
+    match.matchWinner = winner;
+    match.phase = 'matchOver';
+  } else {
+    match.phase = 'roundOver';
+  }
+}
+
+__exp.ringCreateMatch = ringCreateMatch;
+__exp.ringInkBudget = ringInkBudget;
+__exp.ringRadiusAt = ringRadiusAt;
+__exp.ringStartRound = ringStartRound;
+__exp.ringStep = ringStep;
+};
+
+// ---- core/bots.js
+__mods["core/bots.js"] = function (__exp) {
+// Simple deterministic bots. A bot reads the state and returns the same input
+// record a human seat would produce: { mx, my, dash }.
+
+const { rngInt } = __req("core/rng.js");
+
+// Ring bot for one seat. Draws from match.botRng[seat] only.
+// 1. Target: nearest living opponent (centre distance, lowest seat on a tie).
+// 2. Aim point: the target centre, shifted toward the ring centre by
+//    insideBias * own radius, so that the push goes outward.
+// 3. Every wobbleTicks the bot picks a sideways wobble of -1, 0 or +1.
+// 4. Near the edge the steering blends toward the ring centre; lighter bots
+//    start earlier and go round a target that blocks the way.
+// 5. Dash by chance when the target is close and the bot is not near the edge.
+function botRingInput(tuning, match, seat) {
+  const bt = tuning.bots;
+  const bodies = match.world.bodies;
+  const me = bodies[seat];
+  const out = { mx: 0, my: 0, dash: false };
+  if (!me.alive) return out;
+  const rng = match.botRng[seat];
+  if (match.tick % bt.wobbleTicks === 0) match.botWobble[seat] = rngInt(rng, 3) - 1;
+  let target = -1;
+  let bestD2 = 0;
+  for (let i = 0; i < bodies.length; i++) {
+    if (i === seat || !bodies[i].alive) continue;
+    const dx = bodies[i].x - me.x;
+    const dy = bodies[i].y - me.y;
+    const d2 = dx * dx + dy * dy;
+    if (target === -1 || d2 < bestD2) { target = i; bestD2 = d2; }
+  }
+  const myDist = Math.sqrt(me.x * me.x + me.y * me.y);
+  let dirX = 0;
+  let dirY = 0;
+  let targetDist = 0;
+  if (target !== -1) {
+    const t = bodies[target];
+    let ax = t.x;
+    let ay = t.y;
+    const td = Math.sqrt(t.x * t.x + t.y * t.y);
+    if (td > 0) {
+      const shift = bt.insideBias * me.fig.radius;
+      const use = shift < td ? shift : td;
+      ax -= t.x / td * use;
+      ay -= t.y / td * use;
+    }
+    let dx = ax - me.x;
+    let dy = ay - me.y;
+    let d = Math.sqrt(dx * dx + dy * dy);
+    if (d > 0) { dx = dx / d; dy = dy / d; } else { dx = me.fx; dy = me.fy; }
+    // sideways wobble (perpendicular to the approach)
+    const w = match.botWobble[seat] * bt.wobbleStrength;
+    dirX = dx - dy * w;
+    dirY = dy + dx * w;
+    d = Math.sqrt(dirX * dirX + dirY * dirY);
+    dirX = dirX / d;
+    dirY = dirY / d;
+    targetDist = Math.sqrt(bestD2);
+  }
+  // edge avoidance. A bot that is lighter than its target keeps further away
+  // from the edge. When the target blocks the way back to the centre the bot
+  // goes round it.
+  let margin = bt.edgeMargin;
+  if (target !== -1) {
+    const tm = bodies[target].fig.mass;
+    if (tm > me.fig.mass) margin += match.ringRadius * bt.lightRetreatFraction * (1 - me.fig.mass / tm);
+  }
+  const limit = match.ringRadius - margin;
+  let edge = 0;
+  if (myDist > limit && myDist > 0) {
+    edge = (myDist - limit) / bt.edgeBlend;
+    if (edge > 1) edge = 1;
+    const cx = -me.x / myDist;
+    const cy = -me.y / myDist;
+    let ex = cx;
+    let ey = cy;
+    if (target !== -1 && targetDist > 0) {
+      const ux = (bodies[target].x - me.x) / targetDist;
+      const uy = (bodies[target].y - me.y) / targetDist;
+      if (cx * ux + cy * uy > bt.roundaboutDot) {
+        let tx = -cy;
+        let ty = cx;
+        if (tx * ux + ty * uy > 0) { tx = -tx; ty = -ty; }
+        ex += tx * bt.roundaboutStrength;
+        ey += ty * bt.roundaboutStrength;
+      }
+    }
+    dirX = dirX * (1 - edge) + ex * edge;
+    dirY = dirY * (1 - edge) + ey * edge;
+    const d = Math.sqrt(dirX * dirX + dirY * dirY);
+    if (d > 0) { dirX = dirX / d; dirY = dirY / d; }
+  }
+  out.mx = dirX;
+  out.my = dirY;
+  if (target !== -1 && me.dashCd === 0 && me.dashTicks === 0 && edge < 0.5) {
+    const reach = bt.dashRange + me.fig.radius + bodies[target].fig.radius;
+    if (targetDist < reach && rngInt(rng, 100) < bt.dashChancePercent) out.dash = true;
+  }
+  return out;
+}
+
+// Inputs for every seat; seats listed in humanInputs keep their given input.
+// humanInputs: array with an input record or null (= bot) per seat.
+function ringBotInputs(tuning, match, humanInputs) {
+  const inputs = [];
+  for (let seat = 0; seat < match.seatCount; seat++) {
+    const h = humanInputs ? humanInputs[seat] : null;
+    inputs.push(h ? h : botRingInput(tuning, match, seat));
+  }
+  return inputs;
+}
+
+// Solo enemy: run at the hero, dash by chance when close.
+function botEnemyInput(tuning, run, index) {
+  const so = tuning.solo;
+  const bodies = run.world.bodies;
+  const me = bodies[index];
+  const hero = bodies[0];
+  const out = { mx: 0, my: 0, dash: false };
+  if (!me.alive || !hero.alive) return out;
+  const dx = hero.x - me.x;
+  const dy = hero.y - me.y;
+  const d = Math.sqrt(dx * dx + dy * dy);
+  if (d > 0) { out.mx = dx / d; out.my = dy / d; }
+  if (me.dashCd === 0 && me.dashTicks === 0 && d < so.enemyDashRange + me.fig.radius + hero.fig.radius) {
+    if (rngInt(run.rng, 100) < so.enemyDashChancePercent) out.dash = true;
+  }
+  return out;
+}
+
+// Solo hero bot (for simulation and attract mode). style 0 = kite (keep away
+// and let the thrown weapon work), style 1 = brawl (run into the nearest enemy).
+// Uses no random numbers.
+function botHeroInput(tuning, run, style) {
+  const so = tuning.solo;
+  const bodies = run.world.bodies;
+  const me = bodies[0];
+  const out = { mx: 0, my: 0, dash: false };
+  if (!me.alive) return out;
+  let near = -1;
+  let nearD2 = 0;
+  for (let i = 1; i < bodies.length; i++) {
+    if (!bodies[i].alive) continue;
+    const dx = bodies[i].x - me.x;
+    const dy = bodies[i].y - me.y;
+    const d2 = dx * dx + dy * dy;
+    if (near === -1 || d2 < nearD2) { near = i; nearD2 = d2; }
+  }
+  let dirX = 0;
+  let dirY = 0;
+  let fleeing = false;
+  if (near !== -1) {
+    const e = bodies[near];
+    const d = Math.sqrt(nearD2);
+    const gap = d - me.fig.radius - e.fig.radius;
+    let ux = 0;
+    let uy = 0;
+    if (d > 0) { ux = (e.x - me.x) / d; uy = (e.y - me.y) / d; }
+    if (style === 1) {
+      dirX = ux; dirY = uy;
+      if (gap < so.enemyDashRange) out.dash = true;
+    } else if (gap < so.botFleeDistance) {
+      // away from the enemy, with a sideways part so the hero circles
+      dirX = -ux - uy * 0.6;
+      dirY = -uy + ux * 0.6;
+      fleeing = true;
+      if (gap < 2) out.dash = true;
+    }
+  }
+  if (!fleeing && style !== 1 || near === -1) {
+    // go for the nearest ink drop
+    let best = -1;
+    let bestD2 = 0;
+    for (let i = 0; i < run.drops.length; i++) {
+      const dx = run.drops[i].x - me.x;
+      const dy = run.drops[i].y - me.y;
+      const d2 = dx * dx + dy * dy;
+      if (best === -1 || d2 < bestD2) { best = i; bestD2 = d2; }
+    }
+    if (best !== -1 && bestD2 > 0) {
+      const d = Math.sqrt(bestD2);
+      dirX = (run.drops[best].x - me.x) / d;
+      dirY = (run.drops[best].y - me.y) / d;
+    }
+  }
+  // stay off the wall
+  const myDist = Math.sqrt(me.x * me.x + me.y * me.y);
+  const limit = so.arenaRadius - so.botWallMargin;
+  if (myDist > limit) {
+    let w = (myDist - limit) / so.botWallMargin;
+    if (w > 1) w = 1;
+    dirX = dirX * (1 - w) - me.x / myDist * w;
+    dirY = dirY * (1 - w) - me.y / myDist * w;
+  }
+  const l = Math.sqrt(dirX * dirX + dirY * dirY);
+  if (l > 0) { out.mx = dirX / l; out.my = dirY / l; }
+  return out;
+}
+
+__exp.botRingInput = botRingInput;
+__exp.ringBotInputs = ringBotInputs;
+__exp.botEnemyInput = botEnemyInput;
+__exp.botHeroInput = botHeroInput;
+};
+
+// ---- core/solo.js
+__mods["core/solo.js"] = function (__exp) {
+// Mode A "Solo Arena": hero plus thrown weapon, one enemy design per wave with
+// copies paid from the wave budget, stakes, ink drops, upgrades, boss.
+// Body 0 of the world is always the hero (team 0); enemies are team 1.
+
+const { buildFigure, createBody, createWorld, stepWorld } = __req("core/physics.js");
+const { computeStats, extractBody, elementMultiplier } = __req("core/drawing.js");
+const { rngCreate, rngFloat } = __req("core/rng.js");
+const { botEnemyInput } = __req("core/bots.js");
+
+const SOLO_WAVES = 5; // the boss is fought as wave index 5
+
+// Check a drawing for the run. kind: 'hero' | 'weapon' | 'enemy'.
+// Returns { ok, reason, stats }. reason: '' | 'tooSmall' | 'overBudget' | 'colourLocked'.
+function soloCheckDrawing(tuning, run, cells, W, H, kind) {
+  const budget = kind === 'hero' ? run.heroBudget : kind === 'weapon' ? run.weaponBudget : tuning.solo.enemyInkBudget;
+  const stats = computeStats(cells, W, H, tuning, kind === 'weapon' ? 'weapon' : 'figure', budget);
+  let reason = '';
+  if (!stats.bigEnough) reason = 'tooSmall';
+  else if (!stats.withinBudget) reason = 'overBudget';
+  else if (kind !== 'enemy') {
+    for (let i = 0; i < cells.length; i++) {
+      if (cells[i] !== 0 && !run.colours[cells[i]]) { reason = 'colourLocked'; break; }
+    }
+  }
+  return { ok: reason === '', reason, stats };
+}
+
+// startColour: 2, 3 or 4, the one colour the run starts with besides Black
+// (0 = Black only).
+function soloCreateRun(tuning, seed, heroCells, weaponCells, W, H, startColour) {
+  const run = {
+    mode: 'solo',
+    seed,
+    rng: rngCreate(seed),
+    phase: 'prepare',     // 'prepare' | 'fight' | 'cleared' | 'dead' | 'won'
+    endReason: '',        // 'armour' | 'time' when phase is 'dead'
+    wave: 0,              // index of the wave to start or being fought; 5 = boss
+    W, H,
+    heroBudget: tuning.ink.figureBudget,
+    weaponBudget: tuning.ink.weaponBudget,
+    colours: [false, true, startColour === 2, startColour === 3, startColour === 4],
+    heroFig: null, weaponFig: null,
+    heroHp: 0, heroMaxHp: 0,
+    enemyDrawings: [],    // body cells of every wave design, for the boss
+    wallet: 0, score: 0,
+    upgradeTaken: false,
+    world: null,
+    shots: [], drops: [],
+    events: [],
+    tick: 0, throwCd: 0,
+    copies: 0, stake: 1,
+  };
+  let chk = soloCheckDrawing(tuning, run, heroCells, W, H, 'hero');
+  if (!chk.ok) throw new Error('hero drawing: ' + chk.reason);
+  chk = soloCheckDrawing(tuning, run, weaponCells, W, H, 'weapon');
+  if (!chk.ok) throw new Error('weapon drawing: ' + chk.reason);
+  run.heroFig = buildFigure(heroCells, W, H, tuning, 'figure', run.heroBudget);
+  run.weaponFig = buildFigure(weaponCells, W, H, tuning, 'weapon', run.weaponBudget);
+  run.heroHp = run.heroFig.stats.armour;
+  run.heroMaxHp = run.heroHp;
+  return run;
+}
+
+// Number of enemy copies a design gets in a wave.
+function soloCopies(tuning, waveIndex, stakeIndex, N) {
+  const so = tuning.solo;
+  let copies = Math.floor(so.waveBudgets[waveIndex] * so.stakes[stakeIndex] / N);
+  if (copies < 1) copies = 1;
+  if (copies > so.maxCopies) copies = so.maxCopies;
+  return copies;
+}
+
+function soloThrowIntervalTicks(tuning, weaponN) {
+  return tuning.solo.throwIntervalBaseTicks + Math.floor(weaponN * tuning.solo.throwIntervalTicksPerInk);
+}
+
+function randomUnit(run) {
+  for (;;) {
+    const x = rngFloat(run.rng) * 2 - 1;
+    const y = rngFloat(run.rng) * 2 - 1;
+    const l2 = x * x + y * y;
+    if (l2 > 0.01 && l2 <= 1) {
+      const l = Math.sqrt(l2);
+      return [x / l, y / l];
+    }
+  }
+}
+
+function beginFight(tuning, run, enemyBodies) {
+  const hero = createBody(run.heroFig, 0, 0, 0, -1, 0, 1, 1, 1);
+  hero.hp = run.heroHp;
+  hero.maxHp = run.heroMaxHp;
+  const bodies = [hero];
+  for (let i = 0; i < enemyBodies.length; i++) bodies.push(enemyBodies[i]);
+  run.world = createWorld(bodies, tuning.solo.arenaRadius);
+  run.shots = [];
+  run.drops = [];
+  run.tick = 0;
+  run.throwCd = soloThrowIntervalTicks(tuning, run.weaponFig.stats.N);
+  run.upgradeTaken = false;
+  run.phase = 'fight';
+}
+
+function spawnEnemy(tuning, run, fig, armourMult) {
+  const so = tuning.solo;
+  const u = randomUnit(run);
+  const d = so.arenaRadius - so.enemySpawnInset;
+  return createBody(fig, u[0] * d, u[1] * d, -u[0], -u[1], 1, armourMult, so.enemySpeedMult, so.enemyDamageMult);
+}
+
+// Start wave run.wave (0..4) with the player's enemy drawing and stake index.
+function soloStartWave(tuning, run, enemyCells, stakeIndex) {
+  if (run.phase !== 'prepare' && run.phase !== 'cleared') throw new Error('cannot start a wave now');
+  if (run.wave >= SOLO_WAVES) throw new Error('all waves done, start the boss');
+  const chk = soloCheckDrawing(tuning, run, enemyCells, run.W, run.H, 'enemy');
+  if (!chk.ok) throw new Error('enemy drawing: ' + chk.reason);
+  const fig = buildFigure(enemyCells, run.W, run.H, tuning, 'figure', tuning.solo.enemyInkBudget);
+  run.enemyDrawings.push(extractBody(enemyCells, run.W, run.H).body);
+  run.copies = soloCopies(tuning, run.wave, stakeIndex, fig.stats.N);
+  run.stake = tuning.solo.stakes[stakeIndex];
+  const enemies = [];
+  for (let i = 0; i < run.copies; i++) enemies.push(spawnEnemy(tuning, run, fig, tuning.solo.enemyArmourMult));
+  beginFight(tuning, run, enemies);
+}
+
+// The boss drawing: cell-wise union of the bodies of all wave designs; where
+// several designs have ink the earliest wave gives the colour.
+function soloBossCells(run) {
+  const total = run.W * run.H;
+  const cells = new Array(total);
+  for (let i = 0; i < total; i++) cells[i] = 0;
+  for (let w = 0; w < run.enemyDrawings.length; w++) {
+    const d = run.enemyDrawings[w];
+    for (let i = 0; i < total; i++) if (cells[i] === 0 && d[i] !== 0) cells[i] = d[i];
+  }
+  return cells;
+}
+
+function soloStartBoss(tuning, run) {
+  if (run.phase !== 'cleared' || run.wave !== SOLO_WAVES) throw new Error('boss not due');
+  const so = tuning.solo;
+  const total = run.W * run.H;
+  const bossFig = buildFigure(soloBossCells(run), run.W, run.H, tuning, 'figure', total);
+  const enemies = [spawnEnemy(tuning, run, bossFig, so.bossArmourMult)];
+  for (let w = 0; w < run.enemyDrawings.length; w++) {
+    const fig = buildFigure(run.enemyDrawings[w], run.W, run.H, tuning, 'figure', total);
+    for (let c = 0; c < so.bossEscortCopies; c++) enemies.push(spawnEnemy(tuning, run, fig, so.enemyArmourMult));
+  }
+  run.copies = enemies.length;
+  run.stake = 1;
+  beginFight(tuning, run, enemies);
+}
+
+// Upgrade between waves; one per break. kind: 'heroInk' (payload = new hero
+// cells), 'weaponInk' (payload = new weapon cells), 'heal', 'colour'
+// (payload = colour 2..4). Returns '' on success or the reason it failed.
+function soloUpgrade(tuning, run, kind, payload) {
+  const so = tuning.solo;
+  if (run.phase !== 'cleared') return 'notNow';
+  if (run.upgradeTaken) return 'alreadyTaken';
+  const cost = so.upgradeCost[run.wave - 1];
+  if (run.wallet < cost) return 'tooExpensive';
+  if (kind === 'heroInk') {
+    run.heroBudget += so.upgradeHeroInk;
+    const chk = soloCheckDrawing(tuning, run, payload, run.W, run.H, 'hero');
+    if (!chk.ok) { run.heroBudget -= so.upgradeHeroInk; return chk.reason; }
+    const damageTaken = run.heroMaxHp - run.heroHp;
+    run.heroFig = buildFigure(payload, run.W, run.H, tuning, 'figure', run.heroBudget);
+    run.heroMaxHp = run.heroFig.stats.armour;
+    run.heroHp = run.heroMaxHp - damageTaken;
+    if (run.heroHp < 1) run.heroHp = 1;
+  } else if (kind === 'weaponInk') {
+    run.weaponBudget += so.upgradeWeaponInk;
+    const chk = soloCheckDrawing(tuning, run, payload, run.W, run.H, 'weapon');
+    if (!chk.ok) { run.weaponBudget -= so.upgradeWeaponInk; return chk.reason; }
+    run.weaponFig = buildFigure(payload, run.W, run.H, tuning, 'weapon', run.weaponBudget);
+  } else if (kind === 'heal') {
+    run.heroHp += run.heroMaxHp * so.upgradeHealPercent / 100;
+    if (run.heroHp > run.heroMaxHp) run.heroHp = run.heroMaxHp;
+  } else if (kind === 'colour') {
+    if (payload < 2 || payload > 4 || run.colours[payload]) return 'badColour';
+    run.colours[payload] = true;
+  } else {
+    return 'unknownUpgrade';
+  }
+  run.wallet -= cost;
+  run.upgradeTaken = true;
+  return '';
+}
+
+// One tick of a wave. input = { mx, my, dash } for the hero.
+function soloStep(tuning, run, input) {
+  if (run.phase !== 'fight') return;
+  const so = tuning.solo;
+  const world = run.world;
+  const bodies = world.bodies;
+  const n = bodies.length;
+  const hero = bodies[0];
+  const inputs = [input];
+  for (let i = 1; i < n; i++) inputs.push(botEnemyInput(tuning, run, i));
+  stepWorld(world, inputs, tuning);
+  run.tick++;
+  run.events = world.events;
+  const wst = run.weaponFig.stats;
+
+  // throw at the nearest enemy
+  run.throwCd--;
+  if (run.throwCd <= 0) {
+    let near = -1;
+    let nearD2 = 0;
+    for (let i = 1; i < n; i++) {
+      if (!bodies[i].alive) continue;
+      const dx = bodies[i].x - hero.x;
+      const dy = bodies[i].y - hero.y;
+      const d2 = dx * dx + dy * dy;
+      if (near === -1 || d2 < nearD2) { near = i; nearD2 = d2; }
+    }
+    if (near !== -1 && nearD2 > 0) {
+      const d = Math.sqrt(nearD2);
+      const sp = so.throwSpeedBase / (1 + wst.N / so.throwSpeedWeightRef);
+      const ux = (bodies[near].x - hero.x) / d;
+      const uy = (bodies[near].y - hero.y) / d;
+      run.shots.push({ x: hero.x, y: hero.y, ux, uy, speed: sp, life: so.projectileLifeTicks });
+      run.throwCd = soloThrowIntervalTicks(tuning, wst.N);
+      run.events.push({ type: 'throw' });
+    }
+  }
+
+  // shots
+  const dt = 1 / tuning.physics.tickRate;
+  let pr = run.weaponFig.radius;
+  if (pr > so.projectileRadiusMax) pr = so.projectileRadiusMax;
+  const keptShots = [];
+  for (let s = 0; s < run.shots.length; s++) {
+    const shot = run.shots[s];
+    shot.x += shot.ux * shot.speed * dt;
+    shot.y += shot.uy * shot.speed * dt;
+    shot.life--;
+    let hit = -1;
+    for (let i = 1; i < n && hit === -1; i++) {
+      const e = bodies[i];
+      if (!e.alive) continue;
+      const dx = shot.x - e.x;
+      const dy = shot.y - e.y;
+      const reach = e.fig.radius + pr;
+      if (dx * dx + dy * dy >= reach * reach) continue;
+      const ef = e.fig;
+      const c = -e.fy;
+      const sn = e.fx;
+      const rr = (pr + 0.5) * (pr + 0.5);
+      for (let bi = 0; bi < ef.boundary.length; bi++) {
+        const k = ef.boundary[bi];
+        const wx = e.x + c * ef.lx[k] - sn * ef.ly[k] - shot.x;
+        const wy = e.y + sn * ef.lx[k] + c * ef.ly[k] - shot.y;
+        if (wx * wx + wy * wy < rr) { hit = i; break; }
+      }
+    }
+    if (hit !== -1) {
+      const e = bodies[hit];
+      const dmg = wst.sharpness * elementMultiplier(tuning, wst.element, e.fig.stats.element);
+      e.hp -= dmg;
+      const kb = wst.N * so.weaponKnockbackPerInk / e.fig.mass;
+      e.vx += shot.ux * kb;
+      e.vy += shot.uy * kb;
+      run.events.push({ type: 'shotHit', to: hit, damage: dmg });
+    } else if (shot.life > 0) {
+      keptShots.push(shot);
+    }
+  }
+  run.shots = keptShots;
+
+  // enemy deaths leave ink
+  let enemiesAlive = 0;
+  for (let i = 1; i < n; i++) {
+    const e = bodies[i];
+    if (!e.alive) continue;
+    if (e.hp <= 0) {
+      e.alive = false;
+      run.drops.push({ x: e.x, y: e.y, value: e.fig.stats.N, life: so.dropLifeTicks });
+      run.events.push({ type: 'enemyDown', index: i });
+    } else {
+      enemiesAlive++;
+    }
+  }
+
+  // drops: pick up, then age
+  const keptDrops = [];
+  const pick = hero.fig.radius + so.pickupRange;
+  for (let d = 0; d < run.drops.length; d++) {
+    const drop = run.drops[d];
+    const dx = drop.x - hero.x;
+    const dy = drop.y - hero.y;
+    if (dx * dx + dy * dy <= pick * pick) {
+      run.wallet += drop.value;
+      run.score += drop.value;
+      run.events.push({ type: 'pickup', value: drop.value });
+      continue;
+    }
+    drop.life--;
+    if (drop.life > 0) keptDrops.push(drop);
+  }
+  run.drops = keptDrops;
+
+  run.heroHp = hero.hp;
+  if (hero.hp <= 0) {
+    hero.alive = false;
+    run.phase = 'dead';
+    run.endReason = 'armour';
+    return;
+  }
+  if (enemiesAlive === 0) {
+    // ink still lying around is collected when the wave ends
+    for (let d = 0; d < run.drops.length; d++) {
+      run.wallet += run.drops[d].value;
+      run.score += run.drops[d].value;
+    }
+    run.drops = [];
+    run.shots = [];
+    if (run.wave === SOLO_WAVES) {
+      run.phase = 'won';
+    } else {
+      run.wave++;
+      run.phase = 'cleared';
+    }
+    return;
+  }
+  if (run.tick >= so.waveMaxTicks) {
+    run.phase = 'dead';
+    run.endReason = 'time';
+  }
+}
+
+__exp.soloCheckDrawing = soloCheckDrawing;
+__exp.soloCreateRun = soloCreateRun;
+__exp.soloCopies = soloCopies;
+__exp.soloThrowIntervalTicks = soloThrowIntervalTicks;
+__exp.soloStartWave = soloStartWave;
+__exp.soloBossCells = soloBossCells;
+__exp.soloStartBoss = soloStartBoss;
+__exp.soloUpgrade = soloUpgrade;
+__exp.soloStep = soloStep;
+__exp.SOLO_WAVES = SOLO_WAVES;
+};
+
+// ---- core/hash.js
+__mods["core/hash.js"] = function (__exp) {
+// State hash for bit-exact comparison between implementations.
+// FNV-1a (32 bit) over the 8 little-endian IEEE-754 bytes of every value, in
+// the order given below. Integers and flags are hashed as doubles too.
+// C#: BitConverter.GetBytes(double) on a little-endian machine, uint maths.
+
+const f64 = new Float64Array(1);
+const u8 = new Uint8Array(f64.buffer);
+
+function hashCreate() { return { h: 0x811c9dc5 }; }
+
+function hashDouble(st, value) {
+  f64[0] = value;
+  let h = st.h;
+  for (let i = 0; i < 8; i++) {
+    h = (h ^ u8[i]) >>> 0;
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  st.h = h;
+}
+
+function hashHex(st) {
+  const s = st.h.toString(16);
+  return '00000000'.substring(s.length) + s;
+}
+
+function hashBodies(st, bodies) {
+  for (let i = 0; i < bodies.length; i++) {
+    const b = bodies[i];
+    hashDouble(st, b.x); hashDouble(st, b.y);
+    hashDouble(st, b.vx); hashDouble(st, b.vy);
+    hashDouble(st, b.fx); hashDouble(st, b.fy);
+    hashDouble(st, b.hp);
+    hashDouble(st, b.alive ? 1 : 0);
+    hashDouble(st, b.dashTicks); hashDouble(st, b.dashCd);
+  }
+}
+
+// Ring: tick, ringRadius, bodies (seat order: x y vx vy fx fy hp alive
+// dashTicks dashCd), then the bot generator state of every seat.
+function hashRing(match) {
+  const st = hashCreate();
+  hashDouble(st, match.tick);
+  hashDouble(st, match.ringRadius);
+  hashBodies(st, match.world.bodies);
+  for (let i = 0; i < match.botRng.length; i++) hashDouble(st, match.botRng[i].s);
+  return hashHex(st);
+}
+
+// Solo: tick, bodies, shots (x y life), drops (x y value life), wallet,
+// score, throwCd, generator state.
+function hashSolo(run) {
+  const st = hashCreate();
+  hashDouble(st, run.tick);
+  hashBodies(st, run.world.bodies);
+  for (let i = 0; i < run.shots.length; i++) {
+    hashDouble(st, run.shots[i].x); hashDouble(st, run.shots[i].y); hashDouble(st, run.shots[i].life);
+  }
+  for (let i = 0; i < run.drops.length; i++) {
+    hashDouble(st, run.drops[i].x); hashDouble(st, run.drops[i].y);
+    hashDouble(st, run.drops[i].value); hashDouble(st, run.drops[i].life);
+  }
+  hashDouble(st, run.wallet); hashDouble(st, run.score); hashDouble(st, run.throwCd);
+  hashDouble(st, run.rng.s);
+  return hashHex(st);
+}
+
+__exp.hashCreate = hashCreate;
+__exp.hashDouble = hashDouble;
+__exp.hashHex = hashHex;
+__exp.hashRing = hashRing;
+__exp.hashSolo = hashSolo;
+};
+
+// ---- core/index.js
+__mods["core/index.js"] = function (__exp) {
+// Inkweight engine-free core. See README.md in this folder.
+Object.assign(__exp, __req("core/rng.js"));
+Object.assign(__exp, __req("core/drawing.js"));
+Object.assign(__exp, __req("core/physics.js"));
+Object.assign(__exp, __req("core/ring.js"));
+Object.assign(__exp, __req("core/solo.js"));
+Object.assign(__exp, __req("core/bots.js"));
+Object.assign(__exp, __req("core/hash.js"));
+
+
+};
+
+// ---- app/tuning.js
+__mods["app/tuning.js"] = function (__exp) {
+// The tuning numbers are inlined by build/build.mjs from
+// ../../Shared/ink_tuning.json as the bundle-level variable __INK_TUNING__.
+/* global __INK_TUNING__ */
+const tuning = __INK_TUNING__;
+const W = tuning.canvas.width;
+const H = tuning.canvas.height;
+
+__exp.tuning = tuning;
+__exp.W = W;
+__exp.H = H;
+};
+
+// ---- app/ui.js
+__mods["app/ui.js"] = function (__exp) {
+// Small DOM helpers shared by all screens.
+
+const $ = (id) => document.getElementById(id);
+
+function el(tag, props, children) {
+  const n = document.createElement(tag);
+  if (props) {
+    for (const k of Object.keys(props)) {
+      if (k === 'class') n.className = props[k];
+      else if (k === 'text') n.textContent = props[k];
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), props[k]);
+      else n.setAttribute(k, props[k]);
+    }
+  }
+  if (children) for (const c of children) if (c) n.append(c);
+  return n;
+}
+
+const SCREENS = ['scrStart', 'scrRingSetup', 'scrPass', 'scrDraw', 'scrFight', 'scrSoloIntro', 'scrShop', 'scrGallery'];
+let current = 'scrStart';
+const leaveHooks = {};
+
+function onLeave(id, fn) { leaveHooks[id] = fn; }
+function currentScreen() { return current; }
+function showScreen(id) {
+  if (current !== id && leaveHooks[current]) leaveHooks[current]();
+  for (const s of SCREENS) $(s).hidden = s !== id;
+  current = id;
+  $(id).scrollTop = 0;
+}
+
+const motionQuery = typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : null;
+function reducedMotion() { return !!(motionQuery && motionQuery.matches); }
+
+// Colour tokens are defined once in the stylesheet; canvases read them here.
+let tokens = null;
+function colours() {
+  if (tokens) return tokens;
+  const cs = getComputedStyle(document.documentElement);
+  const g = (n) => cs.getPropertyValue(n).trim();
+  tokens = {
+    paper: g('--paper'), paperLight: g('--paper-light'), paperDeep: g('--paper-deep'),
+    speck: g('--paper-speck'), rule: g('--rule-line'),
+    ink: g('--ink'), inkSoft: g('--ink-soft'), inkFaint: g('--ink-faint'),
+    ember: g('--ember'), tide: g('--tide'), moss: g('--moss'), onInk: g('--on-ink'),
+  };
+  tokens.cell = [null, tokens.ink, tokens.ember, tokens.tide, tokens.moss];
+  return tokens;
+}
+
+const ELEMENT_NAMES = ['Neutral', 'Schwarz', 'Glut', 'Flut', 'Moos'];
+
+// A button that needs a second tap within a short time ("Sicher?").
+function twoTap(button, action, askText) {
+  let armed = false;
+  let timer = 0;
+  let label = '';
+  button.addEventListener('click', () => {
+    if (armed) {
+      clearTimeout(timer);
+      armed = false;
+      button.textContent = label;
+      action();
+      return;
+    }
+    armed = true;
+    label = button.textContent;
+    button.textContent = askText || 'Sicher?';
+    timer = setTimeout(() => { armed = false; button.textContent = label; }, 2500);
+  });
+}
+
+// Small deterministic hash for jitter (visual only, not the core generator).
+function hash3(a, b, c) {
+  let h = Math.imul(a | 0, 374761393) ^ Math.imul(b | 0, 668265263) ^ Math.imul(c | 0, 2147483647);
+  h = Math.imul(h ^ (h >>> 13), 1274126177);
+  h ^= h >>> 16;
+  return (h >>> 0) / 4294967296;
+}
+
+function fitCanvas(canvas, cssW, cssH) {
+  const dpr = Math.min(3, window.devicePixelRatio || 1);
+  const w = Math.max(1, Math.round(cssW * dpr));
+  const h = Math.max(1, Math.round(cssH * dpr));
+  if (canvas.width !== w) canvas.width = w;
+  if (canvas.height !== h) canvas.height = h;
+  return dpr;
+}
+
+// A plain notice screen with one main button ("hand the device over", ...).
+// Resolves with 'go' or 'back'.
+function passScreen(title, text, goLabel, extraNodes, backLabel) {
+  return new Promise((resolve) => {
+    $('passTitle').textContent = title;
+    $('passText').textContent = text || '';
+    const extra = $('passExtra');
+    extra.textContent = '';
+    if (extraNodes) for (const n of extraNodes) if (n) extra.append(n);
+    const go = $('passGo');
+    const back = $('passBack');
+    go.textContent = goLabel || 'Weiter';
+    back.textContent = backLabel || 'Zum Menü';
+    showScreen('scrPass');
+    go.onclick = () => { go.onclick = null; back.onclick = null; resolve('go'); };
+    back.onclick = () => { go.onclick = null; back.onclick = null; resolve('back'); };
+  });
+}
+
+function coarsePointer() {
+  try { return matchMedia('(pointer: coarse)').matches; } catch (e) { return false; }
+}
+
+// Tool buttons react on touch-down already (snappier, and a tap that follows
+// a stroke within a few milliseconds is not lost); keyboard still uses click.
+function onPress(button, fn) {
+  let pressedAt = -1000;
+  button.addEventListener('pointerdown', (ev) => {
+    if (button.disabled || (ev.pointerType === 'mouse' && ev.button !== 0)) return;
+    pressedAt = performance.now();
+    fn(ev);
+  });
+  button.addEventListener('click', (ev) => {
+    if (performance.now() - pressedAt < 700) return;
+    fn(ev);
+  });
+}
+
+__exp.el = el;
+__exp.onLeave = onLeave;
+__exp.currentScreen = currentScreen;
+__exp.showScreen = showScreen;
+__exp.reducedMotion = reducedMotion;
+__exp.colours = colours;
+__exp.twoTap = twoTap;
+__exp.hash3 = hash3;
+__exp.fitCanvas = fitCanvas;
+__exp.passScreen = passScreen;
+__exp.coarsePointer = coarsePointer;
+__exp.onPress = onPress;
+__exp.$ = $;
+__exp.ELEMENT_NAMES = ELEMENT_NAMES;
+};
+
+// ---- app/audio.js
+__mods["app/audio.js"] = function (__exp) {
+// Synthesizer sounds made by code (Web Audio). Nothing is loaded or recorded.
+// Sound starts only after the player taps a "Ton an" button.
+
+let ctx = null;
+let master = null;
+let noise = null;
+let on = false;
+const last = {};
+const listeners = [];
+
+function soundIsOn() { return on; }
+function onSoundChange(fn) { listeners.push(fn); }
+
+function setSound(want) {
+  if (want && !ctx) {
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) {
+        ctx = new AC();
+        master = ctx.createGain();
+        master.gain.value = 0.5;
+        master.connect(ctx.destination);
+        const len = Math.floor(ctx.sampleRate * 0.5);
+        noise = ctx.createBuffer(1, len, ctx.sampleRate);
+        const d = noise.getChannelData(0);
+        let s = 12345;
+        for (let i = 0; i < len; i++) { s = (Math.imul(s, 1103515245) + 12345) | 0; d[i] = ((s >>> 8) & 0xffff) / 32768 - 1; }
+      }
+    } catch (e) { ctx = null; }
+  }
+  on = !!(want && ctx);
+  if (ctx) {
+    try { if (on) ctx.resume(); } catch (e) { /* optional */ }
+    if (master) master.gain.value = on ? 0.5 : 0;
+  }
+  for (const fn of listeners) fn(on);
+  if (on) sfx('click');
+  return on;
+}
+
+function tone(type, f0, f1, dur, vol, delay) {
+  const t = ctx.currentTime + (delay || 0);
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  o.type = type;
+  o.frequency.setValueAtTime(f0, t);
+  if (f1 !== f0) o.frequency.exponentialRampToValueAtTime(Math.max(20, f1), t + dur);
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(vol, t + 0.008);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  o.connect(g); g.connect(master);
+  o.start(t); o.stop(t + dur + 0.02);
+}
+
+function hiss(f0, f1, q, dur, vol, delay) {
+  const t = ctx.currentTime + (delay || 0);
+  const src = ctx.createBufferSource();
+  src.buffer = noise;
+  const f = ctx.createBiquadFilter();
+  f.type = 'bandpass';
+  f.Q.value = q;
+  f.frequency.setValueAtTime(f0, t);
+  if (f1 !== f0) f.frequency.exponentialRampToValueAtTime(f1, t + dur);
+  const g = ctx.createGain();
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(vol, t + 0.006);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+  src.connect(f); f.connect(g); g.connect(master);
+  src.start(t); src.stop(t + dur + 0.02);
+}
+
+const GAP = { pen: 0.035, erase: 0.05, hit: 0.05, sharp: 0.05, pickup: 0.04, shot: 0.05, throw: 0.08 };
+
+function sfx(name, amount) {
+  if (!on || !ctx) return;
+  try {
+    const now = ctx.currentTime;
+    const gap = GAP[name] || 0;
+    if (gap && last[name] && now - last[name] < gap) return;
+    last[name] = now;
+    const a = amount === undefined ? 1 : Math.max(0.3, Math.min(1.6, amount));
+    switch (name) {
+      case 'pen': hiss(2600 + 900 * ((now * 37) % 1), 1900, 1.2, 0.045, 0.12); break;
+      case 'erase': hiss(900, 600, 0.8, 0.06, 0.1); break;
+      case 'click': tone('triangle', 620, 420, 0.06, 0.2); break;
+      case 'deny': tone('square', 160, 120, 0.12, 0.12); break;
+      case 'hit': tone('sine', 190 * a, 60, 0.14, 0.45); hiss(500, 200, 0.7, 0.08, 0.15); break;
+      case 'sharp': tone('sawtooth', 1100, 320, 0.09, 0.16 * a); hiss(5200, 3000, 2, 0.07, 0.2); break;
+      case 'dash': hiss(350, 2400, 1.1, 0.2, 0.25); break;
+      case 'out': tone('sine', 420, 70, 0.5, 0.4); hiss(900, 200, 0.6, 0.35, 0.2, 0.05); break;
+      case 'down': tone('triangle', 300, 110, 0.16, 0.3); hiss(1500, 500, 0.8, 0.12, 0.18); break;
+      case 'throw': hiss(3000, 1200, 1.5, 0.06, 0.08); break;
+      case 'shot': tone('square', 700, 380, 0.05, 0.1); break;
+      case 'pickup': tone('sine', 880, 1320, 0.08, 0.2); break;
+      case 'tick': tone('square', 1000, 1000, 0.03, 0.1); break;
+      case 'count': tone('triangle', 440, 440, 0.12, 0.3); break;
+      case 'go': tone('triangle', 880, 880, 0.25, 0.35); break;
+      case 'win': [523, 659, 784, 1047].forEach((f, i) => tone('triangle', f, f, 0.18, 0.3, i * 0.11)); break;
+      case 'lose': [392, 330, 262].forEach((f, i) => tone('triangle', f, f * 0.97, 0.22, 0.28, i * 0.15)); break;
+      case 'buy': tone('triangle', 660, 990, 0.12, 0.3); tone('triangle', 990, 1320, 0.14, 0.25, 0.1); break;
+      default: break;
+    }
+  } catch (e) { /* sound is optional */ }
+}
+
+__exp.soundIsOn = soundIsOn;
+__exp.onSoundChange = onSoundChange;
+__exp.setSound = setSound;
+__exp.sfx = sfx;
+};
+
+// ---- app/sprites.js
+__mods["app/sprites.js"] = function (__exp) {
+// Figures are rendered from their cells: ink blocks with an outline whose
+// corner points jitter from frame to frame (the "wobbling outline").
+// A sprite holds a few pre-rendered wobble frames of one figure template.
+
+const core = __req("core/index.js");
+const { tuning, W, H } = __req("app/tuning.js");
+const { colours, hash3, reducedMotion } = __req("app/ui.js");
+
+const SPRITE_FRAMES = 3;
+const MARGIN = 2; // cells of empty border around the grid
+const cache = new WeakMap();
+
+function drawFrame(fig, p, frame) {
+  const col = colours();
+  const size = (fig.W + MARGIN * 2) * p;
+  const cv = document.createElement('canvas');
+  cv.width = size;
+  cv.height = size;
+  const g = cv.getContext('2d');
+  const grid = fig.grid;
+  const FW = fig.W;
+  const FH = fig.H;
+  const has = (x, y) => x >= 0 && y >= 0 && x < FW && y < FH && grid[y * FW + x] !== -1;
+  // corner jitter: every grid corner moves a little, differently per frame
+  const jx = (x, y) => (x + MARGIN) * p + (hash3(x, y, frame * 7 + 1) - 0.5) * p * 0.34;
+  const jy = (x, y) => (y + MARGIN) * p + (hash3(x, y, frame * 7 + 4) - 0.5) * p * 0.34;
+  // ink fill
+  for (let y = 0; y < FH; y++) {
+    for (let x = 0; x < FW; x++) {
+      const k = grid[y * FW + x];
+      if (k === -1) continue;
+      g.fillStyle = col.cell[fig.colour[k]];
+      g.beginPath();
+      g.moveTo(jx(x, y), jy(x, y));
+      g.lineTo(jx(x + 1, y), jy(x + 1, y));
+      g.lineTo(jx(x + 1, y + 1), jy(x + 1, y + 1));
+      g.lineTo(jx(x, y + 1), jy(x, y + 1));
+      g.closePath();
+      g.fill();
+      // close hairline gaps between neighbours
+      g.fillRect((x + MARGIN) * p + p * 0.2, (y + MARGIN) * p + p * 0.2, p * 0.6, p * 0.6);
+    }
+  }
+  // outline along every edge that borders empty space
+  g.strokeStyle = col.ink;
+  g.lineWidth = Math.max(1, p * 0.26);
+  g.lineCap = 'round';
+  g.beginPath();
+  for (let y = 0; y < FH; y++) {
+    for (let x = 0; x < FW; x++) {
+      if (grid[y * FW + x] === -1) continue;
+      if (!has(x, y - 1)) { g.moveTo(jx(x, y), jy(x, y)); g.lineTo(jx(x + 1, y), jy(x + 1, y)); }
+      if (!has(x, y + 1)) { g.moveTo(jx(x, y + 1), jy(x, y + 1)); g.lineTo(jx(x + 1, y + 1), jy(x + 1, y + 1)); }
+      if (!has(x - 1, y)) { g.moveTo(jx(x, y), jy(x, y)); g.lineTo(jx(x, y + 1), jy(x, y + 1)); }
+      if (!has(x + 1, y)) { g.moveTo(jx(x + 1, y), jy(x + 1, y)); g.lineTo(jx(x + 1, y + 1), jy(x + 1, y + 1)); }
+    }
+  }
+  g.stroke();
+  // sharp cells get a small light glint so blades can be read in a fight
+  g.strokeStyle = col.paperLight;
+  g.globalAlpha = 0.75;
+  g.lineWidth = Math.max(1, p * 0.14);
+  g.beginPath();
+  for (let k = 0; k < fig.count; k++) {
+    if (!fig.sharp[k]) continue;
+    const x = (fig.lx[k] + fig.cx + MARGIN) * p;
+    const y = (fig.ly[k] + fig.cy + MARGIN) * p;
+    g.moveTo(x - p * 0.2, y + p * 0.2);
+    g.lineTo(x + p * 0.2, y - p * 0.2);
+  }
+  g.stroke();
+  g.globalAlpha = 1;
+  return cv;
+}
+
+// fig: a figure template from core.buildFigure.
+function spriteFor(fig) {
+  let s = cache.get(fig);
+  if (s) return s;
+  s = makeSprite(fig, 8);
+  cache.set(fig, s);
+  return s;
+}
+
+function makeSprite(fig, p) {
+  const frames = [];
+  for (let f = 0; f < SPRITE_FRAMES; f++) frames.push(drawFrame(fig, p, f));
+  return { frames, p, ox: (fig.cx + MARGIN) * p, oy: (fig.cy + MARGIN) * p };
+}
+
+function wobbleFrame(timeSec, phase) {
+  if (reducedMotion()) return 0;
+  return Math.floor(timeSec * 7 + (phase || 0)) % SPRITE_FRAMES;
+}
+
+// Draw a sprite centred on its centroid. (fx, fy) is the unit front vector;
+// scale is device pixels per cell; sx/sy squash along the figure's own axes.
+function drawSprite(g, sprite, frame, x, y, fx, fy, scale, sx, sy) {
+  const k = scale / sprite.p;
+  g.save();
+  g.translate(x, y);
+  g.transform(-fy, fx, -fx, -fy, 0, 0);
+  g.scale(k * (sx || 1), k * (sy || 1));
+  g.drawImage(sprite.frames[frame], -sprite.ox, -sprite.oy);
+  g.restore();
+}
+
+function figureOf(cells) {
+  return core.buildFigure(cells, W, H, tuning, 'figure', W * H);
+}
+
+// A still thumbnail canvas of a drawing, zoomed to the drawn body.
+function thumbCanvas(cells, cssSize) {
+  const fig = figureOf(cells);
+  const cv = document.createElement('canvas');
+  const dpr = Math.min(3, window.devicePixelRatio || 1);
+  cv.width = Math.round(cssSize * dpr);
+  cv.height = Math.round(cssSize * dpr);
+  cv.style.width = cssSize + 'px';
+  cv.style.height = cssSize + 'px';
+  if (fig.count === 0) return cv;
+  const g = cv.getContext('2d');
+  const scale = Math.min(cv.width / (fig.radius * 2 + 2), cv.width / 14);
+  drawSprite(g, makeSprite(fig, Math.max(4, Math.ceil(scale))), 0, cv.width / 2, cv.height / 2, 0, -1, scale, 1, 1);
+  return cv;
+}
+
+__exp.spriteFor = spriteFor;
+__exp.makeSprite = makeSprite;
+__exp.wobbleFrame = wobbleFrame;
+__exp.drawSprite = drawSprite;
+__exp.figureOf = figureOf;
+__exp.thumbCanvas = thumbCanvas;
+__exp.SPRITE_FRAMES = SPRITE_FRAMES;
+};
+
+// ---- app/gallery.js
+__mods["app/gallery.js"] = function (__exp) {
+// The local gallery: drawings stay in this browser only. Every storage access
+// is guarded; without storage the gallery lives in memory for the session.
+
+const { W, H } = __req("app/tuning.js");
+
+const KEY = 'inkweight.gallery.v1';
+const BEST_KEY = 'inkweight.best.v1';
+const SEEN_KEY = 'inkweight.seenHint.v1';
+const MAX_ITEMS = 40;
+let items = null;       // [{ id, kind: 'figure' | 'weapon', data: string of W*H digits }]
+let storageWorks = true;
+const memory = {};
+
+function read(key) {
+  try {
+    const v = window.localStorage.getItem(key);
+    return v === null ? (key in memory ? memory[key] : null) : v;
+  } catch (e) { storageWorks = false; return key in memory ? memory[key] : null; }
+}
+function write(key, value) {
+  memory[key] = value;
+  try { window.localStorage.setItem(key, value); } catch (e) { storageWorks = false; }
+}
+
+function storageOk() { read(KEY); return storageWorks; }
+
+function encode(cells) { return cells.join(''); }
+function decode(data) {
+  const cells = new Array(W * H);
+  for (let i = 0; i < W * H; i++) {
+    const v = data.charCodeAt(i) - 48;
+    cells[i] = v >= 1 && v <= 4 ? v : 0;
+  }
+  return cells;
+}
+
+function galleryAll() {
+  if (items) return items;
+  items = [];
+  const raw = read(KEY);
+  if (raw) {
+    try {
+      const list = JSON.parse(raw);
+      if (Array.isArray(list)) {
+        for (const it of list) {
+          if (it && typeof it.data === 'string' && it.data.length === W * H) {
+            items.push({ id: String(it.id), kind: it.kind === 'weapon' ? 'weapon' : 'figure', data: it.data });
+          }
+        }
+      }
+    } catch (e) { items = []; }
+  }
+  return items;
+}
+
+function persist() { write(KEY, JSON.stringify(items)); }
+
+// Newest first. The same drawing is not stored twice.
+function galleryAdd(cells, kind) {
+  const list = galleryAll();
+  const data = encode(cells);
+  const at = list.findIndex((it) => it.data === data);
+  if (at !== -1) list.splice(at, 1);
+  list.unshift({ id: Date.now().toString(36) + Math.floor(Math.random() * 1e6).toString(36), kind: kind === 'weapon' ? 'weapon' : 'figure', data });
+  while (list.length > MAX_ITEMS) list.pop();
+  persist();
+}
+function galleryRemove(id) {
+  const list = galleryAll();
+  const at = list.findIndex((it) => it.id === id);
+  if (at !== -1) { list.splice(at, 1); persist(); }
+}
+function galleryClear() { items = []; persist(); }
+
+function bestScore() { const v = parseInt(read(BEST_KEY) || '0', 10); return v > 0 ? v : 0; }
+function saveBestScore(score) { if (score > bestScore()) { write(BEST_KEY, String(score)); return true; } return false; }
+function hintSeen() { return read(SEEN_KEY) === '1'; }
+function markHintSeen() { write(SEEN_KEY, '1'); }
+
+__exp.storageOk = storageOk;
+__exp.decode = decode;
+__exp.galleryAll = galleryAll;
+__exp.galleryAdd = galleryAdd;
+__exp.galleryRemove = galleryRemove;
+__exp.galleryClear = galleryClear;
+__exp.bestScore = bestScore;
+__exp.saveBestScore = saveBestScore;
+__exp.hintSeen = hintSeen;
+__exp.markHintSeen = markHintSeen;
+};
+
+// ---- app/scribbles.js
+__mods["app/scribbles.js"] = function (__exp) {
+// Built-in test scribbles. Hand-written cell data, deliberately rough: they
+// are placeholders so that bots have something to fight with before the
+// player has drawn anything. The game shows them with a "Platzhalter" badge.
+// '.' empty, 1 Black, 2 Ember, 3 Tide, 4 Moss. The art is centred on the
+// 32 x 32 canvas; the top is the front.
+
+const { W, H } = __req("app/tuning.js");
+
+const BLOCK = [
+  '..111111111..',
+  '.11111111111.',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '1111111111111',
+  '.11111111111.',
+  '..111111111..',
+];
+
+const SPEAR = [
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '...2...',
+  '1111111',
+  '..111..',
+  '..111..',
+  '..111..',
+];
+
+const URCHIN = [
+  '...1...1...1...',
+  '...1...1...1...',
+  '...1...1...1...',
+  '...333333333...',
+  '...333333333...',
+  '111333333333111',
+  '...333333333...',
+  '111333333333111',
+  '...333333333...',
+  '...333333333...',
+];
+
+const WORM = [
+  '4444444444....',
+  '.........4....',
+  '.........4....',
+  '....444444....',
+  '....4.........',
+  '....4.........',
+  '....4444444444',
+  '.............4',
+  '.............4',
+  '...44444444444',
+];
+
+const RAM = [
+  '1111111111111111111',
+  '1111111111111111111',
+  '1111111111111111111',
+  '....22222222222....',
+  '.....222222222.....',
+  '......2222222......',
+  '.......22222.......',
+  '........222........',
+  '........222........',
+  '........222........',
+];
+
+const SQUID = [
+  '..4444444..',
+  '.444444444.',
+  '44444444444',
+  '44444444444',
+  '44444444444',
+  '.444444444.',
+  '.1..1.1..1.',
+  '.1..1.1..1.',
+  '.1..1.1..1.',
+  '.1..1.1..1.',
+  '.1..1.1..1.',
+];
+
+const NEEDLE = ['1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'];
+
+const PEBBLE = [
+  '.1111.',
+  '111111',
+  '111111',
+  '111111',
+  '111111',
+  '.1111.',
+];
+
+const CROSS = [
+  '....1....',
+  '....1....',
+  '....1....',
+  '....1....',
+  '111111111',
+  '....1....',
+  '....1....',
+  '....1....',
+  '....1....',
+];
+
+function place(art) {
+  const cells = new Array(W * H);
+  for (let i = 0; i < W * H; i++) cells[i] = 0;
+  const h = art.length;
+  const w = art[0].length;
+  const ox = Math.floor((W - w) / 2);
+  const oy = Math.floor((H - h) / 2);
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const ch = art[y].charCodeAt(x) - 48;
+      if (ch >= 1 && ch <= 4) cells[(oy + y) * W + ox + x] = ch;
+    }
+  }
+  return cells;
+}
+
+const SCRIBBLE_FIGURES = [
+  { name: 'Klotz', cells: place(BLOCK) },
+  { name: 'Speer', cells: place(SPEAR) },
+  { name: 'Stachel', cells: place(URCHIN) },
+  { name: 'Wurm', cells: place(WORM) },
+  { name: 'Ramme', cells: place(RAM) },
+  { name: 'Qualle', cells: place(SQUID) },
+];
+
+const SCRIBBLE_WEAPONS = [
+  { name: 'Nadel', cells: place(NEEDLE) },
+  { name: 'Kiesel', cells: place(PEBBLE) },
+  { name: 'Kreuz', cells: place(CROSS) },
+];
+
+__exp.SCRIBBLE_FIGURES = SCRIBBLE_FIGURES;
+__exp.SCRIBBLE_WEAPONS = SCRIBBLE_WEAPONS;
+};
+
+// ---- app/drawscreen.js
+__mods["app/drawscreen.js"] = function (__exp) {
+// The drawing screen: 32 x 32 canvas, smooth 4-connected strokes, ink meter,
+// optional time limit and the live stat display. Used by every mode.
+
+const core = __req("core/index.js");
+const { tuning, W, H } = __req("app/tuning.js");
+const { $, el, onPress, showScreen, onLeave, colours, hash3, reducedMotion, fitCanvas, ELEMENT_NAMES } = __req("app/ui.js");
+const { sfx } = __req("app/audio.js");
+const { makeSprite, drawSprite, wobbleFrame, thumbCanvas } = __req("app/sprites.js");
+const { galleryAll, decode, hintSeen, markHintSeen } = __req("app/gallery.js");
+const { SCRIBBLE_FIGURES, SCRIBBLE_WEAPONS } = __req("app/scribbles.js");
+
+let S = null;          // the running session or null
+let raf = 0;
+let backArmed = 0;
+
+const canvas = $('drawCanvas');
+const preview = $('drawPreview');
+
+function analyse() {
+  const s = S;
+  s.stats = core.computeStats(s.cells, W, H, tuning, s.kind, s.budget);
+  const body = core.extractBody(s.cells, W, H).body;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const i = y * W + x;
+      let m = 0; // 0 empty, 1 body, 2 core, 3 sharp, 4 drip
+      if (s.cells[i] !== 0) {
+        if (body[i] === 0) m = 4;
+        else {
+          const nb = core.countNeighbours(body, W, H, x, y);
+          m = nb === 8 ? 2 : (8 - nb >= tuning.stats.sharpMinEmptyNeighbours ? 3 : 1);
+        }
+      }
+      s.mark[i] = m;
+    }
+  }
+  s.spriteDirty = true;
+  updatePanel();
+  if (s.onStats) s.onStats(s.stats);
+}
+
+function setVal(id, text) {
+  const n = $(id);
+  if (n.textContent === text) return;
+  n.textContent = text;
+  if (!reducedMotion()) { n.classList.remove('pop'); void n.offsetWidth; n.classList.add('pop'); }
+}
+function setBar(id, share) {
+  $(id).style.width = Math.max(0, Math.min(100, share * 100)).toFixed(1) + '%';
+}
+
+function updatePanel() {
+  const s = S;
+  const st = s.stats;
+  const left = s.budget - st.filled;
+  $('inkNum').textContent = String(left);
+  $('inkFill').style.width = Math.max(0, left / s.budget * 100).toFixed(1) + '%';
+  $('inkMeter').classList.toggle('empty', left <= 0);
+  const has = st.N > 0;
+  setVal('stWeight', String(st.N));
+  setVal('stArmour', has ? String(Math.round(st.armour)) : '0');
+  setVal('stSharp', has ? st.sharpness.toFixed(1) : '0');
+  setVal('stSpeed', has ? st.topSpeed.toFixed(0) : '0');
+  const tst = tuning.stats;
+  setBar('stWeightBar', st.N / s.budget);
+  setBar('stArmourBar', has ? st.armour / (tst.armourBase + tst.armourPerCore * s.budget * 0.7) : 0);
+  setBar('stSharpBar', has ? (st.sharpness - tst.sharpBase) / (tst.sharpPerSharpShareSquared + tst.sharpPerSharpShare + 0.001) : 0);
+  setBar('stSpeedBar', has ? st.topSpeed / tst.speedBase : 0);
+  const e = st.element;
+  const ev = $('stElement');
+  ev.className = 's-val wide' + (e ? ' e' + e : '');
+  setVal('stElement', has ? ELEMENT_NAMES[e] : '–');
+  let why;
+  if (e) {
+    const beats = tuning.element.beats[e];
+    let loses = 0;
+    for (let c = 2; c <= 4; c++) if (tuning.element.beats[c] === e) loses = c;
+    why = 'schlägt ' + ELEMENT_NAMES[beats] + ', verliert gegen ' + ELEMENT_NAMES[loses];
+  } else {
+    const coloured = st.colourCounts[1] + st.colourCounts[2] + st.colourCounts[3];
+    const pct = has ? Math.floor(coloured * 100 / st.N) : 0;
+    why = 'ab ' + tuning.element.minColouredPercent + ' % einer Farbe (jetzt ' + pct + ' %)';
+  }
+  $('stElementWhy').textContent = why;
+
+  const msg = $('drawMsg');
+  const min = s.kind === 'weapon' ? tuning.ink.weaponMinBodyCells : tuning.ink.minBodyCells;
+  let text = 'Strich = Klinge · Punkt = Panzerkern · blass = tropft ab';
+  let warn = false;
+  if (st.filled === 0) text = s.kind === 'weapon' ? 'Zeichne die Wurfwaffe. Leicht fliegt schnell, dünn schneidet.' : text;
+  else if (!st.bigEnough) { text = 'Noch zu klein: mindestens ' + min + ' Kästchen am Stück.'; warn = true; }
+  else if (st.drips > 0) { text = st.drips + ' Kästchen hängen nicht dran und tropfen ab.'; warn = true; }
+  if (s.lockNote && st.filled === 0) text = s.lockNote;
+  msg.textContent = text;
+  msg.classList.toggle('warn', warn);
+  $('drawDone').disabled = !st.valid;
+}
+
+function pushUndo() {
+  S.undo.push(S.cells.slice());
+  if (S.undo.length > 40) S.undo.shift();
+}
+
+function paintCell(x, y) {
+  const s = S;
+  const r = s.brush === 3 ? 1 : 0;
+  let changed = false;
+  for (let oy = -r; oy <= r; oy++) {
+    for (let ox = -r; ox <= r; ox++) {
+      const xx = x + ox;
+      const yy = y + oy;
+      if (xx < 0 || yy < 0 || xx >= W || yy >= H) continue;
+      const i = yy * W + xx;
+      const old = s.cells[i];
+      if (old === s.tool) continue;
+      if (s.tool !== 0 && old === 0) {
+        if (s.filled >= s.budget) { s.denied = true; continue; }
+        s.filled++;
+      } else if (s.tool === 0) {
+        s.filled--;
+      }
+      s.cells[i] = s.tool;
+      changed = true;
+    }
+  }
+  return changed;
+}
+
+// Walk the grid from the last cell to the new one, one axis step at a time,
+// so every stroke is 4-connected (diagonal single cells would drip off).
+function paintLine(x0, y0, x1, y1) {
+  let changed = paintCell(x0, y0);
+  const dx = Math.abs(x1 - x0);
+  const dy = Math.abs(y1 - y0);
+  const sx = x1 > x0 ? 1 : -1;
+  const sy = y1 > y0 ? 1 : -1;
+  let ix = 0;
+  let iy = 0;
+  let x = x0;
+  let y = y0;
+  while (ix < dx || iy < dy) {
+    if (iy >= dy || (ix < dx && (0.5 + ix) * dy < (0.5 + iy) * dx)) { x += sx; ix++; } else { y += sy; iy++; }
+    if (paintCell(x, y)) changed = true;
+  }
+  return changed;
+}
+
+function cellAt(ev) {
+  const r = canvas.getBoundingClientRect();
+  let x = Math.floor((ev.clientX - r.left) / r.width * W);
+  let y = Math.floor((ev.clientY - r.top) / r.height * H);
+  if (x < 0) x = 0; else if (x >= W) x = W - 1;
+  if (y < 0) y = 0; else if (y >= H) y = H - 1;
+  return [x, y];
+}
+
+function strokeTo(ev) {
+  const s = S;
+  const c = cellAt(ev);
+  const changed = paintLine(s.lastX, s.lastY, c[0], c[1]);
+  s.lastX = c[0];
+  s.lastY = c[1];
+  if (changed) {
+    s.strokeChanged = true;
+    sfx(s.tool === 0 ? 'erase' : 'pen');
+    analyse();
+  }
+  if (s.denied && !s.deniedShown) {
+    s.deniedShown = true;
+    sfx('deny');
+    const m = $('inkMeter');
+    m.classList.remove('pop'); void m.offsetWidth; m.classList.add('pop');
+  }
+}
+
+canvas.addEventListener('pointerdown', (ev) => {
+  if (!S || S.closed) return;
+  if (ev.pointerType === 'mouse' && ev.button !== 0) return;
+  ev.preventDefault();
+  const s = S;
+  if (!$('drawHint').hidden) { $('drawHint').hidden = true; markHintSeen(); }
+  if (s.timeLimit > 0 && s.timerStart === 0) s.timerStart = performance.now();
+  try { canvas.setPointerCapture(ev.pointerId); } catch (e) { /* optional */ }
+  s.drawing = true;
+  s.pointerId = ev.pointerId;
+  s.strokeChanged = false;
+  s.denied = false;
+  s.deniedShown = false;
+  pushUndo();
+  const c = cellAt(ev);
+  s.lastX = c[0];
+  s.lastY = c[1];
+  strokeTo(ev);
+});
+canvas.addEventListener('pointermove', (ev) => {
+  if (!S || !S.drawing || ev.pointerId !== S.pointerId) return;
+  ev.preventDefault();
+  const list = typeof ev.getCoalescedEvents === 'function' ? ev.getCoalescedEvents() : null;
+  if (list && list.length > 1) for (const e of list) strokeTo(e);
+  else strokeTo(ev);
+});
+function endStroke(ev) {
+  if (!S || !S.drawing || ev.pointerId !== S.pointerId) return;
+  S.drawing = false;
+  if (!S.strokeChanged) S.undo.pop();
+}
+canvas.addEventListener('pointerup', endStroke);
+canvas.addEventListener('pointercancel', endStroke);
+canvas.addEventListener('contextmenu', (ev) => ev.preventDefault());
+
+function selectTool(tool) {
+  if (!S) return;
+  S.tool = tool;
+  for (let c = 1; c <= 4; c++) $('toolC' + c).classList.toggle('on', tool === c);
+  $('toolErase').classList.toggle('on', tool === 0);
+  sfx('click');
+}
+for (let c = 1; c <= 4; c++) onPress($('toolC' + c), () => selectTool(c));
+onPress($('toolErase'), () => selectTool(0));
+onPress($('toolBrush'), () => {
+  if (!S) return;
+  S.brush = S.brush === 1 ? 3 : 1;
+  $('toolBrush').textContent = S.brush === 1 ? 'Dünn' : 'Dick';
+  $('toolBrush').setAttribute('aria-pressed', S.brush === 3 ? 'true' : 'false');
+  $('toolBrush').setAttribute('aria-label', 'Strichbreite: ' + (S.brush === 1 ? 'dünn' : 'dick'));
+  sfx('click');
+});
+
+function replaceCells(cells) {
+  pushUndo();
+  S.cells = cells;
+  let n = 0;
+  for (let i = 0; i < cells.length; i++) if (cells[i] !== 0) n++;
+  S.filled = n;
+  analyse();
+}
+onPress($('toolUndo'), () => {
+  if (!S || S.undo.length === 0) return;
+  const cells = S.undo.pop();
+  S.cells = cells;
+  let n = 0;
+  for (let i = 0; i < cells.length; i++) if (cells[i] !== 0) n++;
+  S.filled = n;
+  sfx('click');
+  analyse();
+});
+onPress($('toolClear'), () => {
+  if (!S || S.filled === 0) return;
+  replaceCells(core.emptyDrawing(W, H).cells);
+  sfx('erase');
+});
+
+$('toolPick').addEventListener('click', () => {
+  if (!S) return;
+  const grid = $('pickGrid');
+  grid.textContent = '';
+  const add = (cells, name, placeholder) => {
+    const use = cells.map((v) => (v !== 0 && !S.allowed[v] ? 1 : v));
+    const st = core.computeStats(use, W, H, tuning, S.kind, S.budget);
+    if (!st.valid) return;
+    const card = el('button', { class: 'card', type: 'button' }, [
+      thumbCanvas(use, 80),
+      el('span', { class: 'card-name', text: name }),
+      placeholder ? el('span', { class: 'badge', text: 'Platzhalter' }) : null,
+    ]);
+    card.addEventListener('click', () => { replaceCells(use.slice()); $('pickLayer').hidden = true; sfx('click'); });
+    grid.append(card);
+  };
+  let n = 0;
+  for (const it of galleryAll()) {
+    if ((it.kind === 'weapon') !== (S.kind === 'weapon')) continue;
+    add(decode(it.data), 'Zeichnung ' + (++n), false);
+  }
+  for (const sc of (S.kind === 'weapon' ? SCRIBBLE_WEAPONS : SCRIBBLE_FIGURES)) add(sc.cells, sc.name, true);
+  if (!grid.firstChild) grid.append(el('p', { class: 'empty-note', text: 'Nichts Passendes da.' }));
+  $('pickLayer').hidden = false;
+});
+$('pickClose').addEventListener('click', () => { $('pickLayer').hidden = true; });
+$('drawHintOk').addEventListener('click', () => { $('drawHint').hidden = true; markHintSeen(); });
+
+$('drawBack').addEventListener('click', () => {
+  if (!S) return;
+  if (S.backConfirm && S.filled > 0 && performance.now() - backArmed > 2500) {
+    backArmed = performance.now();
+    $('drawBack').textContent = 'Sicher?';
+    setTimeout(() => { if (S) $('drawBack').textContent = S.backLabel; }, 2500);
+    return;
+  }
+  finish(null);
+});
+$('drawDone').addEventListener('click', () => {
+  if (!S || !S.stats.valid) return;
+  sfx('click');
+  finish({ cells: S.cells.slice(), stats: S.stats, timedOut: false });
+});
+
+function finish(result) {
+  const s = S;
+  if (!s || s.closed) return;
+  s.closed = true;
+  S = null;
+  cancelAnimationFrame(raf);
+  $('pickLayer').hidden = true;
+  $('drawExtra').textContent = '';
+  s.resolve(result);
+}
+
+function layout() {
+  const board = $('drawBoard');
+  const size = Math.max(120, Math.floor(Math.min(board.clientWidth, board.clientHeight)) - 8);
+  canvas.style.width = size + 'px';
+  canvas.style.height = size + 'px';
+  fitCanvas(canvas, size, size);
+  fitCanvas(preview, preview.clientWidth || 52, preview.clientHeight || 52);
+}
+if (typeof ResizeObserver === 'function') new ResizeObserver(() => { if (S) layout(); }).observe($('drawBoard'));
+window.addEventListener('resize', () => { if (S) layout(); });
+
+function drawBoard(t) {
+  const s = S;
+  const col = colours();
+  const g = canvas.getContext('2d');
+  const size = canvas.width;
+  const c = size / W;
+  g.fillStyle = col.paperLight;
+  g.fillRect(0, 0, size, size);
+  // squared paper
+  g.strokeStyle = col.rule;
+  g.lineWidth = 1;
+  g.globalAlpha = 0.4;
+  g.beginPath();
+  for (let i = 1; i < W; i++) {
+    const p = Math.round(i * c) + 0.5;
+    g.moveTo(p, 0); g.lineTo(p, size);
+    g.moveTo(0, p); g.lineTo(size, p);
+  }
+  g.stroke();
+  // front marker
+  g.globalAlpha = 0.55;
+  g.fillStyle = col.inkFaint;
+  g.beginPath();
+  g.moveTo(size / 2, c * 0.25);
+  g.lineTo(size / 2 - c * 0.9, c * 1.25);
+  g.lineTo(size / 2 + c * 0.9, c * 1.25);
+  g.closePath();
+  g.fill();
+  g.font = '600 ' + Math.round(c * 0.95) + 'px ' + getComputedStyle(document.body).fontFamily;
+  g.textBaseline = 'top';
+  g.textAlign = 'left';
+  g.fillText('vorne', size / 2 + c * 1.3, c * 0.3);
+  g.globalAlpha = 1;
+
+  const still = reducedMotion();
+  // ink
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const i = y * W + x;
+      const m = s.mark[i];
+      if (m === 0) continue;
+      g.fillStyle = col.cell[s.cells[i]];
+      if (m === 4) {
+        // a drip: pale, with a drop falling off
+        g.globalAlpha = 0.3;
+        g.fillRect(x * c, y * c, c, c);
+        const ph = still ? 0.35 : (t * 0.9 + hash3(x, y, 3)) % 1;
+        g.globalAlpha = 0.75 * (1 - ph);
+        g.beginPath();
+        g.ellipse((x + 0.5) * c, (y + 0.8 + ph * 2.4) * c, c * 0.22, c * (0.28 + ph * 0.2), 0, 0, 6.2832);
+        g.fill();
+        g.globalAlpha = 1;
+        continue;
+      }
+      g.fillRect(x * c - 0.5, y * c - 0.5, c + 1, c + 1);
+    }
+  }
+  // subtle marks: core cells get a light dot, sharp cells a light slash
+  g.fillStyle = col.paperLight;
+  g.strokeStyle = col.paperLight;
+  g.lineWidth = Math.max(1, c * 0.16);
+  g.lineCap = 'round';
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const m = s.mark[y * W + x];
+      if (m === 2) {
+        g.globalAlpha = 0.3;
+        g.beginPath();
+        g.arc((x + 0.5) * c, (y + 0.5) * c, c * 0.14, 0, 6.2832);
+        g.fill();
+      } else if (m === 3) {
+        g.globalAlpha = 0.85;
+        g.beginPath();
+        g.moveTo((x + 0.28) * c, (y + 0.72) * c);
+        g.lineTo((x + 0.72) * c, (y + 0.28) * c);
+        g.stroke();
+      }
+    }
+  }
+  g.globalAlpha = 1;
+}
+
+function drawPreview(t) {
+  const s = S;
+  const g = preview.getContext('2d');
+  const size = preview.width;
+  g.clearRect(0, 0, size, size);
+  if (s.spriteDirty && t - s.spriteTime > 0.12) {
+    s.spriteDirty = false;
+    s.spriteTime = t;
+    if (s.stats.N > 0) {
+      s.fig = core.buildFigure(s.cells, W, H, tuning, s.kind, s.budget);
+      s.sprite = makeSprite(s.fig, 5);
+    } else { s.fig = null; s.sprite = null; }
+  }
+  if (!s.sprite) return;
+  const col = colours();
+  const scale = Math.min(size / (s.fig.radius * 2 + 3), size / 12);
+  const still = reducedMotion();
+  // lighter figures hop faster
+  const rate = 2.5 + s.stats.topSpeed / 6;
+  const hop = still ? 0 : Math.abs(Math.sin(t * rate));
+  const land = still ? 0 : Math.max(0, 1 - hop * 4);
+  const cy = size * 0.56 - hop * size * 0.1;
+  g.globalAlpha = 0.18;
+  g.fillStyle = col.ink;
+  g.beginPath();
+  g.ellipse(size / 2, size * 0.9, size * (0.26 - hop * 0.06), size * 0.045, 0, 0, 6.2832);
+  g.fill();
+  g.globalAlpha = 1;
+  drawSprite(g, s.sprite, wobbleFrame(t, 0), size / 2, cy, 0, -1, scale, 1 + land * 0.12, 1 - land * 0.12);
+}
+
+function frame(now) {
+  if (!S) return;
+  raf = requestAnimationFrame(frame);
+  const t = now / 1000;
+  const s = S;
+  if (s.timeLimit > 0) {
+    const left = s.timerStart === 0 ? s.timeLimit : Math.max(0, s.timeLimit - (now - s.timerStart) / 1000);
+    const shown = Math.ceil(left);
+    if (shown !== s.timerShown) {
+      s.timerShown = shown;
+      $('drawTimer').textContent = String(shown);
+      $('drawTimer').classList.toggle('low', shown <= 5);
+      if (shown <= 5 && shown > 0 && s.timerStart !== 0) sfx('tick');
+    }
+    if (left <= 0) {
+      sfx('go');
+      finish(s.stats.valid ? { cells: s.cells.slice(), stats: s.stats, timedOut: true } : { cells: null, stats: s.stats, timedOut: true });
+      return;
+    }
+  }
+  drawBoard(t);
+  drawPreview(t);
+}
+
+onLeave('scrDraw', () => { if (S) finish(null); });
+
+// opts: { title, sub, kind: 'figure' | 'weapon', budget, allowed: [5 booleans],
+//   timeLimit (seconds, 0 = none), initial (cells), doneLabel, backLabel,
+//   backConfirm, canPick, lockNote, extra(container) -> onStats callback }
+// Resolves with { cells, stats, timedOut } or null when the player went back.
+// On time-out with an invalid drawing cells is null.
+function openDraw(opts) {
+  if (S) finish(null);
+  return new Promise((resolve) => {
+    const kind = opts.kind === 'weapon' ? 'weapon' : 'figure';
+    const budget = opts.budget || (kind === 'weapon' ? tuning.ink.weaponBudget : tuning.ink.figureBudget);
+    const allowed = opts.allowed || [false, true, true, true, true];
+    let cells = opts.initial ? opts.initial.slice() : core.emptyDrawing(W, H).cells;
+    let filled = 0;
+    for (let i = 0; i < cells.length; i++) {
+      if (cells[i] !== 0 && !allowed[cells[i]]) cells[i] = 1;
+      if (cells[i] !== 0) filled++;
+    }
+    if (filled > budget) { cells = core.emptyDrawing(W, H).cells; filled = 0; }
+    S = {
+      resolve, kind, budget, allowed, cells, filled,
+      mark: new Array(W * H).fill(0),
+      undo: [], tool: 1, brush: 1,
+      stats: null, onStats: null,
+      drawing: false, pointerId: -1, lastX: 0, lastY: 0, strokeChanged: false, denied: false, deniedShown: false,
+      timeLimit: opts.timeLimit || 0, timerStart: 0, timerShown: -1,
+      sprite: null, fig: null, spriteDirty: true, spriteTime: -1,
+      backConfirm: !!opts.backConfirm, backLabel: opts.backLabel || 'Zurück',
+      lockNote: opts.lockNote || '', closed: false,
+    };
+    $('drawTitle').textContent = opts.title || 'Zeichne';
+    $('drawSub').textContent = opts.sub || '';
+    $('drawDone').textContent = opts.doneLabel || 'Fertig';
+    $('drawBack').textContent = S.backLabel;
+    backArmed = 0;
+    $('drawTimer').hidden = S.timeLimit <= 0;
+    $('toolPick').hidden = !opts.canPick;
+    for (let c = 2; c <= 4; c++) {
+      $('toolC' + c).disabled = !allowed[c];
+      $('toolC' + c).hidden = !allowed[c];
+    }
+    $('toolBrush').textContent = 'Dünn';
+    $('toolBrush').setAttribute('aria-pressed', 'false');
+    $('drawHint').hidden = hintSeen();
+    $('pickLayer').hidden = true;
+    const extra = $('drawExtra');
+    extra.textContent = '';
+    showScreen('scrDraw');
+    if (opts.extra) S.onStats = opts.extra(extra) || null;
+    selectToolQuiet(1);
+    layout();
+    analyse();
+    raf = requestAnimationFrame(frame);
+  });
+}
+
+function selectToolQuiet(tool) {
+  S.tool = tool;
+  for (let c = 1; c <= 4; c++) $('toolC' + c).classList.toggle('on', tool === c);
+  $('toolErase').classList.toggle('on', tool === 0);
+}
+
+__exp.openDraw = openDraw;
+};
+
+// ---- app/input.js
+__mods["app/input.js"] = function (__exp) {
+// Steering: keyboard zones, gamepads where the browser offers them, and touch
+// (drag anywhere on the field to steer, a button to dash).
+
+const KEY_ZONES = [
+  { up: 'KeyW', left: 'KeyA', down: 'KeyS', right: 'KeyD', dash: ['Space', 'KeyF'], label: 'W A S D, Sprint: Leertaste' },
+  { up: 'ArrowUp', left: 'ArrowLeft', down: 'ArrowDown', right: 'ArrowRight', dash: ['Enter', 'ShiftRight'], label: 'Pfeiltasten, Sprint: Enter' },
+  { up: 'KeyI', left: 'KeyJ', down: 'KeyK', right: 'KeyL', dash: ['KeyO', 'KeyU'], label: 'I J K L, Sprint: O' },
+  { up: 'Numpad8', left: 'Numpad4', down: 'Numpad5', right: 'Numpad6', dash: ['Numpad0', 'NumpadAdd'], label: 'Ziffernblock 8 4 5 6, Sprint: 0' },
+];
+
+const keys = new Set();
+let active = false; // only swallow game keys while a fight is running
+const GAME_KEYS = new Set();
+for (const z of KEY_ZONES) { GAME_KEYS.add(z.up); GAME_KEYS.add(z.left); GAME_KEYS.add(z.down); GAME_KEYS.add(z.right); for (const d of z.dash) GAME_KEYS.add(d); }
+
+window.addEventListener('keydown', (ev) => {
+  keys.add(ev.code);
+  if (active && GAME_KEYS.has(ev.code)) {
+    const t = ev.target;
+    const onButton = t && t.tagName === 'BUTTON' && (ev.code === 'Enter' || ev.code === 'Space');
+    if (!onButton) ev.preventDefault();
+  }
+});
+window.addEventListener('keyup', (ev) => { keys.delete(ev.code); });
+window.addEventListener('blur', () => { keys.clear(); });
+
+function setInputActive(v) { active = v; if (!v) { touch.on = false; touch.dash = false; touch.latch = 0; } }
+
+// Touch / mouse drag state, written by the fight view.
+const touch = { on: false, id: -1, ox: 0, oy: 0, x: 0, y: 0, mx: 0, my: 0, dash: false, latch: 0 };
+const STICK_RADIUS = 46; // CSS pixels for full speed
+
+function zoneInput(z, out) {
+  if (keys.has(z.left)) out.mx -= 1;
+  if (keys.has(z.right)) out.mx += 1;
+  if (keys.has(z.up)) out.my -= 1;
+  if (keys.has(z.down)) out.my += 1;
+  for (const d of z.dash) if (keys.has(d)) out.dash = true;
+}
+
+function padInput(index, out) {
+  let pads = null;
+  try { pads = navigator.getGamepads ? navigator.getGamepads() : null; } catch (e) { pads = null; }
+  if (!pads) return;
+  let n = 0;
+  for (let i = 0; i < pads.length; i++) {
+    const p = pads[i];
+    if (!p || !p.connected) continue;
+    if (n++ !== index) continue;
+    const ax = p.axes[0] || 0;
+    const ay = p.axes[1] || 0;
+    if (ax * ax + ay * ay > 0.06) { out.mx += ax; out.my += ay; }
+    const b = p.buttons;
+    if (b[14] && b[14].pressed) out.mx -= 1;
+    if (b[15] && b[15].pressed) out.mx += 1;
+    if (b[12] && b[12].pressed) out.my -= 1;
+    if (b[13] && b[13].pressed) out.my += 1;
+    for (const k of [0, 1, 2, 5, 7]) if (b[k] && b[k].pressed) out.dash = true;
+    return;
+  }
+}
+
+function gamepadCount() {
+  try {
+    const pads = navigator.getGamepads ? navigator.getGamepads() : [];
+    let n = 0;
+    for (let i = 0; i < pads.length; i++) if (pads[i] && pads[i].connected) n++;
+    return n;
+  } catch (e) { return 0; }
+}
+
+// Input of the h-th human (0-based) out of `humans` humans in this fight.
+// A single human may use WASD or the arrow keys; touch belongs to human 0.
+function humanInput(h, humans) {
+  const out = { mx: 0, my: 0, dash: false };
+  if (humans <= 1) { zoneInput(KEY_ZONES[0], out); zoneInput(KEY_ZONES[1], out); }
+  else if (h < KEY_ZONES.length) zoneInput(KEY_ZONES[h], out);
+  padInput(h, out);
+  if (h === 0) {
+    if (touch.on) { out.mx += touch.mx; out.my += touch.my; }
+    if (touch.dash || touch.latch > 0) out.dash = true;
+  }
+  return out;
+}
+
+function endTick() { if (touch.latch > 0) touch.latch--; }
+
+__exp.setInputActive = setInputActive;
+__exp.gamepadCount = gamepadCount;
+__exp.humanInput = humanInput;
+__exp.endTick = endTick;
+__exp.KEY_ZONES = KEY_ZONES;
+__exp.touch = touch;
+__exp.STICK_RADIUS = STICK_RADIUS;
+};
+
+// ---- app/fight.js
+__mods["app/fight.js"] = function (__exp) {
+// The fight view shared by the Ring and the Solo Arena: fixed-timestep loop
+// around the core, camera, figure rendering with squash and hop, ink
+// splashes, mild screen shake, HUD refresh, touch stick and dash button.
+
+const { tuning } = __req("app/tuning.js");
+const { $, el, showScreen, onLeave, colours, hash3, reducedMotion, fitCanvas } = __req("app/ui.js");
+const { sfx } = __req("app/audio.js");
+const { spriteFor, drawSprite, wobbleFrame } = __req("app/sprites.js");
+const { touch, STICK_RADIUS, humanInput, setInputActive, endTick } = __req("app/input.js");
+
+const canvas = $('fightCanvas');
+const stage = $('fightStage');
+const TICK = tuning.physics.tickRate;
+
+let F = null; // running fight
+let raf = 0;
+let stains = null; // offscreen canvas with ink that stays on the paper
+
+// Debug hook used by the automated runs: window.__inkDebug.speed = 8 plays
+// eight ticks per normal tick. Players never see it.
+function speed() {
+  const d = window.__inkDebug;
+  return d && d.speed > 0 ? d.speed : 1;
+}
+
+function camera() {
+  const w = canvas.width;
+  const h = canvas.height;
+  return { w, h, cx: w / 2, cy: h / 2, s: Math.min(w, h) / (2 * F.cfg.viewRadius) };
+}
+
+function layout() {
+  const w = stage.clientWidth;
+  const h = stage.clientHeight;
+  F.dpr = fitCanvas(canvas, w, h);
+  if (!stains || stains.width !== canvas.width || stains.height !== canvas.height) {
+    stains = document.createElement('canvas');
+    stains.width = canvas.width;
+    stains.height = canvas.height;
+  }
+}
+if (typeof ResizeObserver === 'function') new ResizeObserver(() => { if (F) layout(); }).observe(stage);
+
+// ---- touch stick and dash button
+canvas.addEventListener('pointerdown', (ev) => {
+  if (!F || touch.on) return;
+  ev.preventDefault();
+  try { canvas.setPointerCapture(ev.pointerId); } catch (e) { /* optional */ }
+  touch.on = true; touch.id = ev.pointerId;
+  touch.ox = touch.x = ev.clientX; touch.oy = touch.y = ev.clientY;
+  touch.mx = 0; touch.my = 0;
+});
+canvas.addEventListener('pointermove', (ev) => {
+  if (!touch.on || ev.pointerId !== touch.id) return;
+  ev.preventDefault();
+  touch.x = ev.clientX; touch.y = ev.clientY;
+  let dx = (touch.x - touch.ox) / STICK_RADIUS;
+  let dy = (touch.y - touch.oy) / STICK_RADIUS;
+  const l = Math.sqrt(dx * dx + dy * dy);
+  if (l > 1) {
+    dx /= l; dy /= l;
+    // the anchor follows the finger so a long drag can be reversed quickly
+    touch.ox = touch.x - dx * STICK_RADIUS;
+    touch.oy = touch.y - dy * STICK_RADIUS;
+  }
+  if (l < 0.12) { dx = 0; dy = 0; }
+  touch.mx = dx; touch.my = dy;
+});
+function stickEnd(ev) {
+  if (ev.pointerId !== touch.id) return;
+  touch.on = false; touch.mx = 0; touch.my = 0;
+}
+canvas.addEventListener('pointerup', stickEnd);
+canvas.addEventListener('pointercancel', stickEnd);
+canvas.addEventListener('contextmenu', (ev) => ev.preventDefault());
+
+const dashBtn = $('dashBtn');
+dashBtn.addEventListener('pointerdown', (ev) => { ev.preventDefault(); touch.dash = true; touch.latch = 10; });
+const dashUp = () => { touch.dash = false; };
+dashBtn.addEventListener('pointerup', dashUp);
+dashBtn.addEventListener('pointercancel', dashUp);
+dashBtn.addEventListener('pointerleave', dashUp);
+dashBtn.addEventListener('contextmenu', (ev) => ev.preventDefault());
+
+let quitArmed = 0;
+$('fightQuit').addEventListener('click', () => {
+  if (!F) { if (quitHandler) quitHandler(); return; }
+  if (performance.now() - quitArmed > 2500) {
+    quitArmed = performance.now();
+    $('fightQuit').textContent = 'Sicher?';
+    setTimeout(() => { $('fightQuit').textContent = 'Ende'; }, 2500);
+    return;
+  }
+  stop('quit');
+});
+let quitHandler = null;
+
+// ---- effects
+function dominantColour(fig, salt) {
+  if (fig.count === 0) return 1;
+  return fig.colour[Math.floor(hash3(salt, fig.count, 7) * fig.count)];
+}
+
+function splash(x, y, colour, count, power, dirX, dirY) {
+  const f = F;
+  for (let i = 0; i < count; i++) {
+    const a = Math.random() * 6.2832;
+    const sp = (0.3 + Math.random()) * power;
+    f.parts.push({
+      x, y,
+      vx: Math.cos(a) * sp + (dirX || 0) * power * 0.8,
+      vy: Math.sin(a) * sp + (dirY || 0) * power * 0.8,
+      r: 0.25 + Math.random() * 0.45, life: 0.35 + Math.random() * 0.35, age: 0, colour,
+    });
+  }
+  if (f.parts.length > 260) f.parts.splice(0, f.parts.length - 260);
+}
+
+function stain(x, y, colour, size) {
+  if (!stains) return;
+  const cam = camera();
+  const g = stains.getContext('2d');
+  g.fillStyle = colours().cell[colour];
+  g.globalAlpha = 0.16;
+  const n = 2 + Math.floor(Math.random() * 3);
+  for (let i = 0; i < n; i++) {
+    const ox = (Math.random() - 0.5) * size * 2.4;
+    const oy = (Math.random() - 0.5) * size * 2.4;
+    g.beginPath();
+    g.arc(cam.cx + (x + ox) * cam.s, cam.cy + (y + oy) * cam.s, (0.3 + Math.random() * 0.7) * size * cam.s, 0, 6.2832);
+    g.fill();
+  }
+  g.globalAlpha = 1;
+}
+
+function floatText(x, y, text, big, colour) {
+  F.floats.push({ x, y, text, big, colour: colour || 0, age: 0 });
+  if (F.floats.length > 24) F.floats.shift();
+}
+
+function shake(amount) {
+  if (reducedMotion()) return;
+  F.shake = Math.min(5, F.shake + amount);
+}
+
+function fmtDamage(d) { return d >= 10 ? d.toFixed(0) : d.toFixed(1); }
+
+function handleEvents(events) {
+  const f = F;
+  const bodies = f.cfg.world().bodies;
+  for (let e = 0; e < events.length; e++) {
+    const ev = events[e];
+    if (ev.type === 'hit') {
+      const a = bodies[ev.from];
+      const b = bodies[ev.to];
+      let dx = a.x - b.x;
+      let dy = a.y - b.y;
+      const d = Math.sqrt(dx * dx + dy * dy) || 1;
+      dx /= d; dy /= d;
+      const reach = Math.min(b.fig.radius * 0.8, d * 0.5);
+      const px = b.x + dx * reach;
+      const py = b.y + dy * reach;
+      const colour = dominantColour(b.fig, f.tick + e);
+      splash(px, py, colour, Math.min(14, 3 + Math.round(ev.damage * 2.2)), ev.sharp ? 16 : 9, -dx, -dy);
+      if (ev.damage >= 1.5 || Math.random() < 0.3) stain(px, py, colour, 0.6 + Math.min(1.6, ev.damage * 0.25));
+      if (ev.damage >= 0.6) floatText(px, py - 1, fmtDamage(ev.damage), ev.sharp, colour);
+      f.vis[ev.to].squash = Math.min(0.3, 0.1 + ev.damage * 0.04);
+      shake(ev.sharp ? Math.min(3, ev.damage * 0.5) : 0.5);
+      sfx(ev.sharp ? 'sharp' : 'hit', ev.sharp ? ev.damage / 3 : 1);
+    } else if (ev.type === 'out') {
+      const b = bodies[ev.seat];
+      f.vis[ev.seat].deadAt = f.time;
+      f.vis[ev.seat].reason = ev.reason;
+      splash(b.x, b.y, dominantColour(b.fig, 1), 22, 20, 0, 0);
+      stain(b.x, b.y, dominantColour(b.fig, 2), 2.4);
+      shake(4);
+      sfx('out');
+    } else if (ev.type === 'shotHit') {
+      const b = bodies[ev.to];
+      const colour = dominantColour(b.fig, f.tick + e);
+      splash(b.x, b.y, colour, 5, 10, 0, 0);
+      floatText(b.x, b.y - 1, fmtDamage(ev.damage), true, colour);
+      f.vis[ev.to].squash = 0.2;
+      sfx('shot');
+    } else if (ev.type === 'enemyDown') {
+      const b = bodies[ev.index];
+      f.vis[ev.index].deadAt = f.time;
+      splash(b.x, b.y, dominantColour(b.fig, 3), 14, 15, 0, 0);
+      stain(b.x, b.y, dominantColour(b.fig, 4), 1.8);
+      shake(1.5);
+      sfx('down');
+    } else if (ev.type === 'pickup') {
+      const h = bodies[0];
+      floatText(h.x, h.y - h.fig.radius - 1, '+' + ev.value, false, 0);
+      sfx('pickup');
+    } else if (ev.type === 'throw') {
+      sfx('throw');
+    }
+    if (f.cfg.onEvent) f.cfg.onEvent(ev);
+  }
+}
+
+// ---- drawing
+function wobblyCircle(g, cam, r, t, salt) {
+  const still = reducedMotion();
+  const fr = still ? 0 : Math.floor(t * 6);
+  const n = 72;
+  g.beginPath();
+  for (let i = 0; i <= n; i++) {
+    const k = i % n;
+    const a = k / n * 6.2832;
+    const rr = r + (hash3(k, fr, salt) - 0.5) * 0.5;
+    const x = cam.cx + Math.cos(a) * rr * cam.s;
+    const y = cam.cy + Math.sin(a) * rr * cam.s;
+    if (i === 0) g.moveTo(x, y); else g.lineTo(x, y);
+  }
+  g.closePath();
+}
+
+function render(t) {
+  const f = F;
+  const cfg = f.cfg;
+  const col = colours();
+  const g = canvas.getContext('2d');
+  const cam = camera();
+  const world = cfg.world();
+  const bodies = world.bodies;
+  const still = reducedMotion();
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.clearRect(0, 0, cam.w, cam.h);
+  if (f.shake > 0.05 && !still) {
+    g.translate((Math.random() - 0.5) * f.shake * f.dpr, (Math.random() - 0.5) * f.shake * f.dpr);
+  }
+
+  // the sheet
+  const R = cfg.ringRadius();
+  if (cfg.mode === 'ring') {
+    // where the ring started, as a faint pencil line
+    g.strokeStyle = col.inkFaint;
+    g.globalAlpha = 0.5;
+    g.lineWidth = Math.max(1, cam.s * 0.15);
+    g.setLineDash([cam.s * 1.2, cam.s * 1.2]);
+    g.beginPath();
+    g.arc(cam.cx, cam.cy, cfg.startRadius * cam.s, 0, 6.2832);
+    g.stroke();
+    g.setLineDash([]);
+    g.globalAlpha = 1;
+  }
+  wobblyCircle(g, cam, R, t, 11);
+  g.fillStyle = col.paperLight;
+  g.fill();
+  const danger = cfg.mode === 'ring' && cfg.sudden && cfg.sudden();
+  g.strokeStyle = danger ? col.ember : col.ink;
+  g.lineWidth = Math.max(2, cam.s * (cfg.mode === 'ring' ? 0.45 : 0.7));
+  g.lineJoin = 'round';
+  g.stroke();
+  // squared paper inside the sheet
+  g.save();
+  g.beginPath();
+  g.arc(cam.cx, cam.cy, Math.max(0, R - 0.3) * cam.s, 0, 6.2832);
+  g.clip();
+  g.strokeStyle = col.rule;
+  g.globalAlpha = 0.3;
+  g.lineWidth = 1;
+  g.beginPath();
+  const step = 8 * cam.s;
+  for (let x = cam.cx % step; x < cam.w; x += step) { g.moveTo(x, 0); g.lineTo(x, cam.h); }
+  for (let y = cam.cy % step; y < cam.h; y += step) { g.moveTo(0, y); g.lineTo(cam.w, y); }
+  g.stroke();
+  g.globalAlpha = 1;
+  if (stains) g.drawImage(stains, 0, 0);
+  g.restore();
+
+  if (cfg.extraDraw) cfg.extraDraw(g, cam, t, 'under');
+
+  // shadows
+  g.fillStyle = col.ink;
+  for (let i = 0; i < bodies.length; i++) {
+    const b = bodies[i];
+    const v = f.vis[i];
+    if (!b.alive) continue;
+    const sr = Math.sqrt(b.fig.count) * 0.62 + 0.8;
+    g.globalAlpha = 0.1;
+    g.beginPath();
+    g.ellipse(cam.cx + (b.x + 0.4 + v.lift * 0.6) * cam.s, cam.cy + (b.y + 0.7 + v.lift * 1.3) * cam.s,
+      sr * cam.s, sr * 0.9 * cam.s, 0, 0, 6.2832);
+    g.fill();
+  }
+  g.globalAlpha = 1;
+
+  // figures
+  for (let i = 0; i < bodies.length; i++) {
+    const b = bodies[i];
+    const v = f.vis[i];
+    let alpha = 1;
+    let grow = 1;
+    if (!b.alive) {
+      if (v.deadAt < 0) continue;
+      const age = (f.time - v.deadAt) / 0.5;
+      if (age >= 1) continue;
+      alpha = 1 - age;
+      grow = v.reason === 'ring' ? 1 - age * 0.7 : 1 + age * 0.25;
+    }
+    const sprite = spriteFor(b.fig);
+    const fr = wobbleFrame(t, i * 0.37);
+    const sq = still ? 0 : v.squash * Math.cos(v.squashPhase) + v.hopSquash;
+    const sx = (1 + sq) * (1 + v.lift * 0.05) * grow;
+    const sy = (1 - sq) * (1 + v.lift * 0.05) * grow;
+    const px = cam.cx + b.x * cam.s;
+    const py = cam.cy + (b.y - v.lift * 0.5) * cam.s;
+    if (b.alive && b.dashTicks > 0 && !still) {
+      g.globalAlpha = 0.22;
+      drawSprite(g, sprite, fr, px - b.vx * 0.05 * cam.s, py - b.vy * 0.05 * cam.s, b.fx, b.fy, cam.s, sx, sy);
+      g.globalAlpha = 0.4;
+      drawSprite(g, sprite, fr, px - b.vx * 0.025 * cam.s, py - b.vy * 0.025 * cam.s, b.fx, b.fy, cam.s, sx, sy);
+    }
+    g.globalAlpha = alpha;
+    drawSprite(g, sprite, fr, px, py, b.fx, b.fy, cam.s, sx, sy);
+    g.globalAlpha = 1;
+  }
+
+  // armour bar with the seat tag at its left end, just below the figure
+  const fontPx = Math.round(11 * f.dpr);
+  g.font = '700 ' + fontPx + 'px ' + f.font;
+  g.textAlign = 'center';
+  g.textBaseline = 'middle';
+  for (let i = 0; i < bodies.length; i++) {
+    const b = bodies[i];
+    if (!b.alive) continue;
+    const info = cfg.bodyInfo ? cfg.bodyInfo(i) : null;
+    const px = cam.cx + b.x * cam.s;
+    const showBar = info ? info.bar : b.hp < b.maxHp;
+    const below = Math.min(b.fig.radius, Math.sqrt(b.fig.count) * 0.75 + 2);
+    const by = cam.cy + (b.y + below + 0.8) * cam.s;
+    const bw = Math.max(26 * f.dpr, Math.min(b.fig.radius * 1.6, 9) * cam.s);
+    const bh = 4 * f.dpr;
+    if (showBar) {
+      g.fillStyle = col.paperLight;
+      g.fillRect(px - bw / 2, by, bw, bh);
+      g.fillStyle = b.hp / b.maxHp < 0.3 ? col.ember : col.ink;
+      g.fillRect(px - bw / 2, by, bw * Math.max(0, b.hp / b.maxHp), bh);
+      g.strokeStyle = col.ink;
+      g.lineWidth = Math.max(1, f.dpr);
+      g.strokeRect(px - bw / 2, by, bw, bh);
+    }
+    if (info && info.tag) {
+      const tr = 8 * f.dpr;
+      const tx = px - bw / 2 - tr - 2 * f.dpr;
+      const ty = by + bh / 2;
+      g.beginPath();
+      g.arc(tx, ty, tr, 0, 6.2832);
+      g.fillStyle = info.human ? col.ink : col.paperLight;
+      g.fill();
+      g.strokeStyle = col.ink;
+      g.lineWidth = 1.5 * f.dpr;
+      g.stroke();
+      g.fillStyle = info.human ? col.onInk : col.ink;
+      g.fillText(info.tag, tx, ty + f.dpr);
+    }
+  }
+
+  if (cfg.extraDraw) cfg.extraDraw(g, cam, t, 'over');
+
+  // splashes
+  for (let i = 0; i < f.parts.length; i++) {
+    const p = f.parts[i];
+    g.globalAlpha = Math.max(0, 1 - p.age / p.life);
+    g.fillStyle = col.cell[p.colour];
+    g.beginPath();
+    g.arc(cam.cx + p.x * cam.s, cam.cy + p.y * cam.s, p.r * cam.s, 0, 6.2832);
+    g.fill();
+  }
+  // damage numbers
+  for (let i = 0; i < f.floats.length; i++) {
+    const fl = f.floats[i];
+    const k = fl.age / 0.8;
+    const size = Math.round((fl.big ? 17 : 12) * f.dpr);
+    g.font = '700 ' + size + 'px ' + f.font;
+    g.globalAlpha = Math.max(0, 1 - k * k);
+    const x = cam.cx + fl.x * cam.s;
+    const y = cam.cy + (fl.y - k * 3) * cam.s;
+    g.lineWidth = 3 * f.dpr;
+    g.strokeStyle = col.paperLight;
+    g.strokeText(fl.text, x, y);
+    g.fillStyle = fl.colour ? col.cell[fl.colour] : col.ink;
+    g.fillText(fl.text, x, y);
+  }
+  g.globalAlpha = 1;
+
+  // touch stick
+  if (touch.on) {
+    const r = canvas.getBoundingClientRect();
+    const k = canvas.width / r.width;
+    const ox = (touch.ox - r.left) * k;
+    const oy = (touch.oy - r.top) * k;
+    g.setTransform(1, 0, 0, 1, 0, 0);
+    g.strokeStyle = col.ink;
+    g.globalAlpha = 0.35;
+    g.lineWidth = 2 * f.dpr;
+    g.beginPath();
+    g.arc(ox, oy, STICK_RADIUS * k, 0, 6.2832);
+    g.stroke();
+    g.fillStyle = col.ink;
+    g.beginPath();
+    g.arc(ox + touch.mx * STICK_RADIUS * k, oy + touch.my * STICK_RADIUS * k, 16 * k, 0, 6.2832);
+    g.fill();
+    g.globalAlpha = 1;
+  }
+}
+
+function advanceVisuals(dt) {
+  const f = F;
+  const bodies = f.cfg.world().bodies;
+  for (let i = 0; i < bodies.length; i++) {
+    const b = bodies[i];
+    const v = f.vis[i];
+    const sp = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+    const m = Math.min(1, sp / 6);
+    v.hop += dt * (5 + sp * 0.35);
+    const s = Math.abs(Math.sin(v.hop));
+    v.lift = s * m * 0.9;
+    v.hopSquash = (0.5 - s) * 0.09 * m;
+    if (v.squash > 0.002) { v.squash *= Math.pow(0.004, dt); v.squashPhase += dt * 34; } else v.squash = 0;
+  }
+  for (let i = f.parts.length - 1; i >= 0; i--) {
+    const p = f.parts[i];
+    p.age += dt;
+    if (p.age >= p.life) { f.parts.splice(i, 1); continue; }
+    p.x += p.vx * dt; p.y += p.vy * dt;
+    p.vx *= Math.pow(0.02, dt); p.vy *= Math.pow(0.02, dt);
+  }
+  for (let i = f.floats.length - 1; i >= 0; i--) {
+    f.floats[i].age += dt;
+    if (f.floats[i].age >= 0.8) f.floats.splice(i, 1);
+  }
+  f.shake *= Math.pow(0.001, dt);
+}
+
+function setBanner(text, sub) {
+  const b = $('fightBanner');
+  if (!text) { b.hidden = true; return; }
+  b.hidden = false;
+  b.textContent = text;
+  if (sub) b.append(el('small', { text: sub }));
+}
+
+function frame(now) {
+  if (!F) return;
+  raf = requestAnimationFrame(frame);
+  const f = F;
+  const cfg = f.cfg;
+  let dt = (now - f.last) / 1000;
+  f.last = now;
+  if (dt > 0.1) dt = 0.1;
+  if (dt < 0) dt = 0;
+  const sp = speed();
+  f.time += dt;
+  const t = now / 1000;
+
+  if (f.phase === 'count') {
+    f.count -= dt * sp / 0.55;
+    const n = Math.ceil(f.count);
+    if (n !== f.countShown) {
+      f.countShown = n;
+      if (n > 0) { setBanner(String(n), f.controlHint); sfx('count'); }
+      else { setBanner('Los!'); sfx('go'); f.phase = 'run'; f.bannerUntil = f.time + 0.5; }
+    }
+  } else if (f.phase === 'run') {
+    if (f.bannerUntil && f.time > f.bannerUntil) { setBanner(''); f.bannerUntil = 0; }
+    f.acc += dt * TICK * sp;
+    let steps = 0;
+    const max = 6 * sp;
+    while (f.acc >= 1 && steps < max && !cfg.isOver()) {
+      f.acc -= 1;
+      steps++;
+      cfg.step((h) => humanInput(h, cfg.humans));
+      endTick();
+      f.tick++;
+      const bodies = cfg.world().bodies;
+      for (let i = 0; i < bodies.length; i++) {
+        if (bodies[i].alive && bodies[i].dashTicks === tuning.physics.dashTicks - 1) sfx('dash');
+      }
+      handleEvents(cfg.events());
+    }
+    if (f.acc > 4) f.acc = 0;
+    if (cfg.isOver()) { f.phase = 'end'; f.endAt = f.time + 0.9 / sp; }
+    const hb = cfg.dashBody ? cfg.dashBody() : null;
+    dashBtn.classList.toggle('cool', !!(hb && hb.dashCd > 0));
+  } else if (f.phase === 'end') {
+    if (f.time >= f.endAt) { render(t); stop('over'); return; }
+  }
+  advanceVisuals(dt);
+  if (++f.hudCount % 6 === 0 && cfg.hud) cfg.hud($('fightHud'));
+  render(t);
+}
+
+function stop(result) {
+  const f = F;
+  if (!f) return;
+  F = null;
+  cancelAnimationFrame(raf);
+  setInputActive(false);
+  setBanner('');
+  dashBtn.hidden = true;
+  if (f.cfg.hud) f.cfg.hud($('fightHud'));
+  f.resolve(result);
+}
+
+onLeave('scrFight', () => { if (F) stop('quit'); $('fightOverlay').hidden = true; quitHandler = null; });
+
+// cfg: { mode: 'ring' | 'solo', viewRadius, startRadius, ringRadius(), sudden(),
+//   world(), events(), step(humanFn), isOver(), humans, bodyInfo(i), hud(el),
+//   extraDraw(g, cam, t, layer), onEvent(ev), dashBody(), controlHint }
+// Resolves with 'over' or 'quit'.
+function runFight(cfg) {
+  if (F) stop('quit');
+  return new Promise((resolve) => {
+    showScreen('scrFight');
+    $('fightOverlay').hidden = true;
+    const n = cfg.world().bodies.length;
+    const vis = [];
+    for (let i = 0; i < n; i++) vis.push({ hop: i * 1.7, lift: 0, hopSquash: 0, squash: 0, squashPhase: 0, deadAt: -1, reason: '' });
+    F = {
+      cfg, resolve, vis, parts: [], floats: [], shake: 0,
+      phase: 'count', count: 3, countShown: 4, bannerUntil: 0,
+      acc: 0, tick: 0, time: 0, last: performance.now(), endAt: 0, hudCount: 0, dpr: 1,
+      controlHint: cfg.controlHint || '',
+      font: getComputedStyle(document.body).fontFamily,
+    };
+    dashBtn.hidden = false;
+    layout();
+    if (stains) stains.getContext('2d').clearRect(0, 0, stains.width, stains.height);
+    setInputActive(true);
+    if (cfg.hud) cfg.hud($('fightHud'));
+    raf = requestAnimationFrame(frame);
+  });
+}
+
+// A panel over the field: line-up before a fight, results after it.
+// Resolves with 'primary', 'secondary' or 'quit'.
+function fightOverlay(title, bodyNodes, primaryText, secondaryText) {
+  return new Promise((resolve) => {
+    showScreen('scrFight');
+    dashBtn.hidden = true;
+    $('ovTitle').textContent = title;
+    const body = $('ovBody');
+    body.textContent = '';
+    for (const n of bodyNodes) if (n) body.append(n);
+    const p = $('ovPrimary');
+    const s = $('ovSecondary');
+    p.textContent = primaryText;
+    s.textContent = secondaryText || '';
+    s.hidden = !secondaryText;
+    $('fightOverlay').hidden = false;
+    $('fightOverlay').scrollTop = 0;
+    const done = (r) => {
+      p.onclick = null; s.onclick = null; quitHandler = null;
+      $('fightOverlay').hidden = true;
+      sfx('click');
+      resolve(r);
+    };
+    // a key or finger still held from the fight must not skip the panel
+    const shownAt = performance.now();
+    p.onclick = () => { if (performance.now() - shownAt > 450) done('primary'); };
+    s.onclick = () => { if (performance.now() - shownAt > 450) done('secondary'); };
+    quitHandler = () => done('quit');
+    if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+  });
+}
+
+function clearHud() { $('fightHud').textContent = ''; }
+
+__exp.runFight = runFight;
+__exp.fightOverlay = fightOverlay;
+__exp.clearHud = clearHud;
+};
+
+// ---- app/ringmode.js
+__mods["app/ringmode.js"] = function (__exp) {
+// Mode B, the Ring: seats, drawing in turns, rounds, first to three wins,
+// catch-up ink and the result screens.
+
+const core = __req("core/index.js");
+const { tuning, W, H } = __req("app/tuning.js");
+const { $, el, showScreen, passScreen, coarsePointer } = __req("app/ui.js");
+const { sfx } = __req("app/audio.js");
+const { openDraw } = __req("app/drawscreen.js");
+const { runFight, fightOverlay, clearHud } = __req("app/fight.js");
+const { thumbCanvas } = __req("app/sprites.js");
+const { galleryAll, galleryAdd, decode } = __req("app/gallery.js");
+const { SCRIBBLE_FIGURES } = __req("app/scribbles.js");
+const { KEY_ZONES, gamepadCount } = __req("app/input.js");
+
+const SEAT_DEFAULTS = ['human', 'bot', 'bot', 'none'];
+let goHome = () => {};
+
+function seatTypes() {
+  const types = [];
+  for (let i = 0; i < 4; i++) types.push($('seat' + (i + 1) + 'Type').value);
+  return types;
+}
+
+function refreshSetup() {
+  const types = seatTypes();
+  const humans = types.filter((t) => t === 'human').length;
+  const active = types.filter((t) => t !== 'none').length;
+  let h = 0;
+  for (let i = 0; i < 4; i++) {
+    const keys = $('seat' + (i + 1) + 'Keys');
+    if (types[i] === 'human') {
+      if (humans === 1) keys.textContent = coarsePointer() ? 'Finger: ziehen lenkt, Knopf sprintet' : 'W A S D oder Pfeiltasten, Sprint: Leertaste';
+      else keys.textContent = (h < KEY_ZONES.length ? KEY_ZONES[h].label : '') + (h === 0 ? ' · oder Finger' : '') + ' · Gamepad ' + (h + 1);
+      h++;
+    } else if (types[i] === 'bot') keys.textContent = 'zeichnet nicht selbst, nimmt eine fertige Figur';
+    else keys.textContent = 'Platz bleibt leer';
+  }
+  let note = '';
+  if (active < 2) note = 'Es braucht mindestens 2 Figuren.';
+  else if (humans === 0) note = 'Nur Bots: du schaust zu.';
+  else if (humans > 1) note = 'Gezeichnet wird reihum auf diesem Gerät. Gespielt wird mit Tastatur' + (gamepadCount() > 0 ? ' oder Gamepad' : '') + '; den Finger hat nur der erste Mensch.';
+  $('ringSetupNote').textContent = note;
+  $('ringGo').disabled = active < 2;
+}
+
+function initRing(home) {
+  goHome = home;
+  const list = $('seatList');
+  for (let i = 0; i < 4; i++) {
+    const id = 'seat' + (i + 1) + 'Type';
+    const sel = el('select', { id, 'aria-label': 'Platz ' + (i + 1) }, [
+      el('option', { value: 'human', text: 'Mensch' }),
+      el('option', { value: 'bot', text: 'Bot' }),
+      i >= 2 ? el('option', { value: 'none', text: 'leer' }) : null,
+    ]);
+    sel.value = SEAT_DEFAULTS[i];
+    sel.addEventListener('change', refreshSetup);
+    list.append(el('div', { class: 'seat' }, [
+      el('span', { class: 'tag', text: String(i + 1) }),
+      el('span', { class: 'seat-name' }, [
+        document.createTextNode('Platz ' + (i + 1)),
+        el('span', { class: 'seat-keys', id: 'seat' + (i + 1) + 'Keys' }),
+      ]),
+      sel,
+    ]));
+  }
+  $('ringTime').value = String(tuning.ring.drawTimeSeconds);
+  if ($('ringTime').value === '') $('ringTime').value = '30';
+  $('ringSetupBack').addEventListener('click', () => home());
+  $('ringGo').addEventListener('click', () => {
+    const seats = seatTypes().filter((t) => t !== 'none').map((t) => ({ human: t === 'human' }));
+    if (seats.length < 2) return;
+    sfx('click');
+    playRing(seats, parseInt($('ringTime').value, 10) || 0);
+  });
+}
+
+function openRingSetup() {
+  refreshSetup();
+  showScreen('scrRingSetup');
+}
+
+function randomInt(n) { return Math.floor(Math.random() * n); }
+
+function botPool() {
+  const own = [];
+  for (const it of galleryAll()) {
+    if (it.kind !== 'figure') continue;
+    const cells = decode(it.data);
+    if (core.computeStats(cells, W, H, tuning, 'figure', tuning.ink.figureBudget).valid) own.push({ cells, source: 'gallery' });
+  }
+  const built = SCRIBBLE_FIGURES.map((s) => ({ cells: s.cells, source: 'placeholder', name: s.name }));
+  return { own, built };
+}
+
+function pickBotDrawing(pool, used) {
+  const free = (list) => list.filter((d) => used.indexOf(d) === -1);
+  let from = free(pool.own);
+  const built = free(pool.built);
+  if (from.length === 0 || (built.length > 0 && Math.random() < 0.4)) from = built.length > 0 ? built : from;
+  if (from.length === 0) from = pool.built;
+  const d = from[randomInt(from.length)];
+  used.push(d);
+  return d;
+}
+
+function statLine(st) {
+  return 'Gewicht ' + st.N + ' · Panzer ' + Math.round(st.armour) + ' · Schärfe ' + st.sharpness.toFixed(1);
+}
+
+async function playRing(seats, drawTime) {
+  const n = seats.length;
+  const humans = [];
+  const humanIndex = [];
+  for (let s = 0; s < n; s++) { humanIndex.push(seats[s].human ? humans.length : -1); if (seats[s].human) humans.push(s); }
+  const name = (s) => (seats[s].human ? (humans.length === 1 ? 'Du' : 'Spieler ' + (s + 1)) : 'Bot ' + (s + 1));
+  const match = core.ringCreateMatch(tuning, n, (Date.now() ^ (randomInt(1 << 30))) >>> 0);
+  const drawings = new Array(n).fill(null);
+  const source = new Array(n).fill('own');
+  const pool = botPool();
+  const used = [];
+  for (let s = 0; s < n; s++) {
+    if (seats[s].human) continue;
+    const d = pickBotDrawing(pool, used);
+    drawings[s] = d.cells;
+    source[s] = d.source;
+  }
+  const touchPlay = coarsePointer();
+
+  while (match.phase !== 'matchOver') {
+    // drawing, one human after the other
+    for (const s of humans) {
+      const budget = core.ringInkBudget(tuning, match, s);
+      const bonus = budget - tuning.ink.figureBudget;
+      if (humans.length > 1) {
+        const r = await passScreen(name(s) + ' zeichnet', 'Gib das Gerät weiter. Alle anderen schauen weg.', 'Ich bin ' + name(s));
+        if (r === 'back') { goHome(); return; }
+      }
+      const res = await openDraw({
+        title: (humans.length === 1 ? 'Zeichne deine Figur' : name(s) + ': zeichne deine Figur'),
+        sub: 'Runde ' + (match.round + 1) + ' · ' + budget + ' Tinte' + (bonus > 0 ? ' (Aufholtinte +' + bonus + ')' : '')
+          + (drawTime > 0 ? ' · Uhr startet beim ersten Strich' : ''),
+        kind: 'figure', budget, timeLimit: drawTime, initial: drawings[s],
+        backLabel: 'Ende', backConfirm: true, doneLabel: 'Fertig, in den Ring',
+      });
+      if (!res) { goHome(); return; }
+      if (res.cells) {
+        drawings[s] = res.cells;
+        source[s] = 'own';
+        galleryAdd(res.cells, 'figure');
+      } else {
+        const d = pool.built[randomInt(pool.built.length)];
+        drawings[s] = d.cells;
+        source[s] = 'placeholder';
+        const r = await passScreen('Zeit um!', name(s) + ' hatte noch keine fertige Figur (mindestens ' + tuning.ink.minBodyCells
+          + ' Kästchen am Stück). Diese Runde springt der Platzhalter „' + d.name + '“ ein.', 'Na gut');
+        if (r === 'back') { goHome(); return; }
+      }
+    }
+
+    const figures = drawings.map((cells, s) => core.buildFigure(cells, W, H, tuning, 'figure', core.ringInkBudget(tuning, match, s)));
+    const cards = figures.map((fig, s) => el('div', { class: 'card' }, [
+      thumbCanvas(drawings[s], 64),
+      el('span', { class: 'card-name' }, [el('span', { class: 'tag' + (seats[s].human ? ' human' : ''), text: String(s + 1) }), document.createTextNode(' ' + name(s))]),
+      source[s] === 'placeholder' ? el('span', { class: 'badge', text: 'Platzhalter' }) : (seats[s].human ? null : el('span', { class: 'badge', text: 'aus der Galerie' })),
+      el('span', { text: statLine(fig.stats) }),
+    ]));
+    clearHud();
+    const go = await fightOverlay('Runde ' + (match.round + 1), [
+      el('div', { class: 'lineup' }, cards),
+      el('p', { class: 'fine', text: 'Schubs die anderen aus dem Ring oder schneide ihren Panzer weg. Der Ring wird kleiner.' }),
+    ], 'In den Ring!', 'Zum Menü');
+    if (go !== 'primary') { goHome(); return; }
+
+    core.ringStartRound(tuning, match, figures);
+    const hud = makeHud(match, seats, name);
+    const result = await runFight({
+      mode: 'ring',
+      viewRadius: tuning.ring.startRadius[n] + 4,
+      startRadius: tuning.ring.startRadius[n],
+      ringRadius: () => match.ringRadius,
+      sudden: () => match.tick > tuning.ring.suddenDeathTick,
+      world: () => match.world,
+      events: () => match.world.events,
+      humans: humans.length,
+      step: (humanFn) => {
+        const inputs = [];
+        for (let s = 0; s < n; s++) inputs.push(seats[s].human ? humanFn(humanIndex[s]) : null);
+        core.ringStep(tuning, match, core.ringBotInputs(tuning, match, inputs));
+      },
+      isOver: () => match.phase !== 'fight',
+      bodyInfo: (i) => ({ tag: String(i + 1), human: seats[i].human, bar: true }),
+      hud,
+      dashBody: () => (humans.length > 0 ? match.world.bodies[humans[0]] : null),
+      controlHint: humans.length === 0 ? 'Zuschauen' : (touchPlay ? 'Ziehen lenkt · Knopf sprintet' : (humans.length === 1 ? 'W A S D oder Pfeile · Leertaste sprintet' : 'Jeder in seiner Tastenzone')),
+    });
+    if (result === 'quit') { goHome(); return; }
+
+    // why did who lose?
+    const w = match.roundWinner;
+    const over = match.phase === 'matchOver';
+    const order = [];
+    for (let s = 0; s < n; s++) if (s !== w) order.push(s);
+    order.sort((a, b) => match.outTick[a] - match.outTick[b]);
+    const lines = order.map((s) => el('p', {}, [
+      el('b', { text: name(s) + ': ' }),
+      document.createTextNode(match.outReason[s] === 'armour' ? 'Panzer zerbrochen' : 'aus dem Ring geflogen'),
+    ]));
+    if (match.outReason[w] !== '') lines.push(el('p', { class: 'fine', text: 'Alle gleichzeitig raus: wer näher an der Mitte war, gewinnt.' }));
+    const score = el('p', { class: 'score-big', text: match.wins.join(' : ') });
+    const names = el('p', { class: 'fine', text: seats.map((x, s) => name(s)).join(' : ') + ' · wer zuerst ' + tuning.ring.winsToTakeMatch + ' hat, gewinnt' });
+    const humanWon = seats[w].human;
+    sfx(humanWon || humans.length === 0 ? 'win' : 'lose');
+    if (!over) {
+      const pct = tuning.ring.catchUpPercentPerLostRound;
+      const r = await fightOverlay('Runde ' + match.round + ' geht an ' + name(w), [
+        ...lines, score, names,
+        el('p', { class: 'fine', text: 'Wer verloren hat, bekommt ' + pct + ' % mehr Tinte für die nächste Zeichnung.' }),
+      ], humans.length > 0 ? 'Nächste Runde zeichnen' : 'Nächste Runde', 'Zum Menü');
+      if (r !== 'primary') { goHome(); return; }
+    } else {
+      const r = await fightOverlay(name(w) + (name(w) === 'Du' ? ' gewinnst das Spiel!' : ' gewinnt das Spiel!'), [
+        el('div', { class: 'lineup' }, [el('div', { class: 'card' }, [thumbCanvas(drawings[w], 64), el('span', { class: 'card-name', text: name(w) })])]),
+        ...lines, score, names,
+      ], 'Nochmal', 'Zum Menü');
+      if (r === 'primary') { playRing(seats, drawTime); return; }
+      goHome();
+      return;
+    }
+  }
+}
+
+function makeHud(match, seats, name) {
+  let built = false;
+  const bars = [];
+  const chips = [];
+  let line = null;
+  const r = tuning.ring;
+  const T = tuning.physics.tickRate;
+  return (root) => {
+    if (!built || root.firstChild === null) {
+      built = true;
+      root.textContent = '';
+      for (let s = 0; s < seats.length; s++) {
+        const bar = el('i');
+        const pips = '●'.repeat(match.wins[s]) + '○'.repeat(Math.max(0, r.winsToTakeMatch - match.wins[s]));
+        const chip = el('div', { class: 'chip' }, [
+          el('span', { class: 'tag' + (seats[s].human ? ' human' : ''), text: String(s + 1) }),
+          el('span', { class: 'chip-body' }, [
+            el('span', { class: 'chip-name' }, [document.createTextNode(name(s) + ' '), el('span', { class: 'pips', text: pips })]),
+            el('span', { class: 'hpbar' }, [bar]),
+          ]),
+        ]);
+        bars.push(bar); chips.push(chip);
+        root.append(chip);
+      }
+      line = el('div', { class: 'hud-line' });
+      root.append(line);
+    }
+    const bodies = match.world.bodies;
+    for (let s = 0; s < seats.length; s++) {
+      const b = bodies[s];
+      bars[s].style.width = Math.max(0, b.hp / b.maxHp * 100).toFixed(0) + '%';
+      chips[s].classList.toggle('out', !b.alive);
+    }
+    let text;
+    if (match.tick < r.shrinkStartTick) text = 'Ring schrumpft in ' + Math.ceil((r.shrinkStartTick - match.tick) / T) + ' s';
+    else if (match.tick < r.shrinkEndTick) text = 'Der Ring schrumpft';
+    else if (match.tick <= r.suddenDeathTick) text = 'Enger Ring · Schluss in ' + Math.ceil((r.suddenDeathTick - match.tick) / T) + ' s';
+    else text = 'Der Ring verschwindet!';
+    if (line.textContent !== text) line.textContent = text;
+  };
+}
+
+__exp.initRing = initRing;
+__exp.openRingSetup = openRingSetup;
+};
+
+// ---- app/solomode.js
+__mods["app/solomode.js"] = function (__exp) {
+// Mode A, the Solo Arena: hero and thrown weapon, one enemy drawing and a
+// stake per wave, ink drops, one upgrade between waves, five waves and a boss.
+
+const core = __req("core/index.js");
+const { tuning, W, H } = __req("app/tuning.js");
+const { $, el, onPress, showScreen, colours, coarsePointer, ELEMENT_NAMES, reducedMotion } = __req("app/ui.js");
+const { sfx } = __req("app/audio.js");
+const { openDraw } = __req("app/drawscreen.js");
+const { runFight, fightOverlay, clearHud } = __req("app/fight.js");
+const { thumbCanvas, spriteFor, drawSprite, wobbleFrame } = __req("app/sprites.js");
+const { galleryAdd, bestScore, saveBestScore } = __req("app/gallery.js");
+
+let goHome = () => {};
+const so = tuning.solo;
+
+function initSolo(home) {
+  goHome = home;
+  $('soloIntroBack').addEventListener('click', () => home());
+  for (let c = 2; c <= 4; c++) $('soloC' + c).addEventListener('click', () => { sfx('click'); playSolo(c); });
+}
+
+function openSoloIntro() {
+  const best = bestScore();
+  $('soloBest').textContent = best > 0 ? 'Dein bester Lauf auf diesem Gerät: ' + best + ' Tinte.' : '';
+  showScreen('scrSoloIntro');
+}
+
+function stakeLabel(i) {
+  const v = so.stakes[i];
+  return '×' + String(v).replace('.', ',');
+}
+
+async function playSolo(startColour) {
+  const allowed = [false, true, startColour === 2, startColour === 3, startColour === 4];
+  const lock = 'Du hast Schwarz und ' + ELEMENT_NAMES[startColour] + '. Weitere Farben gibt es später als Upgrade.';
+  const hero = await openDraw({
+    title: 'Zeichne deinen Helden', sub: tuning.ink.figureBudget + ' Tinte · oben ist vorne',
+    kind: 'figure', budget: tuning.ink.figureBudget, allowed, canPick: true, lockNote: lock, doneLabel: 'Weiter zur Waffe',
+  });
+  if (!hero) { openSoloIntro(); return; }
+  const weapon = await openDraw({
+    title: 'Zeichne die Wurfwaffe', sub: tuning.ink.weaponBudget + ' Tinte · dein Held wirft sie von selbst',
+    kind: 'weapon', budget: tuning.ink.weaponBudget, allowed, canPick: true, doneLabel: 'Weiter zum ersten Gegner',
+  });
+  if (!weapon) { openSoloIntro(); return; }
+  let heroCells = hero.cells;
+  let weaponCells = weapon.cells;
+  galleryAdd(heroCells, 'figure');
+  galleryAdd(weaponCells, 'weapon');
+  const run = core.soloCreateRun(tuning, (Date.now() ^ Math.floor(Math.random() * 1e9)) >>> 0, heroCells, weaponCells, W, H, startColour);
+  let lastEnemy = null;
+
+  for (;;) {
+    let fightName;
+    if (run.wave < core.SOLO_WAVES) {
+      const waveNo = run.wave + 1;
+      let stake = 0;
+      const res = await openDraw({
+        title: 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES + ': zeichne den Gegner',
+        sub: 'Kleine Figuren kommen als Schwarm, große als Brocken.',
+        kind: 'figure', budget: so.enemyInkBudget, canPick: true, initial: lastEnemy,
+        backLabel: 'Ende', backConfirm: true, doneLabel: 'In den Kampf',
+        extra: (box) => {
+          const buttons = [];
+          const wrap = el('div', { class: 'stakes', role: 'group', 'aria-label': 'Einsatz' });
+          for (let i = 0; i < so.stakes.length; i++) {
+            const b = el('button', { class: 'tool', type: 'button', id: 'stake' + i });
+            onPress(b, () => { stake = i; sfx('click'); paint(null); });
+            buttons.push(b);
+            wrap.append(b);
+          }
+          box.append(wrap);
+          let lastN = 0;
+          function paint(stats) {
+            if (stats) lastN = stats.N;
+            for (let i = 0; i < buttons.length; i++) {
+              const copies = lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0;
+              buttons[i].textContent = 'Einsatz ' + stakeLabel(i) + (copies > 0 ? ': ' + copies + (copies === 1 ? ' Gegner' : ' Gegner') + ', ' + copies * lastN + ' Beute' : '');
+              buttons[i].classList.toggle('on', i === stake);
+              buttons[i].setAttribute('aria-pressed', i === stake ? 'true' : 'false');
+            }
+          }
+          paint(null);
+          return paint;
+        },
+      });
+      if (!res) { goHome(); return; }
+      lastEnemy = res.cells;
+      galleryAdd(res.cells, 'figure');
+      core.soloStartWave(tuning, run, res.cells, stake);
+      fightName = 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES;
+    } else {
+      clearHud();
+      const r = await fightOverlay('Der Endgegner', [
+        el('div', { class: 'lineup' }, [el('div', { class: 'card' }, [thumbCanvas(core.soloBossCells(run), 64), el('span', { class: 'card-name', text: 'Alle in einem' })])]),
+        el('p', { text: 'Er besteht aus allen Gegnern, die du gezeichnet hast, und bringt je einen davon mit.' }),
+      ], 'In den Kampf', 'Zum Menü');
+      if (r !== 'primary') { goHome(); return; }
+      core.soloStartBoss(tuning, run);
+      fightName = 'Endgegner';
+    }
+
+    const result = await runFight(soloFightConfig(run, fightName));
+    if (result === 'quit') { goHome(); return; }
+
+    if (run.phase === 'dead' || run.phase === 'won') {
+      const won = run.phase === 'won';
+      sfx(won ? 'win' : 'lose');
+      const isBest = saveBestScore(run.score);
+      const why = won ? 'Der Endgegner ist nur noch ein Fleck.'
+        : (run.endReason === 'time' ? 'Die Zeit ist um: ein Kampf darf höchstens ' + Math.round(so.waveMaxTicks / tuning.physics.tickRate / 60) + ' Minuten dauern.'
+          : 'Dein Panzer ist zerbrochen (' + fightName + ').');
+      const r = await fightOverlay(won ? 'Geschafft!' : 'Aus und vorbei', [
+        el('p', { text: why }),
+        el('p', { class: 'score-big', text: String(run.score) }),
+        el('p', { class: 'fine', text: 'Tinte gesammelt' + (isBest ? ' · neuer Bestwert auf diesem Gerät' : ' · Bestwert: ' + bestScore()) }),
+        el('p', { class: 'fine', text: 'Geschaffte Wellen: ' + Math.min(run.wave, core.SOLO_WAVES) + ' von ' + core.SOLO_WAVES + (won ? ' und der Endgegner' : '') }),
+      ], 'Nochmal', 'Zum Menü');
+      if (r === 'primary') openSoloIntro(); else goHome();
+      return;
+    }
+
+    // cleared: the shop
+    const next = await shop(run, () => heroCells, (c) => { heroCells = c; }, () => weaponCells, (c) => { weaponCells = c; });
+    if (next === 'quit') { goHome(); return; }
+  }
+}
+
+function soloFightConfig(run, fightName) {
+  const col = colours();
+  const T = tuning.physics.tickRate;
+  let built = false;
+  let bar = null;
+  let line = null;
+  const weaponSprite = spriteFor(run.weaponFig);
+  return {
+    mode: 'solo',
+    viewRadius: so.arenaRadius + 2,
+    startRadius: so.arenaRadius,
+    ringRadius: () => so.arenaRadius,
+    world: () => run.world,
+    events: () => run.events,
+    humans: 1,
+    step: (humanFn) => core.soloStep(tuning, run, humanFn(0)),
+    isOver: () => run.phase !== 'fight',
+    bodyInfo: (i) => (i === 0 ? { tag: '', human: true, bar: true } : null),
+    dashBody: () => run.world.bodies[0],
+    controlHint: coarsePointer() ? 'Ziehen lenkt · Knopf sprintet · geworfen wird von selbst' : 'W A S D oder Pfeile · Leertaste sprintet · geworfen wird von selbst',
+    extraDraw: (g, cam, t, layer) => {
+      if (layer === 'under') {
+        g.fillStyle = col.ink;
+        for (const d of run.drops) {
+          const blink = d.life < 120 && !reducedMotion() ? (Math.floor(t * 8) % 2 === 0 ? 0.35 : 0.9) : 0.9;
+          g.globalAlpha = blink;
+          const r = (0.7 + Math.min(1.2, d.value / 120)) * cam.s;
+          const x = cam.cx + d.x * cam.s;
+          const y = cam.cy + d.y * cam.s;
+          g.beginPath();
+          g.arc(x, y, r, 0, 6.2832);
+          g.arc(x + r * 0.9, y + r * 0.5, r * 0.45, 0, 6.2832);
+          g.arc(x - r * 0.7, y + r * 0.8, r * 0.3, 0, 6.2832);
+          g.fill();
+        }
+        g.globalAlpha = 1;
+      } else {
+        const fr = wobbleFrame(t, 0);
+        for (const s of run.shots) {
+          drawSprite(g, weaponSprite, fr, cam.cx + s.x * cam.s, cam.cy + s.y * cam.s, s.ux, s.uy, cam.s, 1, 1);
+        }
+      }
+    },
+    hud: (root) => {
+      if (!built || root.firstChild === null) {
+        built = true;
+        root.textContent = '';
+        bar = el('i');
+        root.append(el('div', { class: 'chip' }, [
+          el('span', { class: 'chip-body' }, [el('span', { class: 'chip-name', text: 'Dein Panzer' }), el('span', { class: 'hpbar' }, [bar])]),
+        ]));
+        line = el('div', { class: 'hud-line' });
+        root.append(line);
+      }
+      const hero = run.world.bodies[0];
+      bar.style.width = Math.max(0, hero.hp / hero.maxHp * 100).toFixed(0) + '%';
+      let alive = 0;
+      for (let i = 1; i < run.world.bodies.length; i++) if (run.world.bodies[i].alive) alive++;
+      const left = Math.ceil((so.waveMaxTicks - run.tick) / T);
+      const text = fightName + ' · Gegner ' + alive + ' · Tinte ' + run.wallet + (left <= 30 ? ' · noch ' + left + ' s' : '');
+      if (line.textContent !== text) line.textContent = text;
+    },
+  };
+}
+
+function shop(run, getHero, setHero, getWeapon, setWeapon) {
+  return new Promise((resolve) => {
+    const cost = so.upgradeCost[run.wave - 1];
+    const list = $('shopList');
+    const colourBox = $('shopColours');
+    const msg = $('shopMsg');
+    let leaving = false;
+
+    function fail(reason) {
+      const text = {
+        tooExpensive: 'Dafür reicht die Tinte nicht.', alreadyTaken: 'Pro Pause gibt es nur ein Upgrade.',
+        tooSmall: 'Die Zeichnung war zu klein.', overBudget: 'Zu viel Tinte in der Zeichnung.', colourLocked: 'Die Farbe hast du noch nicht.',
+      }[reason] || 'Das ging nicht.';
+      msg.textContent = text;
+      msg.classList.add('warn');
+      sfx('deny');
+    }
+    function bought(text) { msg.textContent = text; msg.classList.remove('warn'); sfx('buy'); }
+
+    function render() {
+      $('shopTitle').textContent = 'Welle ' + run.wave + ' geschafft';
+      $('shopInfo').textContent = 'Tinte im Beutel: ' + run.wallet + ' · Panzer: ' + Math.ceil(run.heroHp) + ' von ' + Math.round(run.heroMaxHp)
+        + '. Du darfst ein Upgrade kaufen, es kostet ' + cost + ' Tinte.';
+      const can = !run.upgradeTaken && run.wallet >= cost;
+      list.textContent = '';
+      colourBox.hidden = true;
+      colourBox.textContent = '';
+      const locked = [2, 3, 4].filter((c) => !run.colours[c]);
+      const mk = (id, title, sub, enabled, fn) => {
+        const b = el('button', { class: 'btn', type: 'button', id }, [document.createTextNode(title), el('small', { text: sub })]);
+        b.disabled = !enabled;
+        b.addEventListener('click', fn);
+        list.append(b);
+      };
+      mk('shopHero', 'Größerer Held', '+' + so.upgradeHeroInk + ' Tinte, du zeichnest ihn neu (Schaden bleibt)', can, async () => {
+        leaving = true;
+        const res = await openDraw({
+          title: 'Held neu zeichnen', sub: (run.heroBudget + so.upgradeHeroInk) + ' Tinte',
+          kind: 'figure', budget: run.heroBudget + so.upgradeHeroInk, allowed: run.colours.slice(), initial: getHero(), canPick: true, doneLabel: 'Kaufen',
+        });
+        leaving = false;
+        showScreen('scrShop');
+        if (res) {
+          const r = core.soloUpgrade(tuning, run, 'heroInk', res.cells);
+          if (r === '') { setHero(res.cells); bought('Dein Held ist gewachsen.'); } else fail(r);
+        }
+        render();
+      });
+      mk('shopWeapon', 'Größere Wurfwaffe', '+' + so.upgradeWeaponInk + ' Tinte, du zeichnest sie neu', can, async () => {
+        leaving = true;
+        const res = await openDraw({
+          title: 'Waffe neu zeichnen', sub: (run.weaponBudget + so.upgradeWeaponInk) + ' Tinte',
+          kind: 'weapon', budget: run.weaponBudget + so.upgradeWeaponInk, allowed: run.colours.slice(), initial: getWeapon(), canPick: true, doneLabel: 'Kaufen',
+        });
+        leaving = false;
+        showScreen('scrShop');
+        if (res) {
+          const r = core.soloUpgrade(tuning, run, 'weaponInk', res.cells);
+          if (r === '') { setWeapon(res.cells); bought('Neue Waffe eingepackt.'); } else fail(r);
+        }
+        render();
+      });
+      mk('shopHeal', 'Flicken', 'heilt ' + so.upgradeHealPercent + ' % deines Panzers', can && run.heroHp < run.heroMaxHp, () => {
+        const r = core.soloUpgrade(tuning, run, 'heal', null);
+        if (r === '') bought('Geflickt.'); else fail(r);
+        render();
+      });
+      mk('shopColour', 'Neue Farbe', locked.length ? 'für Held und Waffe beim nächsten Neuzeichnen' : 'du hast schon alle', can && locked.length > 0, () => {
+        colourBox.hidden = false;
+        colourBox.textContent = '';
+        for (const c of locked) {
+          const b = el('button', { class: 'btn c' + c, type: 'button', id: 'shopCol' + c, text: ELEMENT_NAMES[c] });
+          b.addEventListener('click', () => {
+            const r = core.soloUpgrade(tuning, run, 'colour', c);
+            if (r === '') bought(ELEMENT_NAMES[c] + ' gehört jetzt dir.'); else fail(r);
+            render();
+          });
+          colourBox.append(b);
+        }
+      });
+      if (run.upgradeTaken) for (const b of list.querySelectorAll('button')) b.disabled = true;
+      $('shopNext').textContent = run.wave >= core.SOLO_WAVES ? 'Zum Endgegner' : 'Nächsten Gegner zeichnen';
+    }
+
+    msg.textContent = '';
+    msg.classList.remove('warn');
+    render();
+    showScreen('scrShop');
+    $('shopNext').onclick = () => { if (leaving) return; $('shopNext').onclick = null; $('shopQuit').onclick = null; sfx('click'); resolve('next'); };
+    let armed = 0;
+    $('shopQuit').textContent = 'Ende';
+    $('shopQuit').onclick = () => {
+      if (performance.now() - armed > 2500) {
+        armed = performance.now();
+        $('shopQuit').textContent = 'Sicher?';
+        setTimeout(() => { $('shopQuit').textContent = 'Ende'; }, 2500);
+        return;
+      }
+      $('shopNext').onclick = null; $('shopQuit').onclick = null;
+      resolve('quit');
+    };
+  });
+}
+
+__exp.initSolo = initSolo;
+__exp.openSoloIntro = openSoloIntro;
+};
+
+// ---- app/main.js
+__mods["app/main.js"] = function (__exp) {
+// Inkweight browser prototype: start screen, navigation, gallery, sound switch.
+
+const core = __req("core/index.js");
+const { tuning, W, H } = __req("app/tuning.js");
+const { $, el, showScreen, currentScreen, colours, reducedMotion, fitCanvas } = __req("app/ui.js");
+const { setSound, soundIsOn, onSoundChange, sfx } = __req("app/audio.js");
+const { openDraw } = __req("app/drawscreen.js");
+const { initRing, openRingSetup } = __req("app/ringmode.js");
+const { initSolo, openSoloIntro } = __req("app/solomode.js");
+const { galleryAll, galleryAdd, galleryRemove, galleryClear, decode, storageOk, bestScore } = __req("app/gallery.js");
+const { SCRIBBLE_FIGURES, SCRIBBLE_WEAPONS } = __req("app/scribbles.js");
+const { thumbCanvas, figureOf, makeSprite, drawSprite, wobbleFrame } = __req("app/sprites.js");
+
+if (!window.__inkDebug) window.__inkDebug = { speed: 1 };
+window.__inkDebug.core = core;
+window.__inkDebug.tuning = tuning;
+
+// ---- lost taps
+// Chromium sometimes sends no click for a tap on a button that follows quick
+// strokes on the canvas (seen in the automated phone run: the touch arrives,
+// the click does not). If a finger went down and up on the same button and no
+// click came, the button is activated here; a late real click is swallowed.
+{
+  let downBtn = null;
+  let nativeBtn = null;
+  let nativeAt = 0;
+  let healed = null;
+  let healedAt = 0;
+  const buttonOf = (t) => (t && t.closest ? t.closest('button') : null);
+  document.addEventListener('pointerdown', (ev) => { downBtn = ev.pointerType === 'touch' ? buttonOf(ev.target) : null; }, true);
+  document.addEventListener('click', (ev) => {
+    if (!ev.isTrusted) return;
+    const b = buttonOf(ev.target);
+    if (b && b === healed && performance.now() - healedAt < 600) { ev.stopImmediatePropagation(); ev.preventDefault(); return; }
+    nativeBtn = b;
+    nativeAt = performance.now();
+  }, true);
+  document.addEventListener('pointerup', (ev) => {
+    const b = downBtn;
+    downBtn = null;
+    if (ev.pointerType !== 'touch' || !b) return;
+    const r = b.getBoundingClientRect();
+    if (ev.clientX < r.left || ev.clientX > r.right || ev.clientY < r.top || ev.clientY > r.bottom) return;
+    const t = performance.now();
+    setTimeout(() => {
+      if (nativeBtn === b && nativeAt >= t) return;
+      if (b.disabled || !b.isConnected || b.hidden || b.offsetParent === null) return;
+      healed = b;
+      healedAt = performance.now();
+      b.click();
+    }, 90);
+  }, true);
+}
+
+// ---- sound switch (several buttons, one state)
+const sndButtons = Array.from(document.querySelectorAll('.snd'));
+function paintSound(on) {
+  for (const b of sndButtons) {
+    b.textContent = on ? 'Ton aus' : 'Ton an';
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+}
+onSoundChange(paintSound);
+for (const b of sndButtons) b.addEventListener('click', () => setSound(!soundIsOn()));
+paintSound(false);
+
+// ---- start screen
+let doodle = null;
+function home() {
+  const best = bestScore();
+  $('startBest').hidden = best <= 0;
+  $('startBest').textContent = 'Bester Solo-Lauf: ' + best + ' Tinte.';
+  showScreen('scrStart');
+  startDoodle();
+}
+
+function startDoodle() {
+  const cv = $('startDoodle');
+  if (!doodle) {
+    doodle = [0, 4, 1, 5].map((k, i) => {
+      const fig = figureOf(SCRIBBLE_FIGURES[k].cells);
+      return { fig, sprite: makeSprite(fig, 6), phase: i * 1.3, rate: 3 + 20 / (10 + fig.stats.N / 6) };
+    });
+  }
+  const draw = (now) => {
+    if (currentScreen() !== 'scrStart') return;
+    const t = now / 1000;
+    const w = cv.clientWidth;
+    const h = cv.clientHeight;
+    if (w > 0) {
+      const dpr = fitCanvas(cv, w, h);
+      const g = cv.getContext('2d');
+      g.clearRect(0, 0, cv.width, cv.height);
+      const col = colours();
+      const still = reducedMotion();
+      doodle.forEach((d, i) => {
+        const x = cv.width * (0.14 + i * 0.24);
+        const hop = still ? 0 : Math.abs(Math.sin(t * d.rate + d.phase));
+        const land = still ? 0 : Math.max(0, 1 - hop * 4);
+        const scale = Math.min(cv.height / 34, cv.width / 110);
+        g.globalAlpha = 0.15;
+        g.fillStyle = col.ink;
+        g.beginPath();
+        g.ellipse(x, cv.height * 0.93, d.fig.radius * scale * (0.9 - hop * 0.2), 3 * dpr, 0, 0, 6.2832);
+        g.fill();
+        g.globalAlpha = 1;
+        drawSprite(g, d.sprite, wobbleFrame(t, i * 0.4), x, cv.height * 0.6 - hop * cv.height * 0.14, 0, -1, scale, 1 + land * 0.12, 1 - land * 0.12);
+      });
+    }
+    requestAnimationFrame(draw);
+  };
+  requestAnimationFrame(draw);
+}
+
+$('btnRing').addEventListener('click', () => { sfx('click'); openRingSetup(); });
+$('btnSolo').addEventListener('click', () => { sfx('click'); openSoloIntro(); });
+$('btnGallery').addEventListener('click', () => { sfx('click'); openGallery(); });
+$('btnFree').addEventListener('click', async () => {
+  sfx('click');
+  const res = await openDraw({
+    title: 'Frei zeichnen', sub: tuning.ink.figureBudget + ' Tinte · schau zu, wie sich die Werte ändern',
+    kind: 'figure', canPick: true, doneLabel: 'In die Galerie legen',
+  });
+  if (res) { galleryAdd(res.cells, 'figure'); openGallery(); } else home();
+});
+
+// ---- gallery
+function statText(cells, kind) {
+  const st = core.computeStats(cells, W, H, tuning, kind, W * H);
+  return 'Gewicht ' + st.N + ' · Panzer ' + Math.round(st.armour) + ' · Schärfe ' + st.sharpness.toFixed(1);
+}
+
+function openGallery() {
+  const grid = $('galGrid');
+  grid.textContent = '';
+  const list = galleryAll();
+  if (list.length === 0) grid.append(el('p', { class: 'empty-note', text: 'Noch leer. Alles, was du zeichnest, landet hier.' }));
+  list.forEach((it, i) => {
+    const cells = decode(it.data);
+    const del = el('button', { class: 'btn small', type: 'button', id: 'galDel' + i, text: 'Löschen' });
+    let armed = 0;
+    del.addEventListener('click', () => {
+      if (performance.now() - armed > 2500) { armed = performance.now(); del.textContent = 'Sicher?'; setTimeout(() => { del.textContent = 'Löschen'; }, 2500); return; }
+      galleryRemove(it.id);
+      openGallery();
+    });
+    grid.append(el('div', { class: 'card' }, [
+      thumbCanvas(cells, 80),
+      el('span', { class: 'card-name', text: it.kind === 'weapon' ? 'Wurfwaffe' : 'Figur' }),
+      el('span', { text: statText(cells, it.kind) }),
+      del,
+    ]));
+  });
+  const built = $('galBuiltin');
+  built.textContent = '';
+  for (const s of SCRIBBLE_FIGURES.concat(SCRIBBLE_WEAPONS)) {
+    built.append(el('div', { class: 'card' }, [
+      thumbCanvas(s.cells, 80),
+      el('span', { class: 'card-name', text: s.name }),
+      el('span', { class: 'badge', text: 'Platzhalter' }),
+    ]));
+  }
+  const ok = storageOk();
+  $('galNote').hidden = ok;
+  $('galNote').textContent = ok ? '' : 'Dieser Browser erlaubt hier kein Speichern. Die Galerie hält nur, bis du die Seite schließt.';
+  showScreen('scrGallery');
+}
+$('galBack').addEventListener('click', home);
+{
+  const b = $('galClear');
+  let armed = 0;
+  b.addEventListener('click', () => {
+    if (performance.now() - armed > 2500) { armed = performance.now(); b.textContent = 'Wirklich alle?'; setTimeout(() => { b.textContent = 'Alle löschen'; }, 2500); return; }
+    galleryClear();
+    b.textContent = 'Alle löschen';
+    openGallery();
+  });
+}
+
+initRing(home);
+initSolo(home);
+home();
+
+
+};
+
+__req("app/main.js");
+})();
+</script>

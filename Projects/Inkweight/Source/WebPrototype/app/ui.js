@@ -86,3 +86,41 @@ export function fitCanvas(canvas, cssW, cssH) {
   if (canvas.height !== h) canvas.height = h;
   return dpr;
 }
+
+// A plain notice screen with one main button ("hand the device over", ...).
+// Resolves with 'go' or 'back'.
+export function passScreen(title, text, goLabel, extraNodes, backLabel) {
+  return new Promise((resolve) => {
+    $('passTitle').textContent = title;
+    $('passText').textContent = text || '';
+    const extra = $('passExtra');
+    extra.textContent = '';
+    if (extraNodes) for (const n of extraNodes) if (n) extra.append(n);
+    const go = $('passGo');
+    const back = $('passBack');
+    go.textContent = goLabel || 'Weiter';
+    back.textContent = backLabel || 'Zum Menü';
+    showScreen('scrPass');
+    go.onclick = () => { go.onclick = null; back.onclick = null; resolve('go'); };
+    back.onclick = () => { go.onclick = null; back.onclick = null; resolve('back'); };
+  });
+}
+
+export function coarsePointer() {
+  try { return matchMedia('(pointer: coarse)').matches; } catch (e) { return false; }
+}
+
+// Tool buttons react on touch-down already (snappier, and a tap that follows
+// a stroke within a few milliseconds is not lost); keyboard still uses click.
+export function onPress(button, fn) {
+  let pressedAt = -1000;
+  button.addEventListener('pointerdown', (ev) => {
+    if (button.disabled || (ev.pointerType === 'mouse' && ev.button !== 0)) return;
+    pressedAt = performance.now();
+    fn(ev);
+  });
+  button.addEventListener('click', (ev) => {
+    if (performance.now() - pressedAt < 700) return;
+    fn(ev);
+  });
+}
