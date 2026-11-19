@@ -1,0 +1,6 @@
+{
+  "name": "inkweight-web-prototype",
+  "private": true,
+  "type": "module",
+  "description": "Inkweight engine-free core, tests and balance simulation. No dependencies."
+}
