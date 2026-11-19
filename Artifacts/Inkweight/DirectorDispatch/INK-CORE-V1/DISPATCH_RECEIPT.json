@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_INKWEIGHT_CLAUDE",
+  "project_scope": "Inkweight",
+  "work_order_id": "INK-CORE-V1",
+  "work_order_sha256": "ef1235080952183a5b3f4b4186b99b5cf96dfcf2c44978fa4acb987d799d656a",
+  "manifest_sha256": "958e66c18161ea0e6cc35f6d9c750fda4d1c0dfbdb90d9504113985acf7889d3",
+  "repository": {
+    "branch": "ccr-808d4c02-yt93ed",
+    "head": "da0d8723f7e6e8ab9566d2cd61479f386d2adb5b"
+  },
+  "project_identity_sha256": "55f6d5cc85ce254d13984da18b8587d6faa0f2c090e11b66644328333b55c569",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Inkweight/Source",
+      "Artifacts/Inkweight/Evidence/INK-CORE-V1"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "85931343d83cdcd1a59bbfaf67a660f94c70e06cc126b77cdf2857c9518ac259",
+  "baseline_state_sha256": "04d82aa8c552838aac507be2c0cfb4a62e1f4c646aa85fa375545dc405186b61",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "receipt_id": "cfa711e2533818ab402f1f83c36c36eb21bc58b16cb40fd1f03daa96a5d241f5"
+}
