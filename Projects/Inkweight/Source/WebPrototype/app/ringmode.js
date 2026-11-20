@@ -11,6 +11,7 @@ import { thumbCanvas } from './sprites.js';
 import { galleryAll, galleryAdd, decode } from './gallery.js';
 import { SCRIBBLE_FIGURES } from './scribbles.js';
 import { KEY_ZONES, gamepadCount } from './input.js';
+import { pickBotDrawing, pickBotDrawings, sameCells } from './botpick.js';
 
 const SEAT_DEFAULTS = ['human', 'bot', 'bot', 'none'];
 let goHome = () => {};
@@ -87,37 +88,12 @@ function botPool() {
   for (const it of galleryAll()) {
     if (it.kind !== 'figure') continue;
     const cells = decode(it.data);
-    if (core.computeStats(cells, W, H, tuning, 'figure', tuning.ink.figureBudget).valid) own.push({ cells, source: 'gallery' });
+    const st = core.computeStats(cells, W, H, tuning, 'figure', tuning.ink.figureBudget);
+    if (st.valid && !own.some((o) => sameCells(o.cells, cells))) own.push({ cells, source: 'gallery', weight: st.N });
   }
   const built = SCRIBBLE_FIGURES.map((s) => ({ cells: s.cells, source: 'placeholder', name: s.name,
     weight: core.computeStats(s.cells, W, H, tuning, 'figure', tuning.ink.figureBudget).N }));
   return { own, built };
-}
-
-// Same shape, whatever the colours: a bot must not show up as the human's
-// own figure in another ink.
-function sameCells(a, b) {
-  if (!a || !b) return false;
-  for (let i = 0; i < a.length; i++) if ((a[i] !== 0) !== (b[i] !== 0)) return false;
-  return true;
-}
-
-// taken: cell arrays no bot may show (the humans' drawings of this round).
-function pickBotDrawing(pool, used, taken) {
-  const free = (list) => list.filter((d) => used.indexOf(d) === -1 && !(taken || []).some((t) => sameCells(t, d.cells)));
-  let from = free(pool.own);
-  // Placeholders: the first one a match hands out is a heavy figure, the
-  // later ones at least middle-weight, so the bots are no walkover.
-  let built = free(pool.built);
-  const placed = used.filter((d) => d.source === 'placeholder').length;
-  const strong = built.filter((d) => d.weight >= (placed === 0 ? 150 : 90));
-  if (strong.length > 0) built = strong;
-  if (from.length === 0 || (built.length > 0 && Math.random() < 0.4)) from = built.length > 0 ? built : from;
-  if (from.length === 0) from = pool.built.filter((d) => !(taken || []).some((t) => sameCells(t, d.cells)));
-  if (from.length === 0) from = pool.built;
-  const d = from[randomInt(from.length)];
-  used.push(d);
-  return d;
 }
 
 function statLine(st) {
@@ -134,12 +110,19 @@ async function playRing(seats, drawTime) {
   const drawings = new Array(n).fill(null);
   const source = new Array(n).fill('own');
   const pool = botPool();
-  const used = [];
-  for (let s = 0; s < n; s++) {
-    if (seats[s].human) continue;
-    const d = pickBotDrawing(pool, used);
-    drawings[s] = d.cells;
-    source[s] = d.source;
+  // Bot figures: see botpick.js (a single human never meets two heavy ones;
+  // a fair placeholder line-up while the gallery is small).
+  const loneHuman = humans.length === 1;
+  const picked = pickBotDrawings(pool, n - humans.length, loneHuman);
+  const used = picked.used;
+  {
+    let k = 0;
+    for (let s = 0; s < n; s++) {
+      if (seats[s].human) continue;
+      const d = picked.order[k++];
+      drawings[s] = d.cells;
+      source[s] = d.source;
+    }
   }
   window.__inkDebug.ringBotPicks = drawings.filter((d) => d).map((d) => d.join(''));
   // two bot styles, mixed: one storms straight in, the next one circles first
@@ -186,7 +169,10 @@ async function playRing(seats, drawTime) {
     const humanDrawings = humans.map((s) => drawings[s]);
     for (let s = 0; s < n; s++) {
       if (seats[s].human || !humanDrawings.some((h) => sameCells(h, drawings[s]))) continue;
-      const d = pickBotDrawing(pool, used, humanDrawings);
+      // the replaced figure no longer counts as handed out
+      const gone = used.findIndex((u) => u.cells === drawings[s]);
+      if (gone !== -1) used.splice(gone, 1);
+      const d = pickBotDrawing(pool, used, humanDrawings, loneHuman);
       drawings[s] = d.cells;
       source[s] = d.source;
     }
@@ -231,7 +217,9 @@ async function playRing(seats, drawTime) {
       humans: humans.length,
       step: (humanFn) => {
         const inputs = [];
-        for (let s = 0; s < n; s++) inputs.push(seats[s].human ? humanFn(humanIndex[s]) : null);
+        // measurement only (build/ring_fairness.cjs): a scripted player may steer the human seats
+        const pilot = window.__inkDebug.ringPilot;
+        for (let s = 0; s < n; s++) inputs.push(seats[s].human ? (pilot ? pilot(match, s) : humanFn(humanIndex[s])) : null);
         core.ringStep(tuning, match, core.ringBotInputs(tuning, match, inputs));
       },
       isOver: () => match.phase !== 'fight',

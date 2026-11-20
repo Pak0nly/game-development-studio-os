@@ -28,7 +28,7 @@ namespace Inkweight.Core
         public int[] Colour;
         public int[] Boundary;
         public int[] Grid;
-        public double Radius, Mass, AccelK, TurnRate, TurnCos, TurnSin;
+        public double Radius, Mass, AccelK, TurnRate;
     }
 
     // One moving instance of a figure template.
@@ -40,6 +40,10 @@ namespace Inkweight.Core
         public double Hp, MaxHp;
         public bool Alive;
         public double TopSpeed, DamageMult;
+        // added to the blunt damage of this body's touches before the
+        // multipliers (0 everywhere except solo enemy copies; set once when
+        // the body is made, not hashed)
+        public double BluntBonus;
         public double DashTicks, DashCd, DashDx, DashDy;
         // steering direction of the running tick (set by the control step,
         // used by the sub-steps; not state between ticks, not hashed)
@@ -116,7 +120,6 @@ namespace Inkweight.Core
             }
             double dN = stats.N;
             double turnRate = tuning.TurnBase / (1 + stats.Inertia / tuning.TurnInertiaRef);
-            double t = turnRate / (2 * tuning.TickRate);
             double accelK = tuning.AccelBase / (1 + dN / tuning.AccelWeightRef) / tuning.TickRate;
             if (accelK > 1) accelK = 1;
             InkFigure f = new InkFigure();
@@ -131,8 +134,6 @@ namespace Inkweight.Core
             f.Mass = stats.Push;
             f.AccelK = accelK;
             f.TurnRate = turnRate;
-            f.TurnCos = (1 - t * t) / (1 + t * t);
-            f.TurnSin = (2 * t) / (1 + t * t);
             return f;
         }
 
@@ -147,6 +148,7 @@ namespace Inkweight.Core
             b.Alive = true;
             b.TopSpeed = fig.Stats.TopSpeed * speedMult;
             b.DamageMult = damageMult;
+            b.BluntBonus = 0;
             return b;
         }
 
@@ -162,7 +164,8 @@ namespace Inkweight.Core
         // One fixed tick. inputs[i] is the input of body i (missing = idle).
         // Order: 1 control (index order), 2 hit cooldowns, 3 sub-steps (each
         // one: turn and integrate every body, then pairs i < j in index
-        // order), 4 wall. Elimination rules belong to the mode classes.
+        // order, then the crowd relaxation when the world has more than two
+        // bodies), 4 wall. Elimination rules belong to the mode classes.
         public static void StepWorld(InkWorld world, InkInput[] inputs, InkTuning tuning)
         {
             List<InkBody> bodies = world.Bodies;
@@ -272,6 +275,28 @@ namespace Inkweight.Core
                         InkBody b = bodies[j];
                         if (!b.Alive) continue;
                         CollidePair(world, i, j, a, b, tuning);
+                    }
+                }
+                // Crowd relaxation (three or more bodies, dead ones counted):
+                // the pairs are scanned again, positions only, at most
+                // crowdRelaxPasses times, until no contact is deep.
+                if (n > 2)
+                {
+                    for (int r = 0; r < tuning.CrowdRelaxPasses; r++)
+                    {
+                        bool pushed = false;
+                        for (int i = 0; i < n; i++)
+                        {
+                            InkBody a = bodies[i];
+                            if (!a.Alive) continue;
+                            for (int j = i + 1; j < n; j++)
+                            {
+                                InkBody b = bodies[j];
+                                if (!b.Alive) continue;
+                                if (RelaxPair(world, a, b, tuning)) pushed = true;
+                            }
+                        }
+                        if (!pushed) break;
                     }
                 }
             }
@@ -394,7 +419,7 @@ namespace Inkweight.Core
         // armour cut (share sharpArmourCut of the victim's full armour).
         private static double TouchDamage(InkTuning tuning, InkBody body, bool sharp, InkBody victim)
         {
-            double blunt = tuning.BluntDamage;
+            double blunt = tuning.BluntDamage + body.BluntBonus;
             if (!sharp) return blunt;
             double sh = body.Fig.Stats.Sharpness;
             double cut = tuning.SharpArmourCut * victim.MaxHp;
@@ -429,6 +454,32 @@ namespace Inkweight.Core
             double l = Math.Sqrt(l2);
             world.NormalX = nx / l;
             world.NormalY = ny / l;
+        }
+
+        // Position-only push of a pair whose contact is deeper than
+        // deepContactDepth, by weight shares. Returns true when it pushed.
+        private static bool RelaxPair(InkWorld world, InkBody a, InkBody b, InkTuning tuning)
+        {
+            double rx = a.X - b.X;
+            double ry = a.Y - b.Y;
+            double reach = a.Fig.Radius + b.Fig.Radius;
+            if (rx * rx + ry * ry >= reach * reach) return false;
+            ScanPair(world, a, b);
+            if (world.ScanHits == 0 || world.ScanMaxDepth <= tuning.DeepContactDepth) return false;
+            ContactNormal(world, tuning, a, b);
+            double invA = 1 / a.Fig.Mass;
+            double invB = 1 / b.Fig.Mass;
+            double invSum = invA + invB;
+            double d = world.ScanMaxDepth;
+            double pax = world.NormalX * d * invA / invSum;
+            double pay = world.NormalY * d * invA / invSum;
+            double pbx = world.NormalX * d * invB / invSum;
+            double pby = world.NormalY * d * invB / invSum;
+            a.X += pax;
+            a.Y += pay;
+            b.X -= pbx;
+            b.Y -= pby;
+            return true;
         }
 
         private static void CollidePair(InkWorld world, int i, int j, InkBody a, InkBody b, InkTuning tuning)

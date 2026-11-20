@@ -24,7 +24,7 @@ namespace Inkweight.Core
         // physics
         public double TickRate, HitCooldownTicks, Restitution, AccelBase, AccelWeightRef, TurnBase, TurnInertiaRef,
             DashSpeedMult, DashTicks, DashCooldownTicks, DashAccel, DashRestitution, MaxStepCells, MaxSubSteps,
-            DeepNormalShare, DeepContactDepth, ExtraSeparationPasses, HitKnockbackPerDamage;
+            DeepNormalShare, DeepContactDepth, ExtraSeparationPasses, CrowdRelaxPasses, HitKnockbackPerDamage;
         // ring
         public double[] RingStartRadius;
         public double RingEndRadius, ShrinkStartTick, ShrinkEndTick, SuddenDeathTick, SuddenDeathShrinkPerTick,
@@ -41,7 +41,7 @@ namespace Inkweight.Core
             ThrowSpeedWeightRef, ProjectileLifeTicks, ProjectileRadiusMax, WeaponKnockbackPerInk, DropLifeTicks,
             PickupRange, WaveMaxTicks, UpgradeHeroInk, UpgradeWeaponInk, UpgradeHealPercent, BossArmourMult,
             BossEscortCopies, BotFleeDistance, BotWallMargin, CopyInkOverhead, EnemyArmourPerInk, CopyArmourScaleMin,
-            CopyArmourScaleMax;
+            CopyArmourScaleMax, EnemySpeedBase, EnemyCrushPerInk, BossCrushMult;
 
         public static InkTuning FromJson(string text)
         {
@@ -121,6 +121,7 @@ namespace Inkweight.Core
             t.DeepNormalShare = N(o, "deepNormalShare");
             t.DeepContactDepth = N(o, "deepContactDepth");
             t.ExtraSeparationPasses = N(o, "extraSeparationPasses");
+            t.CrowdRelaxPasses = N(o, "crowdRelaxPasses");
             t.HitKnockbackPerDamage = N(o, "hitKnockbackPerDamage");
 
             o = InkJson.Get(root, "ring");
@@ -167,7 +168,10 @@ namespace Inkweight.Core
             t.MaxCopies = N(o, "maxCopies");
             t.EnemyInkBudget = N(o, "enemyInkBudget");
             t.EnemySpawnInset = N(o, "enemySpawnInset");
+            t.EnemySpeedBase = N(o, "enemySpeedBase");
             t.EnemySpeedMult = N(o, "enemySpeedMult");
+            t.EnemyCrushPerInk = N(o, "enemyCrushPerInk");
+            t.BossCrushMult = N(o, "bossCrushMult");
             t.EnemyArmourMult = N(o, "enemyArmourMult");
             t.EnemyDamageMult = N(o, "enemyDamageMult");
             t.EnemyDashRange = N(o, "enemyDashRange");

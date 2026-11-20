@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Inkweight",
+  "work_order_id": "INK-WEB-V4",
+  "assignment_type": {
+    "value": "Browser prototype on core version 3",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Standard",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Inkweight/DirectorDispatch/INK-WEB-V4/WORK_ORDER.md",
+    "sha256": "692cafae218f49c003cba6d75ab2eb6048b89d87dbc98c9e93e1991f219e954f",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Inkweight",
+    "project_id": "Inkweight",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "bd19330b13d4d947ebbebdf73269b3fe2135280ec75689812fab6c88694b5dea",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Inkweight",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "ccr-808d4c02-yt93ed",
+    "head": "cf9a4da979804b28c5aa4cd26c69f1885b78470b",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Inkweight/Source/WebPrototype/app",
+      "Projects/Inkweight/Source/WebPrototype/dist",
+      "Projects/Inkweight/Source/WebPrototype/build",
+      "Artifacts/Inkweight/Evidence/INK-WEB-V4"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-19, Inkweight concept chat): 'Ja. Du hast bis 9 Uhr Zeit daran zu arbeiten. [...] Nutze die Zeit bis 9 Uhr voll aus und suche dir selbst passende Aufgaben. Ziel ist ein spielbarer Prototyp, oder zumindest die Vorbereitung dessen.'",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "00365cc1eb419e04a35bef0bf36e8c25f5bda7138960fcf1ac3e1f12101a85c0",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "71e2ade3959599343d067cbc9fde2b2a3642bcde130f3ab1a3713db6e4069b69",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Inkweight/Docs/PRODUCTION_PROFILE.md",
+      "sha256": "bd19330b13d4d947ebbebdf73269b3fe2135280ec75689812fab6c88694b5dea",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Inkweight/Docs/INK_RULES_V2.md",
+      "sha256": "376b9391bb7cec59520639579b22f2a730ce9f72dd7b66af7f6272b29498e1c5",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Inkweight/Docs/GAME_CONCEPT.md",
+      "sha256": "4c1785a557251e111e1518b720358a1b092d10cf39db87083d763604165f6724",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Inkweight/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "c512d199ac96278ba980cf7edb4cc4fad82ca36bf95b32795cec59f81f19c9fc",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Inkweight/Source/Shared/CHANGES_V3.md",
+      "sha256": "932d8a4d703b9e84efaa4cbba09c4b5ac6222c997b4202716a8d637be55fa596",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-validator",
+        "path": "Tools/InkweightDispatchGate/validate_inkweight_dispatch.py",
+        "method": "file_sha256",
+        "expected_sha256": "7ad30ed05d659749067678f6cebbcf1e3ef8477443028d6cd100e3978ab50d68",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-19, Inkweight concept chat): 'Ja. Du hast bis 9 Uhr Zeit daran zu arbeiten. [...] Nutze die Zeit bis 9 Uhr voll aus und suche dir selbst passende Aufgaben. Ziel ist ein spielbarer Prototyp, oder zumindest die Vorbereitung dessen.'",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Projects/Inkweight/Source/WebPrototype/app",
+    "Projects/Inkweight/Source/WebPrototype/dist",
+    "Projects/Inkweight/Source/WebPrototype/build",
+    "Artifacts/Inkweight/Evidence/INK-WEB-V4"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs",
+    "Tools",
+    "Projects/Inkweight/Docs",
+    "Projects/Inkweight/README.md",
+    "Projects/Underreign",
+    "Artifacts/Inkweight/DirectorDispatch",
+    "Artifacts/Underreign",
+    "Projects/Inkweight/Source/Shared",
+    "Projects/Inkweight/Source/WebPrototype/core",
+    "Projects/Inkweight/Source/Unity"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change or a need outside the allowed paths.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Production",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Browser prototype on core version 3",
+      "class": "Standard",
+      "reason": "Adopting changed rules in an interactive prototype with truthful player explanations and visual self-inspection; routed to fable at high effort.",
+      "requested_model": "fable",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Game Designer",
+    "Gameplay Programmer",
+    "UI/UX Designer",
+    "QA Lead"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "reason": "Director owns scope, time box and Human checkpoint.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Game Designer",
+      "reason": "Worker shapes the drawing experience and feedback.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Gameplay Programmer",
+      "reason": "Worker builds the prototype.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "UI/UX Designer",
+      "reason": "Phone and desktop usability of the drawing screen.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "QA Lead",
+      "reason": "Independent play-through and review.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Browser prototype on core version 3",
+      "status": "pending"
+    },
+    {
+      "step": "WORKER_RESULT.md",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "INK-WEB-V4",
+    "rounds": 2,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Inkweight Director cloud session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "fable",
+      "reasoning_effort": "high",
+      "reason": "Adopting changed rules in an interactive prototype with truthful player explanations and visual self-inspection; routed to fable at high effort."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": true,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": true,
+      "reviewer_separate_from_worker_and_director": true,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Human judges the ink rules by playing the prototype on the morning of 2026-11-20.",
+    "declaration": "HUMAN DECISION"
+  }
+}

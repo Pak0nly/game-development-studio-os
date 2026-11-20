@@ -186,13 +186,35 @@ namespace Inkweight.Core
             return (perInk + perArmour) * scale;
         }
 
+        // Top speed of one enemy copy in cells per second: a flat part every
+        // enemy has plus a share of the drawing's own top speed, times the
+        // stake factor.
+        public static double EnemySpeed(InkTuning so, InkFigure fig, int stakeIndex)
+        {
+            double share = so.EnemySpeedMult * fig.Stats.TopSpeed;
+            return (so.EnemySpeedBase + share) * so.StakeSpeedMult[stakeIndex];
+        }
+
+        // Crush: what the weight of an enemy copy adds to its blunt touch
+        // damage before the enemy and stake damage factors: enemyCrushPerInk
+        // for every body cell, times the wave scale, times the stake
+        // (multiplied from left to right). Wave copies only: StartBoss
+        // multiplies the value by bossCrushMult (0).
+        public static double EnemyCrush(InkTuning so, InkFigure fig, double scale, int stakeIndex)
+        {
+            double dN = fig.Stats.N;
+            return so.EnemyCrushPerInk * dN * scale * so.Stakes[stakeIndex];
+        }
+
         // isBoss: the boss keeps its full armour times bossArmourMult.
         private static InkBody SpawnEnemy(InkTuning so, InkSoloRun run, InkFigure fig, bool isBoss, int stakeIndex, double scale)
         {
             InkVec2 u = RandomUnit(run);
             double d = so.ArenaRadius - so.EnemySpawnInset;
             InkBody body = InkPhysics.CreateBody(fig, u.X * d, u.Y * d, -u.X, -u.Y, 1, 1,
-                so.EnemySpeedMult * so.StakeSpeedMult[stakeIndex], so.EnemyDamageMult * so.StakeDamageMult[stakeIndex]);
+                1, so.EnemyDamageMult * so.StakeDamageMult[stakeIndex]);
+            body.TopSpeed = EnemySpeed(so, fig, stakeIndex);
+            body.BluntBonus = EnemyCrush(so, fig, scale, stakeIndex);
             body.Hp = isBoss ? fig.Stats.Armour * so.BossArmourMult : EnemyArmour(so, fig, scale);
             body.MaxHp = body.Hp;
             return body;
@@ -252,6 +274,10 @@ namespace Inkweight.Core
                 InkFigure fig = InkPhysics.BuildFigure(run.EnemyDrawings[w], run.W, run.H, so, InkDrawing.KindFigure, total);
                 for (int c = 0; c < so.BossEscortCopies; c++) enemies.Add(SpawnEnemy(so, run, fig, false, 0, 1));
             }
+            // The crush is what a stake buys in a wave. The boss fight has no
+            // stake: the crush of the boss and of every escort is multiplied
+            // by bossCrushMult (0: they hit as in a wave without crush).
+            for (int i = 0; i < enemies.Count; i++) enemies[i].BluntBonus = enemies[i].BluntBonus * so.BossCrushMult;
             run.Copies = enemies.Count;
             run.Stake = 1;
             run.StakeIndex = 0;

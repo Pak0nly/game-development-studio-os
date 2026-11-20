@@ -83,6 +83,7 @@ namespace Inkweight.CoreTests
             TestStatVectors(tuning, stat);
             TestTraces(tuning, tuningText, traces);
             TestRulesV2(tuning);
+            TestRulesV3(tuning, tuningText, traces);
 
             Begin("self check as run inside Unity (embedded tuning and hashes)");
             InkSelfCheckResult sc = InkSelfCheck.Run(embedded);
@@ -557,7 +558,9 @@ namespace Inkweight.CoreTests
             InkBody en = run.World.Bodies[1];
             Check(en.MaxHp == InkSolo.EnemyArmour(tuning, fBig, InkSolo.WaveArmourScale(tuning, 0, 2, n)) && en.Hp == en.MaxHp, "enemy armour comes from EnemyArmour");
             Check(en.DamageMult == tuning.EnemyDamageMult * tuning.StakeDamageMult[2], "stake raises enemy damage");
-            Check(en.TopSpeed == fBig.Stats.TopSpeed * (tuning.EnemySpeedMult * tuning.StakeSpeedMult[2]), "stake raises enemy speed");
+            Check(en.TopSpeed == InkSolo.EnemySpeed(tuning, fBig, 2)
+                && en.TopSpeed == (tuning.EnemySpeedBase + tuning.EnemySpeedMult * fBig.Stats.TopSpeed) * tuning.StakeSpeedMult[2],
+                "enemy speed comes from EnemySpeed (flat part plus share, times the stake factor)");
 
             Dictionary<string, double> ov = new Dictionary<string, double>();
             ov["solo.waveMaxTicks"] = 600;
@@ -567,6 +570,315 @@ namespace Inkweight.CoreTests
             ov["solo.noSuchKey"] = 1;
             try { InkTuning.FromJson(InkGenerated.TuningJson, ov); } catch (FormatException e) { msg = e.Message; }
             Check(msg != "", "an override of an unknown key is refused");
+            End();
+        }
+
+        // ---------------------------------------------------------------- version 3
+
+        private static InkTuning With(string tuningText, string key, double value)
+        {
+            Dictionary<string, double> ov = new Dictionary<string, double>();
+            ov[key] = value;
+            return InkTuning.FromJson(tuningText, ov);
+        }
+
+        private static object TraceItem(object traces, string name)
+        {
+            foreach (object it in InkJson.Arr(InkJson.Get(traces, "items")))
+                if (InkJson.Str(InkJson.Get(it, "name")) == name) return it;
+            return null;
+        }
+
+        private static string RecordedHashes(object it)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (object cp in InkJson.Arr(InkJson.Get(it, "checkpoints"))) sb.Append(InkJson.Str(InkJson.Get(cp, "hash"))).Append(' ');
+            return sb.ToString();
+        }
+
+        private static string RingHashes(InkTuning tuning, object traces, string name)
+        {
+            object it = TraceItem(traces, name);
+            if (it == null) return "missing trace " + name;
+            StringBuilder sb = new StringBuilder();
+            InkReplay.RunRing(tuning, RingScenario(tuning, InkJson.Get(traces, "drawings"), it),
+                delegate (InkRingMatch m) { sb.Append(InkHash.Ring(m)).Append(' '); }, null);
+            return sb.ToString();
+        }
+
+        private static string SoloHashes(InkTuning tuning, object traces, string name)
+        {
+            object it = TraceItem(traces, name);
+            if (it == null) return "missing trace " + name;
+            StringBuilder sb = new StringBuilder();
+            InkReplay.RunSolo(tuning, SoloScenario(InkJson.Get(traces, "drawings"), it),
+                delegate (InkSoloRun r) { sb.Append(InkHash.Solo(r)).Append(' '); }, null);
+            return sb.ToString();
+        }
+
+        // Version 3 rules the golden files cannot show on their own, the three
+        // branches the INK-UNITY-V2 review found unreached, and proof that the
+        // golden traces see each new number in this port (one value changed
+        // must change the hashes).
+        private static void TestRulesV3(InkTuning tuning, string tuningText, object traces)
+        {
+            int W = tuning.CanvasWidth, H = tuning.CanvasHeight;
+            int[] block = InkSelfCheck.PresetCells("block");
+            int[] dot = InkSelfCheck.PresetCells("dot");
+            int[] needle = InkSelfCheck.PresetCells("needle");
+            InkFigure fBlock = InkPhysics.BuildFigure(block, W, H, tuning, InkDrawing.KindFigure, null);
+            InkFigure fDot = InkPhysics.BuildFigure(dot, W, H, tuning, InkDrawing.KindFigure, null);
+
+            Begin("rules version 3: tuning keys, blunt bonus, enemy speed and crush, no crush in the boss fight");
+            Check(tuning.Version == "ink-tuning-3", "tuning version is ink-tuning-3: " + tuning.Version);
+            Check(tuning.ExtraSeparationPasses == 8 && tuning.CrowdRelaxPasses == 4, "separation passes 8 and crowd relax passes 4 are read from the tuning");
+            Check(tuning.EnemySpeedBase == 3 && tuning.EnemySpeedMult == 0.45 && tuning.EnemyCrushPerInk == 0.004 && tuning.BossCrushMult == 0,
+                "solo keys enemySpeedBase, enemySpeedMult, enemyCrushPerInk, bossCrushMult");
+            InkBody ringBody = InkPhysics.CreateBody(fBlock, 0, 0, 0, -1, 0, 1, 1, 1);
+            Check(ringBody.BluntBonus == 0, "a new body has blunt bonus 0");
+            InkRingMatch rm = InkRing.CreateMatch(tuning, 3, 9);
+            InkRing.StartRound(tuning, rm, new InkFigure[] { fBlock, fDot, fBlock });
+            bool ringZero = true;
+            for (int i = 0; i < rm.World.Bodies.Count; i++) if (rm.World.Bodies[i].BluntBonus != 0) ringZero = false;
+            Check(ringZero, "every Ring body has blunt bonus 0");
+
+            int nB = fBlock.Stats.N;
+            for (int st = 0; st < tuning.Stakes.Length; st++)
+            {
+                InkSoloRun run = InkSolo.CreateRun(tuning, 3, InkReplay.Recolour(block, 1), InkReplay.Recolour(needle, 1), W, H, 0);
+                run.Wave = 2; // third wave: the example of CHANGES_V3.md V5
+                InkSolo.StartWave(tuning, run, block, st);
+                double scale = InkSolo.WaveArmourScale(tuning, 2, st, nB);
+                double crush = tuning.EnemyCrushPerInk * nB * scale * tuning.Stakes[st];
+                bool all = true;
+                for (int i = 1; i < run.World.Bodies.Count; i++)
+                {
+                    InkBody e = run.World.Bodies[i];
+                    if (e.BluntBonus != crush || e.BluntBonus != InkSolo.EnemyCrush(tuning, fBlock, scale, st)) all = false;
+                    if (e.TopSpeed != (tuning.EnemySpeedBase + tuning.EnemySpeedMult * fBlock.Stats.TopSpeed) * tuning.StakeSpeedMult[st]) all = false;
+                    if (e.DamageMult != tuning.EnemyDamageMult * tuning.StakeDamageMult[st]) all = false;
+                }
+                Check(all && run.World.Bodies.Count == run.Copies + 1, "wave copies carry crush, speed and damage factor at stake " + st);
+                Check(run.World.Bodies[0].BluntBonus == 0, "the hero has blunt bonus 0 at stake " + st);
+                Check(crush > 0, "a block copy crushes at stake " + st);
+                // blunt touch of a copy on the hero, the example of CHANGES_V3.md V5
+                // (0.79 at x1; at x2 the list says 2.58, the exact value is 2.57472)
+                double touch = (tuning.BluntDamage + crush) * tuning.EnemyDamageMult * tuning.StakeDamageMult[st];
+                if (st == 0) Check(touch > 0.785 && touch < 0.795, "block copy, wave 3, stake x1: blunt touch about 0.79, got " + R(touch));
+                if (st == 2) Check(touch > 2.574 && touch < 2.576, "block copy, wave 3, stake x2: blunt touch about 2.575, got " + R(touch));
+            }
+            Check(InkSolo.EnemyCrush(tuning, fDot, 2, 2) <= 0.004 * 13 * 2 * 2 + 1e-9 && fDot.Stats.N <= 13, "a dot gains little crush");
+
+            for (int variant = 0; variant < 2; variant++)
+            {
+                InkTuning t = variant == 0 ? tuning : With(tuningText, "solo.bossCrushMult", 1);
+                InkSoloRun run = InkSolo.CreateRun(t, 3, InkReplay.Recolour(block, 1), InkReplay.Recolour(needle, 1), W, H, 0);
+                run.EnemyDrawings.Add(InkDrawing.ExtractBody(block, W, H).Body);
+                run.EnemyDrawings.Add(InkDrawing.ExtractBody(dot, W, H).Body);
+                run.Phase = InkSolo.PhaseCleared;
+                run.Wave = InkSolo.Waves;
+                InkSolo.StartBoss(t, run);
+                List<InkBody> bodies = run.World.Bodies;
+                Check(bodies.Count == 4 && run.Copies == 3 && run.StakeIndex == 0 && run.DropValue == 0, "boss fight: boss and one escort per wave design");
+                bool zero = true;
+                bool full = true;
+                bool speed = true;
+                for (int i = 1; i < bodies.Count; i++)
+                {
+                    InkBody e = bodies[i];
+                    double dN = e.Fig.Stats.N;
+                    if (e.BluntBonus != 0) zero = false;
+                    if (e.BluntBonus != t.EnemyCrushPerInk * dN) full = false;
+                    if (e.TopSpeed != t.EnemySpeedBase + t.EnemySpeedMult * e.Fig.Stats.TopSpeed) speed = false;
+                    if (e.DamageMult != t.EnemyDamageMult) speed = false;
+                }
+                if (variant == 0) Check(zero, "no body of the boss fight crushes (bossCrushMult 0)");
+                else Check(full && !zero, "with bossCrushMult 1 boss and escorts crush with enemyCrushPerInk * N");
+                Check(speed, "boss and escorts: speed enemySpeedBase + enemySpeedMult * topSpeed, damage factor enemyDamageMult");
+                Check(bodies[1].MaxHp == bodies[1].Fig.Stats.Armour * t.BossArmourMult, "boss armour is its own armour times bossArmourMult");
+            }
+            End();
+
+            Begin("rules version 3: crowd relaxation runs only with more than two bodies, dead bodies counted, positions only");
+            {
+                // Three blocks in a row, 6 cells apart (overlapping deeply), all
+                // of one team: no damage, no speed. With crowd relaxation the
+                // result differs from the run without it; with two bodies it
+                // does not.
+                for (int count = 2; count <= 3; count++)
+                {
+                    double[][] got = new double[2][];
+                    for (int v = 0; v < 2; v++)
+                    {
+                        InkTuning t = v == 0 ? tuning : With(tuningText, "physics.crowdRelaxPasses", 0);
+                        InkFigure f = InkPhysics.BuildFigure(block, W, H, t, InkDrawing.KindFigure, null);
+                        List<InkBody> bodies = new List<InkBody>();
+                        for (int i = 0; i < count; i++) bodies.Add(InkPhysics.CreateBody(f, i * 6.0, i * 0.5, 0, -1, 0, 1, 1, 1));
+                        InkWorld w = InkPhysics.CreateWorld(bodies, 0);
+                        InkPhysics.StepWorld(w, null, t);
+                        got[v] = new double[count * 4];
+                        for (int i = 0; i < count; i++)
+                        {
+                            got[v][i * 4] = bodies[i].X; got[v][i * 4 + 1] = bodies[i].Y;
+                            got[v][i * 4 + 2] = bodies[i].Vx; got[v][i * 4 + 3] = bodies[i].Vy;
+                        }
+                        Check(w.Events.Count == 0, count + " bodies of one team: no event");
+                        bool still = true;
+                        for (int i = 0; i < count; i++) if (bodies[i].Vx != 0 || bodies[i].Vy != 0 || bodies[i].Hp != bodies[i].MaxHp) still = false;
+                        Check(still, count + " bodies: the relaxation gives no speed and no damage");
+                    }
+                    bool same = true;
+                    for (int k = 0; k < got[0].Length; k++) if (got[0][k] != got[1][k]) same = false;
+                    if (count == 2) Check(same, "two bodies: identical with crowdRelaxPasses 4 and 0");
+                    else Check(!same, "three bodies: crowdRelaxPasses 4 moves bodies that 0 leaves");
+                }
+                // dead bodies count for n > 2: two living bodies plus a dead one
+                // far away still relax
+                double[] xs = new double[2];
+                for (int v = 0; v < 2; v++)
+                {
+                    InkTuning t = With(tuningText, "physics.extraSeparationPasses", 0);
+                    InkFigure f = InkPhysics.BuildFigure(block, W, H, t, InkDrawing.KindFigure, null);
+                    List<InkBody> bodies = new List<InkBody>();
+                    bodies.Add(InkPhysics.CreateBody(f, 0, 0, 0, -1, 0, 1, 1, 1));
+                    bodies.Add(InkPhysics.CreateBody(f, 3, 0.5, 0, -1, 0, 1, 1, 1));
+                    if (v == 1)
+                    {
+                        InkBody dead = InkPhysics.CreateBody(f, 500, 500, 0, -1, 0, 1, 1, 1);
+                        dead.Alive = false;
+                        bodies.Add(dead);
+                    }
+                    InkWorld w = InkPhysics.CreateWorld(bodies, 0);
+                    InkPhysics.StepWorld(w, null, t);
+                    xs[v] = bodies[0].X;
+                }
+                Check(xs[0] != xs[1], "a dead third body switches the relaxation on for the two living ones (" + R(xs[0]) + " / " + R(xs[1]) + ")");
+            }
+            End();
+
+            Begin("branches the golden files do not reach: (1, 0) normal, armour scale upper limit, throw skips an enemy at 0 armour");
+            {
+                // (1, 0) fallback: two equal bodies on the same spot with the
+                // same front. The contact vectors cancel, the deepest contact
+                // has distance 0 (no normal) and the centres coincide. Without
+                // extra passes the push is exactly along x.
+                InkTuning t = With(tuningText, "physics.extraSeparationPasses", 0);
+                InkFigure f = InkPhysics.BuildFigure(block, W, H, t, InkDrawing.KindFigure, null);
+                InkBody a = InkPhysics.CreateBody(f, 7, -3, 0, -1, 0, 1, 1, 1);
+                InkBody b = InkPhysics.CreateBody(f, 7, -3, 0, -1, 1, 1, 1, 1);
+                List<InkBody> two = new List<InkBody>();
+                two.Add(a); two.Add(b);
+                InkWorld w = InkPhysics.CreateWorld(two, 0);
+                InkPhysics.StepWorld(w, null, t);
+                double invA = 1 / f.Mass;
+                double share = 1.0 * 1.0 * invA / (invA + invA);
+                Check(a.X == 7 + share && b.X == 7 - share && a.Y == -3 && b.Y == -3,
+                    "coinciding bodies are pushed apart along (1, 0): a " + R(a.X) + "," + R(a.Y) + " b " + R(b.X) + "," + R(b.Y));
+                Check(w.Events.Count == 2 && a.Vy == 0 && b.Vy == 0 && a.Vx > 0 && b.Vx < 0, "both hit once, knockback along x only");
+                Check(a.Hp == a.MaxHp - t.BluntDamage && b.Hp == b.MaxHp - t.BluntDamage, "blunt damage both ways");
+            }
+            {
+                // Upper limit of the wave armour scale. With the stock tuning it
+                // cannot be reached (the smallest drawing has 12 cells: 380 * 2
+                // / (10 * 52) = 1.46), so the copy limit is lowered.
+                double most = 0;
+                for (int wv = 0; wv < tuning.WaveBudgets.Length; wv++)
+                    for (int st = 0; st < tuning.Stakes.Length; st++)
+                        for (int n = (int)tuning.MinBodyCells; n <= (int)tuning.EnemyInkBudget; n++)
+                        {
+                            double sc = InkSolo.WaveArmourScale(tuning, wv, st, n);
+                            if (sc > most) most = sc;
+                        }
+                Check(most < tuning.CopyArmourScaleMax, "stock tuning: the armour scale never reaches its upper limit (largest " + R(most) + ")");
+                InkTuning t = With(tuningText, "solo.maxCopies", 3);
+                InkFigure f = InkPhysics.BuildFigure(dot, W, H, t, InkDrawing.KindFigure, null);
+                int n2 = f.Stats.N;
+                double raw = t.WaveBudgets[4] * t.Stakes[2] / (3 * (n2 + t.CopyInkOverhead));
+                Check(InkSolo.Copies(t, 4, 2, n2) == 3 && raw > t.CopyArmourScaleMax, "with maxCopies 3 a dot leaves ink unspent (raw scale " + R(raw) + ")");
+                Check(InkSolo.WaveArmourScale(t, 4, 2, n2) == t.CopyArmourScaleMax, "the armour scale stops at copyArmourScaleMax");
+                InkSoloRun run = InkSolo.CreateRun(t, 3, InkReplay.Recolour(block, 1), InkReplay.Recolour(needle, 1), W, H, 0);
+                run.Wave = 4;
+                InkSolo.StartWave(t, run, dot, 2);
+                InkBody e = run.World.Bodies[1];
+                Check(e.MaxHp == InkSolo.EnemyArmour(t, f, t.CopyArmourScaleMax) && e.BluntBonus == InkSolo.EnemyCrush(t, f, t.CopyArmourScaleMax, 2),
+                    "armour and crush of the copies use the limited scale");
+                Check(InkSolo.WaveArmourScale(tuning, 0, 0, 220) == tuning.CopyArmourScaleMin, "lower limit: 220 cells in wave 1 (120 / 260 is below 0.5)");
+            }
+            {
+                // Throw target: the nearest enemy is alive but already at 0
+                // armour (it falls later in the same tick), so the throw goes
+                // to the next one. Control run: with armour left it is the target.
+                for (int v = 0; v < 3; v++)
+                {
+                    InkSoloRun run = InkSolo.CreateRun(tuning, 3, InkReplay.Recolour(dot, 1), InkReplay.Recolour(needle, 1), W, H, 0);
+                    InkSolo.StartWave(tuning, run, dot, 0);
+                    List<InkBody> bodies = run.World.Bodies;
+                    Check(bodies.Count >= 3, "the wave has at least two copies");
+                    bodies[1].X = 20; bodies[1].Y = 0;
+                    bodies[2].X = 0; bodies[2].Y = 40;
+                    for (int i = 3; i < bodies.Count; i++) { bodies[i].X = -50 + i; bodies[i].Y = -25; }
+                    if (v >= 1) bodies[1].Hp = 0;
+                    if (v == 2) for (int i = 2; i < bodies.Count; i++) bodies[i].Hp = 0;
+                    run.ThrowCd = 1;
+                    InkSolo.Step(tuning, run, new InkInput());
+                    InkBody hero = bodies[0];
+                    if (v == 2)
+                    {
+                        Check(run.Shots.Count == 0 && run.Phase == InkSolo.PhaseCleared, "every enemy at 0 armour: no throw, the wave ends");
+                        continue;
+                    }
+                    int target = v == 0 ? 1 : 2;
+                    Check(run.Shots.Count == 1, "one throw (variant " + v + ")");
+                    if (run.Shots.Count == 1)
+                    {
+                        double dx = bodies[target].X - hero.X;
+                        double dy = bodies[target].Y - hero.Y;
+                        double d = Math.Sqrt(dx * dx + dy * dy);
+                        Check(run.Shots[0].Ux == dx / d && run.Shots[0].Uy == dy / d,
+                            v == 0 ? "the nearest enemy with armour is the target" : "the throw skips the nearest enemy at 0 armour and takes the next");
+                    }
+                    Check(bodies[1].Alive == (v == 0), "the enemy at 0 armour falls in the same tick (variant " + v + ")");
+                    Check(run.ThrowCd == InkSolo.ThrowIntervalTicks(tuning, run.WeaponFig.Stats.N), "the throw interval restarts");
+                }
+            }
+            End();
+
+            Begin("the golden traces see the new numbers in this port (one value changed, the hashes must change)");
+            {
+                string deep = "ring_1v1_comb_comb_deep_passes";
+                string crowd = "ring_4_circlers";
+                string heavy = "solo_boss_heavy_no_crush";
+                string duel = "ring_1v1_disc_lance";
+                object deepIt = TraceItem(traces, deep);
+                object crowdIt = TraceItem(traces, crowd);
+                object heavyIt = TraceItem(traces, heavy);
+                object duelIt = TraceItem(traces, duel);
+                Check(deepIt != null && crowdIt != null && heavyIt != null && duelIt != null, "the four traces exist");
+                if (deepIt != null && crowdIt != null && heavyIt != null && duelIt != null)
+                {
+                    Check(RingHashes(tuning, traces, deep) == RecordedHashes(deepIt), deep + " unchanged tuning: recorded hashes");
+                    double[] passes = { 7, 4, 2 };
+                    for (int k = 0; k < passes.Length; k++)
+                        Check(RingHashes(With(tuningText, "physics.extraSeparationPasses", passes[k]), traces, deep) != RecordedHashes(deepIt),
+                            deep + " differs with " + passes[k] + " extra separation passes");
+                    Check(RingHashes(With(tuningText, "physics.crowdRelaxPasses", 0), traces, deep) == RecordedHashes(deepIt),
+                        deep + " (two bodies) is identical without crowd relaxation");
+                    Check(RingHashes(With(tuningText, "physics.crowdRelaxPasses", 0), traces, duel) == RecordedHashes(duelIt),
+                        duel + " (two bodies) is identical without crowd relaxation");
+                    Check(RingHashes(With(tuningText, "physics.crowdRelaxPasses", 0), traces, crowd) != RecordedHashes(crowdIt),
+                        crowd + " differs without crowd relaxation");
+                    Check(RingHashes(With(tuningText, "physics.crowdRelaxPasses", 3), traces, crowd) != RecordedHashes(crowdIt)
+                        || RingHashes(With(tuningText, "physics.crowdRelaxPasses", 5), traces, crowd) != RecordedHashes(crowdIt),
+                        crowd + " differs with 3 or 5 crowd relaxation passes");
+                    Check(SoloHashes(tuning, traces, heavy) == RecordedHashes(heavyIt), heavy + " unchanged tuning: recorded hashes");
+                    Check(SoloHashes(With(tuningText, "solo.bossCrushMult", 1), traces, heavy) != RecordedHashes(heavyIt),
+                        heavy + " differs with bossCrushMult 1");
+                    Check(SoloHashes(With(tuningText, "solo.enemyCrushPerInk", 0), traces, heavy) != RecordedHashes(heavyIt),
+                        heavy + " differs with enemyCrushPerInk 0");
+                    Check(SoloHashes(With(tuningText, "solo.enemySpeedBase", 0), traces, heavy) != RecordedHashes(heavyIt),
+                        heavy + " differs with enemySpeedBase 0");
+                }
+            }
             End();
         }
 

@@ -8,8 +8,8 @@ namespace Inkweight.Core
     public static class InkGenerated
     {
         public const string TuningJson = @"{
-  ""version"": ""ink-tuning-2"",
-  ""note"": ""Tuning for core version 2 (Work Order INK-CORE-V2). All durations are whole ticks at physics.tickRate. All distances are canvas cells. Every value is a prototype proposal, not a Human decision. Changed and new keys against ink-tuning-1 are listed in CHANGES_V2.md."",
+  ""version"": ""ink-tuning-3"",
+  ""note"": ""Tuning for core version 3 (Work Order INK-CORE-V3). All durations are whole ticks at physics.tickRate. All distances are canvas cells. Every value is a prototype proposal, not a Human decision. Changed and new keys against ink-tuning-2 are listed in CHANGES_V3.md (against ink-tuning-1: CHANGES_V2.md)."",
   ""canvas"": {
     ""width"": 32,
     ""height"": 32
@@ -66,7 +66,8 @@ namespace Inkweight.Core
     ""maxSubSteps"": 8,
     ""deepNormalShare"": 0.5,
     ""deepContactDepth"": 0.25,
-    ""extraSeparationPasses"": 2,
+    ""extraSeparationPasses"": 8,
+    ""crowdRelaxPasses"": 4,
     ""hitKnockbackPerDamage"": 39
   },
   ""ring"": {
@@ -134,7 +135,10 @@ namespace Inkweight.Core
     ""maxCopies"": 10,
     ""enemyInkBudget"": 220,
     ""enemySpawnInset"": 6,
-    ""enemySpeedMult"": 0.55,
+    ""enemySpeedBase"": 3,
+    ""enemySpeedMult"": 0.45,
+    ""enemyCrushPerInk"": 0.004,
+    ""bossCrushMult"": 0,
     ""enemyArmourPerInk"": 0.6,
     ""enemyArmourMult"": 0.2,
     ""copyArmourScaleMin"": 0.5,
@@ -919,6 +923,6 @@ namespace Inkweight.Core
         public static readonly int[] SoloCheckStakes = new int[] { 0, 1, 0, 2, 0 };
         public static readonly string[] SoloCheckUpgrades = new string[] { "colour2", "heal", "heal", "heal", "heal" };
         // fight:tick:hash
-        public static readonly string[] SoloCheckHashes = new string[] { "0:120:ffe647d1", "0:240:287138a9", "0:360:5b20ff4d", "0:388:35037663", "1:120:f97bd7d5", "1:240:ec0ff6f3", "1:360:a1e4b516", "1:480:802e4d2b", "1:593:3f779eac", "2:120:64b8dc00", "2:240:6c12c884", "2:360:61c331f8", "2:480:696b4173", "2:600:3290f9e0", "2:720:dbf07a16", "2:803:01e56945", "3:120:4eaa3bd0", "3:240:31abb742", "3:360:1791cdcc", "3:480:c185adf3", "3:600:dd513437", "3:720:cfc02245", "3:784:fcacf00b" };
+        public static readonly string[] SoloCheckHashes = new string[] { "0:120:39420e44", "0:240:58f2e06d", "0:360:baadb270", "0:374:dc54d6e0", "1:120:e7cff556", "1:240:c59e4a5e", "1:360:c425e9d3", "1:480:167b0363", "1:585:7ead4ae7", "2:120:1373973a", "2:240:94186ad4", "2:360:049677bc", "2:480:aed68c87", "2:600:331325dd", "2:720:f68ff53c", "2:804:9920c49e", "3:120:9d70612f", "3:240:4e5b3348", "3:360:187fd09c", "3:480:9b5c3342", "3:600:180d9204", "3:720:cbba85da", "3:840:45a20e94", "3:960:c54e3d4b", "3:1080:d1d7b5bc", "3:1200:a389c839", "3:1279:e8581c79" };
     }
 }

@@ -22,6 +22,7 @@ namespace Inkweight.Runtime
 
         private const float VirtualHeight = 720f;
         private const int MaxStepsPerFrame = 6;
+        private const float MaxClockStep = 0.25f; // most seconds one frame takes off the drawing clock
         private const float StickRadius = 70f;
         private const int NoPointer = int.MinValue;
 
@@ -66,6 +67,7 @@ namespace Inkweight.Runtime
         private bool clockRunning;
         private int seenRevision;
         private int[] lastValidCells;
+        private int messageRevision; // drawing revision the message on the drawing screen belongs to
 
         // preview of the enemy drawing for the stake display (rebuilt when the drawing changes)
         private InkFigure previewFigure;
@@ -134,7 +136,12 @@ namespace Inkweight.Runtime
             }
             try
             {
-                if (view == View.Draw) UpdateDrawClock();
+                if (view == View.Draw)
+                {
+                    // a message about the drawing (a refusal) is out of date once the drawing changes
+                    if (editor.Revision != messageRevision) { messageRevision = editor.Revision; message = ""; }
+                    UpdateDrawClock();
+                }
                 else if (view == View.RingFight) UpdateRing();
                 else if (view == View.SoloFight) UpdateSolo();
                 if (view == View.RingFight || view == View.RingRoundOver) RenderRing();
@@ -244,6 +251,8 @@ namespace Inkweight.Runtime
             accumulator = 0f;
             flash.Clear();
             ram.Clear();
+            fightNote = ""; // a note of the fight before must not show in this one
+            fightNoteTicks = 0;
             stickPointer = NoPointer;
             stickValue = new Vector2(0f, 0f);
         }
@@ -311,12 +320,16 @@ namespace Inkweight.Runtime
             ask = Ask.None;
             editor.Begin(cells, budget, kind, allowed);
             beginRevision = editor.Revision;
+            messageRevision = editor.Revision;
         }
 
         // The Ring drawing clock (ring.drawTimeSeconds; 0 switches it off). It
         // runs in real time from the first change of the drawing. When it
         // runs out the round starts with the drawing as it is; if that is not
-        // valid, with the last valid state of it, else with an example.
+        // valid, with the last valid state of it, else with an example. The
+        // clock stands still while a question is open, and one frame never
+        // takes more than a quarter of a second off it (a stall or a focus
+        // loss must not use up the drawing time).
         private void UpdateDrawClock()
         {
             if (purpose != Purpose.RingFigure || match == null || tuning.DrawTimeSeconds <= 0) return;
@@ -326,8 +339,11 @@ namespace Inkweight.Runtime
                 clockRunning = true;
                 if (editor.Stats.Valid) lastValidCells = editor.CopyCells();
             }
-            if (!clockRunning) return;
-            drawClock -= Time.unscaledDeltaTime;
+            if (!clockRunning || ask != Ask.None) return;
+            float dt = Time.unscaledDeltaTime;
+            if (dt > MaxClockStep) dt = MaxClockStep;
+            if (dt < 0f) dt = 0f;
+            drawClock -= dt;
             if (drawClock > 0f) return;
             drawClock = 0f;
             clockRunning = false;
@@ -644,7 +660,8 @@ namespace Inkweight.Runtime
                     else if (view == View.RingFight || view == View.RingRoundOver) RingGui(vw, vh);
                     else if (view == View.SoloFight || view == View.SoloEnd) SoloGui(vw, vh);
                     else if (view == View.SoloShop) ShopGui(vw, vh);
-                    if (view != View.Menu && GUI.Button(new Rect(vw - 130f, 10f, 120f, 40f), "Menü", buttonStyle)) RequestMenu();
+                    // no "Menü" button while a question is open: the question has its own two answers
+                    if (view != View.Menu && ask == Ask.None && GUI.Button(new Rect(vw - 130f, 10f, 120f, 40f), "Menü", buttonStyle)) RequestMenu();
                 }
             }
             catch (System.Exception e)
@@ -693,23 +710,36 @@ namespace Inkweight.Runtime
 
         private string PurposeTitle()
         {
-            if (purpose == Purpose.RingFigure)
-            {
-                string clock = "";
-                if (tuning.DrawTimeSeconds > 0)
-                {
-                    // whole seconds, rounded up
-                    int left = (int)drawClock;
-                    if (left < drawClock) left++;
-                    clock = clockRunning ? "  –  noch " + left + " s" : "  –  " + left + " s ab dem ersten Strich";
-                }
-                return "Runde " + (match.Round + 1) + ": Zeichne deine Figur (oben ist vorne)" + clock;
-            }
+            if (purpose == Purpose.RingFigure) return "Runde " + (match.Round + 1) + ": Zeichne deine Figur (oben ist vorne)";
             if (purpose == Purpose.SoloHero) return "Zeichne deinen Helden (oben ist vorne)";
             if (purpose == Purpose.SoloWeapon) return "Zeichne deine Wurfwaffe";
             if (purpose == Purpose.SoloEnemy) return run.Wave < InkSolo.Waves ? "Welle " + (run.Wave + 1) + " von " + InkSolo.Waves + ": Zeichne den Gegner" : "Zeichne den Gegner";
             if (purpose == Purpose.SoloUpgradeHero) return "Mehr Tinte: Zeichne deinen Helden neu";
             return "Mehr Tinte: Zeichne deine Waffe neu";
+        }
+
+        // The Ring drawing clock as its own line under the title ("" when it is off).
+        private string ClockText()
+        {
+            if (purpose != Purpose.RingFigure || match == null || tuning.DrawTimeSeconds <= 0) return "";
+            // whole seconds, rounded up
+            int left = (int)drawClock;
+            if (left < drawClock) left++;
+            if (!clockRunning) return "Zeit: " + left + " s ab dem ersten Strich";
+            return "Zeit: noch " + left + " s" + (ask != Ask.None ? " (angehalten)" : "");
+        }
+
+        // Why the drawing has no element, "" when it has one. The rule
+        // (INK_RULES_V2.md section 4): at least element.minColouredPercent of
+        // the body cells are coloured, then the most common colour alone; a
+        // tie between the most common colours is neutral.
+        private string NeutralReason(InkStats st)
+        {
+            if (st.Element != InkDrawing.ElementNeutral || st.N <= 0) return "";
+            int coloured = st.ColourCounts[1] + st.ColourCounts[2] + st.ColourCounts[3];
+            if (coloured * 100 >= tuning.MinColouredPercent * st.N) return "Gleichstand der Farben";
+            int percent = coloured * 100 / st.N; // rounded down, so it never shows the limit while below it
+            return "ab " + I(tuning.MinColouredPercent) + " % bunter Tinte (jetzt " + percent + " %)";
         }
 
         private bool DrawingValid(out string why)
@@ -799,7 +829,9 @@ namespace Inkweight.Runtime
             return "Zurück zum Menü? Die Zeichnung geht verloren.";
         }
 
-        // The open question. Nothing else on the drawing screen reacts while it is shown.
+        // The open question. Nothing else reacts while it is shown: the drawing
+        // screen draws only the canvas, the "Menü" button is left out and the
+        // drawing clock stands still. Escape answers "no".
         private void AskGui(float vw, float vh)
         {
             GUI.Box(new Rect(vw * 0.5f - 280f, vh * 0.5f - 110f, 560f, 220f), "");
@@ -819,7 +851,9 @@ namespace Inkweight.Runtime
 
         private void DrawGui(float vw, float vh)
         {
-            GUI.Label(new Rect(20f, 12f, vw - 180f, 40f), PurposeTitle(), centreStyle);
+            GUI.Label(new Rect(20f, 8f, vw - 180f, 40f), PurposeTitle(), centreStyle);
+            string clock = ClockText();
+            if (clock != "") GUI.Label(new Rect(20f, 48f, vw - 180f, 20f), clock, smallStyle);
 
             float size = vh - 110f;
             if (size > vw * 0.55f) size = vw * 0.55f;
@@ -897,7 +931,8 @@ namespace Inkweight.Runtime
             y += 20f;
             GUI.Label(new Rect(px, y, pw, 24f), "Tinte: " + st.Filled + " von " + I(editor.Budget)
                 + (editor.InkEmptyFlash ? "  –  Tinte leer!" : "")
-                + (st.Drips > 0 ? "   (" + st.Drips + " Felder tropfen ab und zählen nicht)" : ""), smallStyle);
+                + (st.Drips == 1 ? "   (1 Feld tropft ab und zählt nicht)"
+                    : st.Drips > 1 ? "   (" + st.Drips + " Felder tropfen ab und zählen nicht)" : ""), smallStyle);
             y += 24f;
             Color barColour = new Color(0.85f, 0.75f, 0.35f, 1f);
             y = StatRow(px, y, pw,
@@ -907,21 +942,24 @@ namespace Inkweight.Runtime
             y = StatRow(px, y, pw,
                 "Panzerung: " + F(st.Armour) + "  (Kern " + st.C + ", Hohlraum " + I(st.PocketCells) + ")",
                 ArmourFraction(st), barColour,
-                "Gefüllte Flächen panzern, Hohlräume ein wenig.");
+                "Gefüllte Flächen panzern, Hohlräume in dicker Hülle ein wenig.");
             y = StatRow(px, y, pw,
                 "Schärfe: " + F2(st.Sharpness) + "  (Klingenfelder " + st.S + ")",
                 SharpFraction(st), barColour,
-                "Klingen sind Striche, nur ein Feld dick (gelb).");
+                st.S > 0
+                    ? "Klingen (gelb) schneiden mit der Schärfe, mindestens " + F(tuning.BluntDamage) + "."
+                    : "Keine Klinge (Striche, 1 Feld dick): stumpfer Schaden " + F(tuning.BluntDamage) + ".");
             y = StatRow(px, y, pw,
                 "Tempo: " + F(st.TopSpeed),
                 SpeedFraction(st), barColour,
                 "Weniger Tinte ist schneller.");
-            GUI.Label(new Rect(px, y, pw, 24f), "Element: " + ElementName(st.Element), labelStyle);
+            string neutral = NeutralReason(st);
+            GUI.Label(new Rect(px, y, pw, 24f), "Element: " + ElementName(st.Element) + (neutral != "" ? " – " + neutral : ""), labelStyle);
             y += 28f;
 
             if (purpose == Purpose.SoloEnemy && run != null && run.Wave < InkSolo.Waves)
             {
-                GUI.Label(new Rect(px, y, pw, 22f), "Einsatz (mehr Tinte, mehr Gefahr, mehr Beute):", smallStyle);
+                GUI.Label(new Rect(px, y, pw, 22f), "Einsatz: mehr oder zähere Gegner, härtere Treffer, mehr Beute", smallStyle);
                 y += 22f;
                 float sw = (pw - 2f * 6f) / 3f;
                 for (int k = 0; k < tuning.Stakes.Length && k < 3; k++)
@@ -939,9 +977,15 @@ namespace Inkweight.Runtime
                     double scale = InkSolo.WaveArmourScale(tuning, run.Wave, stakeIndex, st.N);
                     double enemyArmour = InkSolo.EnemyArmour(tuning, PreviewFigure(), scale);
                     double drop = InkSolo.DropValue(tuning, run.Wave, stakeIndex, st.N);
+                    // rules version 3: the copy's own top speed, and its blunt
+                    // touch on the hero including the crush of its weight
+                    // (before the element factor; a blade touch is never less)
+                    double enemySpeed = InkSolo.EnemySpeed(tuning, PreviewFigure(), stakeIndex);
+                    double touch = (tuning.BluntDamage + InkSolo.EnemyCrush(tuning, PreviewFigure(), scale, stakeIndex))
+                        * tuning.EnemyDamageMult * tuning.StakeDamageMult[stakeIndex];
                     GUI.Label(new Rect(px, y, pw, 40f),
-                        copies + " Gegner mit je " + F(enemyArmour) + " Panzerung, Schaden " + Mult(tuning.StakeDamageMult[stakeIndex])
-                        + ", Tempo " + Mult(tuning.StakeSpeedMult[stakeIndex]) + ". Beute: " + I(drop) + " Tinte je Gegner.", smallStyle);
+                        (copies == 1 ? "1 Gegner mit " : copies + " Gegner mit je ") + F(enemyArmour) + " Panzerung, Tempo " + F(enemySpeed)
+                        + ", stumpfer Treffer " + F2(touch) + " (ohne Element). Beute je Gegner: " + I(drop) + " Tinte.", smallStyle);
                 }
                 y += 40f;
             }
@@ -1126,7 +1170,7 @@ namespace Inkweight.Runtime
             GUI.enabled = true;
             y += 62f;
             GUI.Label(new Rect(x, y, w, 30f), message, smallStyle);
-            if (GUI.Button(new Rect(x, vh - 100f, w, 64f), bossNext ? "Zum Boss – er besteht aus deinen Gegnern" : "Nächste Welle zeichnen", buttonStyle))
+            if (GUI.Button(new Rect(x, vh - 100f, w, 64f), bossNext ? "Zum Boss – er besteht aus deinen Gegnern (kein Einsatz)" : "Nächste Welle zeichnen", buttonStyle))
             {
                 message = "";
                 if (bossNext)

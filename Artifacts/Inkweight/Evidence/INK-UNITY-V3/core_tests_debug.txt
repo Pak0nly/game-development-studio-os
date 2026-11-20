@@ -1,0 +1,54 @@
+Inkweight core tests
+shared files: /home/user/game-development-studio-os/Projects/Inkweight/Source/Shared
+runtime: .NET 8.0.34, X64
+ok    generated file is up to date
+ok    tuning and golden versions
+ok    core source rules (12 files: no engine reference, no float, only Math.Sqrt and Math.Floor)
+ok    random generator and hash basics
+ok    stat vectors (59 drawings, every field exact)
+  4 rounds, 9906 ticks
+ok    ring trace ring_1v1_disc_lance (88 checkpoints, bit for bit)
+  3 rounds, 4868 ticks
+ok    ring trace ring_1v1_cross_block (45 checkpoints, bit for bit)
+  1 rounds, 491 ticks
+ok    ring trace ring_1v1_scripted (6 checkpoints, bit for bit)
+  3 rounds, 3099 ticks
+ok    ring trace ring_3_star_wedge_needle (30 checkpoints, bit for bit)
+  3 rounds, 4112 ticks
+ok    ring trace ring_4_disc_star_comb_dot (39 checkpoints, bit for bit)
+  2 rounds, 2820 ticks
+ok    ring trace ring_4_one_scripted_seat (27 checkpoints, bit for bit)
+  3 rounds, 3043 ticks
+ok    ring trace ring_1v1_circler_vs_rusher (31 checkpoints, bit for bit)
+  2 rounds, 2418 ticks
+ok    ring trace ring_4_circlers (23 checkpoints, bit for bit)
+  1 rounds, 3630 ticks
+ok    ring trace ring_1v1_sudden_death (14 checkpoints, bit for bit)
+  2 rounds, 3618 ticks
+ok    ring trace ring_2_idle_simultaneous_tie (10 checkpoints, bit for bit)
+  1 rounds, 1712 ticks
+ok    ring trace ring_3_simultaneous_nearest_wins (4 checkpoints, bit for bit)
+  1 rounds, 2625 ticks
+ok    ring trace ring_1v1_comb_comb_deep_passes (23 checkpoints, bit for bit)
+  2 fights, 973 ticks
+ok    solo trace solo_kite_two_waves (9 checkpoints, bit for bit)
+  4 fights, 3042 ticks
+ok    solo trace solo_brawl_full_run (27 checkpoints, bit for bit)
+  6 fights, 4081 ticks
+ok    solo trace solo_win_with_boss (37 checkpoints, bit for bit)
+  6 fights, 6203 ticks
+ok    solo trace solo_boss_heavy_no_crush (55 checkpoints, bit for bit)
+  3 fights, 2219 ticks
+ok    solo trace solo_upgrades_hero_and_weapon_ink (20 checkpoints, bit for bit)
+  2 fights, 841 ticks
+ok    solo trace solo_hero_death (8 checkpoints, bit for bit)
+  1 fights, 600 ticks
+ok    solo trace solo_time_limit (5 checkpoints, bit for bit)
+ok    rules version 2: figure check, thrown errors, stake helpers, tuning overrides
+ok    rules version 3: tuning keys, blunt bonus, enemy speed and crush, no crush in the boss fight
+ok    rules version 3: crowd relaxation runs only with more than two bodies, dead bodies counted, positions only
+ok    branches the golden files do not reach: (1, 0) normal, armour scale upper limit, throw skips an enemy at 0 armour
+ok    the golden traces see the new numbers in this port (one value changed, the hashes must change)
+  self check passed, 115 checkpoints bit-identical
+ok    self check as run inside Unity (embedded tuning and hashes)
+RESULT: PASS (16722 checks, 0 failed)
