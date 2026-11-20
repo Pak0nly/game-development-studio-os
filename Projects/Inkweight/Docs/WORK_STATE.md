@@ -62,6 +62,23 @@ Candidate identity: 24ee02a11c55d0ef25e0a0e209c0708641f09c146dcbb96f05d074539282
 Closure receipt: deac742f5c94eee78860b1826331f9ad64281db045a5d92cbba3c4cd354d4011
 Requested model — not independently attested.
 
+The interface findings of the first browser review are fixed (undo label,
+question before discarding, sideways layout, double taps, ten minor points);
+the page was republished. New review findings for the next update order: on
+the Ring drawing and solo enemy screens "Ende" asks "Verwerfen?" but ends the
+whole match or run (N-1); six minor points
+(`Artifacts/Inkweight/Evidence/INK-WEB-V2/REVIEW.md`). The folder
+`Source/WebPrototype/build` is ignored by the root `.gitignore`; its two files
+were force-added by the Director so they are in Git.
+
+INK-WEB-V2
+Independent review verdict: PASS
+Worker task: ad5840fd8095f43c7
+Reviewer task: a4db7dbe644f6a0b7
+Candidate identity: 18a5de95757574e5a93187acb063b0a1c3e082e564289b75e3690469955b99c7
+Closure receipt: dbebc8a1dba845fe32c550b0e37aab0503593d9d44e19ee3b4d5c64b8632089b
+Requested model — not independently attested.
+
 ## Running
 
 - INK-CORE-V2: core corrections and second balance pass, in a separate work
