@@ -1,7 +1,7 @@
 // Automated play-through of the built prototype with the pre-installed
 // Playwright. Nothing is installed or downloaded.
 //
-//   node build/verify.cjs [phone|landscape|desktop|artifact|duo|checks|all] [--shots DIR]
+//   node build/verify.cjs [phone|landscape|desktop|artifact|duo|checks|stable|all] [--shots DIR]
 //
 // Screenshots go to a folder in the system temp directory unless --shots DIR
 // names another place (so a re-run never overwrites evidence by accident).
@@ -206,8 +206,8 @@ async function runScenario(browser, name) {
   if (mid.weight === before.weight || mid.sharp === before.sharp) throw new Error('live stats did not change');
   const whys = await page.evaluate(() => ['stWeightWhy', 'stArmourWhy', 'stSharpWhy', 'stSpeedWhy', 'stElementWhy'].map((id) => document.getElementById(id).textContent));
   note('stat explanations: ' + whys.join(' | '));
-  if (!/^\d+ Klingen · Schnitt nimmt auch 0,4 % Panzer$/.test(whys[2]) || /Anteil gerader/.test(whys[2])) throw new Error('sharpness explanation is not the version 2 one: ' + whys[2]);
-  if (!/Kern-Kästchen/.test(whys[1]) || !/Hülle|Hohlraum/.test(whys[0])) throw new Error('weight or armour explanation is wrong');
+  if (!/^\d+ Klingen · Schnitt: auch 0,4 % Panzer$/.test(whys[2]) || /Anteil gerader/.test(whys[2])) throw new Error('sharpness explanation is not the version 2 one: ' + whys[2]);
+  if (!/Kern-Punkte?$/.test(whys[1]) || !/Hülle|Hohlraum/.test(whys[0])) throw new Error('weight or armour explanation is wrong');
   const marksNow = await page.evaluate(() => window.__inkDebug.marks);
   if (marksNow.blades !== marksNow.S || marksNow.blades < 10) throw new Error('blade marks do not follow the core: ' + JSON.stringify(marksNow));
   // the rules panel opens over the drawing and keeps it
@@ -719,9 +719,41 @@ async function runChecks(browser) {
     const why = await text('stWeightWhy');
     note('thick closed shell: weight ' + (await text('stWeight')) + ', pocket marks ' + pm.pockets + ', core P ' + pm.P + ', line "' + why + '"');
     if (pm.pockets < 20 || pm.pockets !== pm.P) throw new Error('pocket marks do not follow the core: ' + JSON.stringify(pm));
-    if (!/^Schub \d+,\d: der Hohlraum schiebt mit \(\+\d+,\d\)$/.test(why)) throw new Error('push weight line: ' + why);
+    if (!/^Schub \d+,\d · Hohlraum schiebt mit$/.test(why) || pm.rings !== pm.pockets) throw new Error('push weight line or rings: ' + why + ' ' + JSON.stringify(pm));
     await shot('12-shell-pockets');
     ok('a thick closed shell shows pocket marks and its push weight: "' + why + '"');
+    // m-5: a frame one cell thin holds nothing, so no pocket ring is drawn
+    await press('#toolClear');
+    await stroke([[8, 8], [23, 8], [23, 23], [8, 23], [8, 9]], 10);
+    const thin = await marks();
+    note('thin closed frame: pocket cells ' + thin.pockets + ', counted ' + thin.counted + ', rings drawn ' + thin.rings + ', line "' + (await text('stWeightWhy')) + '"');
+    if (thin.pockets < 50 || thin.counted !== 0 || thin.rings !== 0 || (await text('stWeightWhy')) !== 'Hohlraum zählt erst mit dicker Wand') throw new Error('thin frame: ' + JSON.stringify(thin));
+    ok('a thin frame shows no pocket rings and says why');
+
+    // F-1: the element line tells the real rule in every case
+    await press('#toolClear');
+    await stroke([[5, 10], [18, 10]]);                 // 14 black
+    await press('#toolC2'); await stroke([[5, 11], [7, 11]]);   // 3 red: 17 %
+    const low = (await text('stElement')) + ' | ' + (await text('stElementWhy'));
+    await stroke([[8, 11], [10, 11]]);                 // 6 red of 20: 30 %
+    const one = (await text('stElement')) + ' | ' + (await text('stElementWhy'));
+    await press('#toolC3'); await stroke([[12, 11], [17, 11]]); // 6 red, 6 blue of 26: tie
+    const tie = (await text('stElement')) + ' | ' + (await text('stElementWhy'));
+    await stroke([[12, 12], [13, 12]]);                // blue 8, red 6 of 28: Flut, although no colour alone has 30 %
+    const plur = (await text('stElement')) + ' | ' + (await text('stElementWhy'));
+    await press('#toolC1');
+    note('element lines: [' + low + '] [' + one + '] [' + tie + '] [' + plur + ']');
+    if (low !== 'Neutral | ab 30 % bunter Tinte (jetzt 17 %)') throw new Error('element below the threshold: ' + low);
+    if (one !== 'Glut | schlägt Moos, verliert gegen Flut') throw new Error('element at 30 %: ' + one);
+    if (tie !== 'Neutral | Gleichstand der Farben: kein Element') throw new Error('element tie: ' + tie);
+    if (plur !== 'Flut | schlägt Glut, verliert gegen Moos') throw new Error('element plurality: ' + plur);
+    ok('element line: below 30 % coloured ink, at 30 %, a tie and a plurality each say the truth');
+    // m-3: one loose cell, singular
+    await press('#toolClear');
+    await stroke([[5, 10], [18, 10]]);
+    await stroke([[25, 25], [25, 25]]);
+    if ((await text('drawMsg')) !== '1 Kästchen hängt nicht dran und tropft ab.') throw new Error('singular drip line: ' + (await text('drawMsg')));
+    ok('one loose cell: "1 Kästchen hängt nicht dran und tropft ab."');
     await press('#toolClear');
     await stroke([[16, 6], [16, 24]]);
     await stroke([[10, 14], [22, 14]]);
@@ -915,8 +947,8 @@ async function runChecks(browser) {
   note('stakes for a big enemy in wave 1: ' + stakes.join(' | '));
   // a big enemy comes alone at every stake; the stakes still differ honestly
   if (stakes.some((t) => /^\[aus\]/.test(t))) throw new Error('a stake is switched off');
-  if (!/Grundstärke|halten \d+ % weniger aus/.test(stakes[0]) || /härter/.test(stakes[0])) throw new Error('stake x1 text: ' + stakes[0]);
-  if (!/schlagen 25 % härter zu, sind 10 % schneller/.test(stakes[1]) || !/schlagen 50 % härter zu, sind 20 % schneller/.test(stakes[2])) throw new Error('higher stakes do not say what they do');
+  if (!/Grundstärke|−\d+ % Panzer/.test(stakes[0]) || /Schaden/.test(stakes[0])) throw new Error('stake x1 text: ' + stakes[0]);
+  if (!/\+25 % Schaden, \+10 % Tempo/.test(stakes[1]) || !/\+50 % Schaden, \+20 % Tempo/.test(stakes[2])) throw new Error('higher stakes do not say what they do');
   const loot = stakes.map((t) => parseInt((t.match(/(\d+) Beute/) || [0, '0'])[1], 10));
   if (!(loot[0] < loot[1] && loot[1] < loot[2])) throw new Error('loot does not grow with the stake: ' + loot.join(' '));
   // what the page promises is what the core does
@@ -930,11 +962,12 @@ async function runChecks(browser) {
   // N-1: "Ende" on the solo enemy screen says that the run ends
   await press('#drawBack');
   await sleep(200);
-  const runAsk = (await text('drawBack')) + ' | ' + (await text('drawMsg'));
+  const runAsk = (await text('drawBack')) + ' | ' + (await text('stakeNote'));
   note('solo enemy "Ende" first tap: ' + runAsk);
   if (runAsk !== 'Lauf beenden? | Noch einmal tippen, dann endet der ganze Lauf.' || !(await visible('scrDraw'))) throw new Error('solo Ende asks wrongly: ' + runAsk);
   await shot('14-solo-ende-asks');
   await sleep(2700);
+  if (!/^×1: Gegner/.test(await text('stakeNote'))) throw new Error('stake note did not come back: ' + (await text('stakeNote')));
   ok('"Ende" on the solo enemy screen asks "Lauf beenden?" and says that the whole run ends');
   await press('#drawDone');
   await page.waitForSelector('#scrFight:not([hidden])');
@@ -979,9 +1012,123 @@ async function runChecks(browser) {
   return done.length;
 }
 
+// Correction round 1 of INK-WEB-V3: the drawing canvas keeps its rectangle
+// from before the first stroke, through it and after it on every drawing
+// screen (400 x 780, 400 x 660 and sideways); the solo enemy screen fits a
+// short phone; a shop tap works while the steering finger is still down.
+async function runStable(browser) {
+  const name = 'stable';
+  const note = (s) => console.log('[' + name + '] ' + s);
+  let screens = 0;
+  for (const size of [{ width: 400, height: 780 }, { width: 400, height: 660 }, { width: 780, height: 400 }]) {
+    const tag = size.width + 'x' + size.height;
+    const context = await browser.newContext({ viewport: size, deviceScaleFactor: 2, hasTouch: true, isMobile: true });
+    const page = await context.newPage();
+    const errors = [];
+    runScenario.errors = errors;
+    runScenario.page = page;
+    page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') errors.push(m.type() + ': ' + m.text()); });
+    page.on('pageerror', (e) => errors.push('pageerror: ' + e.message));
+    await page.goto('file://' + path.join(DIST, 'inkweight.html'));
+    await page.waitForSelector('#btnRing');
+    const cdp = await context.newCDPSession(page);
+    const press = async (sel) => { await page.waitForSelector(sel, { state: 'visible' }); await ready(page); await page.tap(sel); };
+    const rect = () => page.evaluate(() => { const r = document.getElementById('drawCanvas').getBoundingClientRect(); return [r.left, r.top, r.width, r.height].map((v) => Math.round(v * 10) / 10).join(' '); });
+    const pt = async (x, y) => { const b = await page.locator('#drawCanvas').boundingBox(); return { x: b.x + (x + 0.5) * b.width / 32, y: b.y + (y + 0.5) * b.width / 32 }; };
+    const line = async (x0, y0, x1, y1, during) => {
+      await ready(page);
+      const a = await pt(x0, y0); const b = await pt(x1, y1);
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [a] });
+      for (let k = 1; k <= 8; k++) await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: a.x + (b.x - a.x) * k / 8, y: a.y + (b.y - a.y) * k / 8 }] });
+      const r = during ? await rect() : '';
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+      await sleep(150);
+      return r;
+    };
+    // one drawing screen: rectangle before, in the first stroke, after it, and after a full figure
+    const stable = async (label, withColour) => {
+      await page.waitForSelector('#scrDraw:not([hidden])');
+      await ready(page);
+      await sleep(250);
+      const before = await rect();
+      const during = await line(16, 4, 16, 16, true);
+      const after = await rect();
+      await press('#toolBrush');
+      await line(11, 16, 21, 16); await line(11, 19, 21, 19);
+      await press('#toolBrush');
+      if (withColour) { await press(withColour); await line(11, 21, 21, 21); await press('#toolC1'); }
+      await line(3, 29, 5, 29); // a loose bit: the warning line appears
+      const full = await rect();
+      const fit = await page.evaluate(() => { const b = document.getElementById('drawDone').getBoundingClientRect(); const s = document.getElementById('scrDraw'); return { bottom: Math.round(b.bottom), ih: window.innerHeight, scroll: s.scrollHeight - s.clientHeight }; });
+      note(tag + ' ' + label + ': canvas ' + before + ' | in the first stroke ' + during + ' | after it ' + after + ' | full figure ' + full + ' | main button bottom ' + fit.bottom + ' of ' + fit.ih + ', scroll ' + fit.scroll);
+      if (before !== during || before !== after || before !== full) throw new Error('the canvas moved on ' + label + ' at ' + tag);
+      if (fit.bottom > fit.ih || fit.scroll > 0) throw new Error('main button outside the window on ' + label + ' at ' + tag);
+      const side = Number(before.split(' ')[2]);
+      if (side < 190) throw new Error('canvas only ' + side + ' px on ' + label + ' at ' + tag);
+      screens++;
+      if (label === 'solo enemy' || label === 'free drawing') await page.screenshot({ path: path.join(SHOTS, 'stable-' + tag + '-' + label.replace(/ /g, '-') + '.png') });
+    };
+    await press('#btnFree');
+    await press('#drawHintOk');
+    await stable('free drawing', '#toolC2');
+    await press('#drawDone');
+    await press('#galBack');
+    await press('#btnRing'); await press('#ringGo');
+    await stable('ring drawing', '#toolC3');
+    await press('#drawBack'); await sleep(300); await press('#drawBack');
+    await page.waitForSelector('#scrStart:not([hidden])');
+    await press('#btnSolo'); await press('#soloC2');
+    await stable('solo hero', '#toolC2');
+    await press('#drawDone');
+    await sleep(300);
+    await stable('solo weapon', null);
+    await press('#toolClear');
+    await line(16, 8, 16, 22); await line(10, 15, 22, 15);
+    await press('#drawDone');
+    await sleep(300);
+    await stable('solo enemy', null);
+    const noteText = await page.locator('#stakeNote').textContent();
+    if (!/hängen nicht dran/.test(noteText)) throw new Error('the drip warning is not shown on the enemy screen: ' + noteText);
+    if (size.height === 780) {
+      // m-7: the steering finger is still down when the shop opens; another finger buys
+      await press('#toolClear');
+      await press('#toolBrush'); await line(14, 14, 18, 14); await line(14, 17, 18, 17); await press('#toolBrush');
+      await press('#drawDone');
+      await page.waitForSelector('#scrFight:not([hidden])');
+      await sleep(2600);
+      const st = await page.locator('#fightStage').boundingBox();
+      const stick = { x: st.x + st.width * 0.4, y: st.y + st.height * 0.7, id: 0 };
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [stick] });
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: stick.x + 30, y: stick.y, id: 0 }] });
+      await sleep(400);
+      await page.evaluate(() => { const r = window.__inkDebug.run; r.world.bodies[0].hp = r.world.bodies[0].maxHp * 0.5; for (let i = 1; i < r.world.bodies.length; i++) r.world.bodies[i].hp = 0; });
+      await page.waitForSelector('#scrShop:not([hidden])', { timeout: 20000 });
+      await ready(page);
+      await sleep(300);
+      const info = await page.locator('#shopInfo').textContent();
+      if (!/Dein Panzer heilt nicht von selbst/.test(info)) throw new Error('the shop does not say that armour does not heal: ' + info);
+      const hb = await page.locator('#shopHeal').boundingBox();
+      const tap = { x: hb.x + hb.width / 2, y: hb.y + hb.height / 2, id: 1 };
+      const held = { x: stick.x + 30, y: stick.y, id: 0 };
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [held, tap] });
+      await sleep(60);
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [tap] });
+      await sleep(500);
+      const msg = await page.locator('#shopMsg').textContent();
+      await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+      note('shop with the steering finger still down, second finger on "Flicken": "' + msg + '" | ' + info);
+      if (msg !== 'Geflickt.') throw new Error('a tap with a second finger did not buy while the steering finger was down');
+      await page.screenshot({ path: path.join(SHOTS, 'stable-shop.png') });
+    }
+    await context.close();
+    if (errors.length) throw new Error('console problems: ' + errors.join(' | '));
+  }
+  return screens;
+}
+
 (async () => {
   fs.mkdirSync(SHOTS, { recursive: true });
-  const list = which === 'all' ? ['phone', 'landscape', 'desktop', 'artifact', 'duo', 'checks'] : [which];
+  const list = which === 'all' ? ['phone', 'landscape', 'desktop', 'artifact', 'duo', 'checks', 'stable'] : [which];
   const browser = await chromium.launch();
   let failed = 0;
   for (const name of list) {
@@ -990,6 +1137,11 @@ async function runChecks(browser) {
       if (name === 'duo') {
         await runDuo(browser);
         console.log('PASS duo: two humans drew in turns, a drawing timed out and got a placeholder, both keyboard zones were held, leaving took two taps, 0 console errors (' + Math.round((Date.now() - t0) / 1000) + ' s)');
+        continue;
+      }
+      if (name === 'stable') {
+        const n = await runStable(browser);
+        console.log('PASS stable: the canvas kept its rectangle before, in and after the first stroke on ' + n + ' drawing screens (400 x 780, 400 x 660, 780 x 400), main button always inside the window, shop tap with a second finger works, 0 console errors (' + Math.round((Date.now() - t0) / 1000) + ' s)');
         continue;
       }
       if (name === 'checks') {

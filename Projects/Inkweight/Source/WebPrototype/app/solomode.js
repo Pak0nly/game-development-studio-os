@@ -59,7 +59,7 @@ async function playSolo(startColour) {
       let stake = 0;
       const res = await openDraw({
         title: 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES + ': dein Gegner',
-        sub: 'Zeichne ihn selbst: klein kommt als Schwarm, groß als Brocken.',
+        sub: 'Klein = Schwarm, groß = Brocken.',
         kind: 'figure', budget: so.enemyInkBudget, canPick: true, initial: lastEnemy,
         backLabel: 'Ende', backConfirm: true, endAsk: 'Lauf beenden?', endMsg: 'Noch einmal tippen, dann endet der ganze Lauf.', doneLabel: 'In den Kampf',
         extra: (box) => {
@@ -86,25 +86,35 @@ async function playSolo(startColour) {
               const copies = lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0;
               const loot = lastN > 0 ? copies * core.soloDropValue(tuning, run.wave, i, lastN) : 0;
               buttons[i].textContent = 'Einsatz ' + stakeLabel(i);
-              buttons[i].append(el('small', { text: copies > 0 ? copies + ' Gegner · ' + loot + ' Beute' : 'erst zeichnen' }));
+              // always two short lines, so the buttons never change height
+              buttons[i].append(el('small', { text: copies > 0 ? copies + ' Gegner' : 'erst' }), el('span', { class: 'gap', text: ' · ' }), el('small', { text: copies > 0 ? loot + ' Beute' : 'zeichnen' }));
               buttons[i].classList.toggle('on', i === stake);
               buttons[i].setAttribute('aria-pressed', i === stake ? 'true' : 'false');
             }
-            let text = 'Höherer Einsatz: mehr Beute, aber die Gegner schlagen härter zu und sind schneller.';
+            let text = 'Höherer Einsatz: mehr Beute, härtere Gegner.';
             if (lastN > 0) {
               const scale = core.soloWaveArmourScale(tuning, run.wave, stake, lastN);
               const parts = [];
               const dmg = pct(so.stakeDamageMult[stake]);
               const spd = pct(so.stakeSpeedMult[stake]);
-              if (dmg > 0) parts.push('schlagen ' + dmg + ' % härter zu');
-              if (spd > 0) parts.push('sind ' + spd + ' % schneller');
+              if (dmg > 0) parts.push('+' + dmg + ' % Schaden');
+              if (spd > 0) parts.push('+' + spd + ' % Tempo');
               const sc = Math.round(scale * 100);
-              if (sc >= 105) parts.push('halten ' + (sc - 100) + ' % mehr aus (übrige Tinte)');
-              else if (sc <= 95) parts.push('halten ' + (100 - sc) + ' % weniger aus');
-              text = stakeLabel(stake) + ': ' + (parts.length ? 'Die Gegner ' + parts.join(', ') + '.' : 'Gegner in Grundstärke.');
+              if (sc >= 105) parts.push('+' + (sc - 100) + ' % Panzer');
+              else if (sc <= 95) parts.push('−' + (100 - sc) + ' % Panzer');
+              text = stakeLabel(stake) + ': Gegner ' + (parts.length ? 'mit ' + parts.join(', ') : 'in Grundstärke');
             }
-            noteEl.textContent = text;
+            stakeText = text;
+            show();
           }
+          // one line of fixed height: a warning of the drawing screen takes it over
+          let stakeText = '';
+          let warnText = '';
+          function show() {
+            noteEl.textContent = warnText || stakeText;
+            noteEl.classList.toggle('warn', warnText !== '');
+          }
+          paint.setMsg = (text, warn) => { warnText = warn ? text : ''; show(); };
           paint(null);
           return paint;
         },
@@ -242,7 +252,7 @@ function shop(run, getHero, setHero, getWeapon, setWeapon) {
     function render() {
       $('shopTitle').textContent = 'Welle ' + run.wave + ' geschafft';
       $('shopInfo').textContent = 'Tinte im Beutel: ' + run.wallet + ' · Panzer: ' + Math.ceil(run.heroHp) + ' von ' + Math.round(run.heroMaxHp)
-        + '. Du darfst ein Upgrade kaufen, es kostet ' + cost + ' Tinte.';
+        + '. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet ' + cost + ' Tinte.';
       // honest label: spent or not, only collected ink counts as the score
       $('shopPurse').textContent = 'Als Punkte zählt alle Tinte, die du gesammelt hast (bisher ' + run.score
         + '). Ausgeben kostet keine Punkte. Was im Beutel übrig bleibt, wird in dieser Version für nichts weiter gebraucht.';

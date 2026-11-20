@@ -60,12 +60,12 @@ function analyse() {
         if (body[i] === 0) m = 4;
         else if (core.isSharpCell(body, W, H, x, y)) { m = 3; blades++; }
         else m = core.countNeighbours(body, W, H, x, y) === 8 ? 2 : 1;
-      } else if (!open[i] && core.countNeighbours(body, W, H, x, y) === 0) { m = 5; pockets++; }
+      } else if (!open[i] && core.countNeighbours(body, W, H, x, y) === 0) { pockets++; if (s.stats.pocketCells > 0) m = 5; }
       s.mark[i] = m;
     }
   }
   // read by the automated check: what the board marks right now
-  if (window.__inkDebug) window.__inkDebug.marks = { blades, pockets, S: s.stats.S, P: s.stats.P };
+  if (window.__inkDebug) window.__inkDebug.marks = { blades, pockets, S: s.stats.S, P: s.stats.P, counted: s.stats.pocketCells, rings: s.stats.pocketCells > 0 ? pockets : 0 };
   s.bladeMarks = blades;
   s.pocketMarks = pockets;
   s.spriteDirty = true;
@@ -101,20 +101,20 @@ function updatePanel() {
   const minCells = s.kind === 'weapon' ? tuning.ink.weaponMinBodyCells : tuning.ink.minBodyCells;
   // Every line below says what rules version 2 really do with this drawing.
   // Weight: ink cells; the push weight adds a tenth of the counting pocket cells.
-  let wWhy = 'viel Tinte schiebt hart, ist aber träge';
+  // All lines are short enough for one row (they never change the layout).
+  let wWhy = 'viel Tinte schiebt, ist aber träge';
   if (has) {
-    const plus = st.push - st.N;
-    if (st.pocketCells > 0) wWhy = 'Schub ' + num(st.push, 1) + ': der Hohlraum schiebt mit (+' + num(plus, 1) + ')';
-    else if (st.P > 0) wWhy = 'Hohlraum zählt erst mit dicker Wand (2 Kästchen)';
-    else if (st.enclosed > 0) wWhy = 'Hohlraum zu klein: zählt erst ab 3 × 3 Kästchen';
-    else wWhy = 'schiebt, ist träge · dicke Hülle schiebt härter';
+    if (st.pocketCells > 0) wWhy = 'Schub ' + num(st.push, 1) + ' · Hohlraum schiebt mit';
+    else if (st.P > 0) wWhy = 'Hohlraum zählt erst mit dicker Wand';
+    else if (st.enclosed > 0) wWhy = 'Hohlraum zu klein (erst ab 3 × 3)';
+    else wWhy = 'träge · dicke Hülle schiebt härter';
   }
   setWhy('stWeightWhy', wWhy);
-  setWhy('stArmourWhy', has ? 'volle Fläche schützt · Kern-Kästchen (Punkt): ' + st.C : 'volle Flächen halten mehr aus');
+  setWhy('stArmourWhy', has ? 'volle Fläche schützt · ' + st.C + (st.C === 1 ? ' Kern-Punkt' : ' Kern-Punkte') : 'volle Flächen halten mehr aus');
   const cut = num(tst.sharpArmourCut * 100, 1);
   setWhy('stSharpWhy', !has ? 'dünne Striche sind Klingen, auch schräge'
-    : (st.S > 0 ? st.S + ' Klingen · Schnitt nimmt auch ' + cut + ' % Panzer' : 'keine Klinge: 1 Kästchen dünne Striche schneiden'));
-  setWhy('stSpeedWhy', 'Kästchen pro Sekunde · wenig Tinte ist flink');
+    : (st.S > 0 ? st.S + (st.S === 1 ? ' Klinge' : ' Klingen') + ' · Schnitt: auch ' + cut + ' % Panzer' : 'keine Klinge · dünner Strich schneidet'));
+  setWhy('stSpeedWhy', 'Kästchen pro Sekunde · leicht ist flink');
   // bar ends are the real ranges of valid drawings with this much ink
   setBar('stWeightBar', st.N / s.budget);
   setBar('stArmourBar', has ? st.armour / (tst.armourBase + 1.1 * s.budget) : 0);
@@ -131,10 +131,14 @@ function updatePanel() {
     for (let c = 2; c <= 4; c++) if (tuning.element.beats[c] === e) loses = c;
     why = 'schlägt ' + ELEMENT_NAMES[beats] + ', verliert gegen ' + ELEMENT_NAMES[loses];
   } else {
+    // The rule: at least minColouredPercent of the body is coloured ink (all
+    // colours together), then the most common colour; a tie is no element.
     const coloured = st.colourCounts[1] + st.colourCounts[2] + st.colourCounts[3];
+    const min = tuning.element.minColouredPercent;
     const pct = has ? Math.floor(coloured * 100 / st.N) : 0;
-    why = pct === 0 ? 'Schwarz ist neutral: kein Element'
-      : 'ab ' + tuning.element.minColouredPercent + ' % einer Farbe (jetzt ' + pct + ' %)';
+    if (coloured === 0) why = 'Schwarz ist neutral: kein Element';
+    else if (coloured * 100 < min * st.N) why = 'ab ' + min + ' % bunter Tinte (jetzt ' + pct + ' %)';
+    else why = 'Gleichstand der Farben: kein Element';
   }
   $('stElementWhy').textContent = why;
 
@@ -143,15 +147,16 @@ function updatePanel() {
   const legend = 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum';
   let text = legend;
   let warn = false;
-  if (st.filled === 0) text = s.kind === 'weapon' ? 'Zeichne die Wurfwaffe. Leicht fliegt schnell, dünn schneidet.' : text;
+  if (st.filled === 0) text = s.kind === 'weapon' ? 'Wurfwaffe: leicht fliegt schnell, dünn schneidet.' : text;
   else if (!st.bigEnough) { text = 'Noch zu klein: mindestens ' + min + ' Kästchen am Stück.'; warn = true; }
-  else if (st.drips > 0) { text = st.drips + ' Kästchen hängen nicht dran und tropfen ab.'; warn = true; }
+  else if (st.drips > 0) { text = st.drips === 1 ? '1 Kästchen hängt nicht dran und tropft ab.' : st.drips + ' Kästchen hängen nicht dran und tropfen ab.'; warn = true; }
   else if (left <= 0) { text = 'Tinte ist alle: radier etwas weg.'; warn = true; }
   if (s.lockNote && st.filled === 0) text = s.lockNote;
   if (s.askingBack) { text = s.backConfirm ? s.endMsg : 'Noch einmal tippen, dann ist die Zeichnung weg.'; warn = true; }
-  msg.textContent = text;
-  // where a mode shows its own line below (the solo stakes), the plain legend makes room
-  msg.classList.toggle('quiet', text === legend && $('drawExtra').childElementCount > 0);
+  // Where a mode has its own line below (the solo stake note), messages go
+  // there and this line stays away for good, so nothing changes height.
+  if (s.onStats && s.onStats.setMsg) s.onStats.setMsg(text === legend ? '' : text, warn);
+  else msg.textContent = text;
   msg.classList.toggle('warn', warn);
   $('drawDone').disabled = !st.valid;
 }
@@ -631,6 +636,7 @@ export function openDraw(opts) {
     extra.textContent = '';
     showScreen('scrDraw');
     if (opts.extra) S.onStats = opts.extra(extra) || null;
+    $('drawMsg').classList.toggle('quiet', !!(S.onStats && S.onStats.setMsg));
     selectToolQuiet(1);
     layout();
     analyse();

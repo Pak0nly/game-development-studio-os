@@ -89,7 +89,8 @@ function botPool() {
     const cells = decode(it.data);
     if (core.computeStats(cells, W, H, tuning, 'figure', tuning.ink.figureBudget).valid) own.push({ cells, source: 'gallery' });
   }
-  const built = SCRIBBLE_FIGURES.map((s) => ({ cells: s.cells, source: 'placeholder', name: s.name }));
+  const built = SCRIBBLE_FIGURES.map((s) => ({ cells: s.cells, source: 'placeholder', name: s.name,
+    weight: core.computeStats(s.cells, W, H, tuning, 'figure', tuning.ink.figureBudget).N }));
   return { own, built };
 }
 
@@ -105,7 +106,12 @@ function sameCells(a, b) {
 function pickBotDrawing(pool, used, taken) {
   const free = (list) => list.filter((d) => used.indexOf(d) === -1 && !(taken || []).some((t) => sameCells(t, d.cells)));
   let from = free(pool.own);
-  const built = free(pool.built);
+  // Placeholders: the first one a match hands out is a heavy figure, the
+  // later ones at least middle-weight, so the bots are no walkover.
+  let built = free(pool.built);
+  const placed = used.filter((d) => d.source === 'placeholder').length;
+  const strong = built.filter((d) => d.weight >= (placed === 0 ? 150 : 90));
+  if (strong.length > 0) built = strong;
   if (from.length === 0 || (built.length > 0 && Math.random() < 0.4)) from = built.length > 0 ? built : from;
   if (from.length === 0) from = pool.built.filter((d) => !(taken || []).some((t) => sameCells(t, d.cells)));
   if (from.length === 0) from = pool.built;

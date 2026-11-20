@@ -613,6 +613,9 @@ function stop(result) {
   if (!f) return;
   F = null;
   cancelAnimationFrame(raf);
+  // the steering finger may still be down: let go of it, so that the next
+  // screen gets its taps (also from another finger)
+  if (touch.on) { try { canvas.releasePointerCapture(touch.id); } catch (e) { /* already gone */ } }
   setInputActive(false);
   setBanner('');
   dashBtn.hidden = true;

@@ -163,12 +163,13 @@ $('btnFree').addEventListener('click', async () => {
   const te = tuning.element;
   const pctText = (v) => num(v * 100, 1).replace(',0', '');
   const topSpeed = (n) => num(ts.speedBase / (1 + n / ts.speedWeightRef), 0);
-  $('rulesWeight').textContent = 'Jedes Kästchen Tinte wiegt 1. Schwer schiebt hart, ist aber träge. Eine dicke, geschlossene Hülle schiebt bis zu '
-    + pctText(ts.pushPerPocket) + ' % härter, als sie wiegt.';
+  $('rulesWeight').textContent = 'Jedes Kästchen Tinte wiegt 1. Schwer schiebt hart, ist aber träge. Eine geschlossene Hülle mit dicker Wand schiebt bis zu '
+    + pctText(ts.pushPerPocket) + ' % härter, als sie wiegt: je Hohlraum-Kästchen (Kringel) +' + num(ts.pushPerPocket, 1) + '. Ein Kringel ist ein eingeschlossenes leeres Kästchen, das keine Tinte berührt.';
   $('rulesArmour').textContent = 'So viel hältst du aus: ' + ts.armourBase + ' als Grundwert, jedes Kästchen +' + num(ts.armourPerCell, 1)
-    + ', jedes ringsum eingeschlossene Kern-Kästchen noch +' + ts.armourPerCore + '.';
+    + ', jedes ringsum eingeschlossene Kern-Kästchen noch +' + ts.armourPerCore + '. Eine geschlossene Hülle mit dicker Wand bekommt +' + num(ts.armourPerPocket, 1)
+    + ' je Hohlraum-Kästchen (Kringel), höchstens so viele, wie sie Kästchen hat, die keine Klinge sind.';
   $('rulesSharp').textContent = 'Ein Kästchen ist Klinge, wenn es in keinem vollen 2 × 2-Block liegt, also auch schräge Striche. Mehr Klingen und ein höherer Klingen-Anteil heben die Schärfe. '
-    + 'Ein Schnitt macht so viel Schaden wie die Schärfe (stumpf: ' + num(ts.bluntDamage, 1) + ') und nimmt dazu ' + pctText(ts.sharpArmourCut) + ' % vom vollen Panzer des Getroffenen.';
+    + 'Eine stumpfe Berührung macht ' + num(ts.bluntDamage, 1) + ' Schaden. Ein Schnitt macht so viel wie die Schärfe, mindestens aber ' + num(ts.bluntDamage, 1) + ', und nimmt dazu ' + pctText(ts.sharpArmourCut) + ' % vom vollen Panzer des Getroffenen.';
   $('rulesSpeed').textContent = 'Nur die Tintenmenge zählt: ' + tuning.ink.minBodyCells + ' Kästchen laufen ' + topSpeed(tuning.ink.minBodyCells)
     + ' Kästchen pro Sekunde, ' + tuning.ink.figureBudget + ' nur noch ' + topSpeed(tuning.ink.figureBudget) + '.';
   const circle = $('rulesCircle');
