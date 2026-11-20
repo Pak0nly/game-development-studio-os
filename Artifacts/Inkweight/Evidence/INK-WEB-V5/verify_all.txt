@@ -1,0 +1,334 @@
+[phone] screenshot phone-01-start.png
+[phone] start figures note: Platzhalter-Kritzeleien. Zeichne selbst, dann hüpfen hier deine Figuren.
+[phone] screenshot phone-02-rules.png
+[phone] screenshot phone-03-rules-end.png
+[phone] screenshot phone-04-draw-first-hint.png
+[phone] stats after drawing: {"weight":"178","armour":"224","sharp":"2,1","speed":"11","element":"Glut","ink":"39","msg":"3 Kästchen hängen nicht dran und tropfen ab.","done":true}
+[phone] stat explanations: träge · dicke Hülle schiebt härter | volle Fläche schützt · 111 Kern-Punkte | 19 Klingen · Schnitt: auch 0,4 % Panzer | Kästchen pro Sekunde · leicht ist flink | schlägt Moos, verliert gegen Flut
+[phone] drawing screen fit at free drawing: {"bottom":772,"top":728,"ih":780,"sh":764,"ch":764,"sideSh":335,"sideCh":335,"canvas":351}
+[phone] screenshot phone-05-draw.png
+[phone] screenshot phone-06-gallery.png
+[phone] gallery items in localStorage: 1
+[phone] ring setup: main button bottom 483 of 780
+[phone] screenshot phone-07-ring-setup.png
+[phone] draw timer shows 27
+[phone] drawing screen fit at ring drawing: {"bottom":772,"top":728,"ih":780,"sh":764,"ch":764,"sideSh":335,"sideCh":335,"canvas":351}
+[phone] screenshot phone-08-ring-draw.png
+[phone] line-up: main button bottom 571 of 780, bot styles shown: stürmt drauflos | kreist und stößt zu (core botStyle 001)
+[phone] line-up bots: placeholder 157, placeholder 98
+[phone] screenshot phone-09-ring-lineup.png
+[phone] screenshot phone-10-ring-fight.png
+[phone] screenshot phone-11-ring-fight-later.png
+[phone] round 1: Runde 1 geht an Bot 2 | Du: aus dem Ring geflogen Bot 3: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger, die Au
+[phone] screenshot phone-12-ring-lost-round-tip.png
+[phone] screenshot phone-13-ring-round-result.png
+[phone] next drawing: Runde 2 · 253 Tinte (Aufholtinte +33) · Uhr startet beim ersten Strich
+[phone] round 2: Runde 2 geht an Bot 2 | Bot 3: aus dem Ring geflogen Du: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger, die Au
+[phone] next drawing: Runde 3 · 286 Tinte (Aufholtinte +66) · Uhr startet beim ersten Strich
+[phone] round 3: Bot 2 gewinnt das Spiel! | Bot 2 Du: aus dem Ring geflogen Bot 3: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger. 
+[phone] win dots 0 : 3 : 0 against score 0 : 3 : 0
+[phone] screenshot phone-14-ring-match-result.png
+[phone] ring match over after 3 rounds: Bot 2 gewinnt das Spiel!
+[phone] screenshot phone-15-solo-intro.png
+[phone] drawing screen fit at weapon drawing: {"bottom":772,"top":728,"ih":780,"sh":764,"ch":764,"sideSh":335,"sideCh":335,"canvas":351}
+[phone] weapon stats: {"weight":"27","armour":"0,52","sharp":"4,2","speed":"41","element":"Neutral","ink":"33","msg":"Strich = Klinge · mehr Klingen, mehr Schaden","done":true}
+[phone] weapon rows: Takt Flug | Takt 0,52 (core 0,52) | Flug 41 (core 41) | schwer stößt Gegner weiter zurück | Sekunden je Wurf · leicht wirft öfter | 27 Klingen · Treffer nimmt 4,2 Panzer | Kästchen pro Sekunde · leicht fliegt schneller | Strich = Klinge · mehr Klingen, mehr Schaden
+[phone] screenshot phone-16-solo-weapon.png
+[phone] wave 1 stakes: Einsatz ×11 Gegner · 120 Beute | Einsatz ×1,52 Gegner · 180 Beute | Einsatz ×23 Gegner · 240 Beute || picked 0: ×1 · als Gegner: Treffer bis 1,0 · Tempo 14,5 · Panzer 60Die Zeilen oben zeigen die Zeichnung als Figur.
+[phone] drawing screen fit at enemy drawing: {"bottom":772,"top":728,"ih":780,"sh":764,"ch":764,"sideSh":399,"sideCh":399,"canvas":287}
+[phone] screenshot phone-17-solo-enemy-draw.png
+[phone] screenshot phone-18-solo-fight.png
+[phone] solo fight 1 ended
+[phone] shop: Tinte im Beutel: 120 · Panzer: 219 von 224. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 60 Tinte.
+[phone] screenshot phone-19-solo-shop.png
+[phone] screenshot phone-20-solo-hero-redraw.png
+[phone] redraw (260 Tinte): {"weight":"186","armour":"233","sharp":"2,1","speed":"10","element":"Moos","ink":"71","msg":"3 Kästchen hängen nicht dran und tropfen ab.","done":true}
+[phone] bought #shopHero: Dein Held ist gewachsen.
+[phone] wave 2 stakes: Einsatz ×12 Gegner · 170 Beute | Einsatz ×1,53 Gegner · 255 Beute | Einsatz ×24 Gegner · 340 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 42Die Zeilen oben zeigen die Zeichnung als Figur.
+[phone] solo fight 2 ended
+[phone] shop: Tinte im Beutel: 315 · Panzer: 183 von 233. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 90 Tinte.
+[phone] redraw (75 Tinte): {"weight":"30","armour":"0,55","sharp":"4,2","speed":"40","element":"Neutral","ink":"45","msg":"Strich = Klinge · mehr Klingen, mehr Schaden","done":true}
+[phone] bought #shopWeapon: Neue Waffe eingepackt.
+[phone] wave 3 stakes: Einsatz ×13 Gegner · 228 Beute | Einsatz ×1,54 Gegner · 344 Beute | Einsatz ×26 Gegner · 456 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 43Die Zeilen oben zeigen die Zeichnung als Figur.
+[phone] solo fight 3 ended
+[phone] shop: Tinte im Beutel: 569 · Panzer: 110 von 233. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 120 Tinte.
+[phone] bought #shopColour: Glut gehört jetzt dir.
+[phone] wave 4 stakes: Einsatz ×14 Gegner · 300 Beute | Einsatz ×1,56 Gegner · 450 Beute | Einsatz ×28 Gegner · 600 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 37Die Zeilen oben zeigen die Zeichnung als Figur.
+[phone] solo fight 4 ended
+[phone] shop: Tinte im Beutel: 899 · Panzer: 8 von 233. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 150 Tinte.
+[phone] bought #shopHeal: Geflickt.
+[phone] wave 5 stakes: Einsatz ×15 Gegner · 380 Beute | Einsatz ×1,57 Gegner · 567 Beute | Einsatz ×210 Gegner · 760 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 41Die Zeilen oben zeigen die Zeichnung als Figur.
+[phone] solo fight 5 ended
+[phone] screenshot phone-21-solo-result.png
+[phone] solo run ended after 5 fights: Aus und vorbei | Dein Panzer ist zerbrochen (Welle 5 von 5). 1412 Tinte gesammelt · neuer Bestwert auf diesem Gerät Geschaffte Wellen: 4 von 5
+[phone] fight events seen in this run: {"rams":103,"hits":736,"sharpHits":283}
+[phone] shop purchases made: #shopHero #shopWeapon #shopColour #shopHeal
+[phone] start figures note with a filled gallery: ""
+[phone] screenshot phone-22-start-own-figures.png
+PASS phone: drew a figure, Ring match finished after 3 rounds, solo run played 5 fights with 4 different shop purchases, 103 rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (76 s)
+[landscape] screenshot landscape-01-start.png
+[landscape] start figures note: Platzhalter-Kritzeleien. Zeichne selbst, dann hüpfen hier deine Figuren.
+[landscape] screenshot landscape-02-rules.png
+[landscape] screenshot landscape-03-rules-end.png
+[landscape] screenshot landscape-04-draw-first-hint.png
+[landscape] stats after drawing: {"weight":"178","armour":"224","sharp":"2,1","speed":"11","element":"Glut","ink":"39","msg":"3 Kästchen hängen nicht dran und tropfen ab.","done":true}
+[landscape] stat explanations: träge · dicke Hülle schiebt härter | volle Fläche schützt · 111 Kern-Punkte | 19 Klingen · Schnitt: auch 0,4 % Panzer | Kästchen pro Sekunde · leicht ist flink | schlägt Moos, verliert gegen Flut
+[landscape] drawing screen fit at free drawing: {"bottom":338,"top":300,"ih":400,"sh":384,"ch":384,"sideSh":340,"sideCh":340,"canvas":324}
+[landscape] screenshot landscape-05-draw.png
+[landscape] screenshot landscape-06-gallery.png
+[landscape] gallery items in localStorage: 1
+[landscape] ring setup: main button bottom 327 of 400
+[landscape] screenshot landscape-07-ring-setup.png
+[landscape] draw timer shows 27
+[landscape] drawing screen fit at ring drawing: {"bottom":338,"top":300,"ih":400,"sh":384,"ch":384,"sideSh":340,"sideCh":340,"canvas":324}
+[landscape] screenshot landscape-08-ring-draw.png
+[landscape] line-up: main button bottom 371 of 400, bot styles shown: stürmt drauflos | kreist und stößt zu (core botStyle 001)
+[landscape] line-up bots: placeholder 157, placeholder 98
+[landscape] screenshot landscape-09-ring-lineup.png
+[landscape] screenshot landscape-10-ring-fight.png
+[landscape] screenshot landscape-11-ring-fight-later.png
+[landscape] round 1: Runde 1 geht an Bot 2 | Du: aus dem Ring geflogen Bot 3: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger, die Au
+[landscape] screenshot landscape-12-ring-lost-round-tip.png
+[landscape] screenshot landscape-13-ring-round-result.png
+[landscape] next drawing: Runde 2 · 253 Tinte (Aufholtinte +33) · Uhr startet beim ersten Strich
+[landscape] round 2: Runde 2 geht an Bot 2 | Bot 3: aus dem Ring geflogen Du: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger, die Au
+[landscape] next drawing: Runde 3 · 286 Tinte (Aufholtinte +66) · Uhr startet beim ersten Strich
+[landscape] round 3: Bot 2 gewinnt das Spiel! | Bot 2 Bot 3: aus dem Ring geflogen Du: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger. 
+[landscape] win dots 0 : 3 : 0 against score 0 : 3 : 0
+[landscape] screenshot landscape-14-ring-match-result.png
+[landscape] ring match over after 3 rounds: Bot 2 gewinnt das Spiel!
+[landscape] screenshot landscape-15-solo-intro.png
+[landscape] drawing screen fit at weapon drawing: {"bottom":338,"top":300,"ih":400,"sh":384,"ch":384,"sideSh":340,"sideCh":340,"canvas":324}
+[landscape] weapon stats: {"weight":"27","armour":"0,52","sharp":"4,2","speed":"41","element":"Neutral","ink":"33","msg":"Strich = Klinge · mehr Klingen, mehr Schaden","done":true}
+[landscape] weapon rows: Takt Flug | Takt 0,52 (core 0,52) | Flug 41 (core 41) | schwer stößt Gegner weiter zurück | Sekunden je Wurf · leicht wirft öfter | 27 Klingen · Treffer nimmt 4,2 Panzer | Kästchen pro Sekunde · leicht fliegt schneller | Strich = Klinge · mehr Klingen, mehr Schaden
+[landscape] screenshot landscape-16-solo-weapon.png
+[landscape] wave 1 stakes: Einsatz ×11 Gegner · 120 Beute | Einsatz ×1,52 Gegner · 180 Beute | Einsatz ×23 Gegner · 240 Beute || picked 0: ×1 · als Gegner: Treffer bis 1,0 · Tempo 14,5 · Panzer 60Die Zeilen oben zeigen die Zeichnung als Figur.
+[landscape] drawing screen fit at enemy drawing: {"bottom":372,"top":334,"ih":400,"sh":384,"ch":384,"sideSh":340,"sideCh":340,"canvas":324}
+[landscape] screenshot landscape-17-solo-enemy-draw.png
+[landscape] screenshot landscape-18-solo-fight.png
+[landscape] solo fight 1 ended
+[landscape] shop: Tinte im Beutel: 120 · Panzer: 218 von 224. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 60 Tinte.
+[landscape] screenshot landscape-19-solo-shop.png
+[landscape] screenshot landscape-20-solo-hero-redraw.png
+[landscape] redraw (260 Tinte): {"weight":"186","armour":"233","sharp":"2,1","speed":"10","element":"Moos","ink":"71","msg":"3 Kästchen hängen nicht dran und tropfen ab.","done":true}
+[landscape] bought #shopHero: Dein Held ist gewachsen.
+[landscape] wave 2 stakes: Einsatz ×12 Gegner · 170 Beute | Einsatz ×1,53 Gegner · 255 Beute | Einsatz ×24 Gegner · 340 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 42Die Zeilen oben zeigen die Zeichnung als Figur.
+[landscape] solo fight 2 ended
+[landscape] shop: Tinte im Beutel: 315 · Panzer: 184 von 233. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 90 Tinte.
+[landscape] redraw (75 Tinte): {"weight":"30","armour":"0,55","sharp":"4,2","speed":"40","element":"Neutral","ink":"45","msg":"Strich = Klinge · mehr Klingen, mehr Schaden","done":true}
+[landscape] bought #shopWeapon: Neue Waffe eingepackt.
+[landscape] wave 3 stakes: Einsatz ×13 Gegner · 228 Beute | Einsatz ×1,54 Gegner · 344 Beute | Einsatz ×26 Gegner · 456 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 43Die Zeilen oben zeigen die Zeichnung als Figur.
+[landscape] solo fight 3 ended
+[landscape] shop: Tinte im Beutel: 569 · Panzer: 113 von 233. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 120 Tinte.
+[landscape] bought #shopColour: Glut gehört jetzt dir.
+[landscape] wave 4 stakes: Einsatz ×14 Gegner · 300 Beute | Einsatz ×1,56 Gegner · 450 Beute | Einsatz ×28 Gegner · 600 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 37Die Zeilen oben zeigen die Zeichnung als Figur.
+[landscape] solo fight 4 ended
+[landscape] screenshot landscape-21-solo-result.png
+[landscape] solo run ended after 4 fights: Aus und vorbei | Dein Panzer ist zerbrochen (Welle 4 von 5). 1094 Tinte gesammelt · neuer Bestwert auf diesem Gerät Geschaffte Wellen: 3 von 5
+[landscape] fight events seen in this run: {"rams":82,"hits":618,"sharpHits":232}
+[landscape] shop purchases made: #shopHero #shopWeapon #shopColour
+[landscape] start figures note with a filled gallery: ""
+[landscape] screenshot landscape-22-start-own-figures.png
+PASS landscape: drew a figure, Ring match finished after 3 rounds, solo run played 4 fights with 3 different shop purchases, 82 rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (69 s)
+[desktop] screenshot desktop-01-start.png
+[desktop] start figures note: Platzhalter-Kritzeleien. Zeichne selbst, dann hüpfen hier deine Figuren.
+[desktop] screenshot desktop-02-rules.png
+[desktop] screenshot desktop-03-rules-end.png
+[desktop] stats after drawing: {"weight":"178","armour":"224","sharp":"2,1","speed":"11","element":"Glut","ink":"39","msg":"3 Kästchen hängen nicht dran und tropfen ab.","done":true}
+[desktop] stat explanations: träge · dicke Hülle schiebt härter | volle Fläche schützt · 111 Kern-Punkte | 19 Klingen · Schnitt: auch 0,4 % Panzer | Kästchen pro Sekunde · leicht ist flink | schlägt Moos, verliert gegen Flut
+[desktop] drawing screen fit at free drawing: {"bottom":599,"top":555,"ih":800,"sh":784,"ch":784,"sideSh":708,"sideCh":708,"canvas":630}
+[desktop] screenshot desktop-04-draw.png
+[desktop] screenshot desktop-05-gallery.png
+[desktop] gallery items in localStorage: 1
+[desktop] ring setup: main button bottom 412 of 800
+[desktop] screenshot desktop-06-ring-setup.png
+[desktop] draw timer shows 27
+[desktop] drawing screen fit at ring drawing: {"bottom":599,"top":555,"ih":800,"sh":784,"ch":784,"sideSh":708,"sideCh":708,"canvas":630}
+[desktop] screenshot desktop-07-ring-draw.png
+[desktop] line-up: main button bottom 572 of 800, bot styles shown: kreist und stößt zu | stürmt drauflos (core botStyle 010)
+[desktop] line-up bots: placeholder 98, placeholder 157
+[desktop] screenshot desktop-08-ring-lineup.png
+[desktop] screenshot desktop-09-ring-fight.png
+[desktop] screenshot desktop-10-ring-fight-later.png
+[desktop] round 1: Runde 1 geht an Bot 3 | Du: aus dem Ring geflogen Bot 2: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger, die Au
+[desktop] screenshot desktop-11-ring-lost-round-tip.png
+[desktop] screenshot desktop-12-ring-round-result.png
+[desktop] next drawing: Runde 2 · 253 Tinte (Aufholtinte +33) · Uhr startet beim ersten Strich
+[desktop] round 2: Runde 2 geht an Bot 3 | Du: aus dem Ring geflogen Bot 2: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger, die Au
+[desktop] next drawing: Runde 3 · 286 Tinte (Aufholtinte +66) · Uhr startet beim ersten Strich
+[desktop] round 3: Bot 3 gewinnt das Spiel! | Bot 3 Du: aus dem Ring geflogen Bot 2: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger. 
+[desktop] win dots 0 : 0 : 3 against score 0 : 0 : 3
+[desktop] screenshot desktop-13-ring-match-result.png
+[desktop] ring match over after 3 rounds: Bot 3 gewinnt das Spiel!
+[desktop] screenshot desktop-14-solo-intro.png
+[desktop] drawing screen fit at weapon drawing: {"bottom":599,"top":555,"ih":800,"sh":784,"ch":784,"sideSh":708,"sideCh":708,"canvas":630}
+[desktop] weapon stats: {"weight":"27","armour":"0,52","sharp":"4,2","speed":"41","element":"Neutral","ink":"33","msg":"Strich = Klinge · mehr Klingen, mehr Schaden","done":true}
+[desktop] weapon rows: Takt Flug | Takt 0,52 (core 0,52) | Flug 41 (core 41) | schwer stößt Gegner weiter zurück | Sekunden je Wurf · leicht wirft öfter | 27 Klingen · Treffer nimmt 4,2 Panzer | Kästchen pro Sekunde · leicht fliegt schneller | Strich = Klinge · mehr Klingen, mehr Schaden
+[desktop] screenshot desktop-15-solo-weapon.png
+[desktop] wave 1 stakes: Einsatz ×11 Gegner · 120 Beute | Einsatz ×1,52 Gegner · 180 Beute | Einsatz ×23 Gegner · 240 Beute || picked 0: ×1 · als Gegner: Treffer bis 0,9 · Tempo 14,5 · Panzer 60Die Zeilen oben zeigen die Zeichnung als Figur.
+[desktop] drawing screen fit at enemy drawing: {"bottom":631,"top":587,"ih":800,"sh":784,"ch":784,"sideSh":708,"sideCh":708,"canvas":630}
+[desktop] screenshot desktop-16-solo-enemy-draw.png
+[desktop] screenshot desktop-17-solo-fight.png
+[desktop] solo fight 1 ended
+[desktop] shop: Tinte im Beutel: 120 · Panzer: 213 von 217. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 60 Tinte.
+[desktop] screenshot desktop-18-solo-shop.png
+[desktop] screenshot desktop-19-solo-hero-redraw.png
+[desktop] redraw (260 Tinte): {"weight":"180","armour":"225","sharp":"2,1","speed":"11","element":"Moos","ink":"77","msg":"3 Kästchen hängen nicht dran und tropfen ab.","done":true}
+[desktop] bought #shopHero: Dein Held ist gewachsen.
+[desktop] wave 2 stakes: Einsatz ×12 Gegner · 170 Beute | Einsatz ×1,53 Gegner · 255 Beute | Einsatz ×24 Gegner · 340 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 42Die Zeilen oben zeigen die Zeichnung als Figur.
+[desktop] solo fight 2 ended
+[desktop] shop: Tinte im Beutel: 315 · Panzer: 176 von 225. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 90 Tinte.
+[desktop] redraw (75 Tinte): {"weight":"30","armour":"0,55","sharp":"4,2","speed":"40","element":"Neutral","ink":"45","msg":"Strich = Klinge · mehr Klingen, mehr Schaden","done":true}
+[desktop] bought #shopWeapon: Neue Waffe eingepackt.
+[desktop] wave 3 stakes: Einsatz ×13 Gegner · 228 Beute | Einsatz ×1,54 Gegner · 344 Beute | Einsatz ×26 Gegner · 456 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 43Die Zeilen oben zeigen die Zeichnung als Figur.
+[desktop] solo fight 3 ended
+[desktop] shop: Tinte im Beutel: 569 · Panzer: 113 von 225. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 120 Tinte.
+[desktop] bought #shopColour: Glut gehört jetzt dir.
+[desktop] wave 4 stakes: Einsatz ×14 Gegner · 300 Beute | Einsatz ×1,56 Gegner · 450 Beute | Einsatz ×28 Gegner · 600 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 37Die Zeilen oben zeigen die Zeichnung als Figur.
+[desktop] solo fight 4 ended
+[desktop] shop: Tinte im Beutel: 899 · Panzer: 19 von 225. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 150 Tinte.
+[desktop] bought #shopHeal: Geflickt.
+[desktop] wave 5 stakes: Einsatz ×15 Gegner · 380 Beute | Einsatz ×1,57 Gegner · 567 Beute | Einsatz ×210 Gegner · 760 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 41Die Zeilen oben zeigen die Zeichnung als Figur.
+[desktop] solo fight 5 ended
+[desktop] screenshot desktop-20-solo-result.png
+[desktop] solo run ended after 5 fights: Aus und vorbei | Dein Panzer ist zerbrochen (Welle 5 von 5). 1574 Tinte gesammelt · neuer Bestwert auf diesem Gerät Geschaffte Wellen: 4 von 5
+[desktop] fight events seen in this run: {"rams":119,"hits":782,"sharpHits":317}
+[desktop] shop purchases made: #shopHero #shopWeapon #shopColour #shopHeal
+[desktop] start figures note with a filled gallery: ""
+[desktop] screenshot desktop-21-start-own-figures.png
+PASS desktop: drew a figure, Ring match finished after 3 rounds, solo run played 5 fights with 4 different shop purchases, 119 rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (77 s)
+[artifact] start figures note: Platzhalter-Kritzeleien. Zeichne selbst, dann hüpfen hier deine Figuren.
+[artifact] stats after drawing: {"weight":"178","armour":"224","sharp":"2,1","speed":"11","element":"Glut","ink":"39","msg":"3 Kästchen hängen nicht dran und tropfen ab.","done":true}
+[artifact] stat explanations: träge · dicke Hülle schiebt härter | volle Fläche schützt · 111 Kern-Punkte | 19 Klingen · Schnitt: auch 0,4 % Panzer | Kästchen pro Sekunde · leicht ist flink | schlägt Moos, verliert gegen Flut
+[artifact] drawing screen fit at free drawing: {"bottom":772,"top":728,"ih":780,"sh":764,"ch":764,"sideSh":335,"sideCh":335,"canvas":351}
+[artifact] gallery items in localStorage: 1
+[artifact] ring setup: main button bottom 483 of 780
+[artifact] draw timer shows 26
+[artifact] drawing screen fit at ring drawing: {"bottom":772,"top":728,"ih":780,"sh":764,"ch":764,"sideSh":335,"sideCh":335,"canvas":351}
+[artifact] line-up: main button bottom 571 of 780, bot styles shown: stürmt drauflos | kreist und stößt zu (core botStyle 001)
+[artifact] line-up bots: placeholder 157, placeholder 78
+[artifact] round 1: Runde 1 geht an Bot 2 | Du: aus dem Ring geflogen Bot 3: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger, die Au
+[artifact] next drawing: Runde 2 · 253 Tinte (Aufholtinte +33) · Uhr startet beim ersten Strich
+[artifact] round 2: Runde 2 geht an Bot 2 | Bot 3: aus dem Ring geflogen Du: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger, die Au
+[artifact] next drawing: Runde 3 · 286 Tinte (Aufholtinte +66) · Uhr startet beim ersten Strich
+[artifact] round 3: Bot 2 gewinnt das Spiel! | Bot 2 Bot 3: aus dem Ring geflogen Du: aus dem Ring geflogen Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger. 
+[artifact] win dots 0 : 3 : 0 against score 0 : 3 : 0
+[artifact] ring match over after 3 rounds: Bot 2 gewinnt das Spiel!
+[artifact] drawing screen fit at weapon drawing: {"bottom":772,"top":728,"ih":780,"sh":764,"ch":764,"sideSh":335,"sideCh":335,"canvas":351}
+[artifact] weapon stats: {"weight":"27","armour":"0,52","sharp":"4,2","speed":"41","element":"Neutral","ink":"33","msg":"Strich = Klinge · mehr Klingen, mehr Schaden","done":true}
+[artifact] weapon rows: Takt Flug | Takt 0,52 (core 0,52) | Flug 41 (core 41) | schwer stößt Gegner weiter zurück | Sekunden je Wurf · leicht wirft öfter | 27 Klingen · Treffer nimmt 4,2 Panzer | Kästchen pro Sekunde · leicht fliegt schneller | Strich = Klinge · mehr Klingen, mehr Schaden
+[artifact] wave 1 stakes: Einsatz ×11 Gegner · 120 Beute | Einsatz ×1,52 Gegner · 180 Beute | Einsatz ×23 Gegner · 240 Beute || picked 0: ×1 · als Gegner: Treffer bis 1,0 · Tempo 14,5 · Panzer 60Die Zeilen oben zeigen die Zeichnung als Figur.
+[artifact] drawing screen fit at enemy drawing: {"bottom":772,"top":728,"ih":780,"sh":764,"ch":764,"sideSh":399,"sideCh":399,"canvas":287}
+[artifact] solo fight 1 ended
+[artifact] shop: Tinte im Beutel: 120 · Panzer: 218 von 224. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 60 Tinte.
+[artifact] redraw (260 Tinte): {"weight":"186","armour":"233","sharp":"2,1","speed":"10","element":"Moos","ink":"71","msg":"3 Kästchen hängen nicht dran und tropfen ab.","done":true}
+[artifact] bought #shopHero: Dein Held ist gewachsen.
+[artifact] wave 2 stakes: Einsatz ×12 Gegner · 170 Beute | Einsatz ×1,53 Gegner · 255 Beute | Einsatz ×24 Gegner · 340 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 42Die Zeilen oben zeigen die Zeichnung als Figur.
+[artifact] solo fight 2 ended
+[artifact] shop: Tinte im Beutel: 315 · Panzer: 180 von 233. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 90 Tinte.
+[artifact] redraw (75 Tinte): {"weight":"30","armour":"0,55","sharp":"4,2","speed":"40","element":"Neutral","ink":"45","msg":"Strich = Klinge · mehr Klingen, mehr Schaden","done":true}
+[artifact] bought #shopWeapon: Neue Waffe eingepackt.
+[artifact] wave 3 stakes: Einsatz ×13 Gegner · 228 Beute | Einsatz ×1,54 Gegner · 344 Beute | Einsatz ×26 Gegner · 456 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 43Die Zeilen oben zeigen die Zeichnung als Figur.
+[artifact] solo fight 3 ended
+[artifact] shop: Tinte im Beutel: 569 · Panzer: 106 von 233. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 120 Tinte.
+[artifact] bought #shopColour: Glut gehört jetzt dir.
+[artifact] wave 4 stakes: Einsatz ×14 Gegner · 300 Beute | Einsatz ×1,56 Gegner · 450 Beute | Einsatz ×28 Gegner · 600 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 37Die Zeilen oben zeigen die Zeichnung als Figur.
+[artifact] solo fight 4 ended
+[artifact] shop: Tinte im Beutel: 899 · Panzer: 18 von 233. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 150 Tinte.
+[artifact] bought #shopHeal: Geflickt.
+[artifact] wave 5 stakes: Einsatz ×15 Gegner · 380 Beute | Einsatz ×1,57 Gegner · 567 Beute | Einsatz ×210 Gegner · 760 Beute || picked 1: ×1,5 · als Gegner: Treffer bis 1,2 · Tempo 16,0 · Panzer 41Die Zeilen oben zeigen die Zeichnung als Figur.
+[artifact] solo fight 5 ended
+[artifact] solo run ended after 5 fights: Aus und vorbei | Dein Panzer ist zerbrochen (Welle 5 von 5). 1250 Tinte gesammelt · neuer Bestwert auf diesem Gerät Geschaffte Wellen: 4 von 5
+[artifact] fight events seen in this run: {"rams":110,"hits":838,"sharpHits":345}
+[artifact] shop purchases made: #shopHero #shopWeapon #shopColour #shopHeal
+[artifact] start figures note with a filled gallery: ""
+PASS artifact: drew a figure, Ring match finished after 3 rounds, solo run played 5 fights with 4 different shop purchases, 110 rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (78 s)
+[duo] setup note: Gezeichnet wird reihum auf diesem Gerät. Gespielt wird mit Tastatur; den Finger hat nur der erste Mensch.
+[duo] hand-over: Spieler 1 zeichnet
+[duo] player 2 waits for the clock (30 s) with: Noch zu klein: mindestens 12 Kästchen am Stück.
+[duo] time-out notice: Zeit um! Spieler 2 hatte noch keine fertige Figur (mindestens 12 Kästchen am Stück). Diese Runde springt der Platzhalter „Klotz“ ein.
+[duo] hud: 1 Spieler 1 ○○○ 2 Spieler 2 ○○○ Ring schrumpft in 3 s
+PASS duo: two humans drew in turns, a drawing timed out and got a placeholder, both keyboard zones were held, leaving took two taps, 0 console errors (38 s)
+[checks] ok: double tap on "Frei zeichnen" (three quick taps) opens only the drawing screen
+[checks] second tap landed at 200,576
+[checks] first-run hint: Dünne Striche sind Klingen, auch schräge. | Gefüllte Flächen sind Panzer. | Was nicht dranhängt, tropft ab.
+[checks] ok: first-run hint shows three things (blades, armour, drips), fits the sheet (65 of 351 px) and closes with one tap
+[checks] ok: sharpness shows a decimal comma: 4,1 · line: "31 Klingen · Schnitt: auch 0,4 % Panzer"
+[checks] block alone: sharpness 1, blade marks 0, armour 217 ("keine Klinge · dünner Strich schneidet"); with a blade of 11 cells: sharpness 2, blade marks 11 ("11 Klingen · Schnitt: auch 0,4 % Panzer")
+[checks] screenshot checks-10-block-with-blade.png
+[checks] ok: a block with a blade shows a higher sharpness than the block alone (1 -> 2), 11 blade marks
+[checks] diagonal stroke: weight 37, blade marks 37, core S 37, sharpness 4,0
+[checks] light blade slashes found on the diagonal: 19 of 19 probed cells
+[checks] screenshot checks-11-diagonal-blade.png
+[checks] ok: a diagonal stroke is a blade: 37 of 37 cells carry the blade mark
+[checks] thick closed shell: weight 180, pocket marks 100, core P 100, line "Schub 190,0 · Hohlraum schiebt mit"
+[checks] screenshot checks-12-shell-pockets.png
+[checks] ok: a thick closed shell shows pocket marks and its push weight: "Schub 190,0 · Hohlraum schiebt mit"
+[checks] thin closed frame: pocket cells 144, counted 0, rings drawn 0, line "Hohlraum zählt erst mit dicker Wand"
+[checks] ok: a thin frame shows no pocket rings and says why
+[checks] element lines: [Neutral | ab 30 % bunter Tinte (jetzt 17 %)] [Glut | schlägt Moos, verliert gegen Flut] [Neutral | Gleichstand: kein Element] [Flut | schlägt Glut, verliert gegen Moos]
+[checks] ok: element line: below 30 % coloured ink, at 30 %, a tie and a plurality each say the truth
+[checks] ok: one loose cell: "1 Kästchen hängt nicht dran und tropft ab."
+[checks] ok: black drawing: Element "Neutral", line "Schwarz ist neutral: kein Element"
+[checks] message while asking: Noch einmal tippen, dann ist die Zeichnung weg.
+[checks] screenshot checks-01-back-asks.png
+[checks] ok: "Zurück" with strokes asks first ("Verwerfen?") and keeps the drawing; without strokes it leaves at once
+[checks] finger left the canvas at the right edge and came back 16 rows lower: 10 cells painted
+[checks] ok: a finger outside the canvas paints nothing (10 cells instead of a line down the edge)
+[checks] screenshot checks-02-finger-left-canvas.png
+[checks] stroke of 8 cells, phone rotated, finger moved on: 7 cells painted
+[checks] screenshot checks-03-rotated-mid-stroke.png
+[checks] ok: rotation in a stroke ends the stroke (7 cells, no line across the sheet)
+[checks] ink left 0, message: Tinte ist alle: radier etwas weg.
+[checks] screenshot checks-04-ink-empty.png
+[checks] ok: ink at 0 says "Tinte ist alle: radier etwas weg." in the warning colour
+[checks] ok: double tap on "Los, zeichnen!": clock still at 30, nothing painted
+[checks] Ring "Ende" first tap: Spiel beenden? | Noch einmal tippen, dann endet das ganze Spiel.
+[checks] screenshot checks-13-ring-ende-asks.png
+[checks] ok: "Ende" while drawing for the Ring asks "Spiel beenden?" and says that the whole game ends
+[checks] bots that first took the gallery copy of my drawing: 1; I drew it again: 1; bots with it in the line-up: 0
+[checks] screenshot checks-05-lineup-no-twin.png
+[checks] ok: a bot that had picked a drawing identical to mine got another one before the line-up
+[checks] screenshot checks-06-fight-sideways-stains.png
+[checks] stained pixels before the rotation 159, after 159, rotated back 159
+[checks] ok: ink stains survive turning the phone in a fight (159 -> 159 -> 159 stained pixels)
+[checks] stakes for a big enemy in wave 1: Einsatz ×11 Gegner · 120 Beute -> ×1 · als Gegner: Treffer 0,7 · Tempo 7,1 · Panzer 95Tinte ist alle | Einsatz ×1,51 Gegner · 180 Beute -> ×1,5 · als Gegner: Treffer 1,1 · Tempo 7,8 · Panzer 131Tinte ist alle | Einsatz ×21 Gegner · 240 Beute -> ×2 · als Gegner: Treffer 1,7 · Tempo 8,6 · Panzer 175Tinte ist alle
+[checks] enemy copy per stake, shown Tempo 7.1 / 7.8 / 8.6 Panzer 95 / 131 / 175, core Tempo 7.13 / 7.84 / 8.55 Panzer 94.8..94.8 / 131.2..131.3 / 174.9..175.1
+[checks] touch of the big enemy per stake, shown 0.7 / 1.1 / 1.7, core 0.656 / 1.057 / 1.695
+[checks] screenshot checks-07-stakes-honest.png
+[checks] ok: every stake says what it does (more loot, the real touch of this enemy with its crush, more speed, tougher or weaker copies)
+[checks] solo enemy "Ende" first tap: Lauf beenden? | Noch einmal tippen, dann endet der ganze Lauf.
+[checks] screenshot checks-14-solo-ende-asks.png
+[checks] ok: "Ende" on the solo enemy screen asks "Lauf beenden?" and says that the whole run ends
+[checks] loss by armour (hero armour set to 0 through the debug hook): Aus und vorbei | Dein Panzer ist zerbrochen (Welle 1 von 5). 0 Tinte gesammelt · Bestwert: 0 Geschaffte Wellen: 0 von 5
+[checks] screenshot checks-08-solo-lost-armour.png
+[checks] ok: solo loss by armour shows its result screen
+[checks] HUD shortly before the time limit: Dein Panzer Welle 1 von 5 · Gegner 1 · Beutel 0 · noch 4 s
+[checks] loss by time (fight clock set to 4 s before the limit through the debug hook): Aus und vorbei | Die Zeit ist um: ein Kampf darf höchstens 3 Minuten dauern. 0 Tinte gesammelt · Bestwert: 0 Geschaffte Wellen: 0 von 5
+[checks] screenshot checks-09-solo-lost-time.png
+[checks] ok: solo loss by time shows its result screen
+PASS checks: 22 single checks passed (double taps, asking before discarding, ink empty, finger off the canvas, rotation in a stroke, bot twin, stains, honest stakes, both solo loss paths; version 2: block with blade, diagonal blade, pocket marks, what Ende asks), 0 console errors, 0 network requests (60 s)
+[stable] 400x780 first-run hint: 19 % of the sheet height, inside the sheet, touches go through to the canvas
+[stable] 400x780 free drawing: canvas 24.5 76.2 351 351 | in the first stroke 24.5 76.2 351 351 | after it 24.5 76.2 351 351 | full figure 24.5 76.2 351 351 | main button bottom 772 of 780, scroll 0
+[stable] 400x780 ring drawing: canvas 24.5 76.2 351 351 | in the first stroke 24.5 76.2 351 351 | after it 24.5 76.2 351 351 | full figure 24.5 76.2 351 351 | main button bottom 772 of 780, scroll 0
+[stable] 400x780 solo hero: canvas 24.5 76.2 351 351 | in the first stroke 24.5 76.2 351 351 | after it 24.5 76.2 351 351 | full figure 24.5 76.2 351 351 | main button bottom 772 of 780, scroll 0
+[stable] 400x780 solo weapon: canvas 24.5 76.2 351 351 | in the first stroke 24.5 76.2 351 351 | after it 24.5 76.2 351 351 | full figure 24.5 76.2 351 351 | main button bottom 772 of 780, scroll 0
+[stable] 400x780 solo enemy: canvas 56.5 76 287 287 | in the first stroke 56.5 76 287 287 | after it 56.5 76 287 287 | full figure 56.5 76 287 287 | main button bottom 772 of 780, scroll 0
+[stable] 400x780 stake line at x2, uncut: ×2 · als Gegner: Treffer bis 1,9 · Tempo 12,6 · Panzer 148 || 3 Kästchen tropfen ab
+[stable] shop with the steering finger still down, second finger on "Flicken": "Geflickt." | Tinte im Beutel: 120 · Panzer: 72 von 143. Dein Panzer heilt nicht von selbst: nur „Flicken“ bringt ihn zurück. Du darfst ein Upgrade kaufen, es kostet 60 Tinte.
+[stable] 400x660 first-run hint: 27 % of the sheet height, inside the sheet, touches go through to the canvas
+[stable] 400x660 free drawing: canvas 53.5 76.2 293 293 | in the first stroke 53.5 76.2 293 293 | after it 53.5 76.2 293 293 | full figure 53.5 76.2 293 293 | main button bottom 652 of 660, scroll 0
+[stable] 400x660 ring drawing: canvas 53.5 76.2 293 293 | in the first stroke 53.5 76.2 293 293 | after it 53.5 76.2 293 293 | full figure 53.5 76.2 293 293 | main button bottom 652 of 660, scroll 0
+[stable] 400x660 solo hero: canvas 53.5 76.2 293 293 | in the first stroke 53.5 76.2 293 293 | after it 53.5 76.2 293 293 | full figure 53.5 76.2 293 293 | main button bottom 652 of 660, scroll 0
+[stable] 400x660 solo weapon: canvas 53.5 76.2 293 293 | in the first stroke 53.5 76.2 293 293 | after it 53.5 76.2 293 293 | full figure 53.5 76.2 293 293 | main button bottom 652 of 660, scroll 0
+[stable] 400x660 solo enemy: canvas 85.5 76 229 229 | in the first stroke 85.5 76 229 229 | after it 85.5 76 229 229 | full figure 85.5 76 229 229 | main button bottom 652 of 660, scroll 0
+[stable] 400x660 stake line at x2, uncut: ×2 · als Gegner: Treffer bis 1,9 · Tempo 12,6 · Panzer 148 || 3 Kästchen tropfen ab
+[stable] 780x400 first-run hint: 20 % of the sheet height, inside the sheet, touches go through to the canvas
+[stable] 780x400 free drawing: canvas 20 60 324 324 | in the first stroke 20 60 324 324 | after it 20 60 324 324 | full figure 20 60 324 324 | main button bottom 338 of 400, scroll 0
+[stable] 780x400 ring drawing: canvas 20 60 324 324 | in the first stroke 20 60 324 324 | after it 20 60 324 324 | full figure 20 60 324 324 | main button bottom 338 of 400, scroll 0
+[stable] 780x400 solo hero: canvas 20 60 324 324 | in the first stroke 20 60 324 324 | after it 20 60 324 324 | full figure 20 60 324 324 | main button bottom 338 of 400, scroll 0
+[stable] 780x400 solo weapon: canvas 20 60 324 324 | in the first stroke 20 60 324 324 | after it 20 60 324 324 | full figure 20 60 324 324 | main button bottom 338 of 400, scroll 0
+[stable] 780x400 solo enemy: canvas 20 60 324 324 | in the first stroke 20 60 324 324 | after it 20 60 324 324 | full figure 20 60 324 324 | main button bottom 372 of 400, scroll 0
+[stable] 780x400 stake line at x2, uncut: ×2 · als Gegner: Treffer bis 1,9 · Tempo 12,6 · Panzer 148 || 3 Kästchen tropfen ab
+PASS stable: the canvas kept its rectangle before, in and after the first stroke on 15 drawing screens (400 x 780, 400 x 660, 780 x 400), main button always inside the window, the first stroke starts on the open hint, draws and closes it, the stake line of the enemy is never cut and the drip warning has its own line, shop tap with a second finger works, 0 console errors (56 s)
+VERIFY OK phone landscape desktop artifact duo checks stable

@@ -8,15 +8,19 @@
 // - While the player's gallery is small, the bots take placeholders, and a
 //   single human gets a fair first line-up: one heavy placeholder that only
 //   pushes and light ones that are beatable. The nastier placeholders (the
-//   heavy hedgehog, the fast worm, the urchin) wait until the gallery has
-//   OWN_MIN figures.
+//   heavy hedgehog, the hoop, the fast worm, the spear, the urchin) wait
+//   until the gallery has OWN_MIN figures.
 // - From then on the bots prefer the player's own gallery figures.
 
 export const HEAVY_INK = 150;
 export const OWN_MIN = 3;
 export const OWN_SHARE = 0.7;
-const FIRST_HEAVY = ['Klotz', 'Reif'];
-const FIRST_LIGHT = ['Ramme', 'Qualle', 'Speer', 'Stachel'];
+// INK-WEB-V5: the widest pusher ("Reif", 180 ink) and the small blade bots
+// ("Speer", "Stachel") no longer meet a newcomer: a plain round blob lost
+// nearly every first match against them. "Klotz" pushes but has no blade;
+// "Ramme" and "Qualle" are lighter than most first drawings.
+const FIRST_HEAVY = ['Klotz'];
+const FIRST_LIGHT = ['Ramme', 'Qualle'];
 
 // Same shape, whatever the colours: a bot must not show up as the human's
 // own figure in another ink.

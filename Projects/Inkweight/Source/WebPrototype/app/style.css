@@ -159,14 +159,14 @@ select {
 .hint {
   position: absolute; left: 8px; top: 8px; right: 8px; pointer-events: none;
   background: var(--veil); border: 2px dashed var(--ink); border-radius: var(--blob);
-  padding: 4px 8px; text-align: left; font-size: 0.74rem; line-height: 1.2;
-  display: flex; align-items: center; gap: 8px;
+  padding: 3px 8px; text-align: left; font-size: 0.72rem; line-height: 1.2;
+  display: flex; align-items: center; gap: 6px;
 }
 .hint .hint-text { flex: 1 1 auto; min-width: 0; }
-.hint .btn { pointer-events: auto; flex: 0 0 auto; }
-.hint p { margin: 0 0 1px; }
-.hint ul { margin: 0; padding: 0; list-style: none; }
-.hint li { margin: 0; }
+.hint .btn { pointer-events: auto; flex: 0 0 auto; min-height: 36px; padding: 4px 10px; font-size: 0.8rem; }
+.hint p { margin: 0; display: inline; }
+.hint ul { margin: 0; padding: 0; list-style: none; display: inline; }
+.hint li { margin: 0; display: inline; }
 .draw-side { flex: 0 0 auto; display: flex; flex-direction: column; gap: 5px; }
 .tools { display: grid; grid-template-columns: repeat(4, 1fr) 1.6fr 1.3fr; gap: 6px; }
 .tool { padding: 4px 6px; min-height: 42px; font-size: 0.85rem; white-space: nowrap; }

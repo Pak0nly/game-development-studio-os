@@ -83,12 +83,13 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   for (let wave = 1; wave <= 6 && !outcome; wave++) {
     const boss = wave === 6;
     let noteText = '';
+    let bossFacts = '';
     if (!boss) {
       await page.waitForFunction((w) => new RegExp('Welle ' + w).test(document.getElementById('drawTitle').textContent) && !document.getElementById('scrDraw').hidden, wave);
       await ready();
       if (wave === 1) await rect(9, 9, 14, 15);
       await page.click('#stake' + stake);
-      noteText = await txt('stakeNote');
+      noteText = await txt('stakeLine'); // INK-WEB-V5: the first of the two fixed lines carries the copy's values
       log('wave ' + wave + ' enemy Gewicht ' + (await txt('stWeight')) + ', stake buttons: ' + (await page.evaluate(() => [0, 1, 2].map((i) => document.getElementById('stake' + i).innerText.replace(/\s+/g, ' ')).join(' | '))) + ' || ' + noteText);
       if (wave === 1 || wave === 3) await shot('02-enemy-wave' + wave);
       await page.click('#drawDone');
@@ -96,10 +97,18 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       await page.waitForFunction(() => !document.getElementById('fightOverlay').hidden && /Endgegner/.test(document.getElementById('ovTitle').textContent));
       log('boss panel: ' + (await page.locator('#ovBody').innerText()).replace(/\s+/g, ' '));
       await shot('04-boss-panel');
+      bossFacts = await txt('bossFacts');
+      if (!/Halte Abstand/.test(await txt('bossTip'))) throw new Error('boss panel without the tip');
       await sleep(550);
       await page.click('#ovPrimary');
     }
     await page.waitForFunction(() => window.__inkDebug.run.phase === 'fight');
+    if (boss) {
+      // INK-WEB-V5 I-3: what the panel announced against the bodies of the fight
+      const real = await page.evaluate(() => { const b = window.__inkDebug.run.world.bodies; return 'Sein Panzer: ' + Math.round(b[1].maxHp) + ' · Begleiter: ' + (b.length - 2) + ' · dein Panzer: ' + Math.ceil(b[0].hp) + ' von ' + Math.round(b[0].maxHp); });
+      if (real !== bossFacts) throw new Error('boss panel said "' + bossFacts + '", the fight has "' + real + '"');
+      log('  boss panel facts equal the bodies of the fight: ' + real);
+    }
     const start = await page.evaluate(() => {
       const d = window.__inkDebug;
       const t = d.tuning;

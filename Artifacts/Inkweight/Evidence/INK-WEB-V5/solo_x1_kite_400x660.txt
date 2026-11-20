@@ -1,0 +1,36 @@
+[solo-x1-kite] first-run hint: Zeichne los, oben ist vorne. Dünne Striche sind Klingen, auch schräge. Gefüllte Flächen sind Panzer. Was nicht dranhängt, tropft ab. Alles klar
+[solo-x1-kite] hero: Gewicht 112 Panzer 158 Schärfe 2,0 Tempo 15
+[solo-x1-kite] hint on the second drawing screen visible: false
+[solo-x1-kite] weapon rows: Gewicht 27 "schwer stößt Gegner weiter zurück" | Takt 0,52 "Sekunden je Wurf · leicht wirft öfter" | Schärfe 4,2 "27 Klingen · Treffer nimmt 4,2 Panzer" | Flug 41 "Kästchen pro Sekunde · leicht fliegt schneller" | Strich = Klinge · mehr Klingen, mehr Schaden
+[solo-x1-kite] wave 1 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 120 Beute | Einsatz ×1,5 1 Gegner 180 Beute | Einsatz ×2 1 Gegner 240 Beute || ×1 · als Gegner: Treffer 0,6 · Tempo 7,3 · Panzer 91
+[solo-x1-kite] wave 1 starts: hero armour 158, enemies [{"N":210,"hp":91,"speed":7.28,"crush":0.42,"blunt":0.648}]
+[solo-x1-kite]   shown touch 0.6, Tempo 7.3, Panzer 91 = enemy body: blunt touch 0.648, top speed 7.28, armour 91
+[solo-x1-kite] wave 1 ends: cleared after 12 s of fight (1 s real), hero armour 158 of 158 (lost 0), Beutel 120
+[solo-x1-kite]   shop: nothing bought (Tinte im Beutel: 120 · Panzer: 158 von 158)
+[solo-x1-kite] wave 2 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 170 Beute | Einsatz ×1,5 1 Gegner 255 Beute | Einsatz ×2 1 Gegner 340 Beute || ×1 · als Gegner: Treffer 0,7 · Tempo 7,3 · Panzer 124
+[solo-x1-kite] wave 2 starts: hero armour 158, enemies [{"N":210,"hp":124,"speed":7.28,"crush":0.571,"blunt":0.708}]
+[solo-x1-kite]   shown touch 0.7, Tempo 7.3, Panzer 124 = enemy body: blunt touch 0.708, top speed 7.28, armour 124
+[solo-x1-kite] wave 2 ends: cleared after 16 s of fight (4 s real), hero armour 158 of 158 (lost 0), Beutel 290
+[solo-x1-kite]   shop: nothing bought (Tinte im Beutel: 290 · Panzer: 158 von 158)
+[solo-x1-kite] wave 3 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 230 Beute | Einsatz ×1,5 1 Gegner 345 Beute | Einsatz ×2 1 Gegner 460 Beute || ×1 · als Gegner: Treffer 0,8 · Tempo 7,3 · Panzer 167
+[solo-x1-kite] wave 3 starts: hero armour 158, enemies [{"N":210,"hp":167,"speed":7.28,"crush":0.773,"blunt":0.789}]
+[solo-x1-kite]   shown touch 0.8, Tempo 7.3, Panzer 167 = enemy body: blunt touch 0.789, top speed 7.28, armour 167
+[solo-x1-kite] wave 3 ends: cleared after 21 s of fight (6 s real), hero armour 158 of 158 (lost 0), Beutel 520
+[solo-x1-kite]   shop: nothing bought (Tinte im Beutel: 520 · Panzer: 158 von 158)
+[solo-x1-kite] wave 4 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 300 Beute | Einsatz ×1,5 1 Gegner 450 Beute | Einsatz ×2 2 Gegner 600 Beute || ×1 · als Gegner: Treffer 0,9 · Tempo 7,3 · Panzer 218
+[solo-x1-kite] wave 4 starts: hero armour 158, enemies [{"N":210,"hp":218,"speed":7.28,"crush":1.008,"blunt":0.883}]
+[solo-x1-kite]   shown touch 0.9, Tempo 7.3, Panzer 218 = enemy body: blunt touch 0.883, top speed 7.28, armour 218
+[solo-x1-kite] wave 4 ends: cleared after 27 s of fight (7 s real), hero armour 158 of 158 (lost 0), Beutel 820
+[solo-x1-kite]   shop: nothing bought (Tinte im Beutel: 820 · Panzer: 158 von 158)
+[solo-x1-kite] wave 5 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 380 Beute | Einsatz ×1,5 2 Gegner 570 Beute | Einsatz ×2 3 Gegner 759 Beute || ×1 · als Gegner: Treffer 1,0 · Tempo 7,3 · Panzer 276
+[solo-x1-kite] wave 5 starts: hero armour 158, enemies [{"N":210,"hp":276,"speed":7.28,"crush":1.277,"blunt":0.991}]
+[solo-x1-kite]   shown touch 1, Tempo 7.3, Panzer 276 = enemy body: blunt touch 0.991, top speed 7.28, armour 276
+[solo-x1-kite] wave 5 ends: cleared after 35 s of fight (9 s real), hero armour 158 of 158 (lost 0), Beutel 1200
+[solo-x1-kite]   shop: nothing bought (Tinte im Beutel: 1200 · Panzer: 158 von 158)
+[solo-x1-kite] boss panel: Alle in einem Er besteht aus allen Gegnern, die du gezeichnet hast, und bringt je einen davon mit. Sein Panzer: 335 · Begleiter: 5 · dein Panzer: 158 von 158 Tipp: Halte Abstand. Deine Waffe wirft von selbst, und dein Panzer heilt im Kampf nicht. Hier gibt es keinen Einsatz: alle schlagen in Grundstärke zu, und auch schwere Gegner drücken hier nicht mit ihrem Gewicht.
+[solo-x1-kite]   boss panel facts equal the bodies of the fight: Sein Panzer: 335 · Begleiter: 5 · dein Panzer: 158 von 158
+[solo-x1-kite] boss fight starts: hero armour 158, enemies [{"N":210,"hp":335,"speed":7.28,"crush":0,"blunt":0.48},{"N":210,"hp":182,"speed":7.28,"crush":0,"blunt":0.48},{"N":210,"hp":182,"speed":7.28,"crush":0,"blunt":0.48},{"N":210,"hp":182,"speed":7.28,"crush":0,"blunt":0.48},{"N":210,"hp":182,"speed":7.28,"crush":0,"blunt":0.48},{"N":210,"hp":182,"speed":7.28,"crush":0,"blunt":0.48}]
+[solo-x1-kite] boss fight ends: won after 148 s of fight (35 s real), hero armour 147 of 158 (lost 11), Beutel 1830
+[solo-x1-kite] weapon hits: 496, damage values 4.229 (weapon screen showed Schärfe 4,2)
+[solo-x1-kite] RESULT Geschafft! | Der Endgegner ist nur noch ein Fleck. 1830 Tinte gesammelt · neuer Bestwert auf diesem Gerät Geschaffte Wellen: 5 von 5 und der Endgegner | 0 console errors
+exit 0

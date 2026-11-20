@@ -70,6 +70,7 @@ async function runScenario(browser, name) {
   await page.goto('file://' + file);
   await page.waitForSelector('#btnRing');
   let rounds = 0;
+  let ringTips = 0;
   let matchTitle = '';
   const cdp = phone ? await context.newCDPSession(page) : null;
 
@@ -185,7 +186,12 @@ async function runScenario(browser, name) {
   }
   if (/\d\.\d/.test(rulesText)) throw new Error('decimal point in the rules panel');
   await shot('rules');
-  await press('#rulesClose');
+  if (rulesText.indexOf('(vor dem Element)') === -1) throw new Error('rules panel lacks: vor dem Element');
+  // INK-WEB-V5 m-1: a second "Schließen" at the end of the long panel
+  await page.evaluate(() => { const l = document.getElementById('rulesLayer'); l.scrollTop = l.scrollHeight; });
+  await sleep(150);
+  await shot('rules-end');
+  await press('#rulesClose2');
   await page.waitForSelector('#rulesLayer', { state: 'hidden', timeout: 3000 });
   // count ram events of all fights of this run (read only)
   await page.evaluate(() => {
@@ -345,6 +351,15 @@ async function runScenario(browser, name) {
     const body = await page.locator('#ovBody').innerText();
     note('round ' + rounds + ': ' + title + ' | ' + body.replace(/\s+/g, ' ').slice(0, 160));
     if (/geht an Du\b/.test(title)) throw new Error('grammar: ' + title);
+    // INK-WEB-V5 I-2: a single human who lost the round reads why and what to try
+    {
+      const tip = await page.evaluate(() => { const t = document.getElementById('ringTip'); return t ? t.textContent : ''; });
+      const lost = !/geht an dich|Du gewinnst/.test(title);
+      if (lost && !(/^Dein Panzer ist zerbrochen\. Versuch es mit mehr gefüllter Fläche/.test(tip) && /Du: Panzer zerbrochen/.test(body.replace(/\s+/g, ' ')))
+        && !(/^Du bist aus dem Ring geflogen\. Versuch es mit mehr Tinte/.test(tip) && /Du: aus dem Ring geflogen/.test(body.replace(/\s+/g, ' ')))) throw new Error('lost round without a fitting tip: ' + tip + ' | ' + body);
+      if (!lost && tip !== '') throw new Error('tip after a won round: ' + tip);
+      if (lost) { ringTips++; if (ringTips === 1) { await sleep(300); await shot('ring-lost-round-tip'); } }
+    }
     if (rounds === 1) { await sleep(300); await shot('ring-round-result'); }
     if (/gewinn(s)?t das Spiel/.test(title)) {
       matchTitle = title;
@@ -437,7 +452,19 @@ async function runScenario(browser, name) {
     } else if (where === 'scrFight') {
       if (await page.locator('#fightOverlay').isVisible()) {
         const title = await page.locator('#ovTitle').textContent();
-        if (title === 'Der Endgegner') { await sleep(300); await shot('solo-boss-intro'); await sleep(400); await press('#ovPrimary'); continue; }
+        if (title === 'Der Endgegner') {
+          // INK-WEB-V5 I-3: the panel says what is coming, as the core will build it
+          const facts = await page.locator('#bossFacts').textContent();
+          const tipText = await page.locator('#bossTip').textContent();
+          const want = await page.evaluate(() => { const d = window.__inkDebug; const r = d.run; const st = d.core.buildFigure(d.core.soloBossCells(r), 32, 32, d.tuning, 'figure', 1024).stats; return 'Sein Panzer: ' + Math.round(st.armour * d.tuning.solo.bossArmourMult) + ' · Begleiter: ' + r.enemyDrawings.length * d.tuning.solo.bossEscortCopies + ' · '; });
+          if (facts.indexOf(want) !== 0 || !/Halte Abstand/.test(tipText)) throw new Error('boss panel: ' + facts + ' | ' + tipText + ' | wanted ' + want);
+          await sleep(300); await shot('solo-boss-intro'); await sleep(400); await press('#ovPrimary');
+          await sleep(900);
+          const real = await page.evaluate(() => { const b = window.__inkDebug.run.world.bodies; return 'Sein Panzer: ' + Math.round(b[1].maxHp) + ' · Begleiter: ' + (b.length - 2) + ' · '; });
+          if (real !== want) throw new Error('boss panel said "' + want + '", the fight has "' + real + '"');
+          note('boss panel: ' + facts + ' = the bodies of the fight; ' + tipText);
+          continue;
+        }
         soloEnd = title + ' | ' + (await page.locator('#ovBody').innerText()).replace(/\s+/g, ' ');
         await sleep(300);
         await shot('solo-result');
@@ -1154,8 +1181,27 @@ async function runStable(browser) {
       if (label === 'solo enemy' || label === 'free drawing') await page.screenshot({ path: path.join(SHOTS, 'stable-' + tag + '-' + label.replace(/ /g, '-') + '.png') });
     };
     await press('#btnFree');
-    await press('#drawHintOk');
+    // INK-WEB-V5 I-1: the first stroke of stable() starts on the open hint
+    // (cell 16,4). It must draw, close the hint and leave the canvas alone.
+    {
+      await page.waitForSelector('#drawHint', { state: 'visible' });
+      await sleep(250);
+      const a = await pt(16, 4);
+      const h = await page.evaluate(([x, y]) => {
+        const r = document.getElementById('drawHint').getBoundingClientRect(); const b = document.getElementById('drawHintOk').getBoundingClientRect(); const c = document.getElementById('drawCanvas').getBoundingClientRect();
+        return { on: x >= r.left && x <= r.right && y >= r.top && y <= r.bottom, onButton: x >= b.left && x <= b.right && y >= b.top && y <= b.bottom,
+          inside: r.left >= c.left && r.right <= c.right && r.top >= c.top && r.bottom <= c.bottom, share: Math.round(100 * r.height / c.height), top: document.elementFromPoint(x, y).id };
+      }, [a.x, a.y]);
+      if (!h.on || h.onButton || !h.inside || h.top !== 'drawCanvas') throw new Error('first-run hint at ' + tag + ': ' + JSON.stringify(h));
+      if (h.share > 30) throw new Error('first-run hint covers ' + h.share + ' % of the sheet height at ' + tag);
+      await page.screenshot({ path: path.join(SHOTS, 'stable-' + tag + '-hint.png') });
+      note(tag + ' first-run hint: ' + h.share + ' % of the sheet height, inside the sheet, touches go through to the canvas');
+    }
     await stable('free drawing', '#toolC2');
+    {
+      const after = await page.evaluate(() => ({ hint: !document.getElementById('drawHint').hidden, weight: parseInt(document.getElementById('stWeight').textContent, 10) }));
+      if (after.hint || !(after.weight >= 13)) throw new Error('a stroke that starts on the hint: ' + JSON.stringify(after));
+    }
     await press('#drawDone');
     await press('#galBack');
     await press('#btnRing'); await press('#ringGo');
@@ -1172,8 +1218,23 @@ async function runStable(browser) {
     await press('#drawDone');
     await sleep(300);
     await stable('solo enemy', null);
-    const noteText = await page.locator('#stakeNote').textContent();
-    if (!/^3 Kästchen tropfen ab · ×1 · als Gegner: Treffer/.test(noteText)) throw new Error('stake line with the drip warning on the enemy screen: ' + noteText);
+    const enemyRect = await rect();
+    // INK-WEB-V5 I-4: two fixed lines; the copy's real values are never cut, the drip warning has its own line
+    {
+      const two = await page.evaluate(() => { const a = document.getElementById('stakeLine'); const b = document.getElementById('stakeSoft');
+        return { a: a.textContent, b: b.textContent, cutA: a.scrollWidth - a.clientWidth, cutB: b.scrollWidth - b.clientWidth, why: document.getElementById('stArmourWhy').textContent, whyS: document.getElementById('stSpeedWhy').textContent }; });
+      if (!/^×1 · als Gegner: Treffer .* · Tempo [\d,]+ · Panzer \d+$/.test(two.a) || two.cutA > 0) throw new Error('stake line cut or wrong at ' + tag + ': ' + JSON.stringify(two));
+      if (two.b !== '3 Kästchen tropfen ab' || two.cutB > 0) throw new Error('drip warning on the enemy screen at ' + tag + ': ' + JSON.stringify(two));
+      if (!/^als Figur · /.test(two.why) || !/^als Figur · /.test(two.whyS)) throw new Error('figure rows are not labelled at ' + tag + ': ' + JSON.stringify(two));
+      await press('#stake2');
+      await sleep(150);
+      const x2 = await page.evaluate(() => { const a = document.getElementById('stakeLine'); return { a: a.textContent, cut: a.scrollWidth - a.clientWidth }; });
+      if (!/^×2 · als Gegner: .*Panzer \d+$/.test(x2.a) || x2.cut > 0) throw new Error('stake line at x2 cut at ' + tag + ': ' + JSON.stringify(x2));
+      if ((await rect()) !== enemyRect) throw new Error('canvas moved when the stake changed at ' + tag);
+      await page.screenshot({ path: path.join(SHOTS, 'stable-' + tag + '-solo-enemy-x2.png') });
+      await press('#stake0');
+      note(tag + ' stake line at x2, uncut: ' + x2.a + ' || ' + two.b);
+    }
     if (size.height === 780) {
       // m-7: the steering finger is still down when the shop opens; another finger buys
       await press('#toolClear');
@@ -1226,7 +1287,7 @@ async function runStable(browser) {
       }
       if (name === 'stable') {
         const n = await runStable(browser);
-        console.log('PASS stable: the canvas kept its rectangle before, in and after the first stroke on ' + n + ' drawing screens (400 x 780, 400 x 660, 780 x 400), main button always inside the window, shop tap with a second finger works, 0 console errors (' + Math.round((Date.now() - t0) / 1000) + ' s)');
+        console.log('PASS stable: the canvas kept its rectangle before, in and after the first stroke on ' + n + ' drawing screens (400 x 780, 400 x 660, 780 x 400), main button always inside the window, the first stroke starts on the open hint, draws and closes it, the stake line of the enemy is never cut and the drip warning has its own line, shop tap with a second finger works, 0 console errors (' + Math.round((Date.now() - t0) / 1000) + ' s)');
         continue;
       }
       if (name === 'checks') {
