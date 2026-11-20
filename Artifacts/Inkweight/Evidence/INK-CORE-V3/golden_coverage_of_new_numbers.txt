@@ -1,0 +1,7 @@
+physics.extraSeparationPasses=7 changes: ring_3_star_wedge_needle, ring_4_one_scripted_seat, ring_4_circlers, ring_1v1_comb_comb_deep_passes, solo_brawl_full_run, solo_boss_heavy_no_crush
+physics.extraSeparationPasses=2 changes: ring_3_star_wedge_needle, ring_4_one_scripted_seat, ring_4_circlers, ring_1v1_comb_comb_deep_passes, solo_brawl_full_run, solo_boss_heavy_no_crush
+physics.crowdRelaxPasses=0 changes: ring_3_star_wedge_needle, ring_4_disc_star_comb_dot, ring_4_one_scripted_seat, ring_4_circlers, solo_brawl_full_run, solo_boss_heavy_no_crush
+solo.bossCrushMult=1 changes: solo_boss_heavy_no_crush
+solo.enemyCrushPerInk=0 changes: solo_brawl_full_run, solo_boss_heavy_no_crush, solo_upgrades_hero_and_weapon_ink, solo_hero_death
+solo.enemySpeedBase=0 changes: solo_kite_two_waves, solo_brawl_full_run, solo_win_with_boss, solo_boss_heavy_no_crush, solo_upgrades_hero_and_weapon_ink, solo_hero_death, solo_time_limit
+solo_win_with_boss won 74 % armour left

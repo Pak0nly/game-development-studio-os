@@ -1,0 +1,4 @@
+4 figures, passes 2, relax 0: 70261 ticks, 23.7 microseconds per tick, worst tick 3.00 ms
+4 figures, passes 8, relax 4: 72964 ticks, 43.6 microseconds per tick, worst tick 9.91 ms
+2 figures, passes 2, relax 0: 53636 ticks, 9.9 microseconds per tick, worst tick 1.97 ms
+2 figures, passes 8, relax 4: 53981 ticks, 9.6 microseconds per tick, worst tick 0.30 ms

@@ -235,9 +235,14 @@ export function runRingBalanceAll(overrides, opts) {
 }
 
 // Solo smoke: bot hero through the five waves against one enemy design per run.
-export function runSoloSmoke(tuning, seeds) {
-  const heroes = [['disc', 0], ['hedgehog', 1], ['star', 0], ['line', 0]];
-  const enemies = ['dot', 'needle', 'block', 'comb', 'cross', 'splinter', 'spiral'];
+// The last four enemies are the heavy blunt designs of re-review finding R1.
+// only (optional): { heroes: [names], enemies: [names] } runs a part of the field.
+export const SOLO_HEAVY_BLUNT = ['block', 'disc', 'ring', 'hoop2'];
+export function runSoloSmoke(tuning, seeds, only) {
+  let heroes = [['disc', 0], ['hedgehog', 1], ['star', 0], ['line', 0]];
+  let enemies = ['dot', 'needle', 'comb', 'cross', 'splinter', 'spiral', 'block', 'disc', 'ring', 'hoop2'];
+  if (only && only.heroes) heroes = heroes.filter((h) => only.heroes.indexOf(h[0]) !== -1);
+  if (only && only.enemies) enemies = enemies.filter((e) => only.enemies.indexOf(e) !== -1);
   const weapon = recolour(archetype('needle').cells, 1);
   const out = [];
   for (const [heroName, style] of heroes) {
@@ -249,6 +254,7 @@ export function runSoloSmoke(tuning, seeds) {
         let score = 0;
         let seconds = 0;
         let timeouts = 0;
+        let bossReached = 0;
         for (let s = 0; s < seeds; s++) {
           const enemy = archetype(enemyName).cells;
           const plan = { style, boss: true, waves: [0, 1, 2, 3, 4].map(() => ({ enemy, stake, upgrade: 'heal' })) };
@@ -256,12 +262,13 @@ export function runSoloSmoke(tuning, seeds) {
           const r = playSoloRun(tuning, 5000 + s, hero, weapon, W, H, 0, plan, null, null);
           cleared += r.run.phase === 'won' ? 5 : (r.run.wave > 5 ? 5 : r.run.wave);
           if (r.run.phase === 'won') won++;
+          if (r.results.length === 6) bossReached++;
           if (r.run.endReason === 'time') timeouts++;
           hpLeft += r.run.heroHp > 0 ? r.run.heroHp / r.run.heroMaxHp : 0;
           score += r.run.score;
           for (const x of r.results) seconds += x.ticks / tuning.physics.tickRate;
         }
-        out.push({ hero: heroName, heroBot: style === 1 ? 'brawl' : 'kite', enemy: enemyName, stake: tuning.solo.stakes[stake], avgWavesCleared: Number((cleared / seeds).toFixed(2)), runsWon: won, runs: seeds, timeouts, avgHpLeft: Number((hpLeft / seeds).toFixed(2)), avgScore: Math.round(score / seeds), avgRunSeconds: Math.round(seconds / seeds) });
+        out.push({ hero: heroName, heroBot: style === 1 ? 'brawl' : 'kite', enemy: enemyName, stake: tuning.solo.stakes[stake], avgWavesCleared: Number((cleared / seeds).toFixed(2)), runsWon: won, bossReached, runs: seeds, timeouts, avgHpLeft: Number((hpLeft / seeds).toFixed(2)), avgScore: Math.round(score / seeds), avgRunSeconds: Math.round(seconds / seeds) });
       }
     }
   }
@@ -347,15 +354,27 @@ export function reportMarkdown(rep, solo, tuning, label) {
     L.push('|---|---|---|---|---|');
     for (const k of Object.keys(sum.byStake)) L.push('| ' + [k, pct(sum.byStake[k].wonShare), sum.byStake[k].avgWavesCleared, pct(sum.byStake[k].avgHpLeft), sum.byStake[k].avgScore].join(' | ') + ' |');
     L.push('');
-    L.push('| Hero | Hero bot | Enemy design | Stake | Avg waves cleared (of 5) | Runs won incl. boss | Timeouts | Avg armour left | Avg score | Avg run seconds |');
-    L.push('|---|---|---|---|---|---|---|---|---|---|');
-    for (const s of solo) L.push('| ' + [s.hero, s.heroBot, s.enemy, 'x' + s.stake, s.avgWavesCleared, s.runsWon + ' / ' + s.runs, s.timeouts, pct(s.avgHpLeft) + ' %', s.avgScore, s.avgRunSeconds].join(' | ') + ' |');
+    // re-review finding R1: the heavy blunt enemy designs against the rest
+    L.push('| Enemy designs | Stake | Runs that reached the boss | Runs won incl. boss | Avg armour left % | Avg score |');
+    L.push('|---|---|---|---|---|---|');
+    for (const group of ['heavy blunt (' + SOLO_HEAVY_BLUNT.join(', ') + ')', 'all others']) {
+      for (const stake of tuning.solo.stakes) {
+        const list = solo.filter((s) => s.stake === stake && (SOLO_HEAVY_BLUNT.indexOf(s.enemy) !== -1) === (group !== 'all others'));
+        if (list.length === 0) continue;
+        const sumOf = (k) => list.reduce((a, s) => a + s[k], 0);
+        L.push('| ' + [group, 'x' + stake, sumOf('bossReached') + ' / ' + sumOf('runs'), sumOf('runsWon') + ' / ' + sumOf('runs'), pct(sumOf('avgHpLeft') / list.length), Math.round(sumOf('avgScore') / list.length)].join(' | ') + ' |');
+      }
+    }
+    L.push('');
+    L.push('| Hero | Hero bot | Enemy design | Stake | Avg waves cleared (of 5) | Reached the boss | Runs won incl. boss | Timeouts | Avg armour left | Avg score | Avg run seconds |');
+    L.push('|---|---|---|---|---|---|---|---|---|---|---|');
+    for (const s of solo) L.push('| ' + [s.hero, s.heroBot, s.enemy, 'x' + s.stake, s.avgWavesCleared, s.bossReached + ' / ' + s.runs, s.runsWon + ' / ' + s.runs, s.timeouts, pct(s.avgHpLeft) + ' %', s.avgScore, s.avgRunSeconds].join(' | ') + ' |');
     L.push('');
   }
   L.push('## What this simulation can and cannot tell');
   L.push('');
   L.push('- It can tell which drawings win under two simple play styles: the rusher runs at the nearest opponent and dashes by chance; the circler picks an opponent outside the crowd, circles it and rams when its dash is ready and its front points at the target. A drawing that is strong under both is strong for a structural reason; one that is strong under only one is partly a bot artefact.');
-  L.push('- The mixed configuration says little about drawings: when a rusher meets a circler the rusher wins about four duels in five whatever is drawn (`node sim/style_check.js`: 79.3 % of 1520 duels with the final tuning). Its duel column is therefore close to 50 % for every drawing and pulls the "all" average toward 50 %. Read the rusher and circler columns for the effect of the drawing.');
+  L.push('- The mixed configuration says little about drawings: when a rusher meets a circler the rusher wins about four duels in five whatever is drawn (`node sim/style_check.js`: 78.9 % of 3040 duels with the version 3 tuning). Its duel column is therefore close to 50 % for every drawing and pulls the "all" average toward 50 %. Read the rusher and circler columns for the effect of the drawing.');
   L.push('- It cannot tell how the game feels, and it cannot find tricks. Bots never dodge, bait, wait or gang up on purpose; they do not redraw between rounds and do not use catch-up ink. Two styles are still only two styles.');
   L.push('- Many pairings are close to 0 or 100 percent because both bots repeat the same behaviour; the seeds only change start sides, wobble and dash timing. Read the averages as a ranking, not as odds between humans.');
   L.push('- The archetype field is hand-made. Six "player optimiser" drawings were added to look for rule-breaking designs, but the numbers were still chosen while looking at this field.');

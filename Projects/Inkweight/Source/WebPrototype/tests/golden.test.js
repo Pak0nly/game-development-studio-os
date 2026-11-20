@@ -33,7 +33,7 @@ test('golden stat vectors can be read back from their text rows', () => {
 test('golden traces cover ring duels, three and four figures and solo, and are small', () => {
   const text = readFileSync(TRACE_PATH, 'utf8');
   const file = JSON.parse(text);
-  assert.ok(file.items.length >= 16);
+  assert.ok(file.items.length >= 19);
   const modes = file.items.map((t) => t.mode + ':' + (t.seats ? t.seats.length : 0));
   for (const need of ['ring:2', 'ring:3', 'ring:4', 'solo:0']) assert.ok(modes.includes(need), 'missing ' + need);
   for (const t of file.items) { assert.ok(t.checkpoints.length >= 2); for (const c of t.checkpoints) assert.match(c.hash, /^[0-9a-f]{8}$/); }
@@ -56,6 +56,31 @@ test('golden traces reach sudden death, simultaneous knock-outs, every solo endi
   assert.ok(solo.some((t) => t.final.phase === 'won'), 'a won run');
   assert.ok(solo.some((t) => t.final.heroBudget === T.ink.figureBudget + T.solo.upgradeHeroInk && t.fights.some((x) => x.upgrade === 'ok')), 'hero-ink upgrade');
   assert.ok(solo.some((t) => t.final.weaponBudget === T.ink.weaponBudget + T.solo.upgradeWeaponInk), 'weapon-ink upgrade');
+});
+
+// INK-CORE-V3 review, suggestion 2: a port that forgets the 8 separation
+// passes must fail on a duel trace of its own
+test('the deep-passes duel trace changes with one separation pass less; the heavy boss trace sees the boss crush factor', () => {
+  const pick = (text) => JSON.parse(text).items.filter((t) => t.name === 'ring_1v1_comb_comb_deep_passes')[0];
+  const now = pick(readFileSync(TRACE_PATH, 'utf8'));
+  assert.ok(now, 'trace exists');
+  const last = (t) => t.checkpoints[t.checkpoints.length - 1].hash + '@' + t.rounds[0].ticks;
+  for (const passes of [7, 2]) {
+    const T2 = JSON.parse(JSON.stringify(T));
+    T2.physics.extraSeparationPasses = passes;
+    assert.notEqual(last(pick(buildSimTracesText(T2))), last(now), 'passes ' + passes);
+  }
+  // the boss fight of a heavy blunt design is in a trace and sees the boss crush factor
+  const T3 = JSON.parse(JSON.stringify(T));
+  T3.solo.bossCrushMult = 1;
+  const boss = (text) => JSON.parse(text).items.filter((t) => t.name === 'solo_boss_heavy_no_crush')[0];
+  const bossNow = boss(readFileSync(TRACE_PATH, 'utf8'));
+  assert.equal(bossNow.fights.length, 6, 'reaches the boss fight');
+  assert.notEqual(JSON.stringify(boss(buildSimTracesText(T3)).final), JSON.stringify(bossNow.final));
+  // the won solo run keeps a margin: at least half the armour left
+  const won = JSON.parse(readFileSync(TRACE_PATH, 'utf8')).items.filter((t) => t.name === 'solo_win_with_boss')[0];
+  assert.equal(won.final.phase, 'won');
+  assert.ok(won.final.heroHp > 0.5 * won.final.heroMaxHp, 'armour left ' + won.final.heroHp);
 });
 
 test('the core uses only the allowed math functions and no ambient randomness or time', () => {

@@ -1,0 +1,7 @@
+Solo smoke before R1 (version 2 solo rules, version 3 physics), 4 seeds per row, from solo_before.txt:
+heavy blunt (block, disc, ring, hoop2) | x1 | won 64/64 | avg waves 5.00 | armour left 54 % | avg score 1944
+heavy blunt (block, disc, ring, hoop2) | x1.5 | won 64/64 | avg waves 5.00 | armour left 50 % | avg score 2420
+heavy blunt (block, disc, ring, hoop2) | x2 | won 64/64 | avg waves 5.00 | armour left 54 % | avg score 2930
+all others | x1 | won 66/96 | avg waves 5.00 | armour left 32 % | avg score 1438
+all others | x1.5 | won 31/96 | avg waves 4.48 | armour left 18 % | avg score 1613
+all others | x2 | won 13/96 | avg waves 3.54 | armour left 6 % | avg score 1483

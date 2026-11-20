@@ -1,10 +1,13 @@
-# Inkweight Rules As Built (core version 2 after correction round 1, Work Order INK-CORE-V2)
+# Inkweight Rules As Built (core version 3, Work Order INK-CORE-V3)
 
 This records what the engine-free core in `../WebPrototype/core/` really does,
 so that a second implementation (C# for Unity) can match it without guessing.
-The numbers live in [`ink_tuning.json`](ink_tuning.json) (`ink-tuning-2`); when
+The numbers live in [`ink_tuning.json`](ink_tuning.json) (`ink-tuning-3`); when
 this text and the JSON differ, the JSON is what runs. What changed against
-version 1 is listed function by function in [`CHANGES_V2.md`](CHANGES_V2.md).
+version 1 is listed function by function in [`CHANGES_V2.md`](CHANGES_V2.md),
+what changed from version 2 to version 3 in [`CHANGES_V3.md`](CHANGES_V3.md)
+(deep-contact passes, crowd relaxation, the blunt bonus of a body, solo enemy
+speed and crush; no Ring balance number changed).
 
 Status of everything here: **prototype proposal by the Worker**, not a Human
 decision. `Projects/Inkweight/Docs/INK_RULES_V1.md` was not edited; the rules
@@ -146,7 +149,7 @@ skipped everywhere.
        depth * invA / (invA + invB)`, B the opposite with `invB`.
      - If the contact is still deeper than `deepContactDepth` after the push,
        the pair is scanned and pushed again, positions only, at most
-       `extraSeparationPasses` times.
+       `extraSeparationPasses` (8) times.
      - `dashing` = A or B has `dashTicks > 0`.
      - If the relative velocity along `n` is closing (`rel = (vA - vB) . n <
        0`): impulse `-(1 + e) * rel / (invA + invB)` along `n` on A and against
@@ -155,14 +158,32 @@ skipped everywhere.
      - **A contact ends a dash:** if `dashing`, every body of the pair with
        `dashTicks > 0` gets `dashTicks = 0` and an event `ram` is recorded.
        The dash cooldown keeps running.
-     - **Damage** (not within one team): if the cooldown A-to-B is 0, B loses
-       `(A touches with a sharp cell ? max(bluntDamage, sharpness_A) +
-       sharpArmourCut * fullArmour_B : bluntDamage) * damageMult_A *
+     - **Damage** (not within one team): with `blunt_A = bluntDamage +
+       bluntBonus_A` (the bonus is 0 for every body except solo enemy copies,
+       section 5): if the cooldown A-to-B is 0, B loses
+       `(A touches with a sharp cell ? max(blunt_A, sharpness_A) +
+       sharpArmourCut * fullArmour_B : blunt_A) * damageMult_A *
        elementMultiplier(A, B)` (a blade also takes 0.4 % of the victim's
        full armour with every hit), the cooldown
        A-to-B becomes `hitCooldownTicks`, and B gets a knockback of `damage *
        hitKnockbackPerDamage / mass_B` away from A. Then the same for B-to-A.
        One contact therefore hurts both sides, each with what it touched with.
+   - **Crowd relaxation** (only when the world has more than two bodies,
+     dead ones counted): pushing one pair apart can press a body into a third
+     one. After the pair loop the pairs `i < j` (living bodies, index order)
+     are gone through again, at most `crowdRelaxPasses` (4) times: a pair
+     within reach whose scan has a contact deeper than `deepContactDepth` is
+     pushed apart along its contact normal by the largest depth, shared by
+     inverse push weight, exactly like the first push of a pair. Positions
+     only: no velocity, damage, cooldown, dash end or event, and teams do not
+     matter. The loop stops after a round in which no pair was pushed.
+     It does not always settle within its four rounds (the Reviewer counted
+     the fourth round still pushing in 538 of 261926 sub-steps), and within
+     one tick a squeezed body can be pushed back and forth; no speed is added
+     and the solo wall is applied afterwards. Because dead bodies count, a
+     three-seat round whose last two figures are alive still relaxes, unlike
+     a duel. Cost: about twice the step time in four-figure rounds (23.7 ->
+     43.6 microseconds per tick in Node), duels unchanged.
 4. **Wall** (solo only): a body further than `arenaRadius` from the centre is
    put back on the circle and loses the outward part of its velocity.
 
@@ -170,11 +191,19 @@ Because of the sub-steps no cell of a body moves more than `maxStepCells`
 (0.4 cells) between two scans, by moving or by turning, up to `maxSubSteps *
 maxStepCells` (3.2 cells per tick = 192 cells per second) for speed plus tip
 speed. The fastest dash of a valid figure is 123 cells per second. Measured
-on bot rounds (`node sim/overlap_probe.js`): the cell centres of two bodies
-stay at least 0.5 apart at the end of every tick for the tested pairs, with
-one known exception: two figures with one-cell teeth and one-cell gaps (comb
-against hedgehog) can mesh, and then a cell centre is deeper than 0.5 inside
-the other figure in about 0.2 % of the ticks (largest overlap seen 0.79).
+on bot rounds (`node sim/overlap_probe.js`, sampled at the end of every
+tick): the cell centres of two bodies stay at least 0.5 apart for the tested
+ordinary pairs. Known limit: figures with one-cell teeth and one-cell gaps
+(comb, hedgehog, star) against each other, and any figures in a crowd, can
+still mesh for a moment. Measured with 8 extra passes and 4 relaxation
+rounds: comb against comb 0.10 % of the ticks deeper than 0.5 (largest
+overlap 0.84, at most 4 ticks in a row), comb against hedgehog 0.02 %, comb
+against star 0.04 %, hedgehog against hedgehog none, 30 random four-figure
+rounds 0.07 % (largest 0.96, at most 17 ticks in a row). With the version 2
+numbers (2 passes, no relaxation) the same probe gives 1.18 % (0.97, 58
+ticks), 0.24 %, 0.02 %, 0.04 % and 0.48 % (0.99, 25 ticks). The overlaps
+are rare, short, deterministic and add no speed; they are reduced, not
+removed.
 
 The last tick of a dash is not a ram: `dashTicks` is counted down in the
 control step, so a contact in the twelfth dash tick is a normal contact
@@ -225,8 +254,19 @@ kept); the mode modules remove it after the step.
     copyInkOverhead))`, limited to `copyArmourScaleMin .. copyArmourScaleMax`
     (0.5 to 2): ink that buys no further copy makes the copies tougher, a
     budget that does not pay for one copy makes it weaker,
-  - top speed times `enemySpeedMult * stakeSpeedMult[k]`,
-  - damage times `enemyDamageMult * stakeDamageMult[k]`.
+  - top speed `(enemySpeedBase + enemySpeedMult * topSpeed) *
+    stakeSpeedMult[k]` (`soloEnemySpeed`): a flat 3 cells per second plus
+    45 % of the drawing's speed, so heavy drawings stay the slowest enemies
+    but do not crawl,
+  - damage times `enemyDamageMult * stakeDamageMult[k]`,
+  - **crush** (`soloEnemyCrush`, the body's `bluntBonus`): `enemyCrushPerInk
+    * N * scale * stakes[k]` is added to the blunt damage of the copy's
+    touches before the two damage factors. In the walled arena weight cannot
+    push anybody out, so it hits harder instead, and a stake that buys no
+    further copy of a heavy drawing makes its copies hit harder. A blunt
+    touch of a copy costs `(bluntDamage + crush) * enemyDamageMult *
+    stakeDamageMult[k]`; a sharp touch `max(bluntDamage + crush, sharpness) +
+    sharpArmourCut * fullArmour_hero`, times the same factors.
   Enemies do not damage each other.
 - Enemy bot: steer straight at the hero; when closer than `enemyDashRange`
   plus both radii and able to dash, dash with `enemyDashChancePercent` chance
@@ -261,7 +301,12 @@ kept); the mode modules remove it after the step.
   wave gives the colour of a shared cell), body and stats by the normal rules
   without a budget, armour `armour * bossArmourMult`, plus `bossEscortCopies`
   copy of each wave design with the enemy armour formula (scale 1); stake
-  index 0.
+  index 0. The speed of the boss and the escorts uses stake index 0. **No
+  crush in the boss fight:** after spawning, the `bluntBonus` of the boss and
+  of every escort is multiplied by `bossCrushMult` (0). The crush is what a
+  stake buys in a wave; the boss fight has no stake, and with crush six heavy
+  bodies made it much harder at x1 than in version 2 for a reason that had
+  nothing to do with the stake (review of version 3, B1).
 
 ## 6. Bots
 
@@ -317,7 +362,8 @@ the nearest enemy. Both stay off the wall.
 - The bots use one module-level scratch record for the steering direction;
   it is fully rewritten in every call and carries nothing between calls.
 - State hash: FNV-1a 32 bit over the little-endian bytes of the doubles listed
-  in `core/hash.js` (layout 2, also in `CHANGES_V2.md` B12).
+  in `core/hash.js` (layout 2, also in `CHANGES_V2.md` B12; unchanged in
+  version 3: `bluntBonus` is fixed when a body is made and is not hashed).
 
 ## 8. What was not built
 
@@ -326,11 +372,13 @@ the nearest enemy. Both stay off the wall.
 - Collisions do not spin figures; there is no angular momentum.
 - Sound, look, squash and hop are outside the core.
 - Bots do not draw; in bot matches the same drawing is reused every round.
-- Element effects were not changed in version 2 (damage multiplier only).
+- Element effects were not changed in version 2 or 3 (damage multiplier
+  only). Version 3 measured stronger multipliers (2 and 0.5) and did not
+  adopt them (`Artifacts/Inkweight/Evidence/INK-CORE-V3/WORKER_RESULT.md`).
 
 ## 9. Differences from INK_RULES_V1.md
 
-| Rule | INK_RULES_V1 | As built (version 2) | Reason |
+| Rule | INK_RULES_V1 | As built (version 3) | Reason |
 |---|---|---|---|
 | Sharp cell | at least 5 of 8 neighbours empty | in no filled 2 x 2 square | The old rule made a diagonal sword blunt (a staircase has 4 body neighbours per cell) and made the corners of a block sharp. The new rule reads "ink one cell thick is blade". |
 | Armour | `20 + 2 C + 0.25 N` | `60 + 1 C + 0.3 N + 0.3 * min(P, N - S)` | Same shape as the first rule with other numbers: a filled disc has 3.9 times the armour of a line and 4.2 times that of a dot. Pocket cells give a thick closed shell a little armour, always less than filling gives. |
@@ -349,7 +397,7 @@ the nearest enemy. Both stay off the wall.
 | Movement step | not stated | a tick is cut into up to 8 parts so that no cell moves more than 0.4 cells between two contact checks, by moving or by turning; the turn happens inside the parts | review V1 I1, review V2 I4 |
 | Hit knockback | not stated | each hit pushes the victim back by `damage * 39 / weight` cells per second | as core version 1 |
 | Solo copies | budget / N | budget x stake / (N + 40), at most 10 | Swarm control. |
-| Solo enemies | copies of the design | armour `(0.6 N + 0.2 armour) x scale`, 55 % speed, 40 % damage | Armour follows size, so a big drawing without core cells is not fragile (review V2 I6); the scale spends the ink that buys no further copy. |
+| Solo enemies | copies of the design | armour `(0.6 N + 0.2 armour) x scale`, speed `3 + 45 %` of the design's, 40 % damage, blunt touches plus the crush `0.004 x N x scale x stake` | Armour follows size, so a big drawing without core cells is not fragile (review V2 I6); the scale spends the ink that buys no further copy. Version 3: heavy blunt designs (block, disc, ring, hoop) were harmless and made the stake free (re-review R1); their weight now hits, and harder with the stake. |
 | Solo stake | x1 / x1.5 / x2 budget | also enemy damage x1 / x1.25 / x1.5 and speed x1 / x1.1 / x1.2; a wave pays its staked budget and never more | The stake had no effect once copies hit the cap (review V1 M7); a heavy design paid its own ink whatever the budget (review V2 I6). |
 | Solo heal | not stated | 35 % of full armour | 50 % made every run safe. |
 | Solo colours | "an extra colour" upgrade | the run starts with Black plus one colour | as core version 1 |
@@ -388,4 +436,35 @@ the nearest enemy. Both stay off the wall.
    enemy designs pay more there; they also make the boss fight harder.
 7. **Thrown weapon** is a circle with the weapon's stats, not its drawn shape
    (unchanged). Recommendation: fine for the prototype.
-8. **Elements** only multiply damage. Not changed in version 2.
+8. **Elements** only multiply damage. Not changed in version 2 or 3.
+9. **Balance pass 3 (version 3) changed no Ring number.** Five levers were
+   measured one by one under rusher bots and under circler bots (slower
+   acceleration for wide heavy drawings, a blade bonus on a figure that is
+   already fighting a third one, stronger elements, a shorter dash cooldown
+   for light figures, a ring edge that comes sooner for big drawings). None
+   lowered the highest duel win rate under both styles; three raised it. The
+   field's leaders differ by bot style (nested loops, border hoop, hedgehog
+   as rushers; one-cell hoop, shield, snake as circlers), so a cost on one
+   property hands the top to another drawing. The two open problems stay
+   open: one drawing wins about 77 % of its duels under either style, and
+   light drawings win almost no four-figure round. Recommendation: let
+   humans play before another balance pass.
+10. **Solo stake and heavy blunt enemy designs (version 3, known open
+    point).** The crush makes x2 a real risk for block, disc, ring and hoop
+    designs when the hero is slow or goes for the drops (bot runs: 27 of 64
+    end before the boss, 27 of 64 won). Two things are **not** solved:
+    - **x1.5 is nearly free again for these designs in the bot runs** (63 of
+      64 runs won, score 2677 against 2006 at x1) now that the boss fight has
+      no crush.
+    - **A fast hero that kites a single heavy copy still gets the higher
+      stake nearly free during the waves.** The Reviewer's simple kiter (run
+      away in a circle, no skill needed) with a 32-cell line hero (26 cells
+      per second) against a block took 0 damage at x1, x1.5 and x2 in waves 1
+      and 3, and collects twice the ink at x2; the only cost is a longer
+      fight. A heavy copy moves at 7.3 to 8.7 cells per second, so this works
+      for every hero faster than about 9, which is almost all of them. Only a
+      slow hero pays (disc hero, wave 3: 10 / 38 / 121 armour lost).
+    No rule was changed for this. A later order can test a minimum copy
+    count per stake for heavy designs (the extra ink split into more, weaker
+    copies), measured with a scripted kiter as well as the drop-chasing
+    bots.

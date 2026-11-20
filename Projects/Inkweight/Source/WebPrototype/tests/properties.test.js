@@ -175,6 +175,38 @@ test('ring-out and armour loss eliminate; last one standing wins the round', () 
   assert.equal(m.roundWinner, 1); assert.equal(m.outReason[0], 'armour');
 });
 
+// R3 (INK-CORE-V3): every seat left loses its last armour in the same tick
+test('R3: simultaneous knock-out by armour: nearest to the centre wins, lowest seat on an exact tie', () => {
+  const m = ringCreateMatch(T, 3, 1);
+  ringStartRound(T, m, [fig('disc'), fig('block'), fig('dot')]);
+  const bs = m.world.bodies;
+  // seat 1 is nearest to the centre; nobody is outside the ring
+  bs[0].x = 30; bs[0].y = 0; bs[1].x = 0; bs[1].y = 19.75; bs[2].x = -30; bs[2].y = 0;
+  for (let i = 0; i < 3; i++) bs[i].hp = 0;
+  ringStep(T, m, [null, null, null]);
+  assert.equal(m.phase, 'roundOver');
+  assert.equal(m.roundWinner, 1);
+  assert.deepEqual(m.outReason, ['armour', 'armour', 'armour']);
+  assert.deepEqual(m.outTick, [1, 1, 1]);
+  assert.deepEqual(m.wins, [0, 1, 0]); assert.deepEqual(m.lost, [1, 0, 1]);
+  assert.equal(m.world.events.filter((e) => e.type === 'out' && e.reason === 'armour').length, 3);
+  // exact tie in distance: the lowest seat wins
+  const m2 = ringCreateMatch(T, 2, 1);
+  ringStartRound(T, m2, [fig('disc'), fig('block')]);
+  m2.world.bodies[0].x = -20; m2.world.bodies[0].y = 0; m2.world.bodies[1].x = 20; m2.world.bodies[1].y = 0;
+  m2.world.bodies[0].hp = 0; m2.world.bodies[1].hp = -5;
+  ringStep(T, m2, [null, null]);
+  assert.equal(m2.roundWinner, 0);
+  assert.deepEqual(m2.outReason, ['armour', 'armour']);
+  // armour and ring in the same tick: still the nearest to the centre
+  const m3 = ringCreateMatch(T, 2, 1);
+  ringStartRound(T, m3, [fig('disc'), fig('block')]);
+  m3.world.bodies[0].x = 1000; m3.world.bodies[1].hp = 0;
+  ringStep(T, m3, [null, null]);
+  assert.equal(m3.roundWinner, 1);
+  assert.deepEqual(m3.outReason, ['ring', 'armour']);
+});
+
 test('catch-up ink: +15 percent per lost round up to the cap', () => {
   const m = ringCreateMatch(T, 2, 1);
   const base = T.ink.figureBudget; const p = T.ring.catchUpPercentPerLostRound;

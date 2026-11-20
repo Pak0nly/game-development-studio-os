@@ -1,24 +1,35 @@
 // Solo smoke run alone, for tuning the solo numbers.
 //   node sim/solo_smoke.js [--seeds 4] [--set path=value ...] [--rows]
+//                          [--heroes a,b] [--enemies a,b] [--heavy] [--out file.json]
+// --heroes / --enemies run a part of the field (for parallel pieces), --heavy
+// only the heavy blunt enemy designs of finding R1, --out writes the rows.
 // Prints the summary by stake (and every row with --rows). --set values that
 // are arrays are written as path=a/b/c. It never writes the tuning file.
-import { runSoloSmoke, soloSummary } from './balance.js';
+import { writeFileSync } from 'node:fs';
+import { runSoloSmoke, soloSummary, SOLO_HEAVY_BLUNT } from './balance.js';
 import { loadTuning, applyOverrides } from '../tools/load_tuning.js';
 
 const set = {};
 let seeds = 4;
 let rows = false;
+const only = {};
+let out = '';
 for (let i = 2; i < process.argv.length; i++) {
   const k = process.argv[i];
   if (k === '--seeds') seeds = Number(process.argv[++i]);
   else if (k === '--rows') rows = true;
+  else if (k === '--heroes') only.heroes = process.argv[++i].split(',');
+  else if (k === '--enemies') only.enemies = process.argv[++i].split(',');
+  else if (k === '--heavy') only.enemies = SOLO_HEAVY_BLUNT;
+  else if (k === '--out') out = process.argv[++i];
   else if (k === '--set') {
     const [p, v] = process.argv[++i].split('=');
     set[p] = v.indexOf('/') === -1 ? Number(v) : v.split('/').map(Number);
   }
 }
 const tuning = applyOverrides(loadTuning(), set);
-const solo = runSoloSmoke(tuning, seeds);
+const solo = runSoloSmoke(tuning, seeds, only);
+if (out) writeFileSync(out, JSON.stringify({ set, seeds, rows: solo }, null, 1) + '\n');
 const sum = soloSummary(solo);
 console.log(JSON.stringify(set));
 console.log('won ' + (100 * sum.wonShare).toFixed(0) + ' % of ' + sum.runs + ', armour left ' + (100 * sum.avgHpLeft).toFixed(0) + ' %');

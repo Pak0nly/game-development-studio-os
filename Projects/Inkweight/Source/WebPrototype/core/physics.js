@@ -40,7 +40,6 @@ export function buildFigure(cells, W, H, tuning, kind, budget) {
     }
   }
   const turnRate = ph.turnBase / (1 + stats.inertia / ph.turnInertiaRef); // radians per second (small-angle)
-  const t = turnRate / (2 * ph.tickRate); // tan(half step angle), approximated by the half angle
   let accelK = ph.accelBase / (1 + stats.N / ph.accelWeightRef) / ph.tickRate;
   if (accelK > 1) accelK = 1;
   return {
@@ -52,8 +51,6 @@ export function buildFigure(cells, W, H, tuning, kind, budget) {
     mass: stats.push,
     accelK,
     turnRate,
-    turnCos: (1 - t * t) / (1 + t * t),
-    turnSin: (2 * t) / (1 + t * t),
   };
 }
 
@@ -72,6 +69,9 @@ export function createBody(fig, x, y, fx, fy, team, armourMult, speedMult, damag
     alive: true,
     topSpeed: fig.stats.topSpeed * sm,
     damageMult: dm,
+    // added to the blunt damage of this body's touches before the multipliers
+    // (0 everywhere except solo enemy copies, see solo.js spawnEnemy)
+    bluntBonus: 0,
     dashTicks: 0, dashCd: 0, dashDx: 0, dashDy: 0,
     // steering direction of the running tick (set by the control step, used
     // by the sub-steps; not state between ticks, not hashed)
@@ -187,6 +187,24 @@ export function stepWorld(world, inputs, tuning) {
         collidePair(world, i, j, a, b, tuning);
       }
     }
+    // Crowd relaxation (three or more bodies): pushing one pair apart can
+    // press a body into a third one. The pairs are scanned again, positions
+    // only, at most crowdRelaxPasses times, until no contact is deep.
+    if (n > 2) {
+      for (let r = 0; r < ph.crowdRelaxPasses; r++) {
+        let pushed = false;
+        for (let i = 0; i < n; i++) {
+          const a = bodies[i];
+          if (!a.alive) continue;
+          for (let j = i + 1; j < n; j++) {
+            const b = bodies[j];
+            if (!b.alive) continue;
+            if (relaxPair(a, b, ph)) pushed = true;
+          }
+        }
+        if (!pushed) break;
+      }
+    }
   }
 
   // 4. wall (solo arena only)
@@ -292,7 +310,7 @@ function scanCells(p, q, sign) {
 // contact the sharpness (never less than blunt) plus the armour cut: a blade
 // takes the share sharpArmourCut of the victim's full armour with every hit.
 function touchDamage(tuning, body, sharp, victim) {
-  const blunt = tuning.stats.bluntDamage;
+  const blunt = tuning.stats.bluntDamage + body.bluntBonus;
   if (!sharp) return blunt;
   const sh = body.fig.stats.sharpness;
   return (sh > blunt ? sh : blunt) + tuning.stats.sharpArmourCut * victim.maxHp;
@@ -327,6 +345,27 @@ function contactNormal(ph, a, b) {
   const l = Math.sqrt(l2);
   normal.x = nx / l;
   normal.y = ny / l;
+}
+
+// Position-only push of a pair whose contact is deeper than
+// deepContactDepth, by weight shares. Returns true when it pushed.
+function relaxPair(a, b, ph) {
+  const rx = a.x - b.x;
+  const ry = a.y - b.y;
+  const reach = a.fig.radius + b.fig.radius;
+  if (rx * rx + ry * ry >= reach * reach) return false;
+  scanPair(a, b);
+  if (scan.hits === 0 || scan.maxDepth <= ph.deepContactDepth) return false;
+  contactNormal(ph, a, b);
+  const invA = 1 / a.fig.mass;
+  const invB = 1 / b.fig.mass;
+  const invSum = invA + invB;
+  const d = scan.maxDepth;
+  a.x += normal.x * d * invA / invSum;
+  a.y += normal.y * d * invA / invSum;
+  b.x -= normal.x * d * invB / invSum;
+  b.y -= normal.y * d * invB / invSum;
+  return true;
 }
 
 function collidePair(world, i, j, a, b, tuning) {

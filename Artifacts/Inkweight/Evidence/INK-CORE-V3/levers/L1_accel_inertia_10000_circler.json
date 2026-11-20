@@ -1,0 +1,210 @@
+{
+ "label": "L1_accel_inertia_10000",
+ "style": "circler",
+ "seedsPerPair": 20,
+ "ffaGames": 1200,
+ "set": {
+  "physics.accelInertiaRef": 10000
+ },
+ "maxDuel": 0.7868,
+ "maxDuelName": "hedgehog",
+ "secondDuel": 0.7132,
+ "secondDuelName": "wedge",
+ "minDuel": 0.2079,
+ "minDuelName": "hoop",
+ "maxFfa": 0.5045,
+ "lightFfa": 0.0356,
+ "avgRoundSeconds": 30.2,
+ "ringOutShare": 0.811,
+ "suddenDeathShare": 0.006,
+ "families": {
+  "solid": {
+   "duel": 0.6803,
+   "ffa": 0.4529,
+   "count": 4
+  },
+  "hollow": {
+   "duel": 0.3179,
+   "ffa": 0.1753,
+   "count": 5
+  },
+  "blades": {
+   "duel": 0.4928,
+   "ffa": 0.1718,
+   "count": 4
+  },
+  "core+blades": {
+   "duel": 0.625,
+   "ffa": 0.388,
+   "count": 4
+  },
+  "small": {
+   "duel": 0.4061,
+   "ffa": 0.0263,
+   "count": 3
+  }
+ },
+ "rows": [
+  {
+   "name": "disc",
+   "shape": "solid",
+   "N": 208,
+   "duel": 0.5974,
+   "ffa": 0.5045,
+   "ffaGames": 222
+  },
+  {
+   "name": "block",
+   "shape": "solid",
+   "N": 210,
+   "duel": 0.7053,
+   "ffa": 0.4655,
+   "ffaGames": 232
+  },
+  {
+   "name": "ring",
+   "shape": "hollow",
+   "N": 172,
+   "duel": 0.3921,
+   "ffa": 0.2247,
+   "ffaGames": 227
+  },
+  {
+   "name": "cross",
+   "shape": "blades",
+   "N": 63,
+   "duel": 0.3763,
+   "ffa": 0.0439,
+   "ffaGames": 228
+  },
+  {
+   "name": "star",
+   "shape": "core+blades",
+   "N": 113,
+   "duel": 0.6211,
+   "ffa": 0.3374,
+   "ffaGames": 243
+  },
+  {
+   "name": "lance",
+   "shape": "core+blades",
+   "N": 127,
+   "duel": 0.5211,
+   "ffa": 0.4481,
+   "ffaGames": 241
+  },
+  {
+   "name": "line",
+   "shape": "blades",
+   "N": 32,
+   "duel": 0.4316,
+   "ffa": 0.0553,
+   "ffaGames": 235
+  },
+  {
+   "name": "comb",
+   "shape": "core+blades",
+   "N": 180,
+   "duel": 0.5711,
+   "ffa": 0.2967,
+   "ffaGames": 246
+  },
+  {
+   "name": "shield",
+   "shape": "solid",
+   "N": 212,
+   "duel": 0.7053,
+   "ffa": 0.3765,
+   "ffaGames": 255
+  },
+  {
+   "name": "dot",
+   "shape": "small",
+   "N": 13,
+   "duel": 0.2763,
+   "ffa": 0.0251,
+   "ffaGames": 239
+  },
+  {
+   "name": "hedgehog",
+   "shape": "core+blades",
+   "N": 197,
+   "duel": 0.7868,
+   "ffa": 0.4696,
+   "ffaGames": 247
+  },
+  {
+   "name": "wedge",
+   "shape": "solid",
+   "N": 210,
+   "duel": 0.7132,
+   "ffa": 0.465,
+   "ffaGames": 243
+  },
+  {
+   "name": "frame",
+   "shape": "hollow",
+   "N": 120,
+   "duel": 0.4,
+   "ffa": 0.1908,
+   "ffaGames": 262
+  },
+  {
+   "name": "needle",
+   "shape": "small",
+   "N": 20,
+   "duel": 0.4553,
+   "ffa": 0.0325,
+   "ffaGames": 246
+  },
+  {
+   "name": "hoop",
+   "shape": "hollow",
+   "N": 92,
+   "duel": 0.2079,
+   "ffa": 0.075,
+   "ffaGames": 240
+  },
+  {
+   "name": "spiral",
+   "shape": "blades",
+   "N": 209,
+   "duel": 0.6342,
+   "ffa": 0.2929,
+   "ffaGames": 239
+  },
+  {
+   "name": "grille",
+   "shape": "blades",
+   "N": 211,
+   "duel": 0.5289,
+   "ffa": 0.2949,
+   "ffaGames": 234
+  },
+  {
+   "name": "splinter",
+   "shape": "small",
+   "N": 12,
+   "duel": 0.4868,
+   "ffa": 0.0214,
+   "ffaGames": 234
+  },
+  {
+   "name": "hoop2",
+   "shape": "hollow",
+   "N": 216,
+   "duel": 0.2132,
+   "ffa": 0.124,
+   "ffaGames": 258
+  },
+  {
+   "name": "hoop3",
+   "shape": "hollow",
+   "N": 216,
+   "duel": 0.3763,
+   "ffa": 0.262,
+   "ffaGames": 229
+  }
+ ],
+ "seconds": 103
+}

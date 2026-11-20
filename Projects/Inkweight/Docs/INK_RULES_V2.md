@@ -6,10 +6,28 @@ them, after the independent reviews of version 1 and of the first version 2
 candidate and a second balance pass. Every number and every rule that is
 new against `INK_RULES_V1.md` is a prototype proposal, not a Human decision;
 new rules are marked **(new)**. The machine-readable values live in
-`Source/Shared/ink_tuning.json` (`ink-tuning-2`); when the two differ, the JSON
+`Source/Shared/ink_tuning.json` (`ink-tuning-3`); when the two differ, the JSON
 file is what the game runs. The exact algorithms are in
 `Source/Shared/RULES_AS_BUILT.md`, the differences to the first core in
 `Source/Shared/CHANGES_V2.md`. `INK_RULES_V1.md` is unchanged.
+
+**What changed since the first version 2** (Work Order INK-CORE-V3,
+2026-11-20, core version 3, exact list in `Source/Shared/CHANGES_V3.md`):
+
+- Solo: enemy copies of heavy drawings no longer crawl (speed is 3 cells per
+  second plus 45 % of the design's speed, was 55 %), and the weight of an
+  enemy copy now hits: its blunt touch gains a **crush** of 0.004 per ink,
+  times the share of staked ink the copy carries, times the stake. Before, a
+  heavy blunt enemy design (block, disc, ring, hoop) was harmless and made
+  the stake free. The boss and its escorts do not crush: the boss fight has
+  no stake. **(new)**
+- **Known open point:** a fast hero that kites a single heavy enemy copy
+  still gets the higher stake nearly free during the waves (section 8).
+- Movement: figures in a crowd and figures with one-cell teeth sit inside
+  each other far less often (more separation passes, a relaxation round for
+  three or more figures). No rule a player sees changed.
+- No number of the Ring changed. A third balance pass measured five levers
+  under both bot styles and adopted none (section 8).
 
 The one sentence still holds: **amount is weight, filled areas are armour,
 thin lines are blades, colour is the element.** Version 2 adds one small
@@ -162,8 +180,16 @@ Unchanged from version 1.
   it follows size, so a swarm of thin copies is fragile and a big drawing is
   tough, with or without filled areas. Ink of the staked budget that buys no
   further copy makes the copies up to twice as tough; a budget too small for
-  one copy makes it weaker (down to half). Enemies move at 55 % of the
-  design's speed and hit with 40 % of its damage.
+  one copy makes it weaker (down to half). Enemies move at 3 cells per
+  second plus 45 % of the design's speed and hit with 40 % of its damage.
+- **(new, version 3)** Crush: an enemy copy's blunt touch gains 0.004 per
+  ink of the design, times the share of staked ink the copy carries (the same
+  0.5 to 2 as for its armour), times the stake. In the walled arena weight
+  cannot push anybody out, so it hits harder instead. A 210-cell block in
+  wave 3 touches for 0.8 at x1 and for 2.6 at x2 (before: 0.5 and 0.7); a
+  13-cell dot gains almost nothing. The boss and its escorts do not crush
+  (factor `bossCrushMult` 0): the crush is the price of a stake, and the boss
+  fight has none.
 - **(new)** The stake matters for danger and for reward: besides more or
   tougher copies the enemies hit 1.25 or 1.5 times harder and are 1.1 or 1.2
   times faster at x1.5 and x2. The drops of a wave together pay the staked
@@ -232,6 +258,74 @@ with 22.9 % armour left on average; by stake x1 / x1.5 / x2: 79.5 % / 40.2 % /
 27.7 % won, average score 1497 / 1718 / 1685. The snake enemy, which the
 review beat in every run at every stake for the highest score, is now won in
 7 of 48 runs. Swarms of needles: 13 of 48 runs won.
+
+### Version 3 (Work Order INK-CORE-V3): measured again, no Ring number changed
+
+Same command and sizes (`node sim/balance.js --seeds 30 --ffa 800
+--soloseeds 4`), core version 3. Full tables:
+`Artifacts/Inkweight/Evidence/INK-CORE-V3/BALANCE_REPORT.md` and
+`before_after_ring.md`.
+
+| Measure | Version 2 after correction round 1 | Version 3 |
+|---|---|---|
+| Highest duel win rate, rusher bots only | grille 76.8 % | grille 76.8 % |
+| Highest, circler bots only | hoop 76.1 % | hoop 76.1 % |
+| Highest, mean of rusher-only and circler-only | hoop2 73.6 % | hoop2 73.6 % |
+| Highest, pooled over three configurations | spiral 68.1 % | spiral 68.1 % |
+| Highest four-figure win rate, pooled | hedgehog 48.6 % | hedgehog 49.2 % |
+| Light shapes in four-figure rounds, average | 2.4 % | 2.6 % |
+
+**The target is still not met**, on the same three counts as above. The
+duel numbers are the same because nothing a duel uses changed except the
+number of separation passes; the four-figure numbers moved by at most a few
+points per drawing (crowd relaxation, and the usual scatter of 800 rounds).
+
+The third balance pass tested five levers, each alone, each under rusher
+bots and under circler bots (20 seeds per pair and 1200 four-figure rounds
+per style), with the rule "adopt only what lowers the highest duel win rate
+under both styles, pushes no shape family down by more than a few points and
+leaves the rule sentence visibly true". **None passed; no number was
+changed.**
+
+| Lever (plain sentence) | Highest duel %, rusher: 77.1 before | circler: 76.3 before | Light shapes in four-figure rounds %, rusher 0.9 / circler 3.3 before | Decision |
+|---|---|---|---|---|
+| Wide, heavy drawings are slow to get going (acceleration divided by 1 + inertia / 10000) | hedgehog 87.1 | hedgehog 78.7 | 0.8 / 3.6 | not adopted: raises the top under both styles |
+| The same, gentler (inertia / 40000) | hedgehog 87.1 | shield 78.2 | 0.9 / 2.9 | not adopted |
+| A blade hit on a figure that is already fighting a third one counts double | grille 77.1 | hoop 76.3 | 2.1 / 4.4 | not adopted: duels untouched by design, light shapes gain 1 point |
+| The same, triple | grille 77.1 | hoop 76.3 | 3.2 / 5.0 | not adopted |
+| Stronger elements (2 and 0.5 instead of 1.5 and 0.75) | grille 77.1 | spiral 74.2 | 1.9 / 3.5 | not adopted: lowers the top under one style only |
+| Light figures get their dash back sooner (40 ticks at no ink up to 120 at full ink) | grille 76.6 | hoop 92.1 | 1.3 / 1.5 | not adopted: the one-cell hoop becomes dominant as a circler |
+| Big drawings are out sooner (out when the centre is closer to the edge than a quarter of the size radius) | hoop2 80.0 | hoop 82.1 | 1.6 / 2.5 | not adopted: raises the top under both styles |
+
+Solo smoke run, version 3 after correction round 1 (four hero drawings, ten
+enemy designs: the seven of version 2 plus disc, hollow ring and the 2-wide
+hoop; 480 runs): by stake x1 / x1.5 / x2: 83.8 % / 58.8 % / 26.3 % won,
+average score 1668 / 2051 / 1819. The heavy blunt enemy designs (block,
+disc, ring, 2-wide hoop), which before were won in 64 of 64 runs at every
+stake with scores of 1944 / 2420 / 2930, are now won in 61 / 63 / 27 of 64
+runs with scores of 2006 / 2677 / 2400; at x2, 27 of 64 runs end before the
+boss.
+
+Where the numbers come from, said plainly:
+
+- The first version 3 candidate also let the boss and its escorts crush.
+  With that, heavy blunt designs were won in only 34 / 30 / 13 of 64 runs,
+  and the drop at x1 and x1.5 came from the **boss fight**, not from the
+  stake (every run reached the boss at x1 and x1.5). The independent review
+  measured the same with a kiting hero: 35 of 36 boss fights won under
+  version 2, 13 of 36 with boss crush, 34 of 36 without. The boss crush was
+  removed for that reason; x1 is again as safe as in version 2 for these
+  designs.
+- What is left of the fix is the price of **x2 in the waves** for a hero
+  that gets touched. **x1.5 is nearly free again** for heavy blunt designs in
+  the bot runs (63 of 64 won, a third more score than x1).
+- **Known open point: a fast hero that kites a single heavy copy still gets
+  the higher stake nearly free during the waves.** The Reviewer's simple
+  kiter with a 32-cell line hero took 0 damage from a block at x1, x1.5 and
+  x2 in waves 1 and 3 and collects twice the ink at x2. A heavy copy moves at
+  7.3 to 8.7 cells per second; almost every hero is faster. No rule was
+  changed for this now; a minimum copy count per stake for heavy designs is
+  the idea to test next.
 
 What the numbers cannot tell is unchanged: bots do not dodge, bait or redraw,
 two bot styles are still two styles, and the field is hand-made. The rules

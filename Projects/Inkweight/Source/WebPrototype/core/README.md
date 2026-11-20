@@ -7,9 +7,11 @@ or `Math.random`; it receives the parsed tuning object
 [`../../Shared/RULES_AS_BUILT.md`](../../Shared/RULES_AS_BUILT.md).
 
 Everything beyond `INK_RULES_V1.md` is a prototype proposal. This note
-describes core version 2 (Work Order INK-CORE-V2, tuning `ink-tuning-2`). What
+describes core version 3 (Work Order INK-CORE-V3, tuning `ink-tuning-3`). What
 changed against version 1, function by function, is in
-[`../../Shared/CHANGES_V2.md`](../../Shared/CHANGES_V2.md); the rules in plain
+[`../../Shared/CHANGES_V2.md`](../../Shared/CHANGES_V2.md), what changed from
+version 2 to version 3 in
+[`../../Shared/CHANGES_V3.md`](../../Shared/CHANGES_V3.md); the rules in plain
 words are in `Projects/Inkweight/Docs/INK_RULES_V2.md`.
 
 ## Modules
@@ -47,15 +49,17 @@ sharpness 1.0 to 4.52 (bar end 4.7), weight 12 to 220, push weight `N` to
 
 **Figure template** (`buildFigure`, immutable, shared by all bodies of one
 drawing): `{ stats, W, H, cx, cy, count, lx[], ly[], sharp[], colour[],
-boundary[], grid[], radius, mass, accelK, turnRate, turnCos, turnSin }`
-(`mass` is `stats.push`; `turnCos`/`turnSin` are no longer used by the step).
+boundary[], grid[], radius, mass, accelK, turnRate }`
+(`mass` is `stats.push`; version 3 removed the unused `turnCos`/`turnSin`).
 `lx/ly` are cell centres relative to the centroid, in ascending cell index.
 `grid[y * W + x]` is the cell number or -1. `boundary` lists the cells that are
 not core cells.
 
 **Body** (`createBody`): `{ fig, team, x, y, vx, vy, fx, fy, hp, maxHp, alive,
-topSpeed, damageMult, dashTicks, dashCd, dashDx, dashDy, turning, turnDx,
-turnDy }` (the last three are scratch values of the running tick). `(fx, fy)` is the unit front
+topSpeed, damageMult, bluntBonus, dashTicks, dashCd, dashDx, dashDy, turning,
+turnDx, turnDy }` (the last three are scratch values of the running tick;
+`bluntBonus` is added to the blunt damage of the body's touches, 0 except
+for solo enemy copies). `(fx, fy)` is the unit front
 vector; a body with front `(0, -1)` looks exactly like its canvas. To draw a
 cell use `cellWorldX/Y`, or rotate the whole sprite by the front vector.
 
@@ -104,8 +108,10 @@ const run = core.soloCreateRun(tuning, seed, heroCells, weaponCells, 32, 32, sta
 core.soloStartWave(tuning, run, enemyCells, stakeIndex);   // stakeIndex 0, 1, 2 -> tuning.solo.stakes; throws on any other value
 // preview for the stake buttons: core.soloCopies(tuning, run.wave, stakeIndex, N) copies, each drop worth
 //   core.soloDropValue(tuning, run.wave, stakeIndex, N) ink; enemy damage x tuning.solo.stakeDamageMult[stakeIndex],
-//   enemy speed x tuning.solo.stakeSpeedMult[stakeIndex], enemy armour
-//   core.soloEnemyArmour(tuning, fig, core.soloWaveArmourScale(tuning, run.wave, stakeIndex, N))
+//   enemy speed core.soloEnemySpeed(tuning, fig, stakeIndex) cells per second, enemy armour
+//   core.soloEnemyArmour(tuning, fig, scale) with scale = core.soloWaveArmourScale(tuning, run.wave, stakeIndex, N),
+//   extra blunt damage by weight core.soloEnemyCrush(tuning, fig, scale, stakeIndex) (wave copies only;
+//   in the boss fight it is multiplied by tuning.solo.bossCrushMult, which is 0)
 core.soloStep(tuning, run, heroInput);                      // every tick while run.phase === 'fight'
 // 'cleared': optional core.soloUpgrade(tuning, run, kind, payload), then the next wave;
 //            when run.wave === core.SOLO_WAVES call core.soloStartBoss(tuning, run)
@@ -165,12 +171,18 @@ languages).
     `playSoloRun` in `../sim/runner.js`.
   - `hash` is the 32-bit FNV-1a value of `hash.js` over the IEEE-754 bytes of
     the listed state values (layout 2, see the comments in `hash.js` and
-    `CHANGES_V2.md`); equal hashes mean bit-identical state.
+    `CHANGES_V2.md`; unchanged in version 3); equal hashes mean bit-identical
+    state.
   - Branch coverage of the traces: sudden death (`ring_1v1_sudden_death`),
     simultaneous knock-out with an exact tie and by distance
     (`ring_2_idle_simultaneous_tie`, `ring_3_simultaneous_nearest_wins`),
     circler bots, hero death, the solo time limit, and the hero-ink and
-    weapon-ink upgrades.
+    weapon-ink upgrades; the number of extra separation passes
+    (`ring_1v1_comb_comb_deep_passes`, a duel that differs for 8, 7, 4 and 2
+    passes); a won run with a wide margin (`solo_win_with_boss`, dot
+    enemies); the boss fight of a heavy blunt design without crush
+    (`solo_boss_heavy_no_crush`, the only trace that sees
+    `solo.bossCrushMult`).
 
 ## Commands
 
@@ -180,10 +192,11 @@ node --test                       # all tests
 node tools/gen_golden.js          # rewrite the golden files after a tuning change
 node sim/balance.js --out DIR     # balance report (Markdown and JSON), three bot configurations
 node sim/sweep.js FILE.json       # compare tuning candidates (see the file header)
-node sim/solo_smoke.js            # solo smoke run alone
+node sim/solo_smoke.js            # solo smoke run alone (--heavy: only the heavy blunt enemy designs)
+node sim/lever_run.js --style rusher --label NAME --out FILE.json   # one bot style for one tuning candidate
 node sim/show_stats.js            # stat line of every archetype
 node sim/readability.js           # stat table of beginner drawings (Markdown)
-node sim/overlap_probe.js         # how deep bodies sit inside each other (review finding I4)
+node sim/overlap_probe.js         # how deep bodies sit inside each other (duels, teeth pairs, four-figure crowds)
 node sim/style_check.js           # how often a rusher bot beats a circler bot
 node sim/tune_search.js 200 1     # random search over tuning numbers (rusher bots only)
 ```

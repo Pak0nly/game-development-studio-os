@@ -1,0 +1,17 @@
+line turns into block, 400 ticks: ticks with overlap > 0.5: 0, max 0.012, after 2 s idle 0.000
+line vs block          rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 22964, max 0.06
+needle vs disc         rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 24758, max 0.24
+lance vs shield        rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 23791, max 0.22
+cross vs block         rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 23610, max 0.07
+star vs wedge          rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 24912, max 0.25
+splinter vs disc       rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 27889, max 0.24
+spiral vs block        rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 27507, max 0.04
+comb vs hedgehog       rounds 12, rounds with overlap > 0.5: 4, ticks > 0.5: 5 of 22179, max 0.54
+teeth pairs (6 seeds, both styles, every tick):
+comb vs comb           ticks 20580, above 0.5: 20 (0.097 %), max 0.84, run 4
+hedgehog vs hedgehog   ticks 26272, above 0.5: 0 (0.000 %), max 0.45, run 0
+comb vs hedgehog       ticks 22179, above 0.5: 5 (0.023 %), max 0.54, run 1
+comb vs grille         ticks 16174, above 0.5: 0 (0.000 %), max 0.12, run 0
+grille vs spiral       ticks 16337, above 0.5: 0 (0.000 %), max 0.05, run 0
+comb vs star           ticks 18113, above 0.5: 7 (0.039 %), max 0.65, run 1
+30 four-figure rounds  ticks 50677, above 0.5: 37 (0.073 %), max 0.96, run 17

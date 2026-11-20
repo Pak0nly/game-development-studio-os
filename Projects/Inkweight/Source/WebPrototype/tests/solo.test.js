@@ -7,7 +7,7 @@ import {
 import { loadTuning } from '../tools/load_tuning.js';
 import { blank, rect, recolour, W, H, archetype } from '../sim/archetypes.js';
 import { playSoloRun, playSoloFight } from '../sim/runner.js';
-import { buildFigure, soloEnemyArmour, soloWaveArmourScale } from '../core/index.js';
+import { buildFigure, soloEnemyArmour, soloWaveArmourScale, soloEnemySpeed, soloEnemyCrush, createBody, createWorld, stepWorld } from '../core/index.js';
 
 const T = loadTuning();
 const black = (name) => recolour(archetype(name).cells, 1);
@@ -146,7 +146,9 @@ test('stake: a wave pays its staked budget and never more; enemies get faster, h
     soloStartWave(T, run, archetype('dot').cells, s);
     const e = run.world.bodies[1];
     speeds.push(e.topSpeed); dmg.push(e.damageMult);
-    assert.equal(e.topSpeed, e.fig.stats.topSpeed * (so.enemySpeedMult * so.stakeSpeedMult[s]));
+    assert.equal(e.topSpeed, (so.enemySpeedBase + so.enemySpeedMult * e.fig.stats.topSpeed) * so.stakeSpeedMult[s]);
+    assert.equal(e.topSpeed, soloEnemySpeed(T, e.fig, s));
+    assert.equal(e.bluntBonus, so.enemyCrushPerInk * 13 * soloWaveArmourScale(T, 0, s, 13) * so.stakes[s]);
     assert.equal(e.damageMult, so.enemyDamageMult * so.stakeDamageMult[s]);
     assert.equal(e.hp, (so.enemyArmourPerInk * 13 + so.enemyArmourMult * e.fig.stats.armour) * soloWaveArmourScale(T, 0, s, 13));
     assert.equal(e.maxHp, e.hp);
@@ -185,6 +187,45 @@ test('I6: a heavy drawing without core cells is neither fragile nor overpaid as 
   assert.ok(hp[2] > hp[0]);
 });
 
+// R1 (INK-CORE-V3): heavy blunt enemy designs must not make the stake free
+test('R1: the stake of a heavy blunt enemy design buys speed and crush, and its touch hurts by weight', () => {
+  const so = T.solo;
+  const block = buildFigure(archetype('block').cells, W, H, T, 'figure');
+  const dot = buildFigure(archetype('dot').cells, W, H, T, 'figure');
+  // crush: per ink, times the wave scale, times the stake; boss fight: scale 1, stake index 0
+  assert.equal(soloEnemyCrush(T, block, 1.5, 2), so.enemyCrushPerInk * block.stats.N * 1.5 * so.stakes[2]);
+  assert.ok(soloEnemyCrush(T, block, 1, 0) > 10 * soloEnemyCrush(T, dot, 1, 0));
+  // heavy enemies stay the slowest, but the flat part keeps them from crawling
+  assert.ok(soloEnemySpeed(T, block, 0) < soloEnemySpeed(T, dot, 0));
+  assert.ok(soloEnemySpeed(T, block, 0) > 0.55 * block.stats.topSpeed);
+  // one block per wave at every stake in wave 3 (index 2): danger grows with the stake although no copy is added
+  const touch = [];
+  for (let s = 0; s < 3; s++) {
+    const run = newRun(31);
+    run.wave = 2;
+    soloStartWave(T, run, archetype('block').cells, s);
+    assert.equal(run.copies, 1);
+    const e = run.world.bodies[1];
+    assert.equal(e.bluntBonus, soloEnemyCrush(T, block, soloWaveArmourScale(T, 2, s, block.stats.N), s));
+    assert.equal(e.topSpeed, soloEnemySpeed(T, block, s));
+    touch.push((T.stats.bluntDamage + e.bluntBonus) * e.damageMult);
+  }
+  assert.ok(touch[1] > 1.5 * touch[0] && touch[2] > 1.5 * touch[1], 'blunt touch by stake ' + touch);
+  // the bonus reaches the hero: one blunt touch of a crushing body costs bluntDamage + bluntBonus, times damageMult
+  const hero = createBody(buildFigure(archetype('disc').cells, W, H, T, 'figure'), 0, 0, 0, -1, 0);
+  const enemy = createBody(block, 0, 15.2, 0, -1, 1, 1, 1, 0.5);
+  enemy.bluntBonus = 3;
+  const w = createWorld([hero, enemy], 0);
+  stepWorld(w, [], T);
+  const hit = w.events.filter((ev) => ev.type === 'hit' && ev.to === 0);
+  assert.equal(hit.length, 1);
+  assert.equal(hit[0].sharp, false);
+  assert.equal(hit[0].damage, (T.stats.bluntDamage + 3) * 0.5);
+  assert.equal(hero.hp, hero.maxHp - (T.stats.bluntDamage + 3) * 0.5);
+  // ring figures never crush
+  assert.equal(createBody(block, 0, 0, 0, -1, 0).bluntBonus, 0);
+});
+
 test('enemy copies: armour follows the drawing, the boss keeps full armour', () => {
   const thin = buildFigure(archetype('splinter').cells, W, H, T, 'figure');
   const solid = buildFigure(archetype('block').cells, W, H, T, 'figure');
@@ -199,6 +240,18 @@ test('enemy copies: armour follows the drawing, the boss keeps full armour', () 
   assert.equal(run.world.bodies.length, 2 + 5 * T.solo.bossEscortCopies);
   assert.equal(run.world.bodies[2].hp, soloEnemyArmour(T, run.world.bodies[2].fig, 1));
   assert.equal(run.dropValue, 0);
+  // boss and escorts: speed at stake index 0; no crush (bossCrushMult 0), the boss fight has no stake
+  assert.equal(boss.topSpeed, soloEnemySpeed(T, boss.fig, 0));
+  assert.equal(T.solo.bossCrushMult, 0);
+  for (let i = 1; i < run.world.bodies.length; i++) assert.equal(run.world.bodies[i].bluntBonus, 0, 'body ' + i);
+  // the factor is what decides it: with 1 the boss and the escorts crush with their own ink
+  const T1 = JSON.parse(JSON.stringify(T)); T1.solo.bossCrushMult = 1;
+  const run1 = soloCreateRun(T1, 14, black('disc'), black('needle'), W, H, 0);
+  for (const n of ['dot', 'cross', 'ring', 'star', 'block']) run1.enemyDrawings.push(extractBody(archetype(n).cells, W, H).body);
+  run1.phase = 'cleared'; run1.wave = SOLO_WAVES;
+  soloStartBoss(T1, run1);
+  assert.equal(run1.world.bodies[1].bluntBonus, soloEnemyCrush(T1, run1.world.bodies[1].fig, 1, 0));
+  assert.equal(run1.world.bodies[6].bluntBonus, T1.solo.enemyCrushPerInk * run1.world.bodies[6].fig.stats.N);
 });
 
 // M2 (kept and documented): hero death is checked before the cleared wave

@@ -1,0 +1,13 @@
+== c1
+ heavy blunt: x1 boss 64 won 61/64 hp 45% w 5.00 sc 2006 to 0 | x1.5 boss 64 won 63/64 hp 41% w 5.00 sc 2676 to 0 | x2 boss 37 won 27/64 hp 19% w 4.58 sc 2400 to 0
+ other      : x1 boss 95 won 73/96 hp 34% w 4.99 sc 1442 to 0 | x1.5 boss 64 won 31/96 hp 19% w 4.48 sc 1633 to 0 | x2 boss 24 won 15/96 hp 7% w 3.40 sc 1431 to 0
+  enemy block    x1 boss 16 won 14/16 hp 39% w 5.00 sc 2027 to 0 | x1.5 boss 16 won 16/16 hp 46% w 5.00 sc 2652 to 0 | x2 boss 11 won 7/16 hp 15% w 4.69 sc 2501 to 0
+  enemy comb     x1 boss 16 won 10/16 hp 16% w 5.00 sc 1976 to 0 | x1.5 boss 16 won 8/16 hp 28% w 5.00 sc 2352 to 0 | x2 boss 9 won 5/16 hp 21% w 4.56 sc 2178 to 0
+  enemy cross    x1 boss 16 won 16/16 hp 28% w 5.00 sc 1462 to 0 | x1.5 boss 13 won 3/16 hp 6% w 4.81 sc 1572 to 0 | x2 boss 2 won 1/16 hp 2% w 3.19 sc 1143 to 0
+  enemy disc     x1 boss 16 won 16/16 hp 44% w 5.00 sc 2032 to 0 | x1.5 boss 16 won 15/16 hp 29% w 5.00 sc 2700 to 0 | x2 boss 11 won 8/16 hp 35% w 4.69 sc 2399 to 0
+  enemy dot      x1 boss 16 won 16/16 hp 81% w 5.00 sc 1268 to 0 | x1.5 boss 16 won 16/16 hp 65% w 5.00 sc 1844 to 0 | x2 boss 7 won 7/16 hp 16% w 4.38 sc 1974 to 0
+  enemy hoop2    x1 boss 16 won 15/16 hp 45% w 5.00 sc 2077 to 0 | x1.5 boss 16 won 16/16 hp 42% w 5.00 sc 2754 to 0 | x2 boss 6 won 6/16 hp 6% w 4.38 sc 2378 to 0
+  enemy needle   x1 boss 15 won 14/16 hp 32% w 4.94 sc 1286 to 0 | x1.5 boss 2 won 2/16 hp 7% w 3.69 sc 1107 to 0 | x2 boss 0 won 0/16 hp 0% w 1.94 sc 631 to 0
+  enemy ring     x1 boss 16 won 16/16 hp 51% w 5.00 sc 1888 to 0 | x1.5 boss 16 won 16/16 hp 47% w 5.00 sc 2599 to 0 | x2 boss 9 won 6/16 hp 20% w 4.56 sc 2322 to 0
+  enemy spiral   x1 boss 16 won 2/16 hp 11% w 5.00 sc 1409 to 0 | x1.5 boss 16 won 1/16 hp 6% w 5.00 sc 1876 to 0 | x2 boss 6 won 2/16 hp 5% w 4.38 sc 1997 to 0
+  enemy splinter x1 boss 16 won 15/16 hp 37% w 5.00 sc 1253 to 0 | x1.5 boss 1 won 1/16 hp 0% w 3.38 sc 1048 to 0 | x2 boss 0 won 0/16 hp 0% w 1.94 sc 663 to 0
