@@ -99,6 +99,26 @@ Reviewer task: a61577cec63b26e0a
 Candidate identity: b9e366676964f7709ffb8386eddf31136496fbc3dfac6f3c1361152776b6e875
 Closure receipt: fc76444df866d9651d51d53467a4b4b04f7caf46b52b0b386663947a53bc95e2
 
+## Human answers to the question page (2026-11-20, exact, not yet entered in DISCOVERY_DECISIONS)
+
+1. Fun of drawing with ink: "Teils: die Idee stimmt, aber etwas stört". Note: "Auf mobile etwas weniger Genauigkeit beim zeichnen. Das war zu erwarten. Verständlichkeit allgemein ohne Tutorial nicht gut."
+2. Filled against light shapes: "Leichte Formen bleiben Zweikampf-Spezialisten; die Party bekommt eigene Disziplinen, in denen leicht gewinnt (Rennen, Weitwurf) (Empfehlung)". Note: "Trotz gefühlt komplexer Konstruktion und versatility gegen einen simplen schwarzen Klotz keine Chance gehabt. Starker Frustrationsfaktor."
+3. Solo boss: "Anders (Notiz)". Note: "Erneut überdenken und fairer gestalten. Fernkampf und Geschwindigkeit darf nicht die einzige Lösung sein."
+4. Next step: "Pause: erst mit Freunden testen". Note: "Sehe das Spiel nicht als Main Steam Game."
+5. Party drawing: "Gleich Handys als Zeichenblock im eigenen WLAN (deutlich mehr Technik)". Note: "Jeder hat ein Handy dabei, nur wenige ausreichend gamepads"
+6. Sound: "Vorerst bei Synthesizer-Klängen bleiben (Empfehlung)"
+7. Unity version: "Unity 6.3 LTS (Studio-Standard) (Empfehlung)". Note: "Wenn überhaupt. Offen für Diskussion."
+8. Location: "Eigenes privates Repository wie bei Underreign (Empfehlung)"
+9. Working title: "Vorerst behalten, später prüfen (Empfehlung)"
+10. Gate copy and cloud C# compiler: "Ja, beides so beibehalten (Empfehlung)"
+
+Director reading, to be confirmed: the project pauses for a test with friends;
+no order is authorised. The Human does not see Inkweight as a main Steam game
+and the engine is open again for discussion, which touches DEC-044 (Unity as
+target, Steam as main goal) and needs a Human decision before any engine work.
+The Human's own play contradicts the bot measurement on one point: a plain
+black block beat an elaborate drawing; bots had solids weak in duels.
+
 Nothing is running. The night's authority (ID-04) ended at 09:00 on
 2026-11-20; every further order needs the Human's go.
 
@@ -120,5 +140,5 @@ Question page for the Human (private, ten open decisions with recommendations,
 answers are pasted into the chat; localStorage key `inkweight-fragen-v1`):
 https://claude.ai/artifact/353hZU99rvh9oYWNz7X8j5
 
-Next action: ask the Human how the prototype felt on the phone and what
-happened when opening the Unity project.
+Next action: wait for the Human; on his go, one order enters the answers above
+in `DISCOVERY_DECISIONS.md` and `OPEN_DECISIONS.md`.

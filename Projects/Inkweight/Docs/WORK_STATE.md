@@ -123,15 +123,16 @@ Nothing. No Worker or Reviewer is active.
 
 ## Human Checkpoint
 
-1. Play the browser prototype on a phone and say whether drawing with ink is
-   fun (the question the prototype exists for).
-2. Open `Source/Unity` in Unity (guide: `Source/Unity/README.md`), press Play,
-   report the self-check line in the menu and any Console errors.
-3. Decide the open design question (filled areas are armour against light
-   shapes in a crowd), and confirm or change ID-05, ID-06, ID-07 and OD-02 to
-   OD-11.
+The Human played the prototype on 2026-11-20 and answered the question page
+(exact answers in `CURRENT_HANDOVER.md`, not yet entered in the decision
+documents). Verdict: the idea is right but hard to understand without a
+tutorial; an elaborate drawing losing to a plain black block is a strong
+frustration; solo must be made fairer (ranged play and speed must not be the
+only answer); phones as drawing pads for the party; own private repository;
+working title, gate copy and cloud tooling confirmed. The project pauses for a
+test with friends. The Human does not see Inkweight as a main Steam game and
+the engine is open for discussion (touches DEC-044).
 
 ## Exact Next Step
 
-Wait for the Human's verdict on the prototype. No further order is authorised:
-the night's authority (ID-04) ended at 09:00 on 2026-11-20.
+Wait for the Human. No order is authorised.
