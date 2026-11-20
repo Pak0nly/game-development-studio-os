@@ -4005,6 +4005,8 @@ function handleEvents(events) {
       sfx('throw');
     }
     if (f.cfg.onEvent) f.cfg.onEvent(ev);
+    const dbg = window.__inkDebug;
+    if (dbg && dbg.onFightEvent) dbg.onFightEvent(ev); // automated check only (read only)
   }
 }
 
@@ -5273,9 +5275,9 @@ $('btnFree').addEventListener('click', async () => {
     if (i < 3) circle.append(document.createTextNode(' schlägt '));
     c = te.beats[c];
   }
-  $('rulesElement').textContent = 'Ein Element hat eine Figur ab ' + te.minColouredPercent + ' % bunter Tinte; es zählt die häufigste Farbe. Treffer gegen das unterlegene Element: Schaden ×'
+  $('rulesElement').textContent = 'Ein Element hat eine Figur ab ' + te.minColouredPercent + ' % bunter Tinte; es zählt die häufigste Farbe (Gleichstand: kein Element). Treffer gegen das unterlegene Element: Schaden ×'
     + num(te.strongMult, 1) + ', gegen das überlegene: ×' + num(te.weakMult, 2) + '. Schwarz ist neutral.';
-  $('rulesFight').textContent = 'Berührung macht Schaden; eine Klinge schneidet nur, wo sie selbst trifft. Ein Sprint, der eine Figur trifft, gibt ihr seinen Schwung mit (Rums!). '
+  $('rulesFight').textContent = 'Jede Berührung kostet beide etwas Panzer. Scharf ist ein Treffer nur, wenn eine Klinge selbst den Gegner berührt. Ein Sprint, der eine Figur trifft, gibt ihr seinen Schwung mit (Rums!). '
     + 'Im Ring verliert, wer hinausfliegt oder keinen Panzer mehr hat.';
   const layer = $('rulesLayer');
   const open = () => { sfx('click'); layer.hidden = false; layer.scrollTop = 0; $('rulesClose').focus({ preventScroll: true }); };
