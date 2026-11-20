@@ -6,7 +6,11 @@ or `Math.random`; it receives the parsed tuning object
 (`../../Shared/ink_tuning.json`) as an argument. The exact algorithms are in
 [`../../Shared/RULES_AS_BUILT.md`](../../Shared/RULES_AS_BUILT.md).
 
-Everything beyond `INK_RULES_V1.md` is a prototype proposal.
+Everything beyond `INK_RULES_V1.md` is a prototype proposal. This note
+describes core version 2 (Work Order INK-CORE-V2, tuning `ink-tuning-2`). What
+changed against version 1, function by function, is in
+[`../../Shared/CHANGES_V2.md`](../../Shared/CHANGES_V2.md); the rules in plain
+words are in `Projects/Inkweight/Docs/INK_RULES_V2.md`.
 
 ## Modules
 
@@ -14,10 +18,10 @@ Everything beyond `INK_RULES_V1.md` is a prototype proposal.
 |---|---|
 | `index.js` | re-exports everything below |
 | `rng.js` | seeded xorshift32 generator: `rngCreate(seed)`, `rngDerive(seed, index)`, `rngU32(r)`, `rngInt(r, n)`, `rngFloat(r)` |
-| `drawing.js` | `parseDrawing(rows)`, `drawingToRows(cells, W, H)`, `emptyDrawing(W, H)`, `extractBody(cells, W, H)`, `countNeighbours(...)`, `computeStats(cells, W, H, tuning, kind, budget)`, `elementMultiplier(tuning, attacker, defender)` |
+| `drawing.js` | `parseDrawing(rows)`, `drawingToRows(cells, W, H)`, `emptyDrawing(W, H)`, `extractBody(cells, W, H)`, `countNeighbours(...)`, `isSharpCell(body, W, H, x, y)`, `countEnclosed(body, W, H)`, `computeStats(cells, W, H, tuning, kind, budget)`, `elementMultiplier(tuning, attacker, defender)` |
 | `physics.js` | `buildFigure(cells, W, H, tuning, kind, budget)`, `createBody(fig, x, y, fx, fy, team, armourMult, speedMult, damageMult)`, `createWorld(bodies, wallRadius)`, `stepWorld(world, inputs, tuning)`, `cellWorldX(body, k)`, `cellWorldY(body, k)` |
-| `ring.js` | `ringCreateMatch(tuning, seatCount, seed)`, `ringInkBudget(tuning, match, seat)`, `ringRadiusAt(tuning, seatCount, tick)`, `ringStartRound(tuning, match, figures)`, `ringStep(tuning, match, inputs)` |
-| `solo.js` | `soloCreateRun(...)`, `soloCheckDrawing(...)`, `soloCopies(...)`, `soloThrowIntervalTicks(...)`, `soloStartWave(...)`, `soloBossCells(run)`, `soloStartBoss(...)`, `soloUpgrade(...)`, `soloStep(tuning, run, input)`, `SOLO_WAVES` |
+| `ring.js` | `ringCreateMatch(tuning, seatCount, seed)`, `ringInkBudget(tuning, match, seat)`, `ringRadiusAt(tuning, seatCount, tick)`, `ringCheckFigure(tuning, match, seat, fig)`, `ringStartRound(tuning, match, figures)`, `ringStep(tuning, match, inputs)` |
+| `solo.js` | `soloCreateRun(...)`, `soloCheckDrawing(...)`, `soloCopies(...)`, `soloDropValue(tuning, waveIndex, stakeIndex, N)`, `soloThrowIntervalTicks(...)`, `soloStartWave(...)`, `soloBossCells(run)`, `soloStartBoss(...)`, `soloUpgrade(...)`, `soloStep(tuning, run, input)`, `SOLO_WAVES` |
 | `bots.js` | `botRingInput(tuning, match, seat)`, `ringBotInputs(tuning, match, humanInputs)`, `botEnemyInput(tuning, run, index)`, `botHeroInput(tuning, run, style)` |
 | `hash.js` | `hashRing(match)`, `hashSolo(run)`, `hashCreate()`, `hashDouble(st, v)`, `hashHex(st)` |
 
@@ -30,10 +34,14 @@ balance simulation), `../tests/` (`node --test`).
 **Drawing:** flat array `cells` of `W * H` integers (32 x 32), index
 `y * W + x`. 0 empty, 1 Black, 2 Ember, 3 Tide, 4 Moss. Row 0 is the front.
 
-**Stats** (`computeStats`): `{ kind, budget, filled, drips, N, C, S,
-colourCounts: [black, ember, tide, moss], element (0 neutral or 2/3/4),
+**Stats** (`computeStats`): `{ kind, budget, filled, drips, N, C, S, enclosed,
+P, colourCounts: [black, ember, tide, moss], element (0 neutral or 2/3/4),
 bigEnough, withinBudget, valid, weight, armour, sharpness, topSpeed, cx, cy,
-radius, inertia }`. Use it for the live stat display while drawing.
+radius, inertia }`. Use it for the live stat display while drawing. `S` counts
+the blade cells (ink one cell thick), `P` the pocket cells (enclosed space),
+`enclosed` all enclosed empty cells. Sharpness lies between
+`stats.sharpBase` and `sharpBase + sharpMax + sharpPurity`; a stat bar should
+use that range.
 
 **Figure template** (`buildFigure`, immutable, shared by all bodies of one
 drawing): `{ stats, W, H, cx, cy, count, lx[], ly[], sharp[], colour[],
@@ -47,8 +55,11 @@ topSpeed, damageMult, dashTicks, dashCd, dashDx, dashDy }`. `(fx, fy)` is the un
 vector; a body with front `(0, -1)` looks exactly like its canvas. To draw a
 cell use `cellWorldX/Y`, or rotate the whole sprite by the front vector.
 
-**World:** `{ bodies, cd, events, wallRadius }`. `events` holds what happened
-in the last tick: `{ type: 'hit', from, to, damage, sharp }`, in Ring also
+**World:** `{ bodies, cd, events, wallRadius, subSteps }`. `subSteps` is the
+number of parts the last tick was cut into (1 to `physics.maxSubSteps`).
+`events` holds what happened in the last tick: `{ type: 'hit', from, to,
+damage, sharp }`, `{ type: 'ram', from, to }` (a dash of `from` ended by
+touching `to`), in Ring also
 `{ type: 'out', seat, reason }`, in Solo also `throw`, `shotHit`, `enemyDown`,
 `pickup`. Read them right after the step; they are cleared by the next step.
 
@@ -62,8 +73,12 @@ import * as core from './core/index.js';
 const tuning = await (await fetch('../Shared/ink_tuning.json')).json();
 
 const match = core.ringCreateMatch(tuning, seatCount, seed);       // phase 'draw'
+// optional: match.botStyle[seat] = 1 makes that seat's bot a circler (0 = rusher, the default)
 // drawing phase: budget per seat = core.ringInkBudget(tuning, match, seat)
 //   stats = core.computeStats(cells, 32, 32, tuning, 'figure', budget); need stats.valid
+//   core.ringCheckFigure(tuning, match, seat, figure) returns '' | 'tooSmall' | 'overBudget';
+//   ringStartRound throws for a figure that fails it (also for a figure kept from an
+//   earlier match that was drawn with catch-up ink the seat no longer has)
 const figures = drawings.map((cells, seat) =>
   core.buildFigure(cells, 32, 32, tuning, 'figure', core.ringInkBudget(tuning, match, seat)));
 core.ringStartRound(tuning, match, figures);                        // phase 'fight'
@@ -74,14 +89,18 @@ core.ringStep(tuning, match, inputs);
 ```
 
 Match fields: `seatCount, round, wins[], lost[], phase, tick, ringRadius,
-world, roundWinner, matchWinner, outTick[], outReason[]`. Body `i` of
+world, roundWinner, matchWinner, outTick[], outReason[], botRng[],
+botWobble[], botStyle[]`. Body `i` of
 `match.world.bodies` belongs to seat `i`.
 
 ## Driving a Solo run
 
 ```js
 const run = core.soloCreateRun(tuning, seed, heroCells, weaponCells, 32, 32, startColour); // throws if invalid
-core.soloStartWave(tuning, run, enemyCells, stakeIndex);   // stakeIndex 0, 1, 2 -> tuning.solo.stakes
+core.soloStartWave(tuning, run, enemyCells, stakeIndex);   // stakeIndex 0, 1, 2 -> tuning.solo.stakes; throws on any other value
+// preview for the stake buttons: core.soloCopies(tuning, run.wave, stakeIndex, N) copies, each drop worth
+//   core.soloDropValue(tuning, run.wave, stakeIndex, N) ink; enemy damage x tuning.solo.stakeDamageMult[stakeIndex],
+//   enemy speed x tuning.solo.stakeSpeedMult[stakeIndex]
 core.soloStep(tuning, run, heroInput);                      // every tick while run.phase === 'fight'
 // 'cleared': optional core.soloUpgrade(tuning, run, kind, payload), then the next wave;
 //            when run.wave === core.SOLO_WAVES call core.soloStartBoss(tuning, run)
@@ -91,7 +110,7 @@ core.soloStep(tuning, run, heroInput);                      // every tick while 
 Run fields: `phase, endReason, wave, heroBudget, weaponBudget, colours[5],
 heroFig, weaponFig, heroHp, heroMaxHp, wallet, score, world, shots[]
 ({ x, y, ux, uy, speed, life }), drops[] ({ x, y, value, life }), events, tick,
-copies, stake`. Body 0 is the hero. Check drawings before use with
+copies, stake, stakeIndex, dropValue, upgradeTaken`. Body 0 is the hero. Check drawings before use with
 `soloCheckDrawing(tuning, run, cells, 32, 32, 'hero' | 'weapon' | 'enemy')`.
 
 ## Determinism
@@ -121,7 +140,8 @@ languages).
   budget)` and compare every field of `expect` exactly.
 - `sim_traces.json`: header field `drawings` maps archetype names to rows.
   - Ring item: `seed`, `seats` (drawing names), `control` (`bot` or `script`
-    per seat), `scripts[seat] = [[fromTick, mx, my, dash], ...]` (the last
+    per seat), `botStyle` (per seat, set on `match.botStyle` right after
+    `ringCreateMatch`), `covers` (what the trace is for), `scripts[seat] = [[fromTick, mx, my, dash], ...]` (the last
     segment with `fromTick <= match.tick` applies, evaluated before the step),
     `maxRounds`, `maxTicksPerRound`, `rounds`, `final`, `checkpoints`. The same
     figures (default budget) are used in every round. A checkpoint is
@@ -130,12 +150,22 @@ languages).
     of `checkpointEvery`, and after the last step of a round.
   - Solo item: `seed`, `hero`, `weapon` (both recoloured black), `heroBot`
     (`kite` = style 0, `brawl` = style 1), `waves: [{ enemy, stake, upgrade }]`
-    (`upgrade` is tried after the wave: `heal`, `colour2/3/4` or null),
-    `boss`, `fights`, `final`, `checkpoints` (`{ fight, tick, hash, hero,
+    (`upgrade` is tried after the wave: `heal`, `colour2/3/4`,
+    `heroInk:<drawing>` or `weaponInk:<drawing>` (redraw with that drawing
+    recoloured black) or null), `boss`, `tuningOverrides` (tuning paths
+    replaced for this trace only; empty for all traces but `solo_time_limit`),
+    `fights` (each with `upgrade`: `ok`, empty or the refusal reason),
+    `final`, `checkpoints` (`{ fight, tick, hash, hero,
     enemiesAlive, shots, drops, wallet, score }`). The reference driver is
     `playSoloRun` in `../sim/runner.js`.
   - `hash` is the 32-bit FNV-1a value of `hash.js` over the IEEE-754 bytes of
-    the listed state values; equal hashes mean bit-identical state.
+    the listed state values (layout 2, see the comments in `hash.js` and
+    `CHANGES_V2.md`); equal hashes mean bit-identical state.
+  - Branch coverage of the traces: sudden death (`ring_1v1_sudden_death`),
+    simultaneous knock-out with an exact tie and by distance
+    (`ring_2_idle_simultaneous_tie`, `ring_3_simultaneous_nearest_wins`),
+    circler bots, hero death, the solo time limit, and the hero-ink and
+    weapon-ink upgrades.
 
 ## Commands
 
@@ -143,6 +173,9 @@ languages).
 cd Projects/Inkweight/Source/WebPrototype
 node --test                       # all tests
 node tools/gen_golden.js          # rewrite the golden files after a tuning change
-node sim/balance.js --out DIR     # balance report (Markdown and JSON)
-node sim/tune_search.js 200 1     # random search over tuning numbers
+node sim/balance.js --out DIR     # balance report (Markdown and JSON), three bot configurations
+node sim/sweep.js FILE.json       # compare tuning candidates (see the file header)
+node sim/solo_smoke.js            # solo smoke run alone
+node sim/show_stats.js            # stat line of every archetype
+node sim/tune_search.js 200 1     # random search over tuning numbers (rusher bots only)
 ```

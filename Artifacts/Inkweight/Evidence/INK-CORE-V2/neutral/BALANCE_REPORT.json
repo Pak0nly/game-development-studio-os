@@ -1,0 +1,1271 @@
+{
+ "ring": {
+  "styles": [
+   "rusher",
+   "circler",
+   "mixed"
+  ],
+  "seedsPerPair": 20,
+  "ffaGames": 400,
+  "neutral": true,
+  "perStyle": [
+   {
+    "style": "rusher",
+    "rounds": 3060,
+    "avgRoundSeconds": 34.6,
+    "ringOutShare": 0.615,
+    "armourOutShare": 0.385,
+    "suddenDeathShare": 0.017,
+    "maxDuelWinRate": 0.8147,
+    "maxDuelName": "splinter",
+    "maxFfaWinRate": 0.5545
+   },
+   {
+    "style": "circler",
+    "rounds": 3060,
+    "avgRoundSeconds": 41.8,
+    "ringOutShare": 0.979,
+    "armourOutShare": 0.021,
+    "suddenDeathShare": 0.062,
+    "maxDuelWinRate": 0.8471,
+    "maxDuelName": "hoop",
+    "maxFfaWinRate": 0.3418
+   },
+   {
+    "style": "mixed",
+    "rounds": 3060,
+    "avgRoundSeconds": 21.5,
+    "ringOutShare": 0.913,
+    "armourOutShare": 0.087,
+    "suddenDeathShare": 0.009,
+    "maxDuelWinRate": 0.6294,
+    "maxDuelName": "line",
+    "maxFfaWinRate": 0.4468
+   }
+  ],
+  "rows": [
+   {
+    "name": "disc",
+    "shape": "solid",
+    "optimiser": false,
+    "N": 208,
+    "C": 148,
+    "S": 0,
+    "P": 0,
+    "armour": 273.6,
+    "sharpness": 1,
+    "topSpeed": 9.57,
+    "radius": 8.4,
+    "element": 0,
+    "duelWinRate": 0.4402,
+    "duelWorst": 0.25,
+    "duelBest": 0.6,
+    "ffaWinRate": 0.2846,
+    "ffaGames": 260,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.5559,
+      "ffa": 0.4286
+     },
+     "circler": {
+      "duel": 0.2412,
+      "ffa": 0.131
+     },
+     "mixed": {
+      "duel": 0.5235,
+      "ffa": 0.2935
+     }
+    },
+    "versus": {
+     "block": 0.433,
+     "ring": 0.533,
+     "cross": 0.483,
+     "star": 0.533,
+     "lance": 0.533,
+     "line": 0.3,
+     "comb": 0.4,
+     "shield": 0.333,
+     "dot": 0.6,
+     "hedgehog": 0.433,
+     "wedge": 0.483,
+     "frame": 0.583,
+     "needle": 0.283,
+     "hoop": 0.5,
+     "spiral": 0.267,
+     "grille": 0.25,
+     "splinter": 0.533
+    },
+    "duelSameStyle": 0.3985
+   },
+   {
+    "name": "block",
+    "shape": "solid",
+    "optimiser": false,
+    "N": 210,
+    "C": 156,
+    "S": 0,
+    "P": 0,
+    "armour": 279.2,
+    "sharpness": 1,
+    "topSpeed": 9.5,
+    "radius": 10.1,
+    "element": 0,
+    "duelWinRate": 0.4843,
+    "duelWorst": 0.283,
+    "duelBest": 0.767,
+    "ffaWinRate": 0.4197,
+    "ffaGames": 274,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.6853,
+      "ffa": 0.5326
+     },
+     "circler": {
+      "duel": 0.2618,
+      "ffa": 0.2935
+     },
+     "mixed": {
+      "duel": 0.5059,
+      "ffa": 0.4333
+     }
+    },
+    "versus": {
+     "disc": 0.567,
+     "ring": 0.517,
+     "cross": 0.517,
+     "star": 0.5,
+     "lance": 0.567,
+     "line": 0.45,
+     "comb": 0.4,
+     "shield": 0.417,
+     "dot": 0.767,
+     "hedgehog": 0.367,
+     "wedge": 0.6,
+     "frame": 0.55,
+     "needle": 0.333,
+     "hoop": 0.5,
+     "spiral": 0.283,
+     "grille": 0.35,
+     "splinter": 0.55
+    },
+    "duelSameStyle": 0.4736
+   },
+   {
+    "name": "ring",
+    "shape": "hollow",
+    "optimiser": false,
+    "N": 172,
+    "C": 16,
+    "S": 0,
+    "P": 208,
+    "armour": 318.8,
+    "sharpness": 1,
+    "topSpeed": 10.99,
+    "radius": 12.4,
+    "element": 0,
+    "duelWinRate": 0.5323,
+    "duelWorst": 0.25,
+    "duelBest": 0.933,
+    "ffaWinRate": 0.3543,
+    "ffaGames": 302,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.5176,
+      "ffa": 0.4592
+     },
+     "circler": {
+      "duel": 0.5735,
+      "ffa": 0.1939
+     },
+     "mixed": {
+      "duel": 0.5059,
+      "ffa": 0.4057
+     }
+    },
+    "versus": {
+     "disc": 0.467,
+     "block": 0.483,
+     "cross": 0.567,
+     "star": 0.667,
+     "lance": 0.683,
+     "line": 0.567,
+     "comb": 0.35,
+     "shield": 0.25,
+     "dot": 0.933,
+     "hedgehog": 0.433,
+     "wedge": 0.517,
+     "frame": 0.767,
+     "needle": 0.467,
+     "hoop": 0.5,
+     "spiral": 0.4,
+     "grille": 0.333,
+     "splinter": 0.667
+    },
+    "duelSameStyle": 0.5455
+   },
+   {
+    "name": "cross",
+    "shape": "blades",
+    "optimiser": false,
+    "N": 63,
+    "C": 0,
+    "S": 63,
+    "P": 0,
+    "armour": 170,
+    "sharpness": 2.78,
+    "topSpeed": 20,
+    "radius": 16.2,
+    "element": 0,
+    "duelWinRate": 0.4627,
+    "duelWorst": 0.267,
+    "duelBest": 0.817,
+    "ffaWinRate": 0.1712,
+    "ffaGames": 257,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.1294,
+      "ffa": 0
+     },
+     "circler": {
+      "duel": 0.7294,
+      "ffa": 0.3333
+     },
+     "mixed": {
+      "duel": 0.5294,
+      "ffa": 0.1807
+     }
+    },
+    "versus": {
+     "disc": 0.517,
+     "block": 0.483,
+     "ring": 0.433,
+     "star": 0.733,
+     "lance": 0.417,
+     "line": 0.35,
+     "comb": 0.4,
+     "shield": 0.4,
+     "dot": 0.817,
+     "hedgehog": 0.5,
+     "wedge": 0.5,
+     "frame": 0.433,
+     "needle": 0.317,
+     "hoop": 0.267,
+     "spiral": 0.45,
+     "grille": 0.45,
+     "splinter": 0.4
+    },
+    "duelSameStyle": 0.4294
+   },
+   {
+    "name": "star",
+    "shape": "core+blades",
+    "optimiser": false,
+    "N": 113,
+    "C": 45,
+    "S": 36,
+    "P": 0,
+    "armour": 201.5,
+    "sharpness": 2.22,
+    "topSpeed": 14.54,
+    "radius": 13.5,
+    "element": 0,
+    "duelWinRate": 0.4402,
+    "duelWorst": 0.167,
+    "duelBest": 0.883,
+    "ffaWinRate": 0.1742,
+    "ffaGames": 310,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.2029,
+      "ffa": 0.0741
+     },
+     "circler": {
+      "duel": 0.5941,
+      "ffa": 0.3333
+     },
+     "mixed": {
+      "duel": 0.5235,
+      "ffa": 0.1064
+     }
+    },
+    "versus": {
+     "disc": 0.467,
+     "block": 0.5,
+     "ring": 0.333,
+     "cross": 0.267,
+     "lance": 0.35,
+     "line": 0.167,
+     "comb": 0.517,
+     "shield": 0.3,
+     "dot": 0.883,
+     "hedgehog": 0.483,
+     "wedge": 0.45,
+     "frame": 0.55,
+     "needle": 0.4,
+     "hoop": 0.5,
+     "spiral": 0.433,
+     "grille": 0.4,
+     "splinter": 0.483
+    },
+    "duelSameStyle": 0.3985
+   },
+   {
+    "name": "lance",
+    "shape": "core+blades",
+    "optimiser": false,
+    "N": 127,
+    "C": 69,
+    "S": 18,
+    "P": 0,
+    "armour": 218.3,
+    "sharpness": 2.12,
+    "topSpeed": 13.5,
+    "radius": 19,
+    "element": 0,
+    "duelWinRate": 0.4873,
+    "duelWorst": 0.267,
+    "duelBest": 0.65,
+    "ffaWinRate": 0.1268,
+    "ffaGames": 276,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.5471,
+      "ffa": 0
+     },
+     "circler": {
+      "duel": 0.3912,
+      "ffa": 0.2198
+     },
+     "mixed": {
+      "duel": 0.5235,
+      "ffa": 0.1596
+     }
+    },
+    "versus": {
+     "disc": 0.467,
+     "block": 0.433,
+     "ring": 0.317,
+     "cross": 0.583,
+     "star": 0.65,
+     "line": 0.5,
+     "comb": 0.533,
+     "shield": 0.267,
+     "dot": 0.633,
+     "hedgehog": 0.383,
+     "wedge": 0.383,
+     "frame": 0.6,
+     "needle": 0.533,
+     "hoop": 0.5,
+     "spiral": 0.55,
+     "grille": 0.617,
+     "splinter": 0.333
+    },
+    "duelSameStyle": 0.4692
+   },
+   {
+    "name": "line",
+    "shape": "blades",
+    "optimiser": false,
+    "N": 32,
+    "C": 0,
+    "S": 32,
+    "P": 0,
+    "armour": 170,
+    "sharpness": 2.95,
+    "topSpeed": 26.08,
+    "radius": 16,
+    "element": 0,
+    "duelWinRate": 0.6088,
+    "duelWorst": 0.3,
+    "duelBest": 0.833,
+    "ffaWinRate": 0.0902,
+    "ffaGames": 266,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.6471,
+      "ffa": 0.0116
+     },
+     "circler": {
+      "duel": 0.55,
+      "ffa": 0.1279
+     },
+     "mixed": {
+      "duel": 0.6294,
+      "ffa": 0.1277
+     }
+    },
+    "versus": {
+     "disc": 0.7,
+     "block": 0.55,
+     "ring": 0.433,
+     "cross": 0.65,
+     "star": 0.833,
+     "lance": 0.5,
+     "comb": 0.767,
+     "shield": 0.3,
+     "dot": 0.667,
+     "hedgehog": 0.633,
+     "wedge": 0.7,
+     "frame": 0.667,
+     "needle": 0.3,
+     "hoop": 0.75,
+     "spiral": 0.783,
+     "grille": 0.75,
+     "splinter": 0.367
+    },
+    "duelSameStyle": 0.5986
+   },
+   {
+    "name": "comb",
+    "shape": "core+blades",
+    "optimiser": false,
+    "N": 180,
+    "C": 22,
+    "S": 108,
+    "P": 0,
+    "armour": 185.4,
+    "sharpness": 2.31,
+    "topSpeed": 10.64,
+    "radius": 13.4,
+    "element": 0,
+    "duelWinRate": 0.5725,
+    "duelWorst": 0.233,
+    "duelBest": 1,
+    "ffaWinRate": 0.24,
+    "ffaGames": 250,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.5353,
+      "ffa": 0.25
+     },
+     "circler": {
+      "duel": 0.6676,
+      "ffa": 0.3152
+     },
+     "mixed": {
+      "duel": 0.5147,
+      "ffa": 0.1212
+     }
+    },
+    "versus": {
+     "disc": 0.6,
+     "block": 0.6,
+     "ring": 0.65,
+     "cross": 0.6,
+     "star": 0.483,
+     "lance": 0.467,
+     "line": 0.233,
+     "shield": 0.417,
+     "dot": 1,
+     "hedgehog": 0.45,
+     "wedge": 0.667,
+     "frame": 0.767,
+     "needle": 0.5,
+     "hoop": 0.65,
+     "spiral": 0.6,
+     "grille": 0.583,
+     "splinter": 0.467
+    },
+    "duelSameStyle": 0.6015
+   },
+   {
+    "name": "shield",
+    "shape": "solid",
+    "optimiser": false,
+    "N": 212,
+    "C": 132,
+    "S": 0,
+    "P": 0,
+    "armour": 262.4,
+    "sharpness": 1,
+    "topSpeed": 9.43,
+    "radius": 14.8,
+    "element": 0,
+    "duelWinRate": 0.6382,
+    "duelWorst": 0.483,
+    "duelBest": 0.833,
+    "ffaWinRate": 0.3933,
+    "ffaGames": 239,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.6176,
+      "ffa": 0.5063
+     },
+     "circler": {
+      "duel": 0.75,
+      "ffa": 0.3418
+     },
+     "mixed": {
+      "duel": 0.5471,
+      "ffa": 0.3333
+     }
+    },
+    "versus": {
+     "disc": 0.667,
+     "block": 0.583,
+     "ring": 0.75,
+     "cross": 0.6,
+     "star": 0.7,
+     "lance": 0.733,
+     "line": 0.7,
+     "comb": 0.583,
+     "dot": 0.833,
+     "hedgehog": 0.5,
+     "wedge": 0.7,
+     "frame": 0.8,
+     "needle": 0.533,
+     "hoop": 0.65,
+     "spiral": 0.5,
+     "grille": 0.483,
+     "splinter": 0.533
+    },
+    "duelSameStyle": 0.6838
+   },
+   {
+    "name": "dot",
+    "shape": "small",
+    "optimiser": false,
+    "N": 13,
+    "C": 1,
+    "S": 4,
+    "P": 0,
+    "armour": 170.7,
+    "sharpness": 1.56,
+    "topSpeed": 32.05,
+    "radius": 2.5,
+    "element": 0,
+    "duelWinRate": 0.1628,
+    "duelWorst": 0,
+    "duelBest": 0.4,
+    "ffaWinRate": 0.1345,
+    "ffaGames": 275,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.0441,
+      "ffa": 0.1264
+     },
+     "circler": {
+      "duel": 0.3118,
+      "ffa": 0.1954
+     },
+     "mixed": {
+      "duel": 0.1324,
+      "ffa": 0.0891
+     }
+    },
+    "versus": {
+     "disc": 0.4,
+     "block": 0.233,
+     "ring": 0.067,
+     "cross": 0.183,
+     "star": 0.117,
+     "lance": 0.367,
+     "line": 0.333,
+     "comb": 0,
+     "shield": 0.167,
+     "hedgehog": 0.133,
+     "wedge": 0,
+     "frame": 0.3,
+     "needle": 0.35,
+     "hoop": 0.017,
+     "spiral": 0,
+     "grille": 0,
+     "splinter": 0.1
+    },
+    "duelSameStyle": 0.1779
+   },
+   {
+    "name": "hedgehog",
+    "shape": "core+blades",
+    "optimiser": false,
+    "N": 197,
+    "C": 77,
+    "S": 80,
+    "P": 0,
+    "armour": 223.9,
+    "sharpness": 2.24,
+    "topSpeed": 9.96,
+    "radius": 10.3,
+    "element": 0,
+    "duelWinRate": 0.5264,
+    "duelWorst": 0.267,
+    "duelBest": 0.867,
+    "ffaWinRate": 0.3818,
+    "ffaGames": 296,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.7676,
+      "ffa": 0.5545
+     },
+     "circler": {
+      "duel": 0.2882,
+      "ffa": 0.1485
+     },
+     "mixed": {
+      "duel": 0.5235,
+      "ffa": 0.4468
+     }
+    },
+    "versus": {
+     "disc": 0.567,
+     "block": 0.633,
+     "ring": 0.567,
+     "cross": 0.5,
+     "star": 0.517,
+     "lance": 0.617,
+     "line": 0.367,
+     "comb": 0.55,
+     "shield": 0.5,
+     "dot": 0.867,
+     "wedge": 0.5,
+     "frame": 0.533,
+     "needle": 0.267,
+     "hoop": 0.5,
+     "spiral": 0.583,
+     "grille": 0.55,
+     "splinter": 0.333
+    },
+    "duelSameStyle": 0.5279
+   },
+   {
+    "name": "wedge",
+    "shape": "solid",
+    "optimiser": false,
+    "N": 210,
+    "C": 136,
+    "S": 2,
+    "P": 0,
+    "armour": 265.2,
+    "sharpness": 1.17,
+    "topSpeed": 9.5,
+    "radius": 13.2,
+    "element": 0,
+    "duelWinRate": 0.4853,
+    "duelWorst": 0.3,
+    "duelBest": 1,
+    "ffaWinRate": 0.3136,
+    "ffaGames": 236,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.5941,
+      "ffa": 0.3291
+     },
+     "circler": {
+      "duel": 0.3235,
+      "ffa": 0.2152
+     },
+     "mixed": {
+      "duel": 0.5382,
+      "ffa": 0.3974
+     }
+    },
+    "versus": {
+     "disc": 0.517,
+     "block": 0.4,
+     "ring": 0.483,
+     "cross": 0.5,
+     "star": 0.55,
+     "lance": 0.617,
+     "line": 0.3,
+     "comb": 0.333,
+     "shield": 0.3,
+     "dot": 1,
+     "hedgehog": 0.5,
+     "frame": 0.583,
+     "needle": 0.467,
+     "hoop": 0.5,
+     "spiral": 0.317,
+     "grille": 0.3,
+     "splinter": 0.583
+    },
+    "duelSameStyle": 0.4588
+   },
+   {
+    "name": "frame",
+    "shape": "hollow",
+    "optimiser": false,
+    "N": 120,
+    "C": 0,
+    "S": 8,
+    "P": 100,
+    "armour": 250,
+    "sharpness": 1.86,
+    "topSpeed": 14,
+    "radius": 15.2,
+    "element": 0,
+    "duelWinRate": 0.4117,
+    "duelWorst": 0.2,
+    "duelBest": 0.7,
+    "ffaWinRate": 0.2411,
+    "ffaGames": 282,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.2735,
+      "ffa": 0.172
+     },
+     "circler": {
+      "duel": 0.4529,
+      "ffa": 0.3226
+     },
+     "mixed": {
+      "duel": 0.5088,
+      "ffa": 0.2292
+     }
+    },
+    "versus": {
+     "disc": 0.417,
+     "block": 0.45,
+     "ring": 0.233,
+     "cross": 0.567,
+     "star": 0.45,
+     "lance": 0.4,
+     "line": 0.333,
+     "comb": 0.233,
+     "shield": 0.2,
+     "dot": 0.7,
+     "hedgehog": 0.467,
+     "wedge": 0.417,
+     "needle": 0.45,
+     "hoop": 0.533,
+     "spiral": 0.35,
+     "grille": 0.35,
+     "splinter": 0.45
+    },
+    "duelSameStyle": 0.3632
+   },
+   {
+    "name": "needle",
+    "shape": "small",
+    "optimiser": false,
+    "N": 20,
+    "C": 0,
+    "S": 20,
+    "P": 0,
+    "armour": 170,
+    "sharpness": 3.03,
+    "topSpeed": 29.56,
+    "radius": 9.5,
+    "element": 0,
+    "duelWinRate": 0.6196,
+    "duelWorst": 0.467,
+    "duelBest": 0.733,
+    "ffaWinRate": 0.1556,
+    "ffaGames": 270,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.7912,
+      "ffa": 0.1379
+     },
+     "circler": {
+      "duel": 0.5324,
+      "ffa": 0.2414
+     },
+     "mixed": {
+      "duel": 0.5353,
+      "ffa": 0.0938
+     }
+    },
+    "versus": {
+     "disc": 0.717,
+     "block": 0.667,
+     "ring": 0.533,
+     "cross": 0.683,
+     "star": 0.6,
+     "lance": 0.467,
+     "line": 0.7,
+     "comb": 0.5,
+     "shield": 0.467,
+     "dot": 0.65,
+     "hedgehog": 0.733,
+     "wedge": 0.533,
+     "frame": 0.55,
+     "hoop": 0.7,
+     "spiral": 0.617,
+     "grille": 0.733,
+     "splinter": 0.683
+    },
+    "duelSameStyle": 0.6618
+   },
+   {
+    "name": "hoop",
+    "shape": "hollow",
+    "optimiser": true,
+    "N": 92,
+    "C": 0,
+    "S": 92,
+    "P": 400,
+    "armour": 170,
+    "sharpness": 2.67,
+    "topSpeed": 16.42,
+    "radius": 16.8,
+    "element": 0,
+    "duelWinRate": 0.4961,
+    "duelWorst": 0.25,
+    "duelBest": 0.983,
+    "ffaWinRate": 0.2462,
+    "ffaGames": 260,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.1324,
+      "ffa": 0.1461
+     },
+     "circler": {
+      "duel": 0.8471,
+      "ffa": 0.3258
+     },
+     "mixed": {
+      "duel": 0.5088,
+      "ffa": 0.2683
+     }
+    },
+    "versus": {
+     "disc": 0.5,
+     "block": 0.5,
+     "ring": 0.5,
+     "cross": 0.733,
+     "star": 0.5,
+     "lance": 0.5,
+     "line": 0.25,
+     "comb": 0.35,
+     "shield": 0.35,
+     "dot": 0.983,
+     "hedgehog": 0.5,
+     "wedge": 0.5,
+     "frame": 0.467,
+     "needle": 0.3,
+     "spiral": 0.483,
+     "grille": 0.5,
+     "splinter": 0.517
+    },
+    "duelSameStyle": 0.4897
+   },
+   {
+    "name": "spiral",
+    "shape": "blades",
+    "optimiser": true,
+    "N": 209,
+    "C": 0,
+    "S": 209,
+    "P": 0,
+    "armour": 170,
+    "sharpness": 2.47,
+    "topSpeed": 9.53,
+    "radius": 13.6,
+    "element": 0,
+    "duelWinRate": 0.5422,
+    "duelWorst": 0.217,
+    "duelBest": 1,
+    "ffaWinRate": 0.3169,
+    "ffaGames": 243,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.5706,
+      "ffa": 0.2405
+     },
+     "circler": {
+      "duel": 0.55,
+      "ffa": 0.2911
+     },
+     "mixed": {
+      "duel": 0.5059,
+      "ffa": 0.4118
+     }
+    },
+    "versus": {
+     "disc": 0.733,
+     "block": 0.717,
+     "ring": 0.6,
+     "cross": 0.55,
+     "star": 0.567,
+     "lance": 0.45,
+     "line": 0.217,
+     "comb": 0.4,
+     "shield": 0.5,
+     "dot": 1,
+     "hedgehog": 0.417,
+     "wedge": 0.683,
+     "frame": 0.65,
+     "needle": 0.383,
+     "hoop": 0.517,
+     "grille": 0.45,
+     "splinter": 0.383
+    },
+    "duelSameStyle": 0.5603
+   },
+   {
+    "name": "grille",
+    "shape": "blades",
+    "optimiser": true,
+    "N": 211,
+    "C": 0,
+    "S": 211,
+    "P": 16,
+    "armour": 170,
+    "sharpness": 2.47,
+    "topSpeed": 9.47,
+    "radius": 14,
+    "element": 0,
+    "duelWinRate": 0.5431,
+    "duelWorst": 0.25,
+    "duelBest": 1,
+    "ffaWinRate": 0.2656,
+    "ffaGames": 241,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.5735,
+      "ffa": 0.3205
+     },
+     "circler": {
+      "duel": 0.5706,
+      "ffa": 0.2436
+     },
+     "mixed": {
+      "duel": 0.4853,
+      "ffa": 0.2353
+     }
+    },
+    "versus": {
+     "disc": 0.75,
+     "block": 0.65,
+     "ring": 0.667,
+     "cross": 0.55,
+     "star": 0.6,
+     "lance": 0.383,
+     "line": 0.25,
+     "comb": 0.417,
+     "shield": 0.517,
+     "dot": 1,
+     "hedgehog": 0.45,
+     "wedge": 0.7,
+     "frame": 0.65,
+     "needle": 0.267,
+     "hoop": 0.5,
+     "spiral": 0.55,
+     "splinter": 0.333
+    },
+    "duelSameStyle": 0.572
+   },
+   {
+    "name": "splinter",
+    "shape": "small",
+    "optimiser": true,
+    "N": 12,
+    "C": 0,
+    "S": 12,
+    "P": 0,
+    "armour": 170,
+    "sharpness": 3.02,
+    "topSpeed": 32.44,
+    "radius": 6,
+    "element": 0,
+    "duelWinRate": 0.5461,
+    "duelWorst": 0.317,
+    "duelBest": 0.9,
+    "ffaWinRate": 0.2053,
+    "ffaGames": 263,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.8147,
+      "ffa": 0.2222
+     },
+     "circler": {
+      "duel": 0.3647,
+      "ffa": 0.2222
+     },
+     "mixed": {
+      "duel": 0.4588,
+      "ffa": 0.1687
+     }
+    },
+    "versus": {
+     "disc": 0.467,
+     "block": 0.45,
+     "ring": 0.333,
+     "cross": 0.6,
+     "star": 0.517,
+     "lance": 0.667,
+     "line": 0.633,
+     "comb": 0.533,
+     "shield": 0.467,
+     "dot": 0.9,
+     "hedgehog": 0.667,
+     "wedge": 0.417,
+     "frame": 0.55,
+     "needle": 0.317,
+     "hoop": 0.483,
+     "spiral": 0.617,
+     "grille": 0.667
+    },
+    "duelSameStyle": 0.5897
+   }
+  ],
+  "profiles": [
+   {
+    "stat": "N",
+    "median": 149.5,
+    "highDuel": 0.5294,
+    "lowDuel": 0.4706,
+    "highFfa": 0.33,
+    "lowFfa": 0.1717
+   },
+   {
+    "stat": "armour",
+    "median": 193.45,
+    "highDuel": 0.494,
+    "lowDuel": 0.506,
+    "highFfa": 0.2988,
+    "lowFfa": 0.2028
+   },
+   {
+    "stat": "sharpness",
+    "median": 2.23,
+    "highDuel": 0.5464,
+    "lowDuel": 0.4536,
+    "highFfa": 0.2303,
+    "lowFfa": 0.2713
+   },
+   {
+    "stat": "topSpeed",
+    "median": 12.25,
+    "highDuel": 0.4706,
+    "lowDuel": 0.5294,
+    "highFfa": 0.1717,
+    "lowFfa": 0.33
+   },
+   {
+    "stat": "radius",
+    "median": 13.45,
+    "highDuel": 0.5145,
+    "lowDuel": 0.4855,
+    "highFfa": 0.2251,
+    "lowFfa": 0.2766
+   }
+  ],
+  "byElement": [
+   {
+    "element": 0,
+    "count": 18,
+    "duel": 0.5
+   },
+   {
+    "element": 2,
+    "count": 0,
+    "duel": 0
+   },
+   {
+    "element": 3,
+    "count": 0,
+    "duel": 0
+   },
+   {
+    "element": 4,
+    "count": 0,
+    "duel": 0
+   }
+  ],
+  "verdict": {
+   "maxDuelWinRate": 0.6382,
+   "maxDuelName": "shield",
+   "maxSingleStyleDuelWinRate": 0.8471,
+   "maxSingleStyleName": "hoop (circler)",
+   "maxSameStyleMean": 0.6838,
+   "maxSameStyleMeanName": "shield",
+   "duelSpread": 0.1024,
+   "under60": false,
+   "under60EveryStyle": false,
+   "viable": [
+    "ring",
+    "line",
+    "comb",
+    "shield",
+    "hedgehog",
+    "needle",
+    "spiral",
+    "grille",
+    "splinter"
+   ],
+   "viableShapeFamilies": [
+    "hollow",
+    "blades",
+    "core+blades",
+    "solid",
+    "small"
+   ],
+   "threeDifferentShapes": true,
+   "maxFfaWinRate": 0.4197,
+   "maxFfaName": "block",
+   "lightNames": [
+    "cross",
+    "line",
+    "dot",
+    "needle",
+    "splinter"
+   ],
+   "lightFfaAverage": 0.1514,
+   "lightAtHalfEven": [
+    "cross",
+    "dot",
+    "needle",
+    "splinter"
+   ],
+   "lightNotHopeless": true
+  },
+  "overrides": {}
+ },
+ "solo": null,
+ "soloSummary": null,
+ "tuning": {
+  "version": "ink-tuning-2",
+  "note": "Tuning for core version 2 (Work Order INK-CORE-V2). All durations are whole ticks at physics.tickRate. All distances are canvas cells. Every value is a prototype proposal, not a Human decision. Changed and new keys against ink-tuning-1 are listed in CHANGES_V2.md.",
+  "canvas": {
+   "width": 32,
+   "height": 32
+  },
+  "ink": {
+   "figureBudget": 220,
+   "weaponBudget": 60,
+   "minBodyCells": 12,
+   "weaponMinBodyCells": 12
+  },
+  "stats": {
+   "armourBase": 170,
+   "armourPerCore": 0.7,
+   "armourPerCell": 0,
+   "armourPerPocket": 0.8,
+   "pocketCapPerCell": 1,
+   "sharpBase": 1,
+   "sharpMax": 1.2,
+   "sharpHalfCells": 5,
+   "sharpPurity": 1.2,
+   "sharpPurityWeightRef": 60,
+   "speedBase": 38,
+   "speedWeightRef": 70,
+   "bluntDamage": 1.2
+  },
+  "element": {
+   "minColouredPercent": 30,
+   "strongMult": 1.5,
+   "weakMult": 0.75,
+   "beats": [
+    0,
+    0,
+    4,
+    2,
+    3
+   ]
+  },
+  "physics": {
+   "tickRate": 60,
+   "hitCooldownTicks": 24,
+   "restitution": 0.79,
+   "accelBase": 6,
+   "accelWeightRef": 400,
+   "turnBase": 8,
+   "turnInertiaRef": 6000,
+   "dashSpeedMult": 3.8,
+   "dashTicks": 12,
+   "dashCooldownTicks": 120,
+   "dashAccel": 1,
+   "dashRestitution": 0.3,
+   "maxStepCells": 0.4,
+   "maxSubSteps": 8,
+   "hitKnockbackPerDamage": 39
+  },
+  "ring": {
+   "startRadius": [
+    0,
+    0,
+    44,
+    50,
+    56
+   ],
+   "endRadius": 16,
+   "shrinkStartTick": 300,
+   "shrinkEndTick": 2700,
+   "suddenDeathTick": 3600,
+   "suddenDeathShrinkPerTick": 0.05,
+   "startDistanceFraction": 0.55,
+   "winsToTakeMatch": 3,
+   "catchUpPercentPerLostRound": 15,
+   "catchUpMaxSteps": 4,
+   "drawTimeSeconds": 30
+  },
+  "bots": {
+   "edgeMargin": 5,
+   "edgeBlend": 6,
+   "insideBias": 0.6,
+   "dashRange": 10,
+   "dashChancePercent": 6,
+   "wobbleTicks": 45,
+   "wobbleStrength": 0.35,
+   "lightRetreatFraction": 0.45,
+   "roundaboutDot": 0.5,
+   "roundaboutStrength": 1,
+   "circlerCrowdRange": 18,
+   "circlerStandoff": 6,
+   "circlerBlend": 4,
+   "circlerAttackLeadTicks": 30,
+   "circlerDashGap": 9,
+   "circlerAlignDot": 0.9
+  },
+  "solo": {
+   "arenaRadius": 60,
+   "waveBudgets": [
+    120,
+    170,
+    230,
+    300,
+    380
+   ],
+   "stakes": [
+    1,
+    1.5,
+    2
+   ],
+   "stakeDamageMult": [
+    1,
+    1.25,
+    1.5
+   ],
+   "stakeSpeedMult": [
+    1,
+    1.1,
+    1.2
+   ],
+   "copyInkOverhead": 40,
+   "maxCopies": 10,
+   "enemyInkBudget": 220,
+   "enemySpawnInset": 6,
+   "enemySpeedMult": 0.55,
+   "enemyArmourBase": 30,
+   "enemyArmourMult": 1.2,
+   "enemyDamageMult": 0.6,
+   "enemyDashRange": 8,
+   "enemyDashChancePercent": 2,
+   "throwIntervalBaseTicks": 18,
+   "throwIntervalTicksPerInk": 0.5,
+   "throwSpeedBase": 60,
+   "throwSpeedWeightRef": 60,
+   "projectileLifeTicks": 120,
+   "projectileRadiusMax": 3,
+   "weaponKnockbackPerInk": 12,
+   "dropLifeTicks": 600,
+   "pickupRange": 3,
+   "waveMaxTicks": 10800,
+   "upgradeCost": [
+    60,
+    90,
+    120,
+    150,
+    180
+   ],
+   "upgradeHeroInk": 40,
+   "upgradeWeaponInk": 15,
+   "upgradeHealPercent": 35,
+   "bossArmourMult": 1.2,
+   "bossEscortCopies": 1,
+   "botFleeDistance": 14,
+   "botWallMargin": 10
+  }
+ }
+}

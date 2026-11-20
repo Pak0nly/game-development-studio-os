@@ -102,6 +102,25 @@ export function countNeighbours(body, W, H, x, y) {
   return n;
 }
 
+// Sharp cell test (rules version 2): a body cell is sharp when it is not part
+// of any completely filled 2 x 2 square of body cells, in other words when
+// the ink is only one cell thick there. Straight lines, diagonal staircases,
+// corners of one-cell strokes and single-cell tips are sharp; the edge, the
+// corners and the slanted side of a solid are not. Outside = empty.
+export function isSharpCell(body, W, H, x, y) {
+  for (let oy = -1; oy <= 0; oy++) {
+    const y0 = y + oy;
+    if (y0 < 0 || y0 + 1 >= H) continue;
+    for (let ox = -1; ox <= 0; ox++) {
+      const x0 = x + ox;
+      if (x0 < 0 || x0 + 1 >= W) continue;
+      const i = y0 * W + x0;
+      if (body[i] !== 0 && body[i + 1] !== 0 && body[i + W] !== 0 && body[i + W + 1] !== 0) return false;
+    }
+  }
+  return true;
+}
+
 // Damage multiplier of an attacker element against a defender element.
 export function elementMultiplier(tuning, attacker, defender) {
   const e = tuning.element;
@@ -109,6 +128,54 @@ export function elementMultiplier(tuning, attacker, defender) {
   if (e.beats[attacker] === defender) return e.strongMult;
   if (e.beats[defender] === attacker) return e.weakMult;
   return 1;
+}
+
+// Enclosed space of a body. An empty (non-body) cell is enclosed when it cannot
+// reach the canvas border through non-body cells, moving in 8 directions
+// (outside the canvas counts as open). A pocket cell is an enclosed cell with
+// no body cell among its 8 neighbours: wide bubbles count, one-cell gaps do
+// not. Returns { enclosed, pockets }.
+export function countEnclosed(body, W, H) {
+  const total = W * H;
+  const open = new Array(total);
+  const stack = new Array(total);
+  let sp = 0;
+  for (let i = 0; i < total; i++) open[i] = false;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      if (x !== 0 && y !== 0 && x !== W - 1 && y !== H - 1) continue;
+      const i = y * W + x;
+      if (body[i] === 0) { open[i] = true; stack[sp++] = i; }
+    }
+  }
+  while (sp > 0) {
+    const k = stack[--sp];
+    const x = k % W;
+    const y = (k - x) / W;
+    for (let oy = -1; oy <= 1; oy++) {
+      const yy = y + oy;
+      if (yy < 0 || yy >= H) continue;
+      for (let ox = -1; ox <= 1; ox++) {
+        const xx = x + ox;
+        if (xx < 0 || xx >= W) continue;
+        const m = yy * W + xx;
+        if (body[m] !== 0 || open[m]) continue;
+        open[m] = true;
+        stack[sp++] = m;
+      }
+    }
+  }
+  let enclosed = 0;
+  let pockets = 0;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      const i = y * W + x;
+      if (body[i] !== 0 || open[i]) continue;
+      enclosed++;
+      if (countNeighbours(body, W, H, x, y) === 0) pockets++;
+    }
+  }
+  return { enclosed, pockets };
 }
 
 // All derived values of a drawing. kind is 'figure' or 'weapon' (only the
@@ -136,7 +203,7 @@ export function computeStats(cells, W, H, tuning, kind, budget) {
       sumY += y;
       const nb = countNeighbours(body, W, H, x, y);
       if (nb === 8) C++;
-      if (8 - nb >= st.sharpMinEmptyNeighbours) S++;
+      if (isSharpCell(body, W, H, x, y)) S++;
     }
   }
   // centroid of cell centres
@@ -168,6 +235,11 @@ export function computeStats(cells, W, H, tuning, kind, budget) {
     }
     if (!tie && bestCount > 0) element = best;
   }
+  // enclosed space: pocket cells count as armour, at most pocketCapPerCell for
+  // every body cell that is not a sharp cell (a wall of blade cells holds nothing)
+  const enc = countEnclosed(body, W, H);
+  let pocketArmourCells = enc.pockets;
+  if (pocketArmourCells > st.pocketCapPerCell * (N - S)) pocketArmourCells = st.pocketCapPerCell * (N - S);
   const withinBudget = ex.filled <= inkBudget;
   const bigEnough = N >= minCells;
   return {
@@ -176,15 +248,17 @@ export function computeStats(cells, W, H, tuning, kind, budget) {
     filled: ex.filled,
     drips: ex.drips,
     N, C, S,
+    enclosed: enc.enclosed,
+    P: enc.pockets,
     colourCounts: [colourCounts[1], colourCounts[2], colourCounts[3], colourCounts[4]],
     element,
     bigEnough,
     withinBudget,
     valid: bigEnough && withinBudget,
     weight: N,
-    armour: st.armourBase + st.armourPerCore * C + st.armourPerCell * N,
-    sharpness: st.sharpBase + st.sharpPerSharpCell * S
-      + (N > 0 ? st.sharpPerSharpShare * S / N + st.sharpPerSharpShareSquared * (S / N) * (S / N) : 0),
+    armour: st.armourBase + st.armourPerCore * C + st.armourPerCell * N + st.armourPerPocket * pocketArmourCells,
+    sharpness: st.sharpBase + (N > 0 ? st.sharpMax * (S * S) / (S * S + st.sharpHalfCells * st.sharpHalfCells)
+      + st.sharpPurity * (S / N) * (S / N) / (1 + N / st.sharpPurityWeightRef) : 0),
     topSpeed: st.speedBase / (1 + N / st.speedWeightRef),
     cx, cy, radius, inertia,
   };

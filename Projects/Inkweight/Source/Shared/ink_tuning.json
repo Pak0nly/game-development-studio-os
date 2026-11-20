@@ -1,6 +1,6 @@
 {
-  "version": "ink-tuning-1",
-  "note": "All durations are whole ticks at physics.tickRate. All distances are canvas cells. Values marked in RULES_AS_BUILT.md as proposals are prototype numbers, not Human decisions.",
+  "version": "ink-tuning-2",
+  "note": "Tuning for core version 2 (Work Order INK-CORE-V2). All durations are whole ticks at physics.tickRate. All distances are canvas cells. Every value is a prototype proposal, not a Human decision. Changed and new keys against ink-tuning-1 are listed in CHANGES_V2.md.",
   "canvas": {
     "width": 32,
     "height": 32
@@ -12,14 +12,16 @@
     "weaponMinBodyCells": 12
   },
   "stats": {
-    "sharpMinEmptyNeighbours": 5,
-    "armourBase": 55,
-    "armourPerCore": 2,
+    "armourBase": 170,
+    "armourPerCore": 0.7,
     "armourPerCell": 0,
+    "armourPerPocket": 0.8,
+    "pocketCapPerCell": 1,
     "sharpBase": 1,
-    "sharpPerSharpCell": 0,
-    "sharpPerSharpShare": 0,
-    "sharpPerSharpShareSquared": 5.5,
+    "sharpMax": 1.2,
+    "sharpHalfCells": 5,
+    "sharpPurity": 1.2,
+    "sharpPurityWeightRef": 60,
     "speedBase": 38,
     "speedWeightRef": 70,
     "bluntDamage": 1.2
@@ -48,6 +50,9 @@
     "dashTicks": 12,
     "dashCooldownTicks": 120,
     "dashAccel": 1,
+    "dashRestitution": 0.3,
+    "maxStepCells": 0.4,
+    "maxSubSteps": 8,
     "hitKnockbackPerDamage": 39
   },
   "ring": {
@@ -79,7 +84,13 @@
     "wobbleStrength": 0.35,
     "lightRetreatFraction": 0.45,
     "roundaboutDot": 0.5,
-    "roundaboutStrength": 1
+    "roundaboutStrength": 1,
+    "circlerCrowdRange": 18,
+    "circlerStandoff": 6,
+    "circlerBlend": 4,
+    "circlerAttackLeadTicks": 30,
+    "circlerDashGap": 9,
+    "circlerAlignDot": 0.9
   },
   "solo": {
     "arenaRadius": 60,
@@ -95,12 +106,24 @@
       1.5,
       2
     ],
-    "maxCopies": 20,
+    "stakeDamageMult": [
+      1,
+      1.25,
+      1.5
+    ],
+    "stakeSpeedMult": [
+      1,
+      1.1,
+      1.2
+    ],
+    "copyInkOverhead": 40,
+    "maxCopies": 10,
     "enemyInkBudget": 220,
     "enemySpawnInset": 6,
-    "enemySpeedMult": 0.45,
-    "enemyArmourMult": 0.35,
-    "enemyDamageMult": 0.2,
+    "enemySpeedMult": 0.55,
+    "enemyArmourBase": 30,
+    "enemyArmourMult": 1.2,
+    "enemyDamageMult": 0.6,
     "enemyDashRange": 8,
     "enemyDashChancePercent": 2,
     "throwIntervalBaseTicks": 18,
@@ -122,8 +145,8 @@
     ],
     "upgradeHeroInk": 40,
     "upgradeWeaponInk": 15,
-    "upgradeHealPercent": 50,
-    "bossArmourMult": 1.5,
+    "upgradeHealPercent": 35,
+    "bossArmourMult": 1.2,
     "bossEscortCopies": 1,
     "botFleeDistance": 14,
     "botWallMargin": 10

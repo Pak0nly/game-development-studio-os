@@ -10,7 +10,7 @@
 //   wx = x + (-fy) * lx - fx * ly
 //   wy = y +   fx  * lx + (-fy) * ly
 
-import { computeStats, extractBody, countNeighbours, elementMultiplier } from './drawing.js';
+import { computeStats, extractBody, countNeighbours, isSharpCell, elementMultiplier } from './drawing.js';
 
 // Build the immutable template of a drawing: stats plus collision cells.
 // Cells are listed in ascending cell index (y * W + x).
@@ -35,7 +35,7 @@ export function buildFigure(cells, W, H, tuning, kind, budget) {
       ly.push(y + 0.5 - stats.cy);
       colour.push(v);
       const nb = countNeighbours(body, W, H, x, y);
-      sharp.push(8 - nb >= tuning.stats.sharpMinEmptyNeighbours);
+      sharp.push(isSharpCell(body, W, H, x, y));
       if (nb < 8) boundary.push(k);
     }
   }
@@ -82,14 +82,15 @@ export function createWorld(bodies, wallRadius) {
   const n = bodies.length;
   const cd = new Array(n * n);
   for (let i = 0; i < n * n; i++) cd[i] = 0;
-  return { bodies, cd, events: [], wallRadius: wallRadius === undefined ? 0 : wallRadius };
+  return { bodies, cd, events: [], wallRadius: wallRadius === undefined ? 0 : wallRadius, subSteps: 1 };
 }
 
 const NO_INPUT = { mx: 0, my: 0, dash: false };
 
 // One fixed tick. inputs[i] = { mx, my, dash } for body i (missing = idle).
-// Order: 1 control (index order), 2 integrate, 3 pairs (i < j, index order),
-// 4 wall. Elimination rules belong to the mode modules.
+// Order: 1 control (index order), 2 hit cooldowns, 3 sub-steps (each one:
+// integrate, then pairs i < j in index order), 4 wall. Elimination rules
+// belong to the mode modules.
 export function stepWorld(world, inputs, tuning) {
   const ph = tuning.physics;
   const bodies = world.bodies;
@@ -138,23 +139,39 @@ export function stepWorld(world, inputs, tuning) {
     b.vy += (tvy - b.vy) * k;
   }
 
-  // 2. integrate
+  // 2. hit cooldowns, once per tick
+  for (let i = 0; i < n * n; i++) if (world.cd[i] > 0) world.cd[i]--;
+
+  // 3. sub-steps. The tick is cut into equal parts so that the fastest body
+  // moves at most maxStepCells per part (speeds as they are after control);
+  // two bodies then close by less than one cell between two contact scans, so
+  // thin figures cannot jump over each other.
+  let maxV2 = 0;
   for (let i = 0; i < n; i++) {
     const b = bodies[i];
     if (!b.alive) continue;
-    b.x += b.vx * dt;
-    b.y += b.vy * dt;
+    const v2 = b.vx * b.vx + b.vy * b.vy;
+    if (v2 > maxV2) maxV2 = v2;
   }
-
-  // 3. pairs
-  for (let i = 0; i < n * n; i++) if (world.cd[i] > 0) world.cd[i]--;
-  for (let i = 0; i < n; i++) {
-    const a = bodies[i];
-    if (!a.alive) continue;
-    for (let j = i + 1; j < n; j++) {
-      const b = bodies[j];
+  let sub = Math.floor(Math.sqrt(maxV2) * dt / ph.maxStepCells) + 1;
+  if (sub > ph.maxSubSteps) sub = ph.maxSubSteps;
+  const h = dt / sub;
+  world.subSteps = sub;
+  for (let s = 0; s < sub; s++) {
+    for (let i = 0; i < n; i++) {
+      const b = bodies[i];
       if (!b.alive) continue;
-      collidePair(world, i, j, a, b, tuning);
+      b.x += b.vx * h;
+      b.y += b.vy * h;
+    }
+    for (let i = 0; i < n; i++) {
+      const a = bodies[i];
+      if (!a.alive) continue;
+      for (let j = i + 1; j < n; j++) {
+        const b = bodies[j];
+        if (!b.alive) continue;
+        collidePair(world, i, j, a, b, tuning);
+      }
     }
   }
 
@@ -253,6 +270,15 @@ function scanCells(p, q, sign) {
   }
 }
 
+// Damage of one touch before multipliers: blunt, or the sharpness when a
+// sharp cell is in the contact, and never less than blunt.
+function touchDamage(tuning, body, sharp) {
+  const blunt = tuning.stats.bluntDamage;
+  if (!sharp) return blunt;
+  const sh = body.fig.stats.sharpness;
+  return sh > blunt ? sh : blunt;
+}
+
 function collidePair(world, i, j, a, b, tuning) {
   const ph = tuning.physics;
   const rx = a.x - b.x;
@@ -286,19 +312,27 @@ function collidePair(world, i, j, a, b, tuning) {
   b.x -= nx * depth * invB / invSum;
   b.y -= ny * depth * invB / invSum;
   const rel = (a.vx - b.vx) * nx + (a.vy - b.vy) * ny;
+  const dashing = a.dashTicks > 0 || b.dashTicks > 0;
   if (rel < 0) {
-    const imp = -(1 + ph.restitution) * rel / invSum;
+    // a contact that involves a dashing body is a ram: its own bounce factor
+    const imp = -(1 + (dashing ? ph.dashRestitution : ph.restitution)) * rel / invSum;
     a.vx += nx * imp * invA;
     a.vy += ny * imp * invA;
     b.vx -= nx * imp * invB;
     b.vy -= ny * imp * invB;
+  }
+  // a contact ends the dash of both bodies, so the control step of the next
+  // tick does not overwrite the velocity the contact has just given them
+  if (dashing) {
+    if (a.dashTicks > 0) { a.dashTicks = 0; world.events.push({ type: 'ram', from: i, to: j }); }
+    if (b.dashTicks > 0) { b.dashTicks = 0; world.events.push({ type: 'ram', from: j, to: i }); }
   }
 
   // damage, once per direction per cooldown; never inside one team
   if (a.team === b.team) return;
   const n = world.bodies.length;
   if (world.cd[i * n + j] === 0) {
-    const dmg = (aSharp ? a.fig.stats.sharpness : tuning.stats.bluntDamage)
+    const dmg = touchDamage(tuning, a, aSharp)
       * a.damageMult * elementMultiplier(tuning, a.fig.stats.element, b.fig.stats.element);
     b.hp -= dmg;
     world.cd[i * n + j] = ph.hitCooldownTicks;
@@ -308,7 +342,7 @@ function collidePair(world, i, j, a, b, tuning) {
     world.events.push({ type: 'hit', from: i, to: j, damage: dmg, sharp: aSharp });
   }
   if (world.cd[j * n + i] === 0) {
-    const dmg = (bSharp ? b.fig.stats.sharpness : tuning.stats.bluntDamage)
+    const dmg = touchDamage(tuning, b, bSharp)
       * b.damageMult * elementMultiplier(tuning, b.fig.stats.element, a.fig.stats.element);
     a.hp -= dmg;
     world.cd[j * n + i] = ph.hitCooldownTicks;

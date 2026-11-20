@@ -3,62 +3,23 @@
 
 import { rngInt } from './rng.js';
 
-// Ring bot for one seat. Draws from match.botRng[seat] only.
-// 1. Target: nearest living opponent (centre distance, lowest seat on a tie).
-// 2. Aim point: the target centre, shifted toward the ring centre by
-//    insideBias * own radius, so that the push goes outward.
-// 3. Every wobbleTicks the bot picks a sideways wobble of -1, 0 or +1.
-// 4. Near the edge the steering blends toward the ring centre; lighter bots
-//    start earlier and go round a target that blocks the way.
-// 5. Dash by chance when the target is close and the bot is not near the edge.
+// Ring bot for one seat. Draws from match.botRng[seat] only. The style comes
+// from match.botStyle[seat]: 0 = rusher, 1 = circler.
 export function botRingInput(tuning, match, seat) {
-  const bt = tuning.bots;
+  if (match.botStyle[seat] === 1) return botCircler(tuning, match, seat);
+  return botRusher(tuning, match, seat);
+}
+
+// Scratch steering direction shared by the two styles.
+const steer = { x: 0, y: 0, edge: 0 };
+
+// Edge avoidance, shared by both styles. A bot that is lighter than its target
+// keeps further away from the edge. When the target blocks the way back to
+// the centre the bot goes round it. Reads and writes steer.x / steer.y and
+// sets steer.edge (0 = free, 1 = fully steering back).
+function edgeSteer(bt, match, me, target, targetDist) {
   const bodies = match.world.bodies;
-  const me = bodies[seat];
-  const out = { mx: 0, my: 0, dash: false };
-  if (!me.alive) return out;
-  const rng = match.botRng[seat];
-  if (match.tick % bt.wobbleTicks === 0) match.botWobble[seat] = rngInt(rng, 3) - 1;
-  let target = -1;
-  let bestD2 = 0;
-  for (let i = 0; i < bodies.length; i++) {
-    if (i === seat || !bodies[i].alive) continue;
-    const dx = bodies[i].x - me.x;
-    const dy = bodies[i].y - me.y;
-    const d2 = dx * dx + dy * dy;
-    if (target === -1 || d2 < bestD2) { target = i; bestD2 = d2; }
-  }
   const myDist = Math.sqrt(me.x * me.x + me.y * me.y);
-  let dirX = 0;
-  let dirY = 0;
-  let targetDist = 0;
-  if (target !== -1) {
-    const t = bodies[target];
-    let ax = t.x;
-    let ay = t.y;
-    const td = Math.sqrt(t.x * t.x + t.y * t.y);
-    if (td > 0) {
-      const shift = bt.insideBias * me.fig.radius;
-      const use = shift < td ? shift : td;
-      ax -= t.x / td * use;
-      ay -= t.y / td * use;
-    }
-    let dx = ax - me.x;
-    let dy = ay - me.y;
-    let d = Math.sqrt(dx * dx + dy * dy);
-    if (d > 0) { dx = dx / d; dy = dy / d; } else { dx = me.fx; dy = me.fy; }
-    // sideways wobble (perpendicular to the approach)
-    const w = match.botWobble[seat] * bt.wobbleStrength;
-    dirX = dx - dy * w;
-    dirY = dy + dx * w;
-    d = Math.sqrt(dirX * dirX + dirY * dirY);
-    dirX = dirX / d;
-    dirY = dirY / d;
-    targetDist = Math.sqrt(bestD2);
-  }
-  // edge avoidance. A bot that is lighter than its target keeps further away
-  // from the edge. When the target blocks the way back to the centre the bot
-  // goes round it.
   let margin = bt.edgeMargin;
   if (target !== -1) {
     const tm = bodies[target].fig.mass;
@@ -84,17 +45,152 @@ export function botRingInput(tuning, match, seat) {
         ey += ty * bt.roundaboutStrength;
       }
     }
-    dirX = dirX * (1 - edge) + ex * edge;
-    dirY = dirY * (1 - edge) + ey * edge;
-    const d = Math.sqrt(dirX * dirX + dirY * dirY);
-    if (d > 0) { dirX = dirX / d; dirY = dirY / d; }
+    steer.x = steer.x * (1 - edge) + ex * edge;
+    steer.y = steer.y * (1 - edge) + ey * edge;
+    const d = Math.sqrt(steer.x * steer.x + steer.y * steer.y);
+    if (d > 0) { steer.x = steer.x / d; steer.y = steer.y / d; }
   }
-  out.mx = dirX;
-  out.my = dirY;
-  if (target !== -1 && me.dashCd === 0 && me.dashTicks === 0 && edge < 0.5) {
+  steer.edge = edge;
+}
+
+// Unit vector from the bot toward the aim point: the target centre, shifted
+// toward the ring centre by insideBias * own radius, so that the push goes
+// outward. Falls back to the own front. Writes steer.x / steer.y.
+function aimInside(bt, me, t) {
+  let ax = t.x;
+  let ay = t.y;
+  const td = Math.sqrt(t.x * t.x + t.y * t.y);
+  if (td > 0) {
+    const shift = bt.insideBias * me.fig.radius;
+    const use = shift < td ? shift : td;
+    ax -= t.x / td * use;
+    ay -= t.y / td * use;
+  }
+  const dx = ax - me.x;
+  const dy = ay - me.y;
+  const d = Math.sqrt(dx * dx + dy * dy);
+  if (d > 0) { steer.x = dx / d; steer.y = dy / d; } else { steer.x = me.fx; steer.y = me.fy; }
+}
+
+// Style 0, the rusher.
+// 1. Every wobbleTicks the bot picks a sideways wobble of -1, 0 or +1.
+// 2. Target: nearest living opponent (centre distance, lowest seat on a tie).
+// 3. Aim point: see aimInside; plus the sideways wobble.
+// 4. Edge avoidance: see edgeSteer.
+// 5. Dash by chance when the target is close and the bot is not near the edge.
+function botRusher(tuning, match, seat) {
+  const bt = tuning.bots;
+  const bodies = match.world.bodies;
+  const me = bodies[seat];
+  const out = { mx: 0, my: 0, dash: false };
+  if (!me.alive) return out;
+  const rng = match.botRng[seat];
+  if (match.tick % bt.wobbleTicks === 0) match.botWobble[seat] = rngInt(rng, 3) - 1;
+  let target = -1;
+  let bestD2 = 0;
+  for (let i = 0; i < bodies.length; i++) {
+    if (i === seat || !bodies[i].alive) continue;
+    const dx = bodies[i].x - me.x;
+    const dy = bodies[i].y - me.y;
+    const d2 = dx * dx + dy * dy;
+    if (target === -1 || d2 < bestD2) { target = i; bestD2 = d2; }
+  }
+  steer.x = 0;
+  steer.y = 0;
+  let targetDist = 0;
+  if (target !== -1) {
+    aimInside(bt, me, bodies[target]);
+    // sideways wobble (perpendicular to the approach)
+    const w = match.botWobble[seat] * bt.wobbleStrength;
+    const dx = steer.x;
+    const dy = steer.y;
+    steer.x = dx - dy * w;
+    steer.y = dy + dx * w;
+    const d = Math.sqrt(steer.x * steer.x + steer.y * steer.y);
+    steer.x = steer.x / d;
+    steer.y = steer.y / d;
+    targetDist = Math.sqrt(bestD2);
+  }
+  edgeSteer(bt, match, me, target, targetDist);
+  out.mx = steer.x;
+  out.my = steer.y;
+  if (target !== -1 && me.dashCd === 0 && me.dashTicks === 0 && steer.edge < 0.5) {
     const reach = bt.dashRange + me.fig.radius + bodies[target].fig.radius;
     if (targetDist < reach && rngInt(rng, 100) < bt.dashChancePercent) out.dash = true;
   }
+  return out;
+}
+
+// Style 1, the circler: hit and run.
+// 1. Wobble draw as in style 0 (same generator use); the sign of the wobble is
+//    the circling side (negative = one way, otherwise the other).
+// 2. Target: the living opponent with the fewest other living figures within
+//    circlerCrowdRange of it (so it stays out of a pile-up); nearest on a
+//    tie, lowest seat on an exact tie.
+// 3. While the dash is not nearly ready (dashCd above circlerAttackLeadTicks)
+//    it circles the target at a gap of circlerStandoff cells.
+// 4. Otherwise it runs at the aim point of style 0 and dashes as soon as the
+//    dash is ready, the gap is below circlerDashGap and its front points at
+//    the target (dot product at least circlerAlignDot). No chance roll.
+// 5. Edge avoidance as in style 0; no dash while deep in edge avoidance.
+function botCircler(tuning, match, seat) {
+  const bt = tuning.bots;
+  const bodies = match.world.bodies;
+  const me = bodies[seat];
+  const out = { mx: 0, my: 0, dash: false };
+  if (!me.alive) return out;
+  const rng = match.botRng[seat];
+  if (match.tick % bt.wobbleTicks === 0) match.botWobble[seat] = rngInt(rng, 3) - 1;
+  let target = -1;
+  let bestCrowd = 0;
+  let bestD2 = 0;
+  const cr2 = bt.circlerCrowdRange * bt.circlerCrowdRange;
+  for (let i = 0; i < bodies.length; i++) {
+    if (i === seat || !bodies[i].alive) continue;
+    let crowd = 0;
+    for (let k = 0; k < bodies.length; k++) {
+      if (k === seat || k === i || !bodies[k].alive) continue;
+      const cx = bodies[k].x - bodies[i].x;
+      const cy = bodies[k].y - bodies[i].y;
+      if (cx * cx + cy * cy < cr2) crowd++;
+    }
+    const dx = bodies[i].x - me.x;
+    const dy = bodies[i].y - me.y;
+    const d2 = dx * dx + dy * dy;
+    if (target === -1 || crowd < bestCrowd || (crowd === bestCrowd && d2 < bestD2)) { target = i; bestCrowd = crowd; bestD2 = d2; }
+  }
+  steer.x = 0;
+  steer.y = 0;
+  let targetDist = 0;
+  let gap = 0;
+  let ux = 0;
+  let uy = 0;
+  let attacking = false;
+  if (target !== -1) {
+    const t = bodies[target];
+    targetDist = Math.sqrt(bestD2);
+    if (targetDist > 0) { ux = (t.x - me.x) / targetDist; uy = (t.y - me.y) / targetDist; } else { ux = me.fx; uy = me.fy; }
+    gap = targetDist - me.fig.radius - t.fig.radius;
+    if (me.dashCd > bt.circlerAttackLeadTicks) {
+      const side = match.botWobble[seat] < 0 ? -1 : 1;
+      let radial = (gap - bt.circlerStandoff) / bt.circlerBlend;
+      if (radial > 1) radial = 1;
+      if (radial < -1) radial = -1;
+      steer.x = -uy * side + ux * radial;
+      steer.y = ux * side + uy * radial;
+      const d = Math.sqrt(steer.x * steer.x + steer.y * steer.y);
+      steer.x = steer.x / d;
+      steer.y = steer.y / d;
+    } else {
+      aimInside(bt, me, t);
+      attacking = true;
+    }
+  }
+  edgeSteer(bt, match, me, target, targetDist);
+  out.mx = steer.x;
+  out.my = steer.y;
+  if (attacking && me.dashCd === 0 && me.dashTicks === 0 && steer.edge < 0.5
+    && gap < bt.circlerDashGap && me.fx * ux + me.fy * uy >= bt.circlerAlignDot) out.dash = true;
   return out;
 }
 

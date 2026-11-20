@@ -29,10 +29,10 @@ export function recolour(cells, v) {
   return c;
 }
 
-function mk(name, colour, shape, note, draw) {
+function mk(name, colour, shape, note, draw, optimiser) {
   const c = blank();
   draw(c, colour);
-  return { name, shape, note, cells: c };
+  return { name, shape, note, cells: c, optimiser: optimiser === true };
 }
 
 // shape = shape family, used to judge "clearly different shapes".
@@ -65,6 +65,22 @@ export const ARCHETYPES = [
     rect(c, 8, 10, 23, 25, v); rect(c, 10, 12, 21, 23, 0); rect(c, 16, 2, 16, 9, v);
   }),
   mk('needle', 1, 'small', 'short light blade with a grip', (c, v) => { rect(c, 16, 8, 16, 23, v); rect(c, 14, 23, 18, 23, v); }),
+  // "Player optimiser" drawings (INK-CORE-V2): what a clever player might draw
+  // to break the rules. optimiser = true.
+  mk('hoop', 3, 'hollow', 'optimiser: one-cell loop round a big empty middle (all blade, big pocket)', (c, v) => {
+    rect(c, 4, 4, 27, 27, v); rect(c, 5, 5, 26, 26, 0);
+  }, true),
+  mk('spiral', 2, 'blades', 'optimiser: one-cell snake that spends all ink on blade cells (heavy and all sharp)', (c, v) => {
+    for (let k = 0; k < 10; k++) {
+      rect(c, 6, 6 + 2 * k, 25, 6 + 2 * k, v);
+      if (k < 9) set(c, k % 2 === 0 ? 25 : 6, 7 + 2 * k, v);
+    }
+  }, true),
+  mk('grille', 4, 'blades', 'optimiser: nested one-cell loops with one-cell gaps (heavy, sharp, tries to farm enclosed space)', (c, v) => {
+    for (let i = 6; i <= 12; i += 2) { rect(c, i, i, 31 - i, 31 - i, v); rect(c, i + 1, i + 1, 30 - i, 30 - i, 0); }
+    set(c, 16, 7, v); set(c, 16, 9, v); set(c, 16, 11, v);
+  }, true),
+  mk('splinter', 1, 'small', 'optimiser: the smallest valid blade, 12 cells (fastest, all sharp)', (c, v) => rect(c, 16, 10, 16, 21, v), true),
 ];
 
 export function archetype(name) {

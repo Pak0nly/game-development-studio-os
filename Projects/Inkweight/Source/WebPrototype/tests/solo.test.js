@@ -2,11 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   soloCreateRun, soloStartWave, soloStartBoss, soloStep, soloUpgrade, soloCopies, soloBossCells, soloCheckDrawing,
-  soloThrowIntervalTicks, botHeroInput, hashSolo, extractBody, SOLO_WAVES,
+  soloThrowIntervalTicks, soloDropValue, botHeroInput, hashSolo, extractBody, SOLO_WAVES,
 } from '../core/index.js';
 import { loadTuning } from '../tools/load_tuning.js';
 import { blank, rect, recolour, W, H, archetype } from '../sim/archetypes.js';
 import { playSoloRun, playSoloFight } from '../sim/runner.js';
+import { buildFigure, soloEnemyArmour } from '../core/index.js';
 
 const T = loadTuning();
 const black = (name) => recolour(archetype(name).cells, 1);
@@ -15,7 +16,7 @@ const newRun = (seed) => soloCreateRun(T, seed, black('disc'), black('needle'), 
 test('copies are paid from the wave budget times the stake', () => {
   const so = T.solo;
   for (let w = 0; w < SOLO_WAVES; w++) for (let s = 0; s < 3; s++) for (const N of [12, 20, 63, 210]) {
-    let expect = Math.floor(so.waveBudgets[w] * so.stakes[s] / N);
+    let expect = Math.floor(so.waveBudgets[w] * so.stakes[s] / (N + so.copyInkOverhead));
     if (expect < 1) expect = 1;
     if (expect > so.maxCopies) expect = so.maxCopies;
     assert.equal(soloCopies(T, w, s, N), expect);
@@ -50,7 +51,7 @@ test('a wave spawns the paid copies inside the arena and the fight ends', () => 
   });
   assert.ok(run.phase === 'cleared' || run.phase === 'dead');
   assert.ok(run.tick <= T.solo.waveMaxTicks);
-  if (run.phase === 'cleared') { assert.equal(run.wave, 1); assert.equal(run.score, run.copies * 13, 'all ink of the wave is collected by the end'); }
+  if (run.phase === 'cleared') { assert.equal(run.wave, 1); assert.equal(run.score, run.copies * soloDropValue(T, 0, 1, 13), 'all ink of the wave is collected by the end'); }
 });
 
 test('upgrades: cost, one per break, heal, colour, redraw with more ink', () => {
@@ -116,4 +117,96 @@ test('hero bot returns a steering vector of length at most 1', () => {
 test('boss can only be started after wave five', () => {
   const run = newRun(8);
   assert.throws(() => soloStartBoss(T, run));
+});
+
+// M7 and task 6: the stake matters for danger and reward
+test('stake: the whole staked wave budget is paid out, and enemies get faster and hit harder', () => {
+  const so = T.solo;
+  for (let w = 0; w < SOLO_WAVES; w++) for (let s = 0; s < 3; s++) for (const N of [12, 13, 20, 63, 120, 210]) {
+    const copies = soloCopies(T, w, s, N);
+    const v = soloDropValue(T, w, s, N);
+    assert.ok(v >= N, 'a drop is never worth less than the enemy');
+    assert.equal(v, Math.max(N, Math.floor(so.waveBudgets[w] * so.stakes[s] / copies)));
+    if (copies * N <= so.waveBudgets[w] * so.stakes[s]) assert.ok(copies * v > so.waveBudgets[w] * so.stakes[s] - copies, 'payout is the staked budget, rounded down per drop');
+  }
+  // a 13-cell design is at the copy cap in the last wave at the two higher stakes: the reward still grows with the stake
+  assert.equal(soloCopies(T, 4, 1, 13), so.maxCopies);
+  assert.equal(soloCopies(T, 4, 2, 13), so.maxCopies);
+  assert.ok(soloDropValue(T, 4, 2, 13) > soloDropValue(T, 4, 1, 13));
+  const speeds = []; const dmg = [];
+  for (let s = 0; s < 3; s++) {
+    const run = newRun(9);
+    soloStartWave(T, run, archetype('dot').cells, s);
+    const e = run.world.bodies[1];
+    speeds.push(e.topSpeed); dmg.push(e.damageMult);
+    assert.equal(e.topSpeed, e.fig.stats.topSpeed * (so.enemySpeedMult * so.stakeSpeedMult[s]));
+    assert.equal(e.damageMult, so.enemyDamageMult * so.stakeDamageMult[s]);
+    assert.equal(e.hp, so.enemyArmourBase + so.enemyArmourMult * (e.fig.stats.armour - T.stats.armourBase));
+    assert.equal(e.maxHp, e.hp);
+    assert.equal(run.stakeIndex, s);
+    assert.equal(run.dropValue, soloDropValue(T, 0, s, 13));
+  }
+  assert.ok(speeds[2] > speeds[1] && speeds[1] > speeds[0]);
+  assert.ok(dmg[2] > dmg[1] && dmg[1] > dmg[0]);
+  const run = newRun(10);
+  assert.throws(() => soloStartWave(T, run, archetype('dot').cells, 3), /stake/);
+  assert.throws(() => soloStartWave(T, run, archetype('dot').cells, -1), /stake/);
+  assert.throws(() => soloStartWave(T, run, archetype('dot').cells, 0.5), /stake/);
+});
+
+test('enemy copies: thin designs are fragile, filled designs are tough, the boss keeps full armour', () => {
+  const thin = buildFigure(archetype('splinter').cells, W, H, T, 'figure');
+  const solid = buildFigure(archetype('block').cells, W, H, T, 'figure');
+  assert.equal(soloEnemyArmour(T, thin), T.solo.enemyArmourBase);
+  assert.ok(soloEnemyArmour(T, solid) > 3 * soloEnemyArmour(T, thin));
+  const run = newRun(14);
+  for (const n of ['dot', 'cross', 'ring', 'star', 'block']) run.enemyDrawings.push(extractBody(archetype(n).cells, W, H).body);
+  run.phase = 'cleared'; run.wave = SOLO_WAVES;
+  soloStartBoss(T, run);
+  const boss = run.world.bodies[1];
+  assert.equal(boss.hp, boss.fig.stats.armour * T.solo.bossArmourMult);
+  assert.equal(run.world.bodies.length, 2 + 5 * T.solo.bossEscortCopies);
+  assert.equal(run.world.bodies[2].hp, soloEnemyArmour(T, run.world.bodies[2].fig));
+  assert.equal(run.dropValue, 0);
+});
+
+// M2 (kept and documented): hero death is checked before the cleared wave
+test('M2: when the hero and the last enemy fall in the same tick the run is lost', () => {
+  const run = newRun(11);
+  soloStartWave(T, run, archetype('block').cells, 0);
+  assert.equal(run.copies, 1);
+  const hero = run.world.bodies[0]; const enemy = run.world.bodies[1];
+  enemy.x = 12; enemy.y = 0; hero.hp = 0.01; enemy.hp = 0.01;
+  soloStep(T, run, { mx: 0, my: 0, dash: false });
+  assert.equal(enemy.alive, false);
+  assert.equal(run.phase, 'dead');
+  assert.equal(run.endReason, 'armour');
+});
+
+// M6
+test('M6: a shot is not spent on an enemy that is already at 0 armour', () => {
+  const run = newRun(12);
+  soloStartWave(T, run, archetype('block').cells, 2);
+  assert.ok(run.copies >= 1);
+  const enemy = run.world.bodies[1];
+  enemy.hp = 0;
+  run.throwCd = 1000;
+  run.shots.push({ x: enemy.x, y: enemy.y, ux: 1, uy: 0, speed: 0, life: 50 });
+  soloStep(T, run, { mx: 0, my: 0, dash: false });
+  assert.ok(!run.events.some((e) => e.type === 'shotHit'), 'no hit on the fallen enemy');
+  assert.ok(run.events.some((e) => e.type === 'enemyDown'));
+  if (run.phase === 'fight') assert.equal(run.shots.length, 1, 'the shot flies on');
+});
+
+// M5
+test('M5: the solo hash sees budgets, colours, the upgrade flag, the wave and the cooldowns', () => {
+  const start = () => { const r = newRun(13); soloStartWave(T, r, archetype('needle').cells, 1); return r; };
+  const base = hashSolo(start());
+  const changes = [
+    (r) => { r.heroBudget += 40; }, (r) => { r.weaponBudget += 15; }, (r) => { r.colours[3] = true; },
+    (r) => { r.upgradeTaken = true; }, (r) => { r.wave = 2; }, (r) => { r.world.cd[1] = 5; },
+    (r) => { r.world.bodies[1].dashDx = 1; }, (r) => { r.dropValue += 1; }, (r) => { r.stakeIndex = 2; },
+  ];
+  for (let i = 0; i < changes.length; i++) { const r = start(); changes[i](r); assert.notEqual(hashSolo(r), base, 'change ' + i); }
+  assert.equal(hashSolo(start()), base);
 });

@@ -41,5 +41,16 @@ export function goldenCases() {
   list.push(mk('weapon_too_small', 'weapon', 'weapon with 11 cells', (c) => rect(c, 3, 4, 13, 4, 2)));
   list.push(mk('weapon_exactly_60', 'weapon', '6 x 10 weapon: exactly the weapon budget', (c) => rect(c, 10, 10, 15, 19, 3)));
   list.push(mk('weapon_over_budget', 'weapon', '2 x 31 weapon: 62 ink', (c) => rect(c, 10, 0, 11, 30, 1)));
+  // rules version 2: blade cells (ink one cell thick) and enclosed space
+  list.push(mk('blade_on_block', 'figure', '10 x 10 block with a 12-cell blade on top: S 12, sharpness clearly above 1', (c) => { rect(c, 10, 14, 19, 23, 1); rect(c, 14, 2, 14, 13, 1); }));
+  list.push(mk('diagonal_sword_on_block', 'figure', 'block with a diagonal staircase blade: the staircase cells are sharp', (c) => { rect(c, 4, 18, 13, 27, 2); for (let i = 0; i < 10; i++) { set(c, 14 + i, 17 - i, 1); set(c, 14 + i, 18 - i, 1); } }));
+  list.push(mk('solid_triangle', 'figure', 'filled triangle: only the two acute single-cell tips are sharp', (c) => { for (let i = 0; i < 12; i++) rect(c, 10, 5 + i, 10 + i, 5 + i, 1); }));
+  list.push(mk('thin_l', 'figure', 'L of one-cell strokes: every cell is sharp, the corner included', (c) => { rect(c, 4, 4, 4, 15, 1); rect(c, 4, 15, 12, 15, 1); }));
+  list.push(mk('thick_frame', 'figure', 'box outline two cells thick: 144 enclosed cells, 100 pocket cells, armour from pockets', (c) => { rect(c, 8, 10, 23, 25, 4); rect(c, 10, 12, 21, 23, 0); }));
+  list.push(mk('thick_frame_open', 'figure', 'the same frame with a gap in the wall: nothing enclosed', (c) => { rect(c, 8, 10, 23, 25, 4); rect(c, 10, 12, 21, 23, 0); set(c, 8, 15, 0); set(c, 9, 15, 0); }));
+  list.push(mk('thin_loop', 'figure', 'one-cell loop: space enclosed, but all cells are blade cells, so no pocket armour', (c) => { rect(c, 4, 4, 27, 27, 1); rect(c, 5, 5, 26, 26, 0); }));
+  list.push(mk('loop_diagonal_gap', 'figure', 'one-cell loop whose wall is closed only diagonally at one corner: the space leaks out', (c) => { rect(c, 10, 10, 13, 10, 1); rect(c, 10, 14, 14, 14, 1); rect(c, 10, 10, 10, 14, 1); rect(c, 14, 11, 14, 14, 1); for (let i = 0; i < 6; i++) set(c, 15 + i, 14, 1); }));
+  list.push(mk('pocket_cap', 'figure', 'thin-walled big box with a short thick part: pockets above the cap pocketCapPerCell * (N - S)', (c) => { rect(c, 2, 2, 29, 29, 3); rect(c, 3, 3, 28, 28, 0); rect(c, 2, 2, 5, 5, 3); }));
+  list.push(mk('drips_do_not_enclose', 'figure', 'a block inside a ring of loose drips: drips are not walls', (c) => { rect(c, 12, 12, 17, 17, 1); for (let i = 8; i <= 21; i += 2) { set(c, i, 8, 2); set(c, i, 21, 2); set(c, 8, i, 2); set(c, 21, i, 2); } }));
   return list.map((o) => ({ ...o, W, H }));
 }
