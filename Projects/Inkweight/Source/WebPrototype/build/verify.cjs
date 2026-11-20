@@ -387,8 +387,33 @@ async function runScenario(browser, name) {
   await drawFits('weapon drawing');
   const wst = await statNumbers();
   note('weapon stats: ' + JSON.stringify(wst));
+  // The weapon screen shows weapon rules only (core/solo.js): throw interval
+  // and flight speed instead of armour and top speed, a hit of exactly the
+  // sharpness, and none of the figure lines (armour, core, pocket, 0,4 %).
+  const wpn = await page.evaluate(() => {
+    const d = window.__inkDebug;
+    const t = d.tuning;
+    const txt = (id) => document.getElementById(id).textContent;
+    const N = parseInt(txt('stWeight'), 10);
+    return {
+      names: txt('stArmourName') + ' ' + txt('stSpeedName'),
+      interval: (d.core.soloThrowIntervalTicks(t, N) / t.physics.tickRate).toFixed(2).replace('.', ','),
+      flight: (t.solo.throwSpeedBase / (1 + N / t.solo.throwSpeedWeightRef)).toFixed(0),
+      lines: [txt('stWeightWhy'), txt('stArmourWhy'), txt('stSharpWhy'), txt('stSpeedWhy'), txt('drawMsg')],
+      rules: document.getElementById('rulesWeapon').textContent,
+    };
+  });
+  note('weapon rows: ' + wpn.names + ' | Takt ' + wst.armour + ' (core ' + wpn.interval + ') | Flug ' + wst.speed + ' (core ' + wpn.flight + ') | ' + wpn.lines.join(' | '));
+  if (wpn.names !== 'Takt Flug') throw new Error('weapon rows are named like figure rows: ' + wpn.names);
+  if (wst.armour !== wpn.interval || wst.speed !== wpn.flight) throw new Error('weapon interval or flight differs from the core');
+  if (wpn.lines[2].indexOf('Treffer nimmt ' + wst.sharp + ' Panzer') === -1) throw new Error('weapon hit line: ' + wpn.lines[2]);
+  if (/Kern|Hohlraum|Hülle|schützt|0,4 %|ist flink/.test(wpn.lines.join(' '))) throw new Error('a figure rule on the weapon screen: ' + wpn.lines.join(' | '));
+  if (!/genau ihre Schärfe/.test(wpn.rules) || !/ohne den Mindestwert 1,2/.test(wpn.rules) || /\d\.\d/.test(wpn.rules)) throw new Error('weapon paragraph of the rules panel: ' + wpn.rules);
   await shot('solo-weapon');
   await press('#drawDone');
+  await page.waitForFunction(() => /Gegner/.test(document.getElementById('drawTitle').textContent));
+  const backNames = await page.evaluate(() => document.getElementById('stArmourName').textContent + ' ' + document.getElementById('stSpeedName').textContent);
+  if (backNames !== 'Panzer Tempo') throw new Error('figure rows after the weapon screen: ' + backNames);
   let waves = 0;
   let soloEnd = '';
   const bought = new Set();

@@ -51,4 +51,4 @@ ok    branches the golden files do not reach: (1, 0) normal, armour scale upper 
 ok    the golden traces see the new numbers in this port (one value changed, the hashes must change)
   self check passed, 115 checkpoints bit-identical
 ok    self check as run inside Unity (embedded tuning and hashes)
-RESULT: PASS (16722 checks, 0 failed)
+RESULT: PASS (16729 checks, 0 failed)

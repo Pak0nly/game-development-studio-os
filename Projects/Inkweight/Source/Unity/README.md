@@ -73,27 +73,41 @@ see "Input" below. This is checked against stubs only.
   - **Blade marks:** ink that is only one cell thick is a blade and is shown
     with a yellow tint (black ink turns olive-gold). A stroke two cells wide,
     and the edge and corners of a filled area, keep the plain ink colour.
-  - **Stat panel:** four rows, each with a number, a bar and one German line:
+  - **Stat panel (figures: Ring figure, hero, enemy):** four rows, each with a
+    number, a bar and one German line:
     - "Gewicht" (ink cells of the body; "Schub" appears when hollow space adds
       push weight) – "Mehr Tinte schiebt stärker, ist aber langsamer."
     - "Panzerung" with "Kern" and "Hohlraum" counts ("Hohlraum" is the number
-      of pocket cells that count) – "Gefüllte Flächen panzern, Hohlräume in
-      dicker Hülle ein wenig." Bar from 60 to 300 (longer scale with catch-up
-      ink).
+      of pocket cells that count) – "Füllung panzert, Hohlraum in dicker Hülle
+      ein wenig." Bar from 60 to 300 (longer scale with catch-up ink).
     - "Schärfe" with "Klingenfelder" – with at least one blade cell "Klingen
-      (gelb) schneiden mit der Schärfe, mindestens 1.2.", without one "Keine
-      Klinge (Striche, 1 Feld dick): stumpfer Schaden 1.2." (1.2 is the blunt
-      damage of the tuning; a cut never does less). Bar from 1.0 to 4.7.
+      (gelb): Schaden = Schärfe, mindestens 1.2.", without one "Keine Klinge
+      (1 Feld dick): stumpfer Schaden 1.2." (1.2 is the blunt damage of the
+      tuning; a cut of a figure never does less. Figures only; a thrown
+      weapon hits with exactly its sharpness, see below). Bar from 1.0 to 4.7.
     - "Tempo" – "Weniger Tinte ist schneller." Bar from the speed of a full
       budget (9.2 at 220 ink) to that of the smallest figure (32.4).
+  - **Stat panel on the weapon screens** ("Zeichne deine Wurfwaffe" and the
+    weapon redraw): a thrown weapon has no armour, no push weight and no top
+    speed, so the rows are different:
+    - "Gewicht: N" – "Mehr Tinte stößt stärker zurück, wirft aber seltener."
+    - "Wurf: alle X s" (throw interval, 0.40 s at 12 cells, 0.80 s at 60) –
+      "Weniger Tinte wirft öfter."
+    - "Schärfe" with "Klingenfelder" – with a blade cell "Wurftreffer: Schaden
+      = Schärfe S (mal Element).", without one "Keine Klinge (1 Feld dick):
+      Wurfschaden 1.00." A thrown weapon hits for exactly its sharpness times
+      the element factor; there is no lower limit of 1.2.
+    - "Flug: Y Felder je Sekunde" (50.0 at 12 cells, 30.0 at 60) – "Weniger
+      Tinte fliegt schneller."
   - **Element line** under the four rows: "Element: Glut (schlägt Moos)", or
-    "Element: Neutral" with the reason: "ab 30 % bunter Tinte (jetzt N %)"
-    while less than 30 % of the body is coloured (N is rounded down), or
+    "Element: Neutral" with the reason beside it in small type: "unter 30 %
+    bunte Körperfelder (jetzt N %)" while less than 30 % of the body cells
+    are coloured (N is rounded down; ink that drips off does not count), or
     "Gleichstand der Farben" when the most common colours tie. The element is
     the most common colour once 30 % of the body is coloured in total; that
     colour alone may be below 30 %.
-  - Cells that drip off are counted in the ink line ("1 Feld tropft ab und
-    zählt nicht" / "N Felder tropfen ab und zählen nicht").
+  - Cells that drip off are counted in the ink line ("1 Feld tropft ab" /
+    "N Felder tropfen ab").
     Reference values to compare with the browser prototype: a filled disc of
     208 cells has armour 270.4 and sharpness 1.00; a straight 12-cell line has
     armour 63.6 and sharpness 4.52.
@@ -121,12 +135,16 @@ see "Input" below. This is checked against stubs only.
   appears for a moment. A figure that takes a hit flashes red. After the round
   you draw again; lost rounds give more ink. First to 3 wins.
 - **Solo:** draw the hero, then the thrown weapon, then the enemy of the wave
-  and its stake ("Einsatz: mehr oder zähere Gegner, härtere Treffer, mehr
-  Beute"). Under the three stake buttons one line says what the chosen stake
-  does, with the numbers the core will use: number of enemies, armour of each,
-  "Tempo" (top speed of a copy in cells per second), "stumpfer Treffer" (damage
-  of one blunt touch of a copy on the hero, before the element factor) and
-  "Beute je Gegner". New in rules version 3: enemy copies move at 3 cells per
+  and its stake ("Einsatz: mehr oder zähere Gegner, mehr Beute"). Under the
+  three stake buttons one text of at most two lines says what the chosen stake
+  does, with the numbers the core will use, for example "2 Gegner, je 23.5
+  Panzerung, Tempo 17.4, stumpfer Treffer 0.50 (ohne Element), Beute je 60."
+  (a 13-cell dot in wave 1 at x1):
+  number of enemies, armour of each, "Tempo" (top speed of a copy in cells per
+  second), "stumpfer Treffer" (damage of one blunt touch of a copy on the
+  hero, before the element factor) and "Beute" (ink per fallen enemy). The
+  stat rows above it describe the drawing itself; the copies in the wave have
+  the armour and speed of this text. New in rules version 3: enemy copies move at 3 cells per
   second plus 45 % of the drawing's own speed (times the stake factor), and the
   weight of a copy adds a crush to its blunt touch, so heavy enemy drawings hit
   harder and much harder at a higher stake (a 210-cell block in wave 3: 0.79
@@ -150,9 +168,9 @@ see "Input" below. This is checked against stubs only.
    carry the yellow blade tint and the tint is readable on all four colours.
 4. The stat panel fits the right column (no cut-off or overlapping text, also
    with the stake buttons on the enemy screen and in a narrow window). The
-   lines that became longer in version 3 are the ones to look at: the element
-   line with its reason, the sharpness explanation, the stake heading and the
-   two-line stake text.
+   lines to look at are the element line with its reason (small type, room
+   for two lines), the sharpness explanation and the two-line stake text;
+   they were shortened to fit a 4:3 window by estimate, not by measurement.
 5. The question box appears over the canvas, and nothing is painted while it
    is open.
 6. Ring clock: its own line under the title, counts down in real seconds,

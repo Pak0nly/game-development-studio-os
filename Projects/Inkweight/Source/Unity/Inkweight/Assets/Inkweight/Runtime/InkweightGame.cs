@@ -739,7 +739,8 @@ namespace Inkweight.Runtime
             int coloured = st.ColourCounts[1] + st.ColourCounts[2] + st.ColourCounts[3];
             if (coloured * 100 >= tuning.MinColouredPercent * st.N) return "Gleichstand der Farben";
             int percent = coloured * 100 / st.N; // rounded down, so it never shows the limit while below it
-            return "ab " + I(tuning.MinColouredPercent) + " % bunter Tinte (jetzt " + percent + " %)";
+            // body cells are counted: ink that drips off does not count
+            return "unter " + I(tuning.MinColouredPercent) + " % bunte Körperfelder (jetzt " + percent + " %)";
         }
 
         private bool DrawingValid(out string why)
@@ -931,35 +932,79 @@ namespace Inkweight.Runtime
             y += 20f;
             GUI.Label(new Rect(px, y, pw, 24f), "Tinte: " + st.Filled + " von " + I(editor.Budget)
                 + (editor.InkEmptyFlash ? "  –  Tinte leer!" : "")
-                + (st.Drips == 1 ? "   (1 Feld tropft ab und zählt nicht)"
-                    : st.Drips > 1 ? "   (" + st.Drips + " Felder tropfen ab und zählen nicht)" : ""), smallStyle);
+                + (st.Drips == 1 ? "   (1 Feld tropft ab)"
+                    : st.Drips > 1 ? "   (" + st.Drips + " Felder tropfen ab)" : ""), smallStyle);
             y += 24f;
             Color barColour = new Color(0.85f, 0.75f, 0.35f, 1f);
-            y = StatRow(px, y, pw,
-                "Gewicht: " + st.N + (st.Push > st.N ? "  (Schub " + F(st.Push) + ")" : ""),
-                editor.Budget > 0 ? (float)(st.N / editor.Budget) : 0f, barColour,
-                "Mehr Tinte schiebt stärker, ist aber langsamer.");
-            y = StatRow(px, y, pw,
-                "Panzerung: " + F(st.Armour) + "  (Kern " + st.C + ", Hohlraum " + I(st.PocketCells) + ")",
-                ArmourFraction(st), barColour,
-                "Gefüllte Flächen panzern, Hohlräume in dicker Hülle ein wenig.");
-            y = StatRow(px, y, pw,
-                "Schärfe: " + F2(st.Sharpness) + "  (Klingenfelder " + st.S + ")",
-                SharpFraction(st), barColour,
-                st.S > 0
-                    ? "Klingen (gelb) schneiden mit der Schärfe, mindestens " + F(tuning.BluntDamage) + "."
-                    : "Keine Klinge (Striche, 1 Feld dick): stumpfer Schaden " + F(tuning.BluntDamage) + ".");
-            y = StatRow(px, y, pw,
-                "Tempo: " + F(st.TopSpeed),
-                SpeedFraction(st), barColour,
-                "Weniger Tinte ist schneller.");
+            if (editor.Kind == InkDrawing.KindWeapon)
+            {
+                // A thrown weapon has no armour, no push weight and no top
+                // speed of its own. What it has (InkSolo.Step): a throw
+                // interval and a flight speed from its ink, a hit of exactly
+                // its sharpness times the element factor (no blunt lower
+                // limit), and a knockback that grows with its ink.
+                int minCells = (int)tuning.WeaponMinBodyCells;
+                int maxCells = (int)editor.Budget;
+                double slow = InkSolo.ThrowIntervalTicks(tuning, maxCells);
+                double quick = InkSolo.ThrowIntervalTicks(tuning, minCells);
+                double interval = InkSolo.ThrowIntervalTicks(tuning, st.N);
+                double flyLo = InkSolo.ThrowSpeed(tuning, maxCells);
+                double flyHi = InkSolo.ThrowSpeed(tuning, minCells);
+                double fly = InkSolo.ThrowSpeed(tuning, st.N);
+                y = StatRow(px, y, pw,
+                    "Gewicht: " + st.N,
+                    editor.Budget > 0 ? (float)(st.N / editor.Budget) : 0f, barColour,
+                    "Mehr Tinte stößt stärker zurück, wirft aber seltener.");
+                y = StatRow(px, y, pw,
+                    "Wurf: alle " + F2(interval / tuning.TickRate) + " s",
+                    st.N > 0 && slow > quick ? (float)((slow - interval) / (slow - quick)) : 0f, barColour,
+                    "Weniger Tinte wirft öfter.");
+                y = StatRow(px, y, pw,
+                    "Schärfe: " + F2(st.Sharpness) + "  (Klingenfelder " + st.S + ")",
+                    SharpFraction(st), barColour,
+                    st.S > 0
+                        ? "Wurftreffer: Schaden = Schärfe " + F2(st.Sharpness) + " (mal Element)."
+                        : "Keine Klinge (1 Feld dick): Wurfschaden " + F2(st.Sharpness) + ".");
+                y = StatRow(px, y, pw,
+                    "Flug: " + F(fly) + " Felder je Sekunde",
+                    st.N > 0 && flyHi > flyLo ? (float)((fly - flyLo) / (flyHi - flyLo)) : 0f, barColour,
+                    "Weniger Tinte fliegt schneller.");
+            }
+            else
+            {
+                y = StatRow(px, y, pw,
+                    "Gewicht: " + st.N + (st.Push > st.N ? "  (Schub " + F(st.Push) + ")" : ""),
+                    editor.Budget > 0 ? (float)(st.N / editor.Budget) : 0f, barColour,
+                    "Mehr Tinte schiebt stärker, ist aber langsamer.");
+                y = StatRow(px, y, pw,
+                    "Panzerung: " + F(st.Armour) + "  (Kern " + st.C + ", Hohlraum " + I(st.PocketCells) + ")",
+                    ArmourFraction(st), barColour,
+                    "Füllung panzert, Hohlraum in dicker Hülle ein wenig.");
+                y = StatRow(px, y, pw,
+                    "Schärfe: " + F2(st.Sharpness) + "  (Klingenfelder " + st.S + ")",
+                    SharpFraction(st), barColour,
+                    st.S > 0
+                        ? "Klingen (gelb): Schaden = Schärfe, mindestens " + F(tuning.BluntDamage) + "."
+                        : "Keine Klinge (1 Feld dick): stumpfer Schaden " + F(tuning.BluntDamage) + ".");
+                y = StatRow(px, y, pw,
+                    "Tempo: " + F(st.TopSpeed),
+                    SpeedFraction(st), barColour,
+                    "Weniger Tinte ist schneller.");
+            }
+            // Element: the name in the large type; the reason for "Neutral"
+            // beside it in the small type with room for two lines.
             string neutral = NeutralReason(st);
-            GUI.Label(new Rect(px, y, pw, 24f), "Element: " + ElementName(st.Element) + (neutral != "" ? " – " + neutral : ""), labelStyle);
-            y += 28f;
+            if (neutral == "") GUI.Label(new Rect(px, y, pw, 24f), "Element: " + ElementName(st.Element), labelStyle);
+            else
+            {
+                GUI.Label(new Rect(px, y, 160f, 24f), "Element: " + ElementName(st.Element), labelStyle);
+                GUI.Label(new Rect(px + 165f, y, pw - 165f, 36f), neutral, smallStyle);
+            }
+            y += 38f;
 
             if (purpose == Purpose.SoloEnemy && run != null && run.Wave < InkSolo.Waves)
             {
-                GUI.Label(new Rect(px, y, pw, 22f), "Einsatz: mehr oder zähere Gegner, härtere Treffer, mehr Beute", smallStyle);
+                GUI.Label(new Rect(px, y, pw, 22f), "Einsatz: mehr oder zähere Gegner, mehr Beute", smallStyle);
                 y += 22f;
                 float sw = (pw - 2f * 6f) / 3f;
                 for (int k = 0; k < tuning.Stakes.Length && k < 3; k++)
@@ -984,8 +1029,8 @@ namespace Inkweight.Runtime
                     double touch = (tuning.BluntDamage + InkSolo.EnemyCrush(tuning, PreviewFigure(), scale, stakeIndex))
                         * tuning.EnemyDamageMult * tuning.StakeDamageMult[stakeIndex];
                     GUI.Label(new Rect(px, y, pw, 40f),
-                        (copies == 1 ? "1 Gegner mit " : copies + " Gegner mit je ") + F(enemyArmour) + " Panzerung, Tempo " + F(enemySpeed)
-                        + ", stumpfer Treffer " + F2(touch) + " (ohne Element). Beute je Gegner: " + I(drop) + " Tinte.", smallStyle);
+                        (copies == 1 ? "1 Gegner, " : copies + " Gegner, je ") + F(enemyArmour) + " Panzerung, Tempo " + F(enemySpeed)
+                        + ", stumpfer Treffer " + F2(touch) + " (ohne Element), Beute " + (copies == 1 ? "" : "je ") + I(drop) + ".", smallStyle);
                 }
                 y += 40f;
             }

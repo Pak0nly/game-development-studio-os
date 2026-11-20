@@ -168,9 +168,9 @@ namespace Inkweight.RuntimeStubCheck
                 "canvas texture is written top row last (not mirrored) and the stroke carries the blade mark");
             Expect(HasLabel("Klingenfelder 23") && HasLabel("Schärfe: ") && HasLabel("Panzerung: 66.9") && HasLabel("Gewicht: 23"),
                 "stat panel shows the version 2 stats of the stroke");
-            Expect(HasLabel("schneiden mit der Schärfe, mindestens 1.2") && HasLabel("Hohlräume in dicker Hülle") && HasLabel("schiebt stärker") && HasLabel("ist schneller"),
+            Expect(HasLabel("Klingen (gelb): Schaden = Schärfe, mindestens 1.2.") && HasLabel("Hohlraum in dicker Hülle") && HasLabel("Panzerung: ") && HasLabel("Tempo: ") && HasLabel("schiebt stärker") && HasLabel("ist schneller"),
                 "the four one-line explanations are shown");
-            Expect(HasLabel("Element: Neutral – ab 30 % bunter Tinte (jetzt 0 %)"), "a black drawing is neutral and the line says why");
+            Expect(HasLabel("Element: Neutral") && HasLabel("unter 30 % bunte Körperfelder (jetzt 0 %)"), "a black drawing is neutral and the line says why");
             Expect(HasLabel("Zeit: noch ") && HasLabel("Zeichne deine Figur (oben ist vorne)") && !HasLabel("vorne)  –"), "the clock has its own line");
             Expect(HasLabel("noch ") && !HasLabel("ab dem ersten Strich"), "the drawing clock runs after the first stroke");
             // a second, thick part: its inner cells are no blades and keep the plain ink colour
@@ -309,18 +309,18 @@ namespace Inkweight.RuntimeStubCheck
             Click("Glut");
             Row(cell, 4, 10, 11); // 2 red: 20 % coloured
             Frame();
-            Expect(HasLabel("Tinte: 10 von 220") && HasLabel("Element: Neutral – ab 30 % bunter Tinte (jetzt 20 %)"), "20 % coloured ink is neutral, with the reason");
+            Expect(HasLabel("Tinte: 10 von 220") && HasLabel("Element: Neutral") && HasLabel("unter 30 % bunte Körperfelder (jetzt 20 %)"), "20 % coloured ink is neutral, with the reason");
             Click("Flut");
             Row(cell, 4, 12, 13); // 2 blue: 4 of 12 coloured (33 %), red and blue tie
             Frame();
-            Expect(HasLabel("Tinte: 12 von 220") && HasLabel("Element: Neutral – Gleichstand der Farben"), "a tie of the most common colours is neutral, with the reason");
+            Expect(HasLabel("Tinte: 12 von 220") && HasLabel("Element: Neutral") && HasLabel("Gleichstand der Farben"), "a tie of the most common colours is neutral, with the reason");
             Row(cell, 4, 14, 14); // 3 blue against 2 red: 5 of 13 coloured, blue alone 23 %
             Frame();
             Expect(HasLabel("Tinte: 13 von 220") && HasLabel("Element: Flut (schlägt Glut)"), "the most common colour is the element although it alone is below 30 %");
             Mouse(EventType.MouseDown, 20f + 20.5f * cell, 70f + 20.5f * cell); // one loose cell
             Mouse(EventType.MouseUp, 20f + 20.5f * cell, 70f + 20.5f * cell);
             Frame();
-            Expect(HasLabel("(1 Feld tropft ab und zählt nicht)"), "one dripping cell is named in the singular");
+            Expect(HasLabel("(1 Feld tropft ab)"), "one dripping cell is named in the singular");
             Click("Menü");
             Click("Ja, verwerfen");
             Expect(HasButton("4 Figuren"), "back in the menu after the element test");
@@ -331,6 +331,7 @@ namespace Inkweight.RuntimeStubCheck
             LoadExampleUntil("Fertig");
             Click("Fertig");
             Expect(HasLabel("Wurfwaffe"), "weapon drawing screen");
+            WeaponScreenChecks(editor, cell);
             LoadExampleUntil("Fertig");
             Click("Fertig");
             Expect(HasLabel("Welle 1 von"), "enemy drawing screen");
@@ -344,10 +345,10 @@ namespace Inkweight.RuntimeStubCheck
                     LoadExampleUntil("Welle starten");
                     if (guard == 0)
                     {
-                        Expect(HasLabel("Einsatz: mehr oder zähere Gegner, härtere Treffer, mehr Beute"), "the stake line names what a stake does in rules version 3");
+                        Expect(HasLabel("Einsatz: mehr oder zähere Gegner, mehr Beute"), "the stake line names what a stake does in rules version 3");
                         string low = StakeText(editor, 0);
                         string high = StakeText(editor, 2);
-                        Expect(HasLabel(low) && HasLabel("Beute je Gegner: ") && HasLabel(" Panzerung, "), "stake x1 shows speed and blunt touch of a copy: " + low);
+                        Expect(HasLabel(low) && HasLabel(", Beute ") && HasLabel(" Panzerung, "), "stake x1 shows speed and blunt touch of a copy: " + low);
                         Click("x2");
                         Expect(HasLabel(high) && low != high && !HasLabel(low), "stake x2 shows its own speed and blunt touch: " + high);
                     }
@@ -403,6 +404,39 @@ namespace Inkweight.RuntimeStubCheck
             Expect(HasButton("Glut"), "back in the menu after the solo run");
             Expect(Debug.Errors.Count == 0, "no error was logged: " + string.Join("; ", Debug.Errors));
             Console.WriteLine("  ram events seen by the game in all fights: " + Field(game, "ramCount") + " (information only)");
+        }
+
+        // The weapon drawing screen shows what a thrown weapon really has: no
+        // armour, no figure speed, no blunt lower limit. A hit is exactly the
+        // sharpness (times the element factor).
+        private static void WeaponScreenChecks(InkCanvasEditor editor, float cell)
+        {
+            InkTuning t = (InkTuning)Field(game, "tuning");
+            System.Globalization.CultureInfo inv = System.Globalization.CultureInfo.InvariantCulture;
+            if (!HasLabel("Tinte: 0 von 60")) { Click("Leeren"); if (HasButton("Ja, verwerfen")) Click("Ja, verwerfen"); }
+            // a 2-wide block of 12 cells: no blade cell, sharpness 1.00
+            Row(cell, 10, 10, 15);
+            Row(cell, 11, 10, 15);
+            Frame();
+            Expect(HasLabel("Tinte: 12 von 60") && HasLabel("Klingenfelder 0"), "weapon: 12 cells without a blade");
+            Expect(HasLabel("Keine Klinge (1 Feld dick): Wurfschaden 1.00."), "weapon without a blade: the hit is its sharpness 1.00, not the blunt 1.2");
+            Expect(!HasLabel("mindestens") && !HasLabel("stumpfer Schaden") && !HasLabel("Panzerung") && !HasLabel("Tempo") && !HasLabel("Schub"),
+                "weapon screen: no lower limit, no blunt damage, no armour, no figure speed, no push weight");
+            string every = "Wurf: alle " + (InkSolo.ThrowIntervalTicks(t, 12) / t.TickRate).ToString("0.00", inv) + " s";
+            string fly = "Flug: " + InkSolo.ThrowSpeed(t, 12).ToString("0.0", inv) + " Felder je Sekunde";
+            Expect(HasLabel(every) && every == "Wurf: alle 0.40 s", "weapon: throw interval of 12 cells: " + every);
+            Expect(HasLabel(fly) && fly == "Flug: 50.0 Felder je Sekunde", "weapon: flight speed of 12 cells: " + fly);
+            Expect(HasLabel("stößt stärker zurück") && HasLabel("wirft öfter") && HasLabel("fliegt schneller") && HasLabel("Element: Neutral"),
+                "weapon: the explanations of weight, interval and flight, and the element line");
+            // one thin cell on top: one blade cell, sharpness 1 + 1.2 / 26 + 3 * (1/13)^2 / (1 + 13/60), below 1.2
+            Row(cell, 9, 12, 12);
+            Frame();
+            InkStats st = editor.Stats;
+            Expect(st.N == 13 && st.S == 1 && st.Sharpness < t.BluntDamage, "weapon with one blade cell has a sharpness below the blunt damage");
+            Expect(HasLabel("Wurftreffer: Schaden = Schärfe " + st.Sharpness.ToString("0.00", inv) + " (mal Element).") && !HasLabel("mindestens"),
+                "weapon with a blade: the hit is exactly the sharpness, no lower limit");
+            Click("Leeren");
+            Click("Ja, verwerfen");
         }
 
         // A horizontal stroke on the canvas (1280 x 720 layout) in row y from column x0 to x1.

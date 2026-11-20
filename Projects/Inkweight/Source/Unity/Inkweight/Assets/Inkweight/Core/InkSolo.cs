@@ -127,6 +127,13 @@ namespace Inkweight.Core
             return (int)copies;
         }
 
+        // Flight speed of the thrown weapon in cells per second.
+        public static double ThrowSpeed(InkTuning tuning, int weaponN)
+        {
+            double wN = weaponN;
+            return tuning.ThrowSpeedBase / (1 + wN / tuning.ThrowSpeedWeightRef);
+        }
+
         public static double ThrowIntervalTicks(InkTuning tuning, int weaponN)
         {
             return tuning.ThrowIntervalBaseTicks + Math.Floor(weaponN * tuning.ThrowIntervalTicksPerInk);
@@ -370,7 +377,7 @@ namespace Inkweight.Core
                     shot.X = hero.X; shot.Y = hero.Y;
                     shot.Ux = (bodies[near].X - hero.X) / d;
                     shot.Uy = (bodies[near].Y - hero.Y) / d;
-                    shot.Speed = so.ThrowSpeedBase / (1 + wN / so.ThrowSpeedWeightRef);
+                    shot.Speed = ThrowSpeed(so, wst.N);
                     shot.Life = so.ProjectileLifeTicks;
                     run.Shots.Add(shot);
                     run.ThrowCd = ThrowIntervalTicks(so, wst.N);

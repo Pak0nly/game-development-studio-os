@@ -24,7 +24,7 @@ PASS worker receipt 54fc709217479941e763bb0ad04b0a5ba20740ee8fb5969b07c77db47b87
   the smoke test passes in each.
 - The seven Unity-layer findings and the test finding of the INK-UNITY-V2
   review are fixed.
-- Six shown rule statements were corrected or completed (section 7).
+- Seven shown rule statements were corrected or completed (section 7).
 - Not verified: anything in the real Unity Editor (section 5).
 
 ## 3. What changed (all inside `Projects/Inkweight/Source/Unity`)
@@ -211,3 +211,86 @@ JavaScript had to win. Small points:
   beyond the "stumpfer Treffer" number.
 - The capability Knowledge Base was not updated (Inkweight has no capability
   index yet, OD-09); no durable tool learning arose.
+
+## Correction round 1 (2026-11-20, 03:40 to 03:47 UTC)
+
+After the independent review (`REVIEW.md`, FAIL because of F-1). Same order,
+same allowed paths; nothing committed or pushed by the Worker. Sections 4 and
+7 above describe the first candidate; where they quote a sentence that this
+round changed, the sentence below is the current one.
+
+### What changed
+
+| File | Change |
+|---|---|
+| `Inkweight/Assets/Inkweight/Runtime/InkweightGame.cs` | F-1 and I-1: the stat rows branch on `editor.Kind == InkDrawing.KindWeapon` (weapon rows: weight, throw interval, sharpness with the throw sentence, flight speed; no armour, no push weight, no figure speed). m-1: element reason counts body cells. m-2: lines shortened; the element reason is a small-type label beside "Element: Neutral" with room for two lines (row height 28 to 38). |
+| `Inkweight/Assets/Inkweight/Core/InkSolo.cs` | New public helper `ThrowSpeed(tuning, weaponN)`; `Step` uses it for the shot speed (same operations; the golden traces still pass bit for bit). The weapon screen reads the flight speed from it instead of repeating the formula. |
+| `EngineStubs/SmokeProgram.cs` | New `WeaponScreenChecks` on the weapon drawing screen; changed texts followed. |
+| `README.md` | Weapon stat panel described; "Figures only; a thrown weapon hits with exactly its sharpness"; new sentences; layout remark. |
+
+### The German sentences now shown
+
+Weapon screens ("Zeichne deine Wurfwaffe", "Mehr Tinte: Zeichne deine Waffe neu"):
+
+- "Gewicht: N" – "Mehr Tinte stößt stärker zurück, wirft aber seltener."
+- "Wurf: alle 0.40 s" – "Weniger Tinte wirft öfter."
+- "Schärfe: 1.06  (Klingenfelder 1)" – with a blade cell "Wurftreffer:
+  Schaden = Schärfe 1.06 (mal Element).", without one "Keine Klinge (1 Feld
+  dick): Wurfschaden 1.00."
+- "Flug: 50.0 Felder je Sekunde" – "Weniger Tinte fliegt schneller."
+
+Checked against the core: hit = sharpness times element factor
+(`InkSolo.Step`), interval `ThrowIntervalTicks / tickRate`, flight
+`ThrowSpeed`, knockback `N * weaponKnockbackPerInk / enemy push weight`.
+
+Figure screens (shortened, same meaning):
+
+- "Füllung panzert, Hohlraum in dicker Hülle ein wenig."
+- "Klingen (gelb): Schaden = Schärfe, mindestens 1.2." / "Keine Klinge (1
+  Feld dick): stumpfer Schaden 1.2."
+
+All screens:
+
+- "Element: Neutral" with "unter 30 % bunte Körperfelder (jetzt N %)" or
+  "Gleichstand der Farben".
+- "(1 Feld tropft ab)" / "(N Felder tropfen ab)".
+
+Enemy screen:
+
+- "Einsatz: mehr oder zähere Gegner, mehr Beute"
+- "2 Gegner, je 23.5 Panzerung, Tempo 17.4, stumpfer Treffer 0.50 (ohne
+  Element), Beute je 60." / "1 Gegner, 167.3 Panzerung, Tempo 7.3, stumpfer
+  Treffer 0.79 (ohne Element), Beute 230."
+
+Other non-figure drawing screens: there are none besides the two weapon
+screens. The enemy screen is a figure; its stat rows describe the drawing
+itself (the boss uses that armour), the copies of the wave are described by
+the stake text. The README now says so.
+
+### Real output (all exit 0)
+
+| Command | Final lines |
+|---|---|
+| `dotnet run --project CoreTests` | `self check passed, 115 checkpoints bit-identical` / `RESULT: PASS (16729 checks, 0 failed)` |
+| `dotnet run -c Release --project CoreTests` | `RESULT: PASS (16729 checks, 0 failed)` |
+| `./check_runtime_against_stubs.sh` | four times `0 Warning(s)` and `RESULT: PASS (stub smoke test, N frames)` (2398, 2575, 2497, 2489); `STUB CHECK: PASS (4 variants compiled and smoke-run against stubs, not against Unity)` |
+
+The check count rose from 16722 to 16729 because the source-rule test checks
+the seven added lines of `InkSolo.cs`. `bin` and `obj` deleted afterwards.
+Engine members newly used: none.
+
+### Findings
+
+| Finding | State |
+|---|---|
+| F-1 false sentence on the weapon screens | Fixed; smoke check: a 12-cell weapon without a blade shows "Wurfschaden 1.00", a weapon with one blade cell (sharpness below 1.2) shows "Schaden = Schärfe S", and no label on that screen contains "mindestens" or "stumpfer Schaden". |
+| I-1 figure rows on the weapon screen | Fixed; smoke check: no "Panzerung", "Tempo" or "Schub" label there; interval and flight speed compared with the core (0.40 s, 50.0 at 12 cells). |
+| m-1 element reason wording | Fixed. |
+| m-2 long lines | Shortened to at most about 53 characters per small-type line and at most two lines for the stake text and the element reason. Estimated from character counts for a 372-unit panel (4:3); not measured, no engine available. The ink line with "Tinte leer!" and the drip text was shortened too. |
+| m-3 golden coverage (dead third body, crush order) | Not for this order: noted for the next core order; the two own tests stay. |
+| m-4 result wording | "Seven" in section 2. |
+
+### Still not verified
+
+Everything in the real Unity Editor, as before; the fit of the shortened
+lines is an estimate.

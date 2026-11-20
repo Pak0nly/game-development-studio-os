@@ -5,8 +5,8 @@ Inkweight runtime smoke test against engine stubs (NOT Unity)
 input variant: old Input Manager
   ring 2 seats: match finished after 3 rounds
   solo: run ended after 6 fights (hero destroyed)
-  ram events seen by the game in all fights: 149 (information only)
-RESULT: PASS (stub smoke test, 2264 frames)
+  ram events seen by the game in all fights: 189 (information only)
+RESULT: PASS (stub smoke test, 2398 frames)
 == input variant: InputSystem
     0 Warning(s)
 Build succeeded.
@@ -14,8 +14,8 @@ Inkweight runtime smoke test against engine stubs (NOT Unity)
 input variant: Input System package
   ring 2 seats: match finished after 3 rounds
   solo: run ended after 6 fights (won)
-  ram events seen by the game in all fights: 208 (information only)
-RESULT: PASS (stub smoke test, 2633 frames)
+  ram events seen by the game in all fights: 192 (information only)
+RESULT: PASS (stub smoke test, 2575 frames)
 == input variant: Both
     0 Warning(s)
 Build succeeded.
@@ -23,15 +23,15 @@ Inkweight runtime smoke test against engine stubs (NOT Unity)
 input variant: both backends
   ring 2 seats: match finished after 3 rounds
   solo: run ended after 6 fights (hero destroyed)
-  ram events seen by the game in all fights: 174 (information only)
-RESULT: PASS (stub smoke test, 2304 frames)
+  ram events seen by the game in all fights: 177 (information only)
+RESULT: PASS (stub smoke test, 2497 frames)
 == input variant: None
     0 Warning(s)
 Build succeeded.
 Inkweight runtime smoke test against engine stubs (NOT Unity)
 input variant: no backend (GUI events only)
   ring 2 seats: match finished after 3 rounds
-  solo: run ended after 6 fights (won)
-  ram events seen by the game in all fights: 191 (information only)
-RESULT: PASS (stub smoke test, 2598 frames)
+  solo: run ended after 6 fights (hero destroyed)
+  ram events seen by the game in all fights: 211 (information only)
+RESULT: PASS (stub smoke test, 2489 frames)
 STUB CHECK: PASS (4 variants compiled and smoke-run against stubs, not against Unity)

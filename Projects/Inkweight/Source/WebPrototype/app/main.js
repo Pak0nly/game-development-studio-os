@@ -196,6 +196,16 @@ $('btnFree').addEventListener('click', async () => {
       + ' % vom Tempo seiner Zeichnung. Unter den Einsatz-Knöpfen steht, was ein Treffer genau dieses Gegners deinem Helden nimmt. '
       + (so.bossCrushMult === 0 ? 'Im Endkampf gibt es keinen Einsatz, und dort drückt niemand: ' : 'Im Endkampf gibt es keinen Einsatz: ')
       + 'eine stumpfe Berührung macht dort ' + num(tuning.stats.bluntDamage * so.enemyDamageMult, 2) + ' Schaden. Dein Panzer heilt nur durch „Flicken“.';
+    // The thrown weapon: none of the figure lines about armour, top speed or
+    // the lower limit of a cut hold for it (core/solo.js, soloStep).
+    const sec = (n) => num(core.soloThrowIntervalTicks(tuning, n) / tuning.physics.tickRate, 2);
+    const fly = (n) => num(so.throwSpeedBase / (1 + n / so.throwSpeedWeightRef), 0);
+    const lo = tuning.ink.weaponMinBodyCells;
+    const hiInk = tuning.ink.weaponBudget;
+    $('rulesWeapon').textContent = 'Für die Wurfwaffe gilt nur die Schärfe wie oben berechnet; Panzer und Tempo einer Figur hat sie nicht. Ein Treffer nimmt dem Gegner genau ihre Schärfe (mal Element), ohne den Mindestwert '
+      + num(tuning.stats.bluntDamage, 1) + ' und ohne Anteil am Panzer. Eine leichte Waffe wird öfter geworfen und fliegt schneller: ' + lo + ' Kästchen alle ' + sec(lo) + ' Sekunden mit ' + fly(lo)
+      + ' Kästchen pro Sekunde, ' + hiInk + ' Kästchen alle ' + sec(hiInk) + ' Sekunden mit ' + fly(hiInk) + '. Eine schwere stößt den Getroffenen weiter zurück. Sie fliegt höchstens ' + num(so.projectileLifeTicks / tuning.physics.tickRate, 0)
+      + ' Sekunden und trifft nur im Umkreis von etwa ' + num(so.projectileRadiusMax, 0) + ' Kästchen um ihre Mitte, auch wenn sie größer gezeichnet ist.';
   }
   const layer = $('rulesLayer');
   const open = () => { sfx('click'); layer.hidden = false; layer.scrollTop = 0; $('rulesClose').focus({ preventScroll: true }); };

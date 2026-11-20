@@ -59,8 +59,8 @@ function analyse() {
       if (s.cells[i] !== 0) {
         if (body[i] === 0) m = 4;
         else if (core.isSharpCell(body, W, H, x, y)) { m = 3; blades++; }
-        else m = core.countNeighbours(body, W, H, x, y) === 8 ? 2 : 1;
-      } else if (!open[i] && core.countNeighbours(body, W, H, x, y) === 0) { pockets++; if (s.stats.pocketCells > 0) m = 5; }
+        else m = s.kind !== 'weapon' && core.countNeighbours(body, W, H, x, y) === 8 ? 2 : 1;
+      } else if (!open[i] && core.countNeighbours(body, W, H, x, y) === 0) { pockets++; if (s.stats.pocketCells > 0 && s.kind !== 'weapon') m = 5; }
       s.mark[i] = m;
     }
   }
@@ -85,6 +85,38 @@ function setBar(id, share) {
   $(id).style.width = Math.max(0, Math.min(100, share * 100)).toFixed(1) + '%';
 }
 
+// A thrown weapon follows other rules than a figure (core/solo.js, soloStep):
+// a hit does exactly its sharpness times the element factor (no lower limit,
+// no share of the armour), it has no armour, and instead of a top speed it
+// has a throw interval and a flight speed; its weight is the knock-back.
+// The second row shows the interval ("Takt"), the fourth the flight ("Flug").
+function weaponNumbers(N) {
+  const so = tuning.solo;
+  return {
+    interval: core.soloThrowIntervalTicks(tuning, N) / tuning.physics.tickRate,
+    flight: so.throwSpeedBase / (1 + N / so.throwSpeedWeightRef),
+  };
+}
+function updateWeaponRows(s, st, has) {
+  const tst = tuning.stats;
+  const min = tuning.ink.weaponMinBodyCells;
+  const w = weaponNumbers(st.N);
+  const best = weaponNumbers(min);
+  setVal('stWeight', String(st.N));
+  setVal('stArmour', has ? num(w.interval, 2) : '0');
+  setVal('stSharp', has ? num(st.sharpness, 1) : '0');
+  setVal('stSpeed', has ? num(w.flight, 0) : '0');
+  setWhy('stWeightWhy', 'schwer stößt Gegner weiter zurück');
+  setWhy('stArmourWhy', 'Sekunden je Wurf · leicht wirft öfter');
+  setWhy('stSharpWhy', !has ? 'dünne Striche sind Klingen, auch schräge'
+    : (st.S > 0 ? st.S + (st.S === 1 ? ' Klinge' : ' Klingen') : 'keine Klinge') + ' · Treffer nimmt ' + num(st.sharpness, 1) + ' Panzer');
+  setWhy('stSpeedWhy', 'Kästchen pro Sekunde · leicht fliegt schneller');
+  setBar('stWeightBar', st.N / s.budget);
+  setBar('stArmourBar', has ? best.interval / w.interval : 0);
+  setBar('stSharpBar', has ? (st.sharpness - tst.sharpBase) / (tst.sharpMax + tst.sharpPurity / (1 + min / tst.sharpPurityWeightRef)) : 0);
+  setBar('stSpeedBar', has ? w.flight / best.flight : 0);
+}
+
 function updatePanel() {
   const s = S;
   const st = s.stats;
@@ -93,6 +125,10 @@ function updatePanel() {
   $('inkFill').style.width = Math.max(0, left / s.budget * 100).toFixed(1) + '%';
   $('inkMeter').classList.toggle('empty', left <= 0);
   const has = st.N > 0;
+  const weapon = s.kind === 'weapon';
+  $('stArmourName').textContent = weapon ? 'Takt' : 'Panzer';
+  $('stSpeedName').textContent = weapon ? 'Flug' : 'Tempo';
+  if (weapon) { updateWeaponRows(s, st, has); } else {
   setVal('stWeight', String(st.N));
   setVal('stArmour', has ? String(Math.round(st.armour)) : '0');
   setVal('stSharp', has ? num(st.sharpness, 1) : '0');
@@ -120,6 +156,7 @@ function updatePanel() {
   setBar('stArmourBar', has ? st.armour / (tst.armourBase + 1.1 * s.budget) : 0);
   setBar('stSharpBar', has ? (st.sharpness - tst.sharpBase) / (tst.sharpMax + tst.sharpPurity / (1 + minCells / tst.sharpPurityWeightRef)) : 0);
   setBar('stSpeedBar', has ? st.topSpeed / (tst.speedBase / (1 + minCells / tst.speedWeightRef)) : 0);
+  }
   const e = st.element;
   const ev = $('stElement');
   ev.className = 's-val wide' + (e ? ' e' + e : '');
@@ -144,7 +181,7 @@ function updatePanel() {
 
   const msg = $('drawMsg');
   const min = s.kind === 'weapon' ? tuning.ink.weaponMinBodyCells : tuning.ink.minBodyCells;
-  const legend = 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum';
+  const legend = weapon ? 'Strich = Klinge · mehr Klingen, mehr Schaden' : 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum';
   let text = legend;
   let warn = false;
   let soft = ''; // short form of a warning that does not stop the player
