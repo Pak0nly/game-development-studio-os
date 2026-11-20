@@ -3,7 +3,7 @@
 
 import * as core from '../core/index.js';
 import { tuning, W, H } from './tuning.js';
-import { $, el, onPress, showScreen, onLeave, colours, hash3, reducedMotion, fitCanvas, ELEMENT_NAMES } from './ui.js';
+import { $, el, onPress, showScreen, onLeave, colours, hash3, reducedMotion, fitCanvas, ELEMENT_NAMES, num } from './ui.js';
 import { sfx } from './audio.js';
 import { makeSprite, drawSprite, wobbleFrame, thumbCanvas } from './sprites.js';
 import { galleryAll, decode, hintSeen, markHintSeen } from './gallery.js';
@@ -59,8 +59,11 @@ function updatePanel() {
   const has = st.N > 0;
   setVal('stWeight', String(st.N));
   setVal('stArmour', has ? String(Math.round(st.armour)) : '0');
-  setVal('stSharp', has ? st.sharpness.toFixed(1) : '0');
-  setVal('stSpeed', has ? st.topSpeed.toFixed(0) : '0');
+  setVal('stSharp', has ? num(st.sharpness, 1) : '0');
+  setVal('stSpeed', has ? num(st.topSpeed, 0) : '0');
+  // what rules version 1 really do: sharpness grows with the share of sharp
+  // cells (straight thin lines and tips) in the whole figure
+  $('stSharpWhy').textContent = has ? 'Anteil gerader dünner Linien: ' + Math.round(st.S * 100 / st.N) + ' %' : 'wächst mit dem Anteil dünner Linien';
   const tst = tuning.stats;
   setBar('stWeightBar', st.N / s.budget);
   setBar('stArmourBar', has ? st.armour / (tst.armourBase + tst.armourPerCore * s.budget * 0.7) : 0);
@@ -79,7 +82,8 @@ function updatePanel() {
   } else {
     const coloured = st.colourCounts[1] + st.colourCounts[2] + st.colourCounts[3];
     const pct = has ? Math.floor(coloured * 100 / st.N) : 0;
-    why = 'ab ' + tuning.element.minColouredPercent + ' % einer Farbe (jetzt ' + pct + ' %)';
+    why = pct === 0 ? 'Schwarz ist neutral: kein Element'
+      : 'ab ' + tuning.element.minColouredPercent + ' % einer Farbe (jetzt ' + pct + ' %)';
   }
   $('stElementWhy').textContent = why;
 
@@ -90,7 +94,9 @@ function updatePanel() {
   if (st.filled === 0) text = s.kind === 'weapon' ? 'Zeichne die Wurfwaffe. Leicht fliegt schnell, dünn schneidet.' : text;
   else if (!st.bigEnough) { text = 'Noch zu klein: mindestens ' + min + ' Kästchen am Stück.'; warn = true; }
   else if (st.drips > 0) { text = st.drips + ' Kästchen hängen nicht dran und tropfen ab.'; warn = true; }
+  else if (left <= 0) { text = 'Tinte ist alle: radier etwas weg.'; warn = true; }
   if (s.lockNote && st.filled === 0) text = s.lockNote;
+  if (s.askingBack) { text = 'Noch einmal tippen, dann ist die Zeichnung weg.'; warn = true; }
   msg.textContent = text;
   msg.classList.toggle('warn', warn);
   $('drawDone').disabled = !st.valid;
@@ -145,23 +151,28 @@ function paintLine(x0, y0, x1, y1) {
   return changed;
 }
 
+// The cell under the pointer, or null while the pointer is off the canvas.
 function cellAt(ev) {
   const r = canvas.getBoundingClientRect();
-  let x = Math.floor((ev.clientX - r.left) / r.width * W);
-  let y = Math.floor((ev.clientY - r.top) / r.height * H);
-  if (x < 0) x = 0; else if (x >= W) x = W - 1;
-  if (y < 0) y = 0; else if (y >= H) y = H - 1;
+  const x = Math.floor((ev.clientX - r.left) / r.width * W);
+  const y = Math.floor((ev.clientY - r.top) / r.height * H);
+  if (x < 0 || y < 0 || x >= W || y >= H) return null;
   return [x, y];
 }
 
 function strokeTo(ev) {
   const s = S;
   const c = cellAt(ev);
+  // a finger that slides off the canvas stops painting; the stroke goes on
+  // (without a joining line) where the finger comes back in
+  if (!c) { s.outside = true; return; }
+  if (s.outside) { s.outside = false; s.lastX = c[0]; s.lastY = c[1]; }
   const changed = paintLine(s.lastX, s.lastY, c[0], c[1]);
   s.lastX = c[0];
   s.lastY = c[1];
   if (changed) {
     s.strokeChanged = true;
+    s.dirty = true;
     sfx(s.tool === 0 ? 'erase' : 'pen');
     analyse();
   }
@@ -169,7 +180,8 @@ function strokeTo(ev) {
     s.deniedShown = true;
     sfx('deny');
     const m = $('inkMeter');
-    m.classList.remove('pop'); void m.offsetWidth; m.classList.add('pop');
+    if (!reducedMotion()) { m.classList.remove('pop'); void m.offsetWidth; m.classList.add('pop'); }
+    updatePanel();
   }
 }
 
@@ -186,8 +198,10 @@ canvas.addEventListener('pointerdown', (ev) => {
   s.strokeChanged = false;
   s.denied = false;
   s.deniedShown = false;
+  s.outside = false;
   pushUndo();
   const c = cellAt(ev);
+  if (!c) { s.outside = true; return; }
   s.lastX = c[0];
   s.lastY = c[1];
   strokeTo(ev);
@@ -200,7 +214,7 @@ canvas.addEventListener('pointermove', (ev) => {
   else strokeTo(ev);
 });
 function endStroke(ev) {
-  if (!S || !S.drawing || ev.pointerId !== S.pointerId) return;
+  if (!S || !S.drawing || (ev && ev.pointerId !== S.pointerId)) return;
   S.drawing = false;
   if (!S.strokeChanged) S.undo.pop();
 }
@@ -228,6 +242,7 @@ onPress($('toolBrush'), () => {
 
 function replaceCells(cells) {
   pushUndo();
+  S.dirty = true;
   S.cells = cells;
   let n = 0;
   for (let i = 0; i < cells.length; i++) if (cells[i] !== 0) n++;
@@ -237,6 +252,7 @@ function replaceCells(cells) {
 onPress($('toolUndo'), () => {
   if (!S || S.undo.length === 0) return;
   const cells = S.undo.pop();
+  S.dirty = S.undo.length > 0;
   S.cells = cells;
   let n = 0;
   for (let i = 0; i < cells.length; i++) if (cells[i] !== 0) n++;
@@ -280,10 +296,20 @@ $('drawHintOk').addEventListener('click', () => { $('drawHint').hidden = true; m
 
 $('drawBack').addEventListener('click', () => {
   if (!S) return;
-  if (S.backConfirm && S.filled > 0 && performance.now() - backArmed > 2500) {
+  // unsaved strokes (or a running match) are never thrown away by one tap
+  const s = S;
+  const ask = s.dirty || (s.backConfirm && s.filled > 0);
+  if (ask && performance.now() - backArmed > 2500) {
     backArmed = performance.now();
-    $('drawBack').textContent = 'Sicher?';
-    setTimeout(() => { if (S) $('drawBack').textContent = S.backLabel; }, 2500);
+    s.askingBack = true;
+    $('drawBack').textContent = s.dirty ? 'Verwerfen?' : 'Sicher?';
+    updatePanel();
+    setTimeout(() => {
+      if (S !== s) return;
+      s.askingBack = false;
+      $('drawBack').textContent = s.backLabel;
+      updatePanel();
+    }, 2500);
     return;
   }
   finish(null);
@@ -314,7 +340,9 @@ function layout() {
   fitCanvas(preview, preview.clientWidth || 52, preview.clientHeight || 52);
 }
 if (typeof ResizeObserver === 'function') new ResizeObserver(() => { if (S) layout(); }).observe($('drawBoard'));
-window.addEventListener('resize', () => { if (S) layout(); });
+// When the window changes (a phone is rotated) the canvas moves under the
+// finger: the running stroke ends there instead of jumping across the sheet.
+window.addEventListener('resize', () => { if (S) { endStroke(null); layout(); } });
 
 function drawBoard(t) {
   const s = S;
@@ -479,6 +507,7 @@ export function openDraw(opts) {
       undo: [], tool: 1, brush: 1,
       stats: null, onStats: null,
       drawing: false, pointerId: -1, lastX: 0, lastY: 0, strokeChanged: false, denied: false, deniedShown: false,
+      outside: false, dirty: false, askingBack: false,
       timeLimit: opts.timeLimit || 0, timerStart: 0, timerShown: -1,
       sprite: null, fig: null, spriteDirty: true, spriteTime: -1,
       backConfirm: !!opts.backConfirm, backLabel: opts.backLabel || 'Zurück',

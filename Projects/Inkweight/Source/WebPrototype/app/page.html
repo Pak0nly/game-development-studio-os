@@ -7,6 +7,7 @@
     </div>
     <div class="start-body">
       <canvas id="startDoodle" class="doodle" aria-hidden="true"></canvas>
+      <p id="startDoodleNote" class="fine doodle-note" hidden></p>
       <h1 class="title">Inkweight</h1>
       <p class="rule">Menge ist Gewicht, gefüllte Flächen sind Panzer, dünne Linien sind Klingen, Farbe ist das Element.</p>
       <div class="menu">
@@ -69,7 +70,7 @@
       <div id="drawBoard" class="draw-board">
         <canvas id="drawCanvas" class="draw-canvas" aria-label="Zeichenfläche, 32 mal 32 Kästchen"></canvas>
         <div id="drawHint" class="hint" hidden>
-          <p><b>Zeichne mit dem Finger oder der Maus.</b> Oben ist vorne. Dünne Striche werden Klingen, volle Flächen werden Panzer.</p>
+          <p><b>Zeichne mit dem Finger oder der Maus.</b> Oben ist vorne. Dünne, gerade Striche werden Klingen, volle Flächen werden Panzer.</p>
           <button id="drawHintOk" class="btn small primary" type="button">Alles klar</button>
         </div>
       </div>
@@ -83,7 +84,7 @@
           <button id="toolBrush" class="tool" type="button" aria-pressed="false">Dünn</button>
         </div>
         <div class="inkrow">
-          <button id="toolUndo" class="tool flat" type="button">Zurück</button>
+          <button id="toolUndo" class="tool flat" type="button">Rückgängig</button>
           <button id="toolClear" class="tool flat" type="button">Leeren</button>
           <button id="toolPick" class="tool flat" type="button">Vorlage</button>
           <div class="inkmeter" id="inkMeter">
@@ -95,7 +96,7 @@
         <ul class="stats" id="statList">
           <li><span class="s-name">Gewicht</span><b id="stWeight" class="s-val">0</b><span class="s-bar"><i id="stWeightBar"></i></span><span class="s-why">schwer schiebt, ist aber träge</span></li>
           <li><span class="s-name">Panzer</span><b id="stArmour" class="s-val">0</b><span class="s-bar"><i id="stArmourBar"></i></span><span class="s-why">volle Flächen halten mehr aus</span></li>
-          <li><span class="s-name">Schärfe</span><b id="stSharp" class="s-val">0</b><span class="s-bar"><i id="stSharpBar"></i></span><span class="s-why">dünne Linien schneiden</span></li>
+          <li><span class="s-name">Schärfe</span><b id="stSharp" class="s-val">0</b><span class="s-bar"><i id="stSharpBar"></i></span><span id="stSharpWhy" class="s-why">wächst mit dem Anteil dünner Linien</span></li>
           <li><span class="s-name">Tempo</span><b id="stSpeed" class="s-val">0</b><span class="s-bar"><i id="stSpeedBar"></i></span><span class="s-why">wenig Tinte ist flink</span></li>
           <li><span class="s-name">Element</span><b id="stElement" class="s-val wide">–</b><span id="stElementWhy" class="s-why"></span></li>
         </ul>
@@ -148,7 +149,7 @@
     </div>
     <div class="panel">
       <p>Du zeichnest einen Helden und seine Wurfwaffe. Vor jeder Welle zeichnest du auch den Gegner und bestimmst den Einsatz: mehr Tinte heißt mehr Gegner und mehr Beute. Nach 5 Wellen kommt der Endgegner aus allen deinen Gegnern.</p>
-      <p><b>Wähle deine Startfarbe.</b> Schwarz hast du immer.</p>
+      <p><b>Wähle deine Startfarbe.</b> Schwarz hast du immer; Schwarz ist neutral und hat kein Element.</p>
       <div class="colour-pick">
         <button id="soloC2" class="btn big c2" type="button">Glut<small>schlägt Moos</small></button>
         <button id="soloC3" class="btn big c3" type="button">Flut<small>schlägt Glut</small></button>
@@ -167,6 +168,7 @@
     </div>
     <div class="panel">
       <p id="shopInfo"></p>
+      <p id="shopPurse" class="fine"></p>
       <div id="shopList" class="shop"></div>
       <div id="shopColours" class="colour-pick" hidden></div>
       <p id="shopMsg" class="msg"></p>

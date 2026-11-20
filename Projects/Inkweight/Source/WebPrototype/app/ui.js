@@ -22,7 +22,26 @@ const leaveHooks = {};
 
 export function onLeave(id, fn) { leaveHooks[id] = fn; }
 export function currentScreen() { return current; }
+// After every screen change taps are ignored for a short moment, so the
+// second tap of a quick double tap never acts on the screen that just opened
+// (it used to open the template picker or start the drawing clock).
+const TAP_BLOCK_MS = 350;
+let blockUntil = 0;
+export function inputBlocked() { return performance.now() < blockUntil; }
+{
+  const guard = (ev) => {
+    if (!inputBlocked()) return;
+    ev.stopImmediatePropagation();
+    if (ev.type === 'click') ev.preventDefault();
+  };
+  for (const type of ['pointerdown', 'mousedown', 'touchstart', 'click']) document.addEventListener(type, guard, true);
+}
+
+// German number text: decimal comma.
+export function num(value, digits) { return value.toFixed(digits || 0).replace('.', ','); }
+
 export function showScreen(id) {
+  if (current !== id) blockUntil = performance.now() + TAP_BLOCK_MS;
   if (current !== id && leaveHooks[current]) leaveHooks[current]();
   for (const s of SCREENS) $(s).hidden = s !== id;
   current = id;
@@ -48,6 +67,7 @@ export function colours() {
   return tokens;
 }
 
+// Index 0 is "no element"; index 1 is the black ink, called Schwarz everywhere.
 export const ELEMENT_NAMES = ['Neutral', 'Schwarz', 'Glut', 'Flut', 'Moos'];
 
 // A button that needs a second tap within a short time ("Sicher?").
