@@ -1009,7 +1009,7 @@ async function runChecks(browser) {
   if (runAsk !== 'Lauf beenden? | Noch einmal tippen, dann endet der ganze Lauf.' || !(await visible('scrDraw'))) throw new Error('solo Ende asks wrongly: ' + runAsk);
   await shot('14-solo-ende-asks');
   await sleep(2700);
-  if (!/^×1: Gegner/.test(await text('stakeNote'))) throw new Error('stake note did not come back: ' + (await text('stakeNote')));
+  if (!/^×1 · Gegner: Treffer/.test(await text('stakeNote'))) throw new Error('stake note did not come back: ' + (await text('stakeNote')));
   ok('"Ende" on the solo enemy screen asks "Lauf beenden?" and says that the whole run ends');
   await press('#drawDone');
   await page.waitForSelector('#scrFight:not([hidden])');
@@ -1130,7 +1130,7 @@ async function runStable(browser) {
     await sleep(300);
     await stable('solo enemy', null);
     const noteText = await page.locator('#stakeNote').textContent();
-    if (!/^×1: Gegner .* · 3 Kästchen tropfen ab$/.test(noteText)) throw new Error('stake line with the drip warning on the enemy screen: ' + noteText);
+    if (!/^×1 · Gegner: Treffer .* · 3 Kästchen tropfen ab$/.test(noteText)) throw new Error('stake line with the drip warning on the enemy screen: ' + noteText);
     if (size.height === 780) {
       // m-7: the steering finger is still down when the shop opens; another finger buys
       await press('#toolClear');
