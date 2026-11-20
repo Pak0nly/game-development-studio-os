@@ -2,6 +2,172 @@
 
 Independent review verdict: PASS
 
+Current verdict after correction round 1 (merge commit `06513a3` in the main
+checkout; the Worker's commits `7c807d9`, `8f9ba9f`, `9e2cf59` on top of
+`e03ae14`). The first review of `e03ae14` is kept below as history.
+
+## Re-review after correction round 1
+
+Reviewer: the same separate Claude Code subagent (QA Lead), read-only in the
+main checkout; this file is the only file changed. Throwaway scripts in
+`/tmp/inkrev3/` (my first-review probes, repointed to the main checkout, plus
+new ones). Nothing committed or pushed.
+
+PASS means, as before: the findings are fixed or decided and documented, the
+tests are real and pass, the golden files cover the named branches, the
+records are exact enough for the ports, the balance verdict is honest (the
+target stays **not met**), and I found no blocker for the browser-app and C#
+port orders. One important solo finding (R1) and three minor ones remain.
+
+### What was run (real output)
+
+| Command | Real output (key lines) |
+|---|---|
+| `git show --name-only` for `7c807d9`, `8f9ba9f`, `9e2cf59` | every path inside the order's allowed paths; `git diff 9e2cf59 06513a3` on `core` and `Shared` is empty (the merge adds only the INK-WEB-V2 app work) |
+| `node --test` (in `Source/WebPrototype`) | `# tests 65` `# pass 65` `# fail 0` `# duration_ms 2362.529247` |
+| `node tools/gen_golden.js --check`, also `--jitless` | `golden files match` twice |
+| grep `Math.` in `core/*.js` | only `Math.floor` 9, `Math.imul` 2, `Math.sqrt` 24 |
+| `/tmp/inkrev3/indep.mjs check` (own stat implementation, now also `pocketCells`, `push`) | `items 59 mismatches 0` |
+| `p5.mjs` (my turning scenario: 32-cell line turns into a 210-cell block, 400 ticks, then 2 s idle) | `ticks overlap>0.5 0 y direction flips >0.2 0 overlap end of push 0.000 after 2 s idle 0.000` (first review: 280 ticks, 372 flips, 0.577 stuck) |
+| `p6.mjs` (my 8 bot pairs, 12 rounds each, overlap every 3rd tick) | 7 pairs `rounds with overlap>0.5 0`, max 0.03 to 0.25; `comb vs hedgehog rounds 12 rounds with overlap>0.5 8 sampled ticks >0.5 19 of 7098 max 0.77` |
+| `p8.mjs` (new: more teeth pairs, every tick, and 30 random four-figure rounds) | `comb vs comb ticks 13519 >0.5 154 (1.139%) max 0.97 longest run of deep ticks 47`; `hedgehog vs hedgehog ... (0.036%) max 0.91`; `comb vs grille ... 0`; `grille vs spiral ... 0`; `comb vs hedgehog ... (0.242%) max 0.79`; `4-figure random ticks 58205 >0.5 206 (0.354%) max 1.00 longest run 22 maxSub 8` |
+| `p4.mjs` (I1 again) | `pass-through 0` in 66 broadside, 240 diagonal dot and 40 head-on dot cases |
+| `probe.mjs` piles and edges | three-body piles max overlap 0.207 / 0.045 / 0.286, idle kinetic energy falls to 1e-23 .. 1e-13 (one tick-to-tick rise of rounding size in one pile); wall dash stays at r = 60, at most 11 `dashTicks`; ring-edge dash ends in one `ram` |
+| `p7.mjs` (four one-cell border frames, 4 seats) | `4 seats start overlap 0.000` (first review: 0.717) |
+| `hoops.mjs` (square and round shells, insets 0..10, walls 2..8, every valid one, against the best filled block of the same `N`) | closest shell: `sq inset 9 wall 5 N 180 P 4 armour 223.2 vs filled 244.0 difference -20.8`; no shell above filled |
+| `hoop2.mjs` (my border hoop against the 20 archetypes, 20 rounds per pairing per style) | `armour 189.6`; `style 0 ... 77.8%`, `style 1 ... 72.8%` (Worker's report: 76.1 / 71.0) |
+| `solo2.mjs` (smoke method, 4 seeds, disc/line/hedgehog heroes) | snake: `disc x1 won 3/4 hp 22% | x2 won 2/4 hp 9%`, line and hedgehog 0/4 at every stake; block, disc, ring, 2-wide hoop enemies: 142 of 144 runs won, at least 3 of 4 in every hero and stake cell, see R1 |
+| `simko.mjs` (three seats, all at 0 armour in one tick) | `phase roundOver winner 1 reasons armour/armour/armour dist 30.0/19.8/30.0` (rule works) |
+| `BALANCE_REPORT.json` | tuning section equals `ink_tuning.json`; per-row numbers equal the tables in `WORKER_RESULT.md` 10.4 and `INK_RULES_V2.md` 8 |
+
+The full balance run (185 s) was not repeated because of the container
+restarts; the 20-round hoop check above agrees with the report within noise.
+
+### Findings of the first review
+
+| Finding | Status | Evidence |
+|---|---|---|
+| I4 turning drives figures together | **Fixed for a prototype; residual decided and documented.** The turn now runs inside the sub-steps with the tip speed in the count; a cancelled normal falls back to the deepest contact; at most two position-only re-pushes. My scenario: 0 deep ticks, nothing stuck. Residual: meshing one-cell teeth (see R2). The extra passes add no velocity (position only), so no energy gain; piles calm down; no tunnelling in my probes; the loop has a fixed integer bound (`extraSeparationPasses` 2) and an exact stop rule, and `CHANGES_V2.md` B5/B6 give every expression and the order (turn part `t = turnRate / (2 * tickRate * sub)`, `turning` with exact `!==`, deepest contact = first strictly deeper one), so a C# port can reproduce it. |
+| I5 hollow beats filled | **Fixed.** Armour `60 + C + 0.3 N + 0.3 min(P, N - S)`: no valid shell reaches a filled block of the same ink (closest -20.8). Formula, push weight `N + 0.1 * pocketCells` (used as `fig.mass` everywhere) and the armour cut `0.004 * victim.maxHp` on blade hits match the code and the tuning file. The hoop is no longer the armour winner but is still strong through size (77.8 / 72.8 %), as the Worker says. |
+| I6 free-money snake enemy | **Fixed**: enemy armour `(0.6 N + 0.2 armour) * scale`, drop `floor(staked / copies)`; the snake is now the hardest design. But the free stake moved to heavy blunt designs (R1). |
+| m1 last dash tick | Documented in B6 and `RULES_AS_BUILT.md` 3. |
+| m2 start overlap | Fixed (`startDistanceFraction` 0.6, test, my probe 0.000). |
+| m3 stat ranges | Fixed; armour 63.6 .. about 290 for 220 ink and sharpness 1.0 .. 4.52 confirmed by my implementation. |
+| m4 drop wording | Fixed (drops never pay more than the staked budget). |
+| m5 tests | Added: M1, offset I1 cases, turning cases, tip speed, bot-round overlap, meshing bound. |
+| m6 section 8 | Rewritten, per-style numbers first, "not met" first. |
+| m7 `steer` note | In B9 and `RULES_AS_BUILT.md` 7. |
+
+`CHANGES_V2.md` is still one list from version 1 (`f26e212`, whose core and
+tuning equal the order base `31e2327`) to the final state, with the
+correction-round parts marked. Checked against
+`git diff f26e212 06513a3 -- .../core .../ink_tuning.json`: every new or
+changed function (`soloWaveArmourScale`, `soloEnemyArmour(tuning, fig,
+scale)`, `soloDropValue`, `scanPair`/`contactNormal` behaviour, `touchDamage`
+with the victim, `turnToward` with per-part cos/sin), every tuning key (added
+`pushPerPocket`, `sharpArmourCut`, `deepNormalShare`, `deepContactDepth`,
+`extraSeparationPasses`, `enemyArmourPerInk`, `copyArmourScaleMin/Max`;
+removed `enemyArmourBase`; changed values), the transient body fields
+`turning`, `turnDx`, `turnDy`, the stat fields `pocketCells`, `push`,
+`fig.mass = push`, and the unchanged hash layout 2 are listed. I found nothing
+a port needs that is missing.
+
+### Readability table (my own stat implementation; every row agrees with the core)
+
+| Drawing | N | C | S | P (used) | Armour | Armour / disc | Sharpness | Top speed |
+|---|---|---|---|---|---|---|---|---|
+| 10 x 10 block | 100 | 64 | 0 | 0 | 154.0 | 0.57 | 1.00 | 15.6 |
+| + 12-cell straight blade | 112 | 64 | 12 | 0 | 157.6 | 0.58 | 2.03 | 14.6 |
+| + 12-cell diagonal blade | 112 | 64 | 12 | 0 | 157.6 | 0.58 | 2.03 | 14.6 |
+| stick figure (my 53-cell one) | 53 | 0 | 53 | 1 (0) | 75.9 | 0.28 | 3.78 | 21.6 |
+| 13-cell dot | 13 | 1 | 4 | 0 | 64.9 | 0.24 | 1.70 | 32.0 |
+| filled disc | 208 | 148 | 0 | 0 | 270.4 | 1.00 | 1.00 | 9.6 |
+| hollow ring | 172 | 16 | 0 | 208 (172) | 179.2 | 0.66 | 1.00 | 11.0 |
+| 2-wide border hoop | 216 | 0 | 0 | 529 (216) | 189.6 | 0.70 | 1.00 | 9.3 |
+| spiky hedgehog (mine, 180 cells) | 180 | 68 | 68 | 0 | 182.0 | 0.67 | 2.30 | 10.6 |
+| hedgehog (archetype) | 197 | 77 | 80 | 0 | 196.1 | 0.73 | 2.31 | 10.0 |
+| all-blade snake | 209 | 0 | 209 | 0 | 122.7 | 0.45 | 2.87 | 9.5 |
+| line 32 | 32 | 0 | 32 | 0 | 69.6 | 0.26 | 4.13 | 26.1 |
+| 12-cell line | 12 | 0 | 12 | 0 | 63.6 | 0.24 | 4.52 | 32.4 |
+
+The rows the Worker also has (`readability.md`) are identical. Now **amount
+is weight** (and push), **filled areas are armour** (about 3.9 to 1 against a
+line, shells always below filling), **thin lines are blades** (diagonal equals
+straight) and **colour is the element** all hold visibly. Two points remain
+hard to show on a stat bar: the purity part (the same blade cuts 4.1 alone and
+2.0 on a block) and the armour cut (blade hits take 0.4 % of the victim's
+full armour, so solids lose duels to blades although they have the most
+armour).
+
+### Remaining findings
+
+No blocker.
+
+**R1 (important). Solo: heavy blunt enemy designs make the stake free.**
+`core/solo.js` `soloWaveArmourScale` / `soloEnemyArmour`: a design of about
+210 cells buys one copy until late waves, so the stake only raises its armour
+(scale up to 2) and its blunt damage (`1.2 * 0.4 * 1.5` = 0.72 per hit) and
+speed (`9.5 * 0.55 * 1.2` = 6.3 cells/s), which the hero outruns. Scenario
+(`/tmp/inkrev3/solo2.mjs`, 4 seeds, smoke plan): enemies block, disc,
+hollow ring and 2-wide hoop against disc, line and hedgehog heroes: 142 of 144
+runs won (at least 3 of 4 at **every** stake), 13 to 93 % armour left, average scores
+1512 to 2334 at x1 and 2173 to 3459 at x2. The Worker's own table has block
+enemies at 47 of 48. Choosing such a design at x2 is roughly 50 % more score
+at no added risk. Fix proposal: when the stake cannot buy another copy, put
+it into threat that a kiting hero feels (speed or damage scaled with the
+armour scale, or a speed floor for enemy copies), or pay drops by kill
+difficulty rather than by the full staked budget; add a heavy blunt design at
+x2 to the smoke checks.
+
+**R2 (minor). The meshing-teeth residual is wider than documented.**
+`RULES_AS_BUILT.md` 3 and the test bound only comb against hedgehog (0.2 %,
+under 1 %). My probe: comb against comb 1.14 % of ticks deeper than 0.5, max
+0.97, up to 47 consecutive ticks (0.8 s); random four-figure rounds 0.35 %,
+max 1.00, up to 22 ticks. Acceptable for a prototype (rare, short, bounded,
+deterministic, no tunnelling or energy gain), but say "figures with one-cell
+teeth (comb, hedgehog) against each other and in crowds" and add comb against
+comb to the probe; a later fix could raise `extraSeparationPasses` for deep
+contacts or resolve per cell pair.
+
+**R3 (minor). The simultaneous knock-out by armour is no longer tested.** The
+assertion was removed from `tests/golden.test.js` with the trace, and no unit
+test covers it (`tests/properties.test.js:165` covers a single armour
+elimination). My probe shows the rule works. Fix: a unit test that sets every
+seat's armour to 0 in one tick and checks the nearest-to-centre winner and
+the reasons.
+
+**R4 (minor, records). `fig.turnCos`/`turnSin` are still built but unused**
+(`core/physics.js:55-56`); documented in B5, harmless. A port may drop them
+only if its replay does not compare template fields.
+
+### Balance verdict
+
+Honest and consistent: `WORKER_RESULT.md` 10.4, `BALANCE_REPORT.md` and
+`INK_RULES_V2.md` 8 say "not met" under every reading (76.8 % rusher, 76.1 %
+circler, 73.6 % mean, 68.1 % pooled), state plainly that the duel balance is
+worse than the first candidate and that light shapes are hopeless again in
+four-figure rounds (2.4 % average), name the armour cut 0.004 a compromise,
+and lead with the per-style numbers. The documents' numbers equal the tuning
+file. The conflict between "filled areas are armour" and light shapes in
+crowds is correctly left as an open design question for the Human.
+
+### Suggestions (Reviewer proposals)
+
+1. Fix R1 before tuning solo further: the stake must add danger that a kiting
+   hero feels, not only armour.
+2. Treat the open design question as a Human decision before another balance
+   pass: either accept that light shapes are duel specialists, or give them a
+   crowd job (for example a ram or knockback that ignores push weight).
+3. Keep measuring per bot style; the 2-wide hoop is now strong through size
+   and weight, so a size cost (for example turn rate or acceleration by
+   radius) is the lever to test next.
+
+---
+
+# History: first review of candidate `e03ae14`
+
+First review verdict (history, superseded by the verdict above): PASS
+
 Reviewer: separate Claude Code subagent, role QA Lead. The Reviewer did not
 build the candidate, changed no file except this one, and committed, merged or
 pushed nothing. Throwaway scripts lived only under `/tmp/inkrev2/`.

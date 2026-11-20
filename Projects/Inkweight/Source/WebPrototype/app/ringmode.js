@@ -93,9 +93,11 @@ function botPool() {
   return { own, built };
 }
 
+// Same shape, whatever the colours: a bot must not show up as the human's
+// own figure in another ink.
 function sameCells(a, b) {
   if (!a || !b) return false;
-  for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+  for (let i = 0; i < a.length; i++) if ((a[i] !== 0) !== (b[i] !== 0)) return false;
   return true;
 }
 
@@ -134,6 +136,13 @@ async function playRing(seats, drawTime) {
     source[s] = d.source;
   }
   window.__inkDebug.ringBotPicks = drawings.filter((d) => d).map((d) => d.join(''));
+  // two bot styles, mixed: one storms straight in, the next one circles first
+  const STYLE_NAMES = ['stürmt drauflos', 'kreist und stößt zu'];
+  {
+    let k = randomInt(2);
+    for (let s = 0; s < n; s++) if (!seats[s].human) match.botStyle[s] = (k++) % 2;
+  }
+  window.__inkDebug.ringBotStyles = match.botStyle.slice();
   const touchPlay = coarsePointer();
 
   while (match.phase !== 'matchOver') {
@@ -150,7 +159,7 @@ async function playRing(seats, drawTime) {
         sub: 'Runde ' + (match.round + 1) + ' · ' + budget + ' Tinte' + (bonus > 0 ? ' (Aufholtinte +' + bonus + ')' : '')
           + (drawTime > 0 ? ' · Uhr startet beim ersten Strich' : ''),
         kind: 'figure', budget, timeLimit: drawTime, initial: source[s] === 'own' ? drawings[s] : null,
-        backLabel: 'Ende', backConfirm: true, doneLabel: 'Fertig, in den Ring',
+        backLabel: 'Ende', backConfirm: true, endAsk: 'Spiel beenden?', endMsg: 'Noch einmal tippen, dann endet das ganze Spiel.', doneLabel: 'Fertig, in den Ring',
       });
       if (!res) { goHome(); return; }
       if (res.cells) {
@@ -177,17 +186,29 @@ async function playRing(seats, drawTime) {
     }
     window.__inkDebug.ringDrawings = drawings.map((cells, s) => ({ human: seats[s].human, data: cells.join('') }));
 
-    const figures = drawings.map((cells, s) => core.buildFigure(cells, W, H, tuning, 'figure', core.ringInkBudget(tuning, match, s)));
+    const build = (s) => core.buildFigure(drawings[s], W, H, tuning, 'figure', core.ringInkBudget(tuning, match, s));
+    const figures = drawings.map((cells, s) => build(s));
+    // The core refuses a figure that is too small or over the seat's ink
+    // (ringCheckFigure). That cannot happen through the drawing screen; if it
+    // ever does, a placeholder steps in instead of a crash.
+    for (let s = 0; s < n; s++) {
+      if (core.ringCheckFigure(tuning, match, s, figures[s]) === '') continue;
+      const d = pool.built[randomInt(pool.built.length)];
+      drawings[s] = d.cells;
+      source[s] = 'placeholder';
+      figures[s] = build(s);
+    }
     const cards = figures.map((fig, s) => el('div', { class: 'card' }, [
       thumbCanvas(drawings[s], 64),
       el('span', { class: 'card-name' }, [el('span', { class: 'tag' + (seats[s].human ? ' human' : ''), text: String(s + 1) }), document.createTextNode(' ' + name(s))]),
       source[s] === 'placeholder' ? el('span', { class: 'badge', text: 'Platzhalter' }) : (seats[s].human ? null : el('span', { class: 'badge', text: 'aus der Galerie' })),
       el('span', { text: statLine(fig.stats) }),
+      seats[s].human ? null : el('span', { class: 'fine', text: STYLE_NAMES[match.botStyle[s]] }),
     ]));
     clearHud();
     const go = await fightOverlay('Runde ' + (match.round + 1), [
       el('div', { class: 'lineup' }, cards),
-      el('p', { class: 'fine', text: 'Schubs die anderen aus dem Ring oder schneide ihren Panzer weg. Der Ring wird kleiner.' }),
+      el('p', { class: 'fine', text: 'Schubs die anderen aus dem Ring oder schneide ihren Panzer weg. Ein Sprint, der trifft, rammt. Der Ring wird kleiner.' }),
     ], 'In den Ring!', 'Zum Menü');
     if (go !== 'primary') { goHome(); return; }
 
@@ -232,7 +253,7 @@ async function playRing(seats, drawTime) {
     sfx(humanWon || humans.length === 0 ? 'win' : 'lose');
     if (!over) {
       const pct = tuning.ring.catchUpPercentPerLostRound;
-      const r = await fightOverlay('Runde ' + match.round + ' geht an ' + name(w), [
+      const r = await fightOverlay('Runde ' + match.round + ' geht an ' + (name(w) === 'Du' ? 'dich' : name(w)), [
         ...lines, score, names,
         el('p', { class: 'fine', text: 'Wer verloren hat, bekommt ' + pct + ' % mehr Tinte für die nächste Zeichnung.' }),
       ], humans.length > 0 ? 'Nächste Runde zeichnen' : 'Nächste Runde', 'Zum Menü');

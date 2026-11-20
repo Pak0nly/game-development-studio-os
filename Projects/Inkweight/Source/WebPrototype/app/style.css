@@ -113,6 +113,7 @@ select {
 .title { font-size: clamp(2.6rem, 13vw, 4rem); letter-spacing: 0.01em; transform: rotate(-2deg); }
 .rule { font-family: var(--font-hand); font-size: 1.02rem; margin: 10px 0 16px; }
 .menu { display: flex; flex-direction: column; gap: 10px; }
+.menu-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
 /* seats */
 .seats { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
@@ -172,10 +173,13 @@ select {
 .inkmeter.empty .bar { border-color: var(--ember); }
 .inkmeter.empty b { color: var(--ember); }
 .stats { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
-.stats li { display: grid; grid-template-columns: 58px 40px 54px 1fr; align-items: center; gap: 6px; font-size: 0.8rem; min-height: 20px; }
+/* phone upright: name, number and bar in one line, the explanation below it */
+.stats li { display: grid; grid-template-columns: 58px 40px 1fr; align-items: center; column-gap: 6px; font-size: 0.8rem; }
+.stats li .s-why { grid-column: 1 / -1; line-height: 1.15; margin-top: -1px; }
 .s-name { font-family: var(--font-hand); font-weight: 700; }
 .s-val { text-align: right; font-family: var(--font-hand); font-variant-numeric: tabular-nums; }
 .s-val.wide { text-align: left; grid-column: 2 / span 2; padding-left: 6px; }
+.stats li .s-val.wide + .s-why { grid-column: 1 / -1; }
 .s-val.e2 { color: var(--ember); } .s-val.e3 { color: var(--tide); } .s-val.e4 { color: var(--moss); }
 .s-bar { height: 9px; border: 1.5px solid var(--ink); border-radius: 6px; overflow: hidden; background: var(--paper-light); }
 .s-bar i { display: block; height: 100%; width: 0; background: var(--ink); transition: width 0.15s; }
@@ -186,6 +190,7 @@ select {
 .stakes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .stakes .tool { min-height: 44px; white-space: normal; line-height: 1.15; font-size: 0.85rem; }
 .stakes .tool small { display: block; font-family: var(--font-body); font-size: 0.7rem; }
+.stake-note { margin: 0; font-size: 0.74rem; line-height: 1.2; }
 
 /* overlays */
 .layer {
@@ -242,6 +247,15 @@ select {
 .lineup .card canvas { width: 64px; height: 64px; }
 .score-big { font-family: var(--font-hand); font-size: 2.4rem; font-weight: 700; }
 
+/* rules */
+.rules-layer { z-index: 8; }
+.rules-list { list-style: none; margin: 6px 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+.rules-list li { display: grid; grid-template-columns: 66px 1fr; gap: 8px; font-size: 0.86rem; }
+.rules-list b { font-family: var(--font-hand); }
+.circle { font-family: var(--font-hand); font-size: 1rem; }
+.circle .e2 { color: var(--ember); } .circle .e3 { color: var(--tide); } .circle .e4 { color: var(--moss); }
+.honest { border: 1.5px dashed var(--ink-soft); border-radius: var(--blob); padding: 6px 10px; margin-top: 12px; }
+
 /* solo */
 .colour-pick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 10px 0; }
 .shop { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
@@ -253,7 +267,7 @@ select {
   .draw-main { flex-direction: row; gap: 20px; }
   .draw-side { flex: 0 0 410px; justify-content: center; gap: 9px; }
   .stats li { min-height: 26px; font-size: 0.88rem; grid-template-columns: 66px 44px 70px 1fr; }
-  .s-why { font-size: 0.8rem; white-space: normal; }
+  .stats li .s-why { grid-column: auto; margin-top: 0; font-size: 0.8rem; white-space: normal; }
   .preview { width: 72px; height: 72px; }
   .dash { display: none; }
   .chip { flex: 0 1 190px; }
@@ -274,8 +288,11 @@ select {
   .draw-side { flex: 0 0 54%; min-width: 0; justify-content: center; gap: 4px; overflow-y: auto; }
   .tool { min-height: 34px; }
   .tool.flat { min-height: 30px; }
-  .stats li { min-height: 17px; font-size: 0.78rem; grid-template-columns: 58px 40px 54px 1fr; }
-  .s-why { font-size: 0.72rem; white-space: nowrap; }
+  .stats li { min-height: 17px; font-size: 0.78rem; grid-template-columns: 54px 34px 30px 1fr; }
+  .stats li .s-why { grid-column: auto; margin-top: 0; font-size: 0.72rem; white-space: nowrap; }
+  .seats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin: 6px 0; }
+  .row { margin: 6px 0; }
+  .stake-note { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .msg { margin: 0; }
   .stakes .tool { min-height: 36px; font-size: 0.8rem; }
   .draw-side > .btn.primary { min-height: 38px; padding: 5px 14px; flex: 0 0 auto; }

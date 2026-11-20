@@ -81,7 +81,8 @@ namespace Inkweight.CoreTests
             TestSourceRules(Path.GetDirectoryName(Path.GetDirectoryName(generated)));
             TestGenerator();
             TestStatVectors(tuning, stat);
-            TestTraces(tuning, traces);
+            TestTraces(tuning, tuningText, traces);
+            TestRulesV2(tuning);
 
             Begin("self check as run inside Unity (embedded tuning and hashes)");
             InkSelfCheckResult sc = InkSelfCheck.Run(embedded);
@@ -241,6 +242,14 @@ namespace Inkweight.CoreTests
                 Same(s.N, InkJson.Get(e, "N"), name + ".N");
                 Same(s.C, InkJson.Get(e, "C"), name + ".C");
                 Same(s.S, InkJson.Get(e, "S"), name + ".S");
+                Same(s.Enclosed, InkJson.Get(e, "enclosed"), name + ".enclosed");
+                Same(s.P, InkJson.Get(e, "P"), name + ".P");
+                Same(s.PocketCells, InkJson.Get(e, "pocketCells"), name + ".pocketCells");
+                Same(s.Push, InkJson.Get(e, "push"), name + ".push");
+                Same(fig.Mass, InkJson.Get(e, "mass"), name + ".mass");
+                int sharpFlags = 0;
+                for (int k = 0; k < fig.Count; k++) if (fig.Sharp[k]) sharpFlags++;
+                Check(sharpFlags == s.S, name + ": sharp flags of the figure agree with S");
                 double[] cc = InkJson.NumArray(InkJson.Get(e, "colourCounts"));
                 Check(cc.Length == 4 && cc[0] == s.ColourCounts[0] && cc[1] == s.ColourCounts[1]
                     && cc[2] == s.ColourCounts[2] && cc[3] == s.ColourCounts[3], name + ".colourCounts");
@@ -270,7 +279,7 @@ namespace Inkweight.CoreTests
             End();
         }
 
-        private static void TestTraces(InkTuning tuning, object traces)
+        private static void TestTraces(InkTuning tuning, string tuningText, object traces)
         {
             object drawings = InkJson.Get(traces, "drawings");
             List<object> items = InkJson.Arr(InkJson.Get(traces, "items"));
@@ -279,7 +288,7 @@ namespace Inkweight.CoreTests
                 object it = items[i];
                 string mode = InkJson.Str(InkJson.Get(it, "mode"));
                 if (mode == "ring") TestRingTrace(tuning, drawings, it);
-                else if (mode == "solo") TestSoloTrace(tuning, drawings, it);
+                else if (mode == "solo") TestSoloTrace(tuning, tuningText, drawings, it);
                 else { Begin("trace " + i); Check(false, "unknown mode " + mode); End(); }
             }
         }
@@ -304,6 +313,9 @@ namespace Inkweight.CoreTests
             sc.MaxRounds = (int)InkJson.Num(InkJson.Get(it, "maxRounds"));
             sc.MaxTicksPerRound = (int)InkJson.Num(InkJson.Get(it, "maxTicksPerRound"));
             sc.CheckpointEvery = (int)InkJson.Num(InkJson.Get(it, "checkpointEvery"));
+            double[] styles = InkJson.NumArray(InkJson.Get(it, "botStyle"));
+            sc.BotStyles = new int[styles.Length];
+            for (int s = 0; s < styles.Length; s++) sc.BotStyles[s] = (int)styles[s];
             return sc;
         }
 
@@ -314,6 +326,7 @@ namespace Inkweight.CoreTests
             List<object> rounds = InkJson.Arr(InkJson.Get(it, "rounds"));
             Begin("ring trace " + name + " (" + cps.Count + " checkpoints, bit for bit)");
             InkRingScenario sc = RingScenario(tuning, drawings, it);
+            Check(sc.BotStyles.Length == sc.Figures.Length, name + ": one bot style per seat");
             string[] control = InkJson.StrArray(InkJson.Get(it, "control"));
             for (int s = 0; s < control.Length; s++)
                 Check((control[s] == "script") == (sc.Scripts[s] != null), name + ": control of seat " + s);
@@ -390,20 +403,32 @@ namespace Inkweight.CoreTests
             sc.WaveEnemyCells = new int[waves.Count][];
             sc.WaveStakes = new int[waves.Count];
             sc.WaveUpgrades = new string[waves.Count];
+            sc.WaveUpgradeCells = new int[waves.Count][];
             for (int w = 0; w < waves.Count; w++)
             {
                 sc.WaveEnemyCells[w] = Cells(InkJson.Get(drawings, InkJson.Str(InkJson.Get(waves[w], "enemy"))));
                 sc.WaveStakes[w] = (int)InkJson.Num(InkJson.Get(waves[w], "stake"));
                 sc.WaveUpgrades[w] = InkJson.Get(waves[w], "upgrade") as string;
+                string dn = InkReplay.UpgradeDrawingName(sc.WaveUpgrades[w]);
+                if (dn != null) sc.WaveUpgradeCells[w] = InkReplay.Recolour(Cells(InkJson.Get(drawings, dn)), 1);
             }
             sc.Boss = (bool)InkJson.Get(it, "boss");
             sc.CheckpointEvery = (int)InkJson.Num(InkJson.Get(it, "checkpointEvery"));
             return sc;
         }
 
-        private static void TestSoloTrace(InkTuning tuning, object drawings, object it)
+        private static void TestSoloTrace(InkTuning baseTuning, string tuningText, object drawings, object it)
         {
             string name = InkJson.Str(InkJson.Get(it, "name"));
+            // a trace with tuningOverrides runs with those values replaced
+            InkTuning tuning = baseTuning;
+            Dictionary<string, object> ov = InkJson.Obj(InkJson.Get(it, "tuningOverrides"));
+            if (ov.Count > 0)
+            {
+                Dictionary<string, double> overrides = new Dictionary<string, double>();
+                foreach (KeyValuePair<string, object> kv in ov) overrides[kv.Key] = InkJson.Num(kv.Value);
+                tuning = InkTuning.FromJson(tuningText, overrides);
+            }
             List<object> cps = InkJson.Arr(InkJson.Get(it, "checkpoints"));
             List<object> fights = InkJson.Arr(InkJson.Get(it, "fights"));
             Begin("solo trace " + name + " (" + cps.Count + " checkpoints, bit for bit)");
@@ -412,6 +437,8 @@ namespace Inkweight.CoreTests
             int cpIndex = 0;
             int fight = 0;
             int totalTicks = 0;
+            string[] upgradeGot = new string[fights.Count + 8];
+            for (int i = 0; i < upgradeGot.Length; i++) upgradeGot[i] = "";
             InkSoloRun run = InkReplay.RunSolo(tuning, sc,
                 delegate (InkSoloRun r)
                 {
@@ -454,7 +481,13 @@ namespace Inkweight.CoreTests
                     }
                     else Check(false, at + ": more fights than recorded");
                     fight++;
+                },
+                delegate (int wave, string result)
+                {
+                    if (wave < upgradeGot.Length) upgradeGot[wave] = result;
                 });
+            for (int f = 0; f < fights.Count; f++)
+                SameStr(upgradeGot[f], InkJson.Get(fights[f], "upgrade"), name + " fight " + f + " upgrade");
             Check(cpIndex == cps.Count, name + ": " + cpIndex + " checkpoints, expected " + cps.Count);
             Check(fight == fights.Count, name + ": " + fight + " fights, expected " + fights.Count);
             object fin = InkJson.Get(it, "final");
@@ -464,7 +497,76 @@ namespace Inkweight.CoreTests
             Same(run.Score, InkJson.Get(fin, "score"), name + " final score");
             Same(run.Wallet, InkJson.Get(fin, "wallet"), name + " final wallet");
             Same(run.HeroHp, InkJson.Get(fin, "heroHp"), name + " final heroHp");
+            Same(run.HeroMaxHp, InkJson.Get(fin, "heroMaxHp"), name + " final heroMaxHp");
+            Same(run.HeroBudget, InkJson.Get(fin, "heroBudget"), name + " final heroBudget");
+            Same(run.WeaponBudget, InkJson.Get(fin, "weaponBudget"), name + " final weaponBudget");
+            Same(run.HeroFig.Stats.N, InkJson.Get(fin, "heroN"), name + " final heroN");
+            Same(run.WeaponFig.Stats.N, InkJson.Get(fin, "weaponN"), name + " final weaponN");
             Console.WriteLine("  " + fight + " fights, " + totalTicks + " ticks");
+            End();
+        }
+
+        // Version 2 rules that the golden files cannot show: the thrown errors
+        // and the helper functions the Unity layer displays.
+        private static void TestRulesV2(InkTuning tuning)
+        {
+            Begin("rules version 2: figure check, thrown errors, stake helpers, tuning overrides");
+            int W = tuning.CanvasWidth, H = tuning.CanvasHeight;
+            int[] big = InkSelfCheck.PresetCells("block");
+            int[] tiny = new int[W * H];
+            for (int i = 0; i < 5; i++) tiny[10 * W + 10 + i] = 1;
+            int[] full = new int[W * H];
+            for (int y = 8; y < 24; y++) for (int x = 8; x < 24; x++) full[y * W + x] = 1; // 256 cells
+            InkFigure fBig = InkPhysics.BuildFigure(big, W, H, tuning, InkDrawing.KindFigure, null);
+            InkFigure fTiny = InkPhysics.BuildFigure(tiny, W, H, tuning, InkDrawing.KindFigure, null);
+            InkFigure fFull = InkPhysics.BuildFigure(full, W, H, tuning, InkDrawing.KindFigure, null);
+            InkRingMatch m = InkRing.CreateMatch(tuning, 2, 5);
+            Check(InkRing.CheckFigure(tuning, m, 0, fBig) == "", "valid figure passes the check");
+            Check(InkRing.CheckFigure(tuning, m, 0, null) == "tooSmall", "missing figure is tooSmall");
+            Check(InkRing.CheckFigure(tuning, m, 0, fTiny) == "tooSmall", "five cells are tooSmall");
+            Check(InkRing.CheckFigure(tuning, m, 0, fFull) == "overBudget", "256 cells are overBudget at 220");
+            string msg = "";
+            try { InkRing.StartRound(tuning, m, new InkFigure[] { fBig, fFull }); } catch (InvalidOperationException e) { msg = e.Message; }
+            Check(msg == "seat 1 figure: overBudget", "StartRound refuses an invalid figure: '" + msg + "'");
+            Check(m.Round == 0 && m.Phase == InkRing.PhaseDraw && m.World == null, "the match is unchanged after the refusal");
+            m.Lost[1] = 2; // 220 * 1.30 = 286
+            Check(InkRing.CheckFigure(tuning, m, 1, fFull) == "", "256 cells pass with catch-up ink");
+            Check(m.BotStyle.Length == 2 && m.BotStyle[0] == 0 && m.BotStyle[1] == 0, "bot styles start as 0");
+
+            InkSoloRun run = InkSolo.CreateRun(tuning, 3, InkReplay.Recolour(big, 1),
+                InkReplay.Recolour(InkSelfCheck.PresetCells("needle"), 1), W, H, 0);
+            msg = "";
+            try { InkSolo.StartWave(tuning, run, big, 3); } catch (ArgumentException e) { msg = e.Message; }
+            Check(msg == "bad stake index", "StartWave refuses stake index 3: '" + msg + "'");
+            msg = "";
+            try { InkSolo.StartWave(tuning, run, big, -1); } catch (ArgumentException e) { msg = e.Message; }
+            Check(msg == "bad stake index", "StartWave refuses stake index -1");
+            Check(run.Phase == InkSolo.PhasePrepare && run.EnemyDrawings.Count == 0, "the run is unchanged after the refusal");
+            int n = fBig.Stats.N;
+            for (int st = 0; st < tuning.Stakes.Length; st++)
+            {
+                int copies = InkSolo.Copies(tuning, 0, st, n);
+                double drop = InkSolo.DropValue(tuning, 0, st, n);
+                Check(copies >= 1 && copies <= tuning.MaxCopies, "copies in range at stake " + st);
+                Check(drop * copies <= tuning.WaveBudgets[0] * tuning.Stakes[st], "a wave never pays more than its staked budget (stake " + st + ")");
+                double scale = InkSolo.WaveArmourScale(tuning, 0, st, n);
+                Check(scale >= tuning.CopyArmourScaleMin && scale <= tuning.CopyArmourScaleMax, "armour scale in range at stake " + st);
+            }
+            InkSolo.StartWave(tuning, run, big, 2);
+            Check(run.StakeIndex == 2 && run.DropValue == InkSolo.DropValue(tuning, 0, 2, n), "run fields stakeIndex and dropValue");
+            InkBody en = run.World.Bodies[1];
+            Check(en.MaxHp == InkSolo.EnemyArmour(tuning, fBig, InkSolo.WaveArmourScale(tuning, 0, 2, n)) && en.Hp == en.MaxHp, "enemy armour comes from EnemyArmour");
+            Check(en.DamageMult == tuning.EnemyDamageMult * tuning.StakeDamageMult[2], "stake raises enemy damage");
+            Check(en.TopSpeed == fBig.Stats.TopSpeed * (tuning.EnemySpeedMult * tuning.StakeSpeedMult[2]), "stake raises enemy speed");
+
+            Dictionary<string, double> ov = new Dictionary<string, double>();
+            ov["solo.waveMaxTicks"] = 600;
+            InkTuning t2 = InkTuning.FromJson(InkGenerated.TuningJson, ov);
+            Check(t2.WaveMaxTicks == 600 && tuning.WaveMaxTicks != 600, "tuning override replaces one value in a copy");
+            msg = "";
+            ov["solo.noSuchKey"] = 1;
+            try { InkTuning.FromJson(InkGenerated.TuningJson, ov); } catch (FormatException e) { msg = e.Message; }
+            Check(msg != "", "an override of an unknown key is refused");
             End();
         }
 
@@ -523,7 +625,8 @@ namespace Inkweight.CoreTests
                 object it = items[i];
                 string mode = InkJson.Str(InkJson.Get(it, "mode"));
                 if (mode == "ring" && ring == null && InkJson.Obj(InkJson.Get(it, "scripts")).Count == 0) ring = it;
-                if (mode == "solo" && (solo == null || (!(bool)InkJson.Get(solo, "boss") && (bool)InkJson.Get(it, "boss")))) solo = it;
+                if (mode == "solo" && InkJson.Obj(InkJson.Get(it, "tuningOverrides")).Count == 0
+                    && (solo == null || (!(bool)InkJson.Get(solo, "boss") && (bool)InkJson.Get(it, "boss")))) solo = it;
             }
             if (ring == null || solo == null) throw new InvalidOperationException("the trace file needs a bot-only ring trace and a solo trace");
 
@@ -540,6 +643,11 @@ namespace Inkweight.CoreTests
             sb.Append("        public const int RingCheckMaxRounds = " + I(InkJson.Get(ring, "maxRounds")) + ";" + nl);
             sb.Append("        public const int RingCheckMaxTicksPerRound = " + I(InkJson.Get(ring, "maxTicksPerRound")) + ";" + nl);
             sb.Append("        public static readonly string[] RingCheckSeats = " + LitArray(InkJson.StrArray(InkJson.Get(ring, "seats"))) + ";" + nl);
+            StringBuilder styles = new StringBuilder("new int[] { ");
+            List<object> styleList = InkJson.Arr(InkJson.Get(ring, "botStyle"));
+            for (int s = 0; s < styleList.Count; s++) styles.Append(s > 0 ? ", " : "").Append(I(styleList[s]));
+            styles.Append(" }");
+            sb.Append("        public static readonly int[] RingCheckBotStyles = " + styles + ";" + nl);
             sb.Append("        // round:tick:hash" + nl);
             sb.Append("        public static readonly string[] RingCheckHashes = " + LitArray(hashes) + ";" + nl + nl);
 

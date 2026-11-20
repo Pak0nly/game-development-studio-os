@@ -1,0 +1,46 @@
+Inkweight core tests
+shared files: /home/user/game-development-studio-os/Projects/Inkweight/Source/Shared
+runtime: .NET 8.0.34, X64
+ok    generated file is up to date
+ok    tuning and golden versions
+ok    core source rules (12 files: no engine reference, no float, only Math.Sqrt and Math.Floor)
+ok    random generator and hash basics
+ok    stat vectors (59 drawings, every field exact)
+  4 rounds, 9906 ticks
+ok    ring trace ring_1v1_disc_lance (88 checkpoints, bit for bit)
+  3 rounds, 4868 ticks
+ok    ring trace ring_1v1_cross_block (45 checkpoints, bit for bit)
+  1 rounds, 491 ticks
+ok    ring trace ring_1v1_scripted (6 checkpoints, bit for bit)
+  3 rounds, 2978 ticks
+ok    ring trace ring_3_star_wedge_needle (29 checkpoints, bit for bit)
+  4 rounds, 5779 ticks
+ok    ring trace ring_4_disc_star_comb_dot (54 checkpoints, bit for bit)
+  2 rounds, 2959 ticks
+ok    ring trace ring_4_one_scripted_seat (28 checkpoints, bit for bit)
+  3 rounds, 3043 ticks
+ok    ring trace ring_1v1_circler_vs_rusher (31 checkpoints, bit for bit)
+  2 rounds, 2754 ticks
+ok    ring trace ring_4_circlers (26 checkpoints, bit for bit)
+  1 rounds, 3630 ticks
+ok    ring trace ring_1v1_sudden_death (14 checkpoints, bit for bit)
+  2 rounds, 3618 ticks
+ok    ring trace ring_2_idle_simultaneous_tie (10 checkpoints, bit for bit)
+  1 rounds, 1712 ticks
+ok    ring trace ring_3_simultaneous_nearest_wins (4 checkpoints, bit for bit)
+  2 fights, 980 ticks
+ok    solo trace solo_kite_two_waves (9 checkpoints, bit for bit)
+  4 fights, 2568 ticks
+ok    solo trace solo_brawl_full_run (23 checkpoints, bit for bit)
+  6 fights, 9449 ticks
+ok    solo trace solo_win_with_boss (82 checkpoints, bit for bit)
+  3 fights, 2197 ticks
+ok    solo trace solo_upgrades_hero_and_weapon_ink (20 checkpoints, bit for bit)
+  3 fights, 1070 ticks
+ok    solo trace solo_hero_death (11 checkpoints, bit for bit)
+  1 fights, 600 ticks
+ok    solo trace solo_time_limit (5 checkpoints, bit for bit)
+ok    rules version 2: figure check, thrown errors, stake helpers, tuning overrides
+  self check passed, 111 checkpoints bit-identical
+ok    self check as run inside Unity (embedded tuning and hashes)
+RESULT: PASS (16527 checks, 0 failed)

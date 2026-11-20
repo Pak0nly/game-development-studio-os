@@ -69,7 +69,7 @@ function hiss(f0, f1, q, dur, vol, delay) {
   src.start(t); src.stop(t + dur + 0.02);
 }
 
-const GAP = { pen: 0.035, erase: 0.05, hit: 0.05, sharp: 0.05, pickup: 0.04, shot: 0.05, throw: 0.08 };
+const GAP = { ram: 0.08, pen: 0.035, erase: 0.05, hit: 0.05, sharp: 0.05, pickup: 0.04, shot: 0.05, throw: 0.08 };
 
 export function sfx(name, amount) {
   if (!on || !ctx) return;
@@ -87,6 +87,7 @@ export function sfx(name, amount) {
       case 'hit': tone('sine', 190 * a, 60, 0.14, 0.45); hiss(500, 200, 0.7, 0.08, 0.15); break;
       case 'sharp': tone('sawtooth', 1100, 320, 0.09, 0.16 * a); hiss(5200, 3000, 2, 0.07, 0.2); break;
       case 'dash': hiss(350, 2400, 1.1, 0.2, 0.25); break;
+      case 'ram': tone('sine', 120, 45, 0.22, 0.5); tone('square', 90, 50, 0.1, 0.12); hiss(260, 120, 0.6, 0.14, 0.3); break;
       case 'out': tone('sine', 420, 70, 0.5, 0.4); hiss(900, 200, 0.6, 0.35, 0.2, 0.05); break;
       case 'down': tone('triangle', 300, 110, 0.16, 0.3); hiss(1500, 500, 0.8, 0.12, 0.18); break;
       case 'throw': hiss(3000, 1200, 1.5, 0.06, 0.08); break;

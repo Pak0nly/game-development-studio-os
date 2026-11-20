@@ -43,13 +43,18 @@ Reviewer task: a4db7dbe644f6a0b7
 Candidate identity: 18a5de95757574e5a93187acb063b0a1c3e082e564289b75e3690469955b99c7
 Closure receipt: dbebc8a1dba845fe32c550b0e37aab0503593d9d44e19ee3b4d5c64b8632089b
 
+Closed: INK-CORE-V2
+Independent review verdict: PASS
+Worker task: ac2ef5b778358368c
+Reviewer task: aa432e08ec4bfc077
+Candidate identity: 23f30cc065753a33973a65d378e3c008b8d98642614cee3171c72c4d8bc96e93
+Closure receipt: dbaf113e10bb659983453bbe7b57763cd65a405fb0bb05047f6658d9394f3a66
+
 Prototype page (private): https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1,
 published from `Source/WebPrototype/dist/inkweight.artifact.html`.
 
-Running: INK-CORE-V2 in the work copy
-`.claude/worktrees/agent-ac2ef5b778358368c` (branch
-`worktree-agent-ac2ef5b778358368c`, not pushed; lost if the container is
-replaced).
+Running: INK-WEB-V3 and INK-UNITY-V2 (dispatched, Workers not yet returned).
+The page at the link above still shows rules version 1 until INK-WEB-V3 is
+republished.
 
-Next action: wait for INK-CORE-V2, merge, review and close it; then update
-orders for the browser prototype and the C# port.
+Next action: wait for both Workers, review and close them, republish the page.

@@ -145,6 +145,39 @@ $('btnFree').addEventListener('click', async () => {
   if (res) { galleryAdd(res.cells, 'figure'); openGallery(); } else home();
 });
 
+// ---- rules panel (start screen and drawing screen)
+{
+  const ts = tuning.stats;
+  const te = tuning.element;
+  const pctText = (v) => num(v * 100, 1).replace(',0', '');
+  const topSpeed = (n) => num(ts.speedBase / (1 + n / ts.speedWeightRef), 0);
+  $('rulesWeight').textContent = 'Jedes Kästchen Tinte wiegt 1. Schwer schiebt hart, ist aber träge. Eine dicke, geschlossene Hülle schiebt bis zu '
+    + pctText(ts.pushPerPocket) + ' % härter, als sie wiegt.';
+  $('rulesArmour').textContent = 'So viel hältst du aus: ' + ts.armourBase + ' als Grundwert, jedes Kästchen +' + num(ts.armourPerCell, 1)
+    + ', jedes ringsum eingeschlossene Kern-Kästchen noch +' + ts.armourPerCore + '.';
+  $('rulesSharp').textContent = 'Ein Kästchen ist Klinge, wenn es in keinem vollen 2 × 2-Block liegt, also auch schräge Striche. Mehr Klingen und ein höherer Klingen-Anteil heben die Schärfe. '
+    + 'Ein Schnitt macht so viel Schaden wie die Schärfe (stumpf: ' + num(ts.bluntDamage, 1) + ') und nimmt dazu ' + pctText(ts.sharpArmourCut) + ' % vom vollen Panzer des Getroffenen.';
+  $('rulesSpeed').textContent = 'Nur die Tintenmenge zählt: ' + tuning.ink.minBodyCells + ' Kästchen laufen ' + topSpeed(tuning.ink.minBodyCells)
+    + ' Kästchen pro Sekunde, ' + tuning.ink.figureBudget + ' nur noch ' + topSpeed(tuning.ink.figureBudget) + '.';
+  const circle = $('rulesCircle');
+  const ELEMENT = ['', '', 'Glut', 'Flut', 'Moos'];
+  let c = 2;
+  for (let i = 0; i < 4; i++) {
+    circle.append(el('b', { class: 'e' + c, text: ELEMENT[c] }));
+    if (i < 3) circle.append(document.createTextNode(' schlägt '));
+    c = te.beats[c];
+  }
+  $('rulesElement').textContent = 'Ein Element hat eine Figur ab ' + te.minColouredPercent + ' % bunter Tinte; es zählt die häufigste Farbe (Gleichstand: kein Element). Treffer gegen das unterlegene Element: Schaden ×'
+    + num(te.strongMult, 1) + ', gegen das überlegene: ×' + num(te.weakMult, 2) + '. Schwarz ist neutral.';
+  $('rulesFight').textContent = 'Jede Berührung kostet beide etwas Panzer. Scharf ist ein Treffer nur, wenn eine Klinge selbst den Gegner berührt. Ein Sprint, der eine Figur trifft, gibt ihr seinen Schwung mit (Rums!). '
+    + 'Im Ring verliert, wer hinausfliegt oder keinen Panzer mehr hat.';
+  const layer = $('rulesLayer');
+  const open = () => { sfx('click'); layer.hidden = false; layer.scrollTop = 0; $('rulesClose').focus({ preventScroll: true }); };
+  $('btnRules').addEventListener('click', open);
+  $('drawRules').addEventListener('click', open);
+  $('rulesClose').addEventListener('click', () => { sfx('click'); layer.hidden = true; });
+}
+
 // ---- gallery
 function statText(cells, kind) {
   const st = core.computeStats(cells, W, H, tuning, kind, W * H);

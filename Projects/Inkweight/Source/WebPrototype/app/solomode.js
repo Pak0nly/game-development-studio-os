@@ -53,6 +53,7 @@ async function playSolo(startColour) {
 
   for (;;) {
     let fightName;
+    let fightStake = '';
     if (run.wave < core.SOLO_WAVES) {
       const waveNo = run.wave + 1;
       let stake = 0;
@@ -60,7 +61,7 @@ async function playSolo(startColour) {
         title: 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES + ': zeichne den Gegner',
         sub: 'Kleine Figuren kommen als Schwarm, große als Brocken.',
         kind: 'figure', budget: so.enemyInkBudget, canPick: true, initial: lastEnemy,
-        backLabel: 'Ende', backConfirm: true, doneLabel: 'In den Kampf',
+        backLabel: 'Ende', backConfirm: true, endAsk: 'Lauf beenden?', endMsg: 'Noch einmal tippen, dann endet der ganze Lauf.', doneLabel: 'In den Kampf',
         extra: (box) => {
           const buttons = [];
           const wrap = el('div', { class: 'stakes', role: 'group', 'aria-label': 'Einsatz' });
@@ -71,27 +72,38 @@ async function playSolo(startColour) {
             wrap.append(b);
           }
           box.append(wrap);
+          const noteEl = el('p', { class: 'fine stake-note', id: 'stakeNote' });
+          box.append(noteEl);
           let lastN = 0;
+          let lastCells = null;
+          const pct = (m) => Math.round((m - 1) * 100);
           function paint(stats) {
             if (stats) lastN = stats.N;
-            const copies = buttons.map((b, i) => (lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0));
-            // A higher stake that brings no more enemies (the figure is too
-            // big for one more copy, or the limit of copies is reached) is
-            // the same choice as the lower one: it is switched off and says so.
-            const twin = buttons.map((b, i) => (lastN > 0 && i > 0 && copies[i] === copies[i - 1]));
-            while (stake > 0 && twin[stake]) stake--;
+            // What a stake really does in rules version 2: more ink for the
+            // wave (more copies, or tougher ones where no further copy fits),
+            // harder hits, more speed, and each drop pays its share.
             for (let i = 0; i < buttons.length; i++) {
-              let same = i;
-              while (same > 0 && twin[same]) same--;
+              const copies = lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0;
+              const loot = lastN > 0 ? copies * core.soloDropValue(tuning, run.wave, i, lastN) : 0;
               buttons[i].textContent = 'Einsatz ' + stakeLabel(i);
-              let sub = 'erst zeichnen';
-              if (twin[i]) sub = 'wie ' + stakeLabel(same) + ': ' + (copies[i] >= so.maxCopies ? 'mehr als ' + so.maxCopies + ' Gegner gibt es nicht' : 'reicht nicht für einen Gegner mehr');
-              else if (copies[i] > 0) sub = copies[i] + ' Gegner · ' + copies[i] * lastN + ' Beute';
-              buttons[i].append(el('small', { text: sub }));
-              buttons[i].disabled = twin[i];
+              buttons[i].append(el('small', { text: copies > 0 ? copies + ' Gegner · ' + loot + ' Beute' : 'erst zeichnen' }));
               buttons[i].classList.toggle('on', i === stake);
               buttons[i].setAttribute('aria-pressed', i === stake ? 'true' : 'false');
             }
+            let text = 'Höherer Einsatz: mehr Beute, aber die Gegner schlagen härter zu und sind schneller.';
+            if (lastN > 0) {
+              const scale = core.soloWaveArmourScale(tuning, run.wave, stake, lastN);
+              const parts = [];
+              const dmg = pct(so.stakeDamageMult[stake]);
+              const spd = pct(so.stakeSpeedMult[stake]);
+              if (dmg > 0) parts.push('schlagen ' + dmg + ' % härter zu');
+              if (spd > 0) parts.push('sind ' + spd + ' % schneller');
+              const sc = Math.round(scale * 100);
+              if (sc >= 105) parts.push('halten ' + (sc - 100) + ' % mehr aus');
+              else if (sc <= 95) parts.push('halten ' + (100 - sc) + ' % weniger aus');
+              text = stakeLabel(stake) + ': ' + (parts.length ? 'Die Gegner ' + parts.join(', ') + '.' : 'Gegner in Grundstärke.');
+            }
+            noteEl.textContent = text;
           }
           paint(null);
           return paint;
@@ -102,18 +114,20 @@ async function playSolo(startColour) {
       galleryAdd(res.cells, 'figure');
       core.soloStartWave(tuning, run, res.cells, stake);
       fightName = 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES;
+      fightStake = stake > 0 ? ' · Einsatz ' + stakeLabel(stake) : '';
     } else {
       clearHud();
       const r = await fightOverlay('Der Endgegner', [
         el('div', { class: 'lineup' }, [el('div', { class: 'card' }, [thumbCanvas(core.soloBossCells(run), 64), el('span', { class: 'card-name', text: 'Alle in einem' })])]),
         el('p', { text: 'Er besteht aus allen Gegnern, die du gezeichnet hast, und bringt je einen davon mit.' }),
+        el('p', { class: 'fine', text: 'Hier gibt es keinen Einsatz: alle schlagen in Grundstärke zu.' }),
       ], 'In den Kampf', 'Zum Menü');
       if (r !== 'primary') { goHome(); return; }
       core.soloStartBoss(tuning, run);
       fightName = 'Endgegner';
     }
 
-    const result = await runFight(soloFightConfig(run, fightName));
+    const result = await runFight(soloFightConfig(run, fightName, fightStake));
     if (result === 'quit') { goHome(); return; }
 
     if (run.phase === 'dead' || run.phase === 'won') {
@@ -139,7 +153,7 @@ async function playSolo(startColour) {
   }
 }
 
-function soloFightConfig(run, fightName) {
+function soloFightConfig(run, fightName, fightStake) {
   const col = colours();
   const T = tuning.physics.tickRate;
   let built = false;
@@ -200,7 +214,7 @@ function soloFightConfig(run, fightName) {
       let alive = 0;
       for (let i = 1; i < run.world.bodies.length; i++) if (run.world.bodies[i].alive) alive++;
       const left = Math.ceil((so.waveMaxTicks - run.tick) / T);
-      const text = fightName + ' · Gegner ' + alive + ' · Tinte ' + run.wallet + (left <= 30 ? ' · noch ' + left + ' s' : '');
+      const text = fightName + fightStake + ' · Gegner ' + alive + ' · Beutel ' + run.wallet + (left <= 30 ? ' · noch ' + left + ' s' : '');
       if (line.textContent !== text) line.textContent = text;
     },
   };

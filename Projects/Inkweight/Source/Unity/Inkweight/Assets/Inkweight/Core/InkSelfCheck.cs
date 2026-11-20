@@ -51,6 +51,7 @@ namespace Inkweight.Core
                 rs.MaxRounds = InkGenerated.RingCheckMaxRounds;
                 rs.MaxTicksPerRound = InkGenerated.RingCheckMaxTicksPerRound;
                 rs.CheckpointEvery = InkGenerated.CheckpointEvery;
+                rs.BotStyles = InkGenerated.RingCheckBotStyles;
                 InkReplay.RunRing(tuning, rs, delegate (InkRingMatch m) { got.Add(m.Round + ":" + m.Tick + ":" + InkHash.Ring(m)); }, null);
                 Compare(res, "ring " + InkGenerated.RingCheckName, got, InkGenerated.RingCheckHashes);
 
@@ -68,6 +69,12 @@ namespace Inkweight.Core
                 for (int i = 0; i < ss.WaveEnemyCells.Length; i++) ss.WaveEnemyCells[i] = PresetCells(InkGenerated.SoloCheckEnemies[i]);
                 ss.WaveStakes = InkGenerated.SoloCheckStakes;
                 ss.WaveUpgrades = InkGenerated.SoloCheckUpgrades;
+                ss.WaveUpgradeCells = new int[ss.WaveUpgrades.Length][];
+                for (int i = 0; i < ss.WaveUpgrades.Length; i++)
+                {
+                    string dn = InkReplay.UpgradeDrawingName(ss.WaveUpgrades[i]);
+                    if (dn != null) ss.WaveUpgradeCells[i] = InkReplay.Recolour(PresetCells(dn), 1);
+                }
                 ss.Boss = InkGenerated.SoloCheckBoss;
                 ss.CheckpointEvery = InkGenerated.CheckpointEvery;
                 InkReplay.RunSolo(tuning, ss,

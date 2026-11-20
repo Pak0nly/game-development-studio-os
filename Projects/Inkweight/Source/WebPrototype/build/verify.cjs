@@ -11,6 +11,9 @@
 // checks:   phone; the single fixes of INK-WEB-V2 (double taps, asking before
 //           a drawing is thrown away, ink running out, finger off the canvas,
 //           rotation in a stroke, bot drawings, stains, both solo loss paths)
+//           and of INK-WEB-V3 (rules version 2: a blade on a block raises the
+//           sharpness, a diagonal stroke is a blade, pocket marks, what the
+//           "Ende" buttons ask, the rules panel, honest stakes, a ram)
 // desktop:  1280 x 800, mouse and keyboard
 // artifact: the fragment file wrapped in a bare host page, 400 x 780,
 //           with prefers-reduced-motion: reduce
@@ -171,6 +174,25 @@ async function runScenario(browser, name) {
   if (!/Platzhalter/.test(doodleNote)) throw new Error('placeholder figures on the start screen are not marked');
   await press('#sndStart'); // sound on by a tap, then off again
   await press('#sndStart');
+  // the rules panel from the start screen
+  await press('#btnRules');
+  await page.waitForSelector('#rulesLayer:not([hidden])');
+  await sleep(200);
+  await noSideScroll('rules');
+  const rulesText = (await page.locator('#rulesLayer').innerText()).replace(/\s+/g, ' ');
+  for (const w of ['Menge ist Gewicht', 'Gewicht', 'Panzer', 'Schärfe', 'Tempo', 'Glut schlägt Moos schlägt Flut schlägt Glut', 'Testwerte']) {
+    if (rulesText.indexOf(w) === -1) throw new Error('rules panel lacks: ' + w);
+  }
+  if (/\d\.\d/.test(rulesText)) throw new Error('decimal point in the rules panel');
+  await shot('rules');
+  await press('#rulesClose');
+  if (await page.locator('#rulesLayer').isVisible()) throw new Error('rules panel did not close');
+  // count ram events of all fights of this run (read only)
+  await page.evaluate(() => {
+    const d = window.__inkDebug;
+    d.rams = 0; d.sharpHits = 0; d.hits = 0;
+    d.onFightEvent = (ev) => { if (ev.type === 'ram') d.rams++; else if (ev.type === 'hit') { d.hits++; if (ev.sharp) d.sharpHits++; } };
+  });
 
   // ---------- free drawing
   await press('#btnFree');
@@ -182,6 +204,17 @@ async function runScenario(browser, name) {
   note('stats after drawing: ' + JSON.stringify(mid));
   if (!mid.done) throw new Error('drawing is not valid');
   if (mid.weight === before.weight || mid.sharp === before.sharp) throw new Error('live stats did not change');
+  const whys = await page.evaluate(() => ['stWeightWhy', 'stArmourWhy', 'stSharpWhy', 'stSpeedWhy', 'stElementWhy'].map((id) => document.getElementById(id).textContent));
+  note('stat explanations: ' + whys.join(' | '));
+  if (!/Klingen-Kästchen · Schnitt nimmt auch 0,4 % Panzer/.test(whys[2]) || /Anteil gerader/.test(whys[2])) throw new Error('sharpness explanation is not the version 2 one: ' + whys[2]);
+  if (!/Kern-Kästchen/.test(whys[1]) || !/Hülle|Hohlraum/.test(whys[0])) throw new Error('weight or armour explanation is wrong');
+  const marksNow = await page.evaluate(() => window.__inkDebug.marks);
+  if (marksNow.blades !== marksNow.S || marksNow.blades < 10) throw new Error('blade marks do not follow the core: ' + JSON.stringify(marksNow));
+  // the rules panel opens over the drawing and keeps it
+  await press('#drawRules');
+  await page.waitForSelector('#rulesLayer:not([hidden])');
+  await press('#rulesClose');
+  if ((await statNumbers()).weight !== mid.weight) throw new Error('rules panel changed the drawing');
   if (mid.element !== 'Glut') throw new Error('element did not follow the colour: ' + mid.element);
   if (/\./.test(mid.sharp) || !/,/.test(mid.sharp)) throw new Error('no decimal comma: ' + mid.sharp);
   await sleep(300);
@@ -286,6 +319,7 @@ async function runScenario(browser, name) {
     const title = await page.locator('#ovTitle').textContent();
     const body = await page.locator('#ovBody').innerText();
     note('round ' + rounds + ': ' + title + ' | ' + body.replace(/\s+/g, ' ').slice(0, 160));
+    if (/geht an Du\b/.test(title)) throw new Error('grammar: ' + title);
     if (rounds === 1) { await sleep(300); await shot('ring-round-result'); }
     if (/gewinn(s)?t das Spiel/.test(title)) {
       matchTitle = title;
@@ -345,9 +379,9 @@ async function runScenario(browser, name) {
       const stakes = await page.evaluate(() => [0, 1, 2].map((i) => { const b = document.getElementById('stake' + i); return { off: b.disabled, text: b.textContent }; }));
       const live = stakes.filter((s) => !s.off).map((s) => s.text.replace(/^Einsatz ×[\d,]+/, ''));
       if (new Set(live).size !== live.length) throw new Error('two stakes that can be picked look the same: ' + JSON.stringify(stakes));
-      const pickStake = stakes[1].off ? 0 : 1;
+      const pickStake = waves === 0 ? 0 : 1;
       await press('#stake' + pickStake);
-      note('wave ' + (waves + 1) + ' stakes: ' + stakes.map((s) => (s.off ? '[aus] ' : '') + s.text).join(' | '));
+      note('wave ' + (waves + 1) + ' stakes: ' + stakes.map((s) => (s.off ? '[aus] ' : '') + s.text).join(' | ') + ' || picked ' + pickStake + ': ' + (await page.locator('#stakeNote').textContent()));
       if (waves === 0) { await sleep(300); await noSideScroll('enemy draw'); await drawFits('enemy drawing'); await shot('solo-enemy-draw'); }
       await press('#drawDone');
     } else if (where === 'scrFight') {
@@ -431,6 +465,9 @@ async function runScenario(browser, name) {
     if (waves > 7) throw new Error('solo run did not end');
   }
   note('solo run ended after ' + waves + ' fights: ' + soloEnd);
+  const evCount = await page.evaluate(() => ({ rams: window.__inkDebug.rams, hits: window.__inkDebug.hits, sharpHits: window.__inkDebug.sharpHits }));
+  note('fight events seen in this run: ' + JSON.stringify(evCount));
+  if (!(evCount.hits > 0 && evCount.sharpHits > 0)) throw new Error('no blade hit in a whole run');
   if (waves < 1) throw new Error('no solo wave was played');
   note('shop purchases made: ' + Array.from(bought).join(' '));
   for (const id of ['#shopHero', '#shopWeapon', '#shopColour']) if (!bought.has(id)) throw new Error('shop choice never bought: ' + id);
@@ -447,7 +484,7 @@ async function runScenario(browser, name) {
   await context.close();
   if (requests.length) throw new Error('network requests: ' + requests.join(', '));
   if (errors.length) throw new Error('console problems: ' + errors.join(' | '));
-  return { rounds, waves, soloEnd, bought: Array.from(bought).length };
+  return { rounds, waves, soloEnd, bought: Array.from(bought).length, rams: evCount.rams };
 }
 
 
@@ -607,6 +644,71 @@ async function runChecks(browser) {
   const sharp = await text('stSharp');
   if (!/^\d+,\d$/.test(sharp)) throw new Error('sharpness is not written with a comma: ' + sharp);
   ok('sharpness shows a decimal comma: ' + sharp + ' · line: "' + (await text('stSharpWhy')) + '"');
+
+  // ---- rules version 2: a blade on a block raises the sharpness
+  {
+    const sharpNum = async () => parseFloat((await text('stSharp')).replace(',', '.'));
+    const marks = () => page.evaluate(() => window.__inkDebug.marks);
+    await press('#toolClear');
+    await press('#toolBrush'); // thick
+    for (const row of [14, 17, 20, 23]) await stroke([[11, row], [21, row]], 8);
+    await press('#toolBrush'); // thin
+    const blockSharp = await sharpNum();
+    const blockMarks = await marks();
+    const blockArmour = parseInt(await text('stArmour'), 10);
+    const blockWhy = await text('stSharpWhy');
+    await stroke([[16, 12], [16, 2]]);
+    const bladeSharp = await sharpNum();
+    const bladeMarks = await marks();
+    note('block alone: sharpness ' + blockSharp + ', blade marks ' + blockMarks.blades + ', armour ' + blockArmour + ' ("' + blockWhy + '"); with a blade of 11 cells: sharpness ' + bladeSharp + ', blade marks ' + bladeMarks.blades + ' ("' + (await text('stSharpWhy')) + '")');
+    if (blockSharp !== 1 || blockMarks.blades !== 0) throw new Error('a solid block must have sharpness 1,0 and no blade mark');
+    if (!(bladeSharp >= blockSharp + 0.5)) throw new Error('a blade on a block does not raise the sharpness: ' + blockSharp + ' -> ' + bladeSharp);
+    if (bladeMarks.blades !== 11 || bladeMarks.S !== 11) throw new Error('blade marks: ' + JSON.stringify(bladeMarks));
+    await shot('10-block-with-blade');
+    ok('a block with a blade shows a higher sharpness than the block alone (' + String(blockSharp).replace('.', ',') + ' -> ' + String(bladeSharp).replace('.', ',') + '), 11 blade marks');
+
+    // a diagonal stroke is a blade
+    await press('#toolClear');
+    await stroke([[6, 26], [24, 8]], 24);
+    const dm = await marks();
+    const w = parseInt(await text('stWeight'), 10);
+    note('diagonal stroke: weight ' + w + ', blade marks ' + dm.blades + ', core S ' + dm.S + ', sharpness ' + (await text('stSharp')));
+    if (w < 30 || dm.blades !== w || dm.S !== w) throw new Error('a diagonal stroke is not all blade: ' + JSON.stringify(dm) + ' of ' + w);
+    // the marks are really painted: light slashes inside the ink of the stroke
+    const light = await page.evaluate(() => {
+      const cv = document.getElementById('drawCanvas');
+      const g = cv.getContext('2d');
+      const c = cv.width / 32;
+      // centre of cell (15, 17) lies on the stroke path or next to it: scan the whole diagonal band
+      let n = 0;
+      for (let k = 6; k <= 24; k++) {
+        const x = k; const y = 32 - k;
+        const d = g.getImageData(Math.floor((x + 0.5) * c), Math.floor((y + 0.5) * c), 1, 1).data;
+        if (d[0] > 200 && d[1] > 200) n++;
+      }
+      return n;
+    });
+    note('light blade slashes found on the diagonal: ' + light + ' of 19 probed cells');
+    if (light < 12) throw new Error('blade marks are not painted on a diagonal stroke');
+    await shot('11-diagonal-blade');
+    ok('a diagonal stroke is a blade: ' + dm.blades + ' of ' + w + ' cells carry the blade mark');
+
+    // a thick closed shell: pocket marks and push weight above the weight
+    await press('#toolClear');
+    await press('#toolBrush'); // thick: walls three cells wide
+    await stroke([[8, 8], [23, 8], [23, 23], [8, 23], [8, 8]], 10);
+    await press('#toolBrush');
+    const pm = await marks();
+    const why = await text('stWeightWhy');
+    note('thick closed shell: weight ' + (await text('stWeight')) + ', pocket marks ' + pm.pockets + ', core P ' + pm.P + ', line "' + why + '"');
+    if (pm.pockets < 20 || pm.pockets !== pm.P) throw new Error('pocket marks do not follow the core: ' + JSON.stringify(pm));
+    if (!/^Schub \d+,\d: der Hohlraum schiebt mit \(\+\d+,\d\)$/.test(why)) throw new Error('push weight line: ' + why);
+    await shot('12-shell-pockets');
+    ok('a thick closed shell shows pocket marks and its push weight: "' + why + '"');
+    await press('#toolClear');
+    await stroke([[16, 6], [16, 24]]);
+    await stroke([[10, 14], [22, 14]]);
+  }
   if ((await text('stElementWhy')) !== 'Schwarz ist neutral: kein Element') throw new Error('black ink line: ' + (await text('stElementWhy')));
   ok('black drawing: Element "' + (await text('stElement')) + '", line "' + (await text('stElementWhy')) + '"');
   await press('#drawBack');
@@ -689,6 +791,19 @@ async function runChecks(browser) {
   if (clock !== '30' || w0 !== '0') throw new Error('double tap started the clock or painted: clock ' + clock + ', weight ' + w0);
   ok('double tap on "Los, zeichnen!": clock still at 30, nothing painted');
 
+  // ---- N-1: "Ende" on the Ring drawing screen says that the game ends
+  await stroke([[5, 5], [9, 5]]);
+  await press('#drawBack');
+  await sleep(200);
+  const endAsk = (await text('drawBack')) + ' | ' + (await text('drawMsg'));
+  note('Ring "Ende" first tap: ' + endAsk);
+  if (endAsk !== 'Spiel beenden? | Noch einmal tippen, dann endet das ganze Spiel.' || !(await visible('scrDraw'))) throw new Error('Ring Ende asks wrongly: ' + endAsk);
+  await shot('13-ring-ende-asks');
+  await sleep(2700);
+  if ((await text('drawBack')) !== 'Ende') throw new Error('Ende did not reset');
+  await press('#toolClear');
+  ok('"Ende" while drawing for the Ring asks "Spiel beenden?" and says that the whole game ends');
+
   // ---- weakness: a bot never has the very drawing the human just made
   const ringFigure = async () => {
     await press('#toolBrush');
@@ -770,17 +885,48 @@ async function runChecks(browser) {
     }
   };
   await startSolo(true);
-  const stakes = await page.evaluate(() => [0, 1, 2].map((i) => { const b = document.getElementById('stake' + i); return (b.disabled ? '[aus] ' : '') + b.textContent; }));
+  const readStakes = async () => {
+    const out = [];
+    for (let i = 0; i < 3; i++) {
+      await press('#stake' + i);
+      out.push(await page.evaluate((k) => { const b = document.getElementById('stake' + k); return (b.disabled ? '[aus] ' : '') + b.textContent + ' -> ' + document.getElementById('stakeNote').textContent; }, i));
+    }
+    await press('#stake0');
+    return out;
+  };
+  const stakes = await readStakes();
   note('stakes for a big enemy in wave 1: ' + stakes.join(' | '));
-  if (!/^\[aus\].*wie ×1/.test(stakes[1]) || !/^\[aus\]/.test(stakes[2]) || /^\[aus\]/.test(stakes[0])) throw new Error('equal stakes are not told apart');
-  await shot('07-stakes-equal');
-  ok('stakes that bring the same enemies are switched off and say so');
+  // a big enemy comes alone at every stake; the stakes still differ honestly
+  if (stakes.some((t) => /^\[aus\]/.test(t))) throw new Error('a stake is switched off');
+  if (!/Grundstärke|halten \d+ % weniger aus/.test(stakes[0]) || /härter/.test(stakes[0])) throw new Error('stake x1 text: ' + stakes[0]);
+  if (!/schlagen 25 % härter zu, sind 10 % schneller/.test(stakes[1]) || !/schlagen 50 % härter zu, sind 20 % schneller/.test(stakes[2])) throw new Error('higher stakes do not say what they do');
+  const loot = stakes.map((t) => parseInt((t.match(/(\d+) Beute/) || [0, '0'])[1], 10));
+  if (!(loot[0] < loot[1] && loot[1] < loot[2])) throw new Error('loot does not grow with the stake: ' + loot.join(' '));
+  // what the page promises is what the core does
+  const promise = await page.evaluate(() => {
+    const d = window.__inkDebug;
+    return d.tuning.solo.stakeDamageMult.join(' ') + ' / ' + d.tuning.solo.stakeSpeedMult.join(' ');
+  });
+  if (promise !== '1 1.25 1.5 / 1 1.1 1.2') throw new Error('tuning changed, adapt the check: ' + promise);
+  await shot('07-stakes-honest');
+  ok('every stake says what it does (more loot, harder hits, more speed, tougher or weaker copies)');
+  // N-1: "Ende" on the solo enemy screen says that the run ends
+  await press('#drawBack');
+  await sleep(200);
+  const runAsk = (await text('drawBack')) + ' | ' + (await text('drawMsg'));
+  note('solo enemy "Ende" first tap: ' + runAsk);
+  if (runAsk !== 'Lauf beenden? | Noch einmal tippen, dann endet der ganze Lauf.' || !(await visible('scrDraw'))) throw new Error('solo Ende asks wrongly: ' + runAsk);
+  await shot('14-solo-ende-asks');
+  await sleep(2700);
+  ok('"Ende" on the solo enemy screen asks "Lauf beenden?" and says that the whole run ends');
   await press('#drawDone');
   await page.waitForSelector('#scrFight:not([hidden])');
   await sleep(2400);
   await page.evaluate(() => { window.__inkDebug.run.world.bodies[0].hp = 0; });
   await page.waitForSelector('#fightOverlay:not([hidden])');
   const lossA = (await text('ovTitle')) + ' | ' + (await page.locator('#ovBody').innerText()).replace(/\s+/g, ' ');
+  const hudSolo = (await page.locator('#fightHud').innerText()).replace(/\s+/g, ' ');
+  if (!/Beutel \d+/.test(hudSolo) || /Tinte \d+/.test(hudSolo)) throw new Error('solo HUD still calls the purse Tinte: ' + hudSolo);
   note('loss by armour (hero armour set to 0 through the debug hook): ' + lossA);
   if (!/^Aus und vorbei \| Dein Panzer ist zerbrochen \(Welle 1 von 5\)/.test(lossA) || !/Geschaffte Wellen: 0 von 5/.test(lossA)) throw new Error('armour loss screen is wrong');
   await sleep(300);
@@ -831,12 +977,12 @@ async function runChecks(browser) {
       }
       if (name === 'checks') {
         const n = await runChecks(browser);
-        console.log('PASS checks: ' + n + ' single checks passed (double taps, asking before discarding, ink empty, finger off the canvas, rotation in a stroke, bot twin, stains, equal stakes, both solo loss paths), 0 console errors, 0 network requests (' + Math.round((Date.now() - t0) / 1000) + ' s)');
+        console.log('PASS checks: ' + n + ' single checks passed (double taps, asking before discarding, ink empty, finger off the canvas, rotation in a stroke, bot twin, stains, honest stakes, both solo loss paths; version 2: block with blade, diagonal blade, pocket marks, what Ende asks), 0 console errors, 0 network requests (' + Math.round((Date.now() - t0) / 1000) + ' s)');
         continue;
       }
       const r = await runScenario(browser, name);
       console.log('PASS ' + name + ': drew a figure, Ring match finished after ' + r.rounds + ' rounds, solo run played ' + r.waves
-        + ' fights with ' + r.bought + ' different shop purchases, 0 console errors, 0 network requests, no sideways scroll (' + Math.round((Date.now() - t0) / 1000) + ' s)');
+        + ' fights with ' + r.bought + ' different shop purchases, ' + r.rams + ' rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (' + Math.round((Date.now() - t0) / 1000) + ' s)');
     } catch (e) {
       failed++;
       try { await runScenario.page.screenshot({ path: path.join(os.tmpdir(), 'inkweight-fail-' + name + '.png') }); console.log('failure screenshot: ' + path.join(os.tmpdir(), 'inkweight-fail-' + name + '.png')); } catch (e2) { /* page gone */ }

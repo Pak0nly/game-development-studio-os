@@ -30,15 +30,29 @@ let blockUntil = 0;
 export function inputBlocked() { return performance.now() < blockUntil; }
 {
   let swallowClickUntil = 0; // the click that belongs to a swallowed touch-down
+  let downX = 0;
+  let downY = 0;
   const guard = (ev) => {
     const now = performance.now();
     if (now >= blockUntil && !(ev.type === 'click' && now < swallowClickUntil)) return;
-    if (ev.type === 'pointerdown') swallowClickUntil = now + 700;
+    if (ev.type === 'pointerdown') { swallowClickUntil = now + 700; downX = ev.clientX; downY = ev.clientY; }
     else if (ev.type === 'click') swallowClickUntil = 0;
     ev.stopImmediatePropagation();
     if (ev.type === 'click') ev.preventDefault();
   };
   for (const type of ['pointerdown', 'mousedown', 'touchstart', 'click']) document.addEventListener(type, guard, true);
+  // The swallowed touch-down is over. If it became a drag, no click follows
+  // and nothing more is swallowed; if it was a tap, its click comes within a
+  // few milliseconds, so the next real click is never eaten.
+  const release = (ev) => {
+    if (swallowClickUntil === 0) return;
+    const dx = ev.clientX - downX;
+    const dy = ev.clientY - downY;
+    const dragged = ev.type === 'pointercancel' || dx * dx + dy * dy > 100;
+    swallowClickUntil = dragged ? 0 : Math.min(swallowClickUntil, performance.now() + 120);
+  };
+  document.addEventListener('pointerup', release, true);
+  document.addEventListener('pointercancel', release, true);
 }
 
 // German number text: decimal comma.

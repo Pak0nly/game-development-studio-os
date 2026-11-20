@@ -45,7 +45,28 @@ namespace Inkweight.Core
 
         public static InkTuning FromJson(string text)
         {
+            return FromJson(text, null);
+        }
+
+        // overrides: "section.key" = number, replaced in a copy of the parsed
+        // file before it is read (golden traces with tuningOverrides). Only
+        // existing number keys may be replaced.
+        public static InkTuning FromJson(string text, Dictionary<string, double> overrides)
+        {
             object root = InkJson.Parse(text);
+            if (overrides != null)
+            {
+                foreach (KeyValuePair<string, double> kv in overrides)
+                {
+                    string[] parts = kv.Key.Split('.');
+                    object o2 = root;
+                    for (int i = 0; i < parts.Length - 1; i++) o2 = InkJson.Get(o2, parts[i]);
+                    Dictionary<string, object> d = InkJson.Obj(o2);
+                    string last = parts[parts.Length - 1];
+                    if (!d.ContainsKey(last) || !(d[last] is double)) throw new FormatException("tuning override: no number at " + kv.Key);
+                    d[last] = kv.Value;
+                }
+            }
             InkTuning t = new InkTuning();
             t.Version = InkJson.Str(InkJson.Get(root, "version"));
 

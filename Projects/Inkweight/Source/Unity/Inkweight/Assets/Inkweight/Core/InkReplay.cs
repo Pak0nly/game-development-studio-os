@@ -15,6 +15,7 @@ namespace Inkweight.Core
         public int MaxRounds;
         public int MaxTicksPerRound;
         public int CheckpointEvery;
+        public int[] BotStyles; // per seat 0 rusher, 1 circler; null = all rushers
     }
 
     public sealed class InkSoloScenario
@@ -26,7 +27,11 @@ namespace Inkweight.Core
         public int Style; // 0 kite, 1 brawl
         public int[][] WaveEnemyCells;
         public int[] WaveStakes;
-        public string[] WaveUpgrades; // null | "heal" | "colour2" | "colour3" | "colour4"
+        // null | "heal" | "colour2" | "colour3" | "colour4" | "heroInk:<name>" | "weaponInk:<name>"
+        public string[] WaveUpgrades;
+        // for the two redraw upgrades: the new drawing of that wave (already
+        // recoloured to Black), else null; the array itself may be null
+        public int[][] WaveUpgradeCells;
         public bool Boss;
         public int CheckpointEvery;
     }
@@ -48,6 +53,7 @@ namespace Inkweight.Core
         {
             int n = sc.Figures.Length;
             InkRingMatch match = InkRing.CreateMatch(tuning, n, sc.Seed);
+            if (sc.BotStyles != null) for (int s = 0; s < n && s < sc.BotStyles.Length; s++) match.BotStyle[s] = sc.BotStyles[s];
             InkInput?[] human = new InkInput?[n];
             while (match.Phase != InkRing.PhaseMatchOver && match.Round < sc.MaxRounds)
             {
@@ -88,6 +94,14 @@ namespace Inkweight.Core
         public static InkSoloRun RunSolo(InkTuning tuning, InkSoloScenario sc,
             Action<InkSoloRun> onCheckpoint, Action<InkSoloRun> onFightEnd)
         {
+            return RunSolo(tuning, sc, onCheckpoint, onFightEnd, null);
+        }
+
+        // onUpgrade(wave, result): after a planned upgrade was tried; result
+        // is "ok" or the refusal reason (not called when none was planned).
+        public static InkSoloRun RunSolo(InkTuning tuning, InkSoloScenario sc,
+            Action<InkSoloRun> onCheckpoint, Action<InkSoloRun> onFightEnd, Action<int, string> onUpgrade)
+        {
             InkSoloRun run = InkSolo.CreateRun(tuning, sc.Seed, sc.HeroCells, sc.WeaponCells, sc.W, sc.H, sc.StartColour);
             for (int w = 0; w < sc.WaveEnemyCells.Length && w < InkSolo.Waves; w++)
             {
@@ -96,10 +110,17 @@ namespace Inkweight.Core
                 if (onFightEnd != null) onFightEnd(run);
                 if (run.Phase != InkSolo.PhaseCleared) return run;
                 string up = sc.WaveUpgrades[w];
-                if (up == "heal") InkSolo.Upgrade(tuning, run, InkSolo.UpgradeHeal, null, 0);
-                else if (up == "colour2") InkSolo.Upgrade(tuning, run, InkSolo.UpgradeColour, null, 2);
-                else if (up == "colour3") InkSolo.Upgrade(tuning, run, InkSolo.UpgradeColour, null, 3);
-                else if (up == "colour4") InkSolo.Upgrade(tuning, run, InkSolo.UpgradeColour, null, 4);
+                string res = null;
+                int[] upCells = sc.WaveUpgradeCells != null ? sc.WaveUpgradeCells[w] : null;
+                if (up == "heal") res = InkSolo.Upgrade(tuning, run, InkSolo.UpgradeHeal, null, 0);
+                else if (up == "colour2") res = InkSolo.Upgrade(tuning, run, InkSolo.UpgradeColour, null, 2);
+                else if (up == "colour3") res = InkSolo.Upgrade(tuning, run, InkSolo.UpgradeColour, null, 3);
+                else if (up == "colour4") res = InkSolo.Upgrade(tuning, run, InkSolo.UpgradeColour, null, 4);
+                else if (up != null && up.StartsWith("heroInk:", StringComparison.Ordinal))
+                    res = InkSolo.Upgrade(tuning, run, InkSolo.UpgradeHeroInk, upCells, 0);
+                else if (up != null && up.StartsWith("weaponInk:", StringComparison.Ordinal))
+                    res = InkSolo.Upgrade(tuning, run, InkSolo.UpgradeWeaponInk, upCells, 0);
+                if (res != null && onUpgrade != null) onUpgrade(w, res == "" ? "ok" : res);
             }
             if (sc.Boss && run.Phase == InkSolo.PhaseCleared && run.Wave == InkSolo.Waves)
             {
@@ -108,6 +129,15 @@ namespace Inkweight.Core
                 if (onFightEnd != null) onFightEnd(run);
             }
             return run;
+        }
+
+        // The drawing name of a redraw upgrade string ("heroInk:block" gives
+        // "block"), or null for every other upgrade.
+        public static string UpgradeDrawingName(string upgrade)
+        {
+            if (upgrade == null) return null;
+            int c = upgrade.IndexOf(':');
+            return c < 0 ? null : upgrade.Substring(c + 1);
         }
 
         public static int[] Recolour(int[] cells, int v)

@@ -215,6 +215,25 @@ function handleEvents(events) {
       f.vis[ev.to].squash = Math.min(0.3, 0.1 + ev.damage * 0.04);
       shake(ev.sharp ? Math.min(3, ev.damage * 0.5) : 0.5);
       sfx(ev.sharp ? 'sharp' : 'hit', ev.sharp ? ev.damage / 3 : 1);
+    } else if (ev.type === 'ram') {
+      // a sprint that ended on another figure: its swing goes into the target
+      const a = bodies[ev.from];
+      const b = bodies[ev.to];
+      let dx = b.x - a.x;
+      let dy = b.y - a.y;
+      const d = Math.sqrt(dx * dx + dy * dy) || 1;
+      dx /= d; dy /= d;
+      const reach = Math.min(a.fig.radius, d * 0.5);
+      const px = a.x + dx * reach;
+      const py = a.y + dy * reach;
+      f.rings.push({ x: px, y: py, age: 0, size: 2 + Math.min(5, Math.sqrt(a.fig.mass) * 0.35) });
+      if (f.rings.length > 8) f.rings.shift();
+      splash(px, py, dominantColour(b.fig, f.tick + e), 7, 13, dx, dy);
+      floatText(px, py - 2.5, 'Rums!', true, 0);
+      f.vis[ev.to].squash = Math.max(f.vis[ev.to].squash, 0.26);
+      f.vis[ev.from].squash = Math.max(f.vis[ev.from].squash, 0.14);
+      shake(2.2);
+      sfx('ram', 0.6 + a.fig.mass / 200);
     } else if (ev.type === 'out') {
       const b = bodies[ev.seat];
       f.vis[ev.seat].deadAt = f.time;
@@ -245,6 +264,8 @@ function handleEvents(events) {
       sfx('throw');
     }
     if (f.cfg.onEvent) f.cfg.onEvent(ev);
+    const dbg = window.__inkDebug;
+    if (dbg && dbg.onFightEvent) dbg.onFightEvent(ev); // automated check only (read only)
   }
 }
 
@@ -418,6 +439,17 @@ function render(t) {
     g.arc(cam.cx + p.x * cam.s, cam.cy + p.y * cam.s, p.r * cam.s, 0, 6.2832);
     g.fill();
   }
+  // ram rings: one ink circle that opens where a sprint landed
+  g.strokeStyle = col.ink;
+  for (let i = 0; i < f.rings.length; i++) {
+    const r = f.rings[i];
+    const k = still ? 0.5 : r.age / 0.32;
+    g.globalAlpha = Math.max(0, 0.7 * (1 - k));
+    g.lineWidth = Math.max(1.5, cam.s * 0.5 * (1 - k * 0.6));
+    g.beginPath();
+    g.arc(cam.cx + r.x * cam.s, cam.cy + r.y * cam.s, r.size * (0.4 + k * 0.9) * cam.s, 0, 6.2832);
+    g.stroke();
+  }
   // damage numbers
   for (let i = 0; i < f.floats.length; i++) {
     const fl = f.floats[i];
@@ -511,6 +543,10 @@ function advanceVisuals(dt) {
     f.floats[i].age += dt;
     if (f.floats[i].age >= 0.8) f.floats.splice(i, 1);
   }
+  for (let i = f.rings.length - 1; i >= 0; i--) {
+    f.rings[i].age += dt;
+    if (f.rings[i].age >= 0.32) f.rings.splice(i, 1);
+  }
   f.shake *= Math.pow(0.001, dt);
 }
 
@@ -599,7 +635,7 @@ export function runFight(cfg) {
     const vis = [];
     for (let i = 0; i < n; i++) vis.push({ hop: i * 1.7, lift: 0, hopSquash: 0, squash: 0, squashPhase: 0, deadAt: -1, reason: '' });
     F = {
-      cfg, resolve, vis, parts: [], floats: [], shake: 0,
+      cfg, resolve, vis, parts: [], floats: [], rings: [], shake: 0,
       phase: 'count', count: 3, countShown: 4, bannerUntil: 0,
       camInit: false, camX: 0, camY: 0,
       acc: 0, tick: 0, time: 0, last: performance.now(), endAt: 0, hudCount: 0, dpr: 1,

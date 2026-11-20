@@ -64,6 +64,8 @@ function analyse() {
       s.mark[i] = m;
     }
   }
+  // read by the automated check: what the board marks right now
+  if (window.__inkDebug) window.__inkDebug.marks = { blades, pockets, S: s.stats.S, P: s.stats.P };
   s.bladeMarks = blades;
   s.pocketMarks = pockets;
   s.spriteDirty = true;
@@ -267,6 +269,7 @@ canvas.addEventListener('pointerdown', (ev) => {
   if (!S || S.closed) return;
   if (ev.pointerType === 'mouse' && ev.button !== 0) return;
   ev.preventDefault();
+  S.endedId = -1;
   beginStroke(ev);
 });
 canvas.addEventListener('pointermove', (ev) => {
