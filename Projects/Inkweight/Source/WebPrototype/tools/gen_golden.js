@@ -28,12 +28,12 @@ export function buildStatVectorsText(tuning) {
       budget: s.budget,
       rows: drawingToRows(c.cells, c.W, c.H),
       expect: {
-        filled: s.filled, drips: s.drips, N: s.N, C: s.C, S: s.S, enclosed: s.enclosed, P: s.P,
+        filled: s.filled, drips: s.drips, N: s.N, C: s.C, S: s.S, enclosed: s.enclosed, P: s.P, pocketCells: s.pocketCells, push: s.push,
         colourCounts: s.colourCounts, element: s.element,
         bigEnough: s.bigEnough, withinBudget: s.withinBudget, valid: s.valid,
         weight: s.weight, armour: s.armour, sharpness: s.sharpness, topSpeed: s.topSpeed,
         cx: s.cx, cy: s.cy, radius: s.radius, inertia: s.inertia,
-        boundaryCells: fig.boundary.length, turnRate: fig.turnRate, accelK: fig.accelK,
+        boundaryCells: fig.boundary.length, turnRate: fig.turnRate, accelK: fig.accelK, mass: fig.mass,
       },
     };
   });
@@ -136,7 +136,7 @@ function soloTrace(baseTuning, def, everyDefault) {
 
 export function buildSimTracesText(tuning) {
   const every = 120;
-  const names = ['disc', 'block', 'ring', 'cross', 'star', 'lance', 'line', 'comb', 'shield', 'dot', 'hedgehog', 'wedge', 'frame', 'needle', 'hoop', 'spiral', 'grille', 'splinter'];
+  const names = ['disc', 'block', 'ring', 'cross', 'star', 'lance', 'line', 'comb', 'shield', 'dot', 'hedgehog', 'wedge', 'frame', 'needle', 'hoop', 'spiral', 'grille', 'splinter', 'hoop2', 'hoop3'];
   const drawings = {};
   for (const n of names) drawings[n] = drawingToRows(archetype(n).cells, W, H);
   const items = [
@@ -170,7 +170,7 @@ export function buildSimTracesText(tuning) {
     ringTrace(tuning, {
       name: 'ring_3_simultaneous_nearest_wins', seed: 23, seats: ['wedge', 'comb', 'lance'], maxRounds: 1, maxTicksPerRound: 100000, every: 600,
       covers: 'simultaneous knock-out decided by the distance to the centre: seats 0 and 1 never move, seat 2 creeps a few thousandths of a cell toward the centre and stops; all three leave the shrinking ring in the same tick and seat 2, the nearest, wins; see rounds[0].outTick and winner',
-      scripts: { 0: [[0, 0, 0, 0]], 1: [[0, 0, 0, 0]], 2: [[0, 0.00346, -0.002, 0], [6, 0, 0, 0]] },
+      scripts: { 0: [[0, 0, 0, 0]], 1: [[0, 0, 0, 0]], 2: [[0, 0.00173, -0.001, 0], [6, 0, 0, 0]] },
     }, every),
     soloTrace(tuning, { name: 'solo_kite_two_waves', seed: 21, hero: 'disc', weapon: 'needle', heroBot: 'kite', boss: false, waves: [{ enemy: 'dot', stake: 2, upgrade: 'heal' }, { enemy: 'needle', stake: 0, upgrade: null }] }, every),
     soloTrace(tuning, {

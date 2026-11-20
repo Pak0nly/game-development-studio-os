@@ -148,7 +148,7 @@ test('stake: a wave pays its staked budget and never more; enemies get faster, h
     speeds.push(e.topSpeed); dmg.push(e.damageMult);
     assert.equal(e.topSpeed, e.fig.stats.topSpeed * (so.enemySpeedMult * so.stakeSpeedMult[s]));
     assert.equal(e.damageMult, so.enemyDamageMult * so.stakeDamageMult[s]);
-    assert.equal(e.hp, so.enemyArmourMult * e.fig.stats.armour * soloWaveArmourScale(T, 0, s, 13));
+    assert.equal(e.hp, (so.enemyArmourPerInk * 13 + so.enemyArmourMult * e.fig.stats.armour) * soloWaveArmourScale(T, 0, s, 13));
     assert.equal(e.maxHp, e.hp);
     assert.equal(run.stakeIndex, s);
     assert.equal(run.dropValue, soloDropValue(T, 0, s, 13));
@@ -167,7 +167,7 @@ test('I6: a heavy drawing without core cells is neither fragile nor overpaid as 
   const spiral = buildFigure(archetype('spiral').cells, W, H, T, 'figure');
   const splinter = buildFigure(archetype('splinter').cells, W, H, T, 'figure');
   assert.equal(spiral.stats.C, 0);
-  assert.ok(soloEnemyArmour(T, spiral, 1) > 1.5 * soloEnemyArmour(T, splinter, 1), 'enemy armour grows with size');
+  assert.ok(soloEnemyArmour(T, spiral, 1) > 4 * soloEnemyArmour(T, splinter, 1), 'enemy armour grows with size');
   for (let s = 0; s < 3; s++) {
     assert.equal(soloCopies(T, 0, s, spiral.stats.N), 1);
     assert.equal(soloDropValue(T, 0, s, spiral.stats.N), so.waveBudgets[0] * so.stakes[s], 'one copy pays the staked budget, not its own ink');
@@ -188,7 +188,7 @@ test('I6: a heavy drawing without core cells is neither fragile nor overpaid as 
 test('enemy copies: armour follows the drawing, the boss keeps full armour', () => {
   const thin = buildFigure(archetype('splinter').cells, W, H, T, 'figure');
   const solid = buildFigure(archetype('block').cells, W, H, T, 'figure');
-  assert.equal(soloEnemyArmour(T, thin, 1), T.solo.enemyArmourMult * thin.stats.armour);
+  assert.equal(soloEnemyArmour(T, thin, 1), T.solo.enemyArmourPerInk * thin.stats.N + T.solo.enemyArmourMult * thin.stats.armour);
   assert.ok(soloEnemyArmour(T, solid, 1) > 3 * soloEnemyArmour(T, thin, 1));
   const run = newRun(14);
   for (const n of ['dot', 'cross', 'ring', 'star', 'block']) run.enemyDrawings.push(extractBody(archetype(n).cells, W, H).body);

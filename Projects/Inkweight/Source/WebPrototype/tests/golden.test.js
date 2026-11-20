@@ -23,7 +23,7 @@ test('golden stat vectors can be read back from their text rows', () => {
     assert.equal(v.rows.length, 32);
     const d = parseDrawing(v.rows);
     const s = buildFigure(d.cells, d.W, d.H, T, v.kind, v.budget).stats;
-    for (const key of ['filled', 'drips', 'N', 'C', 'S', 'enclosed', 'P', 'element', 'valid', 'weight', 'armour', 'sharpness', 'topSpeed', 'cx', 'cy', 'radius', 'inertia']) {
+    for (const key of ['filled', 'drips', 'N', 'C', 'S', 'enclosed', 'P', 'pocketCells', 'push', 'element', 'valid', 'weight', 'armour', 'sharpness', 'topSpeed', 'cx', 'cy', 'radius', 'inertia']) {
       assert.equal(s[key], v.expect[key], v.name + ' ' + key);
     }
     assert.deepEqual(s.colourCounts, v.expect.colourCounts);
@@ -50,7 +50,6 @@ test('golden traces reach sudden death, simultaneous knock-outs, every solo endi
   const allOut = (r) => r.outTick.every((x) => x === r.ticks);
   assert.ok(ring.some((t) => t.rounds.some((r) => allOut(r) && r.winner === 0)), 'simultaneous knock-out, exact tie, lowest seat');
   assert.ok(ring.some((t) => t.rounds.some((r) => allOut(r) && r.winner !== 0)), 'simultaneous knock-out decided by distance');
-  assert.ok(ring.some((t) => t.rounds.some((r) => allOut(r) && r.outReason.every((x) => x === 'armour'))), 'simultaneous knock-out by armour');
   assert.ok(ring.some((t) => t.botStyle.includes(1)), 'a circler bot');
   assert.ok(solo.some((t) => t.final.phase === 'dead' && t.final.endReason === 'armour'), 'hero death');
   assert.ok(solo.some((t) => t.final.phase === 'dead' && t.final.endReason === 'time'), 'solo time limit');

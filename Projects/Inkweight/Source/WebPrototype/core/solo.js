@@ -117,10 +117,12 @@ export function soloWaveArmourScale(tuning, waveIndex, stakeIndex, N) {
   return scale;
 }
 
-// Armour of one enemy copy: enemyArmourMult times the armour of the drawing,
-// times the wave scale (1 for boss escorts).
+// Armour of one enemy copy: enemyArmourPerInk for every body cell plus
+// enemyArmourMult times the armour of the drawing, times the wave scale (1
+// for boss escorts). Size counts directly, so a big drawing is never fragile.
 export function soloEnemyArmour(tuning, fig, scale) {
-  return tuning.solo.enemyArmourMult * fig.stats.armour * scale;
+  const so = tuning.solo;
+  return (so.enemyArmourPerInk * fig.stats.N + so.enemyArmourMult * fig.stats.armour) * scale;
 }
 
 // isBoss: the boss keeps its full armour times bossArmourMult.

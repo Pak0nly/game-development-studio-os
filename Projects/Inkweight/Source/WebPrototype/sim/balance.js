@@ -333,7 +333,7 @@ export function reportMarkdown(rep, solo, tuning, label) {
   L.push('- Spread of the duel win rates round 50 % (root mean square): ' + pct(v.duelSpread) + ' points.');
   L.push('- Archetypes at or above 50 %: ' + v.viable.join(', ') + '; shape families among them: ' + v.viableShapeFamilies.join(', ') + ' (target: at least three clearly different shapes): ' + (v.threeDifferentShapes ? 'MET' : 'NOT MET') + '.');
   L.push('- Highest free-for-all win rate: ' + v.maxFfaName + ' with ' + pct(v.maxFfaWinRate) + ' % (even would be 25 %).');
-  L.push('- Light shapes (at most ' + LIGHT_MAX_N + ' cells: ' + v.lightNames.join(', ') + ') in four-figure rounds: average ' + pct(v.lightFfaAverage) + ' %; at or above 12.5 % (half of even): ' + (v.lightAtHalfEven.length ? v.lightAtHalfEven.join(', ') : 'none') + '. Worker\'s own yardstick "not hopeless" (average at least 12.5 % and at least two light shapes at 12.5 %): ' + (v.lightNotHopeless ? 'MET' : 'NOT MET') + '.');
+  L.push('- Light shapes (at most ' + LIGHT_MAX_N + ' cells: ' + v.lightNames.join(', ') + ') in four-figure rounds: average ' + pct(v.lightFfaAverage) + ' %; at or above 12.5 % (half of even): ' + (v.lightAtHalfEven.length ? v.lightAtHalfEven.join(', ') : 'none') + '. Worker\'s own yardstick (average at least 12.5 % and at least two light shapes at 12.5 %): ' + (v.lightNotHopeless ? 'reached, which is only "partly" against the order\'s wording "not hopeless"; see the rusher column' : 'not reached') + '.');
   L.push('');
   if (solo) {
     const sum = soloSummary(solo);
