@@ -41,6 +41,10 @@ namespace Inkweight.Core
         public bool Alive;
         public double TopSpeed, DamageMult;
         public double DashTicks, DashCd, DashDx, DashDy;
+        // steering direction of the running tick (set by the control step,
+        // used by the sub-steps; not state between ticks, not hashed)
+        public bool Turning;
+        public double TurnDx, TurnDy;
     }
 
     public struct InkInput
@@ -53,6 +57,7 @@ namespace Inkweight.Core
     public struct InkEvent
     {
         public const string Hit = "hit";
+        public const string Ram = "ram";
         public const string Out = "out";
         public const string Throw = "throw";
         public const string ShotHit = "shotHit";
@@ -72,9 +77,10 @@ namespace Inkweight.Core
         public double[] Cd; // Cd[i * n + j] = ticks until body i may damage body j again
         public List<InkEvent> Events = new List<InkEvent>();
         public double WallRadius;
+        public int SubSteps = 1; // sub-steps of the last tick (not hashed)
 
         // scratch result of the cell scan of one pair
-        internal double ScanSx, ScanSy, ScanMaxDepth;
+        internal double ScanSx, ScanSy, ScanMaxDepth, ScanDeepX, ScanDeepY, NormalX, NormalY;
         internal int ScanHits;
         internal bool ScanPSharp, ScanQSharp;
     }
@@ -104,7 +110,7 @@ namespace Inkweight.Core
                     ly.Add(y + 0.5 - stats.Cy);
                     colour.Add(v);
                     int nb = InkDrawing.CountNeighbours(body, W, H, x, y);
-                    sharp.Add(8 - nb >= tuning.SharpMinEmptyNeighbours);
+                    sharp.Add(InkDrawing.IsSharpCell(body, W, H, x, y));
                     if (nb < 8) boundary.Add(k);
                 }
             }
@@ -122,7 +128,7 @@ namespace Inkweight.Core
             f.Sharp = sharp.ToArray(); f.Colour = colour.ToArray();
             f.Boundary = boundary.ToArray(); f.Grid = grid;
             f.Radius = stats.Radius;
-            f.Mass = dN;
+            f.Mass = stats.Push;
             f.AccelK = accelK;
             f.TurnRate = turnRate;
             f.TurnCos = (1 - t * t) / (1 + t * t);
@@ -154,7 +160,8 @@ namespace Inkweight.Core
         }
 
         // One fixed tick. inputs[i] is the input of body i (missing = idle).
-        // Order: 1 control (index order), 2 integrate, 3 pairs (i < j, index
+        // Order: 1 control (index order), 2 hit cooldowns, 3 sub-steps (each
+        // one: turn and integrate every body, then pairs i < j in index
         // order), 4 wall. Elimination rules belong to the mode classes.
         public static void StepWorld(InkWorld world, InkInput[] inputs, InkTuning tuning)
         {
@@ -180,8 +187,11 @@ namespace Inkweight.Core
                     dx = mx / len;
                     dy = my / len;
                     if (len2 > 1) { mx = dx; my = dy; }
-                    TurnToward(b, dx, dy);
                 }
+                // the turn itself happens inside the sub-steps
+                b.Turning = len2 > 0 && (b.Fx != dx || b.Fy != dy);
+                b.TurnDx = dx;
+                b.TurnDy = dy;
                 if (b.DashCd > 0) b.DashCd--;
                 if (inp.Dash && b.DashCd == 0 && b.DashTicks == 0)
                 {
@@ -212,29 +222,57 @@ namespace Inkweight.Core
                 b.Vy += ay;
             }
 
-            // 2. integrate
+            // 2. hit cooldowns, once per tick
+            double[] cd = world.Cd;
+            for (int i = 0; i < n * n; i++) if (cd[i] > 0) cd[i]--;
+
+            // 3. sub-steps
+            double maxSpeed = 0;
             for (int i = 0; i < n; i++)
             {
                 InkBody b = bodies[i];
                 if (!b.Alive) continue;
-                double sx = b.Vx * dt;
-                double sy = b.Vy * dt;
-                b.X += sx;
-                b.Y += sy;
-            }
-
-            // 3. pairs
-            double[] cd = world.Cd;
-            for (int i = 0; i < n * n; i++) if (cd[i] > 0) cd[i]--;
-            for (int i = 0; i < n; i++)
-            {
-                InkBody a = bodies[i];
-                if (!a.Alive) continue;
-                for (int j = i + 1; j < n; j++)
+                double sp = Math.Sqrt(b.Vx * b.Vx + b.Vy * b.Vy);
+                if (b.Turning)
                 {
-                    InkBody b = bodies[j];
+                    double tip = b.Fig.Radius * b.Fig.TurnRate;
+                    sp += tip;
+                }
+                if (sp > maxSpeed) maxSpeed = sp;
+            }
+            double subD = Math.Floor(maxSpeed * dt / tuning.MaxStepCells) + 1;
+            if (subD > tuning.MaxSubSteps) subD = tuning.MaxSubSteps;
+            double h = dt / subD;
+            int sub = (int)subD;
+            world.SubSteps = sub;
+            for (int s = 0; s < sub; s++)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    InkBody b = bodies[i];
                     if (!b.Alive) continue;
-                    CollidePair(world, i, j, a, b, tuning);
+                    if (b.Turning)
+                    {
+                        // one part of this tick's turn step: half-angle tangent t / sub
+                        double t = b.Fig.TurnRate / (2 * tuning.TickRate * subD);
+                        double tt = t * t;
+                        TurnToward(b, b.TurnDx, b.TurnDy, (1 - tt) / (1 + tt), (2 * t) / (1 + tt));
+                    }
+                    double sx = b.Vx * h;
+                    double sy = b.Vy * h;
+                    b.X += sx;
+                    b.Y += sy;
+                }
+                for (int i = 0; i < n; i++)
+                {
+                    InkBody a = bodies[i];
+                    if (!a.Alive) continue;
+                    for (int j = i + 1; j < n; j++)
+                    {
+                        InkBody b = bodies[j];
+                        if (!b.Alive) continue;
+                        CollidePair(world, i, j, a, b, tuning);
+                    }
                 }
             }
 
@@ -268,15 +306,14 @@ namespace Inkweight.Core
         }
 
         // Rotate the front vector toward the unit direction (dx, dy) by at most
-        // one turn step, then renormalise.
-        private static void TurnToward(InkBody b, double dx, double dy)
+        // the angle with cosine turnCos and sine turnSin, then renormalise.
+        private static void TurnToward(InkBody b, double dx, double dy, double turnCos, double turnSin)
         {
-            InkFigure fig = b.Fig;
             double dot = b.Fx * dx + b.Fy * dy;
-            if (dot >= fig.TurnCos) { b.Fx = dx; b.Fy = dy; return; }
+            if (dot >= turnCos) { b.Fx = dx; b.Fy = dy; return; }
             double cross = b.Fx * dy - b.Fy * dx;
-            double cs = fig.TurnCos;
-            double sn = cross >= 0 ? fig.TurnSin : -fig.TurnSin;
+            double cs = turnCos;
+            double sn = cross >= 0 ? turnSin : -turnSin;
             double nx = b.Fx * cs - b.Fy * sn;
             double ny = b.Fx * sn + b.Fy * cs;
             double len = Math.Sqrt(nx * nx + ny * ny);
@@ -331,6 +368,8 @@ namespace Inkweight.Core
                         if (pf.Sharp[k]) { if (sign > 0) scan.ScanPSharp = true; else scan.ScanQSharp = true; }
                         if (qf.Sharp[m]) { if (sign > 0) scan.ScanQSharp = true; else scan.ScanPSharp = true; }
                         double depth = 1;
+                        double wnx = 0;
+                        double wny = 0;
                         if (d2 > 0)
                         {
                             double d = Math.Sqrt(d2);
@@ -338,15 +377,58 @@ namespace Inkweight.Core
                             // normal q -> p in q-local, weighted by depth, rotated to the world
                             double nx = ex / d * depth;
                             double ny = ey / d * depth;
-                            double ax = sign * (qc * nx - qs * ny);
-                            double ay = sign * (qs * nx + qc * ny);
-                            scan.ScanSx += ax;
-                            scan.ScanSy += ay;
+                            wnx = sign * (qc * nx - qs * ny);
+                            wny = sign * (qs * nx + qc * ny);
+                            scan.ScanSx += wnx;
+                            scan.ScanSy += wny;
                         }
-                        if (depth > scan.ScanMaxDepth) scan.ScanMaxDepth = depth;
+                        // the deepest contact keeps its own (depth-weighted) normal
+                        if (depth > scan.ScanMaxDepth) { scan.ScanMaxDepth = depth; scan.ScanDeepX = wnx; scan.ScanDeepY = wny; }
                     }
                 }
             }
+        }
+
+        // Damage of one touch before multipliers: blunt, or with a sharp cell
+        // in the contact the sharpness (never less than blunt) plus the
+        // armour cut (share sharpArmourCut of the victim's full armour).
+        private static double TouchDamage(InkTuning tuning, InkBody body, bool sharp, InkBody victim)
+        {
+            double blunt = tuning.BluntDamage;
+            if (!sharp) return blunt;
+            double sh = body.Fig.Stats.Sharpness;
+            double cut = tuning.SharpArmourCut * victim.MaxHp;
+            return (sh > blunt ? sh : blunt) + cut;
+        }
+
+        // Scan the pair (a's boundary against b, then b's against a).
+        private static void ScanPair(InkWorld world, InkBody a, InkBody b)
+        {
+            world.ScanSx = 0; world.ScanSy = 0; world.ScanMaxDepth = 0; world.ScanDeepX = 0; world.ScanDeepY = 0;
+            world.ScanHits = 0; world.ScanPSharp = false; world.ScanQSharp = false;
+            ScanCells(world, a, b, 1);   // a's boundary against b's cells
+            ScanCells(world, b, a, -1);  // b's boundary against a's cells; flags are swapped back by sign
+        }
+
+        // Unit contact normal of the last scan; it pushes a away from b.
+        // Summed contact vectors; when they cancel, the deepest contact's own
+        // normal; then centre a minus centre b; then (1, 0).
+        private static void ContactNormal(InkWorld world, InkTuning tuning, InkBody a, InkBody b)
+        {
+            double nx = world.ScanSx;
+            double ny = world.ScanSy;
+            double l2 = nx * nx + ny * ny;
+            double lim = tuning.DeepNormalShare * world.ScanMaxDepth;
+            if (l2 < lim * lim)
+            {
+                double dl2 = world.ScanDeepX * world.ScanDeepX + world.ScanDeepY * world.ScanDeepY;
+                if (dl2 > 1e-12) { nx = world.ScanDeepX; ny = world.ScanDeepY; l2 = dl2; }
+            }
+            if (l2 < 1e-12) { nx = a.X - b.X; ny = a.Y - b.Y; l2 = nx * nx + ny * ny; }
+            if (l2 < 1e-12) { nx = 1; ny = 0; l2 = 1; }
+            double l = Math.Sqrt(l2);
+            world.NormalX = nx / l;
+            world.NormalY = ny / l;
         }
 
         private static void CollidePair(InkWorld world, int i, int j, InkBody a, InkBody b, InkTuning tuning)
@@ -355,23 +437,13 @@ namespace Inkweight.Core
             double ry = a.Y - b.Y;
             double reach = a.Fig.Radius + b.Fig.Radius;
             if (rx * rx + ry * ry >= reach * reach) return;
-            world.ScanSx = 0; world.ScanSy = 0; world.ScanMaxDepth = 0; world.ScanHits = 0;
-            world.ScanPSharp = false; world.ScanQSharp = false;
-            ScanCells(world, a, b, 1);   // a's boundary against b's cells
-            ScanCells(world, b, a, -1);  // b's boundary against a's cells; flags are swapped back by sign
+            ScanPair(world, a, b);
             if (world.ScanHits == 0) return;
             bool aSharp = world.ScanPSharp;
             bool bSharp = world.ScanQSharp;
-
-            // contact normal: pushes a away from b
-            double nx = world.ScanSx;
-            double ny = world.ScanSy;
-            double l2 = nx * nx + ny * ny;
-            if (l2 < 1e-12) { nx = rx; ny = ry; l2 = nx * nx + ny * ny; }
-            if (l2 < 1e-12) { nx = 1; ny = 0; l2 = 1; }
-            double l = Math.Sqrt(l2);
-            nx = nx / l;
-            ny = ny / l;
+            ContactNormal(world, tuning, a, b);
+            double nx = world.NormalX;
+            double ny = world.NormalY;
 
             double invA = 1 / a.Fig.Mass;
             double invB = 1 / b.Fig.Mass;
@@ -385,10 +457,30 @@ namespace Inkweight.Core
             a.Y += pay;
             b.X -= pbx;
             b.Y -= pby;
+            // A contact that is still deep after the push is scanned and
+            // pushed again, positions only. Velocity, damage and the sharp
+            // flags come from the first scan.
+            for (int pass = 0; pass < tuning.ExtraSeparationPasses; pass++)
+            {
+                ScanPair(world, a, b);
+                if (world.ScanHits == 0 || world.ScanMaxDepth <= tuning.DeepContactDepth) break;
+                ContactNormal(world, tuning, a, b);
+                double dd = world.ScanMaxDepth;
+                double qax = world.NormalX * dd * invA / invSum;
+                double qay = world.NormalY * dd * invA / invSum;
+                double qbx = world.NormalX * dd * invB / invSum;
+                double qby = world.NormalY * dd * invB / invSum;
+                a.X += qax;
+                a.Y += qay;
+                b.X -= qbx;
+                b.Y -= qby;
+            }
             double rel = (a.Vx - b.Vx) * nx + (a.Vy - b.Vy) * ny;
+            bool dashing = a.DashTicks > 0 || b.DashTicks > 0;
             if (rel < 0)
             {
-                double imp = -(1 + tuning.Restitution) * rel / invSum;
+                // a contact that involves a dashing body is a ram: its own bounce factor
+                double imp = -(1 + (dashing ? tuning.DashRestitution : tuning.Restitution)) * rel / invSum;
                 double iax = nx * imp * invA;
                 double iay = ny * imp * invA;
                 double ibx = nx * imp * invB;
@@ -398,13 +490,31 @@ namespace Inkweight.Core
                 b.Vx -= ibx;
                 b.Vy -= iby;
             }
+            // a contact ends the dash of both bodies
+            if (dashing)
+            {
+                if (a.DashTicks > 0)
+                {
+                    a.DashTicks = 0;
+                    InkEvent e = new InkEvent();
+                    e.Type = InkEvent.Ram; e.From = i; e.To = j;
+                    world.Events.Add(e);
+                }
+                if (b.DashTicks > 0)
+                {
+                    b.DashTicks = 0;
+                    InkEvent e = new InkEvent();
+                    e.Type = InkEvent.Ram; e.From = j; e.To = i;
+                    world.Events.Add(e);
+                }
+            }
 
             // damage, once per direction per cooldown; never inside one team
             if (a.Team == b.Team) return;
             int n = world.Bodies.Count;
             if (world.Cd[i * n + j] == 0)
             {
-                double dmg = (aSharp ? a.Fig.Stats.Sharpness : tuning.BluntDamage)
+                double dmg = TouchDamage(tuning, a, aSharp, b)
                     * a.DamageMult * InkDrawing.ElementMultiplier(tuning, a.Fig.Stats.Element, b.Fig.Stats.Element);
                 b.Hp -= dmg;
                 world.Cd[i * n + j] = tuning.HitCooldownTicks;
@@ -419,7 +529,7 @@ namespace Inkweight.Core
             }
             if (world.Cd[j * n + i] == 0)
             {
-                double dmg = (bSharp ? b.Fig.Stats.Sharpness : tuning.BluntDamage)
+                double dmg = TouchDamage(tuning, b, bSharp, a)
                     * b.DamageMult * InkDrawing.ElementMultiplier(tuning, b.Fig.Stats.Element, a.Fig.Stats.Element);
                 a.Hp -= dmg;
                 world.Cd[j * n + i] = tuning.HitCooldownTicks;

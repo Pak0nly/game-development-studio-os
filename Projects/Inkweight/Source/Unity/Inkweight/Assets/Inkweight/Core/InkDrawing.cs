@@ -23,6 +23,8 @@ namespace Inkweight.Core
         public string Kind; // "figure" or "weapon"
         public double Budget;
         public int Filled, Drips, N, C, S;
+        public int Enclosed, P;            // enclosed empty cells, pocket cells
+        public double PocketCells, Push;   // pocket cells that count, push weight
         public int[] ColourCounts; // black, ember, tide, moss
         public int Element;        // 0 neutral or 2/3/4
         public bool BigEnough, WithinBudget, Valid;
@@ -147,6 +149,77 @@ namespace Inkweight.Core
             return n;
         }
 
+        // Sharp cell test (rules version 2): a body cell is sharp when it is
+        // not part of any completely filled 2 x 2 square of body cells.
+        public static bool IsSharpCell(int[] body, int W, int H, int x, int y)
+        {
+            for (int oy = -1; oy <= 0; oy++)
+            {
+                int y0 = y + oy;
+                if (y0 < 0 || y0 + 1 >= H) continue;
+                for (int ox = -1; ox <= 0; ox++)
+                {
+                    int x0 = x + ox;
+                    if (x0 < 0 || x0 + 1 >= W) continue;
+                    int i = y0 * W + x0;
+                    if (body[i] != 0 && body[i + 1] != 0 && body[i + W] != 0 && body[i + W + 1] != 0) return false;
+                }
+            }
+            return true;
+        }
+
+        // Enclosed space of a body: empty cells that cannot reach the canvas
+        // border through non-body cells (8 directions). A pocket cell is an
+        // enclosed cell with no body cell among its 8 neighbours.
+        public static void CountEnclosed(int[] body, int W, int H, out int enclosed, out int pockets)
+        {
+            int total = W * H;
+            bool[] open = new bool[total];
+            int[] stack = new int[total];
+            int sp = 0;
+            for (int y = 0; y < H; y++)
+            {
+                for (int x = 0; x < W; x++)
+                {
+                    if (x != 0 && y != 0 && x != W - 1 && y != H - 1) continue;
+                    int i = y * W + x;
+                    if (body[i] == 0) { open[i] = true; stack[sp++] = i; }
+                }
+            }
+            while (sp > 0)
+            {
+                int k = stack[--sp];
+                int x = k % W;
+                int y = (k - x) / W;
+                for (int oy = -1; oy <= 1; oy++)
+                {
+                    int yy = y + oy;
+                    if (yy < 0 || yy >= H) continue;
+                    for (int ox = -1; ox <= 1; ox++)
+                    {
+                        int xx = x + ox;
+                        if (xx < 0 || xx >= W) continue;
+                        int m = yy * W + xx;
+                        if (body[m] != 0 || open[m]) continue;
+                        open[m] = true;
+                        stack[sp++] = m;
+                    }
+                }
+            }
+            enclosed = 0;
+            pockets = 0;
+            for (int y = 0; y < H; y++)
+            {
+                for (int x = 0; x < W; x++)
+                {
+                    int i = y * W + x;
+                    if (body[i] != 0 || open[i]) continue;
+                    enclosed++;
+                    if (CountNeighbours(body, W, H, x, y) == 0) pockets++;
+                }
+            }
+        }
+
         // Damage multiplier of an attacker element against a defender element.
         public static double ElementMultiplier(InkTuning tuning, int attacker, int defender)
         {
@@ -182,7 +255,7 @@ namespace Inkweight.Core
                     sumY += y;
                     int nb = CountNeighbours(body, W, H, x, y);
                     if (nb == 8) C++;
-                    if (8 - nb >= tuning.SharpMinEmptyNeighbours) S++;
+                    if (IsSharpCell(body, W, H, x, y)) S++;
                 }
             }
             // centroid of cell centres
@@ -233,9 +306,17 @@ namespace Inkweight.Core
             double dN = N;
             double dS = S;
             double dC = C;
-            s.Armour = tuning.ArmourBase + tuning.ArmourPerCore * dC + tuning.ArmourPerCell * dN;
-            s.Sharpness = tuning.SharpBase + tuning.SharpPerSharpCell * dS
-                + (N > 0 ? tuning.SharpPerSharpShare * dS / dN + tuning.SharpPerSharpShareSquared * (dS / dN) * (dS / dN) : 0);
+            int enclosed, pockets;
+            CountEnclosed(body, W, H, out enclosed, out pockets);
+            double pocketCells = pockets;
+            if (pocketCells > tuning.PocketCapPerCell * (dN - dS)) pocketCells = tuning.PocketCapPerCell * (dN - dS);
+            s.Enclosed = enclosed;
+            s.P = pockets;
+            s.PocketCells = pocketCells;
+            s.Push = dN + tuning.PushPerPocket * pocketCells;
+            s.Armour = tuning.ArmourBase + tuning.ArmourPerCore * dC + tuning.ArmourPerCell * dN + tuning.ArmourPerPocket * pocketCells;
+            s.Sharpness = tuning.SharpBase + (N > 0 ? tuning.SharpMax * (dS * dS) / (dS * dS + tuning.SharpHalfCells * tuning.SharpHalfCells)
+                + tuning.SharpPurity * (dS / dN) * (dS / dN) / (1 + dN / tuning.SharpPurityWeightRef) : 0);
             s.TopSpeed = tuning.SpeedBase / (1 + dN / tuning.SpeedWeightRef);
             s.Cx = cx; s.Cy = cy; s.Radius = radius; s.Inertia = inertia;
             return s;

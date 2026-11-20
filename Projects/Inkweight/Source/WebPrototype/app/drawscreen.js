@@ -3,7 +3,7 @@
 
 import * as core from '../core/index.js';
 import { tuning, W, H } from './tuning.js';
-import { $, el, onPress, showScreen, onLeave, colours, hash3, reducedMotion, fitCanvas, ELEMENT_NAMES, num } from './ui.js';
+import { $, el, onPress, showScreen, onLeave, colours, hash3, reducedMotion, fitCanvas, ELEMENT_NAMES, num, inputBlocked } from './ui.js';
 import { sfx } from './audio.js';
 import { makeSprite, drawSprite, wobbleFrame, thumbCanvas } from './sprites.js';
 import { galleryAll, decode, hintSeen, markHintSeen } from './gallery.js';
@@ -16,28 +16,62 @@ let backArmed = 0;
 const canvas = $('drawCanvas');
 const preview = $('drawPreview');
 
+// Marks per cell for the board: 0 empty, 1 body, 2 core, 3 blade, 4 drip,
+// 5 pocket (enclosed empty cell that touches no ink). Blade cells come from
+// the core's own rule (isSharpCell); the pocket cells follow countEnclosed.
+const openScratch = new Array(W * H);
 function analyse() {
   const s = S;
   s.stats = core.computeStats(s.cells, W, H, tuning, s.kind, s.budget);
   const body = core.extractBody(s.cells, W, H).body;
+  // open space: every empty cell reachable from the canvas border (8 directions)
+  const open = openScratch;
+  const stack = [];
+  for (let i = 0; i < W * H; i++) open[i] = false;
+  for (let y = 0; y < H; y++) {
+    for (let x = 0; x < W; x++) {
+      if (x !== 0 && y !== 0 && x !== W - 1 && y !== H - 1) continue;
+      const i = y * W + x;
+      if (body[i] === 0) { open[i] = true; stack.push(i); }
+    }
+  }
+  while (stack.length > 0) {
+    const k = stack.pop();
+    const x = k % W;
+    const y = (k - x) / W;
+    for (let oy = -1; oy <= 1; oy++) {
+      const yy = y + oy;
+      if (yy < 0 || yy >= H) continue;
+      for (let ox = -1; ox <= 1; ox++) {
+        const xx = x + ox;
+        if (xx < 0 || xx >= W) continue;
+        const j = yy * W + xx;
+        if (body[j] === 0 && !open[j]) { open[j] = true; stack.push(j); }
+      }
+    }
+  }
+  let blades = 0;
+  let pockets = 0;
   for (let y = 0; y < H; y++) {
     for (let x = 0; x < W; x++) {
       const i = y * W + x;
-      let m = 0; // 0 empty, 1 body, 2 core, 3 sharp, 4 drip
+      let m = 0;
       if (s.cells[i] !== 0) {
         if (body[i] === 0) m = 4;
-        else {
-          const nb = core.countNeighbours(body, W, H, x, y);
-          m = nb === 8 ? 2 : (8 - nb >= tuning.stats.sharpMinEmptyNeighbours ? 3 : 1);
-        }
-      }
+        else if (core.isSharpCell(body, W, H, x, y)) { m = 3; blades++; }
+        else m = core.countNeighbours(body, W, H, x, y) === 8 ? 2 : 1;
+      } else if (!open[i] && core.countNeighbours(body, W, H, x, y) === 0) { m = 5; pockets++; }
       s.mark[i] = m;
     }
   }
+  s.bladeMarks = blades;
+  s.pocketMarks = pockets;
   s.spriteDirty = true;
   updatePanel();
   if (s.onStats) s.onStats(s.stats);
 }
+
+function setWhy(id, text) { const n = $(id); if (n.textContent !== text) n.textContent = text; }
 
 function setVal(id, text) {
   const n = $(id);
@@ -61,14 +95,29 @@ function updatePanel() {
   setVal('stArmour', has ? String(Math.round(st.armour)) : '0');
   setVal('stSharp', has ? num(st.sharpness, 1) : '0');
   setVal('stSpeed', has ? num(st.topSpeed, 0) : '0');
-  // what rules version 1 really do: sharpness grows with the share of sharp
-  // cells (straight thin lines and tips) in the whole figure
-  $('stSharpWhy').textContent = has ? 'Anteil gerader dünner Linien: ' + Math.round(st.S * 100 / st.N) + ' %' : 'wächst mit dem Anteil dünner Linien';
   const tst = tuning.stats;
+  const minCells = s.kind === 'weapon' ? tuning.ink.weaponMinBodyCells : tuning.ink.minBodyCells;
+  // Every line below says what rules version 2 really do with this drawing.
+  // Weight: ink cells; the push weight adds a tenth of the counting pocket cells.
+  let wWhy = 'viel Tinte schiebt hart, ist aber träge';
+  if (has) {
+    const plus = st.push - st.N;
+    if (st.pocketCells > 0) wWhy = 'Schub ' + num(st.push, 1) + ': der Hohlraum schiebt mit (+' + num(plus, 1) + ')';
+    else if (st.P > 0) wWhy = 'Hohlraum zählt erst mit dicker Wand (2 Kästchen)';
+    else if (st.enclosed > 0) wWhy = 'Hohlraum zu klein: zählt erst ab 3 × 3 Kästchen';
+    else wWhy = 'schiebt, ist träge · dicke Hülle schiebt härter';
+  }
+  setWhy('stWeightWhy', wWhy);
+  setWhy('stArmourWhy', has ? 'volle Fläche schützt · Kern-Kästchen (Punkt): ' + st.C : 'volle Flächen halten mehr aus');
+  const cut = num(tst.sharpArmourCut * 100, 1);
+  setWhy('stSharpWhy', !has ? 'dünne Striche sind Klingen, auch schräge'
+    : (st.S > 0 ? st.S + ' Klingen-Kästchen · Schnitt nimmt auch ' + cut + ' % Panzer' : 'keine Klinge: 1 Kästchen dünne Striche schneiden'));
+  setWhy('stSpeedWhy', 'Kästchen pro Sekunde · wenig Tinte ist flink');
+  // bar ends are the real ranges of valid drawings with this much ink
   setBar('stWeightBar', st.N / s.budget);
-  setBar('stArmourBar', has ? st.armour / (tst.armourBase + tst.armourPerCore * s.budget * 0.7) : 0);
-  setBar('stSharpBar', has ? (st.sharpness - tst.sharpBase) / (tst.sharpPerSharpShareSquared + tst.sharpPerSharpShare + 0.001) : 0);
-  setBar('stSpeedBar', has ? st.topSpeed / tst.speedBase : 0);
+  setBar('stArmourBar', has ? st.armour / (tst.armourBase + 1.1 * s.budget) : 0);
+  setBar('stSharpBar', has ? (st.sharpness - tst.sharpBase) / (tst.sharpMax + tst.sharpPurity / (1 + minCells / tst.sharpPurityWeightRef)) : 0);
+  setBar('stSpeedBar', has ? st.topSpeed / (tst.speedBase / (1 + minCells / tst.speedWeightRef)) : 0);
   const e = st.element;
   const ev = $('stElement');
   ev.className = 's-val wide' + (e ? ' e' + e : '');
@@ -89,14 +138,14 @@ function updatePanel() {
 
   const msg = $('drawMsg');
   const min = s.kind === 'weapon' ? tuning.ink.weaponMinBodyCells : tuning.ink.minBodyCells;
-  let text = 'Strich = Klinge · Punkt = Panzerkern · blass = tropft ab';
+  let text = 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum · blass tropft ab';
   let warn = false;
   if (st.filled === 0) text = s.kind === 'weapon' ? 'Zeichne die Wurfwaffe. Leicht fliegt schnell, dünn schneidet.' : text;
   else if (!st.bigEnough) { text = 'Noch zu klein: mindestens ' + min + ' Kästchen am Stück.'; warn = true; }
   else if (st.drips > 0) { text = st.drips + ' Kästchen hängen nicht dran und tropfen ab.'; warn = true; }
   else if (left <= 0) { text = 'Tinte ist alle: radier etwas weg.'; warn = true; }
   if (s.lockNote && st.filled === 0) text = s.lockNote;
-  if (s.askingBack) { text = 'Noch einmal tippen, dann ist die Zeichnung weg.'; warn = true; }
+  if (s.askingBack) { text = s.backConfirm ? s.endMsg : 'Noch einmal tippen, dann ist die Zeichnung weg.'; warn = true; }
   msg.textContent = text;
   msg.classList.toggle('warn', warn);
   $('drawDone').disabled = !st.valid;
@@ -161,7 +210,9 @@ function cellAt(ev) {
 }
 
 // The window size a stroke was started in (a rotated phone changes it).
-function canvasPlace() { return [window.innerWidth, window.innerHeight]; }
+// Only the width and the orientation count: browser bars that slide in or out
+// change the height alone and must not cut a stroke.
+function canvasPlace() { return [window.innerWidth, window.innerWidth > window.innerHeight ? 1 : 0]; }
 
 function strokeTo(ev) {
   const s = S;
@@ -193,10 +244,7 @@ function strokeTo(ev) {
   }
 }
 
-canvas.addEventListener('pointerdown', (ev) => {
-  if (!S || S.closed) return;
-  if (ev.pointerType === 'mouse' && ev.button !== 0) return;
-  ev.preventDefault();
+function beginStroke(ev) {
   const s = S;
   if (!$('drawHint').hidden) { $('drawHint').hidden = true; markHintSeen(); }
   if (s.timeLimit > 0 && s.timerStart === 0) s.timerStart = performance.now();
@@ -214,9 +262,25 @@ canvas.addEventListener('pointerdown', (ev) => {
   s.lastX = c[0];
   s.lastY = c[1];
   strokeTo(ev);
+}
+canvas.addEventListener('pointerdown', (ev) => {
+  if (!S || S.closed) return;
+  if (ev.pointerType === 'mouse' && ev.button !== 0) return;
+  ev.preventDefault();
+  beginStroke(ev);
 });
 canvas.addEventListener('pointermove', (ev) => {
-  if (!S || !S.drawing || ev.pointerId !== S.pointerId) return;
+  if (!S || S.closed) return;
+  if (!S.drawing) {
+    // A finger that came down in the short tap block after a screen change
+    // and is still held: it starts painting from here once the block is over.
+    const held = ev.pointerType === 'touch' ? true : (ev.buttons & 1) === 1;
+    if (!held || inputBlocked() || S.endedId === ev.pointerId) return;
+    ev.preventDefault();
+    beginStroke(ev);
+    return;
+  }
+  if (ev.pointerId !== S.pointerId) return;
   ev.preventDefault();
   const list = typeof ev.getCoalescedEvents === 'function' ? ev.getCoalescedEvents() : null;
   if (list && list.length > 1) for (const e of list) strokeTo(e);
@@ -225,6 +289,8 @@ canvas.addEventListener('pointermove', (ev) => {
 function endStroke(ev) {
   if (!S || !S.drawing || (ev && ev.pointerId !== S.pointerId)) return;
   S.drawing = false;
+  // a stroke that was ended by a rotation does not start again under the same finger
+  S.endedId = ev ? -1 : S.pointerId;
   if (!S.strokeChanged) S.undo.pop();
 }
 canvas.addEventListener('pointerup', endStroke);
@@ -305,13 +371,15 @@ $('drawHintOk').addEventListener('click', () => { $('drawHint').hidden = true; m
 
 $('drawBack').addEventListener('click', () => {
   if (!S) return;
-  // unsaved strokes (or a running match) are never thrown away by one tap
   const s = S;
-  const ask = s.dirty || (s.backConfirm && s.filled > 0);
+  // "Ende" screens (Ring drawing, solo enemy): the second tap ends the whole
+  // game or run, and the button says exactly that. Elsewhere only the
+  // drawing is lost, and only unsaved strokes are asked about.
+  const ask = s.backConfirm || s.dirty;
   if (ask && performance.now() - backArmed > 2500) {
     backArmed = performance.now();
     s.askingBack = true;
-    $('drawBack').textContent = s.dirty ? 'Verwerfen?' : 'Sicher?';
+    $('drawBack').textContent = s.backConfirm ? s.endAsk : 'Verwerfen?';
     updatePanel();
     setTimeout(() => {
       if (S !== s) return;
@@ -351,7 +419,12 @@ function layout() {
 if (typeof ResizeObserver === 'function') new ResizeObserver(() => { if (S) layout(); }).observe($('drawBoard'));
 // When the window changes (a phone is rotated) the canvas moves under the
 // finger: the running stroke ends there instead of jumping across the sheet.
-window.addEventListener('resize', () => { if (S) { endStroke(null); layout(); } });
+window.addEventListener('resize', () => {
+  if (!S) return;
+  const p = canvasPlace();
+  if (S.drawing && (p[0] !== S.place[0] || p[1] !== S.place[1])) endStroke(null);
+  layout();
+});
 
 function drawBoard(t) {
   const s = S;
@@ -393,7 +466,7 @@ function drawBoard(t) {
     for (let x = 0; x < W; x++) {
       const i = y * W + x;
       const m = s.mark[i];
-      if (m === 0) continue;
+      if (m === 0 || m === 5) continue;
       g.fillStyle = col.cell[s.cells[i]];
       if (m === 4) {
         // a drip: pale, with a drop falling off
@@ -423,6 +496,16 @@ function drawBoard(t) {
         g.beginPath();
         g.arc((x + 0.5) * c, (y + 0.5) * c, c * 0.14, 0, 6.2832);
         g.fill();
+      } else if (m === 5) {
+        // pocket: a faint ring of ink on the empty paper
+        g.globalAlpha = 0.28;
+        g.strokeStyle = col.ink;
+        g.lineWidth = Math.max(1, c * 0.1);
+        g.beginPath();
+        g.arc((x + 0.5) * c, (y + 0.5) * c, c * 0.2, 0, 6.2832);
+        g.stroke();
+        g.strokeStyle = col.paperLight;
+        g.lineWidth = Math.max(1, c * 0.16);
       } else if (m === 3) {
         g.globalAlpha = 0.85;
         g.beginPath();
@@ -494,7 +577,7 @@ onLeave('scrDraw', () => { if (S) finish(null); });
 
 // opts: { title, sub, kind: 'figure' | 'weapon', budget, allowed: [5 booleans],
 //   timeLimit (seconds, 0 = none), initial (cells), doneLabel, backLabel,
-//   backConfirm, canPick, lockNote, extra(container) -> onStats callback }
+//   backConfirm (the back button ends a game: endAsk, endMsg), canPick, lockNote, extra(container) -> onStats callback }
 // Resolves with { cells, stats, timedOut } or null when the player went back.
 // On time-out with an invalid drawing cells is null.
 export function openDraw(opts) {
@@ -516,7 +599,8 @@ export function openDraw(opts) {
       undo: [], tool: 1, brush: 1,
       stats: null, onStats: null,
       drawing: false, pointerId: -1, lastX: 0, lastY: 0, strokeChanged: false, denied: false, deniedShown: false,
-      outside: false, dirty: false, askingBack: false, place: [0, 0],
+      outside: false, dirty: false, askingBack: false, place: [0, 0], endedId: -1, bladeMarks: 0, pocketMarks: 0,
+      endAsk: opts.endAsk || 'Spiel beenden?', endMsg: opts.endMsg || 'Noch einmal tippen, dann endet das Spiel.',
       timeLimit: opts.timeLimit || 0, timerStart: 0, timerShown: -1,
       sprite: null, fig: null, spriteDirty: true, spriteTime: -1,
       backConfirm: !!opts.backConfirm, backLabel: opts.backLabel || 'Zurück',

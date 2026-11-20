@@ -15,29 +15,33 @@ namespace Inkweight.Core
         // ink
         public double FigureBudget, WeaponBudget, MinBodyCells, WeaponMinBodyCells;
         // stats
-        public double SharpMinEmptyNeighbours, ArmourBase, ArmourPerCore, ArmourPerCell, SharpBase,
-            SharpPerSharpCell, SharpPerSharpShare, SharpPerSharpShareSquared, SpeedBase, SpeedWeightRef, BluntDamage;
+        public double ArmourBase, ArmourPerCore, ArmourPerCell, ArmourPerPocket, PushPerPocket, PocketCapPerCell,
+            SharpBase, SharpMax, SharpHalfCells, SharpPurity, SharpPurityWeightRef, SpeedBase, SpeedWeightRef,
+            BluntDamage, SharpArmourCut;
         // element
         public double MinColouredPercent, StrongMult, WeakMult;
         public double[] Beats;
         // physics
         public double TickRate, HitCooldownTicks, Restitution, AccelBase, AccelWeightRef, TurnBase, TurnInertiaRef,
-            DashSpeedMult, DashTicks, DashCooldownTicks, DashAccel, HitKnockbackPerDamage;
+            DashSpeedMult, DashTicks, DashCooldownTicks, DashAccel, DashRestitution, MaxStepCells, MaxSubSteps,
+            DeepNormalShare, DeepContactDepth, ExtraSeparationPasses, HitKnockbackPerDamage;
         // ring
         public double[] RingStartRadius;
         public double RingEndRadius, ShrinkStartTick, ShrinkEndTick, SuddenDeathTick, SuddenDeathShrinkPerTick,
             StartDistanceFraction, WinsToTakeMatch, CatchUpPercentPerLostRound, CatchUpMaxSteps, DrawTimeSeconds;
         // bots
         public double EdgeMargin, EdgeBlend, InsideBias, DashRange, DashChancePercent, WobbleTicks, WobbleStrength,
-            LightRetreatFraction, RoundaboutDot, RoundaboutStrength;
+            LightRetreatFraction, RoundaboutDot, RoundaboutStrength, CirclerCrowdRange, CirclerStandoff, CirclerBlend,
+            CirclerAttackLeadTicks, CirclerDashGap, CirclerAlignDot;
         // solo
         public double ArenaRadius;
-        public double[] WaveBudgets, Stakes, UpgradeCost;
+        public double[] WaveBudgets, Stakes, StakeDamageMult, StakeSpeedMult, UpgradeCost;
         public double MaxCopies, EnemyInkBudget, EnemySpawnInset, EnemySpeedMult, EnemyArmourMult, EnemyDamageMult,
             EnemyDashRange, EnemyDashChancePercent, ThrowIntervalBaseTicks, ThrowIntervalTicksPerInk, ThrowSpeedBase,
             ThrowSpeedWeightRef, ProjectileLifeTicks, ProjectileRadiusMax, WeaponKnockbackPerInk, DropLifeTicks,
             PickupRange, WaveMaxTicks, UpgradeHeroInk, UpgradeWeaponInk, UpgradeHealPercent, BossArmourMult,
-            BossEscortCopies, BotFleeDistance, BotWallMargin;
+            BossEscortCopies, BotFleeDistance, BotWallMargin, CopyInkOverhead, EnemyArmourPerInk, CopyArmourScaleMin,
+            CopyArmourScaleMax;
 
         public static InkTuning FromJson(string text)
         {
@@ -56,14 +60,18 @@ namespace Inkweight.Core
             t.WeaponMinBodyCells = N(o, "weaponMinBodyCells");
 
             o = InkJson.Get(root, "stats");
-            t.SharpMinEmptyNeighbours = N(o, "sharpMinEmptyNeighbours");
             t.ArmourBase = N(o, "armourBase");
             t.ArmourPerCore = N(o, "armourPerCore");
             t.ArmourPerCell = N(o, "armourPerCell");
             t.SharpBase = N(o, "sharpBase");
-            t.SharpPerSharpCell = N(o, "sharpPerSharpCell");
-            t.SharpPerSharpShare = N(o, "sharpPerSharpShare");
-            t.SharpPerSharpShareSquared = N(o, "sharpPerSharpShareSquared");
+            t.ArmourPerPocket = N(o, "armourPerPocket");
+            t.PushPerPocket = N(o, "pushPerPocket");
+            t.PocketCapPerCell = N(o, "pocketCapPerCell");
+            t.SharpMax = N(o, "sharpMax");
+            t.SharpHalfCells = N(o, "sharpHalfCells");
+            t.SharpPurity = N(o, "sharpPurity");
+            t.SharpPurityWeightRef = N(o, "sharpPurityWeightRef");
+            t.SharpArmourCut = N(o, "sharpArmourCut");
             t.SpeedBase = N(o, "speedBase");
             t.SpeedWeightRef = N(o, "speedWeightRef");
             t.BluntDamage = N(o, "bluntDamage");
@@ -86,6 +94,12 @@ namespace Inkweight.Core
             t.DashTicks = N(o, "dashTicks");
             t.DashCooldownTicks = N(o, "dashCooldownTicks");
             t.DashAccel = N(o, "dashAccel");
+            t.DashRestitution = N(o, "dashRestitution");
+            t.MaxStepCells = N(o, "maxStepCells");
+            t.MaxSubSteps = N(o, "maxSubSteps");
+            t.DeepNormalShare = N(o, "deepNormalShare");
+            t.DeepContactDepth = N(o, "deepContactDepth");
+            t.ExtraSeparationPasses = N(o, "extraSeparationPasses");
             t.HitKnockbackPerDamage = N(o, "hitKnockbackPerDamage");
 
             o = InkJson.Get(root, "ring");
@@ -112,11 +126,23 @@ namespace Inkweight.Core
             t.LightRetreatFraction = N(o, "lightRetreatFraction");
             t.RoundaboutDot = N(o, "roundaboutDot");
             t.RoundaboutStrength = N(o, "roundaboutStrength");
+            t.CirclerCrowdRange = N(o, "circlerCrowdRange");
+            t.CirclerStandoff = N(o, "circlerStandoff");
+            t.CirclerBlend = N(o, "circlerBlend");
+            t.CirclerAttackLeadTicks = N(o, "circlerAttackLeadTicks");
+            t.CirclerDashGap = N(o, "circlerDashGap");
+            t.CirclerAlignDot = N(o, "circlerAlignDot");
 
             o = InkJson.Get(root, "solo");
             t.ArenaRadius = N(o, "arenaRadius");
             t.WaveBudgets = InkJson.NumArray(InkJson.Get(o, "waveBudgets"));
             t.Stakes = InkJson.NumArray(InkJson.Get(o, "stakes"));
+            t.StakeDamageMult = InkJson.NumArray(InkJson.Get(o, "stakeDamageMult"));
+            t.StakeSpeedMult = InkJson.NumArray(InkJson.Get(o, "stakeSpeedMult"));
+            t.CopyInkOverhead = N(o, "copyInkOverhead");
+            t.EnemyArmourPerInk = N(o, "enemyArmourPerInk");
+            t.CopyArmourScaleMin = N(o, "copyArmourScaleMin");
+            t.CopyArmourScaleMax = N(o, "copyArmourScaleMax");
             t.MaxCopies = N(o, "maxCopies");
             t.EnemyInkBudget = N(o, "enemyInkBudget");
             t.EnemySpawnInset = N(o, "enemySpawnInset");

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_INKWEIGHT_CLAUDE",
+  "project_scope": "Inkweight",
+  "work_order_id": "INK-UNITY-V2",
+  "work_order_sha256": "a0d98005848b205004daf61a211f2bca968d82401333b3afc5e9adc1dde4be5f",
+  "manifest_sha256": "709bc5ca2cc472f262bc4beaf3ef433ad1ec9be5b1296d138f73de31eef1ffac",
+  "repository": {
+    "branch": "ccr-808d4c02-yt93ed",
+    "head": "7693f3f01042cbf3cecd1b8c096fa4b5fcf12836"
+  },
+  "project_identity_sha256": "55f6d5cc85ce254d13984da18b8587d6faa0f2c090e11b66644328333b55c569",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Inkweight/Source/Unity",
+      "Artifacts/Inkweight/Evidence/INK-UNITY-V2"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "cf924516ac386888ac6803b61eea40c883b371dee54cc3bda3bc171b76a1c5e3",
+  "baseline_state_sha256": "04d82aa8c552838aac507be2c0cfb4a62e1f4c646aa85fa375545dc405186b61",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "receipt_id": "90786ed30f73b3a56df124202e28c540894a733e4649b776de99d8da6eb8c0b9"
+}

@@ -58,30 +58,50 @@ namespace Inkweight.Core
                 st.Add(b.Hp);
                 st.Add(b.Alive ? 1 : 0);
                 st.Add(b.DashTicks); st.Add(b.DashCd);
+                st.Add(b.DashDx); st.Add(b.DashDy);
             }
         }
 
-        // Ring: tick, ringRadius, bodies, then the bot generator state of every seat.
+        private static void AddCooldowns(ref InkHash st, InkWorld world)
+        {
+            for (int i = 0; i < world.Cd.Length; i++) st.Add(world.Cd[i]);
+        }
+
+        // Ring (layout 2): round, tick, ringRadius, bodies, all hit cooldowns,
+        // then per seat: bot generator state, bot wobble, bot style.
         public static string Ring(InkRingMatch match)
         {
             InkHash st = Create();
+            st.Add(match.Round);
             st.Add(match.Tick);
             st.Add(match.RingRadius);
             AddBodies(ref st, match.World.Bodies);
-            for (int i = 0; i < match.BotRng.Length; i++) st.Add(match.BotRng[i].S);
+            AddCooldowns(ref st, match.World);
+            for (int i = 0; i < match.SeatCount; i++)
+            {
+                st.Add(match.BotRng[i].S);
+                st.Add(match.BotWobble[i]);
+                st.Add(match.BotStyle[i]);
+            }
             return st.Hex();
         }
 
-        // Solo: tick, bodies, shots (x y life), drops (x y value life), wallet,
-        // score, throwCd, generator state.
+        // Solo (layout 2): wave, tick, bodies, all hit cooldowns, shots (x y
+        // ux uy speed life), drops (x y value life), wallet, score, throwCd,
+        // generator state, then heroBudget, weaponBudget, colours 1..4,
+        // upgradeTaken, copies, stake index, dropValue, heroMaxHp.
         public static string Solo(InkSoloRun run)
         {
             InkHash st = Create();
+            st.Add(run.Wave);
             st.Add(run.Tick);
             AddBodies(ref st, run.World.Bodies);
+            AddCooldowns(ref st, run.World);
             for (int i = 0; i < run.Shots.Count; i++)
             {
-                st.Add(run.Shots[i].X); st.Add(run.Shots[i].Y); st.Add(run.Shots[i].Life);
+                st.Add(run.Shots[i].X); st.Add(run.Shots[i].Y);
+                st.Add(run.Shots[i].Ux); st.Add(run.Shots[i].Uy); st.Add(run.Shots[i].Speed);
+                st.Add(run.Shots[i].Life);
             }
             for (int i = 0; i < run.Drops.Count; i++)
             {
@@ -90,6 +110,11 @@ namespace Inkweight.Core
             }
             st.Add(run.Wallet); st.Add(run.Score); st.Add(run.ThrowCd);
             st.Add(run.Rng.S);
+            st.Add(run.HeroBudget); st.Add(run.WeaponBudget);
+            for (int c = 1; c <= 4; c++) st.Add(run.Colours[c] ? 1 : 0);
+            st.Add(run.UpgradeTaken ? 1 : 0);
+            st.Add(run.Copies); st.Add(run.StakeIndex); st.Add(run.DropValue);
+            st.Add(run.HeroMaxHp);
             return st.Hex();
         }
     }

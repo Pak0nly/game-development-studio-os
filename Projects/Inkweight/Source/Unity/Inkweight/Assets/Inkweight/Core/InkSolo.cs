@@ -47,6 +47,8 @@ namespace Inkweight.Core
         public double ThrowCd;
         public int Copies;
         public double Stake = 1;
+        public int StakeIndex;   // index into the stakes of the running wave (0 for the boss)
+        public double DropValue; // ink of one drop in the running wave; 0 = the enemy's own N (boss fight)
     }
 
     public static class InkSolo
@@ -115,10 +117,11 @@ namespace Inkweight.Core
             return run;
         }
 
-        // Number of enemy copies a design gets in a wave.
+        // Number of enemy copies a design gets in a wave. Every copy costs its
+        // own ink plus the flat fee copyInkOverhead.
         public static int Copies(InkTuning so, int waveIndex, int stakeIndex, int N)
         {
-            double copies = Math.Floor(so.WaveBudgets[waveIndex] * so.Stakes[stakeIndex] / N);
+            double copies = Math.Floor(so.WaveBudgets[waveIndex] * so.Stakes[stakeIndex] / (N + so.CopyInkOverhead));
             if (copies < 1) copies = 1;
             if (copies > so.MaxCopies) copies = so.MaxCopies;
             return (int)copies;
@@ -161,11 +164,46 @@ namespace Inkweight.Core
             run.Phase = PhaseFight;
         }
 
-        private static InkBody SpawnEnemy(InkTuning so, InkSoloRun run, InkFigure fig, double armourMult)
+        // How much of the staked wave budget each copy carries, compared with
+        // what a copy costs, limited to copyArmourScaleMin .. copyArmourScaleMax.
+        public static double WaveArmourScale(InkTuning so, int waveIndex, int stakeIndex, int N)
+        {
+            double copies = Copies(so, waveIndex, stakeIndex, N);
+            double scale = so.WaveBudgets[waveIndex] * so.Stakes[stakeIndex] / (copies * (N + so.CopyInkOverhead));
+            if (scale < so.CopyArmourScaleMin) scale = so.CopyArmourScaleMin;
+            if (scale > so.CopyArmourScaleMax) scale = so.CopyArmourScaleMax;
+            return scale;
+        }
+
+        // Armour of one enemy copy: enemyArmourPerInk for every body cell plus
+        // enemyArmourMult times the armour of the drawing, times the wave
+        // scale (1 for boss escorts).
+        public static double EnemyArmour(InkTuning so, InkFigure fig, double scale)
+        {
+            double dN = fig.Stats.N;
+            double perInk = so.EnemyArmourPerInk * dN;
+            double perArmour = so.EnemyArmourMult * fig.Stats.Armour;
+            return (perInk + perArmour) * scale;
+        }
+
+        // isBoss: the boss keeps its full armour times bossArmourMult.
+        private static InkBody SpawnEnemy(InkTuning so, InkSoloRun run, InkFigure fig, bool isBoss, int stakeIndex, double scale)
         {
             InkVec2 u = RandomUnit(run);
             double d = so.ArenaRadius - so.EnemySpawnInset;
-            return InkPhysics.CreateBody(fig, u.X * d, u.Y * d, -u.X, -u.Y, 1, armourMult, so.EnemySpeedMult, so.EnemyDamageMult);
+            InkBody body = InkPhysics.CreateBody(fig, u.X * d, u.Y * d, -u.X, -u.Y, 1, 1,
+                so.EnemySpeedMult * so.StakeSpeedMult[stakeIndex], so.EnemyDamageMult * so.StakeDamageMult[stakeIndex]);
+            body.Hp = isBoss ? fig.Stats.Armour * so.BossArmourMult : EnemyArmour(so, fig, scale);
+            body.MaxHp = body.Hp;
+            return body;
+        }
+
+        // Ink of one drop in a wave: the staked wave budget divided by the
+        // copies, rounded down.
+        public static double DropValue(InkTuning so, int waveIndex, int stakeIndex, int N)
+        {
+            double copies = Copies(so, waveIndex, stakeIndex, N);
+            return Math.Floor(so.WaveBudgets[waveIndex] * so.Stakes[stakeIndex] / copies);
         }
 
         // Start wave run.Wave (0..4) with the player's enemy drawing and stake index.
@@ -173,14 +211,18 @@ namespace Inkweight.Core
         {
             if (run.Phase != PhasePrepare && run.Phase != PhaseCleared) throw new InvalidOperationException("cannot start a wave now");
             if (run.Wave >= Waves) throw new InvalidOperationException("all waves done, start the boss");
+            if (stakeIndex < 0 || stakeIndex >= tuning.Stakes.Length) throw new ArgumentException("bad stake index");
             InkSoloCheck chk = CheckDrawing(tuning, run, enemyCells, run.W, run.H, KindEnemy);
             if (!chk.Ok) throw new ArgumentException("enemy drawing: " + chk.Reason);
             InkFigure fig = InkPhysics.BuildFigure(enemyCells, run.W, run.H, tuning, InkDrawing.KindFigure, tuning.EnemyInkBudget);
             run.EnemyDrawings.Add(InkDrawing.ExtractBody(enemyCells, run.W, run.H).Body);
             run.Copies = Copies(tuning, run.Wave, stakeIndex, fig.Stats.N);
             run.Stake = tuning.Stakes[stakeIndex];
+            run.StakeIndex = stakeIndex;
+            run.DropValue = DropValue(tuning, run.Wave, stakeIndex, fig.Stats.N);
+            double scale = WaveArmourScale(tuning, run.Wave, stakeIndex, fig.Stats.N);
             List<InkBody> enemies = new List<InkBody>();
-            for (int i = 0; i < run.Copies; i++) enemies.Add(SpawnEnemy(tuning, run, fig, tuning.EnemyArmourMult));
+            for (int i = 0; i < run.Copies; i++) enemies.Add(SpawnEnemy(tuning, run, fig, false, stakeIndex, scale));
             BeginFight(tuning, run, enemies);
         }
 
@@ -204,14 +246,16 @@ namespace Inkweight.Core
             int total = run.W * run.H;
             InkFigure bossFig = InkPhysics.BuildFigure(BossCells(run), run.W, run.H, so, InkDrawing.KindFigure, total);
             List<InkBody> enemies = new List<InkBody>();
-            enemies.Add(SpawnEnemy(so, run, bossFig, so.BossArmourMult));
+            enemies.Add(SpawnEnemy(so, run, bossFig, true, 0, 1));
             for (int w = 0; w < run.EnemyDrawings.Count; w++)
             {
                 InkFigure fig = InkPhysics.BuildFigure(run.EnemyDrawings[w], run.W, run.H, so, InkDrawing.KindFigure, total);
-                for (int c = 0; c < so.BossEscortCopies; c++) enemies.Add(SpawnEnemy(so, run, fig, so.EnemyArmourMult));
+                for (int c = 0; c < so.BossEscortCopies; c++) enemies.Add(SpawnEnemy(so, run, fig, false, 0, 1));
             }
             run.Copies = enemies.Count;
             run.Stake = 1;
+            run.StakeIndex = 0;
+            run.DropValue = 0;
             BeginFight(so, run, enemies);
         }
 
@@ -287,7 +331,7 @@ namespace Inkweight.Core
                 double nearD2 = 0;
                 for (int i = 1; i < n; i++)
                 {
-                    if (!bodies[i].Alive) continue;
+                    if (!bodies[i].Alive || bodies[i].Hp <= 0) continue; // an enemy already at 0 armour is no target
                     double dx = bodies[i].X - hero.X;
                     double dy = bodies[i].Y - hero.Y;
                     double d2 = dx * dx + dy * dy;
@@ -327,7 +371,7 @@ namespace Inkweight.Core
                 for (int i = 1; i < n && hit == -1; i++)
                 {
                     InkBody e = bodies[i];
-                    if (!e.Alive) continue;
+                    if (!e.Alive || e.Hp <= 0) continue; // a shot passes an enemy that is already at 0 armour
                     double dx = shot.X - e.X;
                     double dy = shot.Y - e.Y;
                     double reach = e.Fig.Radius + pr;
@@ -375,7 +419,7 @@ namespace Inkweight.Core
                 {
                     e.Alive = false;
                     InkDrop drop = new InkDrop();
-                    drop.X = e.X; drop.Y = e.Y; drop.Value = e.Fig.Stats.N; drop.Life = so.DropLifeTicks;
+                    drop.X = e.X; drop.Y = e.Y; drop.Value = run.DropValue > 0 ? run.DropValue : e.Fig.Stats.N; drop.Life = so.DropLifeTicks;
                     run.Drops.Add(drop);
                     InkEvent ev = new InkEvent();
                     ev.Type = InkEvent.EnemyDown; ev.To = i;
