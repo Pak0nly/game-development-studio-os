@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Inkweight",
+  "work_order": {
+    "id": "INK-CORE-V3",
+    "path": "Artifacts/Inkweight/DirectorDispatch/INK-CORE-V3/WORK_ORDER.md",
+    "sha256": "8225bc0b08fb8b833119cdc22942be2a5146d969d680e2b51fe3fcc0dcfc5eab",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Inkweight/DirectorDispatch/INK-CORE-V3/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "bcc9c62b93bb61275117c9bcb44ce85efdeafc52fa1463e54175deb13f8274a0",
+    "receipt_path": "Artifacts/Inkweight/DirectorDispatch/INK-CORE-V3/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "03f20e42cb81a8f548923813450ba6cb3707a817119a35a53ab66fa9c8554258",
+    "receipt_id": "7abbcf15f659ef3fd3d3c640fb9fac8436a3a22bb2a37cbd7302ca7fb2aae218",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-session_01Kh4ZKFT8i4qXjrYsecr1yo",
+    "worker_task_id": "a4f119a8ce7fbbb21",
+    "reviewer_task_id": "a58afcfc8249cc44e"
+  },
+  "candidate": {
+    "identity": "258f450f709942aec0e5c474ca96fd558813ab13972119b5bdfbc43f99d13a8d",
+    "files": [
+      {
+        "path": "Projects/Inkweight/Docs/INK_RULES_V2.md",
+        "sha256": "376b9391bb7cec59520639579b22f2a730ce9f72dd7b66af7f6272b29498e1c5",
+        "size": 19964
+      },
+      {
+        "path": "Projects/Inkweight/Source/Shared/CHANGES_V2.md",
+        "sha256": "64fe3e9d27807e5dee7cd53c09ffc05c241e8b444546e3a3155479fc806375e7",
+        "size": 27943
+      },
+      {
+        "path": "Projects/Inkweight/Source/Shared/CHANGES_V3.md",
+        "sha256": "932d8a4d703b9e84efaa4cbba09c4b5ac6222c997b4202716a8d637be55fa596",
+        "size": 17748
+      },
+      {
+        "path": "Projects/Inkweight/Source/Shared/golden/sim_traces.json",
+        "sha256": "7839010c0ab441adce2c15d4a55a426bdaacbd0d7b94ce67bf4baf8c8ed39bf1",
+        "size": 212231
+      },
+      {
+        "path": "Projects/Inkweight/Source/Shared/golden/stat_vectors.json",
+        "sha256": "566c7249ceb252a29b6dfeda41439b950c8d5109e0c13e8f9c8743a729065082",
+        "size": 97881
+      },
+      {
+        "path": "Projects/Inkweight/Source/Shared/ink_tuning.json",
+        "sha256": "cb402e802f6e1b25309be56696ec544329d613309008ac8274dccdc3968f5c88",
+        "size": 3673
+      },
+      {
+        "path": "Projects/Inkweight/Source/Shared/RULES_AS_BUILT.md",
+        "sha256": "a518f89e9c23a22be00db0e6ace34d907c0a40812b1bf04b912eff50a0cb7bfb",
+        "size": 31419
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/bots.js",
+        "sha256": "4f53d4b431b964be77d15bae0268bd1529c8c31185b12ad7a2fbeceb17d01c70",
+        "size": 11063
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/drawing.js",
+        "sha256": "640a830eac08b8901ba6670fd1c7fb73795b0f9d52452478ed5ecdd1ab53195d",
+        "size": 9494
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/hash.js",
+        "sha256": "d496cf59818cff4ee9c21666940724881f326f1ef2379f98d660a845b26cf31d",
+        "size": 3265
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/index.js",
+        "sha256": "f448edd3f2f09f28c6f9c04d01dd29722cebb75bea11943ce6ed51f73fd60899",
+        "size": 255
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/physics.js",
+        "sha256": "f6529869edaa82c5330f8a5c74764e71d4e6615bea527d842433606cf057bd84",
+        "size": 16660
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/README.md",
+        "sha256": "9f96cfcd1e213a71433f329baf1db64ac8e8f63aceb8c64d21544d0ed68d053e",
+        "size": 12948
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/ring.js",
+        "sha256": "133f706cda0737e2da9c4874c5c65242fd43cfd389453eab550a78f9c350655e",
+        "size": 5753
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/rng.js",
+        "sha256": "90d24366a64a12aed20517fefdf9fa7ddda532aab3e8497b7a617d03c7a413ba",
+        "size": 947
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/core/solo.js",
+        "sha256": "20d5b24833c50fc27c685694444f53b3b8fb4bfaf93008b205fcb13f42dc7e47",
+        "size": 16738
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/archetypes.js",
+        "sha256": "abb0681b82cd5f791c90482cacb4391249752771e38ced239ea9f64a8fd669a6",
+        "size": 4958
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/balance.js",
+        "sha256": "6ba67dc89c33c6a375d2b42f65d5e8aab1e75acc99e3fba5da7b3e4a006337fc",
+        "size": 24789
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/lever_run.js",
+        "sha256": "240d4f08b015271c2d475c758f6b1aa865e4e8735845a9ca686ffb8366fa1e28",
+        "size": 3419
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/overlap_probe.js",
+        "sha256": "022cc52d32a188c7025aaebdc54c7a6f4d9a0c68e29cfe7f3537a1400708f072",
+        "size": 6372
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/readability.js",
+        "sha256": "7a09d7906d1de72d690967329d7479c65a0e3c6f47431bc872e62c408cb64c62",
+        "size": 2554
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/runner.js",
+        "sha256": "946ab485c9c94627d0ab583684a01a919e3d79feb63ade8e93eea2874f3095a3",
+        "size": 3928
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/show_stats.js",
+        "sha256": "c1e05ede509c404836e0355a13ece62a4c7bff62acda8641b09d3fe3ff86ba89",
+        "size": 606
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/solo_smoke.js",
+        "sha256": "e98d41ae68ed8c420e5a9f26c5ae475bb92121bfff718b55de3ef49b2abbfd36",
+        "size": 2629
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/style_check.js",
+        "sha256": "71f4a5e25d12d832035e62842ab1698bedf3f982dffbfb2ee0ff4b3af2bcdcaf",
+        "size": 1516
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/sweep.js",
+        "sha256": "57c73cd89808a21e7ff84f1ac1234497c524067b4105fcf5d76dab17be08ced9",
+        "size": 3078
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/sim/tune_search.js",
+        "sha256": "a5d1396a41b39d920dfd7de7096d7a3c9adeafd7053ec0cc89d1f91e3a3dab17",
+        "size": 3594
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tests/drawing.test.js",
+        "sha256": "f79ee3d22951c5b7e8df6d49c0fe039e8c2808ecd1f9c4739c9e23edd49870c3",
+        "size": 11344
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tests/golden.test.js",
+        "sha256": "11dec6ddd4252cd111a84ac2a8808dcfdcf411e5ae1a7260f5c035ae5caf5742",
+        "size": 5959
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tests/properties.test.js",
+        "sha256": "f582b7d184a6f724556ee6b2084037171de251c5b403fd0112ecbf9e1adb7be1",
+        "size": 13991
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tests/review_fixes.test.js",
+        "sha256": "ed2e5fb003e6eecf1bbbe2f1e131fe5ec9339c57721ecac9ad8517d74f73c324",
+        "size": 13758
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tests/solo.test.js",
+        "sha256": "18663112981030f5279b72d0d7052c85d88a8e211b0a1d0256170b28faab8953",
+        "size": 16088
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tools/gen_golden.js",
+        "sha256": "2554b7b97880c00aebea496a036058bc50c8bc73cdf7fc02124dc078bd1a9c8b",
+        "size": 15408
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tools/golden_cases.js",
+        "sha256": "050f6cd39c226e8de59be38e2d1916e106f146d89eb70e1983bd1e557568ba98",
+        "size": 6860
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tools/load_tuning.js",
+        "sha256": "90c1feea06b860acafb74dcd8b5876b33803e222eb7454c65d31466b912a0823",
+        "size": 903
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/tools/trace_summary.js",
+        "sha256": "a0e37b0755268f87b3341a47ef808b908565c26082107a152aa25fc9f5dae948",
+        "size": 857
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Inkweight/Evidence/INK-CORE-V3/REVIEW.md",
+      "sha256": "c46bc93c2ef2601e857ed56a883f2d95b3121aa3776b80740b9373509ca931f0",
+      "size": 20443
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Inkweight/Evidence/INK-CORE-V3/review.json",
+    "record_sha256": "8bd23b05cbd7613fd36aada76bb29652123fcf9344307c4d9e19a3e295994d0c",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "258f450f709942aec0e5c474ca96fd558813ab13972119b5bdfbc43f99d13a8d",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Inkweight/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Inkweight/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}
