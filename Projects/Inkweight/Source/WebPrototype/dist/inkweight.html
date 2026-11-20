@@ -198,6 +198,9 @@ select {
 .stakes .tool { min-height: 44px; white-space: normal; line-height: 1.15; font-size: 0.85rem; }
 .stakes .tool small { display: block; font-family: var(--font-body); font-size: 0.7rem; }
 .stake-note { margin: 0; font-size: 0.74rem; line-height: 1.2; }
+.stats li.el-row { position: relative; padding-right: 84px; min-height: 36px; }
+.rules-btn { position: absolute; right: 0; top: 0; min-height: 34px; padding: 2px 12px; }
+.msg.quiet { display: none; }
 
 /* overlays */
 .layer {
@@ -274,7 +277,7 @@ select {
   .draw-main { flex-direction: row; gap: 20px; }
   .draw-side { flex: 0 0 410px; justify-content: center; gap: 9px; }
   .stats li { min-height: 26px; font-size: 0.88rem; grid-template-columns: 66px 44px 70px 1fr; }
-  .stats li .s-why { grid-column: auto; margin-top: 0; font-size: 0.8rem; white-space: normal; }
+  .stats li .s-why, .stats li .s-val.wide + .s-why { grid-column: auto; margin-top: 0; font-size: 0.8rem; white-space: normal; }
   .preview { width: 72px; height: 72px; }
   .dash { display: none; }
   .chip { flex: 0 1 190px; }
@@ -296,10 +299,14 @@ select {
   .tool { min-height: 34px; }
   .tool.flat { min-height: 30px; }
   .stats li { min-height: 17px; font-size: 0.78rem; grid-template-columns: 54px 34px 30px 1fr; }
-  .stats li .s-why { grid-column: auto; margin-top: 0; font-size: 0.72rem; white-space: nowrap; }
+  .stats li .s-why, .stats li .s-val.wide + .s-why { grid-column: auto; margin-top: 0; font-size: 0.72rem; white-space: nowrap; }
+  .lineup .card { width: 152px; padding: 4px 6px; gap: 1px; }
+  .ov-body { margin: 4px 0; }
   .seats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; margin: 6px 0; }
   .row { margin: 6px 0; }
   .stake-note { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .stats li.el-row { min-height: 26px; }
+  .rules-btn { min-height: 26px; }
   .msg { margin: 0; }
   .stakes .tool { min-height: 36px; font-size: 0.8rem; }
   .draw-side > .btn.primary { min-height: 38px; padding: 5px 14px; flex: 0 0 auto; }
@@ -391,7 +398,6 @@ select {
         <h2 id="drawTitle"></h2>
         <p id="drawSub"></p>
       </div>
-      <button id="drawRules" class="btn small" type="button">Regeln</button>
       <div id="drawTimer" class="timer" hidden>30</div>
       <canvas id="drawPreview" class="preview" aria-hidden="true"></canvas>
     </div>
@@ -427,7 +433,7 @@ select {
           <li><span class="s-name">Panzer</span><b id="stArmour" class="s-val">0</b><span class="s-bar"><i id="stArmourBar"></i></span><span id="stArmourWhy" class="s-why">volle Flächen halten mehr aus</span></li>
           <li><span class="s-name">Schärfe</span><b id="stSharp" class="s-val">0</b><span class="s-bar"><i id="stSharpBar"></i></span><span id="stSharpWhy" class="s-why">dünne Striche sind Klingen, auch schräge</span></li>
           <li><span class="s-name">Tempo</span><b id="stSpeed" class="s-val">0</b><span class="s-bar"><i id="stSpeedBar"></i></span><span id="stSpeedWhy" class="s-why">Kästchen pro Sekunde · wenig Tinte ist flink</span></li>
-          <li><span class="s-name">Element</span><b id="stElement" class="s-val wide">–</b><span id="stElementWhy" class="s-why"></span></li>
+          <li class="el-row"><span class="s-name">Element</span><b id="stElement" class="s-val wide">–</b><span id="stElementWhy" class="s-why"></span><button id="drawRules" class="tool flat rules-btn" type="button">Regeln</button></li>
         </ul>
         <p id="drawMsg" class="msg"></p>
         <div id="drawExtra" class="draw-extra"></div>
@@ -3135,7 +3141,8 @@ function updatePanel() {
 
   const msg = $('drawMsg');
   const min = s.kind === 'weapon' ? tuning.ink.weaponMinBodyCells : tuning.ink.minBodyCells;
-  let text = 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum · blass tropft ab';
+  const legend = 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum';
+  let text = legend;
   let warn = false;
   if (st.filled === 0) text = s.kind === 'weapon' ? 'Zeichne die Wurfwaffe. Leicht fliegt schnell, dünn schneidet.' : text;
   else if (!st.bigEnough) { text = 'Noch zu klein: mindestens ' + min + ' Kästchen am Stück.'; warn = true; }
@@ -3144,6 +3151,8 @@ function updatePanel() {
   if (s.lockNote && st.filled === 0) text = s.lockNote;
   if (s.askingBack) { text = s.backConfirm ? s.endMsg : 'Noch einmal tippen, dann ist die Zeichnung weg.'; warn = true; }
   msg.textContent = text;
+  // where a mode shows its own line below (the solo stakes), the plain legend makes room
+  msg.classList.toggle('quiet', text === legend && $('drawExtra').childElementCount > 0);
   msg.classList.toggle('warn', warn);
   $('drawDone').disabled = !st.valid;
 }
@@ -4831,8 +4840,8 @@ async function playSolo(startColour) {
       const waveNo = run.wave + 1;
       let stake = 0;
       const res = await openDraw({
-        title: 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES + ': zeichne den Gegner',
-        sub: 'Kleine Figuren kommen als Schwarm, große als Brocken.',
+        title: 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES + ': dein Gegner',
+        sub: 'Zeichne ihn selbst: klein kommt als Schwarm, groß als Brocken.',
         kind: 'figure', budget: so.enemyInkBudget, canPick: true, initial: lastEnemy,
         backLabel: 'Ende', backConfirm: true, endAsk: 'Lauf beenden?', endMsg: 'Noch einmal tippen, dann endet der ganze Lauf.', doneLabel: 'In den Kampf',
         extra: (box) => {
@@ -4872,7 +4881,7 @@ async function playSolo(startColour) {
               if (dmg > 0) parts.push('schlagen ' + dmg + ' % härter zu');
               if (spd > 0) parts.push('sind ' + spd + ' % schneller');
               const sc = Math.round(scale * 100);
-              if (sc >= 105) parts.push('halten ' + (sc - 100) + ' % mehr aus');
+              if (sc >= 105) parts.push('halten ' + (sc - 100) + ' % mehr aus (übrige Tinte)');
               else if (sc <= 95) parts.push('halten ' + (100 - sc) + ' % weniger aus');
               text = stakeLabel(stake) + ': ' + (parts.length ? 'Die Gegner ' + parts.join(', ') + '.' : 'Gegner in Grundstärke.');
             }

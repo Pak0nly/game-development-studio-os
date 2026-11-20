@@ -66,7 +66,6 @@
         <h2 id="drawTitle"></h2>
         <p id="drawSub"></p>
       </div>
-      <button id="drawRules" class="btn small" type="button">Regeln</button>
       <div id="drawTimer" class="timer" hidden>30</div>
       <canvas id="drawPreview" class="preview" aria-hidden="true"></canvas>
     </div>
@@ -102,7 +101,7 @@
           <li><span class="s-name">Panzer</span><b id="stArmour" class="s-val">0</b><span class="s-bar"><i id="stArmourBar"></i></span><span id="stArmourWhy" class="s-why">volle Flächen halten mehr aus</span></li>
           <li><span class="s-name">Schärfe</span><b id="stSharp" class="s-val">0</b><span class="s-bar"><i id="stSharpBar"></i></span><span id="stSharpWhy" class="s-why">dünne Striche sind Klingen, auch schräge</span></li>
           <li><span class="s-name">Tempo</span><b id="stSpeed" class="s-val">0</b><span class="s-bar"><i id="stSpeedBar"></i></span><span id="stSpeedWhy" class="s-why">Kästchen pro Sekunde · wenig Tinte ist flink</span></li>
-          <li><span class="s-name">Element</span><b id="stElement" class="s-val wide">–</b><span id="stElementWhy" class="s-why"></span></li>
+          <li class="el-row"><span class="s-name">Element</span><b id="stElement" class="s-val wide">–</b><span id="stElementWhy" class="s-why"></span><button id="drawRules" class="tool flat rules-btn" type="button">Regeln</button></li>
         </ul>
         <p id="drawMsg" class="msg"></p>
         <div id="drawExtra" class="draw-extra"></div>

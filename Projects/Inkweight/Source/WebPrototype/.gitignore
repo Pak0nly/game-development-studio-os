@@ -1,0 +1,5 @@
+# The repository root ignores every folder named build (a Unity rule).
+# This build folder holds the two hand-written scripts of the web prototype
+# (build.mjs, verify.cjs) and belongs under version control.
+!build/
+!build/**

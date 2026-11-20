@@ -140,7 +140,8 @@ function updatePanel() {
 
   const msg = $('drawMsg');
   const min = s.kind === 'weapon' ? tuning.ink.weaponMinBodyCells : tuning.ink.minBodyCells;
-  let text = 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum · blass tropft ab';
+  const legend = 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum';
+  let text = legend;
   let warn = false;
   if (st.filled === 0) text = s.kind === 'weapon' ? 'Zeichne die Wurfwaffe. Leicht fliegt schnell, dünn schneidet.' : text;
   else if (!st.bigEnough) { text = 'Noch zu klein: mindestens ' + min + ' Kästchen am Stück.'; warn = true; }
@@ -149,6 +150,8 @@ function updatePanel() {
   if (s.lockNote && st.filled === 0) text = s.lockNote;
   if (s.askingBack) { text = s.backConfirm ? s.endMsg : 'Noch einmal tippen, dann ist die Zeichnung weg.'; warn = true; }
   msg.textContent = text;
+  // where a mode shows its own line below (the solo stakes), the plain legend makes room
+  msg.classList.toggle('quiet', text === legend && $('drawExtra').childElementCount > 0);
   msg.classList.toggle('warn', warn);
   $('drawDone').disabled = !st.valid;
 }

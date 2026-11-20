@@ -58,8 +58,8 @@ async function playSolo(startColour) {
       const waveNo = run.wave + 1;
       let stake = 0;
       const res = await openDraw({
-        title: 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES + ': zeichne den Gegner',
-        sub: 'Kleine Figuren kommen als Schwarm, große als Brocken.',
+        title: 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES + ': dein Gegner',
+        sub: 'Zeichne ihn selbst: klein kommt als Schwarm, groß als Brocken.',
         kind: 'figure', budget: so.enemyInkBudget, canPick: true, initial: lastEnemy,
         backLabel: 'Ende', backConfirm: true, endAsk: 'Lauf beenden?', endMsg: 'Noch einmal tippen, dann endet der ganze Lauf.', doneLabel: 'In den Kampf',
         extra: (box) => {
@@ -99,7 +99,7 @@ async function playSolo(startColour) {
               if (dmg > 0) parts.push('schlagen ' + dmg + ' % härter zu');
               if (spd > 0) parts.push('sind ' + spd + ' % schneller');
               const sc = Math.round(scale * 100);
-              if (sc >= 105) parts.push('halten ' + (sc - 100) + ' % mehr aus');
+              if (sc >= 105) parts.push('halten ' + (sc - 100) + ' % mehr aus (übrige Tinte)');
               else if (sc <= 95) parts.push('halten ' + (100 - sc) + ' % weniger aus');
               text = stakeLabel(stake) + ': ' + (parts.length ? 'Die Gegner ' + parts.join(', ') + '.' : 'Gegner in Grundstärke.');
             }

@@ -251,6 +251,12 @@ async function runScenario(browser, name) {
   await press('#btnRing');
   await sleep(200);
   await noSideScroll('ring setup');
+  {
+    // the main button is on screen without scrolling (N-3: it was 9 px below a sideways phone)
+    const r = await page.evaluate(() => ({ bottom: Math.round(document.getElementById('ringGo').getBoundingClientRect().bottom), ih: window.innerHeight }));
+    note('ring setup: main button bottom ' + r.bottom + ' of ' + r.ih);
+    if (r.bottom > r.ih) throw new Error('"Los, zeichnen!" is below the window');
+  }
   await shot('ring-setup');
   await press('#ringGo');
   await page.waitForSelector('#scrDraw:not([hidden])');
@@ -265,7 +271,15 @@ async function runScenario(browser, name) {
   
   for (;;) {
     await page.waitForSelector('#fightOverlay:not([hidden])');
-    if (rounds === 0) { await sleep(200); await noSideScroll('line-up'); await shot('ring-lineup'); }
+    if (rounds === 0) {
+      await sleep(200); await noSideScroll('line-up');
+      const r = await page.evaluate(() => ({ bottom: Math.round(document.getElementById('ovPrimary').getBoundingClientRect().bottom), ih: window.innerHeight,
+        styles: Array.from(document.querySelectorAll('#ovBody .card .fine')).map((n) => n.textContent).join(' | '), core: (window.__inkDebug.ringBotStyles || []).join('') }));
+      note('line-up: main button bottom ' + r.bottom + ' of ' + r.ih + ', bot styles shown: ' + r.styles + ' (core botStyle ' + r.core + ')');
+      if (r.bottom > r.ih) throw new Error('"In den Ring!" is below the window');
+      if (!/stürmt/.test(r.styles) || !/kreist/.test(r.styles)) throw new Error('the two bot styles are not mixed: ' + r.styles);
+      await shot('ring-lineup');
+    }
     await sleep(600);
     await press('#ovPrimary');
     // fight: steer in a slow circle, dash now and then

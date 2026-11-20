@@ -100,13 +100,30 @@ Candidate identity: 23f30cc065753a33973a65d378e3c008b8d98642614cee3171c72c4d8bc9
 Closure receipt: dbaf113e10bb659983453bbe7b57763cd65a405fb0bb05047f6658d9394f3a66
 Requested model — not independently attested.
 
+The Unity project is on core version 2: the C# core matches the golden files
+bit for bit (16527 checks, Debug and Release, .NET 8); the Unity layer gained
+the stat panel for rules version 2, a 30 second drawing clock and a question
+before discarding, still checked against stubs only and never opened in Unity.
+Eight minor review findings
+(`Artifacts/Inkweight/Evidence/INK-UNITY-V2/REVIEW.md`).
+
+INK-UNITY-V2
+Independent review verdict: PASS
+Worker task: ad78e651563b1191e
+Reviewer task: aa3a8b100fa210ae1
+Candidate identity: 628e7349c664d4a5695f24ef4bc27490e0e2b1e0171731599626a61b49ced3c6
+Closure receipt: cbd417b8bb9c677076e26ebe426ae9a16b8e4c79ea4702b40b2fbb3e357e5599
+Requested model — not independently attested.
+
 ## Running
 
 - INK-WEB-V3: browser prototype on core version 2 plus second review fixes
   (Worker running).
-- INK-UNITY-V2: C# port and Unity layer on core version 2 (Worker running).
+- INK-CORE-V3: re-review leftovers R1 to R3 and a restrained third balance
+  pass, in a separate work copy (Worker running).
 
 ## Exact Next Step
 
 Wait for both Workers, review and close them, republish the prototype page;
-then, if time remains, one more core order for R1 to R3 with port updates.
+if INK-CORE-V3 changes the core, merge it and dispatch one small update order
+each for the browser prototype and the C# port.

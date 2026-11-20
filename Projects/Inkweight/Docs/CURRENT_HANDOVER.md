@@ -50,11 +50,18 @@ Reviewer task: aa432e08ec4bfc077
 Candidate identity: 23f30cc065753a33973a65d378e3c008b8d98642614cee3171c72c4d8bc96e93
 Closure receipt: dbaf113e10bb659983453bbe7b57763cd65a405fb0bb05047f6658d9394f3a66
 
+Closed: INK-UNITY-V2
+Independent review verdict: PASS
+Worker task: ad78e651563b1191e
+Reviewer task: aa3a8b100fa210ae1
+Candidate identity: 628e7349c664d4a5695f24ef4bc27490e0e2b1e0171731599626a61b49ced3c6
+Closure receipt: cbd417b8bb9c677076e26ebe426ae9a16b8e4c79ea4702b40b2fbb3e357e5599
+
 Prototype page (private): https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1,
 published from `Source/WebPrototype/dist/inkweight.artifact.html`.
 
-Running: INK-WEB-V3 and INK-UNITY-V2 (dispatched, Workers not yet returned).
-The page at the link above still shows rules version 1 until INK-WEB-V3 is
-republished.
+Running: INK-WEB-V3 (main checkout) and INK-CORE-V3 (separate work copy under
+`.claude/worktrees/`, local branch, not pushed). The page at the link above
+still shows rules version 1 until INK-WEB-V3 is republished.
 
 Next action: wait for both Workers, review and close them, republish the page.
