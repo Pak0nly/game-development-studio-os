@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_receipt",
+  "gate_state": "ACTIVE_INKWEIGHT_CLAUDE",
+  "project_scope": "Inkweight",
+  "work_order_id": "INK-CORE-V3",
+  "work_order_sha256": "8225bc0b08fb8b833119cdc22942be2a5146d969d680e2b51fe3fcc0dcfc5eab",
+  "manifest_sha256": "bcc9c62b93bb61275117c9bcb44ce85efdeafc52fa1463e54175deb13f8274a0",
+  "repository": {
+    "branch": "ccr-808d4c02-yt93ed",
+    "head": "960c6ae472ffedd2b30d2059cf67113655e3d3ef"
+  },
+  "project_identity_sha256": "55f6d5cc85ce254d13984da18b8587d6faa0f2c090e11b66644328333b55c569",
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Inkweight/Source/Shared",
+      "Projects/Inkweight/Source/WebPrototype/core",
+      "Projects/Inkweight/Source/WebPrototype/sim",
+      "Projects/Inkweight/Source/WebPrototype/tools",
+      "Projects/Inkweight/Source/WebPrototype/tests",
+      "Projects/Inkweight/Docs/INK_RULES_V2.md",
+      "Artifacts/Inkweight/Evidence/INK-CORE-V3"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_state_sha256": "591db9ed1aab579bc8832d814660ac2fdf0a39a4099205934d805759f155db6b",
+  "baseline_state_sha256": "04d82aa8c552838aac507be2c0cfb4a62e1f4c646aa85fa375545dc405186b61",
+  "required_live_task_tools": [
+    "Agent",
+    "Bash",
+    "SendMessage"
+  ],
+  "receipt_id": "7abbcf15f659ef3fd3d3c640fb9fac8436a3a22bb2a37cbd7302ca7fb2aae218"
+}

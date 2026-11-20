@@ -679,12 +679,12 @@ async function runChecks(browser) {
       const cv = document.getElementById('drawCanvas');
       const g = cv.getContext('2d');
       const c = cv.width / 32;
-      // centre of cell (15, 17) lies on the stroke path or next to it: scan the whole diagonal band
+      // the cells with x + y = 32 lie on the stroke: probe their centres
+      const img = g.getImageData(0, 0, cv.width, cv.height).data; // one readback
       let n = 0;
       for (let k = 6; k <= 24; k++) {
-        const x = k; const y = 32 - k;
-        const d = g.getImageData(Math.floor((x + 0.5) * c), Math.floor((y + 0.5) * c), 1, 1).data;
-        if (d[0] > 200 && d[1] > 200) n++;
+        const o = (Math.floor((32 - k + 0.5) * c) * cv.width + Math.floor((k + 0.5) * c)) * 4;
+        if (img[o] > 200 && img[o + 1] > 200) n++;
       }
       return n;
     });

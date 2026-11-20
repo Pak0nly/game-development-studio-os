@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "kind": "claude_dispatch_manifest",
+  "project_scope": "Inkweight",
+  "work_order_id": "INK-CORE-V3",
+  "assignment_type": {
+    "value": "Core: re-review leftovers and a restrained third balance pass",
+    "declaration": "VERIFIED"
+  },
+  "classification": {
+    "value": "Standard",
+    "declaration": "VERIFIED"
+  },
+  "work_order": {
+    "path": "Artifacts/Inkweight/DirectorDispatch/INK-CORE-V3/WORK_ORDER.md",
+    "sha256": "8225bc0b08fb8b833119cdc22942be2a5146d969d680e2b51fe3fcc0dcfc5eab",
+    "declaration": "VERIFIED"
+  },
+  "repository": {
+    "root": ".",
+    "repository_id": "game-development-studio",
+    "project_path": "Projects/Inkweight",
+    "project_id": "Inkweight",
+    "project_identity": {
+      "source_path": "Docs/PRODUCTION_PROFILE.md",
+      "source_sha256": "bd19330b13d4d947ebbebdf73269b3fe2135280ec75689812fab6c88694b5dea",
+      "method": "utf8_key_value",
+      "key": "project_id",
+      "expected_value": "Inkweight",
+      "indentation": 0,
+      "declaration": "VERIFIED"
+    },
+    "branch": "ccr-808d4c02-yt93ed",
+    "head": "960c6ae472ffedd2b30d2059cf67113655e3d3ef",
+    "declaration": "VERIFIED"
+  },
+  "dirty_state": {
+    "mode": "bounded_projection",
+    "paths": [
+      "Projects/Inkweight/Source/Shared",
+      "Projects/Inkweight/Source/WebPrototype/core",
+      "Projects/Inkweight/Source/WebPrototype/sim",
+      "Projects/Inkweight/Source/WebPrototype/tools",
+      "Projects/Inkweight/Source/WebPrototype/tests",
+      "Projects/Inkweight/Docs/INK_RULES_V2.md",
+      "Artifacts/Inkweight/Evidence/INK-CORE-V3"
+    ],
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "declaration": "VERIFIED"
+  },
+  "human_authority": {
+    "statement": "Human (2026-11-19, Inkweight concept chat): 'Ja. Du hast bis 9 Uhr Zeit daran zu arbeiten. [...] Nutze die Zeit bis 9 Uhr voll aus und suche dir selbst passende Aufgaben. Ziel ist ein spielbarer Prototyp, oder zumindest die Vorbereitung dessen.'",
+    "declaration": "HUMAN DECISION"
+  },
+  "required_live_task_tools": [
+    {
+      "name": "Agent",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "SendMessage",
+      "declaration": "VERIFIED"
+    },
+    {
+      "name": "Bash",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "authority_sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "00365cc1eb419e04a35bef0bf36e8c25f5bda7138960fcf1ac3e1f12101a85c0",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Docs/CONFIRMED_DECISIONS.md",
+      "sha256": "71e2ade3959599343d067cbc9fde2b2a3642bcde130f3ab1a3713db6e4069b69",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "project_sources": [
+    {
+      "path": "Projects/Inkweight/Docs/PRODUCTION_PROFILE.md",
+      "sha256": "bd19330b13d4d947ebbebdf73269b3fe2135280ec75689812fab6c88694b5dea",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Inkweight/Docs/INK_RULES_V2.md",
+      "sha256": "1165b0a2a5dd75d24d508fb3980161df4ff3cc464a2cd7c091774664373e1a61",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Inkweight/Docs/GAME_CONCEPT.md",
+      "sha256": "4c1785a557251e111e1518b720358a1b092d10cf39db87083d763604165f6724",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Inkweight/Docs/DISCOVERY_DECISIONS.md",
+      "sha256": "c512d199ac96278ba980cf7edb4cc4fad82ca36bf95b32795cec59f81f19c9fc",
+      "declaration": "VERIFIED"
+    },
+    {
+      "path": "Projects/Inkweight/Source/Shared/RULES_AS_BUILT.md",
+      "sha256": "935eba88eb92f493eb42055d1232e89cb6b8c0484b19122e2b89d7c5dd6826c2",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "baselines": {
+    "technical": [
+      {
+        "id": "gate-validator",
+        "path": "Tools/InkweightDispatchGate/validate_inkweight_dispatch.py",
+        "method": "file_sha256",
+        "expected_sha256": "7ad30ed05d659749067678f6cebbcf1e3ef8477443028d6cd100e3978ab50d68",
+        "declaration": "VERIFIED"
+      }
+    ],
+    "status_decisions": [
+      {
+        "id": "human-approval",
+        "statement": "Human (2026-11-19, Inkweight concept chat): 'Ja. Du hast bis 9 Uhr Zeit daran zu arbeiten. [...] Nutze die Zeit bis 9 Uhr voll aus und suche dir selbst passende Aufgaben. Ziel ist ein spielbarer Prototyp, oder zumindest die Vorbereitung dessen.'",
+        "declaration": "HUMAN DECISION"
+      }
+    ]
+  },
+  "allowed_mutations": [
+    "Projects/Inkweight/Source/Shared",
+    "Projects/Inkweight/Source/WebPrototype/core",
+    "Projects/Inkweight/Source/WebPrototype/sim",
+    "Projects/Inkweight/Source/WebPrototype/tools",
+    "Projects/Inkweight/Source/WebPrototype/tests",
+    "Projects/Inkweight/Docs/INK_RULES_V2.md",
+    "Artifacts/Inkweight/Evidence/INK-CORE-V3"
+  ],
+  "protected_paths": [
+    "AGENTS.md",
+    "Docs",
+    "Tools",
+    "Projects/Inkweight/Docs/INK_RULES_V1.md",
+    "Projects/Inkweight/Docs/GAME_CONCEPT.md",
+    "Projects/Inkweight/README.md",
+    "Projects/Underreign",
+    "Artifacts/Inkweight/DirectorDispatch",
+    "Artifacts/Underreign",
+    "Projects/Inkweight/Source/WebPrototype/app",
+    "Projects/Inkweight/Source/WebPrototype/dist",
+    "Projects/Inkweight/Source/WebPrototype/build",
+    "Projects/Inkweight/Source/Unity"
+  ],
+  "stop_boundary": {
+    "statement": "Stop on verify-worker failure, protected change, a need outside the allowed paths, or a rules contradiction that cannot be resolved as a marked proposal.",
+    "declaration": "VERIFIED"
+  },
+  "execution_mode": {
+    "value": "Production",
+    "declaration": "VERIFIED"
+  },
+  "model_routing": [
+    {
+      "task": "Core: re-review leftovers and a restrained third balance pass",
+      "class": "Standard",
+      "reason": "Physics correction and balance design on a deterministic core that two ports depend on; routed to fable at high effort.",
+      "requested_model": "fable",
+      "context_fork": "Fresh Worker subagent with exact Work Order, manifest and receipt only.",
+      "attempts": "One candidate; up to three operational recoveries.",
+      "escalate_stop": "Stop on verify-worker failure or protected change.",
+      "attestation": "Requested model — not independently attested.",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "role_requirements": [
+    "Producer / Scope Controller",
+    "Game Designer",
+    "Gameplay Programmer",
+    "QA Lead"
+  ],
+  "roles": [
+    {
+      "role": "Producer / Scope Controller",
+      "reason": "Director owns scope, time box and Human checkpoint.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Game Designer",
+      "reason": "Worker turns the ink rules into exact algorithms and tunes them.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "Gameplay Programmer",
+      "reason": "Worker builds the deterministic core and tests.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    },
+    {
+      "role": "QA Lead",
+      "reason": "Independent review of tests, determinism and the balance claims.",
+      "status": "ACTIVATED",
+      "declaration": "VERIFIED"
+    }
+  ],
+  "visible_task_plan": [
+    {
+      "step": "verify-worker",
+      "status": "pending"
+    },
+    {
+      "step": "Core: re-review leftovers and a restrained third balance pass",
+      "status": "pending"
+    },
+    {
+      "step": "WORKER_RESULT.md",
+      "status": "pending"
+    }
+  ],
+  "correction_allowance": {
+    "stage": "INK-CORE-V3",
+    "rounds": 2,
+    "declaration": "VERIFIED"
+  },
+  "monitoring": {
+    "owner": "Director (Claude Code Inkweight Director cloud session)",
+    "declaration": "VERIFIED"
+  },
+  "orchestration": {
+    "director_mode": "orchestration_only",
+    "director_mutation_allowed": false,
+    "separate_worker_task": {
+      "required": true,
+      "creation_tool": "Agent",
+      "resume_tool": "SendMessage",
+      "separate_from_director": true
+    },
+    "worker_route": {
+      "requested_model": "fable",
+      "reasoning_effort": "high",
+      "reason": "Physics correction and balance design on a deterministic core that two ports depend on; routed to fable at high effort."
+    },
+    "monitoring": {
+      "required": true,
+      "mode": "agent_completion",
+      "tool": "Agent"
+    },
+    "independent_review": {
+      "required": true,
+      "activation": "after_reviewable_evidence",
+      "separate_reviewer_task": true,
+      "reviewer_separate_from_worker_and_director": true,
+      "builder_self_review_is_independent": false
+    },
+    "maximum_independent_reviewer_tasks": 1
+  },
+  "human_checkpoint": {
+    "statement": "Human judges the ink rules by playing the prototype on the morning of 2026-11-20.",
+    "declaration": "HUMAN DECISION"
+  }
+}
