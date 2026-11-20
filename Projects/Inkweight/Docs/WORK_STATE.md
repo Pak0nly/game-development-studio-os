@@ -44,12 +44,31 @@ Candidate identity: 0421bd209dd886824dcdf3ea8f769a2f2d3a4765bfe2a79e6f4f7ff60a33
 Closure receipt: 47cec3eb698ed0930bcf1f8a4d34c5396e5c2315ef6934090b72dcbea9ddb4df
 Requested model — not independently attested.
 
+A playable browser design prototype exists (`Source/WebPrototype/dist`,
+published privately as https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1):
+drawing with live stats, the Ring against bots or a second human, the solo
+arena. Automated play-throughs pass on phone and desktop size; it has not been
+played on a real phone. Review findings to fix in the update order: the top
+"Zurück" silently discards a drawing and undo has the same label; the drawing
+screen does not fit a phone held sideways; a double tap acts on the next
+screen; ten minor points (`Artifacts/Inkweight/Evidence/INK-WEB-V1/REVIEW.md`).
+With rules version 1 a normal figure with a sword shows almost no sharpness.
+
+INK-WEB-V1
+Independent review verdict: PASS
+Worker task: a923e74900180ad99
+Reviewer task: a19c37393c145c4bc
+Candidate identity: 24ee02a11c55d0ef25e0a0e209c0708641f09c146dcbb96f05d074539282036c
+Closure receipt: deac742f5c94eee78860b1826331f9ad64281db045a5d92cbba3c4cd354d4011
+Requested model — not independently attested.
+
 ## Running
 
-- INK-WEB-V1: playable browser prototype on the core (Worker running).
+- INK-CORE-V2: core corrections and second balance pass, in a separate work
+  copy (Worker running; interrupted once by a container restart and resumed).
 
 ## Exact Next Step
 
-Wait for the browser prototype Worker, review and close it, then dispatch a core correction
-and balance order (I1, I3, golden coverage, balance toward the target) followed
-by small update orders for the browser prototype and the C# port.
+Wait for INK-CORE-V2, merge its branch, review and close it; then dispatch the
+update orders for the browser prototype (new core plus review findings) and the
+C# port (change list), and republish the prototype page.

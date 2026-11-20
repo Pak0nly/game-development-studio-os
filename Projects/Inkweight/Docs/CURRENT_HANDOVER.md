@@ -29,7 +29,20 @@ Closure receipt: 47cec3eb698ed0930bcf1f8a4d34c5396e5c2315ef6934090b72dcbea9ddb4d
 The Unity layer was never compiled against Unity (stubs only); the Human opens
 it first, guide in `Source/Unity/README.md`.
 
-Running: INK-WEB-V1 (dispatched, Worker not yet returned).
+Closed: INK-WEB-V1
+Independent review verdict: PASS
+Worker task: a923e74900180ad99
+Reviewer task: a19c37393c145c4bc
+Candidate identity: 24ee02a11c55d0ef25e0a0e209c0708641f09c146dcbb96f05d074539282036c
+Closure receipt: deac742f5c94eee78860b1826331f9ad64281db045a5d92cbba3c4cd354d4011
 
-Next action: wait for the browser prototype Worker, review and close it; then the core
-correction and balance order.
+Prototype page (private): https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1,
+published from `Source/WebPrototype/dist/inkweight.artifact.html`.
+
+Running: INK-CORE-V2 in the work copy
+`.claude/worktrees/agent-ac2ef5b778358368c` (branch
+`worktree-agent-ac2ef5b778358368c`, not pushed; lost if the container is
+replaced).
+
+Next action: wait for INK-CORE-V2, merge, review and close it; then update
+orders for the browser prototype and the C# port.
