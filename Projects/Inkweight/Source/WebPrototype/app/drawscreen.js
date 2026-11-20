@@ -160,19 +160,16 @@ function cellAt(ev) {
   return [x, y];
 }
 
-// Where the canvas sits on the screen; a stroke belongs to one such place.
-function canvasPlace() {
-  const r = canvas.getBoundingClientRect();
-  return [r.left, r.top, r.width];
-}
+// The window size a stroke was started in (a rotated phone changes it).
+function canvasPlace() { return [window.innerWidth, window.innerHeight]; }
 
 function strokeTo(ev) {
   const s = S;
-  // the canvas moved or changed size under the finger (rotation): the stroke
-  // ends here instead of being joined to wherever the finger now points
+  // the phone was rotated under the finger: the stroke ends here instead of
+  // being joined to wherever the finger now points (the move can arrive
+  // before the resize event does)
   const p = canvasPlace();
-  const cell = p[2] / W;
-  if (Math.abs(p[0] - s.place[0]) > cell || Math.abs(p[1] - s.place[1]) > cell || Math.abs(p[2] - s.place[2]) > cell) { endStroke(null); return; }
+  if (p[0] !== s.place[0] || p[1] !== s.place[1]) { endStroke(null); return; }
   const c = cellAt(ev);
   // a finger that slides off the canvas stops painting; the stroke goes on
   // (without a joining line) where the finger comes back in
@@ -519,7 +516,7 @@ export function openDraw(opts) {
       undo: [], tool: 1, brush: 1,
       stats: null, onStats: null,
       drawing: false, pointerId: -1, lastX: 0, lastY: 0, strokeChanged: false, denied: false, deniedShown: false,
-      outside: false, dirty: false, askingBack: false, place: [0, 0, 0],
+      outside: false, dirty: false, askingBack: false, place: [0, 0],
       timeLimit: opts.timeLimit || 0, timerStart: 0, timerShown: -1,
       sprite: null, fig: null, spriteDirty: true, spriteTime: -1,
       backConfirm: !!opts.backConfirm, backLabel: opts.backLabel || 'Zurück',

@@ -652,7 +652,12 @@ export function clearHud() { $('fightHud').textContent = ''; }
 // Debug only (automated check): how much ink the stain layer holds.
 window.__inkDebug.stainInk = () => {
   if (!stains) return 0;
-  const d = stains.getContext('2d').getImageData(0, 0, stains.width, stains.height).data;
+  const copy = document.createElement('canvas');
+  copy.width = stains.width;
+  copy.height = stains.height;
+  const cg = copy.getContext('2d', { willReadFrequently: true });
+  cg.drawImage(stains, 0, 0);
+  const d = cg.getImageData(0, 0, copy.width, copy.height).data;
   let n = 0;
   for (let i = 3; i < d.length; i += 4) if (d[i] !== 0) n++;
   return n;
