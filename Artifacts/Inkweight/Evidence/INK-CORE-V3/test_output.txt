@@ -1,0 +1,430 @@
+TAP version 13
+# Subtest: parse and print round trip
+ok 1 - parse and print round trip
+  ---
+  duration_ms: 2.490267
+  type: 'test'
+  ...
+# Subtest: body is the largest 4-connected group, the rest drips off
+ok 2 - body is the largest 4-connected group, the rest drips off
+  ---
+  duration_ms: 0.44043
+  type: 'test'
+  ...
+# Subtest: tie between groups goes to the group with the lowest cell index
+ok 3 - tie between groups goes to the group with the lowest cell index
+  ---
+  duration_ms: 0.18274
+  type: 'test'
+  ...
+# Subtest: minimum body size and ink budget decide validity
+ok 4 - minimum body size and ink budget decide validity
+  ---
+  duration_ms: 13.331354
+  type: 'test'
+  ...
+# Subtest: core and sharp cells of a block and a line
+ok 5 - core and sharp cells of a block and a line
+  ---
+  duration_ms: 0.560225
+  type: 'test'
+  ...
+# Subtest: sharp cells (rules 2): ink one cell thick is blade, hand-derived cases
+ok 6 - sharp cells (rules 2): ink one cell thick is blade, hand-derived cases
+  ---
+  duration_ms: 7.736289
+  type: 'test'
+  ...
+# Subtest: a blade on a solid body raises the sharpness stat clearly
+ok 7 - a blade on a solid body raises the sharpness stat clearly
+  ---
+  duration_ms: 0.742416
+  type: 'test'
+  ...
+# Subtest: enclosed space and pocket cells, hand-derived
+ok 8 - enclosed space and pocket cells, hand-derived
+  ---
+  duration_ms: 6.539442
+  type: 'test'
+  ...
+# Subtest: cells at the canvas border count outside as empty
+ok 9 - cells at the canvas border count outside as empty
+  ---
+  duration_ms: 5.319896
+  type: 'test'
+  ...
+# Subtest: stat formulas follow the tuning file
+ok 10 - stat formulas follow the tuning file
+  ---
+  duration_ms: 11.463265
+  type: 'test'
+  ...
+# Subtest: centroid and radius
+ok 11 - centroid and radius
+  ---
+  duration_ms: 0.256144
+  type: 'test'
+  ...
+# Subtest: element: 30 percent threshold, plurality and ties
+ok 12 - element: 30 percent threshold, plurality and ties
+  ---
+  duration_ms: 0.888651
+  type: 'test'
+  ...
+# Subtest: element multipliers: Ember beats Moss beats Tide beats Ember
+ok 13 - element multipliers: Ember beats Moss beats Tide beats Ember
+  ---
+  duration_ms: 0.107798
+  type: 'test'
+  ...
+# Subtest: figure template lists body cells in index order with local coordinates
+ok 14 - figure template lists body cells in index order with local coordinates
+  ---
+  duration_ms: 0.256929
+  type: 'test'
+  ...
+# Subtest: filled areas are armour: solids out-armour lines, dots and every hollow shell of the same ink
+ok 15 - filled areas are armour: solids out-armour lines, dots and every hollow shell of the same ink
+  ---
+  duration_ms: 1.945648
+  type: 'test'
+  ...
+# Subtest: regenerating the golden stat vectors gives byte-identical output
+ok 16 - regenerating the golden stat vectors gives byte-identical output
+  ---
+  duration_ms: 50.005217
+  type: 'test'
+  ...
+# Subtest: regenerating the golden simulation traces gives byte-identical output
+ok 17 - regenerating the golden simulation traces gives byte-identical output
+  ---
+  duration_ms: 2703.327169
+  type: 'test'
+  ...
+# Subtest: golden stat vectors can be read back from their text rows
+ok 18 - golden stat vectors can be read back from their text rows
+  ---
+  duration_ms: 9.122797
+  type: 'test'
+  ...
+# Subtest: golden traces cover ring duels, three and four figures and solo, and are small
+ok 19 - golden traces cover ring duels, three and four figures and solo, and are small
+  ---
+  duration_ms: 2.133862
+  type: 'test'
+  ...
+# Subtest: golden traces reach sudden death, simultaneous knock-outs, every solo ending and both ink upgrades
+ok 20 - golden traces reach sudden death, simultaneous knock-outs, every solo ending and both ink upgrades
+  ---
+  duration_ms: 1.843209
+  type: 'test'
+  ...
+# Subtest: the core uses only the allowed math functions and no ambient randomness or time
+ok 21 - the core uses only the allowed math functions and no ambient randomness or time
+  ---
+  duration_ms: 1.204238
+  type: 'test'
+  ...
+# Subtest: generator is reproducible and stays in range
+ok 22 - generator is reproducible and stays in range
+  ---
+  duration_ms: 1.605385
+  type: 'test'
+  ...
+# Subtest: random drawings: invariants of body and stats
+ok 23 - random drawings: invariants of body and stats
+  ---
+  duration_ms: 63.534918
+  type: 'test'
+  ...
+# Subtest: random drawings: shifting, mirroring and recolouring keep N, C and S
+ok 24 - random drawings: shifting, mirroring and recolouring keep N, C and S
+  ---
+  duration_ms: 32.878471
+  type: 'test'
+  ...
+# Subtest: adding ink never lowers weight, and more weight is never faster
+ok 25 - adding ink never lowers weight, and more weight is never faster
+  ---
+  duration_ms: 0.236629
+  type: 'test'
+  ...
+# Subtest: front vector stays a unit vector and turns toward the steering direction
+ok 26 - front vector stays a unit vector and turns toward the steering direction
+  ---
+  duration_ms: 1.200775
+  type: 'test'
+  ...
+# Subtest: top speed is reached but not exceeded without a dash; dash is faster and has a cooldown
+ok 27 - top speed is reached but not exceeded without a dash; dash is faster and has a cooldown
+  ---
+  duration_ms: 0.666151
+  type: 'test'
+  ...
+# Subtest: weight pushes: the heavier figure drives the lighter one back
+ok 28 - weight pushes: the heavier figure drives the lighter one back
+  ---
+  duration_ms: 9.591196
+  type: 'test'
+  ...
+# Subtest: contact damage: sharp or blunt, element multiplier, cooldown per direction
+ok 29 - contact damage: sharp or blunt, element multiplier, cooldown per direction
+  ---
+  duration_ms: 16.580622
+  type: 'test'
+  ...
+# Subtest: figures of one team do not damage each other
+ok 30 - figures of one team do not damage each other
+  ---
+  duration_ms: 5.626684
+  type: 'test'
+  ...
+# Subtest: ring radius never grows and reaches zero
+ok 31 - ring radius never grows and reaches zero
+  ---
+  duration_ms: 7.253383
+  type: 'test'
+  ...
+# Subtest: ring-out and armour loss eliminate; last one standing wins the round
+ok 32 - ring-out and armour loss eliminate; last one standing wins the round
+  ---
+  duration_ms: 5.914449
+  type: 'test'
+  ...
+# Subtest: R3: simultaneous knock-out by armour: nearest to the centre wins, lowest seat on an exact tie
+ok 33 - R3: simultaneous knock-out by armour: nearest to the centre wins, lowest seat on an exact tie
+  ---
+  duration_ms: 1.18146
+  type: 'test'
+  ...
+# Subtest: catch-up ink: +15 percent per lost round up to the cap
+ok 34 - catch-up ink: +15 percent per lost round up to the cap
+  ---
+  duration_ms: 0.094985
+  type: 'test'
+  ...
+# Subtest: bot matches end, first to the win target takes the match, same seed gives the same hashes
+ok 35 - bot matches end, first to the win target takes the match, same seed gives the same hashes
+  ---
+  duration_ms: 1439.492162
+  type: 'test'
+  ...
+# Subtest: human input replaces the bot for a seat; idle seats stay where they are
+ok 36 - human input replaces the bot for a seat; idle seats stay where they are
+  ---
+  duration_ms: 0.491963
+  type: 'test'
+  ...
+# Subtest: M3: the Ring refuses figures that are too small or over the seat budget
+ok 37 - M3: the Ring refuses figures that are too small or over the seat budget
+  ---
+  duration_ms: 1.516278
+  type: 'test'
+  ...
+# Subtest: M5: the ring hash sees cooldowns, dash direction, bot wobble, bot style and the round
+ok 38 - M5: the ring hash sees cooldowns, dash direction, bot wobble, bot style and the round
+  ---
+  duration_ms: 1.724983
+  type: 'test'
+  ...
+# Subtest: both bot styles steer with a vector of length at most 1 and finish rounds
+ok 39 - both bot styles steer with a vector of length at most 1 and finish rounds
+  ---
+  duration_ms: 343.716527
+  type: 'test'
+  ...
+# Subtest: I1: two 20-cell lines dashing broadside from gaps of 6 to 14 cells never cross
+ok 40 - I1: two 20-cell lines dashing broadside from gaps of 6 to 14 cells never cross
+  ---
+  duration_ms: 26.106988
+  type: 'test'
+  ...
+# Subtest: I1: a fast small figure does not pass through a one-cell line, at any offset
+ok 41 - I1: a fast small figure does not pass through a one-cell line, at any offset
+  ---
+  duration_ms: 48.864259
+  type: 'test'
+  ...
+# Subtest: I1: a dash transfers its push and ends on contact
+ok 42 - I1: a dash transfers its push and ends on contact
+  ---
+  duration_ms: 4.042607
+  type: 'test'
+  ...
+# Subtest: sub-steps: a tick is cut so that no body moves more than maxStepCells per part
+ok 43 - sub-steps: a tick is cut so that no body moves more than maxStepCells per part
+  ---
+  duration_ms: 0.562178
+  type: 'test'
+  ...
+# Subtest: I3: a sharp touch never does less than a blunt touch
+ok 44 - I3: a sharp touch never does less than a blunt touch
+  ---
+  duration_ms: 6.744608
+  type: 'test'
+  ...
+# Subtest: I1: lines dashing broadside with fractional gaps and sideways offsets never cross
+ok 45 - I1: lines dashing broadside with fractional gaps and sideways offsets never cross
+  ---
+  duration_ms: 50.276271
+  type: 'test'
+  ...
+# Subtest: I4: turning scenarios never leave two cell centres of different bodies closer than 0.5
+ok 46 - I4: turning scenarios never leave two cell centres of different bodies closer than 0.5
+  ---
+  duration_ms: 173.492248
+  type: 'test'
+  ...
+# Subtest: I4: the tip speed of a turning figure counts for the number of sub-steps
+ok 47 - I4: the tip speed of a turning figure counts for the number of sub-steps
+  ---
+  duration_ms: 0.347911
+  type: 'test'
+  ...
+# Subtest: I4: bot rounds keep cell centres of different bodies at least 0.5 apart at the end of every tick
+ok 48 - I4: bot rounds keep cell centres of different bodies at least 0.5 apart at the end of every tick
+  ---
+  duration_ms: 1587.536793
+  type: 'test'
+  ...
+# Subtest: I4: meshing teeth (comb against hedgehog) overlap deeper than 0.5 in under 1 percent of ticks
+ok 49 - I4: meshing teeth (comb against hedgehog) overlap deeper than 0.5 in under 1 percent of ticks
+  ---
+  duration_ms: 417.823864
+  type: 'test'
+  ...
+# Subtest: R2: comb against comb overlaps deeper than 0.5 in under 0.5 percent of ticks, never for half a second
+ok 50 - R2: comb against comb overlaps deeper than 0.5 in under 0.5 percent of ticks, never for half a second
+  ---
+  duration_ms: 539.187591
+  type: 'test'
+  ...
+# Subtest: R2: random four-figure rounds overlap deeper than 0.5 in under 0.5 percent of ticks
+ok 51 - R2: random four-figure rounds overlap deeper than 0.5 in under 0.5 percent of ticks
+  ---
+  duration_ms: 1739.737901
+  type: 'test'
+  ...
+# Subtest: R2: the crowd relaxation moves positions only and leaves duels alone
+ok 52 - R2: the crowd relaxation moves positions only and leaves duels alone
+  ---
+  duration_ms: 47.402315
+  type: 'test'
+  ...
+# Subtest: m2: four widest figures do not overlap at the start of a four-seat round
+ok 53 - m2: four widest figures do not overlap at the start of a four-seat round
+  ---
+  duration_ms: 0.692086
+  type: 'test'
+  ...
+# Subtest: M1: a figure whose armour reaches 0 in a tick still hits in a later pair of the same tick
+ok 54 - M1: a figure whose armour reaches 0 in a tick still hits in a later pair of the same tick
+  ---
+  duration_ms: 0.333938
+  type: 'test'
+  ...
+# Subtest: copies are paid from the wave budget times the stake
+ok 55 - copies are paid from the wave budget times the stake
+  ---
+  duration_ms: 0.876633
+  type: 'test'
+  ...
+# Subtest: heavier weapons are thrown less often
+ok 56 - heavier weapons are thrown less often
+  ---
+  duration_ms: 0.098594
+  type: 'test'
+  ...
+# Subtest: invalid hero, weapon and enemy drawings are refused
+ok 57 - invalid hero, weapon and enemy drawings are refused
+  ---
+  duration_ms: 9.995462
+  type: 'test'
+  ...
+# Subtest: a wave spawns the paid copies inside the arena and the fight ends
+ok 58 - a wave spawns the paid copies inside the arena and the fight ends
+  ---
+  duration_ms: 28.933432
+  type: 'test'
+  ...
+# Subtest: upgrades: cost, one per break, heal, colour, redraw with more ink
+ok 59 - upgrades: cost, one per break, heal, colour, redraw with more ink
+  ---
+  duration_ms: 1.30532
+  type: 'test'
+  ...
+# Subtest: boss drawing is the union of the wave designs; earliest wave gives the colour
+ok 60 - boss drawing is the union of the wave designs; earliest wave gives the colour
+  ---
+  duration_ms: 2.066429
+  type: 'test'
+  ...
+# Subtest: a full bot run is deterministic and reaches a final state
+ok 61 - a full bot run is deterministic and reaches a final state
+  ---
+  duration_ms: 724.312377
+  type: 'test'
+  ...
+# Subtest: hero bot returns a steering vector of length at most 1
+ok 62 - hero bot returns a steering vector of length at most 1
+  ---
+  duration_ms: 5.561023
+  type: 'test'
+  ...
+# Subtest: boss can only be started after wave five
+ok 63 - boss can only be started after wave five
+  ---
+  duration_ms: 0.651975
+  type: 'test'
+  ...
+# Subtest: stake: a wave pays its staked budget and never more; enemies get faster, hit harder and carry the unspent ink as armour
+ok 64 - stake: a wave pays its staked budget and never more; enemies get faster, hit harder and carry the unspent ink as armour
+  ---
+  duration_ms: 3.736003
+  type: 'test'
+  ...
+# Subtest: I6: a heavy drawing without core cells is neither fragile nor overpaid as an enemy
+ok 65 - I6: a heavy drawing without core cells is neither fragile nor overpaid as an enemy
+  ---
+  duration_ms: 6.008689
+  type: 'test'
+  ...
+# Subtest: R1: the stake of a heavy blunt enemy design buys speed and crush, and its touch hurts by weight
+ok 66 - R1: the stake of a heavy blunt enemy design buys speed and crush, and its touch hurts by weight
+  ---
+  duration_ms: 8.047057
+  type: 'test'
+  ...
+# Subtest: enemy copies: armour follows the drawing, the boss keeps full armour
+ok 67 - enemy copies: armour follows the drawing, the boss keeps full armour
+  ---
+  duration_ms: 1.361539
+  type: 'test'
+  ...
+# Subtest: M2: when the hero and the last enemy fall in the same tick the run is lost
+ok 68 - M2: when the hero and the last enemy fall in the same tick the run is lost
+  ---
+  duration_ms: 1.411856
+  type: 'test'
+  ...
+# Subtest: M6: a shot is not spent on an enemy that is already at 0 armour
+ok 69 - M6: a shot is not spent on an enemy that is already at 0 armour
+  ---
+  duration_ms: 0.872365
+  type: 'test'
+  ...
+# Subtest: M5: the solo hash sees budgets, colours, the upgrade flag, the wave and the cooldowns
+ok 70 - M5: the solo hash sees budgets, colours, the upgrade flag, the wave and the cooldowns
+  ---
+  duration_ms: 13.713023
+  type: 'test'
+  ...
+1..70
+# tests 70
+# suites 0
+# pass 70
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 4872.122855

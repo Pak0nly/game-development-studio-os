@@ -1,8 +1,9 @@
 // One bot style of the Ring balance run for one tuning candidate, written to
 // a file as soon as it is done (INK-CORE-V3: levers are measured one by one
 // and per bot style; short pieces survive a container restart).
-//   node sim/lever_test.js --style rusher|circler|mixed --label name --out file.json
+//   node sim/lever_run.js --style rusher|circler|mixed --label name --out file.json
 //                          [--seeds 20] [--ffa 300] [--set path=value ...]
+// (The file name must not end in test.js: node --test would run it.)
 // --set values that are arrays are written as path=a/b/c. The output holds the
 // verdict of the style, the light-shape average in four-figure rounds and the
 // duel and four-figure rate of every archetype. It never writes the tuning file.

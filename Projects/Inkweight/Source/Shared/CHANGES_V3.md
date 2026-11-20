@@ -160,18 +160,23 @@ code is in the core.
 - `Shared/golden/stat_vectors.json`: only `tuningVersion` changed; every
   expected value is as in version 2 (the template fields `turnCos` and
   `turnSin` were never in it).
-- `Shared/golden/sim_traces.json`: regenerated with the same trace list.
-  Every solo trace and every Ring trace with three or four seats changed;
-  duel traces changed only where a contact needed more than two extra passes.
-  Replace the whole file.
-- Tests: 71 (version 2: 65). New: simultaneous knock-out by armour (R3), comb
+- `Shared/golden/sim_traces.json`: regenerated with the same 17 traces.
+  Changed (10): the four Ring traces with three or four seats and contact
+  (`ring_3_star_wedge_needle`, `ring_4_disc_star_comb_dot`,
+  `ring_4_one_scripted_seat`, `ring_4_circlers`) and all six solo traces.
+  Byte-identical to version 2 (7): the six duel traces and
+  `ring_3_simultaneous_nearest_wins` (nobody touches). A port can therefore
+  check V2 with the duel traces first, then V3 with the crowd traces, then V4
+  and V5 with the solo traces. Replace the whole file (the header carries the
+  new `tuningVersion`).
+- Tests: 70 (version 2: 65). New: simultaneous knock-out by armour (R3), comb
   against comb, a four-figure crowd, the crowd relaxation (positions only,
   duels untouched), the solo crush and speed (R1).
 - Simulation tools (not part of a port): `sim/overlap_probe.js` also measures
   teeth pairs and random four-figure rounds; `sim/balance.js` has the heavy
   blunt enemy designs (block, disc, ring, 2-wide hoop) in the solo smoke
   field and reports them as a group; `sim/solo_smoke.js` can run a part of
-  the field; new `sim/lever_test.js` (one bot style of the Ring balance run
+  the field; new `sim/lever_run.js` (one bot style of the Ring balance run
   for one tuning candidate).
 
 ## C. What the browser app has to change
