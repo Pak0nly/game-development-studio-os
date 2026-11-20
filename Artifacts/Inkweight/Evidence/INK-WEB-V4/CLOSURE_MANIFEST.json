@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Inkweight",
+  "work_order": {
+    "id": "INK-WEB-V4",
+    "path": "Artifacts/Inkweight/DirectorDispatch/INK-WEB-V4/WORK_ORDER.md",
+    "sha256": "692cafae218f49c003cba6d75ab2eb6048b89d87dbc98c9e93e1991f219e954f",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Inkweight/DirectorDispatch/INK-WEB-V4/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "252e6994f5500f1f4413494c9f8eeb56a4a3756e42b03b66b2a79d58ec6529b0",
+    "receipt_path": "Artifacts/Inkweight/DirectorDispatch/INK-WEB-V4/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "c10e50a8cf2c57b1cdd6e634714c10117e807a397cd37f2d8907448717a564dd",
+    "receipt_id": "e262e0af5e09235a97cd5b7245f563247c4ae61905a5e714412664abf1d9276a",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-session_01Kh4ZKFT8i4qXjrYsecr1yo",
+    "worker_task_id": "a7cfafae2d45ff931",
+    "reviewer_task_id": "a55c395b5dc8fe484"
+  },
+  "candidate": {
+    "identity": "c6867db8938079ea7c90e530e55cdeb84c95dc61ad65022cbe5805f1e0667e87",
+    "files": [
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/audio.js",
+        "sha256": "da8128e9ea254d00ab3725c4190fadcae84c9fd4dd535874a74b7a5aa801d257",
+        "size": 4426
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/botpick.js",
+        "sha256": "0dabb6d16aefe72a63dcd09b9aae89ed011130f11b732c14fd1b83aa4c08e124",
+        "size": 3135
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/drawscreen.js",
+        "sha256": "18bb951a6963532047ae49a28e150d548b4bb4508cd9853377d23ca2f4137348",
+        "size": 27412
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/fight.js",
+        "sha256": "9efd4b9c7f8cfb15e6ab365ffaedc23e110cc16b9f7f711cb8a6802ef31b2c32",
+        "size": 25340
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/gallery.js",
+        "sha256": "cf6ef62bd5c827d16599a7caabe52964eb20b3502e2f67a089342a1fcf0ae8a1",
+        "size": 2749
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/input.js",
+        "sha256": "3843e276f1f5e7551d88f198527ad17ba97092385c4225ce3f90aa4b5ae3e182",
+        "size": 3611
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/main.js",
+        "sha256": "7a544e3787bc70be10f6b83cf2f356c0e06752eb19da0035f2425e27fc84fcc1",
+        "size": 14754
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/page.html",
+        "sha256": "a3ea1d157be587a318a6f39f293edf4fa317ea5ad0c430b86e9087c1b2a19382",
+        "size": 11779
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/ringmode.js",
+        "sha256": "1cf106b767366e00d51ffaa8322ffd4d65d57cf856ae6d09fa6b45ff669daa71",
+        "size": 14868
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/scribbles.js",
+        "sha256": "d6f63429916b84836f1ea0d062024ddb3af0e8b457ab76e5e31c3d5155a23bb0",
+        "size": 4088
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/solomode.js",
+        "sha256": "9740976636cbc342f3700eb4bf462d48e57d8ec20b5244d246aa2124e9af258e",
+        "size": 18588
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/sprites.js",
+        "sha256": "5c4291fa34f32e28088e4cfda76ebad92f897be7b2233ddf53bb440a48acd81d",
+        "size": 4688
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/style.css",
+        "sha256": "336f521aed9fcfb8c4fe2f7ce32014ab5211e15d184c2efaf7bb5324ab2a858f",
+        "size": 17247
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/tuning.js",
+        "sha256": "79a5cadf86c4a4d64826f28bb2616c72a722ef0f98854ebed48d5905d26baf5b",
+        "size": 278
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/app/ui.js",
+        "sha256": "2420044a577d47144763ae67ed01e626cd84ae8f91bd90efe7093a6e80df4f94",
+        "size": 6492
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/build/build.mjs",
+        "sha256": "5fb84555a334dd2eadff4d747d5d448dda21abe1f4b70222a859606d6a90332a",
+        "size": 6016
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/build/ring_fairness.cjs",
+        "sha256": "956efeabdc452e4efacd2025aa3461ddb82966e897f28ee38324ea205bbeaced",
+        "size": 8540
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/build/solo_play.cjs",
+        "sha256": "5109cf57cb6e55256482e0208fab4e77e3f8a4963f0551b6e145547d5d26a53d",
+        "size": 9372
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/build/verify.cjs",
+        "sha256": "9132b4ad96587317895610b909e811a50a11a1b6d4256ef77a0d164788f53e1b",
+        "size": 73649
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/dist/inkweight.artifact.html",
+        "sha256": "accc5372d4af5702d1291e2212e32762c75c7ff71970151e3833071dba0a62f4",
+        "size": 231505
+      },
+      {
+        "path": "Projects/Inkweight/Source/WebPrototype/dist/inkweight.html",
+        "sha256": "bde18a13dff830b9fcfa7fd9f077d542bcc91675836993b719f946e2ba606e54",
+        "size": 231632
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Inkweight/Evidence/INK-WEB-V4/REVIEW.md",
+      "sha256": "6188a87027b9210687671f535efe6097420d797dc9b195c183949014f4d757bd",
+      "size": 22878
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Inkweight/Evidence/INK-WEB-V4/review.json",
+    "record_sha256": "276c7cf01c4dd039278db37a346789fa76d8bac2973193b5fd478222ababde2f",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "c6867db8938079ea7c90e530e55cdeb84c95dc61ad65022cbe5805f1e0667e87",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Inkweight/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Inkweight/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

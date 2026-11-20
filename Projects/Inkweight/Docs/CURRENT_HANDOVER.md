@@ -85,7 +85,14 @@ Reviewer task: a00e917ba43eef5ea
 Candidate identity: b299b6b963db9180a87590215851df144763fb1922a16c4c4e1302ed6067b77d
 Closure receipt: 2433ce39a86728f4f8bbe990b6bc5442b264828af58301f15fadbb7fb3c9e4f8
 
-Running: INK-WEB-V4 (dispatched, Worker not yet returned).
+INK-WEB-V4
+Independent review verdict: PASS
+Worker task: a7cfafae2d45ff931
+Reviewer task: a55c395b5dc8fe484
+Candidate identity: c6867db8938079ea7c90e530e55cdeb84c95dc61ad65022cbe5805f1e0667e87
+Closure receipt: ad9d9674a3f34429b141db67b96b58f31e60443c80168a84227508d2a7bb532f
 
-Next action: wait for the browser Worker, review and close the order, republish the page,
-write the morning report.
+Running: INK-WEB-V5 (the four important findings of the last browser review).
+
+Next action: wait for the Worker, review and close the order, republish the
+page, give the Human the morning report.

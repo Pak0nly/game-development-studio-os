@@ -18,11 +18,16 @@ preparation, choosing tasks himself (ID-04).
   measured in version 3 and none adopted. Open in solo: the middle stake is
   nearly free against heavy slow enemy designs, and a fast hero can kite a
   single heavy enemy at any stake.
-- **Browser prototype** (`Source/WebPrototype/app`, `dist`): playable, reviewed
-  on core version 2; every number and rule sentence shown was checked against
-  the rules. Published privately: https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1
-  Not yet rebuilt on core version 3; the first Ring match is too hard with the
-  current placeholder bots. Never played on a real phone.
+- **Browser prototype** (`Source/WebPrototype/app`, `dist`): playable on core
+  version 3 and reviewed; every number and rule sentence shown was recomputed
+  independently. Published privately: https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1
+  Review findings still open in the published version: the first-run hint
+  swallows a stroke that starts on it; a newcomer wins about one Ring match in
+  three and a plain blob almost never; solo at x1 has easy waves and then a
+  boss that kills a hero who runs into enemies; on a phone the enemy's real
+  armour can be cut off by a drip warning
+  (`Artifacts/Inkweight/Evidence/INK-WEB-V4/REVIEW.md`). Never played on a real
+  phone.
 - **Unity project** (`Source/Unity`): C# core bit-exact on core version 3
   (16729 checks, Debug and Release, .NET 8); every rule sentence shown was
   checked against the rules. The Unity layer was only compiled
@@ -96,14 +101,20 @@ Reviewer task: a00e917ba43eef5ea
 Candidate identity: b299b6b963db9180a87590215851df144763fb1922a16c4c4e1302ed6067b77d
 Closure receipt: 2433ce39a86728f4f8bbe990b6bc5442b264828af58301f15fadbb7fb3c9e4f8
 
+INK-WEB-V4
+Independent review verdict: PASS
+Worker task: a7cfafae2d45ff931
+Reviewer task: a55c395b5dc8fe484
+Candidate identity: c6867db8938079ea7c90e530e55cdeb84c95dc61ad65022cbe5805f1e0667e87
+Closure receipt: ad9d9674a3f34429b141db67b96b58f31e60443c80168a84227508d2a7bb532f
+
 Requested model — not independently attested.
 
 ## Running
 
-- INK-WEB-V4: browser prototype on core version 3, fair first Ring match,
-  small first-run hint.
+- INK-WEB-V5: the four important findings of the last browser review.
 
 ## Exact Next Step
 
-Wait for the browser Worker, review and close the order, republish the prototype page,
-then write the morning report for the Human.
+Wait for the Worker, review and close the order, republish the prototype page,
+then give the Human the morning report.
