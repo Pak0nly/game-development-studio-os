@@ -125,13 +125,36 @@ export function soloEnemyArmour(tuning, fig, scale) {
   return (so.enemyArmourPerInk * fig.stats.N + so.enemyArmourMult * fig.stats.armour) * scale;
 }
 
+// Top speed of one enemy copy in cells per second: a flat part every enemy
+// has plus a share of the drawing's own top speed, times the stake factor.
+// Heavy drawings stay the slowest enemies, but at the higher stakes they are
+// no longer slower than every hero.
+export function soloEnemySpeed(tuning, fig, stakeIndex) {
+  const so = tuning.solo;
+  return (so.enemySpeedBase + so.enemySpeedMult * fig.stats.topSpeed) * so.stakeSpeedMult[stakeIndex];
+}
+
+// Crush (proposal, INK-CORE-V3): what the weight of an enemy copy adds to
+// its blunt touch damage, before the enemy and stake damage factors:
+// enemyCrushPerInk for every body cell, times the wave scale (how much staked
+// ink the copy carries, see soloWaveArmourScale), times the stake. In the
+// walled arena weight cannot push anybody out, so it hits harder instead, and
+// a stake that cannot buy another copy of a heavy drawing makes its copies
+// hit harder. Boss and escorts: scale 1, stake index 0.
+export function soloEnemyCrush(tuning, fig, scale, stakeIndex) {
+  const so = tuning.solo;
+  return so.enemyCrushPerInk * fig.stats.N * scale * so.stakes[stakeIndex];
+}
+
 // isBoss: the boss keeps its full armour times bossArmourMult.
 function spawnEnemy(tuning, run, fig, isBoss, stakeIndex, scale) {
   const so = tuning.solo;
   const u = randomUnit(run);
   const d = so.arenaRadius - so.enemySpawnInset;
   const body = createBody(fig, u[0] * d, u[1] * d, -u[0], -u[1], 1, 1,
-    so.enemySpeedMult * so.stakeSpeedMult[stakeIndex], so.enemyDamageMult * so.stakeDamageMult[stakeIndex]);
+    1, so.enemyDamageMult * so.stakeDamageMult[stakeIndex]);
+  body.topSpeed = soloEnemySpeed(tuning, fig, stakeIndex);
+  body.bluntBonus = soloEnemyCrush(tuning, fig, scale, stakeIndex);
   body.hp = isBoss ? fig.stats.armour * so.bossArmourMult : soloEnemyArmour(tuning, fig, scale);
   body.maxHp = body.hp;
   return body;

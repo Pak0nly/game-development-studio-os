@@ -69,6 +69,9 @@ export function createBody(fig, x, y, fx, fy, team, armourMult, speedMult, damag
     alive: true,
     topSpeed: fig.stats.topSpeed * sm,
     damageMult: dm,
+    // added to the blunt damage of this body's touches before the multipliers
+    // (0 everywhere except solo enemy copies, see solo.js spawnEnemy)
+    bluntBonus: 0,
     dashTicks: 0, dashCd: 0, dashDx: 0, dashDy: 0,
     // steering direction of the running tick (set by the control step, used
     // by the sub-steps; not state between ticks, not hashed)
@@ -307,7 +310,7 @@ function scanCells(p, q, sign) {
 // contact the sharpness (never less than blunt) plus the armour cut: a blade
 // takes the share sharpArmourCut of the victim's full armour with every hit.
 function touchDamage(tuning, body, sharp, victim) {
-  const blunt = tuning.stats.bluntDamage;
+  const blunt = tuning.stats.bluntDamage + body.bluntBonus;
   if (!sharp) return blunt;
   const sh = body.fig.stats.sharpness;
   return (sh > blunt ? sh : blunt) + tuning.stats.sharpArmourCut * victim.maxHp;

@@ -235,9 +235,14 @@ export function runRingBalanceAll(overrides, opts) {
 }
 
 // Solo smoke: bot hero through the five waves against one enemy design per run.
-export function runSoloSmoke(tuning, seeds) {
-  const heroes = [['disc', 0], ['hedgehog', 1], ['star', 0], ['line', 0]];
-  const enemies = ['dot', 'needle', 'block', 'comb', 'cross', 'splinter', 'spiral'];
+// The last four enemies are the heavy blunt designs of re-review finding R1.
+// only (optional): { heroes: [names], enemies: [names] } runs a part of the field.
+export const SOLO_HEAVY_BLUNT = ['block', 'disc', 'ring', 'hoop2'];
+export function runSoloSmoke(tuning, seeds, only) {
+  let heroes = [['disc', 0], ['hedgehog', 1], ['star', 0], ['line', 0]];
+  let enemies = ['dot', 'needle', 'comb', 'cross', 'splinter', 'spiral', 'block', 'disc', 'ring', 'hoop2'];
+  if (only && only.heroes) heroes = heroes.filter((h) => only.heroes.indexOf(h[0]) !== -1);
+  if (only && only.enemies) enemies = enemies.filter((e) => only.enemies.indexOf(e) !== -1);
   const weapon = recolour(archetype('needle').cells, 1);
   const out = [];
   for (const [heroName, style] of heroes) {
@@ -249,6 +254,7 @@ export function runSoloSmoke(tuning, seeds) {
         let score = 0;
         let seconds = 0;
         let timeouts = 0;
+        let bossReached = 0;
         for (let s = 0; s < seeds; s++) {
           const enemy = archetype(enemyName).cells;
           const plan = { style, boss: true, waves: [0, 1, 2, 3, 4].map(() => ({ enemy, stake, upgrade: 'heal' })) };
@@ -256,12 +262,13 @@ export function runSoloSmoke(tuning, seeds) {
           const r = playSoloRun(tuning, 5000 + s, hero, weapon, W, H, 0, plan, null, null);
           cleared += r.run.phase === 'won' ? 5 : (r.run.wave > 5 ? 5 : r.run.wave);
           if (r.run.phase === 'won') won++;
+          if (r.results.length === 6) bossReached++;
           if (r.run.endReason === 'time') timeouts++;
           hpLeft += r.run.heroHp > 0 ? r.run.heroHp / r.run.heroMaxHp : 0;
           score += r.run.score;
           for (const x of r.results) seconds += x.ticks / tuning.physics.tickRate;
         }
-        out.push({ hero: heroName, heroBot: style === 1 ? 'brawl' : 'kite', enemy: enemyName, stake: tuning.solo.stakes[stake], avgWavesCleared: Number((cleared / seeds).toFixed(2)), runsWon: won, runs: seeds, timeouts, avgHpLeft: Number((hpLeft / seeds).toFixed(2)), avgScore: Math.round(score / seeds), avgRunSeconds: Math.round(seconds / seeds) });
+        out.push({ hero: heroName, heroBot: style === 1 ? 'brawl' : 'kite', enemy: enemyName, stake: tuning.solo.stakes[stake], avgWavesCleared: Number((cleared / seeds).toFixed(2)), runsWon: won, bossReached, runs: seeds, timeouts, avgHpLeft: Number((hpLeft / seeds).toFixed(2)), avgScore: Math.round(score / seeds), avgRunSeconds: Math.round(seconds / seeds) });
       }
     }
   }
