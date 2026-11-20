@@ -35,23 +35,27 @@ balance simulation), `../tests/` (`node --test`).
 `y * W + x`. 0 empty, 1 Black, 2 Ember, 3 Tide, 4 Moss. Row 0 is the front.
 
 **Stats** (`computeStats`): `{ kind, budget, filled, drips, N, C, S, enclosed,
-P, colourCounts: [black, ember, tide, moss], element (0 neutral or 2/3/4),
+P, pocketCells, push, colourCounts: [black, ember, tide, moss], element (0 neutral or 2/3/4),
 bigEnough, withinBudget, valid, weight, armour, sharpness, topSpeed, cx, cy,
 radius, inertia }`. Use it for the live stat display while drawing. `S` counts
 the blade cells (ink one cell thick), `P` the pocket cells (enclosed space),
-`enclosed` all enclosed empty cells. Sharpness lies between
-`stats.sharpBase` and `sharpBase + sharpMax + sharpPurity`; a stat bar should
-use that range.
+`enclosed` all enclosed empty cells, `pocketCells` the pocket cells that
+count, `push` the push weight (the mass of collisions). Real ranges of valid
+figure drawings up to 220 ink, for stat bars: armour 63.6 to about 290,
+sharpness 1.0 to 4.52 (bar end 4.7), weight 12 to 220, push weight `N` to
+`1.1 * N`, top speed 9.2 to 32.4.
 
 **Figure template** (`buildFigure`, immutable, shared by all bodies of one
 drawing): `{ stats, W, H, cx, cy, count, lx[], ly[], sharp[], colour[],
-boundary[], grid[], radius, mass, accelK, turnRate, turnCos, turnSin }`.
+boundary[], grid[], radius, mass, accelK, turnRate, turnCos, turnSin }`
+(`mass` is `stats.push`; `turnCos`/`turnSin` are no longer used by the step).
 `lx/ly` are cell centres relative to the centroid, in ascending cell index.
 `grid[y * W + x]` is the cell number or -1. `boundary` lists the cells that are
 not core cells.
 
 **Body** (`createBody`): `{ fig, team, x, y, vx, vy, fx, fy, hp, maxHp, alive,
-topSpeed, damageMult, dashTicks, dashCd, dashDx, dashDy }`. `(fx, fy)` is the unit front
+topSpeed, damageMult, dashTicks, dashCd, dashDx, dashDy, turning, turnDx,
+turnDy }` (the last three are scratch values of the running tick). `(fx, fy)` is the unit front
 vector; a body with front `(0, -1)` looks exactly like its canvas. To draw a
 cell use `cellWorldX/Y`, or rotate the whole sprite by the front vector.
 
@@ -100,7 +104,8 @@ const run = core.soloCreateRun(tuning, seed, heroCells, weaponCells, 32, 32, sta
 core.soloStartWave(tuning, run, enemyCells, stakeIndex);   // stakeIndex 0, 1, 2 -> tuning.solo.stakes; throws on any other value
 // preview for the stake buttons: core.soloCopies(tuning, run.wave, stakeIndex, N) copies, each drop worth
 //   core.soloDropValue(tuning, run.wave, stakeIndex, N) ink; enemy damage x tuning.solo.stakeDamageMult[stakeIndex],
-//   enemy speed x tuning.solo.stakeSpeedMult[stakeIndex]
+//   enemy speed x tuning.solo.stakeSpeedMult[stakeIndex], enemy armour
+//   core.soloEnemyArmour(tuning, fig, core.soloWaveArmourScale(tuning, run.wave, stakeIndex, N))
 core.soloStep(tuning, run, heroInput);                      // every tick while run.phase === 'fight'
 // 'cleared': optional core.soloUpgrade(tuning, run, kind, payload), then the next wave;
 //            when run.wave === core.SOLO_WAVES call core.soloStartBoss(tuning, run)
@@ -177,5 +182,8 @@ node sim/balance.js --out DIR     # balance report (Markdown and JSON), three bo
 node sim/sweep.js FILE.json       # compare tuning candidates (see the file header)
 node sim/solo_smoke.js            # solo smoke run alone
 node sim/show_stats.js            # stat line of every archetype
+node sim/readability.js           # stat table of beginner drawings (Markdown)
+node sim/overlap_probe.js         # how deep bodies sit inside each other (review finding I4)
+node sim/style_check.js           # how often a rusher bot beats a circler bot
 node sim/tune_search.js 200 1     # random search over tuning numbers (rusher bots only)
 ```

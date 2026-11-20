@@ -5,42 +5,42 @@
    "circler",
    "mixed"
   ],
-  "seedsPerPair": 60,
-  "ffaGames": 1200,
+  "seedsPerPair": 30,
+  "ffaGames": 800,
   "neutral": false,
   "perStyle": [
    {
     "style": "rusher",
-    "rounds": 9180,
-    "avgRoundSeconds": 33.2,
-    "ringOutShare": 0.529,
-    "armourOutShare": 0.471,
-    "suddenDeathShare": 0.016,
-    "maxDuelWinRate": 0.7902,
-    "maxDuelName": "splinter",
-    "maxFfaWinRate": 0.5271
+    "rounds": 5700,
+    "avgRoundSeconds": 21.9,
+    "ringOutShare": 0.266,
+    "armourOutShare": 0.734,
+    "suddenDeathShare": 0.005,
+    "maxDuelWinRate": 0.7684,
+    "maxDuelName": "grille",
+    "maxFfaWinRate": 0.6337
    },
    {
     "style": "circler",
-    "rounds": 9180,
-    "avgRoundSeconds": 41.6,
-    "ringOutShare": 0.973,
-    "armourOutShare": 0.027,
-    "suddenDeathShare": 0.061,
-    "maxDuelWinRate": 0.8353,
+    "rounds": 5700,
+    "avgRoundSeconds": 35.5,
+    "ringOutShare": 0.638,
+    "armourOutShare": 0.362,
+    "suddenDeathShare": 0.011,
+    "maxDuelWinRate": 0.7614,
     "maxDuelName": "hoop",
-    "maxFfaWinRate": 0.3993
+    "maxFfaWinRate": 0.5515
    },
    {
     "style": "mixed",
-    "rounds": 9180,
-    "avgRoundSeconds": 21.3,
-    "ringOutShare": 0.904,
-    "armourOutShare": 0.096,
-    "suddenDeathShare": 0.011,
-    "maxDuelWinRate": 0.6343,
-    "maxDuelName": "line",
-    "maxFfaWinRate": 0.4624
+    "rounds": 5700,
+    "avgRoundSeconds": 17.4,
+    "ringOutShare": 0.655,
+    "armourOutShare": 0.345,
+    "suddenDeathShare": 0.001,
+    "maxDuelWinRate": 0.6719,
+    "maxDuelName": "spiral",
+    "maxFfaWinRate": 0.4566
    }
   ],
   "rows": [
@@ -52,50 +52,52 @@
     "C": 148,
     "S": 0,
     "P": 0,
-    "armour": 273.6,
+    "armour": 270.4,
     "sharpness": 1,
     "topSpeed": 9.57,
     "radius": 8.4,
     "element": 0,
-    "duelWinRate": 0.4457,
-    "duelWorst": 0.278,
-    "duelBest": 0.633,
-    "ffaWinRate": 0.3194,
-    "ffaGames": 792,
+    "duelWinRate": 0.3731,
+    "duelWorst": 0.155,
+    "duelBest": 0.967,
+    "ffaWinRate": 0.3265,
+    "ffaGames": 441,
     "perStyle": {
      "rusher": {
-      "duel": 0.5941,
-      "ffa": 0.4312
+      "duel": 0.2754,
+      "ffa": 0.3103
      },
      "circler": {
-      "duel": 0.2255,
-      "ffa": 0.1599
+      "duel": 0.2895,
+      "ffa": 0.2897
      },
      "mixed": {
-      "duel": 0.5176,
-      "ffa": 0.3701
+      "duel": 0.5544,
+      "ffa": 0.3775
      }
     },
     "versus": {
-     "block": 0.395,
-     "ring": 0.533,
-     "cross": 0.494,
-     "star": 0.522,
-     "lance": 0.6,
-     "line": 0.361,
-     "comb": 0.439,
-     "shield": 0.333,
-     "dot": 0.633,
-     "hedgehog": 0.356,
-     "wedge": 0.467,
-     "frame": 0.556,
-     "needle": 0.3,
-     "hoop": 0.5,
-     "spiral": 0.3,
-     "grille": 0.278,
-     "splinter": 0.511
+     "block": 0.455,
+     "ring": 0.289,
+     "cross": 0.367,
+     "star": 0.3,
+     "lance": 0.656,
+     "line": 0.622,
+     "comb": 0.211,
+     "shield": 0.3,
+     "dot": 0.967,
+     "hedgehog": 0.333,
+     "wedge": 0.444,
+     "frame": 0.511,
+     "needle": 0.245,
+     "hoop": 0.4,
+     "spiral": 0.222,
+     "grille": 0.222,
+     "splinter": 0.155,
+     "hoop2": 0.178,
+     "hoop3": 0.211
     },
-    "duelSameStyle": 0.4098
+    "duelSameStyle": 0.2824
    },
    {
     "name": "block",
@@ -105,50 +107,52 @@
     "C": 156,
     "S": 0,
     "P": 0,
-    "armour": 279.2,
+    "armour": 279,
     "sharpness": 1,
     "topSpeed": 9.5,
     "radius": 10.1,
     "element": 0,
-    "duelWinRate": 0.5079,
-    "duelWorst": 0.283,
-    "duelBest": 0.822,
-    "ffaWinRate": 0.3915,
-    "ffaGames": 774,
+    "duelWinRate": 0.4146,
+    "duelWorst": 0.178,
+    "duelBest": 1,
+    "ffaWinRate": 0.3255,
+    "ffaGames": 467,
     "perStyle": {
      "rusher": {
-      "duel": 0.7157,
-      "ffa": 0.5271
+      "duel": 0.3281,
+      "ffa": 0.3487
      },
      "circler": {
-      "duel": 0.2961,
-      "ffa": 0.2636
+      "duel": 0.3544,
+      "ffa": 0.2895
      },
      "mixed": {
-      "duel": 0.5118,
-      "ffa": 0.3837
+      "duel": 0.5614,
+      "ffa": 0.3374
      }
     },
     "versus": {
-     "disc": 0.605,
-     "ring": 0.572,
+     "disc": 0.545,
+     "ring": 0.3,
      "cross": 0.522,
-     "star": 0.511,
-     "lance": 0.578,
-     "line": 0.489,
-     "comb": 0.422,
-     "shield": 0.439,
-     "dot": 0.822,
-     "hedgehog": 0.433,
-     "wedge": 0.6,
-     "frame": 0.539,
-     "needle": 0.445,
+     "star": 0.255,
+     "lance": 0.622,
+     "line": 0.6,
+     "comb": 0.256,
+     "shield": 0.333,
+     "dot": 1,
+     "hedgehog": 0.333,
+     "wedge": 0.555,
+     "frame": 0.589,
+     "needle": 0.378,
      "hoop": 0.5,
-     "spiral": 0.283,
-     "grille": 0.333,
-     "splinter": 0.539
+     "spiral": 0.244,
+     "grille": 0.244,
+     "splinter": 0.222,
+     "hoop2": 0.178,
+     "hoop3": 0.2
     },
-    "duelSameStyle": 0.5059
+    "duelSameStyle": 0.3412
    },
    {
     "name": "ring",
@@ -158,50 +162,52 @@
     "C": 16,
     "S": 0,
     "P": 208,
-    "armour": 318.8,
+    "armour": 179.2,
     "sharpness": 1,
     "topSpeed": 10.99,
     "radius": 12.4,
     "element": 3,
-    "duelWinRate": 0.5284,
-    "duelWorst": 0.278,
-    "duelBest": 0.933,
-    "ffaWinRate": 0.3611,
-    "ffaGames": 839,
+    "duelWinRate": 0.4713,
+    "duelWorst": 0.022,
+    "duelBest": 1,
+    "ffaWinRate": 0.3231,
+    "ffaGames": 458,
     "perStyle": {
      "rusher": {
-      "duel": 0.5167,
-      "ffa": 0.4596
+      "duel": 0.5035,
+      "ffa": 0.2922
      },
      "circler": {
-      "duel": 0.5647,
-      "ffa": 0.2574
+      "duel": 0.4526,
+      "ffa": 0.3247
      },
      "mixed": {
-      "duel": 0.5039,
-      "ffa": 0.3661
+      "duel": 0.4579,
+      "ffa": 0.3533
      }
     },
     "versus": {
-     "disc": 0.467,
-     "block": 0.428,
-     "cross": 0.589,
-     "star": 0.628,
-     "lance": 0.728,
-     "line": 0.544,
-     "comb": 0.3,
-     "shield": 0.278,
-     "dot": 0.933,
-     "hedgehog": 0.489,
-     "wedge": 0.567,
-     "frame": 0.694,
-     "needle": 0.467,
-     "hoop": 0.522,
-     "spiral": 0.372,
-     "grille": 0.289,
-     "splinter": 0.689
+     "disc": 0.711,
+     "block": 0.7,
+     "cross": 0.7,
+     "star": 0.333,
+     "lance": 0.733,
+     "line": 0.144,
+     "comb": 0.4,
+     "shield": 0.544,
+     "dot": 1,
+     "hedgehog": 0.6,
+     "wedge": 0.611,
+     "frame": 0.411,
+     "needle": 0.022,
+     "hoop": 0.4,
+     "spiral": 0.555,
+     "grille": 0.311,
+     "splinter": 0.033,
+     "hoop2": 0.3,
+     "hoop3": 0.444
     },
-    "duelSameStyle": 0.5407
+    "duelSameStyle": 0.478
    },
    {
     "name": "cross",
@@ -211,50 +217,52 @@
     "C": 0,
     "S": 63,
     "P": 0,
-    "armour": 170,
-    "sharpness": 2.78,
+    "armour": 78.9,
+    "sharpness": 3.66,
     "topSpeed": 20,
     "radius": 16.2,
     "element": 2,
-    "duelWinRate": 0.4971,
-    "duelWorst": 0.261,
-    "duelBest": 0.789,
-    "ffaWinRate": 0.1344,
-    "ffaGames": 781,
+    "duelWinRate": 0.5146,
+    "duelWorst": 0,
+    "duelBest": 0.989,
+    "ffaWinRate": 0.0516,
+    "ffaGames": 446,
     "perStyle": {
      "rusher": {
-      "duel": 0.2157,
-      "ffa": 0.0309
+      "duel": 0.4895,
+      "ffa": 0.028
      },
      "circler": {
-      "duel": 0.7471,
-      "ffa": 0.2625
+      "duel": 0.5386,
+      "ffa": 0.0629
      },
      "mixed": {
-      "duel": 0.5284,
-      "ffa": 0.1103
+      "duel": 0.5158,
+      "ffa": 0.0625
      }
     },
     "versus": {
-     "disc": 0.506,
+     "disc": 0.633,
      "block": 0.478,
-     "ring": 0.411,
-     "star": 0.761,
-     "lance": 0.439,
-     "line": 0.322,
-     "comb": 0.439,
-     "shield": 0.594,
-     "dot": 0.789,
-     "hedgehog": 0.494,
-     "wedge": 0.467,
-     "frame": 0.711,
-     "needle": 0.367,
-     "hoop": 0.261,
-     "spiral": 0.444,
-     "grille": 0.606,
-     "splinter": 0.361
+     "ring": 0.3,
+     "star": 0.989,
+     "lance": 0.178,
+     "line": 0.722,
+     "comb": 0,
+     "shield": 0.855,
+     "dot": 0.989,
+     "hedgehog": 0,
+     "wedge": 0.055,
+     "frame": 0.967,
+     "needle": 0.822,
+     "hoop": 0.156,
+     "spiral": 0,
+     "grille": 0.878,
+     "splinter": 0.833,
+     "hoop2": 0.178,
+     "hoop3": 0.744
     },
-    "duelSameStyle": 0.4814
+    "duelSameStyle": 0.5141
    },
    {
     "name": "star",
@@ -264,50 +272,52 @@
     "C": 45,
     "S": 36,
     "P": 0,
-    "armour": 201.5,
-    "sharpness": 2.22,
+    "armour": 138.9,
+    "sharpness": 2.28,
     "topSpeed": 14.54,
     "radius": 13.5,
     "element": 4,
-    "duelWinRate": 0.4686,
-    "duelWorst": 0.228,
-    "duelBest": 0.878,
-    "ffaWinRate": 0.1682,
-    "ffaGames": 844,
+    "duelWinRate": 0.5123,
+    "duelWorst": 0.011,
+    "duelBest": 1,
+    "ffaWinRate": 0.2008,
+    "ffaGames": 498,
     "perStyle": {
      "rusher": {
-      "duel": 0.2706,
-      "ffa": 0.0664
+      "duel": 0.4456,
+      "ffa": 0.128
      },
      "circler": {
-      "duel": 0.6157,
-      "ffa": 0.2937
+      "duel": 0.5825,
+      "ffa": 0.2866
      },
      "mixed": {
-      "duel": 0.5196,
-      "ffa": 0.1434
+      "duel": 0.5088,
+      "ffa": 0.1882
      }
     },
     "versus": {
-     "disc": 0.478,
-     "block": 0.489,
-     "ring": 0.372,
-     "cross": 0.239,
-     "lance": 0.383,
-     "line": 0.228,
-     "comb": 0.661,
-     "shield": 0.3,
-     "dot": 0.878,
-     "hedgehog": 0.478,
-     "wedge": 0.655,
-     "frame": 0.55,
-     "needle": 0.35,
-     "hoop": 0.6,
-     "spiral": 0.422,
-     "grille": 0.433,
-     "splinter": 0.45
+     "disc": 0.7,
+     "block": 0.745,
+     "ring": 0.667,
+     "cross": 0.011,
+     "lance": 0.289,
+     "line": 0.634,
+     "comb": 0.867,
+     "shield": 0.133,
+     "dot": 1,
+     "hedgehog": 0.189,
+     "wedge": 0.734,
+     "frame": 0.789,
+     "needle": 0.711,
+     "hoop": 0.733,
+     "spiral": 0.011,
+     "grille": 0.344,
+     "splinter": 0.422,
+     "hoop2": 0.356,
+     "hoop3": 0.4
     },
-    "duelSameStyle": 0.4432
+    "duelSameStyle": 0.5141
    },
    {
     "name": "lance",
@@ -317,50 +327,52 @@
     "C": 69,
     "S": 18,
     "P": 0,
-    "armour": 218.3,
-    "sharpness": 2.12,
+    "armour": 167.1,
+    "sharpness": 2.13,
     "topSpeed": 13.5,
     "radius": 19,
     "element": 2,
-    "duelWinRate": 0.4696,
-    "duelWorst": 0.233,
-    "duelBest": 0.744,
-    "ffaWinRate": 0.1552,
-    "ffaGames": 812,
+    "duelWinRate": 0.5023,
+    "duelWorst": 0.133,
+    "duelBest": 0.9,
+    "ffaWinRate": 0.2074,
+    "ffaGames": 458,
     "perStyle": {
      "rusher": {
-      "duel": 0.5049,
-      "ffa": 0.044
+      "duel": 0.5965,
+      "ffa": 0.1373
      },
      "circler": {
-      "duel": 0.3676,
-      "ffa": 0.2564
+      "duel": 0.3316,
+      "ffa": 0.268
      },
      "mixed": {
-      "duel": 0.5363,
-      "ffa": 0.1654
+      "duel": 0.5789,
+      "ffa": 0.2171
      }
     },
     "versus": {
-     "disc": 0.4,
-     "block": 0.422,
-     "ring": 0.272,
-     "cross": 0.561,
-     "star": 0.617,
-     "line": 0.467,
-     "comb": 0.233,
-     "shield": 0.422,
-     "dot": 0.617,
-     "hedgehog": 0.383,
-     "wedge": 0.433,
-     "frame": 0.672,
-     "needle": 0.528,
-     "hoop": 0.267,
-     "spiral": 0.545,
-     "grille": 0.744,
-     "splinter": 0.4
+     "disc": 0.344,
+     "block": 0.378,
+     "ring": 0.267,
+     "cross": 0.822,
+     "star": 0.711,
+     "line": 0.889,
+     "comb": 0.133,
+     "shield": 0.533,
+     "dot": 0.9,
+     "hedgehog": 0.155,
+     "wedge": 0.256,
+     "frame": 0.711,
+     "needle": 0.667,
+     "hoop": 0.233,
+     "spiral": 0.445,
+     "grille": 0.811,
+     "splinter": 0.567,
+     "hoop2": 0.189,
+     "hoop3": 0.533
     },
-    "duelSameStyle": 0.4363
+    "duelSameStyle": 0.4641
    },
    {
     "name": "line",
@@ -370,50 +382,52 @@
     "C": 0,
     "S": 32,
     "P": 0,
-    "armour": 170,
-    "sharpness": 2.95,
+    "armour": 69.6,
+    "sharpness": 4.13,
     "topSpeed": 26.08,
     "radius": 16,
     "element": 0,
-    "duelWinRate": 0.5997,
-    "duelWorst": 0.289,
-    "duelBest": 0.811,
-    "ffaWinRate": 0.0945,
-    "ffaGames": 825,
+    "duelWinRate": 0.4298,
+    "duelWorst": 0,
+    "duelBest": 0.933,
+    "ffaWinRate": 0.0217,
+    "ffaGames": 506,
     "perStyle": {
      "rusher": {
-      "duel": 0.6284,
-      "ffa": 0.0253
+      "duel": 0.5456,
+      "ffa": 0.0058
      },
      "circler": {
-      "duel": 0.5363,
-      "ffa": 0.1408
+      "duel": 0.3175,
+      "ffa": 0.0058
      },
      "mixed": {
-      "duel": 0.6343,
-      "ffa": 0.1181
+      "duel": 0.4263,
+      "ffa": 0.0556
      }
     },
     "versus": {
-     "disc": 0.639,
-     "block": 0.511,
-     "ring": 0.456,
-     "cross": 0.678,
-     "star": 0.772,
-     "lance": 0.533,
-     "comb": 0.778,
-     "shield": 0.289,
-     "dot": 0.667,
-     "hedgehog": 0.606,
-     "wedge": 0.683,
-     "frame": 0.661,
-     "needle": 0.306,
-     "hoop": 0.689,
-     "spiral": 0.811,
-     "grille": 0.778,
-     "splinter": 0.339
+     "disc": 0.378,
+     "block": 0.4,
+     "ring": 0.856,
+     "cross": 0.278,
+     "star": 0.366,
+     "lance": 0.111,
+     "comb": 0.233,
+     "shield": 0.511,
+     "dot": 0.889,
+     "hedgehog": 0,
+     "wedge": 0.433,
+     "frame": 0.933,
+     "needle": 0.211,
+     "hoop": 0.211,
+     "spiral": 0,
+     "grille": 0.056,
+     "splinter": 0.678,
+     "hoop2": 0.9,
+     "hoop3": 0.722
     },
-    "duelSameStyle": 0.5823
+    "duelSameStyle": 0.4315
    },
    {
     "name": "comb",
@@ -423,50 +437,52 @@
     "C": 22,
     "S": 108,
     "P": 0,
-    "armour": 185.4,
-    "sharpness": 2.31,
+    "armour": 136,
+    "sharpness": 2.47,
     "topSpeed": 10.64,
     "radius": 13.4,
     "element": 3,
-    "duelWinRate": 0.5529,
-    "duelWorst": 0.222,
+    "duelWinRate": 0.6216,
+    "duelWorst": 0.133,
     "duelBest": 1,
-    "ffaWinRate": 0.3136,
-    "ffaGames": 762,
+    "ffaWinRate": 0.3206,
+    "ffaGames": 499,
     "perStyle": {
      "rusher": {
-      "duel": 0.499,
-      "ffa": 0.3015
+      "duel": 0.6719,
+      "ffa": 0.3515
      },
      "circler": {
-      "duel": 0.6529,
-      "ffa": 0.3206
+      "duel": 0.5754,
+      "ffa": 0.2606
      },
      "mixed": {
-      "duel": 0.5069,
-      "ffa": 0.3193
+      "duel": 0.6175,
+      "ffa": 0.3491
      }
     },
     "versus": {
-     "disc": 0.561,
-     "block": 0.578,
-     "ring": 0.7,
-     "cross": 0.561,
-     "star": 0.339,
-     "lance": 0.767,
-     "line": 0.222,
-     "shield": 0.317,
+     "disc": 0.789,
+     "block": 0.744,
+     "ring": 0.6,
+     "cross": 1,
+     "star": 0.133,
+     "lance": 0.867,
+     "line": 0.767,
+     "shield": 0.278,
      "dot": 1,
-     "hedgehog": 0.783,
-     "wedge": 0.628,
-     "frame": 0.478,
-     "needle": 0.483,
-     "hoop": 0.622,
-     "spiral": 0.639,
-     "grille": 0.278,
-     "splinter": 0.444
+     "hedgehog": 0.8,
+     "wedge": 0.733,
+     "frame": 0.456,
+     "needle": 0.711,
+     "hoop": 0.633,
+     "spiral": 0.778,
+     "grille": 0.156,
+     "splinter": 0.745,
+     "hoop2": 0.322,
+     "hoop3": 0.3
     },
-    "duelSameStyle": 0.5759
+    "duelSameStyle": 0.6237
    },
    {
     "name": "shield",
@@ -476,50 +492,52 @@
     "C": 132,
     "S": 0,
     "P": 0,
-    "armour": 262.4,
+    "armour": 255.6,
     "sharpness": 1,
     "topSpeed": 9.43,
     "radius": 14.8,
     "element": 4,
-    "duelWinRate": 0.614,
-    "duelWorst": 0.361,
-    "duelBest": 0.872,
-    "ffaWinRate": 0.3934,
-    "ffaGames": 793,
+    "duelWinRate": 0.552,
+    "duelWorst": 0.145,
+    "duelBest": 0.989,
+    "ffaWinRate": 0.4473,
+    "ffaGames": 503,
     "perStyle": {
      "rusher": {
-      "duel": 0.551,
-      "ffa": 0.4664
+      "duel": 0.3035,
+      "ffa": 0.3333
      },
      "circler": {
-      "duel": 0.7529,
-      "ffa": 0.3993
+      "duel": 0.7368,
+      "ffa": 0.5515
      },
      "mixed": {
-      "duel": 0.5382,
-      "ffa": 0.3113
+      "duel": 0.6158,
+      "ffa": 0.4566
      }
     },
     "versus": {
-     "disc": 0.667,
-     "block": 0.561,
-     "ring": 0.722,
-     "cross": 0.406,
-     "star": 0.7,
-     "lance": 0.578,
-     "line": 0.711,
-     "comb": 0.683,
-     "dot": 0.872,
-     "hedgehog": 0.478,
-     "wedge": 0.728,
-     "frame": 0.8,
-     "needle": 0.55,
-     "hoop": 0.656,
-     "spiral": 0.361,
-     "grille": 0.478,
-     "splinter": 0.489
+     "disc": 0.7,
+     "block": 0.667,
+     "ring": 0.456,
+     "cross": 0.145,
+     "star": 0.867,
+     "lance": 0.467,
+     "line": 0.489,
+     "comb": 0.722,
+     "dot": 0.989,
+     "hedgehog": 0.544,
+     "wedge": 0.833,
+     "frame": 0.644,
+     "needle": 0.389,
+     "hoop": 0.833,
+     "spiral": 0.389,
+     "grille": 0.411,
+     "splinter": 0.322,
+     "hoop2": 0.311,
+     "hoop3": 0.311
     },
-    "duelSameStyle": 0.652
+    "duelSameStyle": 0.5202
    },
    {
     "name": "dot",
@@ -529,50 +547,52 @@
     "C": 1,
     "S": 4,
     "P": 0,
-    "armour": 170.7,
-    "sharpness": 1.56,
+    "armour": 64.9,
+    "sharpness": 1.7,
     "topSpeed": 32.05,
     "radius": 2.5,
     "element": 0,
-    "duelWinRate": 0.1572,
+    "duelWinRate": 0.0298,
     "duelWorst": 0,
-    "duelBest": 0.383,
-    "ffaWinRate": 0.1071,
-    "ffaGames": 850,
+    "duelBest": 0.156,
+    "ffaWinRate": 0.0021,
+    "ffaGames": 475,
     "perStyle": {
      "rusher": {
-      "duel": 0.0422,
-      "ffa": 0.0947
+      "duel": 0,
+      "ffa": 0
      },
      "circler": {
-      "duel": 0.3069,
-      "ffa": 0.1614
+      "duel": 0.0789,
+      "ffa": 0.0061
      },
      "mixed": {
-      "duel": 0.1225,
-      "ffa": 0.0643
+      "duel": 0.0105,
+      "ffa": 0
      }
     },
     "versus": {
-     "disc": 0.367,
-     "block": 0.178,
-     "ring": 0.067,
-     "cross": 0.211,
-     "star": 0.122,
-     "lance": 0.383,
-     "line": 0.333,
+     "disc": 0.033,
+     "block": 0,
+     "ring": 0,
+     "cross": 0.011,
+     "star": 0,
+     "lance": 0.1,
+     "line": 0.111,
      "comb": 0,
-     "shield": 0.128,
-     "hedgehog": 0.117,
+     "shield": 0.011,
+     "hedgehog": 0,
      "wedge": 0,
-     "frame": 0.267,
-     "needle": 0.317,
-     "hoop": 0.011,
+     "frame": 0,
+     "needle": 0.156,
+     "hoop": 0,
      "spiral": 0,
      "grille": 0,
-     "splinter": 0.172
+     "splinter": 0.145,
+     "hoop2": 0,
+     "hoop3": 0
     },
-    "duelSameStyle": 0.1746
+    "duelSameStyle": 0.0394
    },
    {
     "name": "hedgehog",
@@ -582,50 +602,52 @@
     "C": 77,
     "S": 80,
     "P": 0,
-    "armour": 223.9,
-    "sharpness": 2.24,
+    "armour": 196.1,
+    "sharpness": 2.31,
     "topSpeed": 9.96,
     "radius": 10.3,
     "element": 2,
-    "duelWinRate": 0.5056,
-    "duelWorst": 0.217,
-    "duelBest": 0.883,
-    "ffaWinRate": 0.3663,
-    "ffaGames": 819,
+    "duelWinRate": 0.6509,
+    "duelWorst": 0.122,
+    "duelBest": 1,
+    "ffaWinRate": 0.4863,
+    "ffaGames": 510,
     "perStyle": {
      "rusher": {
-      "duel": 0.702,
-      "ffa": 0.4556
+      "duel": 0.7526,
+      "ffa": 0.6337
      },
      "circler": {
-      "duel": 0.2882,
-      "ffa": 0.1778
+      "duel": 0.5509,
+      "ffa": 0.3837
      },
      "mixed": {
-      "duel": 0.5265,
-      "ffa": 0.4624
+      "duel": 0.6491,
+      "ffa": 0.4398
      }
     },
     "versus": {
-     "disc": 0.644,
-     "block": 0.567,
-     "ring": 0.511,
-     "cross": 0.506,
-     "star": 0.522,
-     "lance": 0.617,
-     "line": 0.394,
-     "comb": 0.217,
-     "shield": 0.522,
-     "dot": 0.883,
-     "wedge": 0.472,
-     "frame": 0.544,
-     "needle": 0.244,
-     "hoop": 0.422,
-     "spiral": 0.567,
-     "grille": 0.567,
-     "splinter": 0.394
+     "disc": 0.667,
+     "block": 0.667,
+     "ring": 0.4,
+     "cross": 1,
+     "star": 0.811,
+     "lance": 0.845,
+     "line": 1,
+     "comb": 0.2,
+     "shield": 0.456,
+     "dot": 1,
+     "wedge": 0.4,
+     "frame": 0.833,
+     "needle": 1,
+     "hoop": 0.122,
+     "spiral": 0.589,
+     "grille": 0.622,
+     "splinter": 1,
+     "hoop2": 0.2,
+     "hoop3": 0.556
     },
-    "duelSameStyle": 0.4951
+    "duelSameStyle": 0.6518
    },
    {
     "name": "wedge",
@@ -635,50 +657,52 @@
     "C": 136,
     "S": 2,
     "P": 0,
-    "armour": 265.2,
+    "armour": 259,
     "sharpness": 1.17,
     "topSpeed": 9.5,
     "radius": 13.2,
     "element": 3,
-    "duelWinRate": 0.467,
-    "duelWorst": 0.206,
+    "duelWinRate": 0.4637,
+    "duelWorst": 0.167,
     "duelBest": 1,
-    "ffaWinRate": 0.2727,
-    "ffaGames": 770,
+    "ffaWinRate": 0.3235,
+    "ffaGames": 473,
     "perStyle": {
      "rusher": {
-      "duel": 0.5667,
-      "ffa": 0.2962
+      "duel": 0.4351,
+      "ffa": 0.3442
      },
      "circler": {
-      "duel": 0.299,
-      "ffa": 0.2154
+      "duel": 0.3877,
+      "ffa": 0.2662
      },
      "mixed": {
-      "duel": 0.5353,
-      "ffa": 0.308
+      "duel": 0.5684,
+      "ffa": 0.3576
      }
     },
     "versus": {
-     "disc": 0.533,
-     "block": 0.4,
-     "ring": 0.433,
-     "cross": 0.533,
-     "star": 0.345,
-     "lance": 0.567,
-     "line": 0.317,
-     "comb": 0.372,
-     "shield": 0.272,
+     "disc": 0.556,
+     "block": 0.445,
+     "ring": 0.389,
+     "cross": 0.945,
+     "star": 0.266,
+     "lance": 0.744,
+     "line": 0.567,
+     "comb": 0.267,
+     "shield": 0.167,
      "dot": 1,
-     "hedgehog": 0.528,
-     "frame": 0.522,
-     "needle": 0.378,
-     "hoop": 0.511,
-     "spiral": 0.417,
-     "grille": 0.206,
-     "splinter": 0.606
+     "hedgehog": 0.6,
+     "frame": 0.389,
+     "needle": 0.478,
+     "hoop": 0.544,
+     "spiral": 0.511,
+     "grille": 0.189,
+     "splinter": 0.355,
+     "hoop2": 0.178,
+     "hoop3": 0.222
     },
-    "duelSameStyle": 0.4328
+    "duelSameStyle": 0.4114
    },
    {
     "name": "frame",
@@ -688,50 +712,52 @@
     "C": 0,
     "S": 8,
     "P": 100,
-    "armour": 250,
-    "sharpness": 1.86,
+    "armour": 126,
+    "sharpness": 1.87,
     "topSpeed": 14,
     "radius": 15.2,
     "element": 4,
-    "duelWinRate": 0.4137,
-    "duelWorst": 0.2,
-    "duelBest": 0.733,
-    "ffaWinRate": 0.2323,
-    "ffaGames": 779,
+    "duelWinRate": 0.3398,
+    "duelWorst": 0.011,
+    "duelBest": 1,
+    "ffaWinRate": 0.1323,
+    "ffaGames": 499,
     "perStyle": {
      "rusher": {
-      "duel": 0.2676,
-      "ffa": 0.1439
+      "duel": 0.3526,
+      "ffa": 0.0545
      },
      "circler": {
-      "duel": 0.4647,
-      "ffa": 0.2917
+      "duel": 0.3246,
+      "ffa": 0.2061
      },
      "mixed": {
-      "duel": 0.5088,
-      "ffa": 0.2629
+      "duel": 0.3421,
+      "ffa": 0.1361
      }
     },
     "versus": {
-     "disc": 0.444,
-     "block": 0.461,
-     "ring": 0.306,
-     "cross": 0.289,
-     "star": 0.45,
-     "lance": 0.328,
-     "line": 0.339,
-     "comb": 0.522,
-     "shield": 0.2,
-     "dot": 0.733,
-     "hedgehog": 0.456,
-     "wedge": 0.478,
-     "needle": 0.417,
-     "hoop": 0.533,
-     "spiral": 0.311,
-     "grille": 0.344,
-     "splinter": 0.422
+     "disc": 0.489,
+     "block": 0.411,
+     "ring": 0.589,
+     "cross": 0.033,
+     "star": 0.211,
+     "lance": 0.289,
+     "line": 0.067,
+     "comb": 0.544,
+     "shield": 0.356,
+     "dot": 1,
+     "hedgehog": 0.167,
+     "wedge": 0.611,
+     "needle": 0.011,
+     "hoop": 0.589,
+     "spiral": 0.044,
+     "grille": 0.255,
+     "splinter": 0.022,
+     "hoop2": 0.422,
+     "hoop3": 0.344
     },
-    "duelSameStyle": 0.3661
+    "duelSameStyle": 0.3386
    },
    {
     "name": "needle",
@@ -741,50 +767,52 @@
     "C": 0,
     "S": 20,
     "P": 0,
-    "armour": 170,
-    "sharpness": 3.03,
+    "armour": 66,
+    "sharpness": 4.38,
     "topSpeed": 29.56,
     "radius": 9.5,
     "element": 0,
-    "duelWinRate": 0.6134,
-    "duelWorst": 0.45,
-    "duelBest": 0.756,
-    "ffaWinRate": 0.1915,
-    "ffaGames": 825,
+    "duelWinRate": 0.5135,
+    "duelWorst": 0,
+    "duelBest": 0.989,
+    "ffaWinRate": 0.0152,
+    "ffaGames": 461,
     "perStyle": {
      "rusher": {
-      "duel": 0.7794,
-      "ffa": 0.1103
+      "duel": 0.593,
+      "ffa": 0
      },
      "circler": {
-      "duel": 0.5176,
-      "ffa": 0.3051
+      "duel": 0.4702,
+      "ffa": 0.0267
      },
      "mixed": {
-      "duel": 0.5431,
-      "ffa": 0.1601
+      "duel": 0.4772,
+      "ffa": 0.0186
      }
     },
     "versus": {
-     "disc": 0.7,
-     "block": 0.555,
-     "ring": 0.533,
-     "cross": 0.633,
-     "star": 0.65,
-     "lance": 0.472,
-     "line": 0.694,
-     "comb": 0.517,
-     "shield": 0.45,
-     "dot": 0.683,
-     "hedgehog": 0.756,
-     "wedge": 0.622,
-     "frame": 0.583,
-     "hoop": 0.639,
-     "spiral": 0.633,
-     "grille": 0.683,
-     "splinter": 0.622
+     "disc": 0.755,
+     "block": 0.622,
+     "ring": 0.978,
+     "cross": 0.178,
+     "star": 0.289,
+     "lance": 0.333,
+     "line": 0.789,
+     "comb": 0.289,
+     "shield": 0.611,
+     "dot": 0.844,
+     "hedgehog": 0,
+     "wedge": 0.522,
+     "frame": 0.989,
+     "hoop": 0.233,
+     "spiral": 0,
+     "grille": 0,
+     "splinter": 0.6,
+     "hoop2": 0.845,
+     "hoop3": 0.878
     },
-    "duelSameStyle": 0.6485
+    "duelSameStyle": 0.5316
    },
    {
     "name": "hoop",
@@ -794,50 +822,52 @@
     "C": 0,
     "S": 92,
     "P": 400,
-    "armour": 170,
-    "sharpness": 2.67,
+    "armour": 87.6,
+    "sharpness": 3.38,
     "topSpeed": 16.42,
     "radius": 16.8,
     "element": 3,
-    "duelWinRate": 0.5229,
-    "duelWorst": 0.311,
-    "duelBest": 0.989,
-    "ffaWinRate": 0.244,
-    "ffaGames": 787,
+    "duelWinRate": 0.5813,
+    "duelWorst": 0.167,
+    "duelBest": 1,
+    "ffaWinRate": 0.1837,
+    "ffaGames": 490,
     "perStyle": {
      "rusher": {
-      "duel": 0.2225,
-      "ffa": 0.2118
+      "duel": 0.4404,
+      "ffa": 0.1566
      },
      "circler": {
-      "duel": 0.8353,
-      "ffa": 0.2863
+      "duel": 0.7614,
+      "ffa": 0.1867
      },
      "mixed": {
-      "duel": 0.5108,
-      "ffa": 0.2347
+      "duel": 0.5421,
+      "ffa": 0.2089
      }
     },
     "versus": {
-     "disc": 0.5,
+     "disc": 0.6,
      "block": 0.5,
-     "ring": 0.478,
-     "cross": 0.739,
-     "star": 0.4,
-     "lance": 0.733,
-     "line": 0.311,
-     "comb": 0.378,
-     "shield": 0.344,
-     "dot": 0.989,
-     "hedgehog": 0.578,
-     "wedge": 0.489,
-     "frame": 0.467,
-     "needle": 0.361,
-     "spiral": 0.639,
-     "grille": 0.45,
-     "splinter": 0.533
+     "ring": 0.6,
+     "cross": 0.844,
+     "star": 0.267,
+     "lance": 0.767,
+     "line": 0.789,
+     "comb": 0.367,
+     "shield": 0.167,
+     "dot": 1,
+     "hedgehog": 0.878,
+     "wedge": 0.456,
+     "frame": 0.411,
+     "needle": 0.767,
+     "spiral": 0.911,
+     "grille": 0.178,
+     "splinter": 0.833,
+     "hoop2": 0.278,
+     "hoop3": 0.433
     },
-    "duelSameStyle": 0.5289
+    "duelSameStyle": 0.6009
    },
    {
     "name": "spiral",
@@ -847,50 +877,52 @@
     "C": 0,
     "S": 209,
     "P": 0,
-    "armour": 170,
-    "sharpness": 2.47,
+    "armour": 122.7,
+    "sharpness": 2.87,
     "topSpeed": 9.53,
     "radius": 13.6,
     "element": 2,
-    "duelWinRate": 0.5467,
-    "duelWorst": 0.189,
+    "duelWinRate": 0.6813,
+    "duelWorst": 0.089,
     "duelBest": 1,
-    "ffaWinRate": 0.2829,
-    "ffaGames": 774,
+    "ffaWinRate": 0.3512,
+    "ffaGames": 484,
     "perStyle": {
      "rusher": {
-      "duel": 0.5706,
-      "ffa": 0.3047
+      "duel": 0.6544,
+      "ffa": 0.3478
      },
      "circler": {
-      "duel": 0.5716,
-      "ffa": 0.2539
+      "duel": 0.7175,
+      "ffa": 0.3851
      },
      "mixed": {
-      "duel": 0.498,
-      "ffa": 0.2901
+      "duel": 0.6719,
+      "ffa": 0.321
      }
     },
     "versus": {
-     "disc": 0.7,
-     "block": 0.717,
-     "ring": 0.628,
-     "cross": 0.556,
-     "star": 0.578,
-     "lance": 0.455,
-     "line": 0.189,
-     "comb": 0.361,
-     "shield": 0.639,
+     "disc": 0.778,
+     "block": 0.756,
+     "ring": 0.445,
+     "cross": 1,
+     "star": 0.989,
+     "lance": 0.555,
+     "line": 1,
+     "comb": 0.222,
+     "shield": 0.611,
      "dot": 1,
-     "hedgehog": 0.433,
-     "wedge": 0.583,
-     "frame": 0.689,
-     "needle": 0.367,
-     "hoop": 0.361,
-     "grille": 0.667,
-     "splinter": 0.372
+     "hedgehog": 0.411,
+     "wedge": 0.489,
+     "frame": 0.956,
+     "needle": 1,
+     "hoop": 0.089,
+     "grille": 0.811,
+     "splinter": 1,
+     "hoop2": 0.233,
+     "hoop3": 0.6
     },
-    "duelSameStyle": 0.5711
+    "duelSameStyle": 0.686
    },
    {
     "name": "grille",
@@ -900,50 +932,52 @@
     "C": 0,
     "S": 211,
     "P": 16,
-    "armour": 170,
-    "sharpness": 2.47,
+    "armour": 123.3,
+    "sharpness": 2.86,
     "topSpeed": 9.47,
     "radius": 14,
     "element": 4,
-    "duelWinRate": 0.5428,
-    "duelWorst": 0.222,
+    "duelWinRate": 0.6643,
+    "duelWorst": 0.122,
     "duelBest": 1,
-    "ffaWinRate": 0.2399,
-    "ffaGames": 771,
+    "ffaWinRate": 0.4065,
+    "ffaGames": 465,
     "perStyle": {
      "rusher": {
-      "duel": 0.5627,
-      "ffa": 0.278
+      "duel": 0.7684,
+      "ffa": 0.4465
      },
      "circler": {
-      "duel": 0.5892,
-      "ffa": 0.2158
+      "duel": 0.6737,
+      "ffa": 0.4151
      },
      "mixed": {
-      "duel": 0.4765,
-      "ffa": 0.2284
+      "duel": 0.5509,
+      "ffa": 0.3537
      }
     },
     "versus": {
-     "disc": 0.722,
-     "block": 0.667,
-     "ring": 0.711,
-     "cross": 0.394,
-     "star": 0.567,
-     "lance": 0.256,
-     "line": 0.222,
-     "comb": 0.722,
-     "shield": 0.522,
+     "disc": 0.778,
+     "block": 0.756,
+     "ring": 0.689,
+     "cross": 0.122,
+     "star": 0.656,
+     "lance": 0.189,
+     "line": 0.944,
+     "comb": 0.844,
+     "shield": 0.589,
      "dot": 1,
-     "hedgehog": 0.433,
-     "wedge": 0.794,
-     "frame": 0.656,
-     "needle": 0.317,
-     "hoop": 0.55,
-     "spiral": 0.333,
-     "splinter": 0.361
+     "hedgehog": 0.378,
+     "wedge": 0.811,
+     "frame": 0.745,
+     "needle": 1,
+     "hoop": 0.822,
+     "spiral": 0.189,
+     "splinter": 1,
+     "hoop2": 0.589,
+     "hoop3": 0.522
     },
-    "duelSameStyle": 0.5759
+    "duelSameStyle": 0.721
    },
    {
     "name": "splinter",
@@ -953,130 +987,242 @@
     "C": 0,
     "S": 12,
     "P": 0,
-    "armour": 170,
-    "sharpness": 3.02,
+    "armour": 63.6,
+    "sharpness": 4.52,
     "topSpeed": 32.44,
     "radius": 6,
     "element": 0,
-    "duelWinRate": 0.5467,
-    "duelWorst": 0.311,
-    "duelBest": 0.828,
-    "ffaWinRate": 0.2528,
-    "ffaGames": 803,
+    "duelWinRate": 0.5187,
+    "duelWorst": 0,
+    "duelBest": 0.978,
+    "ffaWinRate": 0.0271,
+    "ffaGames": 479,
     "perStyle": {
      "rusher": {
-      "duel": 0.7902,
-      "ffa": 0.2894
+      "duel": 0.5404,
+      "ffa": 0.0245
      },
      "circler": {
-      "duel": 0.3686,
-      "ffa": 0.2454
+      "duel": 0.5421,
+      "ffa": 0.0123
      },
      "mixed": {
-      "duel": 0.4814,
-      "ffa": 0.2218
+      "duel": 0.4737,
+      "ffa": 0.0458
      }
     },
     "versus": {
-     "disc": 0.489,
-     "block": 0.461,
-     "ring": 0.311,
-     "cross": 0.639,
-     "star": 0.55,
-     "lance": 0.6,
-     "line": 0.661,
-     "comb": 0.556,
-     "shield": 0.511,
-     "dot": 0.828,
-     "hedgehog": 0.606,
-     "wedge": 0.394,
-     "frame": 0.578,
-     "needle": 0.378,
-     "hoop": 0.467,
-     "spiral": 0.628,
-     "grille": 0.639
+     "disc": 0.845,
+     "block": 0.778,
+     "ring": 0.967,
+     "cross": 0.167,
+     "star": 0.578,
+     "lance": 0.433,
+     "line": 0.322,
+     "comb": 0.255,
+     "shield": 0.678,
+     "dot": 0.855,
+     "hedgehog": 0,
+     "wedge": 0.645,
+     "frame": 0.978,
+     "needle": 0.4,
+     "hoop": 0.167,
+     "spiral": 0,
+     "grille": 0,
+     "hoop2": 0.856,
+     "hoop3": 0.933
     },
-    "duelSameStyle": 0.5794
+    "duelSameStyle": 0.5413
+   },
+   {
+    "name": "hoop2",
+    "shape": "hollow",
+    "optimiser": true,
+    "N": 216,
+    "C": 0,
+    "S": 0,
+    "P": 529,
+    "armour": 189.6,
+    "sharpness": 1,
+    "topSpeed": 9.3,
+    "radius": 20.3,
+    "element": 3,
+    "duelWinRate": 0.6409,
+    "duelWorst": 0.1,
+    "duelBest": 1,
+    "ffaWinRate": 0.4053,
+    "ffaGames": 533,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.7614,
+      "ffa": 0.5389
+     },
+     "circler": {
+      "duel": 0.7105,
+      "ffa": 0.3444
+     },
+     "mixed": {
+      "duel": 0.4509,
+      "ffa": 0.3295
+     }
+    },
+    "versus": {
+     "disc": 0.822,
+     "block": 0.822,
+     "ring": 0.7,
+     "cross": 0.822,
+     "star": 0.644,
+     "lance": 0.811,
+     "line": 0.1,
+     "comb": 0.678,
+     "shield": 0.689,
+     "dot": 1,
+     "hedgehog": 0.8,
+     "wedge": 0.822,
+     "frame": 0.578,
+     "needle": 0.155,
+     "hoop": 0.722,
+     "spiral": 0.767,
+     "grille": 0.411,
+     "splinter": 0.144,
+     "hoop3": 0.689
+    },
+    "duelSameStyle": 0.7359
+   },
+   {
+    "name": "hoop3",
+    "shape": "hollow",
+    "optimiser": true,
+    "N": 216,
+    "C": 72,
+    "S": 0,
+    "P": 169,
+    "armour": 247.5,
+    "sharpness": 1,
+    "topSpeed": 9.3,
+    "radius": 14.6,
+    "element": 4,
+    "duelWinRate": 0.524,
+    "duelWorst": 0.067,
+    "duelBest": 1,
+    "ffaWinRate": 0.4154,
+    "ffaGames": 455,
+    "perStyle": {
+     "rusher": {
+      "duel": 0.5421,
+      "ffa": 0.4706
+     },
+     "circler": {
+      "duel": 0.6035,
+      "ffa": 0.4118
+     },
+     "mixed": {
+      "duel": 0.4263,
+      "ffa": 0.3624
+     }
+    },
+    "versus": {
+     "disc": 0.789,
+     "block": 0.8,
+     "ring": 0.556,
+     "cross": 0.256,
+     "star": 0.6,
+     "lance": 0.467,
+     "line": 0.278,
+     "comb": 0.7,
+     "shield": 0.689,
+     "dot": 1,
+     "hedgehog": 0.444,
+     "wedge": 0.778,
+     "frame": 0.656,
+     "needle": 0.122,
+     "hoop": 0.567,
+     "spiral": 0.4,
+     "grille": 0.478,
+     "splinter": 0.067,
+     "hoop2": 0.311
+    },
+    "duelSameStyle": 0.5728
    }
   ],
   "profiles": [
    {
     "stat": "N",
-    "median": 149.5,
-    "highDuel": 0.5234,
-    "lowDuel": 0.4765,
-    "highFfa": 0.3268,
-    "lowFfa": 0.1756
+    "median": 176,
+    "highDuel": 0.5586,
+    "lowDuel": 0.4413,
+    "highFfa": 0.3808,
+    "lowFfa": 0.1165
    },
    {
     "stat": "armour",
-    "median": 193.45,
-    "highDuel": 0.4912,
-    "lowDuel": 0.5088,
-    "highFfa": 0.2956,
-    "lowFfa": 0.2067
+    "median": 137.45,
+    "highDuel": 0.5105,
+    "lowDuel": 0.4895,
+    "highFfa": 0.3461,
+    "lowFfa": 0.1512
    },
    {
     "stat": "sharpness",
-    "median": 2.23,
-    "highDuel": 0.5475,
-    "lowDuel": 0.4525,
-    "highFfa": 0.2355,
-    "lowFfa": 0.2668
+    "median": 2.21,
+    "highDuel": 0.5688,
+    "lowDuel": 0.4311,
+    "highFfa": 0.2065,
+    "lowFfa": 0.2908
    },
    {
     "stat": "topSpeed",
-    "median": 12.25,
-    "highDuel": 0.4765,
-    "lowDuel": 0.5234,
-    "highFfa": 0.1756,
-    "lowFfa": 0.3268
+    "median": 10.82,
+    "highDuel": 0.4413,
+    "lowDuel": 0.5586,
+    "highFfa": 0.1165,
+    "lowFfa": 0.3808
    },
    {
     "stat": "radius",
-    "median": 13.45,
-    "highDuel": 0.5195,
-    "lowDuel": 0.4805,
-    "highFfa": 0.2161,
-    "lowFfa": 0.2862
+    "median": 13.55,
+    "highDuel": 0.543,
+    "lowDuel": 0.4569,
+    "highFfa": 0.2622,
+    "lowFfa": 0.2351
    }
   ],
   "byElement": [
    {
     "element": 0,
     "count": 6,
-    "duel": 0.4784
+    "duel": 0.3799
    },
    {
     "element": 2,
     "count": 4,
-    "duel": 0.5048
+    "duel": 0.5873
    },
    {
     "element": 3,
-    "count": 4,
-    "duel": 0.5178
+    "count": 5,
+    "duel": 0.5558
    },
    {
     "element": 4,
-    "count": 4,
-    "duel": 0.5098
+    "count": 5,
+    "duel": 0.5185
    }
   ],
   "verdict": {
-   "maxDuelWinRate": 0.614,
-   "maxDuelName": "shield",
-   "maxSingleStyleDuelWinRate": 0.8353,
-   "maxSingleStyleName": "hoop (circler)",
-   "maxSameStyleMean": 0.652,
-   "maxSameStyleMeanName": "shield",
-   "duelSpread": 0.0992,
+   "maxDuelWinRate": 0.6813,
+   "maxDuelName": "spiral",
+   "maxSingleStyleDuelWinRate": 0.7684,
+   "maxSingleStyleName": "grille (rusher)",
+   "maxSameStyleMean": 0.7359,
+   "maxSameStyleMeanName": "hoop2",
+   "duelSpread": 0.1424,
    "under60": false,
    "under60EveryStyle": false,
    "viable": [
-    "block",
-    "ring",
-    "line",
+    "cross",
+    "star",
+    "lance",
     "comb",
     "shield",
     "hedgehog",
@@ -1084,18 +1230,20 @@
     "hoop",
     "spiral",
     "grille",
-    "splinter"
+    "splinter",
+    "hoop2",
+    "hoop3"
    ],
    "viableShapeFamilies": [
-    "solid",
-    "hollow",
     "blades",
     "core+blades",
-    "small"
+    "solid",
+    "small",
+    "hollow"
    ],
    "threeDifferentShapes": true,
-   "maxFfaWinRate": 0.3934,
-   "maxFfaName": "shield",
+   "maxFfaWinRate": 0.4863,
+   "maxFfaName": "hedgehog",
    "lightNames": [
     "cross",
     "line",
@@ -1103,13 +1251,9 @@
     "needle",
     "splinter"
    ],
-   "lightFfaAverage": 0.1561,
-   "lightAtHalfEven": [
-    "cross",
-    "needle",
-    "splinter"
-   ],
-   "lightNotHopeless": true
+   "lightFfaAverage": 0.0235,
+   "lightAtHalfEven": [],
+   "lightNotHopeless": false
   },
   "overrides": {}
  },
@@ -1120,12 +1264,12 @@
    "enemy": "dot",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.68,
-   "avgScore": 1259,
-   "avgRunSeconds": 107
+   "avgHpLeft": 0.78,
+   "avgScore": 1272,
+   "avgRunSeconds": 55
   },
   {
    "hero": "disc",
@@ -1133,25 +1277,25 @@
    "enemy": "dot",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.24,
-   "avgScore": 1855,
-   "avgRunSeconds": 122
+   "avgHpLeft": 0.64,
+   "avgScore": 1870,
+   "avgRunSeconds": 66
   },
   {
    "hero": "disc",
    "heroBot": "kite",
    "enemy": "dot",
    "stake": 2,
-   "avgWavesCleared": 3.17,
+   "avgWavesCleared": 4,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 1342,
-   "avgRunSeconds": 62
+   "avgScore": 1841,
+   "avgRunSeconds": 51
   },
   {
    "hero": "disc",
@@ -1159,25 +1303,25 @@
    "enemy": "needle",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.16,
-   "avgScore": 1212,
-   "avgRunSeconds": 92
+   "avgHpLeft": 0.3,
+   "avgScore": 1316,
+   "avgRunSeconds": 55
   },
   {
    "hero": "disc",
    "heroBot": "kite",
    "enemy": "needle",
    "stake": 1.5,
-   "avgWavesCleared": 3,
+   "avgWavesCleared": 4,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 777,
-   "avgRunSeconds": 45
+   "avgScore": 1225,
+   "avgRunSeconds": 43
   },
   {
    "hero": "disc",
@@ -1186,11 +1330,11 @@
    "stake": 2,
    "avgWavesCleared": 2,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
    "avgScore": 580,
-   "avgRunSeconds": 32
+   "avgRunSeconds": 26
   },
   {
    "hero": "disc",
@@ -1198,12 +1342,12 @@
    "enemy": "block",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 3,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.09,
-   "avgScore": 1995,
-   "avgRunSeconds": 227
+   "avgHpLeft": 0.58,
+   "avgScore": 1935,
+   "avgRunSeconds": 201
   },
   {
    "hero": "disc",
@@ -1212,11 +1356,11 @@
    "stake": 1.5,
    "avgWavesCleared": 5,
    "runsWon": 4,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.04,
-   "avgScore": 2493,
-   "avgRunSeconds": 253
+   "avgHpLeft": 0.46,
+   "avgScore": 2603,
+   "avgRunSeconds": 238
   },
   {
    "hero": "disc",
@@ -1224,51 +1368,51 @@
    "enemy": "block",
    "stake": 2,
    "avgWavesCleared": 5,
-   "runsWon": 3,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.46,
+   "avgScore": 2940,
+   "avgRunSeconds": 285
+  },
+  {
+   "hero": "disc",
+   "heroBot": "kite",
+   "enemy": "comb",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.68,
+   "avgScore": 1875,
+   "avgRunSeconds": 166
+  },
+  {
+   "hero": "disc",
+   "heroBot": "kite",
+   "enemy": "comb",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 2,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.36,
+   "avgScore": 2021,
+   "avgRunSeconds": 190
+  },
+  {
+   "hero": "disc",
+   "heroBot": "kite",
+   "enemy": "comb",
+   "stake": 2,
+   "avgWavesCleared": 5,
+   "runsWon": 2,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0.03,
-   "avgScore": 2551,
-   "avgRunSeconds": 294
-  },
-  {
-   "hero": "disc",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.75,
-   "avgScore": 1870,
-   "avgRunSeconds": 107
-  },
-  {
-   "hero": "disc",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 1.5,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.7,
-   "avgScore": 2670,
-   "avgRunSeconds": 121
-  },
-  {
-   "hero": "disc",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.69,
-   "avgScore": 2915,
-   "avgRunSeconds": 135
+   "avgScore": 2191,
+   "avgRunSeconds": 219
   },
   {
    "hero": "disc",
@@ -1276,12 +1420,12 @@
    "enemy": "cross",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.48,
-   "avgScore": 1408,
-   "avgRunSeconds": 79
+   "avgHpLeft": 0.22,
+   "avgScore": 1419,
+   "avgRunSeconds": 89
   },
   {
    "hero": "disc",
@@ -1289,25 +1433,25 @@
    "enemy": "cross",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 0,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.42,
-   "avgScore": 1870,
-   "avgRunSeconds": 93
+   "avgHpLeft": 0,
+   "avgScore": 1690,
+   "avgRunSeconds": 100
   },
   {
    "hero": "disc",
    "heroBot": "kite",
    "enemy": "cross",
    "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 3,
-   "runs": 6,
+   "avgWavesCleared": 3.25,
+   "runsWon": 0,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.04,
-   "avgScore": 2374,
-   "avgRunSeconds": 101
+   "avgHpLeft": 0,
+   "avgScore": 1130,
+   "avgRunSeconds": 69
   },
   {
    "hero": "disc",
@@ -1315,12 +1459,12 @@
    "enemy": "splinter",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 1,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.01,
-   "avgScore": 1206,
-   "avgRunSeconds": 83
+   "avgHpLeft": 0.33,
+   "avgScore": 1266,
+   "avgRunSeconds": 49
   },
   {
    "hero": "disc",
@@ -1329,24 +1473,63 @@
    "stake": 1.5,
    "avgWavesCleared": 3,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
    "avgScore": 774,
-   "avgRunSeconds": 40
+   "avgRunSeconds": 30
   },
   {
    "hero": "disc",
    "heroBot": "kite",
    "enemy": "splinter",
    "stake": 2,
-   "avgWavesCleared": 1.5,
+   "avgWavesCleared": 2,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 408,
-   "avgRunSeconds": 25
+   "avgScore": 576,
+   "avgRunSeconds": 22
+  },
+  {
+   "hero": "disc",
+   "heroBot": "kite",
+   "enemy": "spiral",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 3,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.22,
+   "avgScore": 1670,
+   "avgRunSeconds": 154
+  },
+  {
+   "hero": "disc",
+   "heroBot": "kite",
+   "enemy": "spiral",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 2,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.08,
+   "avgScore": 2247,
+   "avgRunSeconds": 187
+  },
+  {
+   "hero": "disc",
+   "heroBot": "kite",
+   "enemy": "spiral",
+   "stake": 2,
+   "avgWavesCleared": 5,
+   "runsWon": 2,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.09,
+   "avgScore": 2473,
+   "avgRunSeconds": 220
   },
   {
    "hero": "hedgehog",
@@ -1354,12 +1537,12 @@
    "enemy": "dot",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.58,
+   "avgHpLeft": 0.77,
    "avgScore": 1272,
-   "avgRunSeconds": 69
+   "avgRunSeconds": 44
   },
   {
    "hero": "hedgehog",
@@ -1367,25 +1550,25 @@
    "enemy": "dot",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.2,
+   "avgHpLeft": 0.69,
    "avgScore": 1870,
-   "avgRunSeconds": 74
+   "avgRunSeconds": 51
   },
   {
    "hero": "hedgehog",
    "heroBot": "brawl",
    "enemy": "dot",
    "stake": 2,
-   "avgWavesCleared": 3.17,
-   "runsWon": 0,
-   "runs": 6,
+   "avgWavesCleared": 4.75,
+   "runsWon": 3,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 1532,
-   "avgRunSeconds": 39
+   "avgHpLeft": 0.12,
+   "avgScore": 2451,
+   "avgRunSeconds": 52
   },
   {
    "hero": "hedgehog",
@@ -1393,12 +1576,12 @@
    "enemy": "needle",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.06,
-   "avgScore": 1263,
-   "avgRunSeconds": 57
+   "avgHpLeft": 0.26,
+   "avgScore": 1316,
+   "avgRunSeconds": 47
   },
   {
    "hero": "hedgehog",
@@ -1407,11 +1590,11 @@
    "stake": 1.5,
    "avgWavesCleared": 4,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 1246,
-   "avgRunSeconds": 35
+   "avgScore": 1241,
+   "avgRunSeconds": 33
   },
   {
    "hero": "hedgehog",
@@ -1420,11 +1603,11 @@
    "stake": 2,
    "avgWavesCleared": 2,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 602,
-   "avgRunSeconds": 20
+   "avgScore": 645,
+   "avgRunSeconds": 21
   },
   {
    "hero": "hedgehog",
@@ -1432,12 +1615,12 @@
    "enemy": "block",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 1,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.01,
-   "avgScore": 1750,
-   "avgRunSeconds": 139
+   "avgHpLeft": 0.41,
+   "avgScore": 2145,
+   "avgRunSeconds": 111
   },
   {
    "hero": "hedgehog",
@@ -1445,12 +1628,12 @@
    "enemy": "block",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 1,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2118,
-   "avgRunSeconds": 145
+   "avgHpLeft": 0.41,
+   "avgScore": 2374,
+   "avgRunSeconds": 134
   },
   {
    "hero": "hedgehog",
@@ -1458,12 +1641,12 @@
    "enemy": "block",
    "stake": 2,
    "avgWavesCleared": 5,
-   "runsWon": 0,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2170,
-   "avgRunSeconds": 144
+   "avgHpLeft": 0.39,
+   "avgScore": 3015,
+   "avgRunSeconds": 152
   },
   {
    "hero": "hedgehog",
@@ -1471,12 +1654,12 @@
    "enemy": "comb",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.34,
-   "avgScore": 2320,
-   "avgRunSeconds": 62
+   "avgHpLeft": 0.05,
+   "avgScore": 2235,
+   "avgRunSeconds": 95
   },
   {
    "hero": "hedgehog",
@@ -1484,25 +1667,25 @@
    "enemy": "comb",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 0,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.31,
-   "avgScore": 2820,
-   "avgRunSeconds": 70
+   "avgHpLeft": 0,
+   "avgScore": 2565,
+   "avgRunSeconds": 113
   },
   {
    "hero": "hedgehog",
    "heroBot": "brawl",
    "enemy": "comb",
    "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "avgWavesCleared": 4.25,
+   "runsWon": 0,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.33,
-   "avgScore": 3419,
-   "avgRunSeconds": 78
+   "avgHpLeft": 0,
+   "avgScore": 2299,
+   "avgRunSeconds": 94
   },
   {
    "hero": "hedgehog",
@@ -1510,12 +1693,12 @@
    "enemy": "cross",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.3,
-   "avgScore": 1440,
-   "avgRunSeconds": 50
+   "avgHpLeft": 0.32,
+   "avgScore": 1513,
+   "avgRunSeconds": 61
   },
   {
    "hero": "hedgehog",
@@ -1523,337 +1706,415 @@
    "enemy": "cross",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 0,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.28,
-   "avgScore": 2039,
-   "avgRunSeconds": 59
+   "avgHpLeft": 0,
+   "avgScore": 1775,
+   "avgRunSeconds": 68
   },
   {
    "hero": "hedgehog",
    "heroBot": "brawl",
    "enemy": "cross",
    "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 0,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2500,
-   "avgRunSeconds": 62
-  },
-  {
-   "hero": "hedgehog",
-   "heroBot": "brawl",
-   "enemy": "splinter",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 0,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 1236,
-   "avgRunSeconds": 53
-  },
-  {
-   "hero": "hedgehog",
-   "heroBot": "brawl",
-   "enemy": "splinter",
-   "stake": 1.5,
    "avgWavesCleared": 3,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 849,
-   "avgRunSeconds": 30
-  },
-  {
-   "hero": "hedgehog",
-   "heroBot": "brawl",
-   "enemy": "splinter",
-   "stake": 2,
-   "avgWavesCleared": 2,
-   "runsWon": 0,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 576,
-   "avgRunSeconds": 19
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "dot",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.68,
-   "avgScore": 1263,
-   "avgRunSeconds": 93
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "dot",
-   "stake": 1.5,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.13,
-   "avgScore": 1868,
-   "avgRunSeconds": 96
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "dot",
-   "stake": 2,
-   "avgWavesCleared": 3.17,
-   "runsWon": 0,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 1222,
+   "avgScore": 1129,
    "avgRunSeconds": 42
   },
   {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "needle",
+   "hero": "hedgehog",
+   "heroBot": "brawl",
+   "enemy": "splinter",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 1,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.26,
+   "avgScore": 1266,
+   "avgRunSeconds": 39
+  },
+  {
+   "hero": "hedgehog",
+   "heroBot": "brawl",
+   "enemy": "splinter",
+   "stake": 1.5,
+   "avgWavesCleared": 3.25,
+   "runsWon": 0,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 1239,
-   "avgRunSeconds": 63
+   "avgScore": 1096,
+   "avgRunSeconds": 28
+  },
+  {
+   "hero": "hedgehog",
+   "heroBot": "brawl",
+   "enemy": "splinter",
+   "stake": 2,
+   "avgWavesCleared": 2,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 676,
+   "avgRunSeconds": 16
+  },
+  {
+   "hero": "hedgehog",
+   "heroBot": "brawl",
+   "enemy": "spiral",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 1409,
+   "avgRunSeconds": 86
+  },
+  {
+   "hero": "hedgehog",
+   "heroBot": "brawl",
+   "enemy": "spiral",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 1762,
+   "avgRunSeconds": 102
+  },
+  {
+   "hero": "hedgehog",
+   "heroBot": "brawl",
+   "enemy": "spiral",
+   "stake": 2,
+   "avgWavesCleared": 4.25,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 2008,
+   "avgRunSeconds": 89
   },
   {
    "hero": "star",
    "heroBot": "kite",
-   "enemy": "needle",
+   "enemy": "dot",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.82,
+   "avgScore": 1272,
+   "avgRunSeconds": 53
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "dot",
    "stake": 1.5,
-   "avgWavesCleared": 3,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.61,
+   "avgScore": 1870,
+   "avgRunSeconds": 62
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "dot",
+   "stake": 2,
+   "avgWavesCleared": 3.5,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 830,
+   "avgScore": 1603,
    "avgRunSeconds": 36
   },
   {
    "hero": "star",
    "heroBot": "kite",
    "enemy": "needle",
-   "stake": 2,
-   "avgWavesCleared": 1.83,
+   "stake": 1,
+   "avgWavesCleared": 5,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 568,
+   "avgScore": 1226,
+   "avgRunSeconds": 46
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "needle",
+   "stake": 1.5,
+   "avgWavesCleared": 2.75,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 740,
+   "avgRunSeconds": 26
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "needle",
+   "stake": 2,
+   "avgWavesCleared": 1.5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 461,
+   "avgRunSeconds": 17
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "block",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.59,
+   "avgScore": 1778,
+   "avgRunSeconds": 193
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "block",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.35,
+   "avgScore": 2498,
+   "avgRunSeconds": 215
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "block",
+   "stake": 2,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.4,
+   "avgScore": 3113,
+   "avgRunSeconds": 265
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "comb",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 2,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.13,
+   "avgScore": 1650,
+   "avgRunSeconds": 127
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "comb",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 3,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.11,
+   "avgScore": 2153,
+   "avgRunSeconds": 174
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "comb",
+   "stake": 2,
+   "avgWavesCleared": 5,
+   "runsWon": 2,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.03,
+   "avgScore": 2529,
+   "avgRunSeconds": 195
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "cross",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.26,
+   "avgScore": 1434,
+   "avgRunSeconds": 93
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "cross",
+   "stake": 1.5,
+   "avgWavesCleared": 4,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 1258,
+   "avgRunSeconds": 69
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "cross",
+   "stake": 2,
+   "avgWavesCleared": 2.25,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 752,
+   "avgRunSeconds": 39
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "splinter",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 3,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.08,
+   "avgScore": 1257,
+   "avgRunSeconds": 45
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "splinter",
+   "stake": 1.5,
+   "avgWavesCleared": 2.75,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 760,
    "avgRunSeconds": 23
   },
   {
    "hero": "star",
    "heroBot": "kite",
-   "enemy": "block",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 5,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.27,
-   "avgScore": 2065,
-   "avgRunSeconds": 229
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "block",
-   "stake": 1.5,
-   "avgWavesCleared": 5,
-   "runsWon": 4,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.29,
-   "avgScore": 2425,
-   "avgRunSeconds": 249
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "block",
+   "enemy": "splinter",
    "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 4,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.31,
-   "avgScore": 2657,
-   "avgRunSeconds": 300
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.62,
-   "avgScore": 1960,
-   "avgRunSeconds": 98
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 1.5,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.65,
-   "avgScore": 2520,
-   "avgRunSeconds": 115
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.6,
-   "avgScore": 2963,
-   "avgRunSeconds": 125
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "cross",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.41,
-   "avgScore": 1440,
-   "avgRunSeconds": 76
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "cross",
-   "stake": 1.5,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.26,
-   "avgScore": 1959,
-   "avgRunSeconds": 86
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "cross",
-   "stake": 2,
-   "avgWavesCleared": 4.17,
+   "avgWavesCleared": 1.5,
    "runsWon": 0,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 1920,
-   "avgRunSeconds": 56
+   "avgScore": 492,
+   "avgRunSeconds": 15
   },
   {
    "hero": "star",
    "heroBot": "kite",
-   "enemy": "splinter",
+   "enemy": "spiral",
    "stake": 1,
    "avgWavesCleared": 5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 1200,
+   "avgRunSeconds": 104
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "spiral",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 1743,
+   "avgRunSeconds": 143
+  },
+  {
+   "hero": "star",
+   "heroBot": "kite",
+   "enemy": "spiral",
+   "stake": 2,
+   "avgWavesCleared": 5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 2123,
+   "avgRunSeconds": 177
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "dot",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.92,
+   "avgScore": 1262,
+   "avgRunSeconds": 69
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "dot",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.76,
+   "avgScore": 1693,
+   "avgRunSeconds": 77
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "dot",
+   "stake": 2,
+   "avgWavesCleared": 4.75,
    "runsWon": 3,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.04,
-   "avgScore": 1228,
-   "avgRunSeconds": 80
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "splinter",
-   "stake": 1.5,
-   "avgWavesCleared": 3,
-   "runsWon": 0,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 793,
-   "avgRunSeconds": 40
-  },
-  {
-   "hero": "star",
-   "heroBot": "kite",
-   "enemy": "splinter",
-   "stake": 2,
-   "avgWavesCleared": 1,
-   "runsWon": 0,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 333,
-   "avgRunSeconds": 17
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "dot",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.9,
-   "avgScore": 1039,
-   "avgRunSeconds": 147
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "dot",
-   "stake": 1.5,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.91,
-   "avgScore": 1483,
-   "avgRunSeconds": 165
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "dot",
-   "stake": 2,
-   "avgWavesCleared": 4.83,
-   "runsWon": 5,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.7,
-   "avgScore": 1742,
-   "avgRunSeconds": 175
+   "avgHpLeft": 0.49,
+   "avgScore": 1955,
+   "avgRunSeconds": 94
   },
   {
    "hero": "line",
@@ -1861,38 +2122,38 @@
    "enemy": "needle",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.78,
-   "avgScore": 1157,
-   "avgRunSeconds": 122
+   "avgHpLeft": 0.63,
+   "avgScore": 1255,
+   "avgRunSeconds": 71
   },
   {
    "hero": "line",
    "heroBot": "kite",
    "enemy": "needle",
    "stake": 1.5,
-   "avgWavesCleared": 4,
+   "avgWavesCleared": 4.25,
    "runsWon": 1,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.09,
-   "avgScore": 1341,
-   "avgRunSeconds": 78
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "needle",
-   "stake": 2,
-   "avgWavesCleared": 3.83,
-   "runsWon": 1,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.05,
+   "avgHpLeft": 0.17,
    "avgScore": 1332,
-   "avgRunSeconds": 100
+   "avgRunSeconds": 68
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "needle",
+   "stake": 2,
+   "avgWavesCleared": 2,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 719,
+   "avgRunSeconds": 26
   },
   {
    "hero": "line",
@@ -1900,12 +2161,12 @@
    "enemy": "block",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
+   "runsWon": 4,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.79,
-   "avgScore": 1680,
-   "avgRunSeconds": 284
+   "avgHpLeft": 0.51,
+   "avgScore": 1830,
+   "avgRunSeconds": 195
   },
   {
    "hero": "line",
@@ -1913,166 +2174,205 @@
    "enemy": "block",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 5,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.37,
-   "avgScore": 2565,
-   "avgRunSeconds": 260
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "block",
-   "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.64,
-   "avgScore": 2895,
-   "avgRunSeconds": 343
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.82,
-   "avgScore": 1780,
-   "avgRunSeconds": 108
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 1.5,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.72,
-   "avgScore": 2550,
-   "avgRunSeconds": 119
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "comb",
-   "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.68,
-   "avgScore": 3028,
-   "avgRunSeconds": 133
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "cross",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.78,
-   "avgScore": 1429,
-   "avgRunSeconds": 90
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "cross",
-   "stake": 1.5,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.54,
-   "avgScore": 2028,
-   "avgRunSeconds": 96
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "cross",
-   "stake": 2,
-   "avgWavesCleared": 5,
-   "runsWon": 5,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.55,
-   "avgScore": 2486,
-   "avgRunSeconds": 118
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "splinter",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 6,
-   "runs": 6,
-   "timeouts": 0,
-   "avgHpLeft": 0.68,
-   "avgScore": 1101,
-   "avgRunSeconds": 134
-  },
-  {
-   "hero": "line",
-   "heroBot": "kite",
-   "enemy": "splinter",
-   "stake": 1.5,
-   "avgWavesCleared": 4.33,
    "runsWon": 3,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.39,
-   "avgScore": 1251,
+   "avgHpLeft": 0.66,
+   "avgScore": 2044,
+   "avgRunSeconds": 245
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "block",
+   "stake": 2,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.75,
+   "avgScore": 2682,
+   "avgRunSeconds": 303
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "comb",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 2,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.24,
+   "avgScore": 1695,
    "avgRunSeconds": 128
   },
   {
    "hero": "line",
    "heroBot": "kite",
-   "enemy": "splinter",
+   "enemy": "comb",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 3,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.34,
+   "avgScore": 2201,
+   "avgRunSeconds": 186
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "comb",
    "stake": 2,
+   "avgWavesCleared": 5,
+   "runsWon": 3,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.19,
+   "avgScore": 2408,
+   "avgRunSeconds": 218
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "cross",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 3,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.45,
+   "avgScore": 1356,
+   "avgRunSeconds": 95
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "cross",
+   "stake": 1.5,
+   "avgWavesCleared": 4.75,
+   "runsWon": 2,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.29,
+   "avgScore": 1539,
+   "avgRunSeconds": 108
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "cross",
+   "stake": 2,
+   "avgWavesCleared": 3.75,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 1309,
+   "avgRunSeconds": 82
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "splinter",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.54,
+   "avgScore": 1266,
+   "avgRunSeconds": 57
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "splinter",
+   "stake": 1.5,
    "avgWavesCleared": 3.5,
    "runsWon": 1,
-   "runs": 6,
+   "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.17,
-   "avgScore": 1262,
+   "avgHpLeft": 0.04,
+   "avgScore": 1131,
+   "avgRunSeconds": 45
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "splinter",
+   "stake": 2,
+   "avgWavesCleared": 2.25,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 691,
+   "avgRunSeconds": 26
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "spiral",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 1514,
    "avgRunSeconds": 102
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "spiral",
+   "stake": 1.5,
+   "avgWavesCleared": 5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 2042,
+   "avgRunSeconds": 139
+  },
+  {
+   "hero": "line",
+   "heroBot": "kite",
+   "enemy": "spiral",
+   "stake": 2,
+   "avgWavesCleared": 5,
+   "runsWon": 0,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0,
+   "avgScore": 2377,
+   "avgRunSeconds": 168
   }
  ],
  "soloSummary": {
-  "wonShare": 0.597,
-  "runs": 432,
-  "avgHpLeft": 0.299,
+  "wonShare": 0.491,
+  "runs": 336,
+  "avgHpLeft": 0.229,
   "byStake": {
    "x1": {
-    "wonShare": 0.806,
-    "avgHpLeft": 0.426,
-    "avgScore": 1484,
+    "wonShare": 0.795,
+    "avgHpLeft": 0.37,
+    "avgScore": 1497,
     "avgWavesCleared": 5
    },
    "x1.5": {
-    "wonShare": 0.625,
-    "avgHpLeft": 0.272,
-    "avgScore": 1791,
-    "avgWavesCleared": 4.47
+    "wonShare": 0.402,
+    "avgHpLeft": 0.213,
+    "avgScore": 1718,
+    "avgWavesCleared": 4.51
    },
    "x2": {
-    "wonShare": 0.361,
-    "avgHpLeft": 0.2,
-    "avgScore": 1807,
-    "avgWavesCleared": 3.8
+    "wonShare": 0.277,
+    "avgHpLeft": 0.105,
+    "avgScore": 1685,
+    "avgWavesCleared": 3.68
    }
   }
  },
@@ -2090,19 +2390,21 @@
    "weaponMinBodyCells": 12
   },
   "stats": {
-   "armourBase": 170,
-   "armourPerCore": 0.7,
-   "armourPerCell": 0,
-   "armourPerPocket": 0.8,
+   "armourBase": 60,
+   "armourPerCore": 1,
+   "armourPerCell": 0.3,
+   "armourPerPocket": 0.3,
+   "pushPerPocket": 0.1,
    "pocketCapPerCell": 1,
    "sharpBase": 1,
    "sharpMax": 1.2,
    "sharpHalfCells": 5,
-   "sharpPurity": 1.2,
+   "sharpPurity": 3,
    "sharpPurityWeightRef": 60,
    "speedBase": 38,
    "speedWeightRef": 70,
-   "bluntDamage": 1.2
+   "bluntDamage": 1.2,
+   "sharpArmourCut": 0.004
   },
   "element": {
    "minColouredPercent": 30,
@@ -2131,6 +2433,9 @@
    "dashRestitution": 0.3,
    "maxStepCells": 0.4,
    "maxSubSteps": 8,
+   "deepNormalShare": 0.5,
+   "deepContactDepth": 0.25,
+   "extraSeparationPasses": 2,
    "hitKnockbackPerDamage": 39
   },
   "ring": {
@@ -2146,7 +2451,7 @@
    "shrinkEndTick": 2700,
    "suddenDeathTick": 3600,
    "suddenDeathShrinkPerTick": 0.05,
-   "startDistanceFraction": 0.55,
+   "startDistanceFraction": 0.6,
    "winsToTakeMatch": 3,
    "catchUpPercentPerLostRound": 15,
    "catchUpMaxSteps": 4,
@@ -2199,9 +2504,11 @@
    "enemyInkBudget": 220,
    "enemySpawnInset": 6,
    "enemySpeedMult": 0.55,
-   "enemyArmourBase": 30,
-   "enemyArmourMult": 1.2,
-   "enemyDamageMult": 0.6,
+   "enemyArmourPerInk": 0.6,
+   "enemyArmourMult": 0.2,
+   "copyArmourScaleMin": 0.5,
+   "copyArmourScaleMax": 2,
+   "enemyDamageMult": 0.4,
    "enemyDashRange": 8,
    "enemyDashChancePercent": 2,
    "throwIntervalBaseTicks": 18,

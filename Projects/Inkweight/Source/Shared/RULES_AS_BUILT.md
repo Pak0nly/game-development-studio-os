@@ -1,4 +1,4 @@
-# Inkweight Rules As Built (core version 2, Work Order INK-CORE-V2)
+# Inkweight Rules As Built (core version 2 after correction round 1, Work Order INK-CORE-V2)
 
 This records what the engine-free core in `../WebPrototype/core/` really does,
 so that a second implementation (C# for Unity) can match it without guessing.
@@ -34,9 +34,12 @@ second). World axes equal canvas axes: x to the right, y downward.
   among its 8 neighbours.
 - Valid: `N >= ink.minBodyCells` (12; weapons `ink.weaponMinBodyCells`, also
   12) and `filled <= budget`.
-- Weight = `N`.
+- Weight = `N`. Push weight = `N + pushPerPocket * pocketCells`, where
+  `pocketCells = min(P, pocketCapPerCell * (N - S))`. The push weight is the
+  mass of every collision; speed and acceleration use `N`.
 - Armour = `armourBase + armourPerCore * C + armourPerCell * N +
-  armourPerPocket * min(P, pocketCapPerCell * (N - S))`.
+  armourPerPocket * pocketCells` (60 + 1 per core cell + 0.3 per cell + 0.3
+  per counted pocket cell).
 - Sharpness = `sharpBase + (sharpMax * S^2 / (S^2 + sharpHalfCells^2) +
   sharpPurity * (S / N)^2 / (1 + N / sharpPurityWeightRef))`.
 - Top speed = `speedBase / (1 + N / speedWeightRef)` cells per second.
@@ -61,10 +64,19 @@ Facts that follow from these rules:
   tip is.
 - Where a one-cell blade meets a solid body, the blade cells are sharp up to
   the body and the body cells are not.
-- A one-cell loop encloses space but gets no pocket armour (all its cells are
-  blade cells, the cap `N - S` is 0). A loop with walls two or more cells
-  thick does. A gap in the wall, also a diagonal one, opens the space.
+- A one-cell loop encloses space but its pockets do not count (all its cells
+  are blade cells, the cap `N - S` is 0). A loop with walls two or more cells
+  thick counts them. A gap in the wall, also a diagonal one, opens the space.
 - Gaps one cell wide between walls are enclosed but are not pocket cells.
+- A hollow shell never has more armour than a filled drawing of the same ink:
+  a wall cell earns at most 0.3 through a pocket cell, a core cell earns 1.
+  Examples: filled disc (208 cells) 270.4, block 279.0, 3-wide hoop (216)
+  247.5, 2-wide border hoop (216) 189.6, hollow ring (172) 179.2, all-blade
+  snake (209) 122.7, 32-cell line 69.6, 13-cell dot 64.9.
+- Stat ranges of valid figure drawings up to 220 ink (for stat bars): armour
+  63.6 to about 290 (never above `60 + 1.3 * N`; about 450 with full catch-up
+  ink of 352); sharpness 1.0 to 4.52 (safe upper end 4.7); push weight `N` to
+  `1.1 * N`; top speed 9.2 to 32.4.
 
 ## 2. Collision shape
 
@@ -95,17 +107,22 @@ skipped everywhere.
      stick * `topSpeed`, `k = accelK = min(1, accelBase / (1 + N /
      accelWeightRef) / tickRate)`.
    - `v += (target - v) * k`.
-   - **Turning:** `turnRate = turnBase / (1 + inertia / turnInertiaRef)`,
-     `t = turnRate / (2 * tickRate)`, `turnCos = (1 - t^2) / (1 + t^2)`,
-     `turnSin = 2t / (1 + t^2)`. With `dot = f . d` and `cross = fx * dy - fy *
-     dx`: if `dot >= turnCos` the front becomes exactly `d`; otherwise the
-     front is rotated by `(turnCos, +turnSin)` when `cross >= 0`, else by
-     `(turnCos, -turnSin)`, and divided by its length. Long and heavy drawings
-     turn slower. Collisions never rotate a body.
+   - The steering direction `d` is stored for the sub-steps (`turnDx`,
+     `turnDy`) together with `turning` = the stick is not idle and the front
+     differs from `d`. The front is not turned in the control step.
 2. **Hit cooldowns:** all hit cooldowns above 0 count down by 1.
-3. **Sub-steps:** `sub = floor(sqrt(maxV2) * dt / maxStepCells) + 1`, at most
-   `maxSubSteps`, where `maxV2` is the largest squared speed of a living body
-   after control. `h = dt / sub`. `sub` times in a row:
+3. **Sub-steps:** `sub = floor(maxSpeed * dt / maxStepCells) + 1`, at most
+   `maxSubSteps`, where `maxSpeed` is the largest value over the living
+   bodies of: speed after control, plus `radius * turnRate` (the speed of the
+   outermost cell) while the body is `turning`. `h = dt / sub`. `sub` times
+   in a row:
+   - **Turn:** `turnRate = turnBase / (1 + inertia / turnInertiaRef)`,
+     `t = turnRate / (2 * tickRate * sub)`, `c = (1 - t^2) / (1 + t^2)`,
+     `s = 2t / (1 + t^2)`. With `dot = f . d` and `cross = fx * dy - fy * dx`:
+     if `dot >= c` the front becomes exactly `d`; otherwise the front is
+     rotated by `(c, +s)` when `cross >= 0`, else by `(c, -s)`, and divided by
+     its length. Long and heavy drawings turn slower. Collisions never rotate
+     a body.
    - **Integrate:** `pos += v * h` for every living body.
    - **Pairs:** every pair `i < j` in index order:
      - Skip if the centre distance is at least the sum of the two size radii.
@@ -120,11 +137,16 @@ skipped everywhere.
        largest depth is kept. If either cell of a contact is sharp, its owner
        is marked as "touching with a sharp cell".
      - No contact: nothing happens. Otherwise the normal `n` is the normalised
-       sum (fallback: centre A minus centre B, then `(1, 0)`, when the squared
-       length is below 1e-12).
-     - Push apart along `n` by the largest depth, shared by inverse weight:
-       with `invA = 1 / N_A`, `invB = 1 / N_B`: A moves `+n * depth * invA /
-       (invA + invB)`, B the opposite with `invB`.
+       sum. When the sum is shorter than `deepNormalShare` times the largest
+       depth (contacts on both sides of a blade cancel), the vector of the
+       deepest contact alone is used. Fallbacks: centre A minus centre B, then
+       `(1, 0)`, when the squared length is below 1e-12.
+     - Push apart along `n` by the largest depth, shared by inverse push
+       weight: with `invA = 1 / mass_A`, `invB = 1 / mass_B`: A moves `+n *
+       depth * invA / (invA + invB)`, B the opposite with `invB`.
+     - If the contact is still deeper than `deepContactDepth` after the push,
+       the pair is scanned and pushed again, positions only, at most
+       `extraSeparationPasses` times.
      - `dashing` = A or B has `dashTicks > 0`.
      - If the relative velocity along `n` is closing (`rel = (vA - vB) . n <
        0`): impulse `-(1 + e) * rel / (invA + invB)` along `n` on A and against
@@ -134,20 +156,29 @@ skipped everywhere.
        `dashTicks > 0` gets `dashTicks = 0` and an event `ram` is recorded.
        The dash cooldown keeps running.
      - **Damage** (not within one team): if the cooldown A-to-B is 0, B loses
-       `(A touches with a sharp cell ? max(bluntDamage, sharpness_A) :
-       bluntDamage) * damageMult_A * elementMultiplier(A, B)`, the cooldown
+       `(A touches with a sharp cell ? max(bluntDamage, sharpness_A) +
+       sharpArmourCut * fullArmour_B : bluntDamage) * damageMult_A *
+       elementMultiplier(A, B)` (a blade also takes 0.4 % of the victim's
+       full armour with every hit), the cooldown
        A-to-B becomes `hitCooldownTicks`, and B gets a knockback of `damage *
-       hitKnockbackPerDamage / N_B` away from A. Then the same for B-to-A.
+       hitKnockbackPerDamage / mass_B` away from A. Then the same for B-to-A.
        One contact therefore hurts both sides, each with what it touched with.
 4. **Wall** (solo only): a body further than `arenaRadius` from the centre is
    put back on the circle and loses the outward part of its velocity.
 
-Because of the sub-steps two bodies close by at most `2 * maxStepCells` (0.8
-cells) between two scans, less than the width of the contact zone of two cells
-(2 cells), so a contact is found before two thin figures can pass each other,
-up to a speed of `maxSubSteps * maxStepCells` (3.2 cells per tick = 192 cells
-per second) per body. The fastest dash of a valid figure is 123 cells per
-second.
+Because of the sub-steps no cell of a body moves more than `maxStepCells`
+(0.4 cells) between two scans, by moving or by turning, up to `maxSubSteps *
+maxStepCells` (3.2 cells per tick = 192 cells per second) for speed plus tip
+speed. The fastest dash of a valid figure is 123 cells per second. Measured
+on bot rounds (`node sim/overlap_probe.js`): the cell centres of two bodies
+stay at least 0.5 apart at the end of every tick for the tested pairs, with
+one known exception: two figures with one-cell teeth and one-cell gaps (comb
+against hedgehog) can mesh, and then a cell centre is deeper than 0.5 inside
+the other figure in about 0.2 % of the ticks (largest overlap seen 0.79).
+
+The last tick of a dash is not a ram: `dashTicks` is counted down in the
+control step, so a contact in the twelfth dash tick is a normal contact
+(review finding m1, kept).
 
 A figure whose armour reaches 0 during a tick stays in the step until the end
 of the tick and still pushes, deals and takes damage (review finding M1,
@@ -155,7 +186,9 @@ kept); the mode modules remove it after the step.
 
 ## 4. Mode B: Ring
 
-- 2 to 4 seats. Start slots are unit vectors: 2 seats left and right; 3 seats
+- 2 to 4 seats (start distance `startRadius * startDistanceFraction`, 0.6, so
+  that four canvas-wide figures do not overlap at the start). Start slots are
+  unit vectors: 2 seats left and right; 3 seats
   `(0, -1)`, `(sqrt(3) / 2, 0.5)`, `(-sqrt(3) / 2, 0.5)`; 4 seats left, right,
   top, bottom. Seat `s` takes slot `(s + roundsAlreadyStarted) mod seats`, at
   distance `startRadius * startDistanceFraction`, front toward the centre.
@@ -187,7 +220,11 @@ kept); the mode modules remove it after the step.
   least 1, at most `maxCopies`. Each copy spawns at a random direction (two
   generator draws, rejection of points outside the unit circle) at
   `arenaRadius - enemySpawnInset`, front toward the centre, with
-  - armour `enemyArmourBase + enemyArmourMult * (armour - armourBase)`,
+  - armour `(enemyArmourPerInk * N + enemyArmourMult * armour) * scale`,
+    where `scale = waveBudgets[w] * stakes[k] / (copies * (N +
+    copyInkOverhead))`, limited to `copyArmourScaleMin .. copyArmourScaleMax`
+    (0.5 to 2): ink that buys no further copy makes the copies tougher, a
+    budget that does not pay for one copy makes it weaker,
   - top speed times `enemySpeedMult * stakeSpeedMult[k]`,
   - damage times `enemyDamageMult * stakeDamageMult[k]`.
   Enemies do not damage each other.
@@ -206,8 +243,9 @@ kept); the mode modules remove it after the step.
   weapon's element; knockback speed `N_w * weaponKnockbackPerInk / N_enemy`
   along the flight. The shot is spent. Shots live `projectileLifeTicks`.
 - An enemy at 0 armour leaves a drop. In a wave every drop is worth
-  `max(N, floor(waveBudgets[w] * stakes[k] / copies))`, so the wave pays out
-  its whole staked budget; in the boss fight a drop is worth the enemy's `N`.
+  `floor(waveBudgets[w] * stakes[k] / copies)`: a wave pays its staked
+  budget (rounded down per drop) and never more. In the boss fight a drop is
+  worth the enemy's `N`.
   A drop is collected when within hero radius + `pickupRange`; it disappears
   after `dropLifeTicks`. Drops still lying when the last enemy falls are
   collected. Collected ink counts into score and wallet.
@@ -222,7 +260,8 @@ kept); the mode modules remove it after the step.
 - Boss after wave 5: cell-wise union of the five enemy bodies (the earliest
   wave gives the colour of a shared cell), body and stats by the normal rules
   without a budget, armour `armour * bossArmourMult`, plus `bossEscortCopies`
-  copy of each wave design with the enemy armour formula; stake index 0.
+  copy of each wave design with the enemy armour formula (scale 1); stake
+  index 0.
 
 ## 6. Bots
 
@@ -275,6 +314,8 @@ the nearest enemy. Both stay off the wall.
   (next >>> 8) / 2^24`. Reference values are written into
   `tests/properties.test.js`.
 - Floating-point sums run in the loop orders given above.
+- The bots use one module-level scratch record for the steering direction;
+  it is fully rewritten in every call and carries nothing between calls.
 - State hash: FNV-1a 32 bit over the little-endian bytes of the doubles listed
   in `core/hash.js` (layout 2, also in `CHANGES_V2.md` B12).
 
@@ -292,9 +333,10 @@ the nearest enemy. Both stay off the wall.
 | Rule | INK_RULES_V1 | As built (version 2) | Reason |
 |---|---|---|---|
 | Sharp cell | at least 5 of 8 neighbours empty | in no filled 2 x 2 square | The old rule made a diagonal sword blunt (a staircase has 4 body neighbours per cell) and made the corners of a block sharp. The new rule reads "ink one cell thick is blade". |
-| Armour | `20 + 2 C + 0.25 N` | `170 + 0.7 C + 0.8 * min(P, N - S)` | A thin drawing had a fifteenth (rules 1) or a sixth (core 1) of a solid's armour and lost every four-figure round. Now a filled drawing has about 1.6 times the armour of a thin one. Pocket cells give hollow drawings a job. |
-| Sharpness | `3 + 0.12 S` | `1 + 1.2 S^2 / (S^2 + 25) + 1.2 (S / N)^2 / (1 + N / 60)` | Count of blade cells with a ceiling: a short blade on a solid body already raises the stat clearly (12 cells: 1.0 to 2.0), more spikes add little, so "full ink covered in spikes" cannot run away. The second part makes a light drawing that is nothing but blade the sharpest (up to 3.0 to 3.4). |
-| Sharp touch | sharpness | `max(blunt, sharpness)` | A sharp cell never does less than a blunt touch (review I3). |
+| Armour | `20 + 2 C + 0.25 N` | `60 + 1 C + 0.3 N + 0.3 * min(P, N - S)` | Same shape as the first rule with other numbers: a filled disc has 3.9 times the armour of a line and 4.2 times that of a dot. Pocket cells give a thick closed shell a little armour, always less than filling gives. |
+| Push weight | weight | `N + 0.1 * min(P, N - S)` | A job for hollow shapes that is not armour: a thick closed shell is up to 10 % harder to push. |
+| Sharpness | `3 + 0.12 S` | `1 + 1.2 S^2 / (S^2 + 25) + 3 (S / N)^2 / (1 + N / 60)` | Count of blade cells with a ceiling: a short blade on a solid body already raises the stat clearly (12 cells: 1.0 to 2.0), more spikes add little. The second part makes a light drawing that is nothing but blade the sharpest (line 4.1, 12-cell line 4.5). |
+| Sharp touch | sharpness | `max(blunt, sharpness) + 0.4 % of the victim's full armour` | A sharp cell never does less than a blunt touch (review I3). The armour cut is the counterweight to the steep armour: without it thick empty shells won 85 to 93 % of duels as rushers and light blades fell to 25 to 33 %. |
 | Blunt damage | 1 | 1.2 | as core version 1 |
 | Top speed | `9 / (1 + N / 160)` | `38 / (1 + N / 70)` | as core version 1 |
 | Hit cooldown | 0.4 s | 24 ticks (= 0.4 s) | unchanged |
@@ -304,11 +346,11 @@ the nearest enemy. Both stay off the wall.
 | Simultaneous knock-out | not stated | closest to the centre wins | needed a rule |
 | Ring size and timing | not stated | radius 44 / 50 / 56, shrinks from 5 s to 45 s down to 16, sudden death from 60 s | needed numbers |
 | Dash | "short burst, cooldown" | 0.2 s at 3.8 times top speed, 2 s cooldown; a contact ends the dash and is a ram with its own bounce factor 0.3 | Without this a dashing figure passed through thin figures (review I1). |
-| Movement step | not stated | a tick is cut into up to 8 parts so that no figure moves more than 0.4 cells between two contact checks | review I1 |
+| Movement step | not stated | a tick is cut into up to 8 parts so that no cell moves more than 0.4 cells between two contact checks, by moving or by turning; the turn happens inside the parts | review V1 I1, review V2 I4 |
 | Hit knockback | not stated | each hit pushes the victim back by `damage * 39 / weight` cells per second | as core version 1 |
-| Solo copies | budget / N | budget x stake / (N + 40), at most 10 | With the flat armour every copy carries, a swarm of 20 twelve-cell copies could not be beaten. |
-| Solo enemies | copies of the design | armour `30 + 1.2 * (armour - 170)`, 55 % speed, 60 % damage | Thin copies are fragile, filled copies are tough; version 1 copies (35 % armour, 20 % damage) could not hurt a big hero. |
-| Solo stake | x1 / x1.5 / x2 budget | also enemy damage x1 / x1.25 / x1.5 and speed x1 / x1.1 / x1.2; drops pay out the whole staked budget | The stake had no effect once copies hit the cap (review M7). |
+| Solo copies | budget / N | budget x stake / (N + 40), at most 10 | Swarm control. |
+| Solo enemies | copies of the design | armour `(0.6 N + 0.2 armour) x scale`, 55 % speed, 40 % damage | Armour follows size, so a big drawing without core cells is not fragile (review V2 I6); the scale spends the ink that buys no further copy. |
+| Solo stake | x1 / x1.5 / x2 budget | also enemy damage x1 / x1.25 / x1.5 and speed x1 / x1.1 / x1.2; a wave pays its staked budget and never more | The stake had no effect once copies hit the cap (review V1 M7); a heavy design paid its own ink whatever the budget (review V2 I6). |
 | Solo heal | not stated | 35 % of full armour | 50 % made every run safe. |
 | Solo colours | "an extra colour" upgrade | the run starts with Black plus one colour | as core version 1 |
 | Solo time limit | not stated | a fight ends the run after 180 s | as core version 1 |
@@ -316,34 +358,34 @@ the nearest enemy. Both stay off the wall.
 
 ## 10. Open design questions for the Human
 
-1. **Sharpness now has two parts.** "Any blade cuts" (count, with a ceiling)
-   and "a light drawing that is all blade cuts deepest". The second part was
-   added because without it pure light blades lost their place to heavy
-   spiked bodies (measured: line 46 to 50 %, needle 35 %, 12-cell line 23 to
-   28 % duel win rate), and its weight term was added because heavy all-blade
-   drawings (a 209-cell snake, nested loops) were otherwise the best drawings
-   in the field (66 to 72 %). Recommendation: judge by playing whether the
-   stat bar is understandable; if not, drop the purity part and accept weak
-   light blades.
-2. **Armour is much flatter.** A thin figure has 170 armour, a full solid about
-   275. This is what made four-figure rounds less one-sided, but the sentence
-   "filled areas are armour" is now a 1.6 to 1 effect instead of 6 to 1.
-   Recommendation: keep for the next play test and look at whether filling
-   still feels worth it.
-3. **Pocket armour.** A thick-walled ring now has the highest armour in the
-   field (319). Recommendation: keep; hollow shapes pay with low weight per
-   size. Watch for a "bubble" drawing becoming the default.
-4. **Small drawings stay weak in duels.** A 13-cell dot wins about one duel in
-   seven. Recommendation unchanged: accept for the Ring, let small drawings
-   shine in solo swarms and later disciplines.
-5. **Bot style decides more than shape.** In the simulation a rusher beats a
-   circler with most drawings, and heavy solids are strong as rushers and weak
-   as circlers. Recommendation: do not tune further on bot numbers before
-   humans have played.
-6. **Solo swarms of thin copies are fragile but still dangerous** at the
-   higher stakes (needle and 12-cell-line swarms win most runs at x1.5 and
-   x2). Recommendation: play it; if it frustrates, lower `maxCopies` or
-   `stakeDamageMult`.
+1. **"Filled areas are armour" against four-figure rounds.** Correction round
+   1 made the sentence visibly true again (disc 270, line 70, dot 65). The
+   price was measured: light drawings win almost no four-figure round again
+   (2.4 % on average, even is 25 %), and the dot wins 3 % of its duels. The
+   flat armour of the first candidate had lifted them to 15.6 %. Both cannot
+   be had with the present rules; this needs a Human decision or a new idea
+   (for example a separate, weight-independent way to survive).
+2. **Solids are now weak in duels** (disc 37 %, block 42 % pooled, 28 to 33 %
+   as rushers) although they have the most armour: blades take 0.4 % of the
+   full armour per hit on top of their sharpness, and solids deal only blunt
+   damage. Lowering the armour cut brings the thick empty shells back to the
+   top (measured 85 to 93 % as rushers without it). Recommendation: play it
+   before changing numbers; a solid with one blade (lance, hedgehog) is the
+   strong all-round drawing at the moment.
+3. **Heavy all-blade drawings lead the field** (snake 68 %, nested loops
+   66 %, hedgehog 65 % pooled). The purity part of sharpness has a weight
+   term against exactly these drawings; it is not enough at the new armour
+   scale.
+4. **Sharpness has two parts**, and the armour cut is a third thing a blade
+   does. Recommendation: judge by playing whether the stat bar is
+   understandable.
+5. **Bot style decides more than shape.** A rusher beats a circler in 79 % of
+   duels whatever is drawn. Recommendation: do not tune further on bot
+   numbers before humans have played.
+6. **Solo:** swarms of thin copies are beatable at x1 and deadly above; the
+   heavy snake enemy is now one of the hardest enemies (7 of 48 runs won).
+   The boss fight still pays the ink of the boss and its escorts, so heavy
+   enemy designs pay more there; they also make the boss fight harder.
 7. **Thrown weapon** is a circle with the weapon's stats, not its drawn shape
    (unchanged). Recommendation: fine for the prototype.
 8. **Elements** only multiply damage. Not changed in version 2.

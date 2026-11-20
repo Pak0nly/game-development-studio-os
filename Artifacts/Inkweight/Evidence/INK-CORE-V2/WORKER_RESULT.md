@@ -1,5 +1,7 @@
 # INK-CORE-V2 Worker Result
 
+**Read the last section first: "Correction round 1" describes the final state. Sections 1 to 9 describe the first candidate (commit `e03ae14`); its balance numbers, armour formula and solo numbers are superseded; its reports are in `before_correction_1/`.**
+
 Worker: separate Claude Code subagent (requested model fable), roles Game
 Designer and Gameplay Programmer. Not independently reviewed. Everything that
 is new against `INK_RULES_V1.md` is a prototype proposal, not a Human decision.
@@ -247,3 +249,207 @@ Exact list: `Projects/Inkweight/Source/Shared/CHANGES_V2.md`. In short:
 - Bit-exactness was checked only inside Node (JIT, `--jitless`, `--no-opt`).
 - Capability Knowledge Base: not applicable (no tool, package or asset
   choice), as stated in the order.
+
+## 10. Correction round 1 (after the independent review of the first candidate)
+
+Review: `Artifacts/Inkweight/Evidence/INK-CORE-V2/REVIEW.md` in the main
+checkout (verdict PASS with important findings I4 to I6 and minor m1 to m7).
+The container was restarted once more during this round; work continued from
+the files on disk, with two local work-in-progress commits before the final
+one (`7c807d9`, `8f9ba9f`). Nothing was pushed.
+
+### 10.1 What changed
+
+| Finding | Done |
+|---|---|
+| I4 turning pushes figures into each other | Fixed in `core/physics.js`. The turn of the front now happens inside the sub-steps (one part of the turn per sub-step), and the speed of the outermost cell (`radius * turnRate`) counts for the number of sub-steps while a body turns. When the summed contact vectors cancel (shorter than half the deepest depth) the push goes along the deepest contact; a contact still deeper than 0.25 after the push is scanned and pushed again, positions only, at most twice. Reviewer's scenario (line turns into a block, 400 ticks): ticks with overlap above 0.5: 0 (before: 280), largest overlap 0.012, after 2 s idle 0.000 (before: tip 5 cells inside). Bot rounds: 0 ticks above 0.5 for seven of the Reviewer's eight pairs. **Not fully solved:** comb against hedgehog (one-cell teeth meshing with one-cell gaps) still has 52 of 21305 ticks above 0.5, largest 0.79 (before: 2 to 20 % of ticks, up to 1.0). Stated in RULES_AS_BUILT section 3; a test bounds it at 1 %. |
+| I5 and the rule sentence | Armour is `60 + 1 C + 0.3 N + 0.3 * min(P, N - S)`. Disc 270.4, line 69.6 (3.9 to 1), dot 64.9 (0.24 of the disc). The 2-cell-wide border hoop has 189.6 (was 342.8), the hollow ring 179.2; a test asserts that every hollow archetype and the hoop have less armour than a filled drawing of the same ink. Hollow shapes keep a small other job: counted pocket cells add 10 % of a cell each to the push weight (`stats.push`, the collision mass). Compensation for stronger solids: a blade hit also takes 0.4 % of the victim's full armour (`stats.sharpArmourCut`); the purity part of sharpness went from 1.2 to 3. Both hoops (`hoop2`, `hoop3`) are in the optimiser field. |
+| I6 solo free-money enemy | Enemy armour is `(0.6 N + 0.2 armour) * scale`; the scale (0.5 to 2) is the staked budget divided by what the copies cost, so ink that buys no further copy makes the copies tougher. Drop value is `floor(staked budget / copies)` without the `max(N, ...)` floor: a wave never pays more than its staked budget. The snake enemy is in the smoke field: 7 of 48 runs won (the review won 18 of 18 with 80 to 91 % armour left). Enemy damage 40 %. |
+| m1 last dash tick is no ram | Kept; one paragraph in CHANGES_V2 B6 and RULES_AS_BUILT section 3. |
+| m2 four seats can start overlapping | `ring.startDistanceFraction` 0.55 to 0.6; test with four canvas-wide frames (overlap 0 at the start). |
+| m3 stat ranges | Real ranges in CHANGES_V2 (B2, B3, C2), RULES_AS_BUILT section 1 and the core README: armour 63.6 to about 290 for 220 ink (never above `60 + 1.3 N`, about 450 with full catch-up ink), sharpness 1.0 to 4.52 (bar end 4.7), push weight `N` to `1.1 N`, top speed 9.2 to 32.4. |
+| m4 drop wording | Obsolete through I6: the wave pays the staked budget and never more; texts corrected. |
+| m5 tests | Added: M1 test; I1 with fractional gaps and sideways offsets; six turning scenarios with and without dash (overlap never above 0.5, at rest below 0.05); tip speed in the sub-step count; bot rounds for eight pairs under both bot styles (no overlap above 0.5 at the end of any tick); the meshing-teeth bound. |
+| m6 INK_RULES_V2 section 8 | Rewritten; leads with the per-bot-style numbers, says "not met" first. |
+| m7 bot scratch state | Port note in CHANGES_V2 B9 and RULES_AS_BUILT section 7. |
+
+Also: `BALANCE_REPORT.md` now says "partly" instead of "MET" for the light
+shapes yardstick, and its text about the mixed configuration quotes the new
+style check.
+
+A finding of my own while writing the sideways-offset test: two parallel
+one-cell lines that meet with a sideways offset of a fraction of a cell slide
+apart sideways (the rows of cell circles act like a washboard) and can then
+pass each other without ever overlapping. That is contact physics, not
+tunnelling; the test checks crossing only while the lines still overlap
+sideways.
+
+### 10.2 Tests and checks (real output)
+
+`/opt/node22/bin/node --test` in `Projects/Inkweight/Source/WebPrototype`:
+
+```text
+# tests 65
+# pass 65
+# fail 0
+# duration_ms 2259.655687
+```
+
+`node tools/gen_golden.js --check`, also `--jitless` and `--no-opt`: `golden
+files match` three times. Golden files 308 kB together. Full output:
+`test_output.txt`. `node sim/overlap_probe.js` (`overlap_probe.txt`):
+
+```text
+line turns into block, 400 ticks: ticks with overlap > 0.5: 0, max 0.012, after 2 s idle 0.000
+line vs block          rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 22964, max 0.06
+needle vs disc         rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 24758, max 0.24
+lance vs shield        rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 23791, max 0.22
+cross vs block         rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 23610, max 0.07
+star vs wedge          rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 24912, max 0.25
+splinter vs disc       rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 27889, max 0.24
+spiral vs block        rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 27507, max 0.04
+comb vs hedgehog       rounds 12, rounds with overlap > 0.5: 8, ticks > 0.5: 52 of 21305, max 0.79
+```
+
+Golden coverage lost in this round: the first candidate had a naturally
+occurring simultaneous knock-out by armour in the circler trace; with the new
+numbers that trace no longer contains one, and the assertion for it was
+removed. Simultaneous knock-outs by the ring (exact tie and by distance),
+sudden death (round ends at tick 3630), hero death, time limit, a won run and
+both ink upgrades are still in the file and asserted.
+
+### 10.3 Readability table (`node sim/readability.js`, `readability.md`)
+
+| Drawing | N | C | S | P (counted) | Armour | Armour / disc | Sharpness | Blade hit on the disc | Push weight | Top speed | Blunt hits to kill |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 10 x 10 block | 100 | 64 | 0 | 0 (0) | 154.0 | 0.57 | 1.00 | - | 100.0 | 15.6 | 129 |
+| same + 12-cell straight blade | 112 | 64 | 12 | 0 (0) | 157.6 | 0.58 | 2.03 | 3.12 | 112.0 | 14.6 | 132 |
+| same + 12-cell diagonal blade (staircase) | 112 | 64 | 12 | 0 (0) | 157.6 | 0.58 | 2.03 | 3.12 | 112.0 | 14.6 | 132 |
+| stick figure (hollow head, body, arms, diagonal legs) | 65 | 0 | 65 | 9 (0) | 79.5 | 0.29 | 3.63 | 4.71 | 65.0 | 19.7 | 67 |
+| 13-cell dot | 13 | 1 | 4 | 0 (0) | 64.9 | 0.24 | 1.70 | 2.78 | 13.0 | 32.0 | 55 |
+| filled disc | 208 | 148 | 0 | 0 (0) | 270.4 | 1.00 | 1.00 | - | 208.0 | 9.6 | 226 |
+| hollow ring | 172 | 16 | 0 | 208 (172) | 179.2 | 0.66 | 1.00 | - | 189.2 | 11.0 | 150 |
+| 2-cell-wide border hoop (216 ink) | 216 | 0 | 0 | 529 (216) | 189.6 | 0.70 | 1.00 | - | 237.6 | 9.3 | 158 |
+| 3-cell-wide hoop (216 ink) | 216 | 72 | 0 | 169 (169) | 247.5 | 0.92 | 1.00 | - | 232.9 | 9.3 | 207 |
+| hedgehog | 197 | 77 | 80 | 0 (0) | 196.1 | 0.73 | 2.31 | 3.39 | 197.0 | 10.0 | 164 |
+| line 32 | 32 | 0 | 32 | 0 (0) | 69.6 | 0.26 | 4.13 | 5.21 | 32.0 | 26.1 | 58 |
+| 12-cell line | 12 | 0 | 12 | 0 (0) | 63.6 | 0.24 | 4.52 | 5.60 | 12.0 | 32.4 | 53 |
+| all-blade snake (209 ink) | 209 | 0 | 209 | 0 (0) | 122.7 | 0.45 | 2.87 | 3.95 | 209.0 | 9.5 | 103 |
+
+"Blade hit on the disc" = sharpness plus 0.4 % of the disc's armour.
+
+### 10.4 Balance after correction round 1
+
+`node sim/balance.js --seeds 30 --ffa 800 --soloseeds 4` (185.7 s; fewer
+seeds than the first candidate's run because of the container restarts), 20
+archetypes, 5700 duel rounds and 800 four-figure rounds per bot
+configuration. Tuning sweeps of this round: `sweeps/correction1_sweep_1.txt`
+to `_4.txt` (6 to 8 seeds, noisy). The all-black `neutral` run was not
+repeated.
+
+| Archetype | Armour | Sharp | Duel % rusher | Duel % circler | Duel % mixed | Duel % pooled | FFA % rusher | FFA % circler | FFA % pooled |
+|---|---|---|---|---|---|---|---|---|---|
+| spiral * | 122.7 | 2.87 | 65.4 | 71.8 | 67.2 | 68.1 | 34.8 | 38.5 | 35.1 |
+| grille * | 123.3 | 2.86 | 76.8 | 67.4 | 55.1 | 66.4 | 44.6 | 41.5 | 40.6 |
+| hedgehog | 196.1 | 2.31 | 75.3 | 55.1 | 64.9 | 65.1 | 63.4 | 38.4 | 48.6 |
+| hoop2 * | 189.6 | 1 | 76.1 | 71.0 | 45.1 | 64.1 | 53.9 | 34.4 | 40.5 |
+| comb | 136 | 2.47 | 67.2 | 57.5 | 61.8 | 62.2 | 35.1 | 26.1 | 32.1 |
+| hoop * | 87.6 | 3.38 | 44.0 | 76.1 | 54.2 | 58.1 | 15.7 | 18.7 | 18.4 |
+| shield | 255.6 | 1 | 30.3 | 73.7 | 61.6 | 55.2 | 33.3 | 55.1 | 44.7 |
+| hoop3 * | 247.5 | 1 | 54.2 | 60.4 | 42.6 | 52.4 | 47.1 | 41.2 | 41.5 |
+| splinter * | 63.6 | 4.52 | 54.0 | 54.2 | 47.4 | 51.9 | 2.5 | 1.2 | 2.7 |
+| cross | 78.9 | 3.66 | 48.9 | 53.9 | 51.6 | 51.5 | 2.8 | 6.3 | 5.2 |
+| needle | 66 | 4.38 | 59.3 | 47.0 | 47.7 | 51.3 | 0.0 | 2.7 | 1.5 |
+| star | 138.9 | 2.28 | 44.6 | 58.3 | 50.9 | 51.2 | 12.8 | 28.7 | 20.1 |
+| lance | 167.1 | 2.13 | 59.7 | 33.2 | 57.9 | 50.2 | 13.7 | 26.8 | 20.7 |
+| ring | 179.2 | 1 | 50.3 | 45.3 | 45.8 | 47.1 | 29.2 | 32.5 | 32.3 |
+| wedge | 259 | 1.17 | 43.5 | 38.8 | 56.8 | 46.4 | 34.4 | 26.6 | 32.4 |
+| line | 69.6 | 4.13 | 54.6 | 31.8 | 42.6 | 43.0 | 0.6 | 0.6 | 2.2 |
+| block | 279 | 1 | 32.8 | 35.4 | 56.1 | 41.5 | 34.9 | 28.9 | 32.6 |
+| disc | 270.4 | 1 | 27.5 | 28.9 | 55.4 | 37.3 | 31.0 | 29.0 | 32.6 |
+| frame | 126 | 1.87 | 35.3 | 32.5 | 34.2 | 34.0 | 5.5 | 20.6 | 13.2 |
+| dot | 64.9 | 1.7 | 0.0 | 7.9 | 1.1 | 3.0 | 0.0 | 0.6 | 0.2 |
+
+Style check (`style_check.txt`, 4 seeds): a rusher beats a circler in 79.3 %
+of 1520 duels (first candidate: 91.7 %).
+
+Honest verdict:
+
+- **The balance target is not met, and the duel balance is worse than the
+  first candidate's.** Highest duel win rate: rusher bots 76.8 % (grille),
+  circler bots 76.1 % (hoop), mean of the two 73.6 % (hoop2), pooled 68.1 %
+  (spiral). First candidate: 79.0 / 83.5 / 65.2 / 61.4. Version 1 (rusher
+  only, 14 archetypes): 71.3 %.
+- **Light shapes in four-figure rounds are hopeless again:** 2.4 % on average
+  (needle 1.5, line 2.2, cross 5.2, 12-cell line 2.7, dot 0.2; even is 25 %).
+  The first candidate had 15.6 % with flat armour. Restoring "filled areas
+  are armour" took this away; I found no principled counterweight in the
+  time (the armour cut and the higher purity help light blades in duels, not
+  in a crowd).
+- **Filled solids without a blade are weak in duels** (disc 27.5 % and block
+  32.8 % as rushers) although they have the most armour, because of the
+  armour cut. Without the armour cut (`correction1_sweep_4.txt`) the thick empty shells won 85
+  to 93 % as rushers and light blades fell to 25 to 33 %; with it the shells
+  are at 76 % and the solids low. The value 0.004 is a compromise, not a
+  solution.
+- The Reviewer's 2-cell-wide hoop: armour 189.6 instead of 342.8, duel 76.1 %
+  rusher / 71.0 % circler (review: 80.6 / 80.8), four-figure 53.9 % with
+  rushers (review: 79.7 %). Better, still too strong; its strength now comes
+  from its size (radius 20.3) and weight, not from armour.
+- Three different shape families at or above 50 % pooled: yes (blades,
+  core+blades, hollow, solid through the shield, small through needle and
+  12-cell line).
+- The dot wins 3 % of its duels.
+
+Solo smoke run, 336 runs (4 heroes x 7 enemy designs x 3 stakes x 4 seeds):
+
+| Stake | Runs won % | Avg waves cleared | Avg armour left % | Avg score |
+|---|---|---|---|---|
+| x1 | 79.5 | 5 | 37.0 | 1497 |
+| x1.5 | 40.2 | 4.51 | 21.3 | 1718 |
+| x2 | 27.7 | 3.68 | 10.5 | 1685 |
+
+Overall 49.1 % won, 22.9 % armour left. Runs won per enemy design: dot 38 of
+48, block 47 of 48, comb 27 of 48, cross 17 of 48, 12-cell line 16 of 48,
+needle 13 of 48, snake 7 of 48. Per hero: disc 47 of 84, line 45, hedgehog
+39, star 34. Weak points: the score does not rise from x1.5 to x2 (fewer
+waves cleared); block enemies are nearly always beaten; the snake enemy went
+from free money to the hardest design (only the disc hero beats it); the boss
+fight still pays the ink of the boss and its escorts, so heavy enemy designs
+pay more there. Solo was tuned in three short rounds with 2 seeds each.
+
+### 10.5 What the ports must follow now
+
+`CHANGES_V2.md` is still one list from version 1 to the final state; parts
+that changed in this round are marked "(correction round 1)". Against the
+first candidate the differences are:
+
+- Armour formula values 60 / 1 / 0.3 / 0.3; new stats `pocketCells`, `push`;
+  `fig.mass = stats.push`; new key `stats.pushPerPocket`.
+- `stats.sharpPurity` 3; new key `stats.sharpArmourCut` and the armour cut in
+  `touchDamage`.
+- `stepWorld`: turn inside the sub-steps, tip speed in the sub-step count,
+  body scratch fields `turning`, `turnDx`, `turnDy`.
+- `collidePair`: deepest-contact normal, extra separation passes; new keys
+  `physics.deepNormalShare`, `deepContactDepth`, `extraSeparationPasses`.
+- `ring.startDistanceFraction` 0.6.
+- Solo: `soloWaveArmourScale` (new), `soloEnemyArmour(tuning, fig, scale)`
+  (new formula and third argument), `soloDropValue` without the floor; keys
+  `solo.enemyArmourPerInk`, `copyArmourScaleMin`, `copyArmourScaleMax` new,
+  `solo.enemyArmourBase` removed, `enemyArmourMult` 0.2, `enemyDamageMult`
+  0.4.
+- Golden files regenerated; `expect` has `pocketCells`, `push`, `mass`; two
+  more archetypes.
+- Hash layout unchanged (layout 2).
+
+### 10.6 Known weaknesses and not done in this round
+
+- Balance target not met (10.4).
+- Meshing one-cell teeth can still overlap deeper than 0.5 for single ticks.
+- No golden trace with a simultaneous knock-out by armour any more.
+- The full balance run used 30 seeds per pair and 800 four-figure rounds; the
+  neutral run was not repeated; `sim/tune_search.js` still not run.
+- The stick figure and the other rows of the readability table are my own
+  drawings, not the Reviewer's exact ones (my stick figure has 65 cells, the
+  Reviewer's 53).
+- The C# port and the browser app still do not match this core.
