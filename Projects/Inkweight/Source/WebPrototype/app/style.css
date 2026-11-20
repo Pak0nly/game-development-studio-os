@@ -195,7 +195,7 @@ select {
 .stakes .tool { min-height: 44px; white-space: normal; line-height: 1.15; font-size: 0.85rem; }
 .stakes .tool small { display: block; font-family: var(--font-body); font-size: 0.7rem; white-space: nowrap; }
 .stake-note { margin: 0; font-size: 0.76rem; }
-.stakes .gap { font-size: 0; }
+.stakes .gap { display: none; }
 .stats li.el-row { position: relative; padding-right: 84px; min-height: 36px; }
 .rules-btn { position: absolute; right: 0; top: 0; min-height: 34px; padding: 2px 12px; }
 .msg.quiet { display: none; }

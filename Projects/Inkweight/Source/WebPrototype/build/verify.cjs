@@ -1088,7 +1088,7 @@ async function runStable(browser) {
     await sleep(300);
     await stable('solo enemy', null);
     const noteText = await page.locator('#stakeNote').textContent();
-    if (!/hängen nicht dran/.test(noteText)) throw new Error('the drip warning is not shown on the enemy screen: ' + noteText);
+    if (!/^×1: Gegner .* · 3 Kästchen tropfen ab$/.test(noteText)) throw new Error('stake line with the drip warning on the enemy screen: ' + noteText);
     if (size.height === 780) {
       // m-7: the steering finger is still down when the shop opens; another finger buys
       await press('#toolClear');

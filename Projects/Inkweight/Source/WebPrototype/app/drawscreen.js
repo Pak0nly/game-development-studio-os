@@ -147,15 +147,16 @@ function updatePanel() {
   const legend = 'Strich = Klinge · Punkt = Kern · Kringel = Hohlraum';
   let text = legend;
   let warn = false;
+  let soft = ''; // short form of a warning that does not stop the player
   if (st.filled === 0) text = s.kind === 'weapon' ? 'Wurfwaffe: leicht fliegt schnell, dünn schneidet.' : text;
   else if (!st.bigEnough) { text = 'Noch zu klein: mindestens ' + min + ' Kästchen am Stück.'; warn = true; }
-  else if (st.drips > 0) { text = st.drips === 1 ? '1 Kästchen hängt nicht dran und tropft ab.' : st.drips + ' Kästchen hängen nicht dran und tropfen ab.'; warn = true; }
-  else if (left <= 0) { text = 'Tinte ist alle: radier etwas weg.'; warn = true; }
+  else if (st.drips > 0) { text = st.drips === 1 ? '1 Kästchen hängt nicht dran und tropft ab.' : st.drips + ' Kästchen hängen nicht dran und tropfen ab.'; warn = true; soft = st.drips === 1 ? '1 Kästchen tropft ab' : st.drips + ' Kästchen tropfen ab'; }
+  else if (left <= 0) { text = 'Tinte ist alle: radier etwas weg.'; warn = true; soft = 'Tinte ist alle'; }
   if (s.lockNote && st.filled === 0) text = s.lockNote;
-  if (s.askingBack) { text = s.backConfirm ? s.endMsg : 'Noch einmal tippen, dann ist die Zeichnung weg.'; warn = true; }
+  if (s.askingBack) { soft = ''; text = s.backConfirm ? s.endMsg : 'Noch einmal tippen, dann ist die Zeichnung weg.'; warn = true; }
   // Where a mode has its own line below (the solo stake note), messages go
   // there and this line stays away for good, so nothing changes height.
-  if (s.onStats && s.onStats.setMsg) s.onStats.setMsg(text === legend ? '' : text, warn);
+  if (s.onStats && s.onStats.setMsg) s.onStats.setMsg(text === legend ? '' : text, warn, soft);
   else msg.textContent = text;
   msg.classList.toggle('warn', warn);
   $('drawDone').disabled = !st.valid;

@@ -110,11 +110,13 @@ async function playSolo(startColour) {
           // one line of fixed height: a warning of the drawing screen takes it over
           let stakeText = '';
           let warnText = '';
+          let softText = '';
           function show() {
-            noteEl.textContent = warnText || stakeText;
-            noteEl.classList.toggle('warn', warnText !== '');
+            // a warning that stops nothing (drips, ink used up) rides along with the stake line
+            noteEl.textContent = softText ? stakeText + ' · ' + softText : (warnText || stakeText);
+            noteEl.classList.toggle('warn', warnText !== '' && softText === '');
           }
-          paint.setMsg = (text, warn) => { warnText = warn ? text : ''; show(); };
+          paint.setMsg = (text, warn, soft) => { warnText = warn ? text : ''; softText = soft || ''; show(); };
           paint(null);
           return paint;
         },
