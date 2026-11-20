@@ -3114,7 +3114,7 @@ function updatePanel() {
   setWhy('stArmourWhy', has ? 'volle Fläche schützt · Kern-Kästchen (Punkt): ' + st.C : 'volle Flächen halten mehr aus');
   const cut = num(tst.sharpArmourCut * 100, 1);
   setWhy('stSharpWhy', !has ? 'dünne Striche sind Klingen, auch schräge'
-    : (st.S > 0 ? st.S + ' Klingen-Kästchen · Schnitt nimmt auch ' + cut + ' % Panzer' : 'keine Klinge: 1 Kästchen dünne Striche schneiden'));
+    : (st.S > 0 ? st.S + ' Klingen · Schnitt nimmt auch ' + cut + ' % Panzer' : 'keine Klinge: 1 Kästchen dünne Striche schneiden'));
   setWhy('stSpeedWhy', 'Kästchen pro Sekunde · wenig Tinte ist flink');
   // bar ends are the real ranges of valid drawings with this much ink
   setBar('stWeightBar', st.N / s.budget);

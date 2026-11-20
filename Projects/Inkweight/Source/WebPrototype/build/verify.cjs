@@ -206,7 +206,7 @@ async function runScenario(browser, name) {
   if (mid.weight === before.weight || mid.sharp === before.sharp) throw new Error('live stats did not change');
   const whys = await page.evaluate(() => ['stWeightWhy', 'stArmourWhy', 'stSharpWhy', 'stSpeedWhy', 'stElementWhy'].map((id) => document.getElementById(id).textContent));
   note('stat explanations: ' + whys.join(' | '));
-  if (!/Klingen-Kästchen · Schnitt nimmt auch 0,4 % Panzer/.test(whys[2]) || /Anteil gerader/.test(whys[2])) throw new Error('sharpness explanation is not the version 2 one: ' + whys[2]);
+  if (!/^\d+ Klingen · Schnitt nimmt auch 0,4 % Panzer$/.test(whys[2]) || /Anteil gerader/.test(whys[2])) throw new Error('sharpness explanation is not the version 2 one: ' + whys[2]);
   if (!/Kern-Kästchen/.test(whys[1]) || !/Hülle|Hohlraum/.test(whys[0])) throw new Error('weight or armour explanation is wrong');
   const marksNow = await page.evaluate(() => window.__inkDebug.marks);
   if (marksNow.blades !== marksNow.S || marksNow.blades < 10) throw new Error('blade marks do not follow the core: ' + JSON.stringify(marksNow));
