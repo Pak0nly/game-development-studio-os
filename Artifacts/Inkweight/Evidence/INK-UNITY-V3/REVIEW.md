@@ -1,6 +1,135 @@
 # INK-UNITY-V3 Independent Review (QA Lead)
 
-Independent review verdict: FAIL
+Independent review verdict: PASS
+
+(Current verdict after correction round 1. The first review below ended in
+FAIL; its verdict line is kept there as "First review verdict".)
+
+## Re-review after correction round 1
+
+Reviewer: the same independent QA Lead subagent, not the builder. Window
+2026-11-20, 03:43 to 03:50 UTC. Candidate: commit `50dde70` (working tree of
+`Projects/Inkweight/Source/Unity` clean against it), compared with `8efe9c5`.
+Changed: `Core/InkSolo.cs` (+9/-1), `Runtime/InkweightGame.cs`,
+`EngineStubs/SmokeProgram.cs`, `README.md`, evidence files.
+`EngineStubs/UnityEngineStubs.cs` unchanged. Inspect and run only; `bin`/`obj`
+deleted afterwards, throwaway copies under /tmp deleted.
+
+### Runs (real output)
+
+| Command | Real final lines | Exit |
+|---|---|---|
+| `dotnet run --project CoreTests` | all 7 solo traces `ok ... bit for bit` (e.g. `ok    solo trace solo_brawl_full_run (27 checkpoints, bit for bit)`), `  self check passed, 115 checkpoints bit-identical`, `RESULT: PASS (16729 checks, 0 failed)` | 0 |
+| `dotnet run -c Release --project CoreTests` | `RESULT: PASS (16729 checks, 0 failed)` | 0 |
+| `./check_runtime_against_stubs.sh` | four times `Build succeeded.` and `RESULT: PASS (stub smoke test, N frames)` (2096, 2552, 2468, 1969); `STUB CHECK: PASS (4 variants compiled and smoke-run against stubs, not against Unity)` | 0 |
+
+### `ThrowSpeed` refactor (core edit)
+
+- Old: `shot.Speed = so.ThrowSpeedBase / (1 + wN / so.ThrowSpeedWeightRef)`
+  with `double wN = wst.N`. New: `ThrowSpeed(so, wst.N)` with
+  `double wN = weaponN; return tuning.ThrowSpeedBase / (1 + wN /
+  tuning.ThrowSpeedWeightRef);`. JavaScript (`solo.js` 291):
+  `so.throwSpeedBase / (1 + wst.N / so.throwSpeedWeightRef)`. Same operations
+  in the same order; the int-to-double conversion is exact. Pure refactor.
+- Do the traces exercise a throw? Yes. The solo state hash (layout 2,
+  `core/hash.js` 61) includes every live shot's `x y ux uy speed life`, and
+  the golden solo checkpoints record `"shots":1` 83 times and `"shots":2` 10
+  times. Probe (throwaway copy): `(1 + wN / ref)` -> `(1 + (wN + 1) / ref)`
+  fails all 7 solo traces and the sensitivity test. A second probe with an
+  algebraically equal but reordered form (`base * ref / (ref + wN)`) still
+  passed (16729 checks): for the weapon sizes in the golden files the two
+  forms round alike, so the traces do not prove the order in every case. The
+  candidate keeps the JavaScript order exactly, so this is no finding against
+  it (noted for the next core order as part of m-3).
+
+### Weapon screens (`InkweightGame.cs` 935-972), against core and tuning
+
+Rows: "Gewicht: N" with "Mehr Tinte stößt stärker zurück, wirft aber
+seltener."; "Wurf: alle X s" with "Weniger Tinte wirft öfter."; "Schärfe"
+with "Wurftreffer: Schaden = Schärfe S (mal Element)." or "Keine Klinge (1 Feld
+dick): Wurfschaden S."; "Flug: Y Felder je Sekunde" with "Weniger Tinte fliegt
+schneller.". Core: interval `18 + floor(0.5 * N_w)` ticks (`ThrowIntervalTicks`,
+the same helper `Step` uses), speed `60 / (1 + N_w / 60)`, hit `sharpness *
+element factor` (`InkSolo.cs` 427), knockback `N_w * 12 / N_enemy`.
+
+| Weapon (own computation) | Interval | Flight | Hit text |
+|---|---|---|---|
+| straight 12-cell line (S = 12, sharpness 4.52) | 18 + 6 = 24 ticks = "alle 0.40 s" | 60 / 1.2 = "50.0" | "Wurftreffer: Schaden = Schärfe 4.52 (mal Element)." |
+| filled 6 x 10 block, 60 cells (S = 0, sharpness 1.00) | 18 + 30 = 48 ticks = "alle 0.80 s" | 60 / 2 = "30.0" | "Keine Klinge (1 Feld dick): Wurfschaden 1.00." |
+| 13 cells (odd) | 18 + floor(6.5) = 24 ticks = 0.40 s | 50 / 1.0833 = 46.2 | – |
+
+All true. Knockback grows with weapon ink, the interval grows with it, the
+flight speed falls with it: the three sentences are true. No armour, push or
+"Tempo" row is shown for a weapon any more (I-1 resolved). The smoke test now
+checks the 12-cell values and the 1.00 no-blade text on the weapon screen
+(`SmokeProgram.cs` 422-436).
+
+### Figure and enemy screens, shortened texts
+
+- "Füllung panzert, Hohlraum in dicker Hülle ein wenig." true.
+- "Klingen (gelb): Schaden = Schärfe, mindestens 1.2." / "Keine Klinge (1 Feld
+  dick): stumpfer Schaden 1.2." true for figures (touch rule `max(sh, blunt)
+  + cut`; the cut is left out, which is an omission, not a false statement).
+- Element reason "unter 30 % bunte Körperfelder (jetzt N %)": counts body
+  cells, true (m-1 resolved). Drawn in small type beside "Element: Neutral",
+  rect 36 high (two lines).
+- Drip text "(1 Feld tropft ab)" / "(N Felder tropfen ab)": true.
+- Stake heading "Einsatz: mehr oder zähere Gegner, mehr Beute": true.
+- Stake line, README example recomputed: 13-cell dot, wave 1, x1: copies
+  floor(120 / 53) = 2, scale 1.1321, armour (7.8 + 12.98) * 1.1321 = 23.5,
+  tempo (3 + 0.45 * 32.05) = 17.4, touch (1.2 + 0.0589) * 0.4 = 0.50, loot
+  floor(120 / 2) = 60: "2 Gegner, je 23.5 Panzerung, Tempo 17.4, stumpfer
+  Treffer 0.50 (ohne Element), Beute je 60." True. Block wave 3 values of the
+  first review unchanged (same formulas). Singular "1 Gegner, ... Beute 230."
+  correct.
+- Height: the element row grew from 28 to 38; the enemy screen's last label
+  now ends at about 636, the start button begins at 640. Fits, tightly.
+- Everything else shown (menu, boss button, shop, catch-up, end texts) is
+  unchanged from the first review and was true there.
+
+### Engine members, compile
+
+No engine member newly used (`GUI.Label(Rect, string, GUIStyle)` with
+`smallStyle`, `StatRow`, `F`/`F2` only); stubs unchanged; no certain compile
+error; four variants compile with warnings as errors.
+
+### Remaining findings
+
+Blocker: none. Important: none.
+
+Minor:
+
+- **m-5 (new, small):** the no-blade weapon text "Wurfschaden 1.00." omits
+  "(mal Element)", which the blade text has; a coloured weapon hits 1.5 or
+  0.75 times that against the elements it beats or loses to. The number is
+  the base damage, the element row is beside it, so not false. Fix: append
+  " (mal Element)" in `InkweightGame.cs` line 967 and the README.
+- **m-2 (reduced):** at 4:3 or in a narrow window the stake line (now about 95
+  characters) may still need three lines in its 40-unit rect; the other lines
+  now fit by my estimate. The README checklist item 4 still names them.
+- **m-3 (unchanged):** dead bodies counted in the crowd condition, the crush
+  multiplication order and now the throw-speed operation order are proven by
+  own tests or by code reading, not by a golden trace that would fail on a
+  reordering. Ask the next core order for golden cases.
+- **m-4:** resolved per the Worker; not material.
+
+### Basis of PASS
+
+- C# core proven against the version 3 golden files, Debug and Release, bit
+  for bit; the one core edit is an exact refactor and the throw is exercised
+  by the traces.
+- No identifiable compile or first-Play error in the Unity layer.
+- No rule statement shown to the player that I found false (F-1 and I-1
+  fixed; weapon numbers computed for two weapons).
+- Unverified parts stay honestly named: nothing ran in the Unity Editor;
+  layout, real input, Mono/IL2CPP/ARM arithmetic are open for the Human's
+  first look.
+
+---
+
+# First review (kept unchanged below)
+
+First review verdict: FAIL
 
 Reviewer: separate Claude Code subagent, role QA Lead, not the builder.
 Window: 2026-11-20, 03:33 to 03:45 UTC. Nothing was committed or pushed; this

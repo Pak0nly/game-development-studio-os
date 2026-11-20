@@ -23,8 +23,9 @@ preparation, choosing tasks himself (ID-04).
   the rules. Published privately: https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1
   Not yet rebuilt on core version 3; the first Ring match is too hard with the
   current placeholder bots. Never played on a real phone.
-- **Unity project** (`Source/Unity`): C# core bit-exact on core version 2
-  (16527 checks); not yet on version 3. The Unity layer was only compiled
+- **Unity project** (`Source/Unity`): C# core bit-exact on core version 3
+  (16729 checks, Debug and Release, .NET 8); every rule sentence shown was
+  checked against the rules. The Unity layer was only compiled
   against hand-written stubs and has never been opened in the Unity Editor:
   that is the Human's first check (`Source/Unity/README.md`).
 - The folder `Source/WebPrototype/build` is re-included by a local
@@ -88,16 +89,21 @@ Reviewer task: a58afcfc8249cc44e
 Candidate identity: 258f450f709942aec0e5c474ca96fd558813ab13972119b5bdfbc43f99d13a8d
 Closure receipt: b4cf5f9b457aa49eeea5d0d15daaa7d005e10521680685017c11ea499a5af679
 
+INK-UNITY-V3
+Independent review verdict: PASS
+Worker task: abf22b5c28d3f4a1d
+Reviewer task: a00e917ba43eef5ea
+Candidate identity: b299b6b963db9180a87590215851df144763fb1922a16c4c4e1302ed6067b77d
+Closure receipt: 2433ce39a86728f4f8bbe990b6bc5442b264828af58301f15fadbb7fb3c9e4f8
+
 Requested model — not independently attested.
 
 ## Running
 
 - INK-WEB-V4: browser prototype on core version 3, fair first Ring match,
   small first-run hint.
-- INK-UNITY-V3: C# port on core version 3, minor review findings, truthful
-  texts.
 
 ## Exact Next Step
 
-Wait for both Workers, review and close them, republish the prototype page,
+Wait for the browser Worker, review and close the order, republish the prototype page,
 then write the morning report for the Human.

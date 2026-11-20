@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_manifest",
+  "project_scope": "Inkweight",
+  "work_order": {
+    "id": "INK-UNITY-V3",
+    "path": "Artifacts/Inkweight/DirectorDispatch/INK-UNITY-V3/WORK_ORDER.md",
+    "sha256": "6dfa1be450d5fa52275167c56abfe129f5ce720391439f4f6f38d3893299dd14",
+    "declaration": "VERIFIED"
+  },
+  "dispatch": {
+    "manifest_path": "Artifacts/Inkweight/DirectorDispatch/INK-UNITY-V3/DISPATCH_MANIFEST.json",
+    "manifest_sha256": "593d40cc4b4f508860cfcd07971276bfb731f069bddcdb5c4dd246384bfc0249",
+    "receipt_path": "Artifacts/Inkweight/DirectorDispatch/INK-UNITY-V3/DISPATCH_RECEIPT.json",
+    "receipt_sha256": "94a88dc6be885f058dd4754f40d34f195e7409eaed995ab4945e55be448d4c65",
+    "receipt_id": "54fc709217479941e763bb0ad04b0a5ba20740ee8fb5969b07c77db47b870cf2",
+    "declaration": "VERIFIED"
+  },
+  "tasks": {
+    "director_task_id": "director-session_01Kh4ZKFT8i4qXjrYsecr1yo",
+    "worker_task_id": "abf22b5c28d3f4a1d",
+    "reviewer_task_id": "a00e917ba43eef5ea"
+  },
+  "candidate": {
+    "identity": "b299b6b963db9180a87590215851df144763fb1922a16c4c4e1302ed6067b77d",
+    "files": [
+      {
+        "path": "Projects/Inkweight/Source/Unity/.gitignore",
+        "sha256": "3297d6b6164d21b41d65329c143832801152a545e8a3cb7d2fbab8f511d7d9c0",
+        "size": 462
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/check_runtime_against_stubs.sh",
+        "sha256": "9bdd11cae2a3de06c976074191a29903040f6ab39aca6a8b98fa0f8ae561840d",
+        "size": 1040
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/CoreTests/CoreTests.csproj",
+        "sha256": "a69f450f9e41b0ec402c0bcd360c7c4647b843b3a9ad0f69f81ab51d5dda79da",
+        "size": 1018
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/CoreTests/Program.cs",
+        "sha256": "c9701bb7c5df80d1bc3e967b344cd3259bf013d52cd4b37cd6e20d905f665ee1",
+        "size": 62361
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/EngineStubs/RuntimeStubCheck.csproj",
+        "sha256": "1eb63a7b9963f9290a26f083ba2b649617ab024eed3d90a7f1bb54f700c26a10",
+        "size": 2213
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/EngineStubs/SmokeProgram.cs",
+        "sha256": "c2b26e98bb3bd84ffb311bcf0455cc1896fe928ff9bd38bb0efa007b1d74e2e9",
+        "size": 26261
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/EngineStubs/UnityEngineStubs.cs",
+        "sha256": "2715f7726de90523199416fc81d3ffb4ad6aefa8f11a49b4c225a7cc8670fa6e",
+        "size": 14090
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/Generated/InkGenerated.cs",
+        "sha256": "941ad9b024b85b98fc705e2c9ad6aa8ba4dfbe47bda15e48bc202bfa48e97a76",
+        "size": 43039
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkBots.cs",
+        "sha256": "337cf27fbf7ef7f79f0a7a957057ca33b82361c5bc5b112334f98d3c72ca2d45",
+        "size": 13680
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkDrawing.cs",
+        "sha256": "ae8f6288974f5c165a562ac6bb2ad731186522e6dab6809f3aaaf8d0a399d156",
+        "size": 13195
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkHash.cs",
+        "sha256": "43858d92780c3e19b23825e9aa446f0638f5b82254d55441a87d1170bc886b5a",
+        "size": 4254
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkJson.cs",
+        "sha256": "eb0a3f616f006028c2521f63ac5b2844c561035f387f3d1d31d1d9589397910b",
+        "size": 6608
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkPhysics.cs",
+        "sha256": "c2c9dcaff6adb1b99e3fd0b1a0dc6ee17b51c2445db7896038450f04fb394ea7",
+        "size": 25666
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkReplay.cs",
+        "sha256": "e3daf921efdc432eb060a148652e926d7aedb9367ec325bf8a22b708a3590f7f",
+        "size": 7372
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkRing.cs",
+        "sha256": "90eb2259868a51ff1ed015625b26f461aaa7b2070d79084fd98ecce958aa28ee",
+        "size": 8972
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkRng.cs",
+        "sha256": "b92a341513bbb388347def627bd4bdbd8fe822e4f7a51a6d7bcc8416f0d4c63f",
+        "size": 1473
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkSelfCheck.cs",
+        "sha256": "f522cfc6601c90c72c2cbac621b0424b7bd9a9d4da4ca7d7d60b2d1bbc6a7262",
+        "size": 5248
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkSolo.cs",
+        "sha256": "8c9b62a1c10f565d12b898d67052c13c216f0f75cdf7c5710a612d0b038fcead",
+        "size": 23837
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/InkTuning.cs",
+        "sha256": "a004531a5d826d888104f7b62bd59c173e8949565dbd3402f6153c603609f291",
+        "size": 10707
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Core/Inkweight.Core.asmdef",
+        "sha256": "9a9d25931ea54e737ff1c91b0909c1b43f48ccd7c0338dd9702a4746c1d0c2a8",
+        "size": 361
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Runtime/InkArenaView.cs",
+        "sha256": "b53fd3d1bb44d01ba905417ad6dcdde1e8d244772081ca9dc0061ed57807d23b",
+        "size": 10033
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Runtime/InkCanvasEditor.cs",
+        "sha256": "95fa2c334793f4f7ebc31356711cd8b6879c7ce132f2f8845212b896cb09f869",
+        "size": 6910
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Runtime/InkInputReader.cs",
+        "sha256": "e6c3b48b9505b53ef2bb0521e0b658b58cd86c2fcb629d5b1d519760f30fec9c",
+        "size": 7432
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Runtime/Inkweight.Runtime.asmdef",
+        "sha256": "ee4576138ea83bdd7fbfc8aa012e31a11e6756ee19415e2e13c06f78ae379e80",
+        "size": 579
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Runtime/InkweightBootstrap.cs",
+        "sha256": "fe5915ab094e7eaaa37c5045e84eca96b66053ea06e451e2725c2c8967a0e5b9",
+        "size": 999
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Assets/Inkweight/Runtime/InkweightGame.cs",
+        "sha256": "abe65124e32a630b51b81ddde89ac948ebcf70a50011e19194b4560dab3ac34c",
+        "size": 57922
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/Inkweight/Packages/manifest.json",
+        "sha256": "2409dd6887970c903f569f00612850b491fb9ce3b55f78b0f61ccaa52ae52d48",
+        "size": 113
+      },
+      {
+        "path": "Projects/Inkweight/Source/Unity/README.md",
+        "sha256": "059947ac8e8814dfdba8f3414f5801ab6fe4f522949af250d700b8f5c5a2210a",
+        "size": 22208
+      }
+    ],
+    "declaration": "VERIFIED"
+  },
+  "evidence": [
+    {
+      "id": "review-report",
+      "path": "Artifacts/Inkweight/Evidence/INK-UNITY-V3/REVIEW.md",
+      "sha256": "3c120da06f3ea3615959dae08fa057208f868cde86c0e6bad9ccd4c78fe3647c",
+      "size": 24382
+    }
+  ],
+  "independent_review": {
+    "required": true,
+    "reviewer_role": "QA Lead",
+    "record_path": "Artifacts/Inkweight/Evidence/INK-UNITY-V3/review.json",
+    "record_sha256": "fef69d7c9ac4032e70ce4689907b11484529b2d15878938b4450185e4bb21a37",
+    "verdict": "PASS",
+    "reviewed_candidate_identity": "b299b6b963db9180a87590215851df144763fb1922a16c4c4e1302ed6067b77d",
+    "reviewed_evidence_ids": [
+      "review-report"
+    ],
+    "declaration": "VERIFIED"
+  },
+  "operational_state": {
+    "work_state_path": "Projects/Inkweight/Docs/WORK_STATE.md",
+    "handover_path": "Projects/Inkweight/Docs/CURRENT_HANDOVER.md"
+  },
+  "declaration": "VERIFIED"
+}

@@ -78,7 +78,14 @@ Reviewer task: a58afcfc8249cc44e
 Candidate identity: 258f450f709942aec0e5c474ca96fd558813ab13972119b5bdfbc43f99d13a8d
 Closure receipt: b4cf5f9b457aa49eeea5d0d15daaa7d005e10521680685017c11ea499a5af679
 
-Running: INK-WEB-V4 and INK-UNITY-V3 (dispatched, Workers not yet returned).
+INK-UNITY-V3
+Independent review verdict: PASS
+Worker task: abf22b5c28d3f4a1d
+Reviewer task: a00e917ba43eef5ea
+Candidate identity: b299b6b963db9180a87590215851df144763fb1922a16c4c4e1302ed6067b77d
+Closure receipt: 2433ce39a86728f4f8bbe990b6bc5442b264828af58301f15fadbb7fb3c9e4f8
 
-Next action: wait for both Workers, review and close them, republish the page,
+Running: INK-WEB-V4 (dispatched, Worker not yet returned).
+
+Next action: wait for the browser Worker, review and close the order, republish the page,
 write the morning report.

@@ -199,7 +199,8 @@ function soloFightConfig(run, fightName, fightStake) {
     world: () => run.world,
     events: () => run.events,
     humans: 1,
-    step: (humanFn) => core.soloStep(tuning, run, humanFn(0)),
+    // measurement only (build/solo_play.cjs): a scripted player may steer the hero
+    step: (humanFn) => core.soloStep(tuning, run, window.__inkDebug.soloPilot ? window.__inkDebug.soloPilot(run) : humanFn(0)),
     isOver: () => run.phase !== 'fight',
     bodyInfo: (i) => (i === 0 ? { tag: '', human: true, bar: true } : null),
     dashBody: () => run.world.bodies[0],

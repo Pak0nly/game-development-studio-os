@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "claude_closure_receipt",
+  "gate_state": "INDEPENDENTLY_REVIEWED_PASS",
+  "project_scope": "Inkweight",
+  "work_order_id": "INK-UNITY-V3",
+  "work_order_sha256": "6dfa1be450d5fa52275167c56abfe129f5ce720391439f4f6f38d3893299dd14",
+  "closure_manifest_sha256": "588d14af63eb5a6283245ee8c120b2fd851180993a5adc16330706fbb4eccf91",
+  "dispatch_receipt_id": "54fc709217479941e763bb0ad04b0a5ba20740ee8fb5969b07c77db47b870cf2",
+  "director_task_id": "director-session_01Kh4ZKFT8i4qXjrYsecr1yo",
+  "worker_task_id": "abf22b5c28d3f4a1d",
+  "reviewer_task_id": "a00e917ba43eef5ea",
+  "candidate_identity": "b299b6b963db9180a87590215851df144763fb1922a16c4c4e1302ed6067b77d",
+  "evidence_state_sha256": "d4d0c74b807a4f4e237a2dfd8e316f1441ff09dc7154782859d36cfe874b69e9",
+  "review_record_sha256": "fef69d7c9ac4032e70ce4689907b11484529b2d15878938b4450185e4bb21a37",
+  "verdict": "PASS",
+  "receipt_id": "2433ce39a86728f4f8bbe990b6bc5442b264828af58301f15fadbb7fb3c9e4f8"
+}
