@@ -49,6 +49,7 @@ async function playSolo(startColour) {
   galleryAdd(weaponCells, 'weapon');
   const run = core.soloCreateRun(tuning, (Date.now() ^ Math.floor(Math.random() * 1e9)) >>> 0, heroCells, weaponCells, W, H, startColour);
   let lastEnemy = null;
+  window.__inkDebug.run = run; // automated check only: forces the two loss paths
 
   for (;;) {
     let fightName;
@@ -73,10 +74,21 @@ async function playSolo(startColour) {
           let lastN = 0;
           function paint(stats) {
             if (stats) lastN = stats.N;
+            const copies = buttons.map((b, i) => (lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0));
+            // A higher stake that brings no more enemies (the figure is too
+            // big for one more copy, or the limit of copies is reached) is
+            // the same choice as the lower one: it is switched off and says so.
+            const twin = buttons.map((b, i) => (lastN > 0 && i > 0 && copies[i] === copies[i - 1]));
+            while (stake > 0 && twin[stake]) stake--;
             for (let i = 0; i < buttons.length; i++) {
-              const copies = lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0;
+              let same = i;
+              while (same > 0 && twin[same]) same--;
               buttons[i].textContent = 'Einsatz ' + stakeLabel(i);
-              buttons[i].append(el('small', { text: copies > 0 ? copies + ' Gegner · ' + copies * lastN + ' Beute' : 'erst zeichnen' }));
+              let sub = 'erst zeichnen';
+              if (twin[i]) sub = 'wie ' + stakeLabel(same) + ': ' + (copies[i] >= so.maxCopies ? 'mehr als ' + so.maxCopies + ' Gegner gibt es nicht' : 'reicht nicht für einen Gegner mehr');
+              else if (copies[i] > 0) sub = copies[i] + ' Gegner · ' + copies[i] * lastN + ' Beute';
+              buttons[i].append(el('small', { text: sub }));
+              buttons[i].disabled = twin[i];
               buttons[i].classList.toggle('on', i === stake);
               buttons[i].setAttribute('aria-pressed', i === stake ? 'true' : 'false');
             }
@@ -217,6 +229,9 @@ function shop(run, getHero, setHero, getWeapon, setWeapon) {
       $('shopTitle').textContent = 'Welle ' + run.wave + ' geschafft';
       $('shopInfo').textContent = 'Tinte im Beutel: ' + run.wallet + ' · Panzer: ' + Math.ceil(run.heroHp) + ' von ' + Math.round(run.heroMaxHp)
         + '. Du darfst ein Upgrade kaufen, es kostet ' + cost + ' Tinte.';
+      // honest label: spent or not, only collected ink counts as the score
+      $('shopPurse').textContent = 'Als Punkte zählt alle Tinte, die du gesammelt hast (bisher ' + run.score
+        + '). Ausgeben kostet keine Punkte. Was im Beutel übrig bleibt, wird in dieser Version für nichts weiter gebraucht.';
       const can = !run.upgradeTaken && run.wallet >= cost;
       list.textContent = '';
       colourBox.hidden = true;

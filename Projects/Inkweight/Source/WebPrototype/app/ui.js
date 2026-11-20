@@ -29,8 +29,12 @@ const TAP_BLOCK_MS = 350;
 let blockUntil = 0;
 export function inputBlocked() { return performance.now() < blockUntil; }
 {
+  let swallowClickUntil = 0; // the click that belongs to a swallowed touch-down
   const guard = (ev) => {
-    if (!inputBlocked()) return;
+    const now = performance.now();
+    if (now >= blockUntil && !(ev.type === 'click' && now < swallowClickUntil)) return;
+    if (ev.type === 'pointerdown') swallowClickUntil = now + 700;
+    else if (ev.type === 'click') swallowClickUntil = 0;
     ev.stopImmediatePropagation();
     if (ev.type === 'click') ev.preventDefault();
   };

@@ -3,7 +3,7 @@
 // splashes, mild screen shake, HUD refresh, touch stick and dash button.
 
 import { tuning } from './tuning.js';
-import { $, el, showScreen, onLeave, colours, hash3, reducedMotion, fitCanvas } from './ui.js';
+import { $, el, showScreen, onLeave, colours, hash3, reducedMotion, fitCanvas, num } from './ui.js';
 import { sfx } from './audio.js';
 import { spriteFor, drawSprite, wobbleFrame } from './sprites.js';
 import { touch, STICK_RADIUS, humanInput, setInputActive, endTick } from './input.js';
@@ -11,6 +11,8 @@ import { touch, STICK_RADIUS, humanInput, setInputActive, endTick } from './inpu
 const canvas = $('fightCanvas');
 const stage = $('fightStage');
 const TICK = tuning.physics.tickRate;
+
+if (!window.__inkDebug) window.__inkDebug = { speed: 1 };
 
 let F = null; // running fight
 let raf = 0;
@@ -162,8 +164,26 @@ function floatText(x, y, text, big, colour) {
     // small numbers do not pile up on one spot
     for (const o of F.floats) if (o.age < 0.3 && Math.abs(o.x - x) < 4 && Math.abs(o.y - y) < 4) return;
   }
-  F.floats.push({ x, y, text, big, colour: colour || 0, age: 0 });
+  F.floats.push({ x, y, text, big, colour: colour || 0, age: 0, key: -1, sum: 0 });
   if (F.floats.length > 24) F.floats.shift();
+}
+
+// Damage numbers: one number per hit figure. Hits on the same figure within
+// a short time add up in that one number instead of stacking many on top of
+// each other, so big fights stay readable.
+function damageText(target, x, y, damage, big, colour) {
+  for (const o of F.floats) {
+    if (o.key !== target || o.age >= 0.45) continue;
+    o.sum += damage;
+    o.text = fmtDamage(o.sum);
+    o.x = x; o.y = y;
+    o.big = o.big || big || o.sum >= 3;
+    o.age = Math.min(o.age, 0.12);
+    return;
+  }
+  if (damage < 0.6) return;
+  F.floats.push({ x, y, text: fmtDamage(damage), big, colour: colour || 0, age: 0, key: target, sum: damage });
+  if (F.floats.length > 16) F.floats.shift();
 }
 
 function shake(amount) {
@@ -171,7 +191,7 @@ function shake(amount) {
   F.shake = Math.min(5, F.shake + amount);
 }
 
-function fmtDamage(d) { return d >= 10 ? d.toFixed(0) : d.toFixed(1); }
+function fmtDamage(d) { return d >= 10 ? num(d, 0) : num(d, 1); }
 
 function handleEvents(events) {
   const f = F;
@@ -191,7 +211,7 @@ function handleEvents(events) {
       const colour = dominantColour(b.fig, f.tick + e);
       splash(px, py, colour, Math.min(14, 3 + Math.round(ev.damage * 2.2)), ev.sharp ? 16 : 9, -dx, -dy);
       if (ev.damage >= 1.5 || Math.random() < 0.3) stain(px, py, colour, 0.6 + Math.min(1.6, ev.damage * 0.25));
-      if (ev.damage >= 0.6) floatText(px, py - 1, fmtDamage(ev.damage), ev.sharp, colour);
+      damageText(ev.to, b.x, b.y - Math.min(b.fig.radius, 6) - 1, ev.damage, ev.sharp, colour);
       f.vis[ev.to].squash = Math.min(0.3, 0.1 + ev.damage * 0.04);
       shake(ev.sharp ? Math.min(3, ev.damage * 0.5) : 0.5);
       sfx(ev.sharp ? 'sharp' : 'hit', ev.sharp ? ev.damage / 3 : 1);
@@ -207,7 +227,7 @@ function handleEvents(events) {
       const b = bodies[ev.to];
       const colour = dominantColour(b.fig, f.tick + e);
       splash(b.x, b.y, colour, 5, 10, 0, 0);
-      floatText(b.x, b.y - 1, fmtDamage(ev.damage), true, colour);
+      damageText(ev.to, b.x, b.y - Math.min(b.fig.radius, 6) - 1, ev.damage, true, colour);
       f.vis[ev.to].squash = 0.2;
       sfx('shot');
     } else if (ev.type === 'enemyDown') {
@@ -628,3 +648,12 @@ export function fightOverlay(title, bodyNodes, primaryText, secondaryText) {
 }
 
 export function clearHud() { $('fightHud').textContent = ''; }
+
+// Debug only (automated check): how much ink the stain layer holds.
+window.__inkDebug.stainInk = () => {
+  if (!stains) return 0;
+  const d = stains.getContext('2d').getImageData(0, 0, stains.width, stains.height).data;
+  let n = 0;
+  for (let i = 3; i < d.length; i += 4) if (d[i] !== 0) n++;
+  return n;
+};

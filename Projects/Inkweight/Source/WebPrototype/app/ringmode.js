@@ -3,7 +3,7 @@
 
 import * as core from '../core/index.js';
 import { tuning, W, H } from './tuning.js';
-import { $, el, showScreen, passScreen, coarsePointer } from './ui.js';
+import { $, el, showScreen, passScreen, coarsePointer, num } from './ui.js';
 import { sfx } from './audio.js';
 import { openDraw } from './drawscreen.js';
 import { runFight, fightOverlay, clearHud } from './fight.js';
@@ -93,11 +93,19 @@ function botPool() {
   return { own, built };
 }
 
-function pickBotDrawing(pool, used) {
-  const free = (list) => list.filter((d) => used.indexOf(d) === -1);
+function sameCells(a, b) {
+  if (!a || !b) return false;
+  for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+  return true;
+}
+
+// taken: cell arrays no bot may show (the humans' drawings of this round).
+function pickBotDrawing(pool, used, taken) {
+  const free = (list) => list.filter((d) => used.indexOf(d) === -1 && !(taken || []).some((t) => sameCells(t, d.cells)));
   let from = free(pool.own);
   const built = free(pool.built);
   if (from.length === 0 || (built.length > 0 && Math.random() < 0.4)) from = built.length > 0 ? built : from;
+  if (from.length === 0) from = pool.built.filter((d) => !(taken || []).some((t) => sameCells(t, d.cells)));
   if (from.length === 0) from = pool.built;
   const d = from[randomInt(from.length)];
   used.push(d);
@@ -105,7 +113,7 @@ function pickBotDrawing(pool, used) {
 }
 
 function statLine(st) {
-  return 'Gewicht ' + st.N + ' · Panzer ' + Math.round(st.armour) + ' · Schärfe ' + st.sharpness.toFixed(1);
+  return 'Gewicht ' + st.N + ' · Panzer ' + Math.round(st.armour) + ' · Schärfe ' + num(st.sharpness, 1);
 }
 
 async function playRing(seats, drawTime) {
@@ -125,6 +133,7 @@ async function playRing(seats, drawTime) {
     drawings[s] = d.cells;
     source[s] = d.source;
   }
+  window.__inkDebug.ringBotPicks = drawings.filter((d) => d).map((d) => d.join(''));
   const touchPlay = coarsePointer();
 
   while (match.phase !== 'matchOver') {
@@ -157,6 +166,16 @@ async function playRing(seats, drawTime) {
         if (r === 'back') { goHome(); return; }
       }
     }
+
+    // a bot never shows up with the very drawing a human has just made
+    const humanDrawings = humans.map((s) => drawings[s]);
+    for (let s = 0; s < n; s++) {
+      if (seats[s].human || !humanDrawings.some((h) => sameCells(h, drawings[s]))) continue;
+      const d = pickBotDrawing(pool, used, humanDrawings);
+      drawings[s] = d.cells;
+      source[s] = d.source;
+    }
+    window.__inkDebug.ringDrawings = drawings.map((cells, s) => ({ human: seats[s].human, data: cells.join('') }));
 
     const figures = drawings.map((cells, s) => core.buildFigure(cells, W, H, tuning, 'figure', core.ringInkBudget(tuning, match, s)));
     const cards = figures.map((fig, s) => el('div', { class: 'card' }, [
@@ -234,6 +253,7 @@ function makeHud(match, seats, name) {
   let built = false;
   const bars = [];
   const chips = [];
+  const pipEls = [];
   let line = null;
   const r = tuning.ring;
   const T = tuning.physics.tickRate;
@@ -243,15 +263,15 @@ function makeHud(match, seats, name) {
       root.textContent = '';
       for (let s = 0; s < seats.length; s++) {
         const bar = el('i');
-        const pips = '●'.repeat(match.wins[s]) + '○'.repeat(Math.max(0, r.winsToTakeMatch - match.wins[s]));
+        const pipEl = el('span', { class: 'pips' });
         const chip = el('div', { class: 'chip' }, [
           el('span', { class: 'tag' + (seats[s].human ? ' human' : ''), text: String(s + 1) }),
           el('span', { class: 'chip-body' }, [
-            el('span', { class: 'chip-name' }, [document.createTextNode(name(s) + ' '), el('span', { class: 'pips', text: pips })]),
+            el('span', { class: 'chip-name' }, [document.createTextNode(name(s) + ' '), pipEl]),
             el('span', { class: 'hpbar' }, [bar]),
           ]),
         ]);
-        bars.push(bar); chips.push(chip);
+        bars.push(bar); chips.push(chip); pipEls.push(pipEl);
         root.append(chip);
       }
       line = el('div', { class: 'hud-line' });
@@ -262,6 +282,9 @@ function makeHud(match, seats, name) {
       const b = bodies[s];
       bars[s].style.width = Math.max(0, b.hp / b.maxHp * 100).toFixed(0) + '%';
       chips[s].classList.toggle('out', !b.alive);
+      // win dots follow the score, also after the deciding round
+      const pips = '●'.repeat(match.wins[s]) + '○'.repeat(Math.max(0, r.winsToTakeMatch - match.wins[s]));
+      if (pipEls[s].textContent !== pips) pipEls[s].textContent = pips;
     }
     let text;
     if (match.tick < r.shrinkStartTick) text = 'Ring schrumpft in ' + Math.ceil((r.shrinkStartTick - match.tick) / T) + ' s';

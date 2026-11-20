@@ -2,7 +2,7 @@
 
 import * as core from '../core/index.js';
 import { tuning, W, H } from './tuning.js';
-import { $, el, showScreen, currentScreen, colours, reducedMotion, fitCanvas } from './ui.js';
+import { $, el, showScreen, currentScreen, colours, reducedMotion, fitCanvas, inputBlocked, num } from './ui.js';
 import { setSound, soundIsOn, onSoundChange, sfx } from './audio.js';
 import { openDraw } from './drawscreen.js';
 import { initRing, openRingSetup } from './ringmode.js';
@@ -14,6 +14,7 @@ import { thumbCanvas, figureOf, makeSprite, drawSprite, wobbleFrame } from './sp
 if (!window.__inkDebug) window.__inkDebug = { speed: 1 };
 window.__inkDebug.core = core;
 window.__inkDebug.tuning = tuning;
+window.__inkDebug.inputBlocked = inputBlocked;
 
 // ---- lost taps
 // Chromium sometimes sends no click for a tap on a button that follows quick
@@ -66,6 +67,7 @@ paintSound(false);
 
 // ---- start screen
 let doodle = null;
+let doodleRun = 0;
 function home() {
   const best = bestScore();
   $('startBest').hidden = best <= 0;
@@ -76,14 +78,33 @@ function home() {
 
 function startDoodle() {
   const cv = $('startDoodle');
-  if (!doodle) {
-    doodle = [0, 4, 1, 5].map((k, i) => {
-      const fig = figureOf(SCRIBBLE_FIGURES[k].cells);
+  // The player's newest gallery figures hop here; built-in scribbles only
+  // fill the gaps and are then named as placeholders.
+  const own = [];
+  for (const it of galleryAll()) {
+    if (own.length >= 4) break;
+    if (it.kind !== 'figure') continue;
+    const cells = decode(it.data);
+    if (core.computeStats(cells, W, H, tuning, 'figure', W * H).valid) own.push(cells);
+  }
+  const key = own.map((c) => c.join('')).join('|');
+  if (!doodle || doodle.key !== key) {
+    const fill = [0, 4, 1, 5].map((k) => SCRIBBLE_FIGURES[k].cells);
+    const list = own.concat(fill.slice(0, 4 - own.length));
+    doodle = list.map((cells, i) => {
+      const fig = figureOf(cells);
       return { fig, sprite: makeSprite(fig, 6), phase: i * 1.3, rate: 3 + 20 / (10 + fig.stats.N / 6) };
     });
+    doodle.key = key;
   }
+  const noteEl = $('startDoodleNote');
+  noteEl.hidden = own.length >= 4;
+  noteEl.textContent = own.length === 0 ? 'Platzhalter-Kritzeleien. Zeichne selbst, dann hüpfen hier deine Figuren.'
+    : 'Links deine Figuren, rechts noch Platzhalter.';
+  doodleRun++;
+  const myRun = doodleRun;
   const draw = (now) => {
-    if (currentScreen() !== 'scrStart') return;
+    if (currentScreen() !== 'scrStart' || myRun !== doodleRun) return;
     const t = now / 1000;
     const w = cv.clientWidth;
     const h = cv.clientHeight;
@@ -97,7 +118,7 @@ function startDoodle() {
         const x = cv.width * (0.14 + i * 0.24);
         const hop = still ? 0 : Math.abs(Math.sin(t * d.rate + d.phase));
         const land = still ? 0 : Math.max(0, 1 - hop * 4);
-        const scale = Math.min(cv.height / 34, cv.width / 110);
+        const scale = Math.min(cv.height / 34, cv.width / 110, cv.height * 0.42 / (d.fig.radius + 1));
         g.globalAlpha = 0.15;
         g.fillStyle = col.ink;
         g.beginPath();
@@ -127,7 +148,7 @@ $('btnFree').addEventListener('click', async () => {
 // ---- gallery
 function statText(cells, kind) {
   const st = core.computeStats(cells, W, H, tuning, kind, W * H);
-  return 'Gewicht ' + st.N + ' · Panzer ' + Math.round(st.armour) + ' · Schärfe ' + st.sharpness.toFixed(1);
+  return 'Gewicht ' + st.N + ' · Panzer ' + Math.round(st.armour) + ' · Schärfe ' + num(st.sharpness, 1);
 }
 
 function openGallery() {

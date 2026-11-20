@@ -109,6 +109,7 @@ select {
 .start-top { display: flex; justify-content: flex-end; flex: 0 0 auto; }
 .start-body { margin: auto; width: 100%; max-width: 460px; text-align: center; padding-bottom: 12px; }
 .doodle { width: 100%; height: 110px; display: block; }
+.doodle-note { margin: 0; font-size: 0.72rem; }
 .title { font-size: clamp(2.6rem, 13vw, 4rem); letter-spacing: 0.01em; transform: rotate(-2deg); }
 .rule { font-family: var(--font-hand); font-size: 1.02rem; margin: 10px 0 16px; }
 .menu { display: flex; flex-direction: column; gap: 10px; }
@@ -156,7 +157,7 @@ select {
 .draw-side { flex: 0 0 auto; display: flex; flex-direction: column; gap: 5px; }
 .tools { display: grid; grid-template-columns: repeat(4, 1fr) 1.6fr 1.3fr; gap: 6px; }
 .tool { padding: 4px 6px; min-height: 42px; font-size: 0.85rem; white-space: nowrap; }
-.tool.flat { min-height: 36px; box-shadow: none; padding: 2px 9px; font-size: 0.8rem; border-width: 1.5px; }
+.tool.flat { min-height: 36px; box-shadow: none; padding: 2px 7px; font-size: 0.8rem; border-width: 1.5px; flex: 0 0 auto; }
 .tool.swatch.c1 { background: var(--ink); }
 .tool.swatch.c2 { background: var(--ember); }
 .tool.swatch.c3 { background: var(--tide); }
@@ -259,6 +260,38 @@ select {
   .hud { justify-content: center; }
 }
 @media (pointer: coarse) { .dash { display: block; } }
+
+/* a phone held sideways: canvas left, tools and stats right, everything on
+   one screen without scrolling */
+@media (orientation: landscape) and (max-height: 520px) {
+  .head { margin-bottom: 3px; }
+  .draw-head { margin-bottom: 2px; }
+  .draw-title p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .preview { width: 42px; height: 42px; }
+  .timer { font-size: 1.1rem; }
+  .draw-main { flex-direction: row; gap: 12px; }
+  .draw-board { min-height: 0; flex: 1 1 0; min-width: 0; }
+  .draw-side { flex: 0 0 54%; min-width: 0; justify-content: center; gap: 4px; overflow-y: auto; }
+  .tool { min-height: 34px; }
+  .tool.flat { min-height: 30px; }
+  .stats li { min-height: 17px; font-size: 0.78rem; grid-template-columns: 58px 40px 54px 1fr; }
+  .s-why { font-size: 0.72rem; white-space: nowrap; }
+  .msg { margin: 0; }
+  .stakes .tool { min-height: 36px; font-size: 0.8rem; }
+  .draw-side > .btn.primary { min-height: 38px; padding: 5px 14px; flex: 0 0 auto; }
+  .hint { left: 4%; right: 4%; bottom: 6%; font-size: 0.85rem; }
+  .ov-buttons { flex-direction: row; justify-content: center; }
+  .lineup .card canvas { width: 46px; height: 46px; }
+  .banner { top: 16%; font-size: 2.4rem; }
+  .start-body { max-width: 640px; }
+  .doodle { height: 64px; }
+  .title { font-size: 2.2rem; }
+  .rule { margin: 4px 0 8px; font-size: 0.95rem; }
+  .menu { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .menu .btn.big { font-size: 1rem; padding: 7px 12px; }
+  .panel.center { margin: auto; }
+  .shop { display: grid; grid-template-columns: 1fr 1fr; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
