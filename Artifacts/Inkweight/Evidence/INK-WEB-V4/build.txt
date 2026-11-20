@@ -1,0 +1,3 @@
+BUILD OK modules=21 inkweight.html=231632B inkweight.artifact.html=231505B
+accc5372d4af5702d1291e2212e32762c75c7ff71970151e3833071dba0a62f4  dist/inkweight.artifact.html
+bde18a13dff830b9fcfa7fd9f077d542bcc91675836993b719f946e2ba606e54  dist/inkweight.html

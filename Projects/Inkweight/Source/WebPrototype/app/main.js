@@ -193,7 +193,7 @@ $('btnFree').addEventListener('click', async () => {
       + num(so.enemyCrushPerInk, 3) + ' stärker (vor den ' + pctText(so.enemyDamageMult) + ' %), mal Einsatz, mal dem Faktor, um den die Welle ihren Panzer hebt oder senkt. Ein kleiner Punkt merkt davon fast nichts, ein großer Brocken viel. '
       + 'Einsatz ' + stakeList(so.stakes) + ': aller Gegnerschaden ' + stakeList(so.stakeDamageMult) + ', Gegnertempo ' + stakeList(so.stakeSpeedMult)
       + ', dazu mehr Beute und mehr oder zähere Gegner. Jeder Gegner läuft ' + num(so.enemySpeedBase, 0) + ' Kästchen pro Sekunde plus ' + pctText(so.enemySpeedMult)
-      + ' % vom Tempo seiner Zeichnung. Unter den Einsatz-Knöpfen steht, was ein Treffer genau dieses Gegners deinem Helden nimmt. '
+      + ' % vom Tempo seiner Zeichnung. Als Gegner hat eine Zeichnung eigene Werte: unter den Einsatz-Knöpfen steht, was ein Treffer genau dieses Gegners deinem Helden nimmt, wie schnell er läuft und wie viel Panzer er hat. '
       + (so.bossCrushMult === 0 ? 'Im Endkampf gibt es keinen Einsatz, und dort drückt niemand: ' : 'Im Endkampf gibt es keinen Einsatz: ')
       + 'eine stumpfe Berührung macht dort ' + num(tuning.stats.bluntDamage * so.enemyDamageMult, 2) + ' Schaden. Dein Panzer heilt nur durch „Flicken“.';
     // The thrown weapon: none of the figure lines about armour, top speed or

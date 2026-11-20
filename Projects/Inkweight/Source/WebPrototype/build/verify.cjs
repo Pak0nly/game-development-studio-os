@@ -999,7 +999,9 @@ async function runChecks(browser) {
   // by more than the plain damage factor (1,25 and 1,5)
   const hits = stakes.map((t) => parseFloat(((t.match(/Treffer (?:bis )?(\d+,\d)/) || [0, 'NaN'])[1]).replace(',', '.')));
   if (hits.some((h) => !(h > 0))) throw new Error('a stake does not show its touch: ' + stakes.join(' | '));
-  if (/Tempo/.test(stakes[0]) || !/Tempo \+10 %/.test(stakes[1]) || !/Tempo \+20 %/.test(stakes[2])) throw new Error('stake speed text: ' + stakes.join(' | '));
+  const shownSpeed = stakes.map((t) => parseFloat(((t.match(/Tempo (\d+,\d)/) || [0, 'NaN'])[1]).replace(',', '.')));
+  const shownArmour = stakes.map((t) => parseInt((t.match(/Panzer (\d+)/) || [0, 'NaN'])[1], 10));
+  if (!(shownSpeed[0] < shownSpeed[1] && shownSpeed[1] < shownSpeed[2])) throw new Error('enemy speed does not grow with the stake: ' + stakes.join(' | '));
   if (!(hits[1] > hits[0] * 1.25 && hits[2] > hits[0] * 1.5)) throw new Error('a heavy enemy must hit harder with the stake than the plain factor: ' + hits.join(' '));
   // the shown touch is what the core does: start nothing, compute it from the core's own functions
   const coreHits = await page.evaluate(() => {
@@ -1014,6 +1016,22 @@ async function runChecks(browser) {
     }
     return out;
   });
+  // speed and armour of the copy, from the tuning numbers and the shown figure values
+  const coreCopy = await page.evaluate(() => {
+    const d = window.__inkDebug;
+    const t = d.tuning;
+    const N = parseInt(document.getElementById('stWeight').textContent, 10);
+    const armour = parseInt(document.getElementById('stArmour').textContent, 10);
+    const top = t.stats.speedBase / (1 + N / t.stats.speedWeightRef);
+    return [0, 1, 2].map((k) => ({ speed: (t.solo.enemySpeedBase + t.solo.enemySpeedMult * top) * t.solo.stakeSpeedMult[k],
+      armourLow: (t.solo.enemyArmourPerInk * N + t.solo.enemyArmourMult * (armour - 0.5)) * d.core.soloWaveArmourScale(t, d.run.wave, k, N),
+      armourHigh: (t.solo.enemyArmourPerInk * N + t.solo.enemyArmourMult * (armour + 0.5)) * d.core.soloWaveArmourScale(t, d.run.wave, k, N) }));
+  });
+  note('enemy copy per stake, shown Tempo ' + shownSpeed.join(' / ') + ' Panzer ' + shownArmour.join(' / ') + ', core Tempo ' + coreCopy.map((c) => c.speed.toFixed(2)).join(' / ') + ' Panzer ' + coreCopy.map((c) => c.armourLow.toFixed(1) + '..' + c.armourHigh.toFixed(1)).join(' / '));
+  for (let k = 0; k < 3; k++) {
+    if (Math.abs(shownSpeed[k] - coreCopy[k].speed) > 0.051) throw new Error('shown enemy speed differs from the core at stake ' + k);
+    if (shownArmour[k] < Math.floor(coreCopy[k].armourLow) || shownArmour[k] > Math.ceil(coreCopy[k].armourHigh)) throw new Error('shown enemy armour differs from the core at stake ' + k);
+  }
   note('touch of the big enemy per stake, shown ' + hits.join(' / ') + ', core ' + coreHits.map((h) => h.toFixed(3)).join(' / '));
   for (let k = 0; k < 3; k++) if (Math.abs(hits[k] - coreHits[k]) > 0.051) throw new Error('shown touch differs from the core at stake ' + k);
   const loot = stakes.map((t) => parseInt((t.match(/(\d+) Beute/) || [0, '0'])[1], 10));
@@ -1034,7 +1052,7 @@ async function runChecks(browser) {
   if (runAsk !== 'Lauf beenden? | Noch einmal tippen, dann endet der ganze Lauf.' || !(await visible('scrDraw'))) throw new Error('solo Ende asks wrongly: ' + runAsk);
   await shot('14-solo-ende-asks');
   await sleep(2700);
-  if (!/^×1 · Gegner: Treffer/.test(await text('stakeNote'))) throw new Error('stake note did not come back: ' + (await text('stakeNote')));
+  if (!/^×1 · als Gegner: Treffer/.test(await text('stakeNote'))) throw new Error('stake note did not come back: ' + (await text('stakeNote')));
   ok('"Ende" on the solo enemy screen asks "Lauf beenden?" and says that the whole run ends');
   await press('#drawDone');
   await page.waitForSelector('#scrFight:not([hidden])');
@@ -1155,7 +1173,7 @@ async function runStable(browser) {
     await sleep(300);
     await stable('solo enemy', null);
     const noteText = await page.locator('#stakeNote').textContent();
-    if (!/^×1 · Gegner: Treffer .* · 3 Kästchen tropfen ab$/.test(noteText)) throw new Error('stake line with the drip warning on the enemy screen: ' + noteText);
+    if (!/^3 Kästchen tropfen ab · ×1 · als Gegner: Treffer/.test(noteText)) throw new Error('stake line with the drip warning on the enemy screen: ' + noteText);
     if (size.height === 780) {
       // m-7: the steering finger is still down when the shop opens; another finger buys
       await press('#toolClear');

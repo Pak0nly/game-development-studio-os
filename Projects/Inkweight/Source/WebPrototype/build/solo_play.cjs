@@ -112,7 +112,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       const shown = parseFloat(((noteText.match(/Treffer (?:bis )?(\d+,\d)/) || [0, 'NaN'])[1]).replace(',', '.'));
       const real = start.enemies[0].blunt;
       if (!(Math.abs(shown - real) <= 0.051)) throw new Error('the page shows a touch of ' + shown + ', the enemy body does ' + real);
-      log('  shown touch ' + shown + ' = blunt touch of the enemy body ' + real);
+      const shownSpeed = parseFloat(((noteText.match(/Tempo (\d+,\d)/) || [0, 'NaN'])[1]).replace(',', '.'));
+      const shownArmour = parseInt((noteText.match(/Panzer (\d+)/) || [0, 'NaN'])[1], 10);
+      if (!(Math.abs(shownSpeed - start.enemies[0].speed) <= 0.051) || !(Math.abs(shownArmour - start.enemies[0].hp) <= 1)) throw new Error('shown enemy speed or armour differs from the body: ' + noteText);
+      log('  shown touch ' + shown + ', Tempo ' + shownSpeed + ', Panzer ' + shownArmour + ' = enemy body: blunt touch ' + real + ', top speed ' + start.enemies[0].speed + ', armour ' + start.enemies[0].hp);
     } else if (start.enemies.some((e) => e.crush !== 0)) throw new Error('a body of the boss fight crushes');
     if (wave === 1 || boss) { await sleep(2500); await shot((boss ? '05-boss' : '03-wave1') + '-fight'); }
     const t0 = Date.now();

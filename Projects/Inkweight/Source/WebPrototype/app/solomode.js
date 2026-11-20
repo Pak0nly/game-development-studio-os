@@ -89,7 +89,6 @@ async function playSolo(startColour) {
           box.append(noteEl);
           let lastN = 0;
           let lastStats = null;
-          const pct = (m) => Math.round((m - 1) * 100);
           function paint(stats) {
             if (stats) { lastN = stats.N; lastStats = stats; }
             // What a stake really does in rules version 3: more ink for the
@@ -115,12 +114,12 @@ async function playSolo(startColour) {
               // touch with a blade is a cut and never does less.
               const hit = soloTouch(run, lastStats, scale, stake);
               parts.push(hit.sharp > hit.blunt + 0.049 ? 'Treffer bis ' + num(hit.sharp, 1) : 'Treffer ' + num(hit.blunt, 1));
-              const spd = pct(so.stakeSpeedMult[stake]);
-              if (spd > 0) parts.push('Tempo +' + spd + ' %');
-              const sc = Math.round(scale * 100);
-              if (sc >= 105) parts.push('Panzer +' + (sc - 100) + ' %');
-              else if (sc <= 95) parts.push('Panzer −' + (100 - sc) + ' %');
-              text = stakeLabel(stake) + ' · Gegner: ' + parts.join(' · ');
+              // The rows above describe the drawing as a figure. As an enemy
+              // copy it has its own speed and armour (solo.js): both are shown
+              // as the real values of this wave and stake.
+              parts.push('Tempo ' + num(core.soloEnemySpeed(tuning, { stats: lastStats }, stake), 1));
+              parts.push('Panzer ' + Math.round(core.soloEnemyArmour(tuning, { stats: lastStats }, scale)));
+              text = stakeLabel(stake) + ' · als Gegner: ' + parts.join(' · ');
               window.__inkDebug.stakeHit = { stake, blunt: hit.blunt, sharp: hit.sharp, crush: hit.crush, scale };
             }
             stakeText = text;
@@ -132,7 +131,11 @@ async function playSolo(startColour) {
           let softText = '';
           function show() {
             // a warning that stops nothing (drips, ink used up) rides along with the stake line
-            noteEl.textContent = softText ? stakeText + ' · ' + softText : (warnText || stakeText);
+            // The line is cut at its end on a narrow screen: a drip warning
+            // (something to fix) goes first, "ink is empty" (the meter shows
+            // it too) goes last.
+            const dripFirst = softText.indexOf('tropf') !== -1;
+            noteEl.textContent = softText ? (dripFirst ? softText + ' · ' + stakeText : stakeText + ' · ' + softText) : (warnText || stakeText);
             noteEl.classList.toggle('warn', warnText !== '' && softText === '');
           }
           paint.setMsg = (text, warn, soft) => { warnText = warn ? text : ''; softText = soft || ''; show(); };

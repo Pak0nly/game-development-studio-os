@@ -1,0 +1,25 @@
+[solo-x2-brawl] first-run hint: Zeichne los, oben ist vorne. Drei Dinge zählen: Dünne Striche sind Klingen, auch schräge. Gefüllte Flächen sind Panzer. Was nicht dranhängt, tropft ab. Alles klar
+[solo-x2-brawl] hero: Gewicht 112 Panzer 158 Schärfe 2,0 Tempo 15
+[solo-x2-brawl] hint on the second drawing screen visible: false
+[solo-x2-brawl] weapon rows: Gewicht 27 "schwer stößt Gegner weiter zurück" | Takt 0,52 "Sekunden je Wurf · leicht wirft öfter" | Schärfe 4,2 "27 Klingen · Treffer nimmt 4,2 Panzer" | Flug 41 "Kästchen pro Sekunde · leicht fliegt schneller" | Strich = Klinge · mehr Klingen, mehr Schaden
+[solo-x2-brawl] wave 1 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 120 Beute | Einsatz ×1,5 1 Gegner 180 Beute | Einsatz ×2 1 Gegner 240 Beute || ×2 · als Gegner: Treffer 1,7 · Tempo 8,7 · Panzer 175
+[solo-x2-brawl] wave 1 starts: hero armour 158, enemies [{"N":210,"hp":175,"speed":8.73,"crush":1.613,"blunt":1.688}]
+[solo-x2-brawl]   shown touch 1.7, Tempo 8.7, Panzer 175 = enemy body: blunt touch 1.688, top speed 8.73, armour 175
+[solo-x2-brawl] wave 1 ends: cleared after 13 s of fight (1 s real), hero armour 112 of 158 (lost 46), Beutel 240
+[solo-x2-brawl]   shop: Geflickt. Tinte im Beutel: 180 · Panzer: 158 von 158
+[solo-x2-brawl] wave 2 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 170 Beute | Einsatz ×1,5 1 Gegner 255 Beute | Einsatz ×2 1 Gegner 340 Beute || ×2 · als Gegner: Treffer 2,1 · Tempo 8,7 · Panzer 247
+[solo-x2-brawl] wave 2 starts: hero armour 158, enemies [{"N":210,"hp":247,"speed":8.73,"crush":2.285,"blunt":2.091}]
+[solo-x2-brawl]   shown touch 2.1, Tempo 8.7, Panzer 247 = enemy body: blunt touch 2.091, top speed 8.73, armour 247
+[solo-x2-brawl] wave 2 ends: cleared after 17 s of fight (5 s real), hero armour 78 of 158 (lost 79), Beutel 520
+[solo-x2-brawl]   shop: Geflickt. Tinte im Beutel: 430 · Panzer: 134 von 158
+[solo-x2-brawl] wave 3 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 230 Beute | Einsatz ×1,5 1 Gegner 345 Beute | Einsatz ×2 1 Gegner 460 Beute || ×2 · als Gegner: Treffer 2,6 · Tempo 8,7 · Panzer 335
+[solo-x2-brawl] wave 3 starts: hero armour 133, enemies [{"N":210,"hp":335,"speed":8.73,"crush":3.091,"blunt":2.575}]
+[solo-x2-brawl]   shown touch 2.6, Tempo 8.7, Panzer 335 = enemy body: blunt touch 2.575, top speed 8.73, armour 335
+[solo-x2-brawl] wave 3 ends: cleared after 22 s of fight (6 s real), hero armour 10 of 158 (lost 124), Beutel 890
+[solo-x2-brawl]   shop: Geflickt. Tinte im Beutel: 770 · Panzer: 65 von 158
+[solo-x2-brawl] wave 4 enemy Gewicht 210, stake buttons: Einsatz ×1 1 Gegner 300 Beute | Einsatz ×1,5 1 Gegner 450 Beute | Einsatz ×2 2 Gegner 600 Beute || ×2 · als Gegner: Treffer 1,9 · Tempo 8,7 · Panzer 218
+[solo-x2-brawl] wave 4 starts: hero armour 65, enemies [{"N":210,"hp":218,"speed":8.73,"crush":2.016,"blunt":1.93},{"N":210,"hp":218,"speed":8.73,"crush":2.016,"blunt":1.93}]
+[solo-x2-brawl]   shown touch 1.9, Tempo 8.7, Panzer 218 = enemy body: blunt touch 1.93, top speed 8.73, armour 218
+[solo-x2-brawl] wave 4 ends: dead after 13 s of fight (4 s real), hero armour 0 of 158 (lost 65), Beutel 770
+[solo-x2-brawl] weapon hits: 120, damage values 4.229 (weapon screen showed Schärfe 4,2)
+[solo-x2-brawl] RESULT Aus und vorbei | Dein Panzer ist zerbrochen (Welle 4 von 5). 1040 Tinte gesammelt · neuer Bestwert auf diesem Gerät Geschaffte Wellen: 3 von 5 | 0 console errors
