@@ -3,7 +3,7 @@
 
 import * as core from '../core/index.js';
 import { tuning, W, H } from './tuning.js';
-import { $, el, onPress, showScreen, colours, coarsePointer, ELEMENT_NAMES, reducedMotion } from './ui.js';
+import { $, el, onPress, showScreen, colours, coarsePointer, ELEMENT_NAMES, reducedMotion, num } from './ui.js';
 import { sfx } from './audio.js';
 import { openDraw } from './drawscreen.js';
 import { runFight, fightOverlay, clearHud } from './fight.js';
@@ -28,6 +28,19 @@ export function openSoloIntro() {
 function stakeLabel(i) {
   const v = so.stakes[i];
   return '×' + String(v).replace('.', ',');
+}
+
+// One touch of a wave copy of this drawing against the hero, as the core
+// computes it (physics.js touchDamage, solo.js spawnEnemy): blunt and, for a
+// touch with a blade, sharp. stats: the stats of the enemy drawing.
+function soloTouch(run, stats, scale, stakeIndex) {
+  const ts = tuning.stats;
+  const crush = core.soloEnemyCrush(tuning, { stats }, scale, stakeIndex);
+  const factor = so.enemyDamageMult * so.stakeDamageMult[stakeIndex]
+    * core.elementMultiplier(tuning, stats.element, run.heroFig.stats.element);
+  const blunt = ts.bluntDamage + crush;
+  const sharp = stats.S > 0 ? (stats.sharpness > blunt ? stats.sharpness : blunt) + ts.sharpArmourCut * run.heroMaxHp : blunt;
+  return { crush, blunt: blunt * factor, sharp: sharp * factor };
 }
 
 async function playSolo(startColour) {
@@ -75,13 +88,14 @@ async function playSolo(startColour) {
           const noteEl = el('p', { class: 'fine stake-note', id: 'stakeNote' });
           box.append(noteEl);
           let lastN = 0;
-          let lastCells = null;
+          let lastStats = null;
           const pct = (m) => Math.round((m - 1) * 100);
           function paint(stats) {
-            if (stats) lastN = stats.N;
-            // What a stake really does in rules version 2: more ink for the
+            if (stats) { lastN = stats.N; lastStats = stats; }
+            // What a stake really does in rules version 3: more ink for the
             // wave (more copies, or tougher ones where no further copy fits),
-            // harder hits, more speed, and each drop pays its share.
+            // harder hits (heavy copies crush harder with the stake), more
+            // speed, and each drop pays its share.
             for (let i = 0; i < buttons.length; i++) {
               const copies = lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0;
               const loot = lastN > 0 ? copies * core.soloDropValue(tuning, run.wave, i, lastN) : 0;
@@ -92,17 +106,22 @@ async function playSolo(startColour) {
               buttons[i].setAttribute('aria-pressed', i === stake ? 'true' : 'false');
             }
             let text = 'Höherer Einsatz: mehr Beute, härtere Gegner.';
-            if (lastN > 0) {
+            if (lastN > 0 && lastStats) {
               const scale = core.soloWaveArmourScale(tuning, run.wave, stake, lastN);
               const parts = [];
-              const dmg = pct(so.stakeDamageMult[stake]);
+              // What one touch of this very drawing takes off the hero at this
+              // stake (rules version 3): blunt damage plus the crush of a heavy
+              // copy, times the enemy and stake factors and the element. A
+              // touch with a blade is a cut and never does less.
+              const hit = soloTouch(run, lastStats, scale, stake);
+              parts.push(hit.sharp > hit.blunt + 0.049 ? 'Treffer bis ' + num(hit.sharp, 1) : 'Treffer ' + num(hit.blunt, 1));
               const spd = pct(so.stakeSpeedMult[stake]);
-              if (dmg > 0) parts.push('+' + dmg + ' % Schaden');
-              if (spd > 0) parts.push('+' + spd + ' % Tempo');
+              if (spd > 0) parts.push('Tempo +' + spd + ' %');
               const sc = Math.round(scale * 100);
-              if (sc >= 105) parts.push('+' + (sc - 100) + ' % Panzer');
-              else if (sc <= 95) parts.push('−' + (100 - sc) + ' % Panzer');
-              text = stakeLabel(stake) + ': Gegner ' + (parts.length ? 'mit ' + parts.join(', ') : 'in Grundstärke');
+              if (sc >= 105) parts.push('Panzer +' + (sc - 100) + ' %');
+              else if (sc <= 95) parts.push('Panzer −' + (100 - sc) + ' %');
+              text = stakeLabel(stake) + ' · Gegner: ' + parts.join(' · ');
+              window.__inkDebug.stakeHit = { stake, blunt: hit.blunt, sharp: hit.sharp, crush: hit.crush, scale };
             }
             stakeText = text;
             show();
@@ -132,7 +151,7 @@ async function playSolo(startColour) {
       const r = await fightOverlay('Der Endgegner', [
         el('div', { class: 'lineup' }, [el('div', { class: 'card' }, [thumbCanvas(core.soloBossCells(run), 64), el('span', { class: 'card-name', text: 'Alle in einem' })])]),
         el('p', { text: 'Er besteht aus allen Gegnern, die du gezeichnet hast, und bringt je einen davon mit.' }),
-        el('p', { class: 'fine', text: 'Hier gibt es keinen Einsatz: alle schlagen in Grundstärke zu.' }),
+        el('p', { class: 'fine', text: 'Hier gibt es keinen Einsatz: alle schlagen in Grundstärke zu, und auch schwere Gegner drücken hier nicht mit ihrem Gewicht.' }),
       ], 'In den Kampf', 'Zum Menü');
       if (r !== 'primary') { goHome(); return; }
       core.soloStartBoss(tuning, run);

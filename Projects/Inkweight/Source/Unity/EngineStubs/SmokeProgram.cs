@@ -168,8 +168,10 @@ namespace Inkweight.RuntimeStubCheck
                 "canvas texture is written top row last (not mirrored) and the stroke carries the blade mark");
             Expect(HasLabel("Klingenfelder 23") && HasLabel("Schärfe: ") && HasLabel("Panzerung: 66.9") && HasLabel("Gewicht: 23"),
                 "stat panel shows the version 2 stats of the stroke");
-            Expect(HasLabel("nur ein Feld dick") && HasLabel("Hohlräume") && HasLabel("schiebt stärker") && HasLabel("ist schneller"),
+            Expect(HasLabel("schneiden mit der Schärfe, mindestens 1.2") && HasLabel("Hohlräume in dicker Hülle") && HasLabel("schiebt stärker") && HasLabel("ist schneller"),
                 "the four one-line explanations are shown");
+            Expect(HasLabel("Element: Neutral – ab 30 % bunter Tinte (jetzt 0 %)"), "a black drawing is neutral and the line says why");
+            Expect(HasLabel("Zeit: noch ") && HasLabel("Zeichne deine Figur (oben ist vorne)") && !HasLabel("vorne)  –"), "the clock has its own line");
             Expect(HasLabel("noch ") && !HasLabel("ab dem ersten Strich"), "the drawing clock runs after the first stroke");
             // a second, thick part: its inner cells are no blades and keep the plain ink colour
             Mouse(EventType.MouseDown, 20f + 20.5f * cell, 70f + 10.5f * cell);
@@ -179,7 +181,7 @@ namespace Inkweight.RuntimeStubCheck
             Mouse(EventType.MouseDrag, 20f + 22.5f * cell, 70f + 11.5f * cell);
             Mouse(EventType.MouseUp, 20f + 22.5f * cell, 70f + 11.5f * cell);
             Frame();
-            Expect(HasLabel("Tinte: 29 von 220") && HasLabel("tropfen ab"), "a separate 3 x 2 block drips off");
+            Expect(HasLabel("Tinte: 29 von 220") && HasLabel("6 Felder tropfen ab"), "a separate 3 x 2 block drips off");
             // asking before a drawing is discarded
             Click("Leeren");
             Expect(HasButton("Ja, verwerfen") && HasButton("Nein, weiterzeichnen") && !HasButton("In den Ring!"), "Leeren asks first");
@@ -187,6 +189,7 @@ namespace Inkweight.RuntimeStubCheck
             Expect(HasLabel("Tinte: 29 von 220") && HasButton("In den Ring!"), "answering no keeps the drawing");
             Click("Menü");
             Expect(HasButton("Ja, verwerfen") && !HasButton("2 Figuren"), "Menü asks first on the drawing screen");
+            Expect(!HasButton("Menü"), "no Menü button while the question is open");
             Key(KeyCode.Escape, true);
             Frame();
             Key(KeyCode.Escape, false);
@@ -246,9 +249,21 @@ namespace Inkweight.RuntimeStubCheck
             Expect(HasLabel("30 s ab dem ersten Strich") && HasButton("In den Ring!"), "the clock waits for the first stroke");
             Mouse(EventType.MouseDown, 20f + 2.5f * cell, 70f + 2.5f * cell);
             Mouse(EventType.MouseUp, 20f + 2.5f * cell, 70f + 2.5f * cell);
-            Time.StubDelta = 1f;
-            for (int f = 0; f < 29; f++) Frame();
+            Time.StubDelta = 0.25f;
+            for (int f = 0; f < 116; f++) Frame();
             Expect(HasButton("In den Ring!") && HasLabel("noch 1 s"), "one second before the end the drawing screen is still open");
+            // a stalled frame (focus loss) takes at most a quarter of a second off the clock
+            Time.StubDelta = 5f;
+            Frame();
+            Expect(HasButton("In den Ring!") && HasLabel("noch 1 s"), "a 5 second frame does not use up the drawing time");
+            // the clock stands still while a question is open
+            Click("Leeren");
+            Time.StubDelta = 1f;
+            for (int f = 0; f < 10; f++) Frame();
+            Expect(HasButton("Ja, verwerfen") && HasLabel("noch 1 s (angehalten)"), "the clock stands still while a question is open");
+            Time.StubDelta = 0f;
+            Click("Nein, weiterzeichnen");
+            Expect(HasButton("In den Ring!") && HasLabel("noch 1 s") && !HasLabel("angehalten"), "after the answer the clock goes on where it was");
             Time.StubDelta = 0.02f;
             for (int f = 0; f < 60 && HasButton("In den Ring!"); f++) Frame();
             Expect(!HasButton("In den Ring!") && HasLabel("Zeit abgelaufen!") && HasLabel("Ring "), "after 30 seconds the round starts by itself");
@@ -262,8 +277,8 @@ namespace Inkweight.RuntimeStubCheck
             Click("Leeren");
             Click("Ja, verwerfen");
             Expect(HasLabel("Tinte: 0 von 220") && !HasButton("In den Ring!"), "answering yes clears the drawing");
-            Time.StubDelta = 1f;
-            for (int f = 0; f < 31 && !HasLabel("Zeit abgelaufen"); f++) Frame();
+            Time.StubDelta = 0.25f;
+            for (int f = 0; f < 125 && !HasLabel("Zeit abgelaufen"); f++) Frame();
             Expect(HasLabel("letzte gültige Zeichnung") && HasLabel("Ring "), "the last valid drawing enters the ring when the time is up");
             Key(KeyCode.Escape, true);
             Frame();
@@ -276,13 +291,39 @@ namespace Inkweight.RuntimeStubCheck
             Expect(HasLabel("Tinte: 0 von 220"), "empty canvas without a kept drawing");
             Mouse(EventType.MouseDown, 20f + 2.5f * cell, 70f + 2.5f * cell);
             Mouse(EventType.MouseUp, 20f + 2.5f * cell, 70f + 2.5f * cell);
-            Time.StubDelta = 1f;
-            for (int f = 0; f < 31 && !HasLabel("Zeit abgelaufen"); f++) Frame();
+            Time.StubDelta = 0.25f;
+            for (int f = 0; f < 125 && !HasLabel("Zeit abgelaufen"); f++) Frame();
             Expect(HasLabel("Beispielfigur") && HasLabel("Ring "), "an example figure enters the ring when nothing valid was drawn");
             Key(KeyCode.Escape, true);
             Frame();
             Key(KeyCode.Escape, false);
             Expect(HasButton("4 Figuren"), "back in the menu after the clock tests");
+
+            // ---- element line: 30 % coloured ink in total, then the most common colour, a tie is neutral
+            Time.StubDelta = 0f;
+            Click("2 Figuren");
+            if (!HasLabel("Tinte: 0 von 220")) { Click("Leeren"); Click("Ja, verwerfen"); }
+            Expect(HasLabel("Tinte: 0 von 220") && HasLabel("Element: Neutral") && !HasLabel("bunter Tinte") && !HasLabel("Gleichstand"),
+                "an empty canvas is neutral without a reason");
+            Row(cell, 4, 2, 9);  // 8 black
+            Click("Glut");
+            Row(cell, 4, 10, 11); // 2 red: 20 % coloured
+            Frame();
+            Expect(HasLabel("Tinte: 10 von 220") && HasLabel("Element: Neutral – ab 30 % bunter Tinte (jetzt 20 %)"), "20 % coloured ink is neutral, with the reason");
+            Click("Flut");
+            Row(cell, 4, 12, 13); // 2 blue: 4 of 12 coloured (33 %), red and blue tie
+            Frame();
+            Expect(HasLabel("Tinte: 12 von 220") && HasLabel("Element: Neutral – Gleichstand der Farben"), "a tie of the most common colours is neutral, with the reason");
+            Row(cell, 4, 14, 14); // 3 blue against 2 red: 5 of 13 coloured, blue alone 23 %
+            Frame();
+            Expect(HasLabel("Tinte: 13 von 220") && HasLabel("Element: Flut (schlägt Glut)"), "the most common colour is the element although it alone is below 30 %");
+            Mouse(EventType.MouseDown, 20f + 20.5f * cell, 70f + 20.5f * cell); // one loose cell
+            Mouse(EventType.MouseUp, 20f + 20.5f * cell, 70f + 20.5f * cell);
+            Frame();
+            Expect(HasLabel("(1 Feld tropft ab und zählt nicht)"), "one dripping cell is named in the singular");
+            Click("Menü");
+            Click("Ja, verwerfen");
+            Expect(HasButton("4 Figuren"), "back in the menu after the element test");
             Time.StubDelta = 0.1f;
 
             // ---- solo
@@ -303,9 +344,12 @@ namespace Inkweight.RuntimeStubCheck
                     LoadExampleUntil("Welle starten");
                     if (guard == 0)
                     {
-                        Expect(HasLabel("Schaden x1, Tempo x1. Beute: "), "stake x1 shows no extra damage or speed");
+                        Expect(HasLabel("Einsatz: mehr oder zähere Gegner, härtere Treffer, mehr Beute"), "the stake line names what a stake does in rules version 3");
+                        string low = StakeText(editor, 0);
+                        string high = StakeText(editor, 2);
+                        Expect(HasLabel(low) && HasLabel("Beute je Gegner: ") && HasLabel(" Panzerung, "), "stake x1 shows speed and blunt touch of a copy: " + low);
                         Click("x2");
-                        Expect(HasLabel("Schaden x1.5, Tempo x1.2") && HasLabel("Beute: ") && HasLabel(" Panzerung, "), "stake x2 shows its effects");
+                        Expect(HasLabel(high) && low != high && !HasLabel(low), "stake x2 shows its own speed and blunt touch: " + high);
                     }
                     Click("Welle starten");
                 }
@@ -323,7 +367,7 @@ namespace Inkweight.RuntimeStubCheck
                 if (HasButton("Zurück zum Menü"))
                 {
                     ended = true;
-                    string outcome = HasLabel("Gewonnen") ? "won" : HasLabel("Zeit") ? "time over" : "hero destroyed";
+                    string outcome = HasLabel("Gewonnen") ? "won" : HasLabel("Die Zeit ist abgelaufen") ? "time over" : "hero destroyed";
                     Console.WriteLine("  solo: run ended after " + fights + " fights (" + outcome + ")");
                     Click("Zurück zum Menü");
                     break;
@@ -359,6 +403,26 @@ namespace Inkweight.RuntimeStubCheck
             Expect(HasButton("Glut"), "back in the menu after the solo run");
             Expect(Debug.Errors.Count == 0, "no error was logged: " + string.Join("; ", Debug.Errors));
             Console.WriteLine("  ram events seen by the game in all fights: " + Field(game, "ramCount") + " (information only)");
+        }
+
+        // A horizontal stroke on the canvas (1280 x 720 layout) in row y from column x0 to x1.
+        private static void Row(float cell, int y, int x0, int x1)
+        {
+            Mouse(EventType.MouseDown, 20f + (x0 + 0.5f) * cell, 70f + (y + 0.5f) * cell);
+            if (x1 != x0) Mouse(EventType.MouseDrag, 20f + (x1 + 0.5f) * cell, 70f + (y + 0.5f) * cell);
+            Mouse(EventType.MouseUp, 20f + (x1 + 0.5f) * cell, 70f + (y + 0.5f) * cell);
+        }
+
+        // What the stake line must say about speed and blunt touch of a copy of
+        // the drawing on the canvas in wave 1, computed here from the core.
+        private static string StakeText(InkCanvasEditor editor, int stake)
+        {
+            InkTuning t = (InkTuning)Field(game, "tuning");
+            InkFigure f = InkPhysics.BuildFigure(editor.Cells, 32, 32, t, InkDrawing.KindFigure, t.EnemyInkBudget);
+            double scale = InkSolo.WaveArmourScale(t, 0, stake, f.Stats.N);
+            double touch = (t.BluntDamage + InkSolo.EnemyCrush(t, f, scale, stake)) * t.EnemyDamageMult * t.StakeDamageMult[stake];
+            System.Globalization.CultureInfo inv = System.Globalization.CultureInfo.InvariantCulture;
+            return "Tempo " + InkSolo.EnemySpeed(t, f, stake).ToString("0.0", inv) + ", stumpfer Treffer " + touch.ToString("0.00", inv) + " (ohne Element)";
         }
 
         private static void SetField(object o, string name, object value)

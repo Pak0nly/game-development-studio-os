@@ -1,7 +1,7 @@
 # Inkweight Unity Project: How to Open It and What to Expect
 
-Work Orders INK-UNITY-V1 and INK-UNITY-V2 (core version 2, tuning
-`ink-tuning-2`, the same rules as the browser prototype). Everything in this
+Work Orders INK-UNITY-V1 to INK-UNITY-V3 (core version 3, tuning
+`ink-tuning-3`, the same rules as the browser prototype). Everything in this
 folder was written and tested
 **without the Unity Editor** (it is not available in the cloud container). The
 rules core is proven against the golden files outside Unity. The Unity
@@ -54,17 +54,17 @@ If Unity asks about the Input System or "active input handling", every answer
 is meant to work (old, new or both, with or without the Input System package);
 see "Input" below. This is checked against stubs only.
 
-## What should happen on Play (rules version 2)
+## What should happen on Play (rules version 3)
 
 - A dark background and a menu: title "Inkweight – Prototyp", three buttons
   under "Ring gegen Bots" (2, 3, 4 figures), three buttons under "Solo-Arena".
 - **The self-check line** at the bottom of the menu: **"Kern-Selbsttest
-  bestanden (111 Prüfpunkte bitgenau). Regeln: ink-tuning-2"**. The number
+  bestanden (115 Prüfpunkte bitgenau). Regeln: ink-tuning-3"**. The number
   changes when the golden files are regenerated; the rules name must be
-  `ink-tuning-2`. The game replays two recorded fights from the golden files
+  `ink-tuning-3`. The game replays two recorded fights from the golden files
   (`ring_1v1_disc_lance` and `solo_brawl_full_run`) at start and compares the
   state hashes. The Console shows the same as
-  `Inkweight: self check passed, 111 checkpoints bit-identical`. A red line
+  `Inkweight: self check passed, 115 checkpoints bit-identical`. A red line
   "Kern-Selbsttest FEHLGESCHLAGEN" means this build computes differently from
   the reference; please report its text.
 - **Drawing screen:** a 32 x 32 paper canvas on the left; tools, ink meter and
@@ -76,22 +76,37 @@ see "Input" below. This is checked against stubs only.
   - **Stat panel:** four rows, each with a number, a bar and one German line:
     - "Gewicht" (ink cells of the body; "Schub" appears when hollow space adds
       push weight) – "Mehr Tinte schiebt stärker, ist aber langsamer."
-    - "Panzerung" with "Kern" and "Hohlraum" counts – "Gefüllte Flächen
-      panzern, Hohlräume ein wenig." Bar from 60 to 300 (longer scale with
-      catch-up ink).
-    - "Schärfe" with "Klingenfelder" – "Klingen sind Striche, nur ein Feld dick
-      (gelb)." Bar from 1.0 to 4.7.
+    - "Panzerung" with "Kern" and "Hohlraum" counts ("Hohlraum" is the number
+      of pocket cells that count) – "Gefüllte Flächen panzern, Hohlräume in
+      dicker Hülle ein wenig." Bar from 60 to 300 (longer scale with catch-up
+      ink).
+    - "Schärfe" with "Klingenfelder" – with at least one blade cell "Klingen
+      (gelb) schneiden mit der Schärfe, mindestens 1.2.", without one "Keine
+      Klinge (Striche, 1 Feld dick): stumpfer Schaden 1.2." (1.2 is the blunt
+      damage of the tuning; a cut never does less). Bar from 1.0 to 4.7.
     - "Tempo" – "Weniger Tinte ist schneller." Bar from the speed of a full
       budget (9.2 at 220 ink) to that of the smallest figure (32.4).
+  - **Element line** under the four rows: "Element: Glut (schlägt Moos)", or
+    "Element: Neutral" with the reason: "ab 30 % bunter Tinte (jetzt N %)"
+    while less than 30 % of the body is coloured (N is rounded down), or
+    "Gleichstand der Farben" when the most common colours tie. The element is
+    the most common colour once 30 % of the body is coloured in total; that
+    colour alone may be below 30 %.
+  - Cells that drip off are counted in the ink line ("1 Feld tropft ab und
+    zählt nicht" / "N Felder tropfen ab und zählen nicht").
     Reference values to compare with the browser prototype: a filled disc of
     208 cells has armour 270.4 and sharpness 1.00; a straight 12-cell line has
     armour 63.6 and sharpness 4.52.
   - **Question before ink is lost:** "Leeren", "Beispiel laden", "Menü", Esc
     and "Abbrechen" (upgrade redraw, only when it was changed) ask once
     ("Ja, verwerfen" / "Nein, weiterzeichnen") when the canvas has ink. Esc
-    while the question is open answers no.
-- **Ring:** the title shows the drawing clock: "30 s ab dem ersten Strich",
-  then "noch N s" from the first change of the drawing. When it reaches 0 the
+    while the question is open answers no. While the question is open the
+    "Menü" button is not shown and the drawing clock stands still ("Zeit: noch
+    N s (angehalten)").
+- **Ring:** a line of its own under the title shows the drawing clock: "Zeit:
+  30 s ab dem ersten Strich", then "Zeit: noch N s" from the first change of
+  the drawing. One frame takes at most a quarter of a second off the clock, so
+  a stall or a focus loss does not use up the drawing time. When it reaches 0 the
   round starts by itself with the drawing as it is; if that is not valid, with
   its last valid state, and if there is none, with an example figure (a note
   over the ring says which). "In den Ring!" starts earlier. Before the round
@@ -99,18 +114,28 @@ see "Input" below. This is checked against stubs only.
   figure shows its reason on the drawing screen instead of starting. In the
   fight: a paper-coloured round floor that shrinks, your figure with a yellow
   marker, the bots' figures, armour bars. Each bot is named with its style,
-  "Stürmer" (runs at you) or "Kreisler" (circles, then dashes); the styles
+  "Stürmer" (runs at the nearest figure) or "Kreisler" (circles, then dashes); the styles
   alternate between the bot seats. Steering: WASD or arrow keys, dash with
   Space. **Ram:** a dash that touches another figure ends there; the rammer
   flashes yellow and "Rammstoß!" (you rammed) or "Gerammt!" (you were rammed)
   appears for a moment. A figure that takes a hit flashes red. After the round
   you draw again; lost rounds give more ink. First to 3 wins.
 - **Solo:** draw the hero, then the thrown weapon, then the enemy of the wave
-  and its stake. Under the three stake buttons one line says what the chosen
-  stake does: number of enemies, armour of each, "Schaden x…" and "Tempo x…"
-  (stake x1.5 gives x1.25 and x1.1, stake x2 gives x1.5 and x1.2) and "Beute"
-  (ink per fallen enemy). Fight; between waves a small shop (heal 35 %, more
-  ink, new colour); after wave 5 the boss built from your enemy drawings.
+  and its stake ("Einsatz: mehr oder zähere Gegner, härtere Treffer, mehr
+  Beute"). Under the three stake buttons one line says what the chosen stake
+  does, with the numbers the core will use: number of enemies, armour of each,
+  "Tempo" (top speed of a copy in cells per second), "stumpfer Treffer" (damage
+  of one blunt touch of a copy on the hero, before the element factor) and
+  "Beute je Gegner". New in rules version 3: enemy copies move at 3 cells per
+  second plus 45 % of the drawing's own speed (times the stake factor), and the
+  weight of a copy adds a crush to its blunt touch, so heavy enemy drawings hit
+  harder and much harder at a higher stake (a 210-cell block in wave 3: 0.79
+  at x1, 2.57 at x2; a 13-cell dot 0.50 at x1 and 0.79 at x2, of which the
+  crush is 0.02 and 0.07). Fight; between waves a
+  small shop (heal 35 % of the full armour, more ink, new colour); after wave 5
+  the boss built from your enemy drawings ("kein Einsatz": the boss fight has
+  no stake, the boss and its escorts hit without crush). Figures in a crowd
+  sit inside each other less often than in version 2.
 - Esc or the "Menü" button leads back to the menu (during a fight without a
   question).
 
@@ -118,16 +143,20 @@ see "Input" below. This is checked against stubs only.
 
 1. Console: no compile errors, and the self-check line is there.
 2. Menu text is readable and the German umlauts are correct; the self-check
-   line names `ink-tuning-2`.
+   line names `ink-tuning-3`.
 3. Drawing: the cell under the mouse pointer is the one that gets painted (not
    mirrored or shifted), strokes have no gaps, the ink meter and stats change
    while drawing, the pale colour marks cells that drip off, thin strokes
    carry the yellow blade tint and the tint is readable on all four colours.
 4. The stat panel fits the right column (no cut-off or overlapping text, also
-   with the stake buttons on the enemy screen and in a narrow window).
+   with the stake buttons on the enemy screen and in a narrow window). The
+   lines that became longer in version 3 are the ones to look at: the element
+   line with its reason, the sharpness explanation, the stake heading and the
+   two-line stake text.
 5. The question box appears over the canvas, and nothing is painted while it
    is open.
-6. Ring clock: counts down in real seconds and starts the round at 0.
+6. Ring clock: its own line under the title, counts down in real seconds,
+   stands still while a question is open and starts the round at 0.
 7. Fight: the figure looks like the drawing with the canvas top as its front,
    it turns toward the steering direction, "up" on the keyboard moves it up on
    the screen, and it is not mirrored.
@@ -209,11 +238,16 @@ clashing names known to us, but not the full namespaces.
 
 `CoreTests` compiles the very same source files that Unity compiles (no copy),
 with the C# language version limited to 9. It checks every field of the 59
-stat vectors exactly and every checkpoint of the 17 simulation traces (state
+stat vectors exactly and every checkpoint of the 19 simulation traces (state
 hash layout 2, positions, velocities, armour; bot styles, tuning overrides,
 redraw upgrades and the per-trace checkpoint interval are taken from the trace
 file) bit for bit, the version 2 rules the golden files cannot show (figure
-check, the two thrown errors, stake helpers), plus the determinism rules of
+check, the two thrown errors, stake helpers), the version 3 rules (blunt
+bonus, enemy speed and crush, no crush in the boss fight, crowd relaxation
+only with more than two bodies), three branches no golden trace reaches (the
+`(1, 0)` contact normal, the upper limit of the wave armour scale, the throw
+skipping an enemy at 0 armour), a check that the golden traces change in this
+port when one new tuning value is changed, plus the determinism rules of
 the source text itself (no `float`, only `Math.Sqrt` and `Math.Floor`, no
 engine type). Run it in both configurations:
 `dotnet run --project CoreTests` and `dotnet run -c Release --project CoreTests`.
@@ -267,7 +301,7 @@ screen) without touching the core.
 
 The list below was collected by reading the Runtime sources (the stubs in
 `EngineStubs/UnityEngineStubs.cs` declare these members and a few neighbours).
-No engine member was added for rules version 2:
+No engine member was added for rules version 2 or 3:
 
 - `MonoBehaviour` (`Awake`, `Update`, `OnGUI`, `OnApplicationFocus`),
   `GameObject` (constructor with name, `AddComponent<T>`, `SetActive`,

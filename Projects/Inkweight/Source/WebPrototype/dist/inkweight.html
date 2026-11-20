@@ -164,7 +164,9 @@ select {
   background: var(--veil); border: 2px dashed var(--ink); border-radius: var(--blob);
   padding: 10px 12px; text-align: center; font-size: 0.92rem;
 }
-.hint p { margin: 0 0 8px; }
+.hint p { margin: 0 0 4px; }
+.hint ul { margin: 0 0 8px; padding: 0; list-style: none; }
+.hint li { margin: 1px 0; }
 .draw-side { flex: 0 0 auto; display: flex; flex-direction: column; gap: 5px; }
 .tools { display: grid; grid-template-columns: repeat(4, 1fr) 1.6fr 1.3fr; gap: 6px; }
 .tool { padding: 4px 6px; min-height: 42px; font-size: 0.85rem; white-space: nowrap; }
@@ -421,7 +423,12 @@ select {
       <div id="drawBoard" class="draw-board">
         <canvas id="drawCanvas" class="draw-canvas" aria-label="Zeichenfläche, 32 mal 32 Kästchen"></canvas>
         <div id="drawHint" class="hint" hidden>
-          <p><b>Zeichne mit dem Finger oder der Maus.</b> Oben ist vorne. Dünne Striche werden Klingen, auch schräge. Volle Flächen werden Panzer.</p>
+          <p><b>Zeichne los, oben ist vorne.</b> Drei Dinge zählen:</p>
+          <ul>
+            <li>Dünne Striche sind Klingen, auch schräge.</li>
+            <li>Gefüllte Flächen sind Panzer.</li>
+            <li>Was nicht dranhängt, tropft ab.</li>
+          </ul>
           <button id="drawHintOk" class="btn small primary" type="button">Alles klar</button>
         </div>
       </div>
@@ -499,7 +506,7 @@ select {
       <button id="sndSolo" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
     </div>
     <div class="panel">
-      <p>Du zeichnest einen Helden und seine Wurfwaffe. Vor jeder Welle zeichnest du auch den Gegner und bestimmst den Einsatz: ein höherer Einsatz bringt mehr Beute, aber auch mehr oder zähere Gegner, die härter zuschlagen und schneller sind. Dein Panzer heilt zwischen den Wellen nicht von selbst. Nach 5 Wellen kommt der Endgegner aus allen deinen Gegnern.</p>
+      <p>Du zeichnest einen Helden und seine Wurfwaffe. Vor jeder Welle zeichnest du auch den Gegner und bestimmst den Einsatz: ein höherer Einsatz bringt mehr Beute, aber auch mehr oder zähere Gegner, die härter zuschlagen und schneller sind. Schwere Gegner drücken mit ihrem Gewicht, bei höherem Einsatz noch stärker. Dein Panzer heilt zwischen den Wellen nicht von selbst. Nach 5 Wellen kommt der Endgegner aus allen deinen Gegnern; dort gibt es keinen Einsatz und niemand drückt.</p>
       <p><b>Wähle deine Startfarbe.</b> Schwarz hast du immer; Schwarz ist neutral und hat kein Element.</p>
       <div class="colour-pick">
         <button id="soloC2" class="btn big c2" type="button">Glut<small>schlägt Moos</small></button>
@@ -564,6 +571,8 @@ select {
       <p id="rulesElement" class="fine"></p>
       <h3>Im Kampf</h3>
       <p id="rulesFight" class="fine"></p>
+      <h3>Solo-Arena</h3>
+      <p id="rulesSolo" class="fine"></p>
       <p id="rulesHonest" class="fine honest">Alle Zahlen hier sind Testwerte dieses Prototyps. Nichts davon ist endgültig entschieden.</p>
     </div>
   </div>
@@ -573,7 +582,7 @@ select {
 <script>
 (function () {
 'use strict';
-var __INK_TUNING__ = {"version":"ink-tuning-2","note":"Tuning for core version 2 (Work Order INK-CORE-V2). All durations are whole ticks at physics.tickRate. All distances are canvas cells. Every value is a prototype proposal, not a Human decision. Changed and new keys against ink-tuning-1 are listed in CHANGES_V2.md.","canvas":{"width":32,"height":32},"ink":{"figureBudget":220,"weaponBudget":60,"minBodyCells":12,"weaponMinBodyCells":12},"stats":{"armourBase":60,"armourPerCore":1,"armourPerCell":0.3,"armourPerPocket":0.3,"pushPerPocket":0.1,"pocketCapPerCell":1,"sharpBase":1,"sharpMax":1.2,"sharpHalfCells":5,"sharpPurity":3,"sharpPurityWeightRef":60,"speedBase":38,"speedWeightRef":70,"bluntDamage":1.2,"sharpArmourCut":0.004},"element":{"minColouredPercent":30,"strongMult":1.5,"weakMult":0.75,"beats":[0,0,4,2,3]},"physics":{"tickRate":60,"hitCooldownTicks":24,"restitution":0.79,"accelBase":6,"accelWeightRef":400,"turnBase":8,"turnInertiaRef":6000,"dashSpeedMult":3.8,"dashTicks":12,"dashCooldownTicks":120,"dashAccel":1,"dashRestitution":0.3,"maxStepCells":0.4,"maxSubSteps":8,"deepNormalShare":0.5,"deepContactDepth":0.25,"extraSeparationPasses":2,"hitKnockbackPerDamage":39},"ring":{"startRadius":[0,0,44,50,56],"endRadius":16,"shrinkStartTick":300,"shrinkEndTick":2700,"suddenDeathTick":3600,"suddenDeathShrinkPerTick":0.05,"startDistanceFraction":0.6,"winsToTakeMatch":3,"catchUpPercentPerLostRound":15,"catchUpMaxSteps":4,"drawTimeSeconds":30},"bots":{"edgeMargin":5,"edgeBlend":6,"insideBias":0.6,"dashRange":10,"dashChancePercent":6,"wobbleTicks":45,"wobbleStrength":0.35,"lightRetreatFraction":0.45,"roundaboutDot":0.5,"roundaboutStrength":1,"circlerCrowdRange":18,"circlerStandoff":6,"circlerBlend":4,"circlerAttackLeadTicks":30,"circlerDashGap":9,"circlerAlignDot":0.9},"solo":{"arenaRadius":60,"waveBudgets":[120,170,230,300,380],"stakes":[1,1.5,2],"stakeDamageMult":[1,1.25,1.5],"stakeSpeedMult":[1,1.1,1.2],"copyInkOverhead":40,"maxCopies":10,"enemyInkBudget":220,"enemySpawnInset":6,"enemySpeedMult":0.55,"enemyArmourPerInk":0.6,"enemyArmourMult":0.2,"copyArmourScaleMin":0.5,"copyArmourScaleMax":2,"enemyDamageMult":0.4,"enemyDashRange":8,"enemyDashChancePercent":2,"throwIntervalBaseTicks":18,"throwIntervalTicksPerInk":0.5,"throwSpeedBase":60,"throwSpeedWeightRef":60,"projectileLifeTicks":120,"projectileRadiusMax":3,"weaponKnockbackPerInk":12,"dropLifeTicks":600,"pickupRange":3,"waveMaxTicks":10800,"upgradeCost":[60,90,120,150,180],"upgradeHeroInk":40,"upgradeWeaponInk":15,"upgradeHealPercent":35,"bossArmourMult":1.2,"bossEscortCopies":1,"botFleeDistance":14,"botWallMargin":10}};
+var __INK_TUNING__ = {"version":"ink-tuning-3","note":"Tuning for core version 3 (Work Order INK-CORE-V3). All durations are whole ticks at physics.tickRate. All distances are canvas cells. Every value is a prototype proposal, not a Human decision. Changed and new keys against ink-tuning-2 are listed in CHANGES_V3.md (against ink-tuning-1: CHANGES_V2.md).","canvas":{"width":32,"height":32},"ink":{"figureBudget":220,"weaponBudget":60,"minBodyCells":12,"weaponMinBodyCells":12},"stats":{"armourBase":60,"armourPerCore":1,"armourPerCell":0.3,"armourPerPocket":0.3,"pushPerPocket":0.1,"pocketCapPerCell":1,"sharpBase":1,"sharpMax":1.2,"sharpHalfCells":5,"sharpPurity":3,"sharpPurityWeightRef":60,"speedBase":38,"speedWeightRef":70,"bluntDamage":1.2,"sharpArmourCut":0.004},"element":{"minColouredPercent":30,"strongMult":1.5,"weakMult":0.75,"beats":[0,0,4,2,3]},"physics":{"tickRate":60,"hitCooldownTicks":24,"restitution":0.79,"accelBase":6,"accelWeightRef":400,"turnBase":8,"turnInertiaRef":6000,"dashSpeedMult":3.8,"dashTicks":12,"dashCooldownTicks":120,"dashAccel":1,"dashRestitution":0.3,"maxStepCells":0.4,"maxSubSteps":8,"deepNormalShare":0.5,"deepContactDepth":0.25,"extraSeparationPasses":8,"crowdRelaxPasses":4,"hitKnockbackPerDamage":39},"ring":{"startRadius":[0,0,44,50,56],"endRadius":16,"shrinkStartTick":300,"shrinkEndTick":2700,"suddenDeathTick":3600,"suddenDeathShrinkPerTick":0.05,"startDistanceFraction":0.6,"winsToTakeMatch":3,"catchUpPercentPerLostRound":15,"catchUpMaxSteps":4,"drawTimeSeconds":30},"bots":{"edgeMargin":5,"edgeBlend":6,"insideBias":0.6,"dashRange":10,"dashChancePercent":6,"wobbleTicks":45,"wobbleStrength":0.35,"lightRetreatFraction":0.45,"roundaboutDot":0.5,"roundaboutStrength":1,"circlerCrowdRange":18,"circlerStandoff":6,"circlerBlend":4,"circlerAttackLeadTicks":30,"circlerDashGap":9,"circlerAlignDot":0.9},"solo":{"arenaRadius":60,"waveBudgets":[120,170,230,300,380],"stakes":[1,1.5,2],"stakeDamageMult":[1,1.25,1.5],"stakeSpeedMult":[1,1.1,1.2],"copyInkOverhead":40,"maxCopies":10,"enemyInkBudget":220,"enemySpawnInset":6,"enemySpeedBase":3,"enemySpeedMult":0.45,"enemyCrushPerInk":0.004,"bossCrushMult":0,"enemyArmourPerInk":0.6,"enemyArmourMult":0.2,"copyArmourScaleMin":0.5,"copyArmourScaleMax":2,"enemyDamageMult":0.4,"enemyDashRange":8,"enemyDashChancePercent":2,"throwIntervalBaseTicks":18,"throwIntervalTicksPerInk":0.5,"throwSpeedBase":60,"throwSpeedWeightRef":60,"projectileLifeTicks":120,"projectileRadiusMax":3,"weaponKnockbackPerInk":12,"dropLifeTicks":600,"pickupRange":3,"waveMaxTicks":10800,"upgradeCost":[60,90,120,150,180],"upgradeHeroInk":40,"upgradeWeaponInk":15,"upgradeHealPercent":35,"bossArmourMult":1.2,"bossEscortCopies":1,"botFleeDistance":14,"botWallMargin":10}};
 var __mods = {}, __cache = {};
 function __req(id) { var e = __cache[id]; if (e) return e; e = __cache[id] = {}; __mods[id](e); return e; }
 
@@ -953,7 +962,6 @@ function buildFigure(cells, W, H, tuning, kind, budget) {
     }
   }
   const turnRate = ph.turnBase / (1 + stats.inertia / ph.turnInertiaRef); // radians per second (small-angle)
-  const t = turnRate / (2 * ph.tickRate); // tan(half step angle), approximated by the half angle
   let accelK = ph.accelBase / (1 + stats.N / ph.accelWeightRef) / ph.tickRate;
   if (accelK > 1) accelK = 1;
   return {
@@ -965,8 +973,6 @@ function buildFigure(cells, W, H, tuning, kind, budget) {
     mass: stats.push,
     accelK,
     turnRate,
-    turnCos: (1 - t * t) / (1 + t * t),
-    turnSin: (2 * t) / (1 + t * t),
   };
 }
 
@@ -985,6 +991,9 @@ function createBody(fig, x, y, fx, fy, team, armourMult, speedMult, damageMult) 
     alive: true,
     topSpeed: fig.stats.topSpeed * sm,
     damageMult: dm,
+    // added to the blunt damage of this body's touches before the multipliers
+    // (0 everywhere except solo enemy copies, see solo.js spawnEnemy)
+    bluntBonus: 0,
     dashTicks: 0, dashCd: 0, dashDx: 0, dashDy: 0,
     // steering direction of the running tick (set by the control step, used
     // by the sub-steps; not state between ticks, not hashed)
@@ -1100,6 +1109,24 @@ function stepWorld(world, inputs, tuning) {
         collidePair(world, i, j, a, b, tuning);
       }
     }
+    // Crowd relaxation (three or more bodies): pushing one pair apart can
+    // press a body into a third one. The pairs are scanned again, positions
+    // only, at most crowdRelaxPasses times, until no contact is deep.
+    if (n > 2) {
+      for (let r = 0; r < ph.crowdRelaxPasses; r++) {
+        let pushed = false;
+        for (let i = 0; i < n; i++) {
+          const a = bodies[i];
+          if (!a.alive) continue;
+          for (let j = i + 1; j < n; j++) {
+            const b = bodies[j];
+            if (!b.alive) continue;
+            if (relaxPair(a, b, ph)) pushed = true;
+          }
+        }
+        if (!pushed) break;
+      }
+    }
   }
 
   // 4. wall (solo arena only)
@@ -1205,7 +1232,7 @@ function scanCells(p, q, sign) {
 // contact the sharpness (never less than blunt) plus the armour cut: a blade
 // takes the share sharpArmourCut of the victim's full armour with every hit.
 function touchDamage(tuning, body, sharp, victim) {
-  const blunt = tuning.stats.bluntDamage;
+  const blunt = tuning.stats.bluntDamage + body.bluntBonus;
   if (!sharp) return blunt;
   const sh = body.fig.stats.sharpness;
   return (sh > blunt ? sh : blunt) + tuning.stats.sharpArmourCut * victim.maxHp;
@@ -1240,6 +1267,27 @@ function contactNormal(ph, a, b) {
   const l = Math.sqrt(l2);
   normal.x = nx / l;
   normal.y = ny / l;
+}
+
+// Position-only push of a pair whose contact is deeper than
+// deepContactDepth, by weight shares. Returns true when it pushed.
+function relaxPair(a, b, ph) {
+  const rx = a.x - b.x;
+  const ry = a.y - b.y;
+  const reach = a.fig.radius + b.fig.radius;
+  if (rx * rx + ry * ry >= reach * reach) return false;
+  scanPair(a, b);
+  if (scan.hits === 0 || scan.maxDepth <= ph.deepContactDepth) return false;
+  contactNormal(ph, a, b);
+  const invA = 1 / a.fig.mass;
+  const invB = 1 / b.fig.mass;
+  const invSum = invA + invB;
+  const d = scan.maxDepth;
+  a.x += normal.x * d * invA / invSum;
+  a.y += normal.y * d * invA / invSum;
+  b.x -= normal.x * d * invB / invSum;
+  b.y -= normal.y * d * invB / invSum;
+  return true;
 }
 
 function collidePair(world, i, j, a, b, tuning) {
@@ -1935,13 +1983,37 @@ function soloEnemyArmour(tuning, fig, scale) {
   return (so.enemyArmourPerInk * fig.stats.N + so.enemyArmourMult * fig.stats.armour) * scale;
 }
 
+// Top speed of one enemy copy in cells per second: a flat part every enemy
+// has plus a share of the drawing's own top speed, times the stake factor.
+// Heavy drawings stay the slowest enemies, but at the higher stakes they are
+// no longer slower than every hero.
+function soloEnemySpeed(tuning, fig, stakeIndex) {
+  const so = tuning.solo;
+  return (so.enemySpeedBase + so.enemySpeedMult * fig.stats.topSpeed) * so.stakeSpeedMult[stakeIndex];
+}
+
+// Crush (proposal, INK-CORE-V3): what the weight of an enemy copy adds to
+// its blunt touch damage, before the enemy and stake damage factors:
+// enemyCrushPerInk for every body cell, times the wave scale (how much staked
+// ink the copy carries, see soloWaveArmourScale), times the stake. In the
+// walled arena weight cannot push anybody out, so it hits harder instead, and
+// a stake that cannot buy another copy of a heavy drawing makes its copies
+// hit harder. Wave copies only: in the boss fight soloStartBoss multiplies
+// the value by bossCrushMult (0).
+function soloEnemyCrush(tuning, fig, scale, stakeIndex) {
+  const so = tuning.solo;
+  return so.enemyCrushPerInk * fig.stats.N * scale * so.stakes[stakeIndex];
+}
+
 // isBoss: the boss keeps its full armour times bossArmourMult.
 function spawnEnemy(tuning, run, fig, isBoss, stakeIndex, scale) {
   const so = tuning.solo;
   const u = randomUnit(run);
   const d = so.arenaRadius - so.enemySpawnInset;
   const body = createBody(fig, u[0] * d, u[1] * d, -u[0], -u[1], 1, 1,
-    so.enemySpeedMult * so.stakeSpeedMult[stakeIndex], so.enemyDamageMult * so.stakeDamageMult[stakeIndex]);
+    1, so.enemyDamageMult * so.stakeDamageMult[stakeIndex]);
+  body.topSpeed = soloEnemySpeed(tuning, fig, stakeIndex);
+  body.bluntBonus = soloEnemyCrush(tuning, fig, scale, stakeIndex);
   body.hp = isBoss ? fig.stats.armour * so.bossArmourMult : soloEnemyArmour(tuning, fig, scale);
   body.maxHp = body.hp;
   return body;
@@ -1997,6 +2069,10 @@ function soloStartBoss(tuning, run) {
     const fig = buildFigure(run.enemyDrawings[w], run.W, run.H, tuning, 'figure', total);
     for (let c = 0; c < so.bossEscortCopies; c++) enemies.push(spawnEnemy(tuning, run, fig, false, 0, 1));
   }
+  // The crush is what a stake buys in a wave. The boss fight has no stake:
+  // the crush of the boss and of every escort is multiplied by bossCrushMult
+  // (0: they hit as in a wave without crush).
+  for (let i = 0; i < enemies.length; i++) enemies[i].bluntBonus = enemies[i].bluntBonus * so.bossCrushMult;
   run.copies = enemies.length;
   run.stake = 1;
   run.stakeIndex = 0;
@@ -2189,6 +2265,8 @@ __exp.soloCopies = soloCopies;
 __exp.soloThrowIntervalTicks = soloThrowIntervalTicks;
 __exp.soloWaveArmourScale = soloWaveArmourScale;
 __exp.soloEnemyArmour = soloEnemyArmour;
+__exp.soloEnemySpeed = soloEnemySpeed;
+__exp.soloEnemyCrush = soloEnemyCrush;
 __exp.soloDropValue = soloDropValue;
 __exp.soloStartWave = soloStartWave;
 __exp.soloBossCells = soloBossCells;
@@ -2771,7 +2849,7 @@ const { W, H } = __req("app/tuning.js");
 
 const KEY = 'inkweight.gallery.v1';
 const BEST_KEY = 'inkweight.best.v1';
-const SEEN_KEY = 'inkweight.seenHint.v1';
+const SEEN_KEY = 'inkweight.seenHint.v2';
 const MAX_ITEMS = 40;
 let items = null;       // [{ id, kind: 'figure' | 'weapon', data: string of W*H digits }]
 let storageWorks = true;
@@ -3199,7 +3277,7 @@ function updatePanel() {
     const pct = has ? Math.floor(coloured * 100 / st.N) : 0;
     if (coloured === 0) why = 'Schwarz ist neutral: kein Element';
     else if (coloured * 100 < min * st.N) why = 'ab ' + min + ' % bunter Tinte (jetzt ' + pct + ' %)';
-    else why = 'Gleichstand der Farben: kein Element';
+    else why = 'Gleichstand: kein Element';
   }
   $('stElementWhy').textContent = why;
 
@@ -4524,6 +4602,86 @@ __exp.fightOverlay = fightOverlay;
 __exp.clearHud = clearHud;
 };
 
+// ---- app/botpick.js
+__mods["app/botpick.js"] = function (__exp) {
+// Which drawings the Ring bots get. No page access in here, so the choice
+// can be measured outside the browser too (build/ring_fairness.cjs).
+//
+// A pool entry is { cells, source: 'gallery' | 'placeholder', name?, weight }.
+// Rules, measured with a scripted first-time player (see the evidence of
+// INK-WEB-V4):
+// - A single human never meets two heavy bot figures (HEAVY_INK or more).
+// - While the player's gallery is small, the bots take placeholders, and a
+//   single human gets a fair first line-up: one heavy placeholder that only
+//   pushes and light ones that are beatable. The nastier placeholders (the
+//   heavy hedgehog, the fast worm, the urchin) wait until the gallery has
+//   OWN_MIN figures.
+// - From then on the bots prefer the player's own gallery figures.
+
+const HEAVY_INK = 150;
+const OWN_MIN = 3;
+const OWN_SHARE = 0.7;
+const FIRST_HEAVY = ['Klotz', 'Reif'];
+const FIRST_LIGHT = ['Ramme', 'Qualle', 'Speer', 'Stachel'];
+
+// Same shape, whatever the colours: a bot must not show up as the human's
+// own figure in another ink.
+function sameCells(a, b) {
+  if (!a || !b) return false;
+  for (let i = 0; i < a.length; i++) if ((a[i] !== 0) !== (b[i] !== 0)) return false;
+  return true;
+}
+
+// pool: { own: [...], built: [...] }; used: entries already handed out in
+// this match (the pick is added); taken: cell arrays no bot may show;
+// loneHuman: exactly one human sits in the match; rnd: () => 0..1.
+function pickBotDrawing(pool, used, taken, loneHuman, rnd) {
+  const random = rnd || Math.random;
+  const isFree = (d) => used.indexOf(d) === -1 && !(taken || []).some((t) => sameCells(t, d.cells));
+  const heavyOut = loneHuman && used.some((d) => d.weight >= HEAVY_INK);
+  const fits = (d) => isFree(d) && !(heavyOut && d.weight >= HEAVY_INK);
+  const ownReady = pool.own.length >= OWN_MIN;
+  let from = [];
+  if (ownReady && random() < OWN_SHARE) from = pool.own.filter(fits);
+  if (from.length === 0) {
+    let built = pool.built.filter(fits);
+    if (loneHuman && !ownReady) {
+      const names = used.length === 0 ? FIRST_HEAVY : FIRST_LIGHT;
+      const first = built.filter((d) => names.indexOf(d.name) !== -1);
+      if (first.length > 0) built = first;
+    }
+    from = built;
+  }
+  if (from.length === 0) from = pool.own.filter(fits);
+  if (from.length === 0) from = pool.built.filter((d) => !(taken || []).some((t) => sameCells(t, d.cells)) && !(heavyOut && d.weight >= HEAVY_INK));
+  if (from.length === 0) from = pool.built;
+  const d = from[Math.floor(random() * from.length)];
+  used.push(d);
+  return d;
+}
+
+// All bot drawings of a match at once, in a shuffled order so that the heavy
+// one does not always sit on the same seat.
+function pickBotDrawings(pool, count, loneHuman, rnd) {
+  const random = rnd || Math.random;
+  const used = [];
+  for (let i = 0; i < count; i++) pickBotDrawing(pool, used, null, loneHuman, random);
+  const order = used.slice();
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    const t = order[i]; order[i] = order[j]; order[j] = t;
+  }
+  return { order, used };
+}
+
+__exp.sameCells = sameCells;
+__exp.pickBotDrawing = pickBotDrawing;
+__exp.pickBotDrawings = pickBotDrawings;
+__exp.HEAVY_INK = HEAVY_INK;
+__exp.OWN_MIN = OWN_MIN;
+__exp.OWN_SHARE = OWN_SHARE;
+};
+
 // ---- app/ringmode.js
 __mods["app/ringmode.js"] = function (__exp) {
 // Mode B, the Ring: seats, drawing in turns, rounds, first to three wins,
@@ -4539,6 +4697,7 @@ const { thumbCanvas } = __req("app/sprites.js");
 const { galleryAll, galleryAdd, decode } = __req("app/gallery.js");
 const { SCRIBBLE_FIGURES } = __req("app/scribbles.js");
 const { KEY_ZONES, gamepadCount } = __req("app/input.js");
+const { pickBotDrawing, pickBotDrawings, sameCells } = __req("app/botpick.js");
 
 const SEAT_DEFAULTS = ['human', 'bot', 'bot', 'none'];
 let goHome = () => {};
@@ -4615,37 +4774,12 @@ function botPool() {
   for (const it of galleryAll()) {
     if (it.kind !== 'figure') continue;
     const cells = decode(it.data);
-    if (core.computeStats(cells, W, H, tuning, 'figure', tuning.ink.figureBudget).valid) own.push({ cells, source: 'gallery' });
+    const st = core.computeStats(cells, W, H, tuning, 'figure', tuning.ink.figureBudget);
+    if (st.valid && !own.some((o) => sameCells(o.cells, cells))) own.push({ cells, source: 'gallery', weight: st.N });
   }
   const built = SCRIBBLE_FIGURES.map((s) => ({ cells: s.cells, source: 'placeholder', name: s.name,
     weight: core.computeStats(s.cells, W, H, tuning, 'figure', tuning.ink.figureBudget).N }));
   return { own, built };
-}
-
-// Same shape, whatever the colours: a bot must not show up as the human's
-// own figure in another ink.
-function sameCells(a, b) {
-  if (!a || !b) return false;
-  for (let i = 0; i < a.length; i++) if ((a[i] !== 0) !== (b[i] !== 0)) return false;
-  return true;
-}
-
-// taken: cell arrays no bot may show (the humans' drawings of this round).
-function pickBotDrawing(pool, used, taken) {
-  const free = (list) => list.filter((d) => used.indexOf(d) === -1 && !(taken || []).some((t) => sameCells(t, d.cells)));
-  let from = free(pool.own);
-  // Placeholders: the first one a match hands out is a heavy figure, the
-  // later ones at least middle-weight, so the bots are no walkover.
-  let built = free(pool.built);
-  const placed = used.filter((d) => d.source === 'placeholder').length;
-  const strong = built.filter((d) => d.weight >= (placed === 0 ? 150 : 90));
-  if (strong.length > 0) built = strong;
-  if (from.length === 0 || (built.length > 0 && Math.random() < 0.4)) from = built.length > 0 ? built : from;
-  if (from.length === 0) from = pool.built.filter((d) => !(taken || []).some((t) => sameCells(t, d.cells)));
-  if (from.length === 0) from = pool.built;
-  const d = from[randomInt(from.length)];
-  used.push(d);
-  return d;
 }
 
 function statLine(st) {
@@ -4662,12 +4796,19 @@ async function playRing(seats, drawTime) {
   const drawings = new Array(n).fill(null);
   const source = new Array(n).fill('own');
   const pool = botPool();
-  const used = [];
-  for (let s = 0; s < n; s++) {
-    if (seats[s].human) continue;
-    const d = pickBotDrawing(pool, used);
-    drawings[s] = d.cells;
-    source[s] = d.source;
+  // Bot figures: see botpick.js (a single human never meets two heavy ones;
+  // a fair placeholder line-up while the gallery is small).
+  const loneHuman = humans.length === 1;
+  const picked = pickBotDrawings(pool, n - humans.length, loneHuman);
+  const used = picked.used;
+  {
+    let k = 0;
+    for (let s = 0; s < n; s++) {
+      if (seats[s].human) continue;
+      const d = picked.order[k++];
+      drawings[s] = d.cells;
+      source[s] = d.source;
+    }
   }
   window.__inkDebug.ringBotPicks = drawings.filter((d) => d).map((d) => d.join(''));
   // two bot styles, mixed: one storms straight in, the next one circles first
@@ -4714,7 +4855,10 @@ async function playRing(seats, drawTime) {
     const humanDrawings = humans.map((s) => drawings[s]);
     for (let s = 0; s < n; s++) {
       if (seats[s].human || !humanDrawings.some((h) => sameCells(h, drawings[s]))) continue;
-      const d = pickBotDrawing(pool, used, humanDrawings);
+      // the replaced figure no longer counts as handed out
+      const gone = used.findIndex((u) => u.cells === drawings[s]);
+      if (gone !== -1) used.splice(gone, 1);
+      const d = pickBotDrawing(pool, used, humanDrawings, loneHuman);
       drawings[s] = d.cells;
       source[s] = d.source;
     }
@@ -4759,7 +4903,9 @@ async function playRing(seats, drawTime) {
       humans: humans.length,
       step: (humanFn) => {
         const inputs = [];
-        for (let s = 0; s < n; s++) inputs.push(seats[s].human ? humanFn(humanIndex[s]) : null);
+        // measurement only (build/ring_fairness.cjs): a scripted player may steer the human seats
+        const pilot = window.__inkDebug.ringPilot;
+        for (let s = 0; s < n; s++) inputs.push(seats[s].human ? (pilot ? pilot(match, s) : humanFn(humanIndex[s])) : null);
         core.ringStep(tuning, match, core.ringBotInputs(tuning, match, inputs));
       },
       isOver: () => match.phase !== 'fight',
@@ -4861,7 +5007,7 @@ __mods["app/solomode.js"] = function (__exp) {
 
 const core = __req("core/index.js");
 const { tuning, W, H } = __req("app/tuning.js");
-const { $, el, onPress, showScreen, colours, coarsePointer, ELEMENT_NAMES, reducedMotion } = __req("app/ui.js");
+const { $, el, onPress, showScreen, colours, coarsePointer, ELEMENT_NAMES, reducedMotion, num } = __req("app/ui.js");
 const { sfx } = __req("app/audio.js");
 const { openDraw } = __req("app/drawscreen.js");
 const { runFight, fightOverlay, clearHud } = __req("app/fight.js");
@@ -4886,6 +5032,19 @@ function openSoloIntro() {
 function stakeLabel(i) {
   const v = so.stakes[i];
   return '×' + String(v).replace('.', ',');
+}
+
+// One touch of a wave copy of this drawing against the hero, as the core
+// computes it (physics.js touchDamage, solo.js spawnEnemy): blunt and, for a
+// touch with a blade, sharp. stats: the stats of the enemy drawing.
+function soloTouch(run, stats, scale, stakeIndex) {
+  const ts = tuning.stats;
+  const crush = core.soloEnemyCrush(tuning, { stats }, scale, stakeIndex);
+  const factor = so.enemyDamageMult * so.stakeDamageMult[stakeIndex]
+    * core.elementMultiplier(tuning, stats.element, run.heroFig.stats.element);
+  const blunt = ts.bluntDamage + crush;
+  const sharp = stats.S > 0 ? (stats.sharpness > blunt ? stats.sharpness : blunt) + ts.sharpArmourCut * run.heroMaxHp : blunt;
+  return { crush, blunt: blunt * factor, sharp: sharp * factor };
 }
 
 async function playSolo(startColour) {
@@ -4933,13 +5092,14 @@ async function playSolo(startColour) {
           const noteEl = el('p', { class: 'fine stake-note', id: 'stakeNote' });
           box.append(noteEl);
           let lastN = 0;
-          let lastCells = null;
+          let lastStats = null;
           const pct = (m) => Math.round((m - 1) * 100);
           function paint(stats) {
-            if (stats) lastN = stats.N;
-            // What a stake really does in rules version 2: more ink for the
+            if (stats) { lastN = stats.N; lastStats = stats; }
+            // What a stake really does in rules version 3: more ink for the
             // wave (more copies, or tougher ones where no further copy fits),
-            // harder hits, more speed, and each drop pays its share.
+            // harder hits (heavy copies crush harder with the stake), more
+            // speed, and each drop pays its share.
             for (let i = 0; i < buttons.length; i++) {
               const copies = lastN > 0 ? core.soloCopies(tuning, run.wave, i, lastN) : 0;
               const loot = lastN > 0 ? copies * core.soloDropValue(tuning, run.wave, i, lastN) : 0;
@@ -4950,17 +5110,22 @@ async function playSolo(startColour) {
               buttons[i].setAttribute('aria-pressed', i === stake ? 'true' : 'false');
             }
             let text = 'Höherer Einsatz: mehr Beute, härtere Gegner.';
-            if (lastN > 0) {
+            if (lastN > 0 && lastStats) {
               const scale = core.soloWaveArmourScale(tuning, run.wave, stake, lastN);
               const parts = [];
-              const dmg = pct(so.stakeDamageMult[stake]);
+              // What one touch of this very drawing takes off the hero at this
+              // stake (rules version 3): blunt damage plus the crush of a heavy
+              // copy, times the enemy and stake factors and the element. A
+              // touch with a blade is a cut and never does less.
+              const hit = soloTouch(run, lastStats, scale, stake);
+              parts.push(hit.sharp > hit.blunt + 0.049 ? 'Treffer bis ' + num(hit.sharp, 1) : 'Treffer ' + num(hit.blunt, 1));
               const spd = pct(so.stakeSpeedMult[stake]);
-              if (dmg > 0) parts.push('+' + dmg + ' % Schaden');
-              if (spd > 0) parts.push('+' + spd + ' % Tempo');
+              if (spd > 0) parts.push('Tempo +' + spd + ' %');
               const sc = Math.round(scale * 100);
-              if (sc >= 105) parts.push('+' + (sc - 100) + ' % Panzer');
-              else if (sc <= 95) parts.push('−' + (100 - sc) + ' % Panzer');
-              text = stakeLabel(stake) + ': Gegner ' + (parts.length ? 'mit ' + parts.join(', ') : 'in Grundstärke');
+              if (sc >= 105) parts.push('Panzer +' + (sc - 100) + ' %');
+              else if (sc <= 95) parts.push('Panzer −' + (100 - sc) + ' %');
+              text = stakeLabel(stake) + ' · Gegner: ' + parts.join(' · ');
+              window.__inkDebug.stakeHit = { stake, blunt: hit.blunt, sharp: hit.sharp, crush: hit.crush, scale };
             }
             stakeText = text;
             show();
@@ -4990,7 +5155,7 @@ async function playSolo(startColour) {
       const r = await fightOverlay('Der Endgegner', [
         el('div', { class: 'lineup' }, [el('div', { class: 'card' }, [thumbCanvas(core.soloBossCells(run), 64), el('span', { class: 'card-name', text: 'Alle in einem' })])]),
         el('p', { text: 'Er besteht aus allen Gegnern, die du gezeichnet hast, und bringt je einen davon mit.' }),
-        el('p', { class: 'fine', text: 'Hier gibt es keinen Einsatz: alle schlagen in Grundstärke zu.' }),
+        el('p', { class: 'fine', text: 'Hier gibt es keinen Einsatz: alle schlagen in Grundstärke zu, und auch schwere Gegner drücken hier nicht mit ihrem Gewicht.' }),
       ], 'In den Kampf', 'Zum Menü');
       if (r !== 'primary') { goHome(); return; }
       core.soloStartBoss(tuning, run);
@@ -5389,6 +5554,19 @@ $('btnFree').addEventListener('click', async () => {
     + num(te.strongMult, 1) + ', gegen das überlegene: ×' + num(te.weakMult, 2) + '. Schwarz ist neutral.';
   $('rulesFight').textContent = 'Jede Berührung kostet beide etwas Panzer. Scharf ist ein Treffer nur, wenn eine Klinge selbst den Gegner berührt. Ein Sprint, der eine Figur trifft, gibt ihr seinen Schwung mit (Rums!). '
     + 'Im Ring verliert, wer hinausfliegt oder keinen Panzer mehr hat.';
+  {
+    // Solo enemies, rules version 3: every number comes from the tuning file.
+    const so = tuning.solo;
+    const mult = (v) => '×' + String(v).replace('.', ',');
+    const stakeList = (arr) => arr.slice(1).map(mult).join(' und ');
+    $('rulesSolo').textContent = 'Ein Treffer eines Gegners zählt nur zu ' + pctText(so.enemyDamageMult) + ' %. Schwere Gegner drücken dafür mit ihrem Gewicht: ihre stumpfe Berührung wird je Kästchen Tinte um '
+      + num(so.enemyCrushPerInk, 3) + ' stärker (vor den ' + pctText(so.enemyDamageMult) + ' %), mal Einsatz, mal dem Faktor, um den die Welle ihren Panzer hebt oder senkt. Ein kleiner Punkt merkt davon fast nichts, ein großer Brocken viel. '
+      + 'Einsatz ' + stakeList(so.stakes) + ': aller Gegnerschaden ' + stakeList(so.stakeDamageMult) + ', Gegnertempo ' + stakeList(so.stakeSpeedMult)
+      + ', dazu mehr Beute und mehr oder zähere Gegner. Jeder Gegner läuft ' + num(so.enemySpeedBase, 0) + ' Kästchen pro Sekunde plus ' + pctText(so.enemySpeedMult)
+      + ' % vom Tempo seiner Zeichnung. Unter den Einsatz-Knöpfen steht, was ein Treffer genau dieses Gegners deinem Helden nimmt. '
+      + (so.bossCrushMult === 0 ? 'Im Endkampf gibt es keinen Einsatz, und dort drückt niemand: ' : 'Im Endkampf gibt es keinen Einsatz: ')
+      + 'eine stumpfe Berührung macht dort ' + num(tuning.stats.bluntDamage * so.enemyDamageMult, 2) + ' Schaden. Dein Panzer heilt nur durch „Flicken“.';
+  }
   const layer = $('rulesLayer');
   const open = () => { sfx('click'); layer.hidden = false; layer.scrollTop = 0; $('rulesClose').focus({ preventScroll: true }); };
   $('btnRules').addEventListener('click', open);

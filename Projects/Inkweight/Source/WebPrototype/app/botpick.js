@@ -16,7 +16,7 @@ export const HEAVY_INK = 150;
 export const OWN_MIN = 3;
 export const OWN_SHARE = 0.7;
 const FIRST_HEAVY = ['Klotz', 'Reif'];
-const FIRST_LIGHT = ['Ramme', 'Qualle', 'Speer'];
+const FIRST_LIGHT = ['Ramme', 'Qualle', 'Speer', 'Stachel'];
 
 // Same shape, whatever the colours: a bot must not show up as the human's
 // own figure in another ink.

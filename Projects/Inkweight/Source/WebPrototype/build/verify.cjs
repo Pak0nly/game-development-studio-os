@@ -180,7 +180,7 @@ async function runScenario(browser, name) {
   await sleep(200);
   await noSideScroll('rules');
   const rulesText = (await page.locator('#rulesLayer').innerText()).replace(/\s+/g, ' ');
-  for (const w of ['Menge ist Gewicht', 'Gewicht', 'Panzer', 'Schärfe', 'Tempo', 'Glut schlägt Moos schlägt Flut schlägt Glut', 'Testwerte']) {
+  for (const w of ['Menge ist Gewicht', 'Gewicht', 'Panzer', 'Schärfe', 'Tempo', 'Glut schlägt Moos schlägt Flut schlägt Glut', 'Testwerte', 'Solo-Arena', 'drücken', 'Im Endkampf gibt es keinen Einsatz, und dort drückt niemand']) {
     if (rulesText.indexOf(w) === -1) throw new Error('rules panel lacks: ' + w);
   }
   if (/\d\.\d/.test(rulesText)) throw new Error('decimal point in the rules panel');
@@ -278,6 +278,14 @@ async function runScenario(browser, name) {
       note('line-up: main button bottom ' + r.bottom + ' of ' + r.ih + ', bot styles shown: ' + r.styles + ' (core botStyle ' + r.core + ')');
       if (r.bottom > r.ih) throw new Error('"In den Ring!" is below the window');
       if (!/stürmt/.test(r.styles) || !/kreist/.test(r.styles)) throw new Error('the two bot styles are not mixed: ' + r.styles);
+      // fair first line-up: a single human never meets two heavy bot figures,
+      // and with a small gallery the bots are one heavy and one light placeholder
+      const bots = await page.evaluate(() => Array.from(document.querySelectorAll('#ovBody .card')).filter((c) => c.querySelector('.fine'))
+        .map((c) => ({ placeholder: !!c.querySelector('.badge') && /Platzhalter/.test(c.querySelector('.badge').textContent), weight: parseInt((c.textContent.match(/Gewicht (\d+)/) || [0, '0'])[1], 10) })));
+      const heavy = bots.filter((b) => b.weight >= 150).length;
+      note('line-up bots: ' + bots.map((b) => (b.placeholder ? 'placeholder ' : 'gallery ') + b.weight).join(', '));
+      if (heavy > 1) throw new Error('two heavy bot figures against a single human');
+      if (bots.every((b) => b.placeholder) && heavy !== 1) throw new Error('first line-up is not one heavy and one light placeholder');
       await shot('ring-lineup');
     }
     await sleep(600);
@@ -654,7 +662,15 @@ async function runChecks(browser) {
   await press('#drawBack'); // nothing drawn: leaves at once
   await page.waitForSelector('#scrStart:not([hidden])');
   await press('#btnFree');
+  // first-run hint: three things, one tap, gone
+  const hintItems = await page.locator('#drawHint li').allTextContents();
+  note('first-run hint: ' + hintItems.join(' | '));
+  if (hintItems.length !== 3 || !/Klingen/.test(hintItems[0]) || !/Panzer/.test(hintItems[1]) || !/tropft ab/.test(hintItems[2])) throw new Error('first-run hint: ' + hintItems.join(' | '));
+  const hintBox = await page.evaluate(() => { const h = document.getElementById('drawHint').getBoundingClientRect(); const c = document.getElementById('drawCanvas').getBoundingClientRect(); return [h.top >= c.top, h.bottom <= c.bottom, Math.round(h.height), Math.round(c.height)]; });
+  if (!hintBox[0] || !hintBox[1]) throw new Error('first-run hint does not fit the sheet: ' + hintBox.join(' '));
   await press('#drawHintOk');
+  if (await page.locator('#drawHint').isVisible()) throw new Error('first-run hint stayed');
+  ok('first-run hint shows three things (blades, armour, drips), fits the sheet (' + hintBox[2] + ' of ' + hintBox[3] + ' px) and closes with one tap');
   if ((await text('stElementWhy')) !== 'wächst' && !/ab \d+ %|Schwarz ist neutral/.test(await text('stElementWhy'))) throw new Error('element line');
   await stroke([[16, 6], [16, 24]]);
   await stroke([[10, 14], [22, 14]]);
@@ -745,7 +761,7 @@ async function runChecks(browser) {
     note('element lines: [' + low + '] [' + one + '] [' + tie + '] [' + plur + ']');
     if (low !== 'Neutral | ab 30 % bunter Tinte (jetzt 17 %)') throw new Error('element below the threshold: ' + low);
     if (one !== 'Glut | schlägt Moos, verliert gegen Flut') throw new Error('element at 30 %: ' + one);
-    if (tie !== 'Neutral | Gleichstand der Farben: kein Element') throw new Error('element tie: ' + tie);
+    if (tie !== 'Neutral | Gleichstand: kein Element') throw new Error('element tie: ' + tie);
     if (plur !== 'Flut | schlägt Glut, verliert gegen Moos') throw new Error('element plurality: ' + plur);
     ok('element line: below 30 % coloured ink, at 30 %, a tie and a plurality each say the truth');
     // m-3: one loose cell, singular
@@ -864,14 +880,20 @@ async function runChecks(browser) {
   await press('#drawDone');
   await page.waitForSelector('#fightOverlay:not([hidden])');
   const mine = await page.evaluate(() => window.__inkDebug.ringDrawings.find((d) => d.human).data);
-  // a gallery that holds exactly this drawing, and bots that always take a gallery drawing first
-  await page.evaluate((data) => localStorage.setItem('inkweight.gallery.v1', JSON.stringify([{ id: 'check', kind: 'figure', data }])), mine);
+  // a gallery that is big enough for the bots to use it (three figures) with
+  // this drawing first, and bots that always take the first free gallery drawing
+  await page.evaluate((data) => {
+    const sheet = (x0, y0, w, h) => { const c = new Array(32 * 32).fill(0); for (let y = y0; y < y0 + h; y++) for (let x = x0; x < x0 + w; x++) c[y * 32 + x] = 1; return c.join(''); };
+    localStorage.setItem('inkweight.gallery.v1', JSON.stringify([{ id: 'check', kind: 'figure', data },
+      { id: 'check2', kind: 'figure', data: sheet(12, 12, 6, 6) }, { id: 'check3', kind: 'figure', data: sheet(10, 14, 9, 3) }]));
+  }, mine);
   await page.reload();
   await page.waitForSelector('#btnRing');
-  await page.evaluate(() => { window.__realRandom = Math.random; Math.random = () => 0.99; });
+  await page.evaluate(() => { window.__realRandom = Math.random; Math.random = () => 0; });
   await press('#btnRing');
   await press('#ringGo');
   await page.waitForSelector('#scrDraw:not([hidden])');
+  if (await page.locator('#drawHint').isVisible()) throw new Error('first-run hint came back after a reload');
   const firstPick = await page.evaluate((data) => window.__inkDebug.ringBotPicks.filter((d) => d === data).length, mine);
   await ringFigure();
   await press('#drawDone');
@@ -947,8 +969,28 @@ async function runChecks(browser) {
   note('stakes for a big enemy in wave 1: ' + stakes.join(' | '));
   // a big enemy comes alone at every stake; the stakes still differ honestly
   if (stakes.some((t) => /^\[aus\]/.test(t))) throw new Error('a stake is switched off');
-  if (!/Grundstärke|−\d+ % Panzer/.test(stakes[0]) || /Schaden/.test(stakes[0])) throw new Error('stake x1 text: ' + stakes[0]);
-  if (!/\+25 % Schaden, \+10 % Tempo/.test(stakes[1]) || !/\+50 % Schaden, \+20 % Tempo/.test(stakes[2])) throw new Error('higher stakes do not say what they do');
+  // rules version 3: every stake shows what one touch of this enemy takes off
+  // the hero; a heavy enemy crushes harder with the stake, so the touch grows
+  // by more than the plain damage factor (1,25 and 1,5)
+  const hits = stakes.map((t) => parseFloat(((t.match(/Treffer (?:bis )?(\d+,\d)/) || [0, 'NaN'])[1]).replace(',', '.')));
+  if (hits.some((h) => !(h > 0))) throw new Error('a stake does not show its touch: ' + stakes.join(' | '));
+  if (/Tempo/.test(stakes[0]) || !/Tempo \+10 %/.test(stakes[1]) || !/Tempo \+20 %/.test(stakes[2])) throw new Error('stake speed text: ' + stakes.join(' | '));
+  if (!(hits[1] > hits[0] * 1.25 && hits[2] > hits[0] * 1.5)) throw new Error('a heavy enemy must hit harder with the stake than the plain factor: ' + hits.join(' '));
+  // the shown touch is what the core does: start nothing, compute it from the core's own functions
+  const coreHits = await page.evaluate(() => {
+    const d = window.__inkDebug;
+    const t = d.tuning;
+    const N = parseInt(document.getElementById('stWeight').textContent, 10);
+    const out = [];
+    for (let k = 0; k < 3; k++) {
+      const scale = d.core.soloWaveArmourScale(t, d.run.wave, k, N);
+      const crush = d.core.soloEnemyCrush(t, { stats: { N } }, scale, k);
+      out.push((t.stats.bluntDamage + crush) * t.solo.enemyDamageMult * t.solo.stakeDamageMult[k]);
+    }
+    return out;
+  });
+  note('touch of the big enemy per stake, shown ' + hits.join(' / ') + ', core ' + coreHits.map((h) => h.toFixed(3)).join(' / '));
+  for (let k = 0; k < 3; k++) if (Math.abs(hits[k] - coreHits[k]) > 0.051) throw new Error('shown touch differs from the core at stake ' + k);
   const loot = stakes.map((t) => parseInt((t.match(/(\d+) Beute/) || [0, '0'])[1], 10));
   if (!(loot[0] < loot[1] && loot[1] < loot[2])) throw new Error('loot does not grow with the stake: ' + loot.join(' '));
   // what the page promises is what the core does
@@ -958,7 +1000,7 @@ async function runChecks(browser) {
   });
   if (promise !== '1 1.25 1.5 / 1 1.1 1.2') throw new Error('tuning changed, adapt the check: ' + promise);
   await shot('07-stakes-honest');
-  ok('every stake says what it does (more loot, harder hits, more speed, tougher or weaker copies)');
+  ok('every stake says what it does (more loot, the real touch of this enemy with its crush, more speed, tougher or weaker copies)');
   // N-1: "Ende" on the solo enemy screen says that the run ends
   await press('#drawBack');
   await sleep(200);

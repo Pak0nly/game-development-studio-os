@@ -138,7 +138,7 @@ function updatePanel() {
     const pct = has ? Math.floor(coloured * 100 / st.N) : 0;
     if (coloured === 0) why = 'Schwarz ist neutral: kein Element';
     else if (coloured * 100 < min * st.N) why = 'ab ' + min + ' % bunter Tinte (jetzt ' + pct + ' %)';
-    else why = 'Gleichstand der Farben: kein Element';
+    else why = 'Gleichstand: kein Element';
   }
   $('stElementWhy').textContent = why;
 

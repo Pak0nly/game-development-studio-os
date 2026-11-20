@@ -184,6 +184,19 @@ $('btnFree').addEventListener('click', async () => {
     + num(te.strongMult, 1) + ', gegen das überlegene: ×' + num(te.weakMult, 2) + '. Schwarz ist neutral.';
   $('rulesFight').textContent = 'Jede Berührung kostet beide etwas Panzer. Scharf ist ein Treffer nur, wenn eine Klinge selbst den Gegner berührt. Ein Sprint, der eine Figur trifft, gibt ihr seinen Schwung mit (Rums!). '
     + 'Im Ring verliert, wer hinausfliegt oder keinen Panzer mehr hat.';
+  {
+    // Solo enemies, rules version 3: every number comes from the tuning file.
+    const so = tuning.solo;
+    const mult = (v) => '×' + String(v).replace('.', ',');
+    const stakeList = (arr) => arr.slice(1).map(mult).join(' und ');
+    $('rulesSolo').textContent = 'Ein Treffer eines Gegners zählt nur zu ' + pctText(so.enemyDamageMult) + ' %. Schwere Gegner drücken dafür mit ihrem Gewicht: ihre stumpfe Berührung wird je Kästchen Tinte um '
+      + num(so.enemyCrushPerInk, 3) + ' stärker (vor den ' + pctText(so.enemyDamageMult) + ' %), mal Einsatz, mal dem Faktor, um den die Welle ihren Panzer hebt oder senkt. Ein kleiner Punkt merkt davon fast nichts, ein großer Brocken viel. '
+      + 'Einsatz ' + stakeList(so.stakes) + ': aller Gegnerschaden ' + stakeList(so.stakeDamageMult) + ', Gegnertempo ' + stakeList(so.stakeSpeedMult)
+      + ', dazu mehr Beute und mehr oder zähere Gegner. Jeder Gegner läuft ' + num(so.enemySpeedBase, 0) + ' Kästchen pro Sekunde plus ' + pctText(so.enemySpeedMult)
+      + ' % vom Tempo seiner Zeichnung. Unter den Einsatz-Knöpfen steht, was ein Treffer genau dieses Gegners deinem Helden nimmt. '
+      + (so.bossCrushMult === 0 ? 'Im Endkampf gibt es keinen Einsatz, und dort drückt niemand: ' : 'Im Endkampf gibt es keinen Einsatz: ')
+      + 'eine stumpfe Berührung macht dort ' + num(tuning.stats.bluntDamage * so.enemyDamageMult, 2) + ' Schaden. Dein Panzer heilt nur durch „Flicken“.';
+  }
   const layer = $('rulesLayer');
   const open = () => { sfx('click'); layer.hidden = false; layer.scrollTop = 0; $('rulesClose').focus({ preventScroll: true }); };
   $('btnRules').addEventListener('click', open);

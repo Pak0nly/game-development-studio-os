@@ -5,7 +5,7 @@ import { W, H } from './tuning.js';
 
 const KEY = 'inkweight.gallery.v1';
 const BEST_KEY = 'inkweight.best.v1';
-const SEEN_KEY = 'inkweight.seenHint.v1';
+const SEEN_KEY = 'inkweight.seenHint.v2';
 const MAX_ITEMS = 40;
 let items = null;       // [{ id, kind: 'figure' | 'weapon', data: string of W*H digits }]
 let storageWorks = true;
