@@ -1,0 +1,145 @@
+$ /opt/node22/bin/node --test   (in Projects/Inkweight/Source/WebPrototype)
+# Subtest: parse and print round trip
+ok 1 - parse and print round trip
+# Subtest: body is the largest 4-connected group, the rest drips off
+ok 2 - body is the largest 4-connected group, the rest drips off
+# Subtest: tie between groups goes to the group with the lowest cell index
+ok 3 - tie between groups goes to the group with the lowest cell index
+# Subtest: minimum body size and ink budget decide validity
+ok 4 - minimum body size and ink budget decide validity
+# Subtest: core and sharp cells of a block and a line
+ok 5 - core and sharp cells of a block and a line
+# Subtest: sharp cells (rules 2): ink one cell thick is blade, hand-derived cases
+ok 6 - sharp cells (rules 2): ink one cell thick is blade, hand-derived cases
+# Subtest: a blade on a solid body raises the sharpness stat clearly
+ok 7 - a blade on a solid body raises the sharpness stat clearly
+# Subtest: enclosed space and pocket cells, hand-derived
+ok 8 - enclosed space and pocket cells, hand-derived
+# Subtest: cells at the canvas border count outside as empty
+ok 9 - cells at the canvas border count outside as empty
+# Subtest: stat formulas follow the tuning file
+ok 10 - stat formulas follow the tuning file
+# Subtest: centroid and radius
+ok 11 - centroid and radius
+# Subtest: element: 30 percent threshold, plurality and ties
+ok 12 - element: 30 percent threshold, plurality and ties
+# Subtest: element multipliers: Ember beats Moss beats Tide beats Ember
+ok 13 - element multipliers: Ember beats Moss beats Tide beats Ember
+# Subtest: figure template lists body cells in index order with local coordinates
+ok 14 - figure template lists body cells in index order with local coordinates
+# Subtest: regenerating the golden stat vectors gives byte-identical output
+ok 15 - regenerating the golden stat vectors gives byte-identical output
+# Subtest: regenerating the golden simulation traces gives byte-identical output
+ok 16 - regenerating the golden simulation traces gives byte-identical output
+# Subtest: golden stat vectors can be read back from their text rows
+ok 17 - golden stat vectors can be read back from their text rows
+# Subtest: golden traces cover ring duels, three and four figures and solo, and are small
+ok 18 - golden traces cover ring duels, three and four figures and solo, and are small
+# Subtest: golden traces reach sudden death, simultaneous knock-outs, every solo ending and both ink upgrades
+ok 19 - golden traces reach sudden death, simultaneous knock-outs, every solo ending and both ink upgrades
+# Subtest: the core uses only the allowed math functions and no ambient randomness or time
+ok 20 - the core uses only the allowed math functions and no ambient randomness or time
+# Subtest: generator is reproducible and stays in range
+ok 21 - generator is reproducible and stays in range
+# Subtest: random drawings: invariants of body and stats
+ok 22 - random drawings: invariants of body and stats
+# Subtest: random drawings: shifting, mirroring and recolouring keep N, C and S
+ok 23 - random drawings: shifting, mirroring and recolouring keep N, C and S
+# Subtest: adding ink never lowers weight, and more weight is never faster
+ok 24 - adding ink never lowers weight, and more weight is never faster
+# Subtest: front vector stays a unit vector and turns toward the steering direction
+ok 25 - front vector stays a unit vector and turns toward the steering direction
+# Subtest: top speed is reached but not exceeded without a dash; dash is faster and has a cooldown
+ok 26 - top speed is reached but not exceeded without a dash; dash is faster and has a cooldown
+# Subtest: weight pushes: the heavier figure drives the lighter one back
+ok 27 - weight pushes: the heavier figure drives the lighter one back
+# Subtest: contact damage: sharp or blunt, element multiplier, cooldown per direction
+ok 28 - contact damage: sharp or blunt, element multiplier, cooldown per direction
+# Subtest: figures of one team do not damage each other
+ok 29 - figures of one team do not damage each other
+# Subtest: ring radius never grows and reaches zero
+ok 30 - ring radius never grows and reaches zero
+# Subtest: ring-out and armour loss eliminate; last one standing wins the round
+ok 31 - ring-out and armour loss eliminate; last one standing wins the round
+# Subtest: catch-up ink: +15 percent per lost round up to the cap
+ok 32 - catch-up ink: +15 percent per lost round up to the cap
+# Subtest: bot matches end, first to the win target takes the match, same seed gives the same hashes
+ok 33 - bot matches end, first to the win target takes the match, same seed gives the same hashes
+# Subtest: human input replaces the bot for a seat; idle seats stay where they are
+ok 34 - human input replaces the bot for a seat; idle seats stay where they are
+# Subtest: M3: the Ring refuses figures that are too small or over the seat budget
+ok 35 - M3: the Ring refuses figures that are too small or over the seat budget
+# Subtest: M5: the ring hash sees cooldowns, dash direction, bot wobble, bot style and the round
+ok 36 - M5: the ring hash sees cooldowns, dash direction, bot wobble, bot style and the round
+# Subtest: both bot styles steer with a vector of length at most 1 and finish rounds
+ok 37 - both bot styles steer with a vector of length at most 1 and finish rounds
+# Subtest: I1: two 20-cell lines dashing broadside from gaps of 6 to 14 cells never cross
+ok 38 - I1: two 20-cell lines dashing broadside from gaps of 6 to 14 cells never cross
+# Subtest: I1: a fast small figure does not pass through a one-cell line, at any offset
+ok 39 - I1: a fast small figure does not pass through a one-cell line, at any offset
+# Subtest: I1: a dash transfers its push and ends on contact
+ok 40 - I1: a dash transfers its push and ends on contact
+# Subtest: sub-steps: a tick is cut so that no body moves more than maxStepCells per part
+ok 41 - sub-steps: a tick is cut so that no body moves more than maxStepCells per part
+# Subtest: I3: a sharp touch never does less than a blunt touch
+ok 42 - I3: a sharp touch never does less than a blunt touch
+# Subtest: copies are paid from the wave budget times the stake
+ok 43 - copies are paid from the wave budget times the stake
+# Subtest: heavier weapons are thrown less often
+ok 44 - heavier weapons are thrown less often
+# Subtest: invalid hero, weapon and enemy drawings are refused
+ok 45 - invalid hero, weapon and enemy drawings are refused
+# Subtest: a wave spawns the paid copies inside the arena and the fight ends
+ok 46 - a wave spawns the paid copies inside the arena and the fight ends
+# Subtest: upgrades: cost, one per break, heal, colour, redraw with more ink
+ok 47 - upgrades: cost, one per break, heal, colour, redraw with more ink
+# Subtest: boss drawing is the union of the wave designs; earliest wave gives the colour
+ok 48 - boss drawing is the union of the wave designs; earliest wave gives the colour
+# Subtest: a full bot run is deterministic and reaches a final state
+ok 49 - a full bot run is deterministic and reaches a final state
+# Subtest: hero bot returns a steering vector of length at most 1
+ok 50 - hero bot returns a steering vector of length at most 1
+# Subtest: boss can only be started after wave five
+ok 51 - boss can only be started after wave five
+# Subtest: stake: the whole staked wave budget is paid out, and enemies get faster and hit harder
+ok 52 - stake: the whole staked wave budget is paid out, and enemies get faster and hit harder
+# Subtest: enemy copies: thin designs are fragile, filled designs are tough, the boss keeps full armour
+ok 53 - enemy copies: thin designs are fragile, filled designs are tough, the boss keeps full armour
+# Subtest: M2: when the hero and the last enemy fall in the same tick the run is lost
+ok 54 - M2: when the hero and the last enemy fall in the same tick the run is lost
+# Subtest: M6: a shot is not spent on an enemy that is already at 0 armour
+ok 55 - M6: a shot is not spent on an enemy that is already at 0 armour
+# Subtest: M5: the solo hash sees budgets, colours, the upgrade flag, the wave and the cooldowns
+ok 56 - M5: the solo hash sees budgets, colours, the upgrade flag, the wave and the cooldowns
+# tests 56
+# suites 0
+# pass 56
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1012.987142
+$ node  tools/gen_golden.js --check
+golden files match
+$ node --jitless tools/gen_golden.js --check
+golden files match
+$ node --no-opt tools/gen_golden.js --check
+golden files match
+$ node tools/trace_summary.js
+ring_1v1_disc_lance | checkpoints 100 | rounds [ticks, winner, outTick, outReason] [[2749,0,"-1/2749","/ring"],[2763,1,"2763/-1","ring/"],[2963,0,"-1/2963","/ring"],[2841,0,"-1/2841","/ring"]] | wins [3,1]
+ring_1v1_cross_block | checkpoints 42 | rounds [ticks, winner, outTick, outReason] [[898,1,"898/-1","ring/"],[1961,1,"1961/-1","ring/"],[1581,1,"1581/-1","ring/"]] | wins [0,3]
+ring_1v1_scripted | checkpoints 6 | rounds [ticks, winner, outTick, outReason] [[508,0,"-1/508","/ring"]] | wins [1,0]
+ring_3_star_wedge_needle | checkpoints 74 | rounds [ticks, winner, outTick, outReason] [[1606,0,"-1/1606/1260","/armour/ring"],[1049,1,"1049/-1/914","ring//ring"],[1997,2,"1595/1997/-1","armour/armour/"],[1736,2,"1736/1575/-1","armour/armour/"],[1601,2,"1601/1572/-1","armour/armour/"]] | wins [1,1,3]
+ring_4_disc_star_comb_dot | checkpoints 53 | rounds [ticks, winner, outTick, outReason] [[2171,0,"-1/1727/2171/1854","/armour/armour/armour"],[1693,0,"-1/1693/1693/1602","/armour/armour/armour"],[1911,0,"-1/1702/1911/1702","/armour/armour/armour"]] | wins [3,0,0,0]
+ring_4_one_scripted_seat | checkpoints 41 | rounds [ticks, winner, outTick, outReason] [[2254,2,"639/2254/-1/2247","ring/ring//ring"],[2334,2,"154/1922/-1/2334","ring/armour//ring"]] | wins [0,0,2,0]
+ring_1v1_circler_vs_rusher | checkpoints 72 | rounds [ticks, winner, outTick, outReason] [[2594,1,"2594/-1","ring/"],[2797,1,"2797/2797","armour/armour"],[2675,1,"2675/2675","armour/armour"]] | wins [0,3]
+ring_4_circlers | checkpoints 48 | rounds [ticks, winner, outTick, outReason] [[2293,2,"1896/2293/-1/2039","ring/armour//armour"],[3024,2,"525/2147/-1/3024","ring/ring//armour"]] | wins [0,0,2,0]
+ring_1v1_sudden_death | checkpoints 14 | rounds [ticks, winner, outTick, outReason] [[3674,0,"-1/3674","/ring"]] | wins [1,0]
+ring_2_idle_simultaneous_tie | checkpoints 10 | rounds [ticks, winner, outTick, outReason] [[1998,0,"1998/1998","ring/ring"],[1998,0,"1998/1998","ring/ring"]] | wins [2,0]
+ring_3_simultaneous_nearest_wins | checkpoints 5 | rounds [ticks, winner, outTick, outReason] [[1889,2,"1889/1889/1889","ring/ring/ring"]] | wins [0,0,1]
+solo_kite_two_waves | checkpoints 12 | fights [phase, endReason, ticks, copies, upgrade] [["cleared","",818,4,"ok"],["cleared","",485,2,""]] | final {"phase":"cleared","endReason":"","wave":2,"score":410,"wallet":350,"heroHp":257.2411764705883,"heroMaxHp":273.6,"heroBudget":220,"weaponBudget":60,"heroN":208,"weaponN":20}
+solo_brawl_full_run | checkpoints 49 | fights [phase, endReason, ticks, copies, upgrade] [["cleared","",469,2,"ok"],["cleared","",448,3,"ok"],["cleared","",843,1,"ok"],["cleared","",792,5,"ok"],["cleared","",753,2,"ok"],["dead","armour",2234,6,""]] | final {"phase":"dead","endReason":"armour","wave":5,"score":1750,"wallet":1150,"heroHp":-1.2526508000159537,"heroMaxHp":223.9,"heroBudget":220,"weaponBudget":60,"heroN":197,"weaponN":13}
+solo_win_with_boss | checkpoints 63 | fights [phase, endReason, ticks, copies, upgrade] [["cleared","",516,1,"ok"],["cleared","",516,1,"ok"],["cleared","",516,1,"ok"],["cleared","",516,1,"ok"],["cleared","",516,1,"ok"],["won","",4548,6,""]] | final {"phase":"won","endReason":"","wave":5,"score":1450,"wallet":850,"heroHp":170,"heroMaxHp":170,"heroBudget":220,"weaponBudget":60,"heroN":32,"weaponN":20}
+solo_upgrades_hero_and_weapon_ink | checkpoints 20 | fights [phase, endReason, ticks, copies, upgrade] [["cleared","",423,3,"ok"],["cleared","",1141,1,"ok"],["cleared","",689,2,""]] | final {"phase":"cleared","endReason":"","wave":3,"score":665,"wallet":515,"heroHp":235.08795588442126,"heroMaxHp":279.2,"heroBudget":260,"weaponBudget":75,"heroN":210,"weaponN":32}
+solo_hero_death | checkpoints 11 | fights [phase, endReason, ticks, copies, upgrade] [["cleared","",147,1,""],["cleared","",411,1,""],["dead","armour",485,7,""]] | final {"phase":"dead","endReason":"armour","wave":2,"score":775,"wallet":775,"heroHp":-0.012357997087007355,"heroMaxHp":170,"heroBudget":220,"weaponBudget":60,"heroN":12,"weaponN":12}
+solo_time_limit | checkpoints 5 | fights [phase, endReason, ticks, copies, upgrade] [["dead","time",600,1,""]] | final {"phase":"dead","endReason":"time","wave":0,"score":0,"wallet":0,"heroHp":170,"heroMaxHp":170,"heroBudget":220,"weaponBudget":60,"heroN":32,"weaponN":12}

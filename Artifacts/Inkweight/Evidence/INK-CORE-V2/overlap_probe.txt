@@ -1,0 +1,9 @@
+line turns into block, 400 ticks: ticks with overlap > 0.5: 0, max 0.012, after 2 s idle 0.000
+line vs block          rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 22964, max 0.06
+needle vs disc         rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 24758, max 0.24
+lance vs shield        rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 23791, max 0.22
+cross vs block         rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 23610, max 0.07
+star vs wedge          rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 24912, max 0.25
+splinter vs disc       rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 27889, max 0.24
+spiral vs block        rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 27507, max 0.04
+comb vs hedgehog       rounds 12, rounds with overlap > 0.5: 8, ticks > 0.5: 52 of 21305, max 0.79

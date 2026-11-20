@@ -10,7 +10,7 @@
 //   wx = x + (-fy) * lx - fx * ly
 //   wy = y +   fx  * lx + (-fy) * ly
 
-import { computeStats, extractBody, countNeighbours, elementMultiplier } from './drawing.js';
+import { computeStats, extractBody, countNeighbours, isSharpCell, elementMultiplier } from './drawing.js';
 
 // Build the immutable template of a drawing: stats plus collision cells.
 // Cells are listed in ascending cell index (y * W + x).
@@ -35,7 +35,7 @@ export function buildFigure(cells, W, H, tuning, kind, budget) {
       ly.push(y + 0.5 - stats.cy);
       colour.push(v);
       const nb = countNeighbours(body, W, H, x, y);
-      sharp.push(8 - nb >= tuning.stats.sharpMinEmptyNeighbours);
+      sharp.push(isSharpCell(body, W, H, x, y));
       if (nb < 8) boundary.push(k);
     }
   }
@@ -49,7 +49,7 @@ export function buildFigure(cells, W, H, tuning, kind, budget) {
     count: lx.length,
     lx, ly, sharp, colour, boundary, grid,
     radius: stats.radius,
-    mass: stats.N,
+    mass: stats.push,
     accelK,
     turnRate,
     turnCos: (1 - t * t) / (1 + t * t),
@@ -73,6 +73,9 @@ export function createBody(fig, x, y, fx, fy, team, armourMult, speedMult, damag
     topSpeed: fig.stats.topSpeed * sm,
     damageMult: dm,
     dashTicks: 0, dashCd: 0, dashDx: 0, dashDy: 0,
+    // steering direction of the running tick (set by the control step, used
+    // by the sub-steps; not state between ticks, not hashed)
+    turning: false, turnDx: 0, turnDy: 0,
   };
 }
 
@@ -82,14 +85,15 @@ export function createWorld(bodies, wallRadius) {
   const n = bodies.length;
   const cd = new Array(n * n);
   for (let i = 0; i < n * n; i++) cd[i] = 0;
-  return { bodies, cd, events: [], wallRadius: wallRadius === undefined ? 0 : wallRadius };
+  return { bodies, cd, events: [], wallRadius: wallRadius === undefined ? 0 : wallRadius, subSteps: 1 };
 }
 
 const NO_INPUT = { mx: 0, my: 0, dash: false };
 
 // One fixed tick. inputs[i] = { mx, my, dash } for body i (missing = idle).
-// Order: 1 control (index order), 2 integrate, 3 pairs (i < j, index order),
-// 4 wall. Elimination rules belong to the mode modules.
+// Order: 1 control (index order), 2 hit cooldowns, 3 sub-steps (each one:
+// turn and integrate every body, then pairs i < j in index order), 4 wall. Elimination rules
+// belong to the mode modules.
 export function stepWorld(world, inputs, tuning) {
   const ph = tuning.physics;
   const bodies = world.bodies;
@@ -112,8 +116,11 @@ export function stepWorld(world, inputs, tuning) {
       dx = mx / len;
       dy = my / len;
       if (len2 > 1) { mx = dx; my = dy; }
-      turnToward(b, dx, dy);
     }
+    // the turn itself happens inside the sub-steps
+    b.turning = len2 > 0 && (b.fx !== dx || b.fy !== dy);
+    b.turnDx = dx;
+    b.turnDy = dy;
     if (b.dashCd > 0) b.dashCd--;
     if (inp.dash && b.dashCd === 0 && b.dashTicks === 0) {
       if (len2 > 0) { b.dashDx = dx; b.dashDy = dy; } else { b.dashDx = b.fx; b.dashDy = b.fy; }
@@ -138,23 +145,47 @@ export function stepWorld(world, inputs, tuning) {
     b.vy += (tvy - b.vy) * k;
   }
 
-  // 2. integrate
+  // 2. hit cooldowns, once per tick
+  for (let i = 0; i < n * n; i++) if (world.cd[i] > 0) world.cd[i]--;
+
+  // 3. sub-steps. The tick is cut into equal parts so that no cell of any
+  // body moves more than maxStepCells per part: the speed of a body (as it is
+  // after control) plus, while it turns, the speed of its outermost cell
+  // (size radius times turn rate). Two bodies then close by less than one
+  // cell between two contact scans, so thin figures cannot jump over or turn
+  // into each other.
+  let maxSpeed = 0;
   for (let i = 0; i < n; i++) {
     const b = bodies[i];
     if (!b.alive) continue;
-    b.x += b.vx * dt;
-    b.y += b.vy * dt;
+    let sp = Math.sqrt(b.vx * b.vx + b.vy * b.vy);
+    if (b.turning) sp += b.fig.radius * b.fig.turnRate;
+    if (sp > maxSpeed) maxSpeed = sp;
   }
-
-  // 3. pairs
-  for (let i = 0; i < n * n; i++) if (world.cd[i] > 0) world.cd[i]--;
-  for (let i = 0; i < n; i++) {
-    const a = bodies[i];
-    if (!a.alive) continue;
-    for (let j = i + 1; j < n; j++) {
-      const b = bodies[j];
+  let sub = Math.floor(maxSpeed * dt / ph.maxStepCells) + 1;
+  if (sub > ph.maxSubSteps) sub = ph.maxSubSteps;
+  const h = dt / sub;
+  world.subSteps = sub;
+  for (let s = 0; s < sub; s++) {
+    for (let i = 0; i < n; i++) {
+      const b = bodies[i];
       if (!b.alive) continue;
-      collidePair(world, i, j, a, b, tuning);
+      if (b.turning) {
+        // one part of this tick's turn step: half-angle tangent t / sub
+        const t = b.fig.turnRate / (2 * ph.tickRate * sub);
+        turnToward(b, b.turnDx, b.turnDy, (1 - t * t) / (1 + t * t), (2 * t) / (1 + t * t));
+      }
+      b.x += b.vx * h;
+      b.y += b.vy * h;
+    }
+    for (let i = 0; i < n; i++) {
+      const a = bodies[i];
+      if (!a.alive) continue;
+      for (let j = i + 1; j < n; j++) {
+        const b = bodies[j];
+        if (!b.alive) continue;
+        collidePair(world, i, j, a, b, tuning);
+      }
     }
   }
 
@@ -178,15 +209,14 @@ export function stepWorld(world, inputs, tuning) {
   }
 }
 
-// Rotate the front vector toward the unit direction (dx, dy) by at most one
-// turn step, then renormalise.
-function turnToward(b, dx, dy) {
-  const fig = b.fig;
+// Rotate the front vector toward the unit direction (dx, dy) by at most the
+// angle with cosine turnCos and sine turnSin, then renormalise.
+function turnToward(b, dx, dy, turnCos, turnSin) {
   const dot = b.fx * dx + b.fy * dy;
-  if (dot >= fig.turnCos) { b.fx = dx; b.fy = dy; return; }
+  if (dot >= turnCos) { b.fx = dx; b.fy = dy; return; }
   const cross = b.fx * dy - b.fy * dx;
-  const cs = fig.turnCos;
-  const sn = cross >= 0 ? fig.turnSin : -fig.turnSin;
+  const cs = turnCos;
+  const sn = cross >= 0 ? turnSin : -turnSin;
   const nx = b.fx * cs - b.fy * sn;
   const ny = b.fx * sn + b.fy * cs;
   const len = Math.sqrt(nx * nx + ny * ny);
@@ -195,7 +225,7 @@ function turnToward(b, dx, dy) {
 }
 
 // Scratch result of scanCells.
-const scan = { sx: 0, sy: 0, maxDepth: 0, hits: 0, pSharp: false, qSharp: false };
+const scan = { sx: 0, sy: 0, maxDepth: 0, deepX: 0, deepY: 0, hits: 0, pSharp: false, qSharp: false };
 
 // Every boundary cell of p (a circle of radius 0.5) is tested against the
 // cells of q in the 3 x 3 block around it in q's grid. Adds depth-weighted
@@ -238,19 +268,65 @@ function scanCells(p, q, sign) {
         if (pf.sharp[k]) { if (sign > 0) scan.pSharp = true; else scan.qSharp = true; }
         if (qf.sharp[m]) { if (sign > 0) scan.qSharp = true; else scan.pSharp = true; }
         let depth = 1;
+        let wnx = 0;
+        let wny = 0;
         if (d2 > 0) {
           const d = Math.sqrt(d2);
           depth = 1 - d;
           // normal q -> p in q-local, weighted by depth, rotated to the world
           const nx = ex / d * depth;
           const ny = ey / d * depth;
-          scan.sx += sign * (qc * nx - qs * ny);
-          scan.sy += sign * (qs * nx + qc * ny);
+          wnx = sign * (qc * nx - qs * ny);
+          wny = sign * (qs * nx + qc * ny);
+          scan.sx += wnx;
+          scan.sy += wny;
         }
-        if (depth > scan.maxDepth) scan.maxDepth = depth;
+        // the deepest contact keeps its own (depth-weighted) normal
+        if (depth > scan.maxDepth) { scan.maxDepth = depth; scan.deepX = wnx; scan.deepY = wny; }
       }
     }
   }
+}
+
+// Damage of one touch before multipliers: blunt, or with a sharp cell in the
+// contact the sharpness (never less than blunt) plus the armour cut: a blade
+// takes the share sharpArmourCut of the victim's full armour with every hit.
+function touchDamage(tuning, body, sharp, victim) {
+  const blunt = tuning.stats.bluntDamage;
+  if (!sharp) return blunt;
+  const sh = body.fig.stats.sharpness;
+  return (sh > blunt ? sh : blunt) + tuning.stats.sharpArmourCut * victim.maxHp;
+}
+
+// Scratch result of contactNormal.
+const normal = { x: 0, y: 0 };
+
+// Scan the pair (a's boundary against b, then b's against a) into `scan`.
+function scanPair(a, b) {
+  scan.sx = 0; scan.sy = 0; scan.maxDepth = 0; scan.deepX = 0; scan.deepY = 0; scan.hits = 0;
+  scan.pSharp = false; scan.qSharp = false;
+  scanCells(a, b, 1);   // a's boundary against b's cells; pSharp = a, qSharp = b
+  scanCells(b, a, -1);  // b's boundary against a's cells; flags are swapped back by sign
+}
+
+// Unit contact normal of the last scan; it pushes a away from b. Normally the
+// summed contact vectors; when contacts on opposite sides cancel (the sum is
+// shorter than deepNormalShare times the deepest depth) the deepest
+// contact's own normal; then centre a minus centre b; then (1, 0).
+function contactNormal(ph, a, b) {
+  let nx = scan.sx;
+  let ny = scan.sy;
+  let l2 = nx * nx + ny * ny;
+  const lim = ph.deepNormalShare * scan.maxDepth;
+  if (l2 < lim * lim) {
+    const dl2 = scan.deepX * scan.deepX + scan.deepY * scan.deepY;
+    if (dl2 > 1e-12) { nx = scan.deepX; ny = scan.deepY; l2 = dl2; }
+  }
+  if (l2 < 1e-12) { nx = a.x - b.x; ny = a.y - b.y; l2 = nx * nx + ny * ny; }
+  if (l2 < 1e-12) { nx = 1; ny = 0; l2 = 1; }
+  const l = Math.sqrt(l2);
+  normal.x = nx / l;
+  normal.y = ny / l;
 }
 
 function collidePair(world, i, j, a, b, tuning) {
@@ -259,23 +335,13 @@ function collidePair(world, i, j, a, b, tuning) {
   const ry = a.y - b.y;
   const reach = a.fig.radius + b.fig.radius;
   if (rx * rx + ry * ry >= reach * reach) return;
-  scan.sx = 0; scan.sy = 0; scan.maxDepth = 0; scan.hits = 0;
-  scan.pSharp = false; scan.qSharp = false;
-  scanCells(a, b, 1);   // a's boundary against b's cells; pSharp = a, qSharp = b
-  scanCells(b, a, -1);  // b's boundary against a's cells; flags are swapped back by sign
+  scanPair(a, b);
   if (scan.hits === 0) return;
   const aSharp = scan.pSharp;
   const bSharp = scan.qSharp;
-
-  // contact normal: pushes a away from b
-  let nx = scan.sx;
-  let ny = scan.sy;
-  let l2 = nx * nx + ny * ny;
-  if (l2 < 1e-12) { nx = rx; ny = ry; l2 = nx * nx + ny * ny; }
-  if (l2 < 1e-12) { nx = 1; ny = 0; l2 = 1; }
-  const l = Math.sqrt(l2);
-  nx = nx / l;
-  ny = ny / l;
+  contactNormal(ph, a, b);
+  const nx = normal.x;
+  const ny = normal.y;
 
   const invA = 1 / a.fig.mass;
   const invB = 1 / b.fig.mass;
@@ -285,20 +351,42 @@ function collidePair(world, i, j, a, b, tuning) {
   a.y += ny * depth * invA / invSum;
   b.x -= nx * depth * invB / invSum;
   b.y -= ny * depth * invB / invSum;
+  // A contact that is still deep after the push (interlocked teeth, a body
+  // squeezed by a third one) is scanned and pushed again, positions only, at
+  // most extraSeparationPasses times. Velocity, damage and the sharp flags
+  // come from the first scan.
+  for (let pass = 0; pass < ph.extraSeparationPasses; pass++) {
+    scanPair(a, b);
+    if (scan.hits === 0 || scan.maxDepth <= ph.deepContactDepth) break;
+    contactNormal(ph, a, b);
+    const d2 = scan.maxDepth;
+    a.x += normal.x * d2 * invA / invSum;
+    a.y += normal.y * d2 * invA / invSum;
+    b.x -= normal.x * d2 * invB / invSum;
+    b.y -= normal.y * d2 * invB / invSum;
+  }
   const rel = (a.vx - b.vx) * nx + (a.vy - b.vy) * ny;
+  const dashing = a.dashTicks > 0 || b.dashTicks > 0;
   if (rel < 0) {
-    const imp = -(1 + ph.restitution) * rel / invSum;
+    // a contact that involves a dashing body is a ram: its own bounce factor
+    const imp = -(1 + (dashing ? ph.dashRestitution : ph.restitution)) * rel / invSum;
     a.vx += nx * imp * invA;
     a.vy += ny * imp * invA;
     b.vx -= nx * imp * invB;
     b.vy -= ny * imp * invB;
+  }
+  // a contact ends the dash of both bodies, so the control step of the next
+  // tick does not overwrite the velocity the contact has just given them
+  if (dashing) {
+    if (a.dashTicks > 0) { a.dashTicks = 0; world.events.push({ type: 'ram', from: i, to: j }); }
+    if (b.dashTicks > 0) { b.dashTicks = 0; world.events.push({ type: 'ram', from: j, to: i }); }
   }
 
   // damage, once per direction per cooldown; never inside one team
   if (a.team === b.team) return;
   const n = world.bodies.length;
   if (world.cd[i * n + j] === 0) {
-    const dmg = (aSharp ? a.fig.stats.sharpness : tuning.stats.bluntDamage)
+    const dmg = touchDamage(tuning, a, aSharp, b)
       * a.damageMult * elementMultiplier(tuning, a.fig.stats.element, b.fig.stats.element);
     b.hp -= dmg;
     world.cd[i * n + j] = ph.hitCooldownTicks;
@@ -308,7 +396,7 @@ function collidePair(world, i, j, a, b, tuning) {
     world.events.push({ type: 'hit', from: i, to: j, damage: dmg, sharp: aSharp });
   }
   if (world.cd[j * n + i] === 0) {
-    const dmg = (bSharp ? b.fig.stats.sharpness : tuning.stats.bluntDamage)
+    const dmg = touchDamage(tuning, b, bSharp, a)
       * b.damageMult * elementMultiplier(tuning, b.fig.stats.element, a.fig.stats.element);
     a.hp -= dmg;
     world.cd[j * n + i] = ph.hitCooldownTicks;

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   computeStats, extractBody, buildFigure, createBody, createWorld, stepWorld, rngCreate, rngInt, rngFloat, rngU32,
-  ringCreateMatch, ringStartRound, ringStep, ringBotInputs, ringInkBudget, ringRadiusAt, hashRing,
+  ringCreateMatch, ringStartRound, ringStep, ringBotInputs, ringInkBudget, ringRadiusAt, hashRing, ringCheckFigure, rngDerive,
 } from '../core/index.js';
 import { loadTuning } from '../tools/load_tuning.js';
 import { blank, set, rect, recolour, W, H, archetype } from '../sim/archetypes.js';
@@ -35,11 +35,14 @@ test('generator is reproducible and stays in range', () => {
   }
   assert.ok(same); assert.ok(differs);
   for (let i = 0; i < 1000; i++) { const f = rngFloat(a); assert.ok(f >= 0 && f < 1); const k = rngInt(a, 7); assert.ok(k >= 0 && k < 7); }
-  // fixed reference values for the C# port
+  // fixed reference values for the C# port (written down, not recomputed)
   const r = rngCreate(12345);
-  assert.deepEqual([rngU32(r), rngU32(r), rngU32(r)], REF_RNG);
+  assert.deepEqual([rngU32(r), rngU32(r), rngU32(r)], [3438003404, 976339029, 1163348040]);
+  const d = rngDerive(7, 2);
+  assert.equal(d.s, 395558742);
+  assert.equal(rngInt(d, 100), 38);
+  assert.equal(rngFloat(d), 0.10031384229660034);
 });
-const REF_RNG = (() => { const r = rngCreate(12345); return [rngU32(r), rngU32(r), rngU32(r)]; })();
 
 test('random drawings: invariants of body and stats', () => {
   const rng = rngCreate(99);
@@ -134,7 +137,7 @@ test('contact damage: sharp or blunt, element multiplier, cooldown per direction
       const key = e.from + '>' + e.to;
       if (lastHit[key] !== undefined) assert.ok(i - lastHit[key] >= T.physics.hitCooldownTicks, 'cooldown respected');
       lastHit[key] = i;
-      if (e.sharp) assert.equal(e.damage, w.bodies[e.from].fig.stats.sharpness);
+      if (e.sharp) assert.equal(e.damage, Math.max(T.stats.bluntDamage, w.bodies[e.from].fig.stats.sharpness) + T.stats.sharpArmourCut * w.bodies[e.to].maxHp);
       else assert.equal(e.damage, T.stats.bluntDamage);
     }
   }
@@ -204,4 +207,53 @@ test('human input replaces the bot for a seat; idle seats stay where they are', 
   const idle = { mx: 0, my: 0, dash: false };
   for (let i = 0; i < 30; i++) ringStep(T, m, ringBotInputs(T, m, [idle, idle]));
   assert.equal(m.world.bodies[1].x, x1);
+});
+
+// M3
+test('M3: the Ring refuses figures that are too small or over the seat budget', () => {
+  const m = ringCreateMatch(T, 2, 1);
+  const empty = buildFigure(blank(), W, H, T, 'figure');
+  const full = blank(); rect(full, 0, 0, 31, 31, 1);
+  const fullFig = buildFigure(full, W, H, T, 'figure');
+  assert.equal(ringCheckFigure(T, m, 0, empty), 'tooSmall');
+  assert.equal(ringCheckFigure(T, m, 0, fullFig), 'overBudget');
+  assert.equal(ringCheckFigure(T, m, 0, fig('disc')), '');
+  assert.throws(() => ringStartRound(T, m, [empty, fig('disc')]), /seat 0 figure: tooSmall/);
+  assert.throws(() => ringStartRound(T, m, [fig('disc'), fullFig]), /seat 1 figure: overBudget/);
+  assert.equal(m.phase, 'draw', 'a refused start changes nothing');
+  assert.equal(m.round, 0);
+  // drips count against the budget; catch-up ink widens it
+  const big = blank(); rect(big, 4, 10, 26, 20, 1); // 253 cells
+  const bigFig = buildFigure(big, W, H, T, 'figure', 253);
+  assert.equal(ringCheckFigure(T, m, 1, bigFig), 'overBudget');
+  m.lost[1] = 1;
+  assert.equal(ringInkBudget(T, m, 1), 253);
+  assert.equal(ringCheckFigure(T, m, 1, bigFig), '');
+});
+
+// M5
+test('M5: the ring hash sees cooldowns, dash direction, bot wobble, bot style and the round', () => {
+  const start = () => { const m = ringCreateMatch(T, 2, 5); ringStartRound(T, m, [fig('disc'), fig('lance')]); return m; };
+  const base = hashRing(start());
+  const changes = [
+    (m) => { m.world.cd[1] = 3; },
+    (m) => { m.world.bodies[0].dashDx = 1; },
+    (m) => { m.world.bodies[1].dashDy = -1; },
+    (m) => { m.botWobble[1] = 1; },
+    (m) => { m.botStyle[0] = 1; },
+    (m) => { m.round = 2; },
+  ];
+  for (let i = 0; i < changes.length; i++) { const m = start(); changes[i](m); assert.notEqual(hashRing(m), base, 'change ' + i); }
+  assert.equal(hashRing(start()), base);
+});
+
+test('both bot styles steer with a vector of length at most 1 and finish rounds', () => {
+  for (const styles of [[1, 1], [0, 1], [1, 0, 1, 0]]) {
+    const names = styles.length === 2 ? ['line', 'block'] : ['hoop', 'disc', 'needle', 'star'];
+    const m = playRingMatch(T, names.map(fig), 31, (mm) => {
+      const inp = ringBotInputs(T, { ...mm, botRng: mm.botRng.map((r) => ({ s: r.s })), botWobble: mm.botWobble.slice() }, null);
+      for (const x of inp) assert.ok(x.mx * x.mx + x.my * x.my <= 1 + 1e-9);
+    }, null, styles);
+    assert.equal(m.phase, 'matchOver');
+  }
 });

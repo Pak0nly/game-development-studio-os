@@ -18,9 +18,11 @@ export function ringCreateMatch(tuning, seatCount, seed) {
   const wins = [];
   const lost = [];
   const botRng = [];
+  const botStyle = [];
   for (let i = 0; i < seatCount; i++) {
     wins.push(0);
     lost.push(0);
+    botStyle.push(0);
     botRng.push(rngDerive(seed, i));
   }
   return {
@@ -38,7 +40,16 @@ export function ringCreateMatch(tuning, seatCount, seed) {
     outReason: [],       // per seat: '' | 'ring' | 'armour'
     botRng,
     botWobble: [],       // per seat: current sideways wobble of the bot (-1, 0, 1)
+    botStyle,            // per seat: 0 = rusher, 1 = circler (see bots.js); the caller may change it
   };
+}
+
+// Check a figure template for a seat before a round. Returns '' when it may
+// start, else 'tooSmall' or 'overBudget' (against the seat's catch-up budget).
+export function ringCheckFigure(tuning, match, seat, fig) {
+  if (!fig || !fig.stats || fig.stats.N < tuning.ink.minBodyCells) return 'tooSmall';
+  if (fig.stats.filled > ringInkBudget(tuning, match, seat)) return 'overBudget';
+  return '';
 }
 
 // Ink budget of a seat for its next drawing (catch-up rule 6).
@@ -67,6 +78,10 @@ export function ringStartRound(tuning, match, figures) {
   if (match.phase === 'matchOver') throw new Error('match is over');
   if (figures.length !== match.seatCount) throw new Error('one figure per seat');
   const n = match.seatCount;
+  for (let seat = 0; seat < n; seat++) {
+    const why = ringCheckFigure(tuning, match, seat, figures[seat]);
+    if (why !== '') throw new Error('seat ' + seat + ' figure: ' + why);
+  }
   const slots = SLOTS[n];
   const R = tuning.ring.startRadius[n];
   const d = R * tuning.ring.startDistanceFraction;

@@ -49,6 +49,8 @@ export function soloCreateRun(tuning, seed, heroCells, weaponCells, W, H, startC
     events: [],
     tick: 0, throwCd: 0,
     copies: 0, stake: 1,
+    stakeIndex: 0,        // index into tuning.solo.stakes of the running wave (0 for the boss)
+    dropValue: 0,         // ink of one drop in the running wave; 0 = the enemy's own N (boss fight)
   };
   let chk = soloCheckDrawing(tuning, run, heroCells, W, H, 'hero');
   if (!chk.ok) throw new Error('hero drawing: ' + chk.reason);
@@ -61,10 +63,11 @@ export function soloCreateRun(tuning, seed, heroCells, weaponCells, W, H, startC
   return run;
 }
 
-// Number of enemy copies a design gets in a wave.
+// Number of enemy copies a design gets in a wave. Every copy costs its own
+// ink plus the flat fee copyInkOverhead.
 export function soloCopies(tuning, waveIndex, stakeIndex, N) {
   const so = tuning.solo;
-  let copies = Math.floor(so.waveBudgets[waveIndex] * so.stakes[stakeIndex] / N);
+  let copies = Math.floor(so.waveBudgets[waveIndex] * so.stakes[stakeIndex] / (N + so.copyInkOverhead));
   if (copies < 1) copies = 1;
   if (copies > so.maxCopies) copies = so.maxCopies;
   return copies;
@@ -101,25 +104,63 @@ function beginFight(tuning, run, enemyBodies) {
   run.phase = 'fight';
 }
 
-function spawnEnemy(tuning, run, fig, armourMult) {
+// How much of the staked wave budget each copy carries, compared with what a
+// copy costs: budget * stake / (copies * (N + copyInkOverhead)), limited to
+// copyArmourScaleMin .. copyArmourScaleMax. Above 1 when the copy limit leaves
+// ink unspent, below 1 when the budget does not even pay for one copy.
+export function soloWaveArmourScale(tuning, waveIndex, stakeIndex, N) {
+  const so = tuning.solo;
+  const copies = soloCopies(tuning, waveIndex, stakeIndex, N);
+  let scale = so.waveBudgets[waveIndex] * so.stakes[stakeIndex] / (copies * (N + so.copyInkOverhead));
+  if (scale < so.copyArmourScaleMin) scale = so.copyArmourScaleMin;
+  if (scale > so.copyArmourScaleMax) scale = so.copyArmourScaleMax;
+  return scale;
+}
+
+// Armour of one enemy copy: enemyArmourPerInk for every body cell plus
+// enemyArmourMult times the armour of the drawing, times the wave scale (1
+// for boss escorts). Size counts directly, so a big drawing is never fragile.
+export function soloEnemyArmour(tuning, fig, scale) {
+  const so = tuning.solo;
+  return (so.enemyArmourPerInk * fig.stats.N + so.enemyArmourMult * fig.stats.armour) * scale;
+}
+
+// isBoss: the boss keeps its full armour times bossArmourMult.
+function spawnEnemy(tuning, run, fig, isBoss, stakeIndex, scale) {
   const so = tuning.solo;
   const u = randomUnit(run);
   const d = so.arenaRadius - so.enemySpawnInset;
-  return createBody(fig, u[0] * d, u[1] * d, -u[0], -u[1], 1, armourMult, so.enemySpeedMult, so.enemyDamageMult);
+  const body = createBody(fig, u[0] * d, u[1] * d, -u[0], -u[1], 1, 1,
+    so.enemySpeedMult * so.stakeSpeedMult[stakeIndex], so.enemyDamageMult * so.stakeDamageMult[stakeIndex]);
+  body.hp = isBoss ? fig.stats.armour * so.bossArmourMult : soloEnemyArmour(tuning, fig, scale);
+  body.maxHp = body.hp;
+  return body;
+}
+
+// Ink of one drop in a wave: the staked wave budget divided by the copies,
+// rounded down. A wave never pays more than its staked budget.
+export function soloDropValue(tuning, waveIndex, stakeIndex, N) {
+  const so = tuning.solo;
+  const copies = soloCopies(tuning, waveIndex, stakeIndex, N);
+  return Math.floor(so.waveBudgets[waveIndex] * so.stakes[stakeIndex] / copies);
 }
 
 // Start wave run.wave (0..4) with the player's enemy drawing and stake index.
 export function soloStartWave(tuning, run, enemyCells, stakeIndex) {
   if (run.phase !== 'prepare' && run.phase !== 'cleared') throw new Error('cannot start a wave now');
   if (run.wave >= SOLO_WAVES) throw new Error('all waves done, start the boss');
+  if (!(stakeIndex >= 0 && stakeIndex < tuning.solo.stakes.length) || Math.floor(stakeIndex) !== stakeIndex) throw new Error('bad stake index');
   const chk = soloCheckDrawing(tuning, run, enemyCells, run.W, run.H, 'enemy');
   if (!chk.ok) throw new Error('enemy drawing: ' + chk.reason);
   const fig = buildFigure(enemyCells, run.W, run.H, tuning, 'figure', tuning.solo.enemyInkBudget);
   run.enemyDrawings.push(extractBody(enemyCells, run.W, run.H).body);
   run.copies = soloCopies(tuning, run.wave, stakeIndex, fig.stats.N);
   run.stake = tuning.solo.stakes[stakeIndex];
+  run.stakeIndex = stakeIndex;
+  run.dropValue = soloDropValue(tuning, run.wave, stakeIndex, fig.stats.N);
+  const scale = soloWaveArmourScale(tuning, run.wave, stakeIndex, fig.stats.N);
   const enemies = [];
-  for (let i = 0; i < run.copies; i++) enemies.push(spawnEnemy(tuning, run, fig, tuning.solo.enemyArmourMult));
+  for (let i = 0; i < run.copies; i++) enemies.push(spawnEnemy(tuning, run, fig, false, stakeIndex, scale));
   beginFight(tuning, run, enemies);
 }
 
@@ -141,13 +182,15 @@ export function soloStartBoss(tuning, run) {
   const so = tuning.solo;
   const total = run.W * run.H;
   const bossFig = buildFigure(soloBossCells(run), run.W, run.H, tuning, 'figure', total);
-  const enemies = [spawnEnemy(tuning, run, bossFig, so.bossArmourMult)];
+  const enemies = [spawnEnemy(tuning, run, bossFig, true, 0, 1)];
   for (let w = 0; w < run.enemyDrawings.length; w++) {
     const fig = buildFigure(run.enemyDrawings[w], run.W, run.H, tuning, 'figure', total);
-    for (let c = 0; c < so.bossEscortCopies; c++) enemies.push(spawnEnemy(tuning, run, fig, so.enemyArmourMult));
+    for (let c = 0; c < so.bossEscortCopies; c++) enemies.push(spawnEnemy(tuning, run, fig, false, 0, 1));
   }
   run.copies = enemies.length;
   run.stake = 1;
+  run.stakeIndex = 0;
+  run.dropValue = 0;
   beginFight(tuning, run, enemies);
 }
 
@@ -209,7 +252,7 @@ export function soloStep(tuning, run, input) {
     let near = -1;
     let nearD2 = 0;
     for (let i = 1; i < n; i++) {
-      if (!bodies[i].alive) continue;
+      if (!bodies[i].alive || bodies[i].hp <= 0) continue; // an enemy already at 0 armour is no target
       const dx = bodies[i].x - hero.x;
       const dy = bodies[i].y - hero.y;
       const d2 = dx * dx + dy * dy;
@@ -239,7 +282,7 @@ export function soloStep(tuning, run, input) {
     let hit = -1;
     for (let i = 1; i < n && hit === -1; i++) {
       const e = bodies[i];
-      if (!e.alive) continue;
+      if (!e.alive || e.hp <= 0) continue; // a shot passes an enemy that is already at 0 armour
       const dx = shot.x - e.x;
       const dy = shot.y - e.y;
       const reach = e.fig.radius + pr;
@@ -276,7 +319,7 @@ export function soloStep(tuning, run, input) {
     if (!e.alive) continue;
     if (e.hp <= 0) {
       e.alive = false;
-      run.drops.push({ x: e.x, y: e.y, value: e.fig.stats.N, life: so.dropLifeTicks });
+      run.drops.push({ x: e.x, y: e.y, value: run.dropValue > 0 ? run.dropValue : e.fig.stats.N, life: so.dropLifeTicks });
       run.events.push({ type: 'enemyDown', index: i });
     } else {
       enemiesAlive++;

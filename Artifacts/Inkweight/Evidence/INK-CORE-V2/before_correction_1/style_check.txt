@@ -1,0 +1,3 @@
+rusher wins 91.7 % of 2448 rusher-against-circler duels (all drawing pairs, both ways)
+win rate of each drawing when it is the rusher against a circler of every other drawing:
+disc 100, block 99, ring 95, cross 99, star 96, lance 100, line 98, comb 96, shield 99, dot 24, hedgehog 99, wedge 100, frame 99, needle 96, hoop 93, spiral 92, grille 88, splinter 80

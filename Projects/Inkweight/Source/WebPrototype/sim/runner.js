@@ -17,17 +17,20 @@ export function playRingRound(tuning, match, figures, onTick) {
 }
 
 // Play one single bot round between the given figures. slotShift rotates the
-// start slots. Returns { winner, ticks, outReason }.
-export function playSingleRound(tuning, figures, seed, slotShift) {
+// start slots. styles (optional) gives the bot style per seat (0 rusher,
+// 1 circler). Returns { winner, ticks, outReason }.
+export function playSingleRound(tuning, figures, seed, slotShift, styles) {
   const match = ringCreateMatch(tuning, figures.length, seed);
   match.round = slotShift;
+  if (styles) for (let i = 0; i < figures.length; i++) match.botStyle[i] = styles[i];
   playRingRound(tuning, match, figures, null);
   return { winner: match.roundWinner, ticks: match.tick, outReason: match.outReason.slice() };
 }
 
 // Play a whole bot match (same figures every round). Returns the match.
-export function playRingMatch(tuning, figures, seed, onTick, onRoundEnd) {
+export function playRingMatch(tuning, figures, seed, onTick, onRoundEnd, styles) {
   const match = ringCreateMatch(tuning, figures.length, seed);
+  if (styles) for (let i = 0; i < figures.length; i++) match.botStyle[i] = styles[i];
   while (match.phase !== 'matchOver') {
     playRingRound(tuning, match, figures, onTick);
     if (onRoundEnd) onRoundEnd(match);
@@ -44,13 +47,15 @@ export function playSoloFight(tuning, run, style, onTick) {
 }
 
 // Bot-driven solo run. plan = { style, waves: [{ enemy: cells, stake, upgrade }], boss }
-// upgrade: null | 'heal' | 'colour2' | 'colour3' | 'colour4' (tried after the wave).
-// Returns per-wave results; stops at death.
+// upgrade: null | 'heal' | 'colour2' | 'colour3' | 'colour4' (tried after the wave),
+// or { kind: 'heroInk' | 'weaponInk', cells } for a redraw with more ink.
+// Every result row carries `upgrade`: '' when none was tried, else 'ok' or the
+// reason soloUpgrade returned. Returns per-wave results; stops at death.
 export function playSoloRun(tuning, seed, heroCells, weaponCells, W, H, startColour, plan, onTick, onFightEnd) {
   const run = soloCreateRun(tuning, seed, heroCells, weaponCells, W, H, startColour);
   const results = [];
   const note = () => {
-    results.push({ wave: results.length, phase: run.phase, endReason: run.endReason, ticks: run.tick, copies: run.copies, heroHp: run.heroHp, heroMaxHp: run.heroMaxHp, score: run.score, wallet: run.wallet });
+    results.push({ wave: results.length, phase: run.phase, endReason: run.endReason, ticks: run.tick, copies: run.copies, heroHp: run.heroHp, heroMaxHp: run.heroMaxHp, score: run.score, wallet: run.wallet, upgrade: '' });
     if (onFightEnd) onFightEnd(run);
   };
   for (let w = 0; w < plan.waves.length && w < SOLO_WAVES; w++) {
@@ -59,10 +64,13 @@ export function playSoloRun(tuning, seed, heroCells, weaponCells, W, H, startCol
     playSoloFight(tuning, run, plan.style, onTick);
     note();
     if (run.phase !== 'cleared') return { run, results };
-    if (pw.upgrade === 'heal') soloUpgrade(tuning, run, 'heal', null);
-    else if (pw.upgrade === 'colour2') soloUpgrade(tuning, run, 'colour', 2);
-    else if (pw.upgrade === 'colour3') soloUpgrade(tuning, run, 'colour', 3);
-    else if (pw.upgrade === 'colour4') soloUpgrade(tuning, run, 'colour', 4);
+    let up = null;
+    if (pw.upgrade === 'heal') up = soloUpgrade(tuning, run, 'heal', null);
+    else if (pw.upgrade === 'colour2') up = soloUpgrade(tuning, run, 'colour', 2);
+    else if (pw.upgrade === 'colour3') up = soloUpgrade(tuning, run, 'colour', 3);
+    else if (pw.upgrade === 'colour4') up = soloUpgrade(tuning, run, 'colour', 4);
+    else if (pw.upgrade && pw.upgrade.kind) up = soloUpgrade(tuning, run, pw.upgrade.kind, pw.upgrade.cells);
+    if (up !== null) results[results.length - 1].upgrade = up === '' ? 'ok' : up;
   }
   if (plan.boss && run.phase === 'cleared' && run.wave === SOLO_WAVES) {
     soloStartBoss(tuning, run);

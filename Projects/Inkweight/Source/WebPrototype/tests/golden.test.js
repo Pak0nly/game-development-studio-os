@@ -23,7 +23,7 @@ test('golden stat vectors can be read back from their text rows', () => {
     assert.equal(v.rows.length, 32);
     const d = parseDrawing(v.rows);
     const s = buildFigure(d.cells, d.W, d.H, T, v.kind, v.budget).stats;
-    for (const key of ['filled', 'drips', 'N', 'C', 'S', 'element', 'valid', 'weight', 'armour', 'sharpness', 'topSpeed', 'cx', 'cy', 'radius', 'inertia']) {
+    for (const key of ['filled', 'drips', 'N', 'C', 'S', 'enclosed', 'P', 'pocketCells', 'push', 'element', 'valid', 'weight', 'armour', 'sharpness', 'topSpeed', 'cx', 'cy', 'radius', 'inertia']) {
       assert.equal(s[key], v.expect[key], v.name + ' ' + key);
     }
     assert.deepEqual(s.colourCounts, v.expect.colourCounts);
@@ -33,11 +33,29 @@ test('golden stat vectors can be read back from their text rows', () => {
 test('golden traces cover ring duels, three and four figures and solo, and are small', () => {
   const text = readFileSync(TRACE_PATH, 'utf8');
   const file = JSON.parse(text);
-  assert.ok(file.items.length >= 6);
+  assert.ok(file.items.length >= 16);
   const modes = file.items.map((t) => t.mode + ':' + (t.seats ? t.seats.length : 0));
   for (const need of ['ring:2', 'ring:3', 'ring:4', 'solo:0']) assert.ok(modes.includes(need), 'missing ' + need);
   for (const t of file.items) { assert.ok(t.checkpoints.length >= 2); for (const c of t.checkpoints) assert.match(c.hash, /^[0-9a-f]{8}$/); }
   assert.ok(text.length < 1500000, 'trace file size ' + text.length);
+});
+
+// I2: the branches the review found missing
+test('golden traces reach sudden death, simultaneous knock-outs, every solo ending and both ink upgrades', () => {
+  const file = JSON.parse(readFileSync(TRACE_PATH, 'utf8'));
+  const ring = file.items.filter((t) => t.mode === 'ring');
+  const solo = file.items.filter((t) => t.mode === 'solo');
+  assert.ok(ring.some((t) => t.rounds.some((r) => r.ticks > T.ring.suddenDeathTick)), 'a round that ends in sudden death');
+  assert.ok(ring.some((t) => t.checkpoints.some((c) => c.tick > T.ring.shrinkEndTick && c.tick <= T.ring.suddenDeathTick && c.ringRadius === T.ring.endRadius)), 'a checkpoint at the constant end radius');
+  const allOut = (r) => r.outTick.every((x) => x === r.ticks);
+  assert.ok(ring.some((t) => t.rounds.some((r) => allOut(r) && r.winner === 0)), 'simultaneous knock-out, exact tie, lowest seat');
+  assert.ok(ring.some((t) => t.rounds.some((r) => allOut(r) && r.winner !== 0)), 'simultaneous knock-out decided by distance');
+  assert.ok(ring.some((t) => t.botStyle.includes(1)), 'a circler bot');
+  assert.ok(solo.some((t) => t.final.phase === 'dead' && t.final.endReason === 'armour'), 'hero death');
+  assert.ok(solo.some((t) => t.final.phase === 'dead' && t.final.endReason === 'time'), 'solo time limit');
+  assert.ok(solo.some((t) => t.final.phase === 'won'), 'a won run');
+  assert.ok(solo.some((t) => t.final.heroBudget === T.ink.figureBudget + T.solo.upgradeHeroInk && t.fights.some((x) => x.upgrade === 'ok')), 'hero-ink upgrade');
+  assert.ok(solo.some((t) => t.final.weaponBudget === T.ink.weaponBudget + T.solo.upgradeWeaponInk), 'weapon-ink upgrade');
 });
 
 test('the core uses only the allowed math functions and no ambient randomness or time', () => {
