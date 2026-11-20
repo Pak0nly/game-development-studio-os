@@ -116,5 +116,9 @@ Known open points to carry into the next order, none of them started:
 - Work copies of the two isolated core Workers lie under `.claude/worktrees/`
   in the cloud container only (local branches, merged, not pushed).
 
+Question page for the Human (private, ten open decisions with recommendations,
+answers are pasted into the chat; localStorage key `inkweight-fragen-v1`):
+https://claude.ai/artifact/353hZU99rvh9oYWNz7X8j5
+
 Next action: ask the Human how the prototype felt on the phone and what
 happened when opening the Unity project.
