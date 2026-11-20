@@ -1,6 +1,97 @@
 # INK-CORE-V3 Independent Review
 
-Independent review verdict: FAIL
+Independent review verdict: PASS
+
+## Re-review after correction round 1
+
+Candidate: commit `9acd0f7` on `a28a644`, same branch and work copy, reviewed
+read-only (work copy `git status --short` clean). The verdict above is the
+current one; the first review (FAIL on `a28a644`) is kept below unchanged.
+
+### What I ran (real output)
+
+- Changed paths `a28a644..9acd0f7`: only `Source/Shared`, `core/solo.js`,
+  `core/README.md`, `tests`, `tools/gen_golden.js`, `INK_RULES_V2.md` and the
+  evidence folder: inside the allowed paths. Core logic change: one line in
+  `soloStartBoss` (`enemies[i].bluntBonus = enemies[i].bluntBonus *
+  so.bossCrushMult`), new key `solo.bossCrushMult` 0.
+- `node --test`: `# tests 71`, `# pass 71`, `# fail 0`.
+  `node tools/gen_golden.js --check`: `golden files match`.
+- B1, my scripted kiting hero (same script as the first review), five x1
+  waves of one heavy design and the boss, 3 seeds per row: **34 of 36 boss
+  fights won** (only `line vs block` lost twice), e.g.
+  `v3 disc vs block won(270->89,85s) won(270->68,79s) won(270->101,89s)`.
+  Version 2 rules gave 35 of 36. Back at version 2 level.
+- Wave copies still crush: `disc vs block : w1x1 dmg0 | w1x1.5 dmg12 | w1x2
+  dmg37 | w3x1 dmg10 | w3x1.5 dmg38 | w3x2 dmg121 | ...` (identical to the
+  first review).
+- Golden traces against `960c6ae`: the six duel traces and
+  `ring_3_simultaneous_nearest_wins` IDENTICAL; `ring_1v1_comb_comb_deep_passes`
+  and `solo_boss_heavy_no_crush` NEW; the four crowd and the six old solo
+  traces changed.
+- Do the new traces discriminate (regenerated in memory, one value changed)?
+  `extraSeparationPasses = 7` and `= 2`: changes
+  `ring_1v1_comb_comb_deep_passes` (the only duel trace that changes) plus the
+  crowd and two solo traces; `crowdRelaxPasses = 0`: does not change the new
+  duel trace (two bodies, as intended); `bossCrushMult = 1` and `= 0.5`:
+  changes `solo_boss_heavy_no_crush` and nothing else; `enemyCrushPerInk = 0`:
+  four solo traces including the new one. Both new traces discriminate, and
+  the coverage table in `CHANGES_V3.md` V7 matches this.
+- Won-run fragility, the same 13 single tuning changes as before: all
+  required solo endings reached in all 13 (before: the won run was lost in 3).
+- Records: `CHANGES_V3.md` V1 now names `InkPhysics.cs` lines 31, 134, 135
+  (true, checked in the main checkout read-only); V7 no longer claims the duel
+  traces check V2; V3 notes for a port (dead bodies counted, non-settling
+  loop, step times) are true; `step_time.txt` gives 23.7 -> 43.6 microseconds
+  per four-figure tick (my 33.6 -> 62.0 on another run; same ratio), duels
+  9.9 -> 9.6. No stale sentence of the first candidate left (grep for "never
+  had them", "did not change measurably", "check V2 with the duel", "Boss and
+  escorts crush": only the correction note itself).
+- Open points stated plainly: "x1.5 is nearly free again for heavy blunt
+  designs in the bot runs (63 of 64 won, a third more score than x1)" in
+  `INK_RULES_V2.md` section 8, `RULES_AS_BUILT.md` section 10 and
+  `WORKER_RESULT.md`; the kiting remainder (fast hero against one heavy copy,
+  0 damage at x2) in the same three places and the "what changed" note of
+  `INK_RULES_V2.md`. The Worker's solo numbers (`solo_after_correction_1_summary.txt`:
+  heavy x1 / x1.5 / x2 won 61 / 63 / 27 of 64, others unchanged 73 / 31 / 15
+  of 96) are consistent with my kiter.
+- New tests are real: the boss test checks `bluntBonus` 0 for every boss-fight
+  body and that factor 1 restores the crush; the golden test regenerates the
+  deep-passes trace with 7 and 2 passes and the heavy boss trace with factor 1
+  and requires a difference, and requires the won run to keep half its armour.
+
+### Status of the first review's findings
+
+| Finding | Status |
+|---|---|
+| B1 boss and escort crush at x1 | Fixed (`bossCrushMult` 0), measured, test and trace |
+| I1 kiting remainder understated | Corrected in the records; open point for the Human and a later order (accepted by the Director) |
+| M1 C# `TurnCos`/`TurnSin` | Corrected, lines named |
+| M2 duel traces do not check V2 | Corrected, new discriminating duel trace |
+| M3 step time | Corrected with measured numbers |
+| M4 non-settling relaxation, dead bodies counted | Written down for the port |
+| M5 fragile won-run golden | Fixed (dot enemies, margin test); 13 of 13 perturbations hold |
+| M6 source of the x1 drop | Written down plainly |
+
+### Remaining findings
+
+- **Minor (open, accepted):** with the boss crush gone, R1 now only prices x2
+  in the waves; x1.5 is nearly free for heavy blunt designs (63 of 64 won,
+  about a third more score than x1), and a fast kiting hero gets every stake
+  free against one heavy copy. Both are recorded honestly; they are for the
+  Human and a later order (for example a minimum copy count per stake).
+- **Minor:** `CHANGES_V3.md` V3 cites a worst single tick of 10 ms in one run
+  for four-figure rounds; still inside a 60 Hz frame, but a port running
+  several worlds per frame should keep it in mind.
+
+No blocker. The records are exact enough for the two port updates, the
+balance statement is honest, and the game is not worse to play than version 2.
+
+---
+
+# First review (candidate `a28a644`), kept unchanged
+
+Independent review verdict (first review): FAIL
 
 Reviewer: independent Reviewer task (role QA Lead), not the Builder. Date
 2026-11-20. Candidate: branch `worktree-agent-a4f119a8ce7fbbb21`, commits
