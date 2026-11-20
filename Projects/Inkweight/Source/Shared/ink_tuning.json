@@ -1,6 +1,6 @@
 {
-  "version": "ink-tuning-2",
-  "note": "Tuning for core version 2 (Work Order INK-CORE-V2). All durations are whole ticks at physics.tickRate. All distances are canvas cells. Every value is a prototype proposal, not a Human decision. Changed and new keys against ink-tuning-1 are listed in CHANGES_V2.md.",
+  "version": "ink-tuning-3",
+  "note": "Tuning for core version 3 (Work Order INK-CORE-V3). All durations are whole ticks at physics.tickRate. All distances are canvas cells. Every value is a prototype proposal, not a Human decision. Changed and new keys against ink-tuning-2 are listed in CHANGES_V3.md (against ink-tuning-1: CHANGES_V2.md).",
   "canvas": {
     "width": 32,
     "height": 32

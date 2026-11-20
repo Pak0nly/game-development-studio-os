@@ -1,0 +1,77 @@
+== L1_accel_inertia_10000 against base
+ rusher: max grille 77.1 -> hedgehog 87.1 | lightFFA 0.9 -> 0.8 | maxFFA 60.3 -> 64.8 | sec 22.3 -> 20.2
+   families duel: solid 33.2->65.0 (+31.8), hollow 52.1->25.5 (-26.6), blades 61.3->51.7 (-9.5), core+blades 62.2->71.8 (+9.5), small 37.6->39.6 (+1.9)
+   families ffa:  solid 34.1->49.9, hollow 31.6->19.8, blades 20.3->19.1, core+blades 30.4->31.7, small 0.7->0.7
+   duel: hedgehog 87(+12), lance 76(+16), block 76(+43), disc 74(+48), wedge 72(+29), comb 66(-2), spiral 65(-1), needle 61(+2), star 58(+12), splinter 57(+3), grille 50(-27), line 47(-7), cross 45(-4), frame 41(+6), shield 38(+7), ring 26(-25), hoop 23(-21), hoop3 22(-32), hoop2 15(-62), dot 1(+1)
+   ffa:  hedgehog 65(+4), lance 20(+5), block 59(+22), disc 62(+23), wedge 53(+23), comb 24(-9), spiral 35(-1), needle 1(+1), star 19(+5), splinter 1(-0), grille 39(-4), line 0(-0), cross 1(+0), frame 10(+2), shield 25(-5), ring 28(+0), hoop 15(+0), hoop3 31(-24), hoop2 17(-38), dot 0(-0)
+ circler: max hoop 76.3 -> hedgehog 78.7 | lightFFA 3.3 -> 3.6 | maxFFA 49.4 -> 50.4 | sec 35.9 -> 30.2
+   families duel: solid 43.4->68.0 (+24.7), hollow 56.9->31.8 (-25.1), blades 57.4->49.3 (-8.2), core+blades 51.3->62.5 (+11.2), small 35.7->40.6 (+4.9)
+   families ffa:  solid 32.2->45.3, hollow 31.8->17.5, blades 20.8->17.2, core+blades 30.7->38.8, small 1.3->2.6
+   duel: hedgehog 79(+24), wedge 71(+34), block 71(+36), shield 71(-3), spiral 63(-9), star 62(+3), disc 60(+32), comb 57(+0), grille 53(-17), lance 52(+18), splinter 49(-3), needle 46(-1), line 43(+11), frame 40(+10), ring 39(-7), cross 38(-17), hoop3 38(-23), dot 28(+19), hoop2 21(-49), hoop 21(-56)
+   ffa:  hedgehog 47(+11), wedge 46(+16), block 47(+23), shield 38(-12), spiral 29(-3), star 34(+2), disc 50(+25), comb 30(-1), grille 29(-9), lance 45(+20), splinter 2(-1), needle 3(+2), line 6(+1), frame 19(-6), ring 22(-11), cross 4(-4), hoop3 26(-20), dot 3(+3), hoop2 12(-22), hoop 8(-12)
+== L1_accel_inertia_40000 against base
+ rusher: max grille 77.1 -> hedgehog 87.1 | lightFFA 0.9 -> 0.9 | maxFFA 60.3 -> 60.7 | sec 22.3 -> 21.8
+   families duel: solid 33.2->54.9 (+21.7), hollow 52.1->30.3 (-21.8), blades 61.3->58.4 (-2.9), core+blades 62.2->71.1 (+8.9), small 37.6->37.0 (-0.6)
+   families ffa:  solid 34.1->46.0, hollow 31.6->21.6, blades 20.3->21.5, core+blades 30.4->31.1, small 0.7->0.1
+   duel: hedgehog 87(+12), comb 71(+3), lance 70(+9), grille 67(-11), spiral 66(+1), block 63(+30), disc 62(+36), wedge 62(+20), needle 59(-1), star 57(+11), splinter 52(-1), line 51(-2), cross 49(+0), frame 42(+7), hoop 38(-6), shield 33(+1), ring 30(-21), hoop3 23(-31), hoop2 19(-58), dot 0(+0)
+   ffa:  hedgehog 61(+0), comb 32(-2), lance 16(+1), grille 45(+2), spiral 37(+1), block 55(+18), disc 54(+14), wedge 49(+20), needle 0(+0), star 16(+3), splinter 0(-1), line 2(+1), cross 2(+1), frame 8(+1), hoop 18(+4), shield 26(-4), ring 23(-4), hoop3 38(-17), hoop2 21(-34), dot 0(-1)
+ circler: max hoop 76.3 -> shield 78.2 | lightFFA 3.3 -> 2.9 | maxFFA 49.4 -> 52.2 | sec 35.9 -> 35.1
+   families duel: solid 43.4->51.9 (+8.6), hollow 56.9->49.8 (-7.1), blades 57.4->55.8 (-1.6), core+blades 51.3->53.4 (+2.0), small 35.7->35.6 (-0.1)
+   families ffa:  solid 32.2->38.0, hollow 31.8->24.3, blades 20.8->20.8, core+blades 30.7->34.6, small 1.3->1.5
+   duel: shield 78(+4), spiral 73(+1), grille 70(-0), hoop3 63(+3), hoop 62(-15), star 60(+0), comb 60(+3), hedgehog 58(+3), cross 51(-3), splinter 51(-1), wedge 48(+12), ring 47(+1), hoop2 47(-23), needle 44(-3), disc 42(+14), block 39(+4), lance 36(+2), frame 29(-1), line 29(-3), dot 12(+3)
+   ffa:  shield 52(+3), spiral 38(+6), grille 35(-4), hoop3 44(-2), hoop 15(-5), star 37(+5), comb 28(-3), hedgehog 43(+8), cross 8(+0), splinter 3(+0), wedge 32(+2), ring 28(-5), hoop2 17(-17), needle 1(+0), disc 33(+8), block 35(+11), lance 31(+6), frame 17(-8), line 2(-3), dot 0(+0)
+== L2_flank_2 against base
+ rusher: max grille 77.1 -> grille 77.1 | lightFFA 0.9 -> 2.1 | maxFFA 60.3 -> 61.5 | sec 22.3 -> 21.3
+   families duel: solid 33.2->33.2 (+0.0), hollow 52.1->52.1 (+0.0), blades 61.3->61.3 (+0.0), core+blades 62.2->62.2 (+0.0), small 37.6->37.6 (+0.0)
+   families ffa:  solid 34.1->33.4, hollow 31.6->26.6, blades 20.3->25.9, core+blades 30.4->30.9, small 0.7->2.1
+   duel: grille 77(+0), hoop2 77(+0), hedgehog 75(+0), comb 68(+0), spiral 65(+0), lance 61(+0), needle 60(+0), hoop3 54(+0), line 54(+0), splinter 53(+0), ring 51(+0), cross 49(+0), star 46(+0), hoop 44(+0), wedge 42(+0), frame 35(+0), block 32(+0), shield 31(+0), disc 27(+0), dot 0(+0)
+   ffa:  grille 52(+9), hoop2 37(-17), hedgehog 62(+1), comb 39(+5), spiral 48(+12), lance 12(-3), needle 2(+2), hoop3 46(-8), line 1(+0), splinter 4(+3), ring 27(+0), cross 4(+2), star 12(-1), hoop 16(+2), wedge 26(-4), frame 6(-1), block 36(-1), shield 38(+8), disc 34(-5), dot 1(+0)
+ circler: max hoop 76.3 -> hoop 76.3 | lightFFA 3.3 -> 4.4 | maxFFA 49.4 -> 45.9 | sec 35.9 -> 35.5
+   families duel: solid 43.4->43.4 (+0.0), hollow 56.9->56.9 (+0.0), blades 57.4->57.4 (+0.0), core+blades 51.3->51.3 (+0.0), small 35.7->35.7 (+0.0)
+   families ffa:  solid 32.2->33.6, hollow 31.8->28.9, blades 20.8->20.6, core+blades 30.7->31.7, small 1.3->3.2
+   duel: hoop 76(+0), shield 74(+0), spiral 73(+0), hoop2 71(+0), grille 70(+0), hoop3 61(+0), star 59(+0), comb 57(+0), hedgehog 55(+0), cross 54(+0), splinter 52(+0), needle 47(+0), ring 46(+0), wedge 37(+0), block 34(+0), lance 34(+0), line 32(+0), frame 30(+0), disc 28(+0), dot 8(+0)
+   ffa:  hoop 20(+0), shield 46(-4), spiral 36(+4), hoop2 35(+0), grille 34(-5), hoop3 40(-6), star 32(+1), comb 28(-2), hedgehog 42(+6), cross 11(+2), splinter 7(+4), needle 3(+2), ring 26(-7), wedge 30(+0), block 30(+6), lance 24(-0), line 2(-3), frame 23(-2), disc 28(+3), dot 0(+0)
+== L2_flank_3 against base
+ rusher: max grille 77.1 -> grille 77.1 | lightFFA 0.9 -> 3.2 | maxFFA 60.3 -> 61.5 | sec 22.3 -> 20.8
+   families duel: solid 33.2->33.2 (+0.0), hollow 52.1->52.1 (+0.0), blades 61.3->61.3 (+0.0), core+blades 62.2->62.2 (+0.0), small 37.6->37.6 (+0.0)
+   families ffa:  solid 34.1->31.4, hollow 31.6->24.4, blades 20.3->27.0, core+blades 30.4->33.6, small 0.7->3.4
+   duel: grille 77(+0), hoop2 77(+0), hedgehog 75(+0), comb 68(+0), spiral 65(+0), lance 61(+0), needle 60(+0), hoop3 54(+0), line 54(+0), splinter 53(+0), ring 51(+0), cross 49(+0), star 46(+0), hoop 44(+0), wedge 42(+0), frame 35(+0), block 32(+0), shield 31(+0), disc 27(+0), dot 0(+0)
+   ffa:  grille 51(+8), hoop2 32(-22), hedgehog 62(+1), comb 47(+14), spiral 51(+15), lance 11(-4), needle 2(+2), hoop3 39(-15), line 2(+1), splinter 7(+6), ring 25(-2), cross 4(+3), star 14(+1), hoop 21(+7), wedge 23(-6), frame 5(-3), block 32(-5), shield 38(+7), disc 32(-7), dot 1(+0)
+ circler: max hoop 76.3 -> hoop 76.3 | lightFFA 3.3 -> 5.0 | maxFFA 49.4 -> 44.5 | sec 35.9 -> 35.2
+   families duel: solid 43.4->43.4 (+0.0), hollow 56.9->56.9 (+0.0), blades 57.4->57.4 (+0.0), core+blades 51.3->51.3 (+0.0), small 35.7->35.7 (+0.0)
+   families ffa:  solid 32.2->34.1, hollow 31.8->25.8, blades 20.8->22.1, core+blades 30.7->33.1, small 1.3->4.5
+   duel: hoop 76(+0), shield 74(+0), spiral 73(+0), hoop2 71(+0), grille 70(+0), hoop3 61(+0), star 59(+0), comb 57(+0), hedgehog 55(+0), cross 54(+0), splinter 52(+0), needle 47(+0), ring 46(+0), wedge 37(+0), block 34(+0), lance 34(+0), line 32(+0), frame 30(+0), disc 28(+0), dot 8(+0)
+   ffa:  hoop 22(+2), shield 42(-8), spiral 39(+7), hoop2 27(-8), grille 38(-1), hoop3 42(-3), star 33(+1), comb 31(+0), hedgehog 45(+9), cross 10(+2), splinter 7(+4), needle 4(+3), ring 23(-10), wedge 31(+0), block 34(+10), lance 24(-0), line 1(-3), frame 15(-10), disc 30(+4), dot 2(+2)
+== L3_elements_2_05 against base
+ rusher: max grille 77.1 -> grille 77.1 | lightFFA 0.9 -> 1.9 | maxFFA 60.3 -> 54.6 | sec 22.3 -> 21.3
+   families duel: solid 33.2->32.9 (-0.3), hollow 52.1->51.9 (-0.2), blades 61.3->61.3 (+0.0), core+blades 62.2->62.8 (+0.5), small 37.6->37.6 (+0.0)
+   families ffa:  solid 34.1->32.7, hollow 31.6->34.3, blades 20.3->20.7, core+blades 30.4->28.1, small 0.7->0.9
+   duel: grille 77(+0), hedgehog 74(-1), comb 68(+0), hoop2 68(-9), spiral 64(-1), lance 60(-1), needle 60(+0), hoop3 57(+3), line 54(+0), splinter 53(+0), ring 52(+1), cross 50(+1), star 49(+4), hoop 44(+0), wedge 41(-1), frame 38(+3), block 32(+0), shield 32(+0), disc 27(+0), dot 0(+0)
+   ffa:  grille 47(+3), hedgehog 50(-11), comb 26(-8), hoop2 50(-4), spiral 29(-7), lance 18(+3), needle 0(+0), hoop3 55(+0), line 1(+0), splinter 1(+0), ring 37(+9), cross 6(+5), star 19(+6), hoop 16(+2), wedge 31(+1), frame 14(+6), block 37(-1), shield 29(-1), disc 34(-5), dot 1(+0)
+ circler: max hoop 76.3 -> spiral 74.2 | lightFFA 3.3 -> 3.5 | maxFFA 49.4 -> 46.7 | sec 35.9 -> 35.0
+   families duel: solid 43.4->42.4 (-0.9), hollow 56.9->55.8 (-1.1), blades 57.4->56.6 (-0.8), core+blades 51.3->54.4 (+3.1), small 35.7->35.7 (+0.0)
+   families ffa:  solid 32.2->32.9, hollow 31.8->31.2, blades 20.8->21.3, core+blades 30.7->30.5, small 1.3->1.1
+   duel: spiral 74(+1), hoop 69(-7), grille 67(-3), shield 66(-8), hoop2 66(-5), star 62(+3), hoop3 61(+1), hedgehog 60(+5), comb 58(+2), cross 53(-2), splinter 52(+0), ring 48(+2), needle 47(+0), wedge 41(+4), lance 37(+3), block 34(+0), frame 34(+3), line 32(+0), disc 28(+0), dot 8(+0)
+   ffa:  spiral 36(+4), hoop 21(+1), grille 36(-3), shield 47(-3), hoop2 37(+2), star 31(-0), hoop3 45(-1), hedgehog 32(-3), comb 29(-2), cross 11(+3), splinter 3(+0), ring 36(+3), needle 0(-1), wedge 35(+4), lance 29(+5), block 25(+2), frame 18(-7), line 3(-2), disc 25(-0), dot 0(+0)
+== L4_light_dash_40 against base
+ rusher: max grille 77.1 -> grille 76.6 | lightFFA 0.9 -> 1.3 | maxFFA 60.3 -> 57.9 | sec 22.3 -> 22.7
+   families duel: solid 33.2->29.0 (-4.1), hollow 52.1->52.7 (+0.6), blades 61.3->60.7 (-0.6), core+blades 62.2->65.4 (+3.2), small 37.6->38.8 (+1.1)
+   families ffa:  solid 34.1->33.6, hollow 31.6->32.5, blades 20.3->21.1, core+blades 30.4->28.7, small 0.7->1.4
+   duel: grille 77(-1), hedgehog 74(-1), comb 72(+4), spiral 64(-1), hoop2 63(-13), needle 60(+1), lance 59(-2), ring 59(+8), star 57(+11), splinter 54(+1), line 54(+0), hoop 53(+9), cross 48(-1), hoop3 48(-6), wedge 43(+0), frame 41(+6), block 27(-6), disc 25(-2), shield 22(-9), dot 2(+2)
+   ffa:  grille 43(+0), hedgehog 58(-2), comb 29(-4), spiral 39(+3), hoop2 51(-3), needle 0(+0), lance 13(-2), ring 37(+9), star 14(+1), splinter 2(+1), line 0(-0), hoop 14(+0), cross 2(+0), hoop3 55(+0), wedge 35(+5), frame 6(-2), block 39(+2), disc 32(-7), shield 29(-2), dot 2(+1)
+ circler: max hoop 76.3 -> hoop 92.1 | lightFFA 3.3 -> 1.5 | maxFFA 49.4 -> 52.9 | sec 35.9 -> 30.5
+   families duel: solid 43.4->27.8 (-15.6), hollow 56.9->57.7 (+0.8), blades 57.4->58.8 (+1.4), core+blades 51.3->58.4 (+7.1), small 35.7->44.0 (+8.3)
+   families ffa:  solid 32.2->22.1, hollow 31.8->35.6, blades 20.8->19.6, core+blades 30.7->37.6, small 1.3->0.5
+   duel: hoop 92(+16), spiral 71(-2), star 68(+9), needle 68(+21), cross 66(+12), splinter 64(+12), comb 59(+2), hedgehog 57(+2), ring 56(+9), grille 54(-16), hoop2 53(-18), frame 49(+19), lance 49(+15), shield 49(-25), line 44(+12), hoop3 38(-22), wedge 23(-14), disc 21(-8), block 19(-16), dot 0(-8)
+   ffa:  hoop 25(+5), spiral 35(+3), star 35(+4), needle 1(+0), cross 5(-4), splinter 0(-3), comb 35(+4), hedgehog 43(+8), ring 53(+20), grille 38(-1), hoop2 38(+3), frame 27(+2), lance 37(+12), shield 36(-13), line 1(-3), hoop3 35(-11), wedge 18(-13), disc 16(-9), block 18(-6), dot 0(+0)
+== L5_edge_by_size_025 against base
+ rusher: max grille 77.1 -> hoop2 80.0 | lightFFA 0.9 -> 1.6 | maxFFA 60.3 -> 59.1 | sec 22.3 -> 21.2
+   families duel: solid 33.2->42.4 (+9.3), hollow 52.1->53.3 (+1.1), blades 61.3->55.6 (-5.6), core+blades 62.2->57.1 (-5.1), small 37.6->37.6 (+0.0)
+   families ffa:  solid 34.1->34.6, hollow 31.6->31.2, blades 20.3->21.6, core+blades 30.4->28.6, small 0.7->1.7
+   duel: hoop2 80(+3), grille 75(-2), hedgehog 74(-1), spiral 66(+1), comb 65(-3), hoop3 61(+7), needle 58(-2), ring 57(+6), splinter 55(+2), lance 54(-7), block 48(+16), wedge 47(+4), disc 41(+15), line 41(-13), cross 40(-9), hoop 40(-4), star 36(-10), shield 34(+3), frame 28(-7), dot 0(+0)
+   ffa:  hoop2 55(+1), grille 48(+5), hedgehog 59(-1), spiral 35(-1), comb 30(-4), hoop3 52(-3), needle 2(+2), ring 31(+4), splinter 3(+1), lance 12(-2), block 35(-3), wedge 34(+5), disc 41(+2), line 0(-0), cross 3(+1), hoop 11(-3), star 13(+0), shield 28(-2), frame 6(-1), dot 1(+0)
+ circler: max hoop 76.3 -> hoop 82.1 | lightFFA 3.3 -> 2.5 | maxFFA 49.4 -> 50.6 | sec 35.9 -> 32.6
+   families duel: solid 43.4->44.7 (+1.3), hollow 56.9->58.1 (+1.2), blades 57.4->53.0 (-4.5), core+blades 51.3->51.9 (+0.6), small 35.7->37.2 (+1.5)
+   families ffa:  solid 32.2->32.8, hollow 31.8->30.0, blades 20.8->21.3, core+blades 30.7->31.8, small 1.3->1.5
+   duel: hoop 82(+6), spiral 72(-1), shield 71(-3), hoop2 70(-1), star 63(+4), grille 63(-7), hedgehog 59(+4), comb 58(+1), hoop3 57(-4), splinter 52(-0), cross 51(-3), needle 48(+1), ring 47(+1), wedge 42(+5), block 35(+0), frame 34(+4), disc 31(+3), lance 27(-7), line 25(-8), dot 12(+3)
+   ffa:  hoop 20(+0), spiral 38(+6), shield 51(+1), hoop2 26(-9), star 37(+6), grille 40(+1), hedgehog 42(+6), comb 30(-0), hoop3 43(-3), splinter 2(-1), cross 7(-1), needle 2(+1), ring 35(+2), wedge 26(-4), block 28(+5), frame 26(+1), disc 26(+0), lance 18(-7), line 1(-3), dot 1(+1)

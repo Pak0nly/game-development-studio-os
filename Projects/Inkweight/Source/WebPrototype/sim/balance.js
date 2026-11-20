@@ -354,9 +354,21 @@ export function reportMarkdown(rep, solo, tuning, label) {
     L.push('|---|---|---|---|---|');
     for (const k of Object.keys(sum.byStake)) L.push('| ' + [k, pct(sum.byStake[k].wonShare), sum.byStake[k].avgWavesCleared, pct(sum.byStake[k].avgHpLeft), sum.byStake[k].avgScore].join(' | ') + ' |');
     L.push('');
-    L.push('| Hero | Hero bot | Enemy design | Stake | Avg waves cleared (of 5) | Runs won incl. boss | Timeouts | Avg armour left | Avg score | Avg run seconds |');
-    L.push('|---|---|---|---|---|---|---|---|---|---|');
-    for (const s of solo) L.push('| ' + [s.hero, s.heroBot, s.enemy, 'x' + s.stake, s.avgWavesCleared, s.runsWon + ' / ' + s.runs, s.timeouts, pct(s.avgHpLeft) + ' %', s.avgScore, s.avgRunSeconds].join(' | ') + ' |');
+    // re-review finding R1: the heavy blunt enemy designs against the rest
+    L.push('| Enemy designs | Stake | Runs that reached the boss | Runs won incl. boss | Avg armour left % | Avg score |');
+    L.push('|---|---|---|---|---|---|');
+    for (const group of ['heavy blunt (' + SOLO_HEAVY_BLUNT.join(', ') + ')', 'all others']) {
+      for (const stake of tuning.solo.stakes) {
+        const list = solo.filter((s) => s.stake === stake && (SOLO_HEAVY_BLUNT.indexOf(s.enemy) !== -1) === (group !== 'all others'));
+        if (list.length === 0) continue;
+        const sumOf = (k) => list.reduce((a, s) => a + s[k], 0);
+        L.push('| ' + [group, 'x' + stake, sumOf('bossReached') + ' / ' + sumOf('runs'), sumOf('runsWon') + ' / ' + sumOf('runs'), pct(sumOf('avgHpLeft') / list.length), Math.round(sumOf('avgScore') / list.length)].join(' | ') + ' |');
+      }
+    }
+    L.push('');
+    L.push('| Hero | Hero bot | Enemy design | Stake | Avg waves cleared (of 5) | Reached the boss | Runs won incl. boss | Timeouts | Avg armour left | Avg score | Avg run seconds |');
+    L.push('|---|---|---|---|---|---|---|---|---|---|---|');
+    for (const s of solo) L.push('| ' + [s.hero, s.heroBot, s.enemy, 'x' + s.stake, s.avgWavesCleared, s.bossReached + ' / ' + s.runs, s.runsWon + ' / ' + s.runs, s.timeouts, pct(s.avgHpLeft) + ' %', s.avgScore, s.avgRunSeconds].join(' | ') + ' |');
     L.push('');
   }
   L.push('## What this simulation can and cannot tell');

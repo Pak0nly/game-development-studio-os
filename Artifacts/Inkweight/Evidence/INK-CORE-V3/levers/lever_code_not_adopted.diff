@@ -1,0 +1,138 @@
+diff --git a/Projects/Inkweight/Source/Shared/ink_tuning.json b/Projects/Inkweight/Source/Shared/ink_tuning.json
+index 578c293..7464ac2 100644
+--- a/Projects/Inkweight/Source/Shared/ink_tuning.json
++++ b/Projects/Inkweight/Source/Shared/ink_tuning.json
+@@ -46,6 +46,10 @@
+     "restitution": 0.79,
+     "accelBase": 6,
+     "accelWeightRef": 400,
++    "accelInertiaRef": 0,
++    "dashCooldownMinTicks": 120,
++    "flankMult": 1,
++    "flankTicks": 30,
+     "turnBase": 8,
+     "turnInertiaRef": 6000,
+     "dashSpeedMult": 3.8,
+@@ -75,6 +79,7 @@
+     "suddenDeathTick": 3600,
+     "suddenDeathShrinkPerTick": 0.05,
+     "startDistanceFraction": 0.6,
++    "outSizeShare": 0,
+     "winsToTakeMatch": 3,
+     "catchUpPercentPerLostRound": 15,
+     "catchUpMaxSteps": 4,
+@@ -82,6 +87,7 @@
+   },
+   "bots": {
+     "edgeMargin": 5,
++    "outSizeShare": 0,
+     "edgeBlend": 6,
+     "insideBias": 0.6,
+     "dashRange": 10,
+diff --git a/Projects/Inkweight/Source/WebPrototype/core/bots.js b/Projects/Inkweight/Source/WebPrototype/core/bots.js
+index 134cb7e..8573f2a 100644
+--- a/Projects/Inkweight/Source/WebPrototype/core/bots.js
++++ b/Projects/Inkweight/Source/WebPrototype/core/bots.js
+@@ -20,7 +20,7 @@ const steer = { x: 0, y: 0, edge: 0 };
+ function edgeSteer(bt, match, me, target, targetDist) {
+   const bodies = match.world.bodies;
+   const myDist = Math.sqrt(me.x * me.x + me.y * me.y);
+-  let margin = bt.edgeMargin;
++  let margin = bt.edgeMargin + bt.outSizeShare * me.fig.radius; // LEVER L5 (experiment)
+   if (target !== -1) {
+     const tm = bodies[target].fig.mass;
+     if (tm > me.fig.mass) margin += match.ringRadius * bt.lightRetreatFraction * (1 - me.fig.mass / tm);
+diff --git a/Projects/Inkweight/Source/WebPrototype/core/physics.js b/Projects/Inkweight/Source/WebPrototype/core/physics.js
+index 867a4f5..3b4410c 100644
+--- a/Projects/Inkweight/Source/WebPrototype/core/physics.js
++++ b/Projects/Inkweight/Source/WebPrototype/core/physics.js
+@@ -41,6 +41,7 @@ export function buildFigure(cells, W, H, tuning, kind, budget) {
+   }
+   const turnRate = ph.turnBase / (1 + stats.inertia / ph.turnInertiaRef); // radians per second (small-angle)
+   let accelK = ph.accelBase / (1 + stats.N / ph.accelWeightRef) / ph.tickRate;
++  if (ph.accelInertiaRef > 0) accelK = accelK / (1 + stats.inertia / ph.accelInertiaRef); // LEVER L1 (experiment)
+   if (accelK > 1) accelK = 1;
+   return {
+     stats, W, H,
+@@ -85,7 +86,9 @@ export function createWorld(bodies, wallRadius) {
+   const n = bodies.length;
+   const cd = new Array(n * n);
+   for (let i = 0; i < n * n; i++) cd[i] = 0;
+-  return { bodies, cd, events: [], wallRadius: wallRadius === undefined ? 0 : wallRadius, subSteps: 1 };
++  const touch = new Array(n * n); // LEVER L2 (experiment)
++  for (let i = 0; i < n * n; i++) touch[i] = 0;
++  return { bodies, cd, touch, events: [], wallRadius: wallRadius === undefined ? 0 : wallRadius, subSteps: 1 };
+ }
+ 
+ const NO_INPUT = { mx: 0, my: 0, dash: false };
+@@ -126,6 +129,11 @@ export function stepWorld(world, inputs, tuning) {
+       if (len2 > 0) { b.dashDx = dx; b.dashDy = dy; } else { b.dashDx = b.fx; b.dashDy = b.fy; }
+       b.dashTicks = ph.dashTicks;
+       b.dashCd = ph.dashCooldownTicks;
++      if (ph.dashCooldownMinTicks < ph.dashCooldownTicks) { // LEVER L4 (experiment)
++        let share = b.fig.stats.N / tuning.ink.figureBudget;
++        if (share > 1) share = 1;
++        b.dashCd = Math.floor(ph.dashCooldownMinTicks + (ph.dashCooldownTicks - ph.dashCooldownMinTicks) * share);
++      }
+     }
+     let tvx;
+     let tvy;
+@@ -147,6 +155,7 @@ export function stepWorld(world, inputs, tuning) {
+ 
+   // 2. hit cooldowns, once per tick
+   for (let i = 0; i < n * n; i++) if (world.cd[i] > 0) world.cd[i]--;
++  for (let i = 0; i < n * n; i++) if (world.touch[i] > 0) world.touch[i]--;
+ 
+   // 3. sub-steps. The tick is cut into equal parts so that no cell of any
+   // body moves more than maxStepCells per part: the speed of a body (as it is
+@@ -424,8 +433,21 @@ function collidePair(world, i, j, a, b, tuning) {
+   // damage, once per direction per cooldown; never inside one team
+   if (a.team === b.team) return;
+   const n = world.bodies.length;
++  // LEVER L2 (experiment): a blade hit on a figure that touched a third
++  // opponent within the last flankTicks ticks is multiplied by flankMult
++  let aFlank = 1;
++  let bFlank = 1;
++  if (ph.flankMult !== 1) {
++    for (let k = 0; k < n; k++) {
++      if (k === i || k === j || !world.bodies[k].alive) continue;
++      if (aSharp && world.touch[j * n + k] > 0) aFlank = ph.flankMult;
++      if (bSharp && world.touch[i * n + k] > 0) bFlank = ph.flankMult;
++    }
++    world.touch[i * n + j] = ph.flankTicks;
++    world.touch[j * n + i] = ph.flankTicks;
++  }
+   if (world.cd[i * n + j] === 0) {
+-    const dmg = touchDamage(tuning, a, aSharp, b)
++    const dmg = aFlank * touchDamage(tuning, a, aSharp, b)
+       * a.damageMult * elementMultiplier(tuning, a.fig.stats.element, b.fig.stats.element);
+     b.hp -= dmg;
+     world.cd[i * n + j] = ph.hitCooldownTicks;
+@@ -435,7 +457,7 @@ function collidePair(world, i, j, a, b, tuning) {
+     world.events.push({ type: 'hit', from: i, to: j, damage: dmg, sharp: aSharp });
+   }
+   if (world.cd[j * n + i] === 0) {
+-    const dmg = touchDamage(tuning, b, bSharp, a)
++    const dmg = bFlank * touchDamage(tuning, b, bSharp, a)
+       * b.damageMult * elementMultiplier(tuning, b.fig.stats.element, a.fig.stats.element);
+     a.hp -= dmg;
+     world.cd[j * n + i] = ph.hitCooldownTicks;
+diff --git a/Projects/Inkweight/Source/WebPrototype/core/ring.js b/Projects/Inkweight/Source/WebPrototype/core/ring.js
+index 7c84965..75a520e 100644
+--- a/Projects/Inkweight/Source/WebPrototype/core/ring.js
++++ b/Projects/Inkweight/Source/WebPrototype/core/ring.js
+@@ -124,7 +124,13 @@ export function ringStep(tuning, match, inputs) {
+     if (!b.alive) continue;
+     let reason = '';
+     if (b.hp <= 0) reason = 'armour';
+-    else if (b.x * b.x + b.y * b.y > R * R) reason = 'ring';
++    else {
++      // LEVER L5 (experiment): a figure is out when its centre is closer to
++      // the edge than outSizeShare times its size radius
++      let lim = R - tuning.ring.outSizeShare * b.fig.radius;
++      if (lim < 0) lim = 0;
++      if (b.x * b.x + b.y * b.y > lim * lim) reason = 'ring';
++    }
+     if (reason !== '') {
+       b.alive = false;
+       match.outTick[i] = match.tick;
