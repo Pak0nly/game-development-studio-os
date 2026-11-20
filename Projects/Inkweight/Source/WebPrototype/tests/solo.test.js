@@ -240,10 +240,18 @@ test('enemy copies: armour follows the drawing, the boss keeps full armour', () 
   assert.equal(run.world.bodies.length, 2 + 5 * T.solo.bossEscortCopies);
   assert.equal(run.world.bodies[2].hp, soloEnemyArmour(T, run.world.bodies[2].fig, 1));
   assert.equal(run.dropValue, 0);
-  // boss and escorts: speed at stake index 0, crush at scale 1 and stake index 0
+  // boss and escorts: speed at stake index 0; no crush (bossCrushMult 0), the boss fight has no stake
   assert.equal(boss.topSpeed, soloEnemySpeed(T, boss.fig, 0));
-  assert.equal(boss.bluntBonus, soloEnemyCrush(T, boss.fig, 1, 0));
-  assert.equal(run.world.bodies[6].bluntBonus, T.solo.enemyCrushPerInk * run.world.bodies[6].fig.stats.N);
+  assert.equal(T.solo.bossCrushMult, 0);
+  for (let i = 1; i < run.world.bodies.length; i++) assert.equal(run.world.bodies[i].bluntBonus, 0, 'body ' + i);
+  // the factor is what decides it: with 1 the boss and the escorts crush with their own ink
+  const T1 = JSON.parse(JSON.stringify(T)); T1.solo.bossCrushMult = 1;
+  const run1 = soloCreateRun(T1, 14, black('disc'), black('needle'), W, H, 0);
+  for (const n of ['dot', 'cross', 'ring', 'star', 'block']) run1.enemyDrawings.push(extractBody(archetype(n).cells, W, H).body);
+  run1.phase = 'cleared'; run1.wave = SOLO_WAVES;
+  soloStartBoss(T1, run1);
+  assert.equal(run1.world.bodies[1].bluntBonus, soloEnemyCrush(T1, run1.world.bodies[1].fig, 1, 0));
+  assert.equal(run1.world.bodies[6].bluntBonus, T1.solo.enemyCrushPerInk * run1.world.bodies[6].fig.stats.N);
 });
 
 // M2 (kept and documented): hero death is checked before the cleared wave

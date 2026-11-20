@@ -1516,12 +1516,12 @@
    "enemy": "block",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 2,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.21,
-   "avgScore": 1778,
+   "avgHpLeft": 0.36,
+   "avgScore": 2198,
    "avgRunSeconds": 184
   },
   {
@@ -1530,13 +1530,13 @@
    "enemy": "block",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 2,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.11,
-   "avgScore": 2325,
-   "avgRunSeconds": 225
+   "avgHpLeft": 0.54,
+   "avgScore": 2745,
+   "avgRunSeconds": 241
   },
   {
    "hero": "disc",
@@ -1544,27 +1544,27 @@
    "enemy": "block",
    "stake": 2,
    "avgWavesCleared": 5,
-   "runsWon": 1,
-   "bossReached": 4,
-   "runs": 4,
-   "timeouts": 0,
-   "avgHpLeft": 0.1,
-   "avgScore": 2385,
-   "avgRunSeconds": 246
-  },
-  {
-   "hero": "disc",
-   "heroBot": "kite",
-   "enemy": "disc",
-   "stake": 1,
-   "avgWavesCleared": 5,
-   "runsWon": 1,
+   "runsWon": 3,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0.24,
-   "avgScore": 1304,
-   "avgRunSeconds": 165
+   "avgScore": 2963,
+   "avgRunSeconds": 260
+  },
+  {
+   "hero": "disc",
+   "heroBot": "kite",
+   "enemy": "disc",
+   "stake": 1,
+   "avgWavesCleared": 5,
+   "runsWon": 4,
+   "bossReached": 4,
+   "runs": 4,
+   "timeouts": 0,
+   "avgHpLeft": 0.49,
+   "avgScore": 2084,
+   "avgRunSeconds": 190
   },
   {
    "hero": "disc",
@@ -1572,13 +1572,13 @@
    "enemy": "disc",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 1781,
-   "avgRunSeconds": 188
+   "avgHpLeft": 0.25,
+   "avgScore": 2561,
+   "avgRunSeconds": 217
   },
   {
    "hero": "disc",
@@ -1590,9 +1590,9 @@
    "bossReached": 3,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.12,
-   "avgScore": 1985,
-   "avgRunSeconds": 223
+   "avgHpLeft": 0.21,
+   "avgScore": 2089,
+   "avgRunSeconds": 226
   },
   {
    "hero": "disc",
@@ -1604,9 +1604,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.2,
-   "avgScore": 2103,
-   "avgRunSeconds": 147
+   "avgHpLeft": 0.54,
+   "avgScore": 2017,
+   "avgRunSeconds": 150
   },
   {
    "hero": "disc",
@@ -1618,9 +1618,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.19,
+   "avgHpLeft": 0.49,
    "avgScore": 2533,
-   "avgRunSeconds": 178
+   "avgRunSeconds": 179
   },
   {
    "hero": "disc",
@@ -1628,13 +1628,13 @@
    "enemy": "ring",
    "stake": 2,
    "avgWavesCleared": 5,
-   "runsWon": 1,
+   "runsWon": 2,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2325,
-   "avgRunSeconds": 191
+   "avgHpLeft": 0.15,
+   "avgScore": 2669,
+   "avgRunSeconds": 204
   },
   {
    "hero": "disc",
@@ -1646,9 +1646,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.16,
-   "avgScore": 2334,
-   "avgRunSeconds": 165
+   "avgHpLeft": 0.56,
+   "avgScore": 2226,
+   "avgRunSeconds": 169
   },
   {
    "hero": "disc",
@@ -1660,9 +1660,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.23,
+   "avgHpLeft": 0.54,
    "avgScore": 2988,
-   "avgRunSeconds": 200
+   "avgRunSeconds": 199
   },
   {
    "hero": "disc",
@@ -1670,13 +1670,13 @@
    "enemy": "hoop2",
    "stake": 2,
    "avgWavesCleared": 4.75,
-   "runsWon": 2,
+   "runsWon": 3,
    "bossReached": 3,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.05,
-   "avgScore": 2804,
-   "avgRunSeconds": 206
+   "avgHpLeft": 0.18,
+   "avgScore": 3128,
+   "avgRunSeconds": 210
   },
   {
    "hero": "hedgehog",
@@ -1688,9 +1688,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.75,
+   "avgHpLeft": 0.77,
    "avgScore": 1272,
-   "avgRunSeconds": 45
+   "avgRunSeconds": 44
   },
   {
    "hero": "hedgehog",
@@ -1702,9 +1702,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.7,
+   "avgHpLeft": 0.68,
    "avgScore": 1870,
-   "avgRunSeconds": 48
+   "avgRunSeconds": 49
   },
   {
    "hero": "hedgehog",
@@ -1716,7 +1716,7 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.16,
+   "avgHpLeft": 0.15,
    "avgScore": 2470,
    "avgRunSeconds": 57
   },
@@ -1936,13 +1936,13 @@
    "enemy": "block",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 1673,
-   "avgRunSeconds": 98
+   "avgHpLeft": 0.37,
+   "avgScore": 2040,
+   "avgRunSeconds": 106
   },
   {
    "hero": "hedgehog",
@@ -1950,13 +1950,13 @@
    "enemy": "block",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 1901,
-   "avgRunSeconds": 116
+   "avgHpLeft": 0.3,
+   "avgScore": 2636,
+   "avgRunSeconds": 129
   },
   {
    "hero": "hedgehog",
@@ -1978,13 +1978,13 @@
    "enemy": "disc",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 1720,
-   "avgRunSeconds": 94
+   "avgHpLeft": 0.35,
+   "avgScore": 2240,
+   "avgRunSeconds": 100
   },
   {
    "hero": "hedgehog",
@@ -1992,13 +1992,13 @@
    "enemy": "disc",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2197,
-   "avgRunSeconds": 117
+   "avgHpLeft": 0.28,
+   "avgScore": 2717,
+   "avgRunSeconds": 123
   },
   {
    "hero": "hedgehog",
@@ -2024,9 +2024,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.25,
-   "avgScore": 2103,
-   "avgRunSeconds": 91
+   "avgHpLeft": 0.54,
+   "avgScore": 1759,
+   "avgRunSeconds": 93
   },
   {
    "hero": "hedgehog",
@@ -2038,9 +2038,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.24,
-   "avgScore": 2617,
-   "avgRunSeconds": 113
+   "avgHpLeft": 0.51,
+   "avgScore": 2660,
+   "avgRunSeconds": 114
   },
   {
    "hero": "hedgehog",
@@ -2066,9 +2066,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.2,
-   "avgScore": 1794,
-   "avgRunSeconds": 106
+   "avgHpLeft": 0.55,
+   "avgScore": 1632,
+   "avgRunSeconds": 108
   },
   {
    "hero": "hedgehog",
@@ -2080,9 +2080,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.16,
-   "avgScore": 2286,
-   "avgRunSeconds": 128
+   "avgHpLeft": 0.49,
+   "avgScore": 2232,
+   "avgRunSeconds": 127
   },
   {
    "hero": "hedgehog",
@@ -2108,9 +2108,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.79,
+   "avgHpLeft": 0.78,
    "avgScore": 1272,
-   "avgRunSeconds": 54
+   "avgRunSeconds": 55
   },
   {
    "hero": "star",
@@ -2122,9 +2122,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.56,
+   "avgHpLeft": 0.58,
    "avgScore": 1867,
-   "avgRunSeconds": 59
+   "avgRunSeconds": 60
   },
   {
    "hero": "star",
@@ -2356,13 +2356,13 @@
    "enemy": "block",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 1,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.05,
-   "avgScore": 1673,
-   "avgRunSeconds": 143
+   "avgHpLeft": 0.54,
+   "avgScore": 1935,
+   "avgRunSeconds": 187
   },
   {
    "hero": "star",
@@ -2370,13 +2370,13 @@
    "enemy": "block",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 1,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.03,
-   "avgScore": 2220,
-   "avgRunSeconds": 196
+   "avgHpLeft": 0.23,
+   "avgScore": 2903,
+   "avgRunSeconds": 202
   },
   {
    "hero": "star",
@@ -2384,13 +2384,13 @@
    "enemy": "block",
    "stake": 2,
    "avgWavesCleared": 4.75,
-   "runsWon": 1,
+   "runsWon": 2,
    "bossReached": 3,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.02,
-   "avgScore": 2356,
-   "avgRunSeconds": 196
+   "avgHpLeft": 0.09,
+   "avgScore": 2671,
+   "avgRunSeconds": 197
   },
   {
    "hero": "star",
@@ -2398,13 +2398,13 @@
    "enemy": "disc",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 2,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.03,
-   "avgScore": 1720,
-   "avgRunSeconds": 149
+   "avgHpLeft": 0.3,
+   "avgScore": 2240,
+   "avgRunSeconds": 162
   },
   {
    "hero": "star",
@@ -2412,13 +2412,13 @@
    "enemy": "disc",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2320,
-   "avgRunSeconds": 183
+   "avgHpLeft": 0.3,
+   "avgScore": 2996,
+   "avgRunSeconds": 212
   },
   {
    "hero": "star",
@@ -2426,13 +2426,13 @@
    "enemy": "disc",
    "stake": 2,
    "avgWavesCleared": 5,
-   "runsWon": 2,
+   "runsWon": 3,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.49,
-   "avgScore": 2763,
-   "avgRunSeconds": 254
+   "avgHpLeft": 0.6,
+   "avgScore": 3023,
+   "avgRunSeconds": 268
   },
   {
    "hero": "star",
@@ -2444,9 +2444,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.12,
-   "avgScore": 2146,
-   "avgRunSeconds": 131
+   "avgHpLeft": 0.42,
+   "avgScore": 2017,
+   "avgRunSeconds": 129
   },
   {
    "hero": "star",
@@ -2454,13 +2454,13 @@
    "enemy": "ring",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 2,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.1,
-   "avgScore": 2288,
-   "avgRunSeconds": 152
+   "avgHpLeft": 0.4,
+   "avgScore": 2589,
+   "avgRunSeconds": 156
   },
   {
    "hero": "star",
@@ -2473,8 +2473,8 @@
    "runs": 4,
    "timeouts": 0,
    "avgHpLeft": 0,
-   "avgScore": 1968,
-   "avgRunSeconds": 119
+   "avgScore": 2140,
+   "avgRunSeconds": 123
   },
   {
    "hero": "star",
@@ -2482,13 +2482,13 @@
    "enemy": "hoop2",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 1,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.01,
-   "avgScore": 2064,
-   "avgRunSeconds": 135
+   "avgHpLeft": 0.45,
+   "avgScore": 2226,
+   "avgRunSeconds": 150
   },
   {
    "hero": "star",
@@ -2496,13 +2496,13 @@
    "enemy": "hoop2",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2394,
-   "avgRunSeconds": 156
+   "avgHpLeft": 0.41,
+   "avgScore": 2934,
+   "avgRunSeconds": 175
   },
   {
    "hero": "star",
@@ -2528,9 +2528,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.89,
+   "avgHpLeft": 0.9,
    "avgScore": 1259,
-   "avgRunSeconds": 63
+   "avgRunSeconds": 64
   },
   {
    "hero": "line",
@@ -2558,7 +2558,7 @@
    "timeouts": 0,
    "avgHpLeft": 0.45,
    "avgScore": 1857,
-   "avgRunSeconds": 84
+   "avgRunSeconds": 85
   },
   {
    "hero": "line",
@@ -2776,13 +2776,13 @@
    "enemy": "block",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 1,
+   "runsWon": 2,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.23,
-   "avgScore": 1358,
-   "avgRunSeconds": 146
+   "avgHpLeft": 0.28,
+   "avgScore": 1935,
+   "avgRunSeconds": 167
   },
   {
    "hero": "line",
@@ -2794,9 +2794,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.8,
-   "avgScore": 2220,
-   "avgRunSeconds": 270
+   "avgHpLeft": 0.75,
+   "avgScore": 2325,
+   "avgRunSeconds": 260
   },
   {
    "hero": "line",
@@ -2804,13 +2804,13 @@
    "enemy": "block",
    "stake": 2,
    "avgWavesCleared": 5,
-   "runsWon": 1,
+   "runsWon": 2,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.25,
-   "avgScore": 2460,
-   "avgRunSeconds": 240
+   "avgHpLeft": 0.29,
+   "avgScore": 2880,
+   "avgRunSeconds": 257
   },
   {
    "hero": "line",
@@ -2822,9 +2822,9 @@
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.8,
-   "avgScore": 1512,
-   "avgRunSeconds": 219
+   "avgHpLeft": 0.63,
+   "avgScore": 1564,
+   "avgRunSeconds": 199
   },
   {
    "hero": "line",
@@ -2832,13 +2832,13 @@
    "enemy": "disc",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 2,
+   "runsWon": 3,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.38,
-   "avgScore": 2112,
-   "avgRunSeconds": 211
+   "avgHpLeft": 0.32,
+   "avgScore": 2528,
+   "avgRunSeconds": 215
   },
   {
    "hero": "line",
@@ -2846,12 +2846,12 @@
    "enemy": "disc",
    "stake": 2,
    "avgWavesCleared": 5,
-   "runsWon": 3,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.68,
-   "avgScore": 2763,
+   "avgHpLeft": 0.6,
+   "avgScore": 2919,
    "avgRunSeconds": 288
   },
   {
@@ -2860,13 +2860,13 @@
    "enemy": "ring",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 2,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.39,
-   "avgScore": 1673,
-   "avgRunSeconds": 142
+   "avgHpLeft": 0.55,
+   "avgScore": 1759,
+   "avgRunSeconds": 154
   },
   {
    "hero": "line",
@@ -2874,13 +2874,13 @@
    "enemy": "ring",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 2,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.28,
-   "avgScore": 2230,
-   "avgRunSeconds": 181
+   "avgHpLeft": 0.48,
+   "avgScore": 2617,
+   "avgRunSeconds": 191
   },
   {
    "hero": "line",
@@ -2888,13 +2888,13 @@
    "enemy": "ring",
    "stake": 2,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2648,
-   "avgRunSeconds": 190
+   "avgHpLeft": 0.63,
+   "avgScore": 2777,
+   "avgRunSeconds": 243
   },
   {
    "hero": "line",
@@ -2902,13 +2902,13 @@
    "enemy": "hoop2",
    "stake": 1,
    "avgWavesCleared": 5,
-   "runsWon": 0,
+   "runsWon": 3,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 1470,
-   "avgRunSeconds": 111
+   "avgHpLeft": 0.25,
+   "avgScore": 2226,
+   "avgRunSeconds": 147
   },
   {
    "hero": "line",
@@ -2916,13 +2916,13 @@
    "enemy": "hoop2",
    "stake": 1.5,
    "avgWavesCleared": 5,
-   "runsWon": 1,
+   "runsWon": 4,
    "bossReached": 4,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0,
-   "avgScore": 2269,
-   "avgRunSeconds": 161
+   "avgHpLeft": 0.26,
+   "avgScore": 2863,
+   "avgRunSeconds": 190
   },
   {
    "hero": "line",
@@ -2930,36 +2930,36 @@
    "enemy": "hoop2",
    "stake": 2,
    "avgWavesCleared": 4.75,
-   "runsWon": 1,
+   "runsWon": 3,
    "bossReached": 3,
    "runs": 4,
    "timeouts": 0,
-   "avgHpLeft": 0.01,
-   "avgScore": 2696,
-   "avgRunSeconds": 189
+   "avgHpLeft": 0.05,
+   "avgScore": 3182,
+   "avgRunSeconds": 193
   }
  ],
  "soloSummary": {
-  "wonShare": 0.408,
+  "wonShare": 0.563,
   "runs": 480,
-  "avgHpLeft": 0.18,
+  "avgHpLeft": 0.26,
   "byStake": {
    "x1": {
-    "wonShare": 0.669,
-    "avgHpLeft": 0.277,
-    "avgScore": 1576,
+    "wonShare": 0.838,
+    "avgHpLeft": 0.384,
+    "avgScore": 1668,
     "avgWavesCleared": 4.99
    },
    "x1.5": {
-    "wonShare": 0.381,
-    "avgHpLeft": 0.175,
-    "avgScore": 1897,
+    "wonShare": 0.588,
+    "avgHpLeft": 0.276,
+    "avgScore": 2051,
     "avgWavesCleared": 4.69
    },
    "x2": {
-    "wonShare": 0.175,
-    "avgHpLeft": 0.088,
-    "avgScore": 1737,
+    "wonShare": 0.263,
+    "avgHpLeft": 0.12,
+    "avgScore": 1819,
     "avgWavesCleared": 3.87
    }
   }
@@ -3095,6 +3095,7 @@
    "enemySpeedBase": 3,
    "enemySpeedMult": 0.45,
    "enemyCrushPerInk": 0.004,
+   "bossCrushMult": 0,
    "enemyArmourPerInk": 0.6,
    "enemyArmourMult": 0.2,
    "copyArmourScaleMin": 0.5,

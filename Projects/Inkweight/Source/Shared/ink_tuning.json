@@ -129,6 +129,7 @@
     "enemySpeedBase": 3,
     "enemySpeedMult": 0.45,
     "enemyCrushPerInk": 0.004,
+    "bossCrushMult": 0,
     "enemyArmourPerInk": 0.6,
     "enemyArmourMult": 0.2,
     "copyArmourScaleMin": 0.5,

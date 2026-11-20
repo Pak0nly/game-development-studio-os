@@ -1,5 +1,9 @@
 # INK-CORE-V3 Worker Result
 
+**Read section 10 ("Correction round 1") first.** Sections 2 to 9 describe
+the first candidate (`a28a644`); where correction round 1 changed a number
+or a statement, the section says so in a line marked "Correction round 1".
+
 Work Order: `Artifacts/Inkweight/DirectorDispatch/INK-CORE-V3/WORK_ORDER.md`.
 Worker: one separate Claude Code subagent in its own Git worktree. Everything
 new here is a prototype proposal, not a Human decision.
@@ -62,6 +66,10 @@ physics (`solo_before.txt`, `solo_before_summary.txt`); "after" = final state
 | all others | x1.5 | 31 / 96 | 31 / 96 | not counted | 64 / 96 | 1613 | 1633 |
 | all others | x2 | 13 / 96 | 15 / 96 | not counted | 24 / 96 | 1483 | 1432 |
 
+Correction round 1: the "after" columns above are the first candidate, in
+which the boss and its escorts also crushed. Final numbers are in section 10
+(heavy blunt 61 / 63 / 27 of 64 won).
+
 Reading: the score of a heavy blunt design no longer rises from x1.5 to x2,
 27 of 64 runs at x2 end before the boss, and the other designs are where they
 were. What remains:
@@ -71,9 +79,13 @@ were. What remains:
 - **The boss fight with five heavy designs is now hard at every stake** (34
   of 64 won at x1, before 64 of 64): six heavy bodies crush. This is the
   larger part of the drop at x1 and x1.5.
-- **A human who kites perfectly was not measured.** The enemies are still
-  slower than a heavy hero (block 7.3 to 8.7 against 9.6). The bot hero gets
-  touched because it goes for drops.
+- **A fast hero that kites a single heavy copy still gets the higher stake
+  nearly free during the waves** (corrected in correction round 1; my first
+  wording understated it). I did not measure it; the Reviewer did: a 32-cell
+  line hero running away in a circle took 0 damage from a block at x1, x1.5
+  and x2 in waves 1 and 3. A heavy copy moves at 7.3 to 8.7 cells per second
+  and almost every hero is faster. The bot hero gets touched only because it
+  goes for drops. Known open point, no rule change now.
 - Candidates tried on 2 seeds before the choice (scratch runs, not kept as
   files): speed 5 + 0.4 with crush 0.012 flat (heavy 5 / 3 / 1 of 32 won, far
   too hard), crush 0.012 flat alone (7 / 4 / 7), crush 0.006 flat (18 / 16 /
@@ -109,8 +121,12 @@ with and without). No velocity is added.
 
 Steps measured on the way: 4 passes alone gave comb against comb 0.24 % but
 crowds 0.51 %; 8 passes alone 0.10 % and crowds 0.71 %; relaxation 2 / 4
-rounds with 2 passes gave crowds 0.17 % / 0.04 % (60 rounds). Run time of the
-probe did not change measurably.
+rounds with 2 passes gave crowds 0.17 % / 0.04 % (60 rounds). Correction
+round 1: my sentence that the run time did not change was wrong (the probe
+spends its time in the overlap measure, not in the step). Measured step
+time, `step_time.txt`: four-figure rounds 23.7 -> 43.6 microseconds per tick
+(Reviewer: 33.6 -> 62.0), worst single tick 3.0 -> 9.9 ms in my run
+(Reviewer: 2.4 -> 4.0 ms); duels 9.9 -> 9.6.
 
 Wording corrected in `RULES_AS_BUILT.md` section 3 ("figures with one-cell
 teeth against each other, and any figures in a crowd, can still mesh for a
@@ -129,8 +145,12 @@ seat), and armour and ring in the same tick.
 
 `turnCos` and `turnSin` removed from the figure template. Checked before: no
 use in the core, tests, tools, simulation, the browser app or the C# port at
-the dispatch HEAD (the C# template never had them); golden files do not
-contain them.
+the dispatch HEAD; golden files do not contain them. Correction round 1: my
+statement "the C# template never had them" was false. My search covered the
+names `turnCos` / `turnSin` in that exact spelling and so missed the C#
+fields: `InkPhysics.cs` line 31 declares `TurnCos, TurnSin`, lines 134 and
+135 assign them, nothing reads them. The removal is still safe; the C#
+checklist now names the three lines.
 
 ## 3. Balance pass 3: five levers measured, none adopted, no Ring number changed
 
@@ -293,10 +313,12 @@ an app checklist and a C# checklist). In short:
    stakeSpeedMult`, crush `enemyCrushPerInk * N * scale * stake` as
    `bluntBonus`; new `soloEnemySpeed`, `soloEnemyCrush`; `enemySpeedMult`
    0.45, `enemySpeedBase` 3, `enemyCrushPerInk` 0.004.
-5. Template fields `turnCos` / `turnSin` gone (the C# port never had them).
+5. Template fields `turnCos` / `turnSin` gone (the C# port declares and
+   assigns `TurnCos` / `TurnSin`, unread: remove them).
 6. Hash layout unchanged; public functions of version 2 unchanged; replace
-   both golden files. Duel traces are unchanged, so a port can check the
-   steps in order: duel traces, then crowd traces, then solo traces.
+   both golden files. Correction round 1: the old duel traces are unchanged
+   and do not see the 8 passes; the new duel trace
+   `ring_1v1_comb_comb_deep_passes` does. See section 10.
 
 The app needs no call changed; if it explains the stake it should add that
 heavy enemies hit harder at higher stakes.
@@ -332,3 +354,133 @@ unchanged.
   `solo_before_summary.txt`, `solo_after_summary.txt` (the 4-seed run in
   parallel pieces before the final report; same numbers), `readability.md`,
   `style_check.txt`, `test_output.txt`.
+
+## 10. Correction round 1 (independent review: FAIL, one blocker)
+
+Review: `Artifacts/Inkweight/Evidence/INK-CORE-V3/REVIEW.md` in the main
+checkout (read only). Commit: "Inkweight: INK-CORE-V3 correction round 1" on
+the same branch, on top of `a28a644`. Time 02:36 to about 02:50 UTC.
+
+### B1 (blocker): no crush in the boss fight. Fixed.
+
+- New tuning key `solo.bossCrushMult` = 0. `soloStartBoss` multiplies the
+  `bluntBonus` of the boss and of every escort by it after spawning. Wave
+  copies crush as before; the new enemy speed stays everywhere.
+- Test: the boss test checks that every body of the boss fight has
+  `bluntBonus` 0 and that with the factor at 1 the boss and an escort crush
+  with their own ink.
+- New golden trace `solo_boss_heavy_no_crush` (hedgehog brawl hero, block
+  enemies at x1, boss): the only trace that differs when the factor is 1. I
+  added it after finding that no existing trace saw the factor.
+
+Solo smoke, 4 seeds per row, same field and method as section 2 (`node
+sim/solo_smoke.js`, run in four parallel pieces by hero, rows in
+`BALANCE_REPORT.md` / `.json`, summary in
+`solo_after_correction_1_summary.txt`):
+
+| Enemy designs | Stake | Won, version 2 rules | first candidate | after correction 1 | Reached the boss, first candidate | after correction 1 | Avg score, version 2 rules | first candidate | after correction 1 |
+|---|---|---|---|---|---|---|---|---|---|
+| heavy blunt (block, disc, ring, hoop2) | x1 | 64 / 64 | 34 / 64 | **61 / 64** | 64 / 64 | 64 / 64 | 1944 | 1777 | 2006 |
+| heavy blunt | x1.5 | 64 / 64 | 30 / 64 | **63 / 64** | 64 / 64 | 64 / 64 | 2420 | 2293 | 2677 |
+| heavy blunt | x2 | 64 / 64 | 13 / 64 | **27 / 64** | 37 / 64 | 37 / 64 | 2930 | 2195 | 2400 |
+| all others | x1 | 66 / 96 | 73 / 96 | 73 / 96 | 95 / 96 | 95 / 96 | 1438 | 1443 | 1443 |
+| all others | x1.5 | 31 / 96 | 31 / 96 | 31 / 96 | 64 / 96 | 64 / 96 | 1613 | 1633 | 1633 |
+| all others | x2 | 13 / 96 | 15 / 96 | 15 / 96 | 24 / 96 | 24 / 96 | 1483 | 1432 | 1432 |
+
+Boss fights of heavy blunt designs (runs that reached the boss -> runs won):
+first candidate x1 64 -> 34, x1.5 64 -> 30, x2 37 -> 13; after correction 1
+x1 64 -> 61, x1.5 64 -> 63, x2 37 -> 27. Per design after correction 1, won
+at x1 / x1.5 / x2 of 16: block 14 / 16 / 7, disc 16 / 15 / 8, ring 16 / 16 /
+6, hoop2 15 / 16 / 6. The other designs did not move at all (their boss
+fights have no blunt touch that the crush changed).
+
+All ten designs by stake x1 / x1.5 / x2: 83.8 % / 58.8 % / 26.3 % of 160
+runs won, average score 1668 / 2051 / 1819.
+
+What this means, plainly:
+
+- x1 with a heavy blunt enemy design is as safe as in version 2 again (61 of
+  64).
+- The price of the stake that is left is **x2 in the waves**: 27 of 64 runs
+  end before the boss, 27 of 64 are won, and the score at x2 (2400) is below
+  x1.5 (2677).
+- **x1.5 is nearly free again for heavy blunt designs in the bot runs**: 63
+  of 64 won and a third more score than x1. In the first candidate only the
+  boss crush had hidden this. R1 is therefore solved for x2 with a hero that
+  gets touched, and not solved for x1.5.
+- I did not re-run the Reviewer's scripted kiter (35 / 13 / 34 of 36 boss
+  fights); with `bossCrushMult` 0 the code path is the one the Reviewer
+  measured as "boss and escort crush off, speed kept".
+
+### I1: said plainly
+
+`WORKER_RESULT.md` section 2, `INK_RULES_V2.md` (note at the top and section
+8) and `RULES_AS_BUILT.md` section 10 now say that a fast hero kiting a
+single heavy copy still gets the higher stake nearly free during the waves
+(line hero, 0 damage at every stake, Reviewer's measurement), as a known open
+point with the idea to test next (a minimum copy count per stake). No rule
+change.
+
+### M1 to M6
+
+- M1: the C# note is corrected in `CHANGES_V3.md` (V1 and checklist D) and
+  here: `InkPhysics.cs` lines 31, 134, 135 declare and assign `TurnCos` /
+  `TurnSin`, unread; remove.
+- M2: `CHANGES_V3.md` V7 no longer says the old duel traces check the 8
+  passes. It lists which traces must stay identical, which trace checks V2
+  alone, and which trace sees which new number
+  (`golden_coverage_of_new_numbers.txt`, real output of a regeneration with
+  one value changed).
+- M3: run time measured and written into `CHANGES_V3.md` V3,
+  `RULES_AS_BUILT.md` section 3 and section 2 above.
+- M4: `RULES_AS_BUILT.md` section 3 and `CHANGES_V3.md` V3 say that the
+  relaxation does not always settle and that dead bodies count toward "more
+  than two bodies" (the 538 of 261926 is the Reviewer's count, not mine).
+- M5: `solo_win_with_boss` now has dot enemies instead of comb enemies: won
+  with 74 % armour left, and still won under 12 single tuning changes I
+  tried, including the three that broke it for the Reviewer
+  (`crowdRelaxPasses` 0, `extraSeparationPasses` 4, `enemyDamageMult` 0.45).
+  With comb enemies it was lost in 5 of those 12. A test checks more than
+  half the armour is left.
+- M6: `INK_RULES_V2.md` section 8 says where the x1 drop of the first
+  candidate came from (the boss fight) and that it is gone.
+
+### Suggestion 2: done
+
+New duel trace `ring_1v1_comb_comb_deep_passes` (seed 31, comb against comb,
+both circlers): its final hash differs for 8, 7, 4 and 2 extra passes, and a
+duel runs no relaxation, so it fails on its own when a port forgets the 8
+passes. A test regenerates it with 7 and with 2 passes and requires a
+different result.
+
+### Tests and checks (real output)
+
+`node --test`, last lines (`test_output.txt`):
+
+```text
+1..71
+# tests 71
+# suites 0
+# pass 71
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6680.682294
+```
+
+70 tests of the first candidate plus one (deep-passes trace, heavy boss
+trace, margin of the won run). `node tools/gen_golden.js --check` ->
+`golden files match`; with `--jitless` -> `golden files match`. Golden
+traces: 19 (17 in version 2); against version 2 seven are byte-identical,
+ten changed, two are new.
+
+### Not done in this round
+
+- The Ring balance run was not repeated: nothing a Ring round uses changed.
+  `BALANCE_REPORT.md` / `.json` were re-rendered from the stored Ring result
+  and the new solo rows by the report function (title says so); the Ring
+  part is byte-identical except the title line.
+- The scripted kiter was not re-run by me (see above).
+- `solo_after_summary.txt` is the first candidate and is kept for the
+  comparison.

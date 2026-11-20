@@ -177,6 +177,13 @@ skipped everywhere.
      inverse push weight, exactly like the first push of a pair. Positions
      only: no velocity, damage, cooldown, dash end or event, and teams do not
      matter. The loop stops after a round in which no pair was pushed.
+     It does not always settle within its four rounds (the Reviewer counted
+     the fourth round still pushing in 538 of 261926 sub-steps), and within
+     one tick a squeezed body can be pushed back and forth; no speed is added
+     and the solo wall is applied afterwards. Because dead bodies count, a
+     three-seat round whose last two figures are alive still relaxes, unlike
+     a duel. Cost: about twice the step time in four-figure rounds (23.7 ->
+     43.6 microseconds per tick in Node), duels unchanged.
 4. **Wall** (solo only): a body further than `arenaRadius` from the centre is
    put back on the circle and loses the outward part of its velocity.
 
@@ -294,8 +301,12 @@ kept); the mode modules remove it after the step.
   wave gives the colour of a shared cell), body and stats by the normal rules
   without a budget, armour `armour * bossArmourMult`, plus `bossEscortCopies`
   copy of each wave design with the enemy armour formula (scale 1); stake
-  index 0. Speed and crush of the boss and the escorts use scale 1 and stake
-  index 0 (the boss crushes with the `N` of the union drawing).
+  index 0. The speed of the boss and the escorts uses stake index 0. **No
+  crush in the boss fight:** after spawning, the `bluntBonus` of the boss and
+  of every escort is multiplied by `bossCrushMult` (0). The crush is what a
+  stake buys in a wave; the boss fight has no stake, and with crush six heavy
+  bodies made it much harder at x1 than in version 2 for a reason that had
+  nothing to do with the stake (review of version 3, B1).
 
 ## 6. Bots
 
@@ -438,9 +449,22 @@ the nearest enemy. Both stay off the wall.
    open: one drawing wins about 77 % of its duels under either style, and
    light drawings win almost no four-figure round. Recommendation: let
    humans play before another balance pass.
-10. **Solo stake and heavy blunt enemy designs (version 3).** The crush makes
-    x2 a real risk for block, disc, ring and hoop designs, and it makes their
-    boss fight hard at every stake. x1.5 is still cheap during the waves for
-    these designs (every bot run reached the boss); a human who kites
-    perfectly was not measured, the enemies are still slower than a heavy
-    hero.
+10. **Solo stake and heavy blunt enemy designs (version 3, known open
+    point).** The crush makes x2 a real risk for block, disc, ring and hoop
+    designs when the hero is slow or goes for the drops (bot runs: 27 of 64
+    end before the boss, 27 of 64 won). Two things are **not** solved:
+    - **x1.5 is nearly free again for these designs in the bot runs** (63 of
+      64 runs won, score 2677 against 2006 at x1) now that the boss fight has
+      no crush.
+    - **A fast hero that kites a single heavy copy still gets the higher
+      stake nearly free during the waves.** The Reviewer's simple kiter (run
+      away in a circle, no skill needed) with a 32-cell line hero (26 cells
+      per second) against a block took 0 damage at x1, x1.5 and x2 in waves 1
+      and 3, and collects twice the ink at x2; the only cost is a longer
+      fight. A heavy copy moves at 7.3 to 8.7 cells per second, so this works
+      for every hero faster than about 9, which is almost all of them. Only a
+      slow hero pays (disc hero, wave 3: 10 / 38 / 121 armour lost).
+    No rule was changed for this. A later order can test a minimum copy
+    count per stake for heavy designs (the extra ink split into more, weaker
+    copies), measured with a scripted kiter as well as the drop-chasing
+    bots.

@@ -140,7 +140,8 @@ export function soloEnemySpeed(tuning, fig, stakeIndex) {
 // ink the copy carries, see soloWaveArmourScale), times the stake. In the
 // walled arena weight cannot push anybody out, so it hits harder instead, and
 // a stake that cannot buy another copy of a heavy drawing makes its copies
-// hit harder. Boss and escorts: scale 1, stake index 0.
+// hit harder. Wave copies only: in the boss fight soloStartBoss multiplies
+// the value by bossCrushMult (0).
 export function soloEnemyCrush(tuning, fig, scale, stakeIndex) {
   const so = tuning.solo;
   return so.enemyCrushPerInk * fig.stats.N * scale * so.stakes[stakeIndex];
@@ -210,6 +211,10 @@ export function soloStartBoss(tuning, run) {
     const fig = buildFigure(run.enemyDrawings[w], run.W, run.H, tuning, 'figure', total);
     for (let c = 0; c < so.bossEscortCopies; c++) enemies.push(spawnEnemy(tuning, run, fig, false, 0, 1));
   }
+  // The crush is what a stake buys in a wave. The boss fight has no stake:
+  // the crush of the boss and of every escort is multiplied by bossCrushMult
+  // (0: they hit as in a wave without crush).
+  for (let i = 0; i < enemies.length; i++) enemies[i].bluntBonus = enemies[i].bluntBonus * so.bossCrushMult;
   run.copies = enemies.length;
   run.stake = 1;
   run.stakeIndex = 0;

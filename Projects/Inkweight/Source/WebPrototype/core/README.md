@@ -110,7 +110,8 @@ core.soloStartWave(tuning, run, enemyCells, stakeIndex);   // stakeIndex 0, 1, 2
 //   core.soloDropValue(tuning, run.wave, stakeIndex, N) ink; enemy damage x tuning.solo.stakeDamageMult[stakeIndex],
 //   enemy speed core.soloEnemySpeed(tuning, fig, stakeIndex) cells per second, enemy armour
 //   core.soloEnemyArmour(tuning, fig, scale) with scale = core.soloWaveArmourScale(tuning, run.wave, stakeIndex, N),
-//   extra blunt damage by weight core.soloEnemyCrush(tuning, fig, scale, stakeIndex)
+//   extra blunt damage by weight core.soloEnemyCrush(tuning, fig, scale, stakeIndex) (wave copies only;
+//   in the boss fight it is multiplied by tuning.solo.bossCrushMult, which is 0)
 core.soloStep(tuning, run, heroInput);                      // every tick while run.phase === 'fight'
 // 'cleared': optional core.soloUpgrade(tuning, run, kind, payload), then the next wave;
 //            when run.wave === core.SOLO_WAVES call core.soloStartBoss(tuning, run)
@@ -176,7 +177,12 @@ languages).
     simultaneous knock-out with an exact tie and by distance
     (`ring_2_idle_simultaneous_tie`, `ring_3_simultaneous_nearest_wins`),
     circler bots, hero death, the solo time limit, and the hero-ink and
-    weapon-ink upgrades.
+    weapon-ink upgrades; the number of extra separation passes
+    (`ring_1v1_comb_comb_deep_passes`, a duel that differs for 8, 7, 4 and 2
+    passes); a won run with a wide margin (`solo_win_with_boss`, dot
+    enemies); the boss fight of a heavy blunt design without crush
+    (`solo_boss_heavy_no_crush`, the only trace that sees
+    `solo.bossCrushMult`).
 
 ## Commands
 

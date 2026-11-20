@@ -10,6 +10,13 @@ the code and the golden files are what counts. `CHANGES_V2.md` is unchanged.
 
 Everything here is a prototype proposal by the Worker, not a Human decision.
 
+This list describes the **final state after correction round 1** (independent
+review of the first version 3 candidate: no crush in the boss fight, one more
+golden duel trace and one more solo trace, the won solo trace with dot
+enemies). It is still one list from
+the merged version 2 to the final state; nothing of the first candidate has
+to be known.
+
 Notation: "old" is core version 2, "new" is version 3. Section numbers `V1`
 ... are for cross-reference only.
 
@@ -21,9 +28,9 @@ Notation: "old" is core version 2, "new" is version 3. Section numbers `V1`
 | V2 | tuning | `physics.extraSeparationPasses` 2 -> 8 (no code change) | Re-review R2: meshing teeth |
 | V3 | `physics.js`, `stepWorld` | Crowd relaxation after the pair loop of every sub-step when the world has more than two bodies; new function `relaxPair`; new key `physics.crowdRelaxPasses` (4) | Re-review R2: overlap in crowds |
 | V4 | `physics.js`, `createBody`, `touchDamage` | New body field `bluntBonus` (0 by default), added to the blunt damage of that body's touches | Re-review R1 (used by solo enemies only) |
-| V5 | `solo.js`, `spawnEnemy` | Enemy copies: top speed `(enemySpeedBase + enemySpeedMult * topSpeed) * stakeSpeedMult`; crush `enemyCrushPerInk * N * scale * stake` as `bluntBonus`; new functions `soloEnemySpeed`, `soloEnemyCrush`; new keys `solo.enemySpeedBase` (3), `solo.enemyCrushPerInk` (0.004); `solo.enemySpeedMult` 0.55 -> 0.45 | Re-review R1: heavy blunt enemy designs made the stake free |
+| V5 | `solo.js`, `spawnEnemy`, `soloStartBoss` | Enemy copies: top speed `(enemySpeedBase + enemySpeedMult * topSpeed) * stakeSpeedMult`; crush `enemyCrushPerInk * N * scale * stake` as `bluntBonus`, in the boss fight times `bossCrushMult` (0: no crush there); new functions `soloEnemySpeed`, `soloEnemyCrush`; new keys `solo.enemySpeedBase` (3), `solo.enemyCrushPerInk` (0.004), `solo.bossCrushMult` (0); `solo.enemySpeedMult` 0.55 -> 0.45 | Re-review R1: heavy blunt enemy designs made the stake free; the boss fight has no stake (review of version 3, B1) |
 | V6 | tuning | `version` is `ink-tuning-3`; `note` rewritten | New tuning version |
-| V7 | golden files | Regenerated; no new field, no new trace | V2 to V6 |
+| V7 | golden files | Regenerated; no new field; two new traces (`ring_1v1_comb_comb_deep_passes`, `solo_boss_heavy_no_crush`); `solo_win_with_boss` now with dot enemies | V2 to V6; a port that forgets V2 must fail on its own |
 
 Unchanged: `rng.js`, `drawing.js` (every stat and formula), `ring.js`,
 `bots.js`, `hash.js` (layout 2, same fields in the same order), the public
@@ -44,7 +51,10 @@ code is in the core.
   template is `{ stats, W, H, cx, cy, count, lx, ly, sharp, colour, boundary,
   grid, radius, mass, accelK, turnRate }`. `turnRate` and the per-sub-step
   turn (`CHANGES_V2.md` B5) are unchanged.
-- A port that never had these fields has nothing to do.
+- The C# port at the dispatch HEAD has them, unread: `InkPhysics.cs` line 31
+  declares `TurnCos, TurnSin`, lines 134 and 135 assign them. Remove the two
+  names and the two assignments (and the local they are computed from if
+  nothing else uses it); nothing reads them, so no result changes.
 
 ### V2. More passes for deep contacts (tuning only)
 
@@ -97,6 +107,19 @@ code is in the core.
 - Nothing else in `stepWorld` moved: control, hit cooldowns, the number of
   sub-steps, the turn, the integration, `collidePair` and the wall are as in
   version 2.
+- Notes for a port:
+  - Dead bodies count for `n > 2`. A three-seat round whose last two figures
+    are alive still relaxes (unlike a duel); a solo fight always does (hero
+    plus at least one enemy is 2, so a wave with one copy does not, a wave
+    with two or more copies and the boss fight do, also after copies fell).
+  - The loop does not always settle: in the Reviewer's count the fourth round
+    still pushed in 538 of 261926 sub-steps, and inside one tick a squeezed
+    body can be pushed back and forth. That is intended to stay as it is (no
+    speed is added, the solo wall is applied afterwards); a port must stop
+    after `crowdRelaxPasses` rounds exactly like the reference.
+  - Cost, measured in Node (`step_time.txt`): four-figure rounds 23.7 -> 43.6
+    microseconds per tick on average (the Reviewer measured 33.6 -> 62.0),
+    worst single tick 3 -> 10 ms in one run; duels unchanged (9.9 -> 9.6).
 
 ### V4. Blunt bonus of a body (`core/physics.js`)
 
@@ -114,7 +137,8 @@ code is in the core.
 ### V5. Solo enemy copies: speed and crush (`core/solo.js`)
 
 - New tuning keys in `solo`: `enemySpeedBase` = 3 (cells per second),
-  `enemyCrushPerInk` = 0.004. Changed value: `enemySpeedMult` 0.55 -> 0.45.
+  `enemyCrushPerInk` = 0.004, `bossCrushMult` = 0. Changed value:
+  `enemySpeedMult` 0.55 -> 0.45.
 - New exported function `soloEnemySpeed(tuning, fig, stakeIndex)` =
   `(enemySpeedBase + enemySpeedMult * fig.stats.topSpeed) *
   stakeSpeedMult[stakeIndex]` (in this order of operations).
@@ -134,15 +158,25 @@ code is in the core.
 - `scale` is the wave scale of version 2 (`soloWaveArmourScale`, limited to
   `copyArmourScaleMin .. copyArmourScaleMax`); `soloStartBoss` passes scale 1
   and stake index 0 for the boss and for every escort, so in the boss fight
-  speed = `enemySpeedBase + enemySpeedMult * topSpeed` and crush =
-  `enemyCrushPerInk * N` (the boss crushes with the `N` of the union drawing).
+  speed = `enemySpeedBase + enemySpeedMult * topSpeed`.
+- **No crush in the boss fight** (correction round 1). `soloStartBoss`, after
+  all enemies are spawned (boss first, then the escorts in wave order) and
+  before `run.copies` is set: for every enemy body in list order
+  `body.bluntBonus = body.bluntBonus * bossCrushMult`. With `bossCrushMult`
+  = 0 every body of the boss fight has `bluntBonus` exactly 0 and hits as in
+  version 2 (`bluntDamage * enemyDamageMult` = 0.48 blunt). The crush is what
+  a stake buys in a wave; the boss fight has no stake. With the factor at 1
+  the boss would crush with `enemyCrushPerInk * N` of the union drawing.
 - Effect: a blunt touch of an enemy copy costs the hero `(bluntDamage +
   crush) * enemyDamageMult * stakeDamageMult[k]`. Examples for the 210-cell
   block: wave 3 at x1 (scale 0.92) 0.79 per touch, at x2 (scale 1.84) 2.58;
   version 2 had 0.48 and 0.72. A 13-cell dot gains at most 0.13.
 - Enemy top speeds at x1, old -> new: 13-cell dot 17.6 -> 17.4, 20-cell
   needle 16.3 -> 16.3, 210-cell block 5.2 -> 7.3 (8.7 at x2). Heavy drawings
-  stay the slowest enemies.
+  stay the slowest enemies. The new speed also holds in the boss fight.
+- Known open point (not a port matter): a hero faster than a single heavy
+  copy can kite it and takes the higher stake almost free during the waves;
+  see `RULES_AS_BUILT.md` section 10.
 - Everything else in `solo.js` is unchanged: copies, wave scale, enemy
   armour, drops, throw, shots, upgrades, boss drawing, end checks.
 
@@ -150,7 +184,7 @@ code is in the core.
 
 - `version`: `ink-tuning-2` -> `ink-tuning-3`; `note` rewritten.
 - New keys: `physics.crowdRelaxPasses` 4, `solo.enemySpeedBase` 3,
-  `solo.enemyCrushPerInk` 0.004.
+  `solo.enemyCrushPerInk` 0.004, `solo.bossCrushMult` 0.
 - Changed values: `physics.extraSeparationPasses` 2 -> 8,
   `solo.enemySpeedMult` 0.55 -> 0.45.
 - No key removed, no other value changed.
@@ -160,18 +194,51 @@ code is in the core.
 - `Shared/golden/stat_vectors.json`: only `tuningVersion` changed; every
   expected value is as in version 2 (the template fields `turnCos` and
   `turnSin` were never in it).
-- `Shared/golden/sim_traces.json`: regenerated with the same 17 traces.
-  Changed (10): the four Ring traces with three or four seats and contact
-  (`ring_3_star_wedge_needle`, `ring_4_disc_star_comb_dot`,
-  `ring_4_one_scripted_seat`, `ring_4_circlers`) and all six solo traces.
-  Byte-identical to version 2 (7): the six duel traces and
-  `ring_3_simultaneous_nearest_wins` (nobody touches). A port can therefore
-  check V2 with the duel traces first, then V3 with the crowd traces, then V4
-  and V5 with the solo traces. Replace the whole file (the header carries the
-  new `tuningVersion`).
-- Tests: 70 (version 2: 65). New: simultaneous knock-out by armour (R3), comb
+- `Shared/golden/sim_traces.json`: 19 traces (version 2: 17).
+  - Byte-identical to version 2 (7): the six duel traces of version 2 and
+    `ring_3_simultaneous_nearest_wins` (nobody touches). They **must stay
+    identical** in a port; they do not see the new pass number, so they
+    cannot catch a port that forgot V2.
+  - New (1): `ring_1v1_comb_comb_deep_passes` (seed 31, comb against comb,
+    both circlers, one round), placed after `ring_3_simultaneous_nearest_wins`
+    and before the solo traces. Its teeth mesh so deeply that it differs for
+    8, 7, 4 and 2 extra passes; it runs no crowd relaxation (two bodies), so
+    **this trace alone checks V2**.
+  - Changed (4): the Ring traces with three or four seats and contact
+    (`ring_3_star_wedge_needle`, `ring_4_disc_star_comb_dot`,
+    `ring_4_one_scripted_seat`, `ring_4_circlers`): they check V2 and V3
+    together.
+  - Changed (6): all solo traces; they check V4 and V5 (and V2, V3 where
+    enemies crowd). `solo_win_with_boss` now has dot enemies instead of comb
+    enemies (same seed, hero and weapon), so the won run has a wide margin
+    (74 % armour left; it stayed won under 12 single tuning changes that
+    were tried) and no longer sits near the edge.
+  - New (1): `solo_boss_heavy_no_crush` (seed 28, hedgehog hero, brawl bot,
+    needle weapon, block enemies at x1 in all five waves, heal after each,
+    boss), placed after `solo_win_with_boss`. It is the **only** trace that
+    sees `bossCrushMult` (it differs with the factor at 1); the other solo
+    traces with a boss fight do not, because their boss fights have no blunt
+    touch that the crush would change.
+  - Which trace sees which new number (regenerated with one value changed,
+    `golden_coverage_of_new_numbers.txt` in the evidence folder):
+    `extraSeparationPasses` 7 or 2: `ring_3_star_wedge_needle`,
+    `ring_4_one_scripted_seat`, `ring_4_circlers`,
+    `ring_1v1_comb_comb_deep_passes`, `solo_brawl_full_run`,
+    `solo_boss_heavy_no_crush`; `crowdRelaxPasses` 0: the four crowd traces
+    and the same two solo traces; `enemyCrushPerInk` 0: `solo_brawl_full_run`,
+    `solo_boss_heavy_no_crush`, `solo_upgrades_hero_and_weapon_ink`,
+    `solo_hero_death`; `enemySpeedBase` 0: all seven solo traces.
+  - Suggested order for a port: the seven identical traces, then the
+    deep-passes duel (V2), then the crowd traces (V3), then the solo traces
+    (V4, V5). Replace the whole file (the header carries the new
+    `tuningVersion`).
+- Tests: 71 (version 2: 65). New: simultaneous knock-out by armour (R3), comb
   against comb, a four-figure crowd, the crowd relaxation (positions only,
-  duels untouched), the solo crush and speed (R1).
+  duels untouched), the solo crush and speed (R1), and "the deep-passes duel
+  trace changes with one separation pass less" (also checks the margin of
+  the won solo run and that the heavy boss trace sees the boss crush factor).
+  The boss test checks that no body of the boss fight crushes and that the
+  factor decides it.
 - Simulation tools (not part of a port): `sim/overlap_probe.js` also measures
   teeth pairs and random four-figure rounds; `sim/balance.js` has the heavy
   blunt enemy designs (block, disc, ring, 2-wide hoop) in the solo smoke
@@ -187,9 +254,10 @@ code is in the core.
 - [ ] If the app shows what a stake does (the stake buttons read
       `stakeSpeedMult` and `stakeDamageMult`): the speed factor is still
       right. Add one line for the new part, for example "heavy enemies hit
-      harder at higher stakes": the blunt touch of a copy is now
+      harder at higher stakes": the blunt touch of a wave copy is now
       `(bluntDamage + soloEnemyCrush(...)) * enemyDamageMult *
-      stakeDamageMult[k]`.
+      stakeDamageMult[k]`. Not in the boss fight (`bossCrushMult` 0); read
+      `body.bluntBonus` if the app shows a touch value for a living enemy.
 - [ ] If the app shows an enemy speed anywhere, use `soloEnemySpeed(tuning,
       fig, stakeIndex)` instead of `topSpeed * enemySpeedMult *
       stakeSpeedMult[k]`.
@@ -209,11 +277,18 @@ code is in the core.
 - [ ] Solo: add `SoloEnemySpeed` and `SoloEnemyCrush` with the operation
       order of V5; in the enemy spawn pass speed factor 1 to the body
       constructor and then set the top speed and the blunt bonus; boss and
-      escorts with scale 1 and stake index 0.
+      escorts with scale 1 and stake index 0; in the boss start multiply the
+      blunt bonus of every spawned body by `bossCrushMult` (V5).
 - [ ] Tuning: read the new keys `physics.crowdRelaxPasses`,
-      `solo.enemySpeedBase`, `solo.enemyCrushPerInk`; regenerate the embedded
+      `solo.enemySpeedBase`, `solo.enemyCrushPerInk`, `solo.bossCrushMult`;
+      regenerate the embedded
       tuning text (`InkGenerated.cs`) from `ink-tuning-3`.
-- [ ] If the template has `TurnCos` / `TurnSin`, remove them (V1).
+- [ ] Remove `TurnCos` / `TurnSin` from the template (`InkPhysics.cs` lines
+      31, 134, 135 at the dispatch HEAD; declared and assigned, never read)
+      (V1).
 - [ ] The state hash is unchanged (layout 2). Replace both golden files and
       run the core tests: the stat vectors must pass without a code change;
-      the traces need V2 to V5.
+      the seven traces listed in V7 must pass without a code change too; the
+      new duel trace needs V2, the crowd traces V2 and V3, the solo traces V2
+      to V5. The trace list has 19 entries now; `solo_boss_heavy_no_crush` is the
+      one that fails when the boss crush factor is forgotten.

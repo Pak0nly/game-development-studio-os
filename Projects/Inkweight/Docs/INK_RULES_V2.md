@@ -19,7 +19,10 @@ file is what the game runs. The exact algorithms are in
   enemy copy now hits: its blunt touch gains a **crush** of 0.004 per ink,
   times the share of staked ink the copy carries, times the stake. Before, a
   heavy blunt enemy design (block, disc, ring, hoop) was harmless and made
-  the stake free. **(new)**
+  the stake free. The boss and its escorts do not crush: the boss fight has
+  no stake. **(new)**
+- **Known open point:** a fast hero that kites a single heavy enemy copy
+  still gets the higher stake nearly free during the waves (section 8).
 - Movement: figures in a crowd and figures with one-cell teeth sit inside
   each other far less often (more separation passes, a relaxation round for
   three or more figures). No rule a player sees changed.
@@ -184,8 +187,9 @@ Unchanged from version 1.
   0.5 to 2 as for its armour), times the stake. In the walled arena weight
   cannot push anybody out, so it hits harder instead. A 210-cell block in
   wave 3 touches for 0.8 at x1 and for 2.6 at x2 (before: 0.5 and 0.7); a
-  13-cell dot gains almost nothing. Boss and escorts crush with their own
-  ink.
+  13-cell dot gains almost nothing. The boss and its escorts do not crush
+  (factor `bossCrushMult` 0): the crush is the price of a stake, and the boss
+  fight has none.
 - **(new)** The stake matters for danger and for reward: besides more or
   tougher copies the enemies hit 1.25 or 1.5 times harder and are 1.1 or 1.2
   times faster at x1.5 and x2. The drops of a wave together pay the staked
@@ -293,14 +297,35 @@ changed.**
 | Light figures get their dash back sooner (40 ticks at no ink up to 120 at full ink) | grille 76.6 | hoop 92.1 | 1.3 / 1.5 | not adopted: the one-cell hoop becomes dominant as a circler |
 | Big drawings are out sooner (out when the centre is closer to the edge than a quarter of the size radius) | hoop2 80.0 | hoop 82.1 | 1.6 / 2.5 | not adopted: raises the top under both styles |
 
-Solo smoke run, version 3 (four hero drawings, ten enemy designs: the seven
-of version 2 plus disc, hollow ring and the 2-wide hoop; 480 runs): by stake
-x1 / x1.5 / x2: 66.9 % / 38.1 % / 17.5 % won, average score 1576 / 1897 /
-1737. The heavy blunt enemy designs (block, disc, ring, 2-wide hoop), which
-before were won in 64 of 64 runs at every stake with scores of 1944 / 2420 /
-2930, are now won in 34 / 30 / 13 of 64 runs with scores of 1777 / 2293 /
-2195; at x2, 27 of 64 runs end before the boss. At x1.5 every run still
-reaches the boss.
+Solo smoke run, version 3 after correction round 1 (four hero drawings, ten
+enemy designs: the seven of version 2 plus disc, hollow ring and the 2-wide
+hoop; 480 runs): by stake x1 / x1.5 / x2: 83.8 % / 58.8 % / 26.3 % won,
+average score 1668 / 2051 / 1819. The heavy blunt enemy designs (block,
+disc, ring, 2-wide hoop), which before were won in 64 of 64 runs at every
+stake with scores of 1944 / 2420 / 2930, are now won in 61 / 63 / 27 of 64
+runs with scores of 2006 / 2677 / 2400; at x2, 27 of 64 runs end before the
+boss.
+
+Where the numbers come from, said plainly:
+
+- The first version 3 candidate also let the boss and its escorts crush.
+  With that, heavy blunt designs were won in only 34 / 30 / 13 of 64 runs,
+  and the drop at x1 and x1.5 came from the **boss fight**, not from the
+  stake (every run reached the boss at x1 and x1.5). The independent review
+  measured the same with a kiting hero: 35 of 36 boss fights won under
+  version 2, 13 of 36 with boss crush, 34 of 36 without. The boss crush was
+  removed for that reason; x1 is again as safe as in version 2 for these
+  designs.
+- What is left of the fix is the price of **x2 in the waves** for a hero
+  that gets touched. **x1.5 is nearly free again** for heavy blunt designs in
+  the bot runs (63 of 64 won, a third more score than x1).
+- **Known open point: a fast hero that kites a single heavy copy still gets
+  the higher stake nearly free during the waves.** The Reviewer's simple
+  kiter with a 32-cell line hero took 0 damage from a block at x1, x1.5 and
+  x2 in waves 1 and 3 and collects twice the ink at x2. A heavy copy moves at
+  7.3 to 8.7 cells per second; almost every hero is faster. No rule was
+  changed for this now; a minimum copy count per stake for heavy designs is
+  the idea to test next.
 
 What the numbers cannot tell is unchanged: bots do not dodge, bait or redraw,
 two bot styles are still two styles, and the field is hand-made. The rules

@@ -172,6 +172,7 @@ export function buildSimTracesText(tuning) {
       covers: 'simultaneous knock-out decided by the distance to the centre: seats 0 and 1 never move, seat 2 creeps a few thousandths of a cell toward the centre and stops; all three leave the shrinking ring in the same tick and seat 2, the nearest, wins; see rounds[0].outTick and winner',
       scripts: { 0: [[0, 0, 0, 0]], 1: [[0, 0, 0, 0]], 2: [[0, 0.00173, -0.001, 0], [6, 0, 0, 0]] },
     }, every),
+    ringTrace(tuning, { name: 'ring_1v1_comb_comb_deep_passes', seed: 31, seats: ['comb', 'comb'], styles: [1, 1], scripts: {}, maxRounds: 1, maxTicksPerRound: 100000, covers: 'a duel whose teeth mesh so deeply that the number of extra separation passes matters: it differs for physics.extraSeparationPasses 8, 7, 4 and 2 (INK-CORE-V3)' }, every),
     soloTrace(tuning, { name: 'solo_kite_two_waves', seed: 21, hero: 'disc', weapon: 'needle', heroBot: 'kite', boss: false, waves: [{ enemy: 'dot', stake: 2, upgrade: 'heal' }, { enemy: 'needle', stake: 0, upgrade: null }] }, every),
     soloTrace(tuning, {
       name: 'solo_brawl_full_run', seed: 22, hero: 'hedgehog', weapon: 'dot', heroBot: 'brawl', boss: true,
@@ -179,8 +180,13 @@ export function buildSimTracesText(tuning) {
     }, every),
     soloTrace(tuning, {
       name: 'solo_win_with_boss', seed: 27, hero: 'line', weapon: 'needle', heroBot: 'kite', boss: true,
-      covers: 'a run that is won: five waves, heal after each, boss and escorts defeated (final.phase won)',
-      waves: [0, 1, 2, 3, 4].map(() => ({ enemy: 'comb', stake: 0, upgrade: 'heal' })),
+      covers: 'a run that is won: five waves, heal after each, boss and escorts defeated (final.phase won); dot enemies since INK-CORE-V3 correction round 1, so the win has a wide margin',
+      waves: [0, 1, 2, 3, 4].map(() => ({ enemy: 'dot', stake: 0, upgrade: 'heal' })),
+    }, every),
+    soloTrace(tuning, {
+      name: 'solo_boss_heavy_no_crush', seed: 28, hero: 'hedgehog', weapon: 'needle', heroBot: 'brawl', boss: true,
+      covers: 'heavy blunt enemy design (block) in all five waves, then a boss fight in which the hero touches the boss and block escorts: wave copies crush, the boss fight does not (solo.bossCrushMult 0); the trace differs with bossCrushMult 1 (INK-CORE-V3 correction round 1)',
+      waves: [0, 1, 2, 3, 4].map(() => ({ enemy: 'block', stake: 0, upgrade: 'heal' })),
     }, every),
     soloTrace(tuning, {
       name: 'solo_upgrades_hero_and_weapon_ink', seed: 24, hero: 'star', weapon: 'needle', heroBot: 'kite', boss: false,
