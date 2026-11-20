@@ -167,13 +167,15 @@ namespace Inkweight.Runtime
             return Quaternion.Euler(0f, 0f, angle);
         }
 
-        public void DrawBody(InkBody b, bool isPlayer, bool flash, int order)
+        // mark: 0 none, 1 the body was hit, 2 the body rammed (dash contact)
+        public void DrawBody(InkBody b, bool isPlayer, int mark, int order)
         {
             if (!b.Alive) return;
             SpriteRenderer r = Next();
             r.sprite = SpriteFor(b.Fig);
             r.sortingOrder = order;
-            r.color = flash ? new Color(1f, 0.55f, 0.55f, 1f) : new Color(1f, 1f, 1f, 1f);
+            r.color = mark == 1 ? new Color(1f, 0.55f, 0.55f, 1f)
+                : mark == 2 ? new Color(1f, 0.9f, 0.45f, 1f) : new Color(1f, 1f, 1f, 1f);
             Transform t = r.transform;
             t.position = new Vector3((float)b.X, -(float)b.Y, 0f);
             t.rotation = Facing(b.Fx, b.Fy);

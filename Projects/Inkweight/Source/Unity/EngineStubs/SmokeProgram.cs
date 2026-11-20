@@ -10,6 +10,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Inkweight.Core;
 using Inkweight.Runtime;
 using UnityEngine;
 
@@ -159,16 +160,48 @@ namespace Inkweight.RuntimeStubCheck
             InkCanvasEditor editor = (InkCanvasEditor)Field(game, "editor");
             Expect(editor.Cells[6 * 32 + 16] == 1 && editor.Cells[22 * 32 + 10] == 1 && editor.Cells[5 * 32 + 16] == 0, "painted cells are where the mouse was");
             // canvas row 6 must be texture row 31 - 6 (texture rows count from the bottom)
+            // a one-cell stroke is all blade cells (rules version 2), so it carries the blade mark
+            Color32 blade = InkCanvasEditor.BladeTint(InkCanvasEditor.Ink[1]);
             Color32 top = editor.Texture.StubPixels[(31 - 6) * 32 + 16];
             Color32 below = editor.Texture.StubPixels[6 * 32 + 16];
-            Expect(top.r == 28 && below.r != 28, "canvas texture is written top row last (not mirrored)");
+            Expect(blade.r == 130 && top.r == blade.r && top.g == blade.g && below.r != blade.r,
+                "canvas texture is written top row last (not mirrored) and the stroke carries the blade mark");
+            Expect(HasLabel("Klingenfelder 23") && HasLabel("Schärfe: ") && HasLabel("Panzerung: 66.9") && HasLabel("Gewicht: 23"),
+                "stat panel shows the version 2 stats of the stroke");
+            Expect(HasLabel("nur ein Feld dick") && HasLabel("Hohlräume") && HasLabel("schiebt stärker") && HasLabel("ist schneller"),
+                "the four one-line explanations are shown");
+            Expect(HasLabel("noch ") && !HasLabel("ab dem ersten Strich"), "the drawing clock runs after the first stroke");
+            // a second, thick part: its inner cells are no blades and keep the plain ink colour
+            Mouse(EventType.MouseDown, 20f + 20.5f * cell, 70f + 10.5f * cell);
+            Mouse(EventType.MouseDrag, 20f + 22.5f * cell, 70f + 10.5f * cell);
+            Mouse(EventType.MouseUp, 20f + 22.5f * cell, 70f + 10.5f * cell);
+            Mouse(EventType.MouseDown, 20f + 20.5f * cell, 70f + 11.5f * cell);
+            Mouse(EventType.MouseDrag, 20f + 22.5f * cell, 70f + 11.5f * cell);
+            Mouse(EventType.MouseUp, 20f + 22.5f * cell, 70f + 11.5f * cell);
+            Frame();
+            Expect(HasLabel("Tinte: 29 von 220") && HasLabel("tropfen ab"), "a separate 3 x 2 block drips off");
+            // asking before a drawing is discarded
+            Click("Leeren");
+            Expect(HasButton("Ja, verwerfen") && HasButton("Nein, weiterzeichnen") && !HasButton("In den Ring!"), "Leeren asks first");
+            Click("Nein, weiterzeichnen");
+            Expect(HasLabel("Tinte: 29 von 220") && HasButton("In den Ring!"), "answering no keeps the drawing");
+            Click("Menü");
+            Expect(HasButton("Ja, verwerfen") && !HasButton("2 Figuren"), "Menü asks first on the drawing screen");
+            Key(KeyCode.Escape, true);
+            Frame();
+            Key(KeyCode.Escape, false);
+            Frame();
+            Expect(HasButton("In den Ring!") && !HasButton("Ja, verwerfen"), "Escape answers the question with no");
+            Time.StubDelta = 0f; // keep the drawing clock still for the match below
             Expect(HasButton("In den Ring!"), "a valid drawing can start");
             int rounds = 0;
             bool matchDone = false;
-            Time.StubDelta = 0.1f; // 6 ticks per frame
+            bool sawStyle = false;
             for (int guard = 0; guard < 12 && !matchDone; guard++)
             {
+                Time.StubDelta = 0f;
                 Click("In den Ring!");
+                Time.StubDelta = 0.1f; // 6 ticks per frame
                 rounds++;
                 Key(KeyCode.D, true);
                 bool over = false;
@@ -177,6 +210,7 @@ namespace Inkweight.RuntimeStubCheck
                     if (f == 20) { Key(KeyCode.D, false); Key(KeyCode.W, true); Key(KeyCode.Space, true); }
                     if (f == 60) { Key(KeyCode.W, false); Key(KeyCode.Space, false); }
                     Frame();
+                    if (HasLabel("Stürmer") || HasLabel("Kreisler")) sawStyle = true;
                     over = HasButton("Nächste Runde zeichnen") || HasButton("Zurück zum Menü");
                 }
                 Expect(over, "ring round " + rounds + " ended");
@@ -186,18 +220,70 @@ namespace Inkweight.RuntimeStubCheck
             }
             Expect(matchDone, "ring match ended");
             Expect(HasButton("2 Figuren"), "back in the menu after the match");
+            Expect(sawStyle, "the bot style is named in the HUD");
             Console.WriteLine("  ring 2 seats: match finished after " + rounds + " rounds");
 
             // ---- ring, 4 seats with an example drawing, left with Escape
+            Time.StubDelta = 0f;
             Click("4 Figuren");
             Click("Beispiel laden");
+            Expect(HasButton("Ja, verwerfen"), "Beispiel laden asks first when there is ink");
+            Click("Ja, verwerfen");
             Expect(HasButton("In den Ring!"), "example drawing is valid");
             Click("In den Ring!");
+            InkRingMatch m4 = (InkRingMatch)Field(game, "match");
+            Expect(m4 != null && m4.BotStyle[1] != m4.BotStyle[2] && m4.BotStyle[2] != m4.BotStyle[3], "bot styles are mixed in a 4-seat match");
+            Time.StubDelta = 0.1f;
             for (int f = 0; f < 50; f++) Frame();
             Key(KeyCode.Escape, true);
             Frame();
             Key(KeyCode.Escape, false);
-            Expect(HasButton("4 Figuren"), "Escape leads back to the menu");
+            Expect(HasButton("4 Figuren"), "Escape leads back to the menu (no question during a fight)");
+
+            // ---- drawing clock: runs out with a valid drawing
+            Time.StubDelta = 0f;
+            Click("3 Figuren");
+            Expect(HasLabel("30 s ab dem ersten Strich") && HasButton("In den Ring!"), "the clock waits for the first stroke");
+            Mouse(EventType.MouseDown, 20f + 2.5f * cell, 70f + 2.5f * cell);
+            Mouse(EventType.MouseUp, 20f + 2.5f * cell, 70f + 2.5f * cell);
+            Time.StubDelta = 1f;
+            for (int f = 0; f < 29; f++) Frame();
+            Expect(HasButton("In den Ring!") && HasLabel("noch 1 s"), "one second before the end the drawing screen is still open");
+            Time.StubDelta = 0.02f;
+            for (int f = 0; f < 60 && HasButton("In den Ring!"); f++) Frame();
+            Expect(!HasButton("In den Ring!") && HasLabel("Zeit abgelaufen!") && HasLabel("Ring "), "after 30 seconds the round starts by itself");
+            Key(KeyCode.Escape, true);
+            Frame();
+            Key(KeyCode.Escape, false);
+
+            // ---- drawing clock: runs out with an invalid drawing, the last valid one is used
+            Time.StubDelta = 0f;
+            Click("2 Figuren");
+            Click("Leeren");
+            Click("Ja, verwerfen");
+            Expect(HasLabel("Tinte: 0 von 220") && !HasButton("In den Ring!"), "answering yes clears the drawing");
+            Time.StubDelta = 1f;
+            for (int f = 0; f < 31 && !HasLabel("Zeit abgelaufen"); f++) Frame();
+            Expect(HasLabel("letzte gültige Zeichnung") && HasLabel("Ring "), "the last valid drawing enters the ring when the time is up");
+            Key(KeyCode.Escape, true);
+            Frame();
+            Key(KeyCode.Escape, false);
+
+            // ---- drawing clock: runs out with nothing valid at all, an example enters
+            SetField(game, "ringCells", null);
+            Time.StubDelta = 0f;
+            Click("2 Figuren");
+            Expect(HasLabel("Tinte: 0 von 220"), "empty canvas without a kept drawing");
+            Mouse(EventType.MouseDown, 20f + 2.5f * cell, 70f + 2.5f * cell);
+            Mouse(EventType.MouseUp, 20f + 2.5f * cell, 70f + 2.5f * cell);
+            Time.StubDelta = 1f;
+            for (int f = 0; f < 31 && !HasLabel("Zeit abgelaufen"); f++) Frame();
+            Expect(HasLabel("Beispielfigur") && HasLabel("Ring "), "an example figure enters the ring when nothing valid was drawn");
+            Key(KeyCode.Escape, true);
+            Frame();
+            Key(KeyCode.Escape, false);
+            Expect(HasButton("4 Figuren"), "back in the menu after the clock tests");
+            Time.StubDelta = 0.1f;
 
             // ---- solo
             Click("Glut");
@@ -215,7 +301,12 @@ namespace Inkweight.RuntimeStubCheck
                 if (HasButton("Welle starten") || HasButton("Beispiel laden"))
                 {
                     LoadExampleUntil("Welle starten");
-                    if (guard == 0) Click("x2");
+                    if (guard == 0)
+                    {
+                        Expect(HasLabel("Schaden x1, Tempo x1. Beute: "), "stake x1 shows no extra damage or speed");
+                        Click("x2");
+                        Expect(HasLabel("Schaden x1.5, Tempo x1.2") && HasLabel("Beute: ") && HasLabel(" Panzerung, "), "stake x2 shows its effects");
+                    }
                     Click("Welle starten");
                 }
                 fights++;
@@ -243,6 +334,16 @@ namespace Inkweight.RuntimeStubCheck
                     triedInk = true;
                     Click("Mehr Tinte für den Helden");
                     Expect(HasButton("Abbrechen") && HasButton("Fertig"), "upgrade drawing screen");
+                    Click("Abbrechen");
+                    Expect(HasButton("Heilen") && !HasButton("Ja, verwerfen"), "cancelling an unchanged redraw does not ask");
+                    Click("Mehr Tinte für den Helden");
+                    Mouse(EventType.MouseDown, 20f + 1.5f * cell, 70f + 1.5f * cell);
+                    Mouse(EventType.MouseUp, 20f + 1.5f * cell, 70f + 1.5f * cell);
+                    Click("Abbrechen");
+                    Expect(HasButton("Ja, verwerfen"), "cancelling a changed redraw asks first");
+                    Click("Nein, weiterzeichnen");
+                    Mouse(EventType.MouseDown, 20f + 1.5f * cell, 70f + 1.5f * cell);
+                    Mouse(EventType.MouseUp, 20f + 1.5f * cell, 70f + 1.5f * cell);
                     Click("Fertig");
                     Expect(HasLabel("Upgrade gekauft."), "hero ink upgrade bought");
                 }
@@ -257,6 +358,12 @@ namespace Inkweight.RuntimeStubCheck
             Expect(ended, "solo run reached an end screen");
             Expect(HasButton("Glut"), "back in the menu after the solo run");
             Expect(Debug.Errors.Count == 0, "no error was logged: " + string.Join("; ", Debug.Errors));
+            Console.WriteLine("  ram events seen by the game in all fights: " + Field(game, "ramCount") + " (information only)");
+        }
+
+        private static void SetField(object o, string name, object value)
+        {
+            o.GetType().GetField(name, BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public).SetValue(o, value);
         }
 
         private static void LoadExampleUntil(string button)
@@ -264,6 +371,7 @@ namespace Inkweight.RuntimeStubCheck
             for (int i = 0; i < 20; i++)
             {
                 Click("Beispiel laden");
+                if (HasButton("Ja, verwerfen")) Click("Ja, verwerfen"); // asked because there was ink
                 if (HasButton(button)) return;
             }
             Expect(false, "no example drawing made '" + button + "' available");

@@ -5125,18 +5125,29 @@ window.__inkDebug.inputBlocked = inputBlocked;
 // click came, the button is activated here; a late real click is swallowed.
 {
   let downBtn = null;
-  let nativeBtn = null;
-  let nativeAt = 0;
-  let healed = null;
-  let healedAt = 0;
+  const nativeAt = new WeakMap(); // button -> time of its last real click
+  // Taps that were activated here. Their real click can still arrive late
+  // (also after the next tap was handled), so every one is remembered for a
+  // moment: by its button and by its spot, because a tap that closed a layer
+  // would otherwise click whatever lies under the same spot.
+  const healed = [];
   const buttonOf = (t) => (t && t.closest ? t.closest('button') : null);
   document.addEventListener('pointerdown', (ev) => { downBtn = ev.pointerType === 'touch' ? buttonOf(ev.target) : null; }, true);
   document.addEventListener('click', (ev) => {
     if (!ev.isTrusted) return;
     const b = buttonOf(ev.target);
-    if (b && b === healed && performance.now() - healedAt < 600) { ev.stopImmediatePropagation(); ev.preventDefault(); return; }
-    nativeBtn = b;
-    nativeAt = performance.now();
+    const now = performance.now();
+    while (healed.length > 0 && now - healed[0].at > 700) healed.shift();
+    for (let i = 0; i < healed.length; i++) {
+      const h = healed[i];
+      if (b === h.btn || (Math.abs(ev.clientX - h.x) < 14 && Math.abs(ev.clientY - h.y) < 14)) {
+        healed.splice(i, 1);
+        ev.stopImmediatePropagation();
+        ev.preventDefault();
+        return;
+      }
+    }
+    if (b) nativeAt.set(b, now);
   }, true);
   document.addEventListener('pointerup', (ev) => {
     const b = downBtn;
@@ -5145,11 +5156,12 @@ window.__inkDebug.inputBlocked = inputBlocked;
     const r = b.getBoundingClientRect();
     if (ev.clientX < r.left || ev.clientX > r.right || ev.clientY < r.top || ev.clientY > r.bottom) return;
     const t = performance.now();
+    const ux = ev.clientX;
+    const uy = ev.clientY;
     setTimeout(() => {
-      if (nativeBtn === b && nativeAt >= t) return;
+      if ((nativeAt.get(b) || 0) >= t) return;
       if (b.disabled || !b.isConnected || b.hidden || b.offsetParent === null) return;
-      healed = b;
-      healedAt = performance.now();
+      healed.push({ btn: b, at: performance.now(), x: ux, y: uy });
       b.click();
     }, 90);
   }, true);

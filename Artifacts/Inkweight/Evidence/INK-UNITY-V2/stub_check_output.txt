@@ -1,0 +1,37 @@
+== input variant: Legacy
+    0 Warning(s)
+Build succeeded.
+Inkweight runtime smoke test against engine stubs (NOT Unity)
+input variant: old Input Manager
+  ring 2 seats: match finished after 3 rounds
+  solo: run ended after 6 fights (time over)
+  ram events seen by the game in all fights: 155 (information only)
+RESULT: PASS (stub smoke test, 2191 frames)
+== input variant: InputSystem
+    0 Warning(s)
+Build succeeded.
+Inkweight runtime smoke test against engine stubs (NOT Unity)
+input variant: Input System package
+  ring 2 seats: match finished after 3 rounds
+  solo: run ended after 6 fights (time over)
+  ram events seen by the game in all fights: 150 (information only)
+RESULT: PASS (stub smoke test, 2095 frames)
+== input variant: Both
+    0 Warning(s)
+Build succeeded.
+Inkweight runtime smoke test against engine stubs (NOT Unity)
+input variant: both backends
+  ring 2 seats: match finished after 3 rounds
+  solo: run ended after 6 fights (time over)
+  ram events seen by the game in all fights: 176 (information only)
+RESULT: PASS (stub smoke test, 2205 frames)
+== input variant: None
+    0 Warning(s)
+Build succeeded.
+Inkweight runtime smoke test against engine stubs (NOT Unity)
+input variant: no backend (GUI events only)
+  ring 2 seats: match finished after 3 rounds
+  solo: run ended after 6 fights (won)
+  ram events seen by the game in all fights: 151 (information only)
+RESULT: PASS (stub smoke test, 2427 frames)
+STUB CHECK: PASS (4 variants compiled and smoke-run against stubs, not against Unity)

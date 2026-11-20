@@ -17,6 +17,7 @@ namespace Inkweight.Runtime
         public InkStats Stats;
         public bool InkEmptyFlash;           // the last stroke was refused: no ink left
         public Texture2D Texture;
+        public int Revision;                 // counts every Refresh (the drawing or its rules changed)
 
         private readonly InkTuning tuning;
         private int[] body;
@@ -25,6 +26,9 @@ namespace Inkweight.Runtime
 
         public static readonly Color32 Paper = new Color32(245, 240, 225, 255);
         public static readonly Color32 PaperAlt = new Color32(236, 230, 212, 255);
+        // Blade cells (rules version 2: ink that is only one cell thick) are
+        // shown with the ink colour mixed toward this mark colour.
+        public static readonly Color32 BladeMark = new Color32(255, 210, 60, 255);
         public static readonly Color32[] Ink =
         {
             new Color32(0, 0, 0, 0),
@@ -131,10 +135,18 @@ namespace Inkweight.Runtime
             return n;
         }
 
+        // Colour of a blade cell: 11 parts ink, 9 parts mark colour.
+        public static Color32 BladeTint(Color32 ink)
+        {
+            return new Color32((byte)((ink.r * 11 + BladeMark.r * 9) / 20), (byte)((ink.g * 11 + BladeMark.g * 9) / 20),
+                (byte)((ink.b * 11 + BladeMark.b * 9) / 20), 255);
+        }
+
         // Recompute the stats and repaint the texture. Cells that drip off (not
-        // part of the body) are shown pale.
+        // part of the body) are shown pale, blade cells with the blade mark.
         public void Refresh()
         {
+            Revision++;
             Stats = InkDrawing.ComputeStats(Cells, W, H, tuning, Kind, Budget);
             body = InkDrawing.ExtractBody(Cells, W, H).Body;
             for (int y = 0; y < H; y++)
@@ -147,7 +159,7 @@ namespace Inkweight.Runtime
                     if (v >= 1 && v <= 4)
                     {
                         Color32 ink = Ink[v];
-                        if (body[i] != 0) c = ink;
+                        if (body[i] != 0) c = InkDrawing.IsSharpCell(body, W, H, x, y) ? BladeTint(ink) : ink;
                         else c = new Color32((byte)((ink.r + 2 * c.r) / 3), (byte)((ink.g + 2 * c.g) / 3), (byte)((ink.b + 2 * c.b) / 3), 255);
                     }
                     // texture row 0 is the bottom row, canvas row 0 is the top

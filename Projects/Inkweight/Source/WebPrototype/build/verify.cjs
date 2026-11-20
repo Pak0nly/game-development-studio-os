@@ -186,7 +186,7 @@ async function runScenario(browser, name) {
   if (/\d\.\d/.test(rulesText)) throw new Error('decimal point in the rules panel');
   await shot('rules');
   await press('#rulesClose');
-  if (await page.locator('#rulesLayer').isVisible()) throw new Error('rules panel did not close');
+  await page.waitForSelector('#rulesLayer', { state: 'hidden', timeout: 3000 });
   // count ram events of all fights of this run (read only)
   await page.evaluate(() => {
     const d = window.__inkDebug;
@@ -214,6 +214,9 @@ async function runScenario(browser, name) {
   await press('#drawRules');
   await page.waitForSelector('#rulesLayer:not([hidden])');
   await press('#rulesClose');
+  await page.waitForSelector('#rulesLayer', { state: 'hidden', timeout: 3000 });
+  await sleep(700); // a person looks at the drawing again before the next tap
+  if (await page.locator('#rulesLayer').isVisible()) throw new Error('rules panel came back');
   if ((await statNumbers()).weight !== mid.weight) throw new Error('rules panel changed the drawing');
   if (mid.element !== 'Glut') throw new Error('element did not follow the colour: ' + mid.element);
   if (/\./.test(mid.sharp) || !/,/.test(mid.sharp)) throw new Error('no decimal comma: ' + mid.sharp);

@@ -17,12 +17,16 @@ namespace Inkweight.Runtime
 
         private enum Purpose { RingFigure, SoloHero, SoloWeapon, SoloEnemy, SoloUpgradeHero, SoloUpgradeWeapon }
 
+        // question that is open on the drawing screen before ink is thrown away
+        private enum Ask { None, Clear, Preset, Menu, CancelUpgrade }
+
         private const float VirtualHeight = 720f;
         private const int MaxStepsPerFrame = 6;
         private const float StickRadius = 70f;
         private const int NoPointer = int.MinValue;
 
         private static readonly string[] ColourNames = { "Radierer", "Schwarz", "Glut", "Flut", "Moos" };
+        private static readonly string[] BotStyleNames = { "Stürmer", "Kreisler" };
 
         private InkTuning tuning;
         private InkSelfCheckResult selfCheck;
@@ -55,14 +59,33 @@ namespace Inkweight.Runtime
         private int[][] botCells;
         private readonly InkInput?[] ringHuman = new InkInput?[4];
 
+        // drawing screen: open question, Ring drawing clock, last valid drawing
+        private Ask ask = Ask.None;
+        private int beginRevision;
+        private float drawClock;
+        private bool clockRunning;
+        private int seenRevision;
+        private int[] lastValidCells;
+
+        // preview of the enemy drawing for the stake display (rebuilt when the drawing changes)
+        private InkFigure previewFigure;
+        private int previewRevision = -1;
+
+        // short note over the fight ("Rammstoß!", "Zeit abgelaufen")
+        private string fightNote = "";
+        private int fightNoteTicks;
+        private int ramCount;
+
         // solo
         private InkSoloRun run;
         private int startColour;
         private int[] heroCells, weaponCells, enemyCells;
         private int stakeIndex;
 
-        // short red flash of a body that was hit, in ticks, by body index
+        // short red flash of a body that was hit and yellow flash of a body
+        // that rammed, in ticks, by body index
         private readonly List<int> flash = new List<int>();
+        private readonly List<int> ram = new List<int>();
 
         private GUIStyle labelStyle, smallStyle, titleStyle, buttonStyle, centreStyle;
 
@@ -103,10 +126,16 @@ namespace Inkweight.Runtime
             guiScale = Screen.height / VirtualHeight;
             if (guiScale < 0.1f) guiScale = 0.1f;
             input.Poll(guiScale);
-            if (input.EscapePressed && view != View.Menu) { GoMenu(); return; }
+            if (input.EscapePressed && view != View.Menu)
+            {
+                if (ask != Ask.None) ask = Ask.None; // Escape answers the open question with "no"
+                else RequestMenu();
+                return;
+            }
             try
             {
-                if (view == View.RingFight) UpdateRing();
+                if (view == View.Draw) UpdateDrawClock();
+                else if (view == View.RingFight) UpdateRing();
                 else if (view == View.SoloFight) UpdateSolo();
                 if (view == View.RingFight || view == View.RingRoundOver) RenderRing();
                 else if (view == View.SoloFight || view == View.SoloEnd) RenderSolo();
@@ -118,8 +147,16 @@ namespace Inkweight.Runtime
             }
         }
 
+        // Leave to the menu; on the drawing screen ask once before ink is lost.
+        private void RequestMenu()
+        {
+            if (view == View.Draw && editor.Stats.Filled > 0) ask = Ask.Menu;
+            else GoMenu();
+        }
+
         private void GoMenu()
         {
+            ask = Ask.None;
             view = View.Menu;
             match = null;
             run = null;
@@ -175,18 +212,38 @@ namespace Inkweight.Runtime
         private void NoteEvents(List<InkEvent> events, int bodyCount)
         {
             while (flash.Count < bodyCount) flash.Add(0);
+            while (ram.Count < bodyCount) ram.Add(0);
             for (int i = 0; i < flash.Count; i++) if (flash[i] > 0) flash[i]--;
+            for (int i = 0; i < ram.Count; i++) if (ram[i] > 0) ram[i]--;
+            if (fightNoteTicks > 0) fightNoteTicks--;
             for (int i = 0; i < events.Count; i++)
             {
                 InkEvent e = events[i];
                 if ((e.Type == InkEvent.Hit || e.Type == InkEvent.ShotHit) && e.To >= 0 && e.To < flash.Count) flash[e.To] = 8;
+                else if (e.Type == InkEvent.Ram)
+                {
+                    // a dash that touched another figure: the dash ends there
+                    ramCount++;
+                    if (e.From >= 0 && e.From < ram.Count) ram[e.From] = 12;
+                    if (e.From == 0) { fightNote = "Rammstoß!"; fightNoteTicks = 45; }
+                    else if (e.To == 0) { fightNote = "Gerammt!"; fightNoteTicks = 45; }
+                }
             }
+        }
+
+        // 0 none, 1 hit, 2 rammed (for InkArenaView.DrawBody)
+        private int BodyMark(int i)
+        {
+            if (i < flash.Count && flash[i] > 0) return 1;
+            if (i < ram.Count && ram[i] > 0) return 2;
+            return 0;
         }
 
         private void ResetFight()
         {
             accumulator = 0f;
             flash.Clear();
+            ram.Clear();
             stickPointer = NoPointer;
             stickValue = new Vector2(0f, 0f);
         }
@@ -221,31 +278,105 @@ namespace Inkweight.Runtime
             seed = pickRng.U32();
             match = InkRing.CreateMatch(tuning, seats, seed);
             botCells = new int[seats][];
-            for (int s = 1; s < seats; s++) botCells[s] = PickBotDrawing();
+            // bot styles are mixed: rushers and circlers alternate from a random start
+            int firstStyle = pickRng.Int(2);
+            for (int s = 1; s < seats; s++)
+            {
+                botCells[s] = PickBotDrawing();
+                match.BotStyle[s] = (firstStyle + s) % 2;
+            }
+            fightNote = "";
+            fightNoteTicks = 0;
             BeginRingDraw();
         }
 
         private void BeginRingDraw()
         {
             purpose = Purpose.RingFigure;
-            editor.Begin(ringCells, InkRing.InkBudget(tuning, match, 0), InkDrawing.KindFigure, null);
+            BeginEdit(ringCells, InkRing.InkBudget(tuning, match, 0), InkDrawing.KindFigure, null);
             message = "";
             arena.SetVisible(false);
             view = View.Draw;
+            // the drawing clock starts with the first change of the drawing
+            drawClock = (float)tuning.DrawTimeSeconds;
+            clockRunning = false;
+            seenRevision = editor.Revision;
+            lastValidCells = editor.Stats.Valid ? editor.CopyCells() : null;
+        }
+
+        // Every drawing screen starts here, so that an open question never
+        // survives into the next drawing.
+        private void BeginEdit(int[] cells, double budget, string kind, bool[] allowed)
+        {
+            ask = Ask.None;
+            editor.Begin(cells, budget, kind, allowed);
+            beginRevision = editor.Revision;
+        }
+
+        // The Ring drawing clock (ring.drawTimeSeconds; 0 switches it off). It
+        // runs in real time from the first change of the drawing. When it
+        // runs out the round starts with the drawing as it is; if that is not
+        // valid, with the last valid state of it, else with an example.
+        private void UpdateDrawClock()
+        {
+            if (purpose != Purpose.RingFigure || match == null || tuning.DrawTimeSeconds <= 0) return;
+            if (editor.Revision != seenRevision)
+            {
+                seenRevision = editor.Revision;
+                clockRunning = true;
+                if (editor.Stats.Valid) lastValidCells = editor.CopyCells();
+            }
+            if (!clockRunning) return;
+            drawClock -= Time.unscaledDeltaTime;
+            if (drawClock > 0f) return;
+            drawClock = 0f;
+            clockRunning = false;
+            double budget = InkRing.InkBudget(tuning, match, 0);
+            string note = "Zeit abgelaufen!";
+            if (!editor.Stats.Valid)
+            {
+                int[] cells = lastValidCells != null ? lastValidCells : PickBotDrawing();
+                note = lastValidCells != null
+                    ? "Zeit abgelaufen – deine letzte gültige Zeichnung tritt an."
+                    : "Zeit abgelaufen – eine Beispielfigur tritt für dich an.";
+                BeginEdit(cells, budget, InkDrawing.KindFigure, null);
+            }
+            ask = Ask.None;
+            StartRingRound();
+            if (view == View.RingFight) { fightNote = note; fightNoteTicks = 150; }
         }
 
         private void StartRingRound()
         {
-            ringCells = editor.CopyCells();
-            arena.ClearFigures();
+            int[] mine = editor.CopyCells();
             InkFigure[] figures = new InkFigure[seats];
-            figures[0] = InkPhysics.BuildFigure(ringCells, editor.W, editor.H, tuning, InkDrawing.KindFigure, InkRing.InkBudget(tuning, match, 0));
+            figures[0] = InkPhysics.BuildFigure(mine, editor.W, editor.H, tuning, InkDrawing.KindFigure, InkRing.InkBudget(tuning, match, 0));
+            // the core refuses a round with an invalid figure; ask it first
+            string why = InkRing.CheckFigure(tuning, match, 0, figures[0]);
+            if (why != InkRing.CheckOk) { message = ReasonText(why); return; }
             for (int s = 1; s < seats; s++)
             {
-                int[] cells = botCells[s] != null ? botCells[s] : ringCells;
-                figures[s] = InkPhysics.BuildFigure(cells, editor.W, editor.H, tuning, InkDrawing.KindFigure, InkRing.InkBudget(tuning, match, s));
+                double budget = InkRing.InkBudget(tuning, match, s);
+                int[] cells = botCells[s] != null ? botCells[s] : mine;
+                figures[s] = InkPhysics.BuildFigure(cells, editor.W, editor.H, tuning, InkDrawing.KindFigure, budget);
+                if (InkRing.CheckFigure(tuning, match, s, figures[s]) != InkRing.CheckOk)
+                {
+                    // a bot drawing that does not pass is replaced by the player's own (which passed)
+                    botCells[s] = null;
+                    figures[s] = InkPhysics.BuildFigure(mine, editor.W, editor.H, tuning, InkDrawing.KindFigure, budget);
+                }
             }
-            InkRing.StartRound(tuning, match, figures);
+            try
+            {
+                InkRing.StartRound(tuning, match, figures);
+            }
+            catch (System.Exception e)
+            {
+                message = "Die Runde kann nicht starten: " + e.Message;
+                return;
+            }
+            ringCells = mine;
+            arena.ClearFigures();
             ResetFight();
             arena.Frame(tuning.RingStartRadius[seats]);
             arena.SetVisible(true);
@@ -278,7 +409,7 @@ namespace Inkweight.Runtime
             arena.BeginFrame(match.RingRadius);
             List<InkBody> bodies = match.World.Bodies;
             for (int i = 0; i < bodies.Count; i++)
-                arena.DrawBody(bodies[i], i == 0, i < flash.Count && flash[i] > 0, i);
+                arena.DrawBody(bodies[i], i == 0, BodyMark(i), i);
             arena.EndFrame();
         }
 
@@ -296,8 +427,10 @@ namespace Inkweight.Runtime
             run = null;
             seed = pickRng.U32();
             purpose = Purpose.SoloHero;
-            editor.Begin(heroCells, tuning.FigureBudget, InkDrawing.KindFigure, SoloColours());
+            BeginEdit(heroCells, tuning.FigureBudget, InkDrawing.KindFigure, SoloColours());
             message = "";
+            fightNote = "";
+            fightNoteTicks = 0;
             arena.SetVisible(false);
             view = View.Draw;
         }
@@ -306,7 +439,7 @@ namespace Inkweight.Runtime
         {
             purpose = Purpose.SoloEnemy;
             stakeIndex = 0;
-            editor.Begin(enemyCells, tuning.EnemyInkBudget, InkDrawing.KindFigure, null);
+            BeginEdit(enemyCells, tuning.EnemyInkBudget, InkDrawing.KindFigure, null);
             arena.SetVisible(false);
             view = View.Draw;
         }
@@ -326,7 +459,7 @@ namespace Inkweight.Runtime
             {
                 heroCells = editor.CopyCells();
                 purpose = Purpose.SoloWeapon;
-                editor.Begin(weaponCells, tuning.WeaponBudget, InkDrawing.KindWeapon, SoloColours());
+                BeginEdit(weaponCells, tuning.WeaponBudget, InkDrawing.KindWeapon, SoloColours());
             }
             else if (purpose == Purpose.SoloWeapon)
             {
@@ -399,7 +532,7 @@ namespace Inkweight.Runtime
             for (int i = 0; i < run.Drops.Count; i++) arena.DrawDrop(run.Drops[i]);
             List<InkBody> bodies = run.World.Bodies;
             for (int i = bodies.Count - 1; i >= 0; i--)
-                arena.DrawBody(bodies[i], i == 0, i < flash.Count && flash[i] > 0, i == 0 ? 10 : 0);
+                arena.DrawBody(bodies[i], i == 0, BodyMark(i), i == 0 ? 10 : 0);
             for (int i = 0; i < run.Shots.Count; i++) arena.DrawShot(run.Shots[i], run.WeaponFig);
             arena.EndFrame();
         }
@@ -407,6 +540,10 @@ namespace Inkweight.Runtime
         // ------------------------------------------------------------ text helpers
 
         private static string F(double v) { return v.ToString("0.0", CultureInfo.InvariantCulture); }
+
+        private static string F2(double v) { return v.ToString("0.00", CultureInfo.InvariantCulture); }
+
+        private static string Mult(double v) { return "x" + v.ToString("0.##", CultureInfo.InvariantCulture); }
 
         private static string I(double v) { return v.ToString("0", CultureInfo.InvariantCulture); }
 
@@ -428,10 +565,23 @@ namespace Inkweight.Runtime
             if (reason == "alreadyTaken") return "In dieser Pause wurde schon ein Upgrade gekauft.";
             if (reason == "badColour") return "Diese Farbe gibt es schon.";
             if (reason == "notNow") return "Jetzt nicht möglich.";
+            if (reason == "bad stake index") return "Diesen Einsatz gibt es nicht.";
             return reason;
         }
 
         private string SeatName(int seat) { return seat == 0 ? "Du" : "Bot " + seat; }
+
+        private string BotStyleName(int seat)
+        {
+            if (match == null || seat <= 0 || seat >= match.BotStyle.Length) return "";
+            int style = match.BotStyle[seat];
+            return style >= 0 && style < BotStyleNames.Length ? BotStyleNames[style] : "";
+        }
+
+        private void FightNote(float vw)
+        {
+            if (fightNoteTicks > 0 && fightNote != "") GUI.Label(new Rect(vw * 0.5f - 300f, 84f, 600f, 40f), fightNote, centreStyle);
+        }
 
         // ------------------------------------------------------------ GUI
 
@@ -494,7 +644,7 @@ namespace Inkweight.Runtime
                     else if (view == View.RingFight || view == View.RingRoundOver) RingGui(vw, vh);
                     else if (view == View.SoloFight || view == View.SoloEnd) SoloGui(vw, vh);
                     else if (view == View.SoloShop) ShopGui(vw, vh);
-                    if (view != View.Menu && GUI.Button(new Rect(vw - 130f, 10f, 120f, 40f), "Menü", buttonStyle)) GoMenu();
+                    if (view != View.Menu && GUI.Button(new Rect(vw - 130f, 10f, 120f, 40f), "Menü", buttonStyle)) RequestMenu();
                 }
             }
             catch (System.Exception e)
@@ -511,7 +661,7 @@ namespace Inkweight.Runtime
             float x = 60f;
             GUI.Label(new Rect(x, 40f, vw - 2f * x, 50f), "Inkweight – Prototyp", titleStyle);
             GUI.Label(new Rect(x, 95f, vw - 2f * x, 60f),
-                "Menge ist Gewicht, gefüllte Flächen sind Panzerung, dünne Linien sind Klingen, Farbe ist das Element.", labelStyle);
+                "Menge ist Gewicht, gefüllte Flächen sind Panzerung, Striche von einem Feld Breite sind Klingen, Farbe ist das Element.", labelStyle);
 
             GUI.Label(new Rect(x, 170f, 500f, 30f), "Ring gegen Bots", labelStyle);
             if (GUI.Button(new Rect(x, 205f, 160f, 60f), "2 Figuren", buttonStyle)) StartRing(2);
@@ -543,7 +693,18 @@ namespace Inkweight.Runtime
 
         private string PurposeTitle()
         {
-            if (purpose == Purpose.RingFigure) return "Runde " + (match.Round + 1) + ": Zeichne deine Figur (oben ist vorne)";
+            if (purpose == Purpose.RingFigure)
+            {
+                string clock = "";
+                if (tuning.DrawTimeSeconds > 0)
+                {
+                    // whole seconds, rounded up
+                    int left = (int)drawClock;
+                    if (left < drawClock) left++;
+                    clock = clockRunning ? "  –  noch " + left + " s" : "  –  " + left + " s ab dem ersten Strich";
+                }
+                return "Runde " + (match.Round + 1) + ": Zeichne deine Figur (oben ist vorne)" + clock;
+            }
             if (purpose == Purpose.SoloHero) return "Zeichne deinen Helden (oben ist vorne)";
             if (purpose == Purpose.SoloWeapon) return "Zeichne deine Wurfwaffe";
             if (purpose == Purpose.SoloEnemy) return run.Wave < InkSolo.Waves ? "Welle " + (run.Wave + 1) + " von " + InkSolo.Waves + ": Zeichne den Gegner" : "Zeichne den Gegner";
@@ -579,9 +740,81 @@ namespace Inkweight.Runtime
                     if (cells[i] != 0) filled++;
                 }
                 if (filled > editor.Budget) continue;
-                editor.Begin(cells, editor.Budget, editor.Kind, editor.Allowed);
+                int started = beginRevision;
+                BeginEdit(cells, editor.Budget, editor.Kind, editor.Allowed);
+                beginRevision = started; // an example counts as a change of this drawing
                 return;
             }
+        }
+
+        // Stat bar ends for the drawing screen (rules version 2, CHANGES_V2.md
+        // C2), all taken from the tuning: armour from armourBase to 300 at 220
+        // ink (more with catch-up ink), sharpness from sharpBase to the value
+        // of a pure line of the minimum size (4.7), speed between a drawing of
+        // the full budget and one of the minimum size.
+        private float ArmourFraction(InkStats st)
+        {
+            double scale = editor.Budget > tuning.FigureBudget ? editor.Budget / tuning.FigureBudget : 1;
+            double end = 300 * scale;
+            return st.N > 0 && end > tuning.ArmourBase ? (float)((st.Armour - tuning.ArmourBase) / (end - tuning.ArmourBase)) : 0f;
+        }
+
+        private float SharpFraction(InkStats st)
+        {
+            double span = tuning.SharpMax + tuning.SharpPurity / (1 + tuning.MinBodyCells / tuning.SharpPurityWeightRef);
+            return st.N > 0 && span > 0 ? (float)((st.Sharpness - tuning.SharpBase) / span) : 0f;
+        }
+
+        private float SpeedFraction(InkStats st)
+        {
+            double lo = tuning.SpeedBase / (1 + editor.Budget / tuning.SpeedWeightRef);
+            double hi = tuning.SpeedBase / (1 + tuning.MinBodyCells / tuning.SpeedWeightRef);
+            return st.N > 0 && hi > lo ? (float)((st.TopSpeed - lo) / (hi - lo)) : 0f;
+        }
+
+        // One stat: value text, bar and the one-line explanation. Returns the next y.
+        private float StatRow(float px, float y, float pw, string text, float fraction, Color colour, string explain)
+        {
+            GUI.Label(new Rect(px, y, pw, 24f), text, labelStyle);
+            Bar(new Rect(px, y + 25f, pw, 10f), fraction, colour);
+            GUI.Label(new Rect(px, y + 36f, pw, 20f), explain, smallStyle);
+            return y + 58f;
+        }
+
+        private InkFigure PreviewFigure()
+        {
+            if (previewFigure == null || previewRevision != editor.Revision)
+            {
+                previewFigure = InkPhysics.BuildFigure(editor.Cells, editor.W, editor.H, tuning, editor.Kind, editor.Budget);
+                previewRevision = editor.Revision;
+            }
+            return previewFigure;
+        }
+
+        private string AskText()
+        {
+            if (ask == Ask.Clear) return "Die ganze Zeichnung löschen?";
+            if (ask == Ask.Preset) return "Die Zeichnung durch ein Beispiel ersetzen?";
+            if (ask == Ask.CancelUpgrade) return "Abbrechen? Die neue Zeichnung geht verloren.";
+            return "Zurück zum Menü? Die Zeichnung geht verloren.";
+        }
+
+        // The open question. Nothing else on the drawing screen reacts while it is shown.
+        private void AskGui(float vw, float vh)
+        {
+            GUI.Box(new Rect(vw * 0.5f - 280f, vh * 0.5f - 110f, 560f, 220f), "");
+            GUI.Label(new Rect(vw * 0.5f - 260f, vh * 0.5f - 100f, 520f, 110f), AskText(), centreStyle);
+            if (GUI.Button(new Rect(vw * 0.5f - 250f, vh * 0.5f + 30f, 240f, 60f), "Ja, verwerfen", buttonStyle))
+            {
+                Ask what = ask;
+                ask = Ask.None;
+                if (what == Ask.Clear) editor.ClearAll();
+                else if (what == Ask.Preset) LoadNextPreset();
+                else if (what == Ask.CancelUpgrade) { message = ""; view = View.SoloShop; }
+                else GoMenu();
+                return;
+            }
+            if (GUI.Button(new Rect(vw * 0.5f + 10f, vh * 0.5f + 30f, 240f, 60f), "Nein, weiterzeichnen", buttonStyle)) ask = Ask.None;
         }
 
         private void DrawGui(float vw, float vh)
@@ -591,6 +824,15 @@ namespace Inkweight.Runtime
             float size = vh - 110f;
             if (size > vw * 0.55f) size = vw * 0.55f;
             Rect canvas = new Rect(20f, 70f, size, size);
+
+            if (ask != Ask.None)
+            {
+                // only the canvas and the question: no painting, no other button
+                editor.EndStroke();
+                GUI.DrawTexture(canvas, editor.Texture);
+                AskGui(vw, vh);
+                return;
+            }
 
             // painting
             Event e = Event.current;
@@ -633,52 +875,87 @@ namespace Inkweight.Runtime
                 GUI.color = old;
                 GUI.enabled = true;
             }
-            y += 56f;
-            if (GUI.Button(new Rect(px, y, pw * 0.5f - 3f, 40f), "Leeren", buttonStyle)) editor.ClearAll();
-            if (GUI.Button(new Rect(px + pw * 0.5f + 3f, y, pw * 0.5f - 3f, 40f), "Beispiel laden", buttonStyle)) LoadNextPreset();
             y += 52f;
+            InkStats st = editor.Stats;
+            // "Leeren" and "Beispiel laden" throw the drawing away: ask once when there is ink
+            if (GUI.Button(new Rect(px, y, pw * 0.5f - 3f, 38f), "Leeren", buttonStyle))
+            {
+                if (st.Filled > 0) { ask = Ask.Clear; return; }
+                editor.ClearAll();
+            }
+            if (GUI.Button(new Rect(px + pw * 0.5f + 3f, y, pw * 0.5f - 3f, 38f), "Beispiel laden", buttonStyle))
+            {
+                if (st.Filled > 0) { ask = Ask.Preset; return; }
+                LoadNextPreset();
+            }
+            y += 44f;
 
             // ink meter and stats
-            InkStats st = editor.Stats;
+            st = editor.Stats;
             float frac = editor.Budget > 0 ? (float)(st.Filled / editor.Budget) : 0f;
-            Bar(new Rect(px, y, pw, 22f), frac, editor.InkEmptyFlash ? new Color(1f, 0.3f, 0.3f, 1f) : new Color(0.25f, 0.3f, 0.5f, 1f));
-            y += 26f;
-            GUI.Label(new Rect(px, y, pw, 26f), "Tinte: " + st.Filled + " von " + I(editor.Budget)
-                + (editor.InkEmptyFlash ? "  –  Tinte leer!" : ""), labelStyle);
-            y += 30f;
-            string stats =
-                "Gewicht: " + st.N + "\n"
-                + "Panzerung: " + F(st.Armour) + "   (Kernfelder: " + st.C + ")\n"
-                + "Schärfe: " + F(st.Sharpness) + "   (scharfe Felder: " + st.S + ")\n"
-                + "Tempo: " + F(st.TopSpeed) + "\n"
-                + "Element: " + ElementName(st.Element) + "\n"
-                + (st.Drips > 0 ? "Tropft ab (zählt nicht): " + st.Drips + " Felder\n" : "");
-            GUI.Label(new Rect(px, y, pw, 170f), stats, labelStyle);
-            y += 175f;
+            Bar(new Rect(px, y, pw, 18f), frac, editor.InkEmptyFlash ? new Color(1f, 0.3f, 0.3f, 1f) : new Color(0.25f, 0.3f, 0.5f, 1f));
+            y += 20f;
+            GUI.Label(new Rect(px, y, pw, 24f), "Tinte: " + st.Filled + " von " + I(editor.Budget)
+                + (editor.InkEmptyFlash ? "  –  Tinte leer!" : "")
+                + (st.Drips > 0 ? "   (" + st.Drips + " Felder tropfen ab und zählen nicht)" : ""), smallStyle);
+            y += 24f;
+            Color barColour = new Color(0.85f, 0.75f, 0.35f, 1f);
+            y = StatRow(px, y, pw,
+                "Gewicht: " + st.N + (st.Push > st.N ? "  (Schub " + F(st.Push) + ")" : ""),
+                editor.Budget > 0 ? (float)(st.N / editor.Budget) : 0f, barColour,
+                "Mehr Tinte schiebt stärker, ist aber langsamer.");
+            y = StatRow(px, y, pw,
+                "Panzerung: " + F(st.Armour) + "  (Kern " + st.C + ", Hohlraum " + I(st.PocketCells) + ")",
+                ArmourFraction(st), barColour,
+                "Gefüllte Flächen panzern, Hohlräume ein wenig.");
+            y = StatRow(px, y, pw,
+                "Schärfe: " + F2(st.Sharpness) + "  (Klingenfelder " + st.S + ")",
+                SharpFraction(st), barColour,
+                "Klingen sind Striche, nur ein Feld dick (gelb).");
+            y = StatRow(px, y, pw,
+                "Tempo: " + F(st.TopSpeed),
+                SpeedFraction(st), barColour,
+                "Weniger Tinte ist schneller.");
+            GUI.Label(new Rect(px, y, pw, 24f), "Element: " + ElementName(st.Element), labelStyle);
+            y += 28f;
 
             if (purpose == Purpose.SoloEnemy && run != null && run.Wave < InkSolo.Waves)
             {
-                GUI.Label(new Rect(px, y, pw, 26f), "Einsatz (mehr Tinte, mehr Gefahr, mehr Beute):", smallStyle);
-                y += 26f;
+                GUI.Label(new Rect(px, y, pw, 22f), "Einsatz (mehr Tinte, mehr Gefahr, mehr Beute):", smallStyle);
+                y += 22f;
                 float sw = (pw - 2f * 6f) / 3f;
                 for (int k = 0; k < tuning.Stakes.Length && k < 3; k++)
                 {
                     int copies = st.N > 0 ? InkSolo.Copies(tuning, run.Wave, k, st.N) : 0;
-                    string text = "x" + tuning.Stakes[k].ToString("0.#", CultureInfo.InvariantCulture) + "\n" + copies + " Gegner";
+                    string text = Mult(tuning.Stakes[k]) + "\n" + copies + " Gegner";
                     if (stakeIndex == k) text = "[" + text + "]";
-                    if (GUI.Button(new Rect(px + k * (sw + 6f), y, sw, 56f), text, buttonStyle)) stakeIndex = k;
+                    if (GUI.Button(new Rect(px + k * (sw + 6f), y, sw, 50f), text, buttonStyle)) stakeIndex = k;
                 }
-                y += 64f;
+                y += 54f;
+                // what the chosen stake does, all numbers from the core
+                if (st.N > 0 && stakeIndex >= 0 && stakeIndex < tuning.Stakes.Length)
+                {
+                    int copies = InkSolo.Copies(tuning, run.Wave, stakeIndex, st.N);
+                    double scale = InkSolo.WaveArmourScale(tuning, run.Wave, stakeIndex, st.N);
+                    double enemyArmour = InkSolo.EnemyArmour(tuning, PreviewFigure(), scale);
+                    double drop = InkSolo.DropValue(tuning, run.Wave, stakeIndex, st.N);
+                    GUI.Label(new Rect(px, y, pw, 40f),
+                        copies + " Gegner mit je " + F(enemyArmour) + " Panzerung, Schaden " + Mult(tuning.StakeDamageMult[stakeIndex])
+                        + ", Tempo " + Mult(tuning.StakeSpeedMult[stakeIndex]) + ". Beute: " + I(drop) + " Tinte je Gegner.", smallStyle);
+                }
+                y += 40f;
             }
 
             string why;
             bool valid = DrawingValid(out why);
             if (message != "") why = message;
-            GUI.Label(new Rect(px, y, pw, 54f), why, smallStyle);
+            GUI.Label(new Rect(px, y, pw, 40f), why, smallStyle);
             if (purpose == Purpose.SoloUpgradeHero || purpose == Purpose.SoloUpgradeWeapon)
             {
-                if (GUI.Button(new Rect(px, vh - 130f, pw, 40f), "Abbrechen (kein Upgrade)", buttonStyle))
+                if (GUI.Button(new Rect(px, vh - 126f, pw, 40f), "Abbrechen (kein Upgrade)", buttonStyle))
                 {
+                    // the redraw is thrown away: ask once when it was changed
+                    if (editor.Revision != beginRevision) { ask = Ask.CancelUpgrade; return; }
                     message = "";
                     view = View.SoloShop;
                     return;
@@ -728,7 +1005,9 @@ namespace Inkweight.Runtime
             {
                 InkBody b = bodies[i];
                 float y = 44f + i * 30f;
-                GUI.Label(new Rect(20f, y, 150f, 26f), SeatName(i) + "  (" + match.Wins[i] + " Siege)", smallStyle);
+                string styleName = BotStyleName(i);
+                GUI.Label(new Rect(20f, y, 150f, 26f),
+                    SeatName(i) + (styleName != "" ? " " + styleName : "") + "  (" + match.Wins[i] + ")", smallStyle);
                 float frac = b.MaxHp > 0 ? (float)(b.Hp / b.MaxHp) : 0f;
                 Bar(new Rect(170f, y + 4f, 160f, 16f), b.Alive ? frac : 0f, i == 0 ? new Color(1f, 0.8f, 0.2f, 1f) : new Color(0.8f, 0.35f, 0.3f, 1f));
                 if (!b.Alive)
@@ -741,6 +1020,7 @@ namespace Inkweight.Runtime
             }
             if (view == View.RingFight)
             {
+                FightNote(vw);
                 FightHints(vw, vh, bodies[0]);
                 return;
             }
@@ -772,7 +1052,8 @@ namespace Inkweight.Runtime
             for (int i = 1; i < bodies.Count; i++) if (bodies[i].Alive) alive++;
             string wave = run.Wave >= InkSolo.Waves ? "Boss" : "Welle " + (run.Wave + 1) + " von " + InkSolo.Waves;
             GUI.Label(new Rect(20f, 10f, 700f, 28f),
-                wave + "   Gegner: " + alive + "   Beutel: " + I(run.Wallet) + "   Punkte: " + I(run.Score)
+                wave + (run.Wave < InkSolo.Waves ? " (Einsatz " + Mult(run.Stake) + ")" : "")
+                + "   Gegner: " + alive + "   Beutel: " + I(run.Wallet) + "   Punkte: " + I(run.Score)
                 + "   Zeit " + I(run.Tick / tuning.TickRate) + " s", labelStyle);
             GUI.Label(new Rect(20f, 44f, 150f, 26f), "Panzerung", smallStyle);
             Bar(new Rect(120f, 48f, 240f, 16f), hero.MaxHp > 0 ? (float)(hero.Hp / hero.MaxHp) : 0f, new Color(1f, 0.8f, 0.2f, 1f));
@@ -785,6 +1066,7 @@ namespace Inkweight.Runtime
             }
             if (view == View.SoloFight)
             {
+                FightNote(vw);
                 FightHints(vw, vh, hero);
                 return;
             }
@@ -821,7 +1103,7 @@ namespace Inkweight.Runtime
             if (GUI.Button(new Rect(x, y, w, 50f), "Mehr Tinte für den Helden (+" + I(tuning.UpgradeHeroInk) + ") – neu zeichnen", buttonStyle))
             {
                 purpose = Purpose.SoloUpgradeHero;
-                editor.Begin(heroCells, run.HeroBudget + tuning.UpgradeHeroInk, InkDrawing.KindFigure, run.Colours);
+                BeginEdit(heroCells, run.HeroBudget + tuning.UpgradeHeroInk, InkDrawing.KindFigure, run.Colours);
                 message = "";
                 view = View.Draw;
             }
@@ -829,7 +1111,7 @@ namespace Inkweight.Runtime
             if (GUI.Button(new Rect(x, y, w, 50f), "Mehr Tinte für die Waffe (+" + I(tuning.UpgradeWeaponInk) + ") – neu zeichnen", buttonStyle))
             {
                 purpose = Purpose.SoloUpgradeWeapon;
-                editor.Begin(weaponCells, run.WeaponBudget + tuning.UpgradeWeaponInk, InkDrawing.KindWeapon, run.Colours);
+                BeginEdit(weaponCells, run.WeaponBudget + tuning.UpgradeWeaponInk, InkDrawing.KindWeapon, run.Colours);
                 message = "";
                 view = View.Draw;
             }
