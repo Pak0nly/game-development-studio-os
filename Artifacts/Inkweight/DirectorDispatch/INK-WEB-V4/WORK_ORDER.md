@@ -48,11 +48,21 @@ number changed. This is the version the Human sees in the morning.
    (thin strokes are blades, filled areas are armour, loose bits drip off),
    and never again after that. If a hint of this kind already exists, make
    sure it is true for version 3 and not in the way.
-4. Run the full automated check (all setups) with `--shots` outside the
+4. Ring difficulty for a first-time player: after the last correction the
+   placeholder bots may be too heavy (a scripted block with a sword lost 0:3,
+   pushed out every round). Choose the bots so that the first matches are a
+   fair fight: for example one heavy and one light placeholder, never two
+   heavy ones against a single human, bots from the player's own gallery
+   preferred once it has enough figures. Measure with a scripted human using
+   three plausible first drawings (block with a sword, stick figure, round
+   blob) over at least four matches each at fight speed-up, and aim for the
+   human winning roughly one match in two; report the numbers. Placeholders
+   stay marked as placeholders.
+5. Run the full automated check (all setups) with `--shots` outside the
    repository; play one solo run at x1 and one at x2 with a heavy block enemy
    yourself through Playwright and say whether the stake and the boss feel
    fair; look at fresh screenshots of every changed screen.
-5. Evidence `Artifacts/Inkweight/Evidence/INK-WEB-V4/`: `WORKER_RESULT.md`
+6. Evidence `Artifacts/Inkweight/Evidence/INK-WEB-V4/`: `WORKER_RESULT.md`
    (verify-worker line, what changed, commands and real output, what you saw,
    anything not done) and a few screenshots.
 
@@ -79,8 +89,8 @@ scope: `Projects/Inkweight/Source/WebPrototype/app`,
   the rules checked against the rules document and the tuning file.
 - The container has restarted twice tonight: keep runs in the foreground and
   write your result file as you go.
-- Time: check `date -u`; aim to return within about 35 minutes and at the
-  latest after 50 minutes.
+- Time: check `date -u`; aim to return within about 45 minutes and at the
+  latest after 60 minutes.
 - Do NOT commit or push.
 
 ## Success
