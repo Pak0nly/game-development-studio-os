@@ -92,7 +92,29 @@ Reviewer task: a55c395b5dc8fe484
 Candidate identity: c6867db8938079ea7c90e530e55cdeb84c95dc61ad65022cbe5805f1e0667e87
 Closure receipt: ad9d9674a3f34429b141db67b96b58f31e60443c80168a84227508d2a7bb532f
 
-Running: INK-WEB-V5 (the four important findings of the last browser review).
+INK-WEB-V5
+Independent review verdict: PASS
+Worker task: ae58c01a423425f64
+Reviewer task: a61577cec63b26e0a
+Candidate identity: b9e366676964f7709ffb8386eddf31136496fbc3dfac6f3c1361152776b6e875
+Closure receipt: fc76444df866d9651d51d53467a4b4b04f7caf46b52b0b386663947a53bc95e2
 
-Next action: wait for the Worker, review and close the order, republish the
-page, give the Human the morning report.
+Nothing is running. The night's authority (ID-04) ended at 09:00 on
+2026-11-20; every further order needs the Human's go.
+
+Known open points to carry into the next order, none of them started:
+- Core: no golden trace pins the crowd condition with a dead third body, the
+  crush multiplication order or the throw-speed operation order (Unity review
+  m-3); the middle solo stake is nearly free against heavy slow enemies and a
+  fast hero can kite a single heavy enemy; the boss is a wall for a hero that
+  runs in; Ring balance target unmet (see `Docs/WORK_STATE.md`).
+- Browser page: minor findings m-6 to m-9 of the INK-WEB-V5 review.
+- Unity: minor finding m-5 of the INK-UNITY-V3 re-review; text fit at 4:3 is
+  an estimate; nothing was ever run in the Editor.
+- The .NET SDK was installed only inside the cloud container (ID-06). Blender
+  was not needed and not installed.
+- Work copies of the two isolated core Workers lie under `.claude/worktrees/`
+  in the cloud container only (local branches, merged, not pushed).
+
+Next action: ask the Human how the prototype felt on the phone and what
+happened when opening the Unity project.

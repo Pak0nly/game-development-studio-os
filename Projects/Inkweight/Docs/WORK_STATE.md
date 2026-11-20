@@ -1,6 +1,6 @@
 # Inkweight Work State
 
-Updated: 2026-11-20 (night, cloud session)
+Updated: 2026-11-20 (morning, end of the cloud night)
 
 ## Present State
 
@@ -19,15 +19,15 @@ preparation, choosing tasks himself (ID-04).
   nearly free against heavy slow enemy designs, and a fast hero can kite a
   single heavy enemy at any stake.
 - **Browser prototype** (`Source/WebPrototype/app`, `dist`): playable on core
-  version 3 and reviewed; every number and rule sentence shown was recomputed
-  independently. Published privately: https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1
-  Review findings still open in the published version: the first-run hint
-  swallows a stroke that starts on it; a newcomer wins about one Ring match in
-  three and a plain blob almost never; solo at x1 has easy waves and then a
-  boss that kills a hero who runs into enemies; on a phone the enemy's real
-  armour can be cut off by a drip warning
-  (`Artifacts/Inkweight/Evidence/INK-WEB-V4/REVIEW.md`). Never played on a real
-  phone.
+  version 3 and reviewed five times; every number and rule sentence shown was
+  recomputed independently. Published privately (version 6):
+  https://claude.ai/artifact/RHKkswGYg1aRR3szCTNSq1
+  First Ring matches use fair placeholder bots (scripted newcomers won 13 of
+  18 and 5 of 6 matches; a plain round blob is still the weakest start). In
+  solo a hero that runs into enemies still usually loses to the boss; the page
+  now warns and gives a tip. Four minor findings open
+  (`Artifacts/Inkweight/Evidence/INK-WEB-V5/REVIEW.md`). Never played on a real
+  phone, never by a human hand; sound was never heard.
 - **Unity project** (`Source/Unity`): C# core bit-exact on core version 3
   (16729 checks, Debug and Release, .NET 8); every rule sentence shown was
   checked against the rules. The Unity layer was only compiled
@@ -108,13 +108,30 @@ Reviewer task: a55c395b5dc8fe484
 Candidate identity: c6867db8938079ea7c90e530e55cdeb84c95dc61ad65022cbe5805f1e0667e87
 Closure receipt: ad9d9674a3f34429b141db67b96b58f31e60443c80168a84227508d2a7bb532f
 
+INK-WEB-V5
+Independent review verdict: PASS
+Worker task: ae58c01a423425f64
+Reviewer task: a61577cec63b26e0a
+Candidate identity: b9e366676964f7709ffb8386eddf31136496fbc3dfac6f3c1361152776b6e875
+Closure receipt: fc76444df866d9651d51d53467a4b4b04f7caf46b52b0b386663947a53bc95e2
+
 Requested model — not independently attested.
 
 ## Running
 
-- INK-WEB-V5: the four important findings of the last browser review.
+Nothing. No Worker or Reviewer is active.
+
+## Human Checkpoint
+
+1. Play the browser prototype on a phone and say whether drawing with ink is
+   fun (the question the prototype exists for).
+2. Open `Source/Unity` in Unity (guide: `Source/Unity/README.md`), press Play,
+   report the self-check line in the menu and any Console errors.
+3. Decide the open design question (filled areas are armour against light
+   shapes in a crowd), and confirm or change ID-05, ID-06, ID-07 and OD-02 to
+   OD-11.
 
 ## Exact Next Step
 
-Wait for the Worker, review and close the order, republish the prototype page,
-then give the Human the morning report.
+Wait for the Human's verdict on the prototype. No further order is authorised:
+the night's authority (ID-04) ended at 09:00 on 2026-11-20.
