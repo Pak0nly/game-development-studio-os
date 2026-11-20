@@ -241,6 +241,14 @@ async function playRing(seats, drawTime) {
       document.createTextNode(match.outReason[s] === 'armour' ? 'Panzer zerbrochen' : 'aus dem Ring geflogen'),
     ]));
     if (match.outReason[w] !== '') lines.push(el('p', { class: 'fine', text: 'Alle gleichzeitig raus: wer näher an der Mitte war, gewinnt.' }));
+    // A single human who lost the round reads what happened and one thing to
+    // try: weight pushes and is hard to push, filled areas are armour.
+    if (humans.length === 1 && !seats[w].human) {
+      const more = over ? '.' : ', die Aufholtinte hilft dabei.';
+      lines.push(el('p', { class: 'fine', id: 'ringTip', text: match.outReason[humans[0]] === 'armour'
+        ? 'Dein Panzer ist zerbrochen. Versuch es mit mehr gefüllter Fläche: die hält mehr aus' + more
+        : 'Du bist aus dem Ring geflogen. Versuch es mit mehr Tinte: schwer schiebt stärker, ist aber träger' + more }));
+    }
     const score = el('p', { class: 'score-big', text: match.wins.join(' : ') });
     const names = el('p', { class: 'fine', text: seats.map((x, s) => name(s)).join(' : ') + ' · wer zuerst ' + tuning.ring.winsToTakeMatch + ' hat, gewinnt' });
     const humanWon = seats[w].human;

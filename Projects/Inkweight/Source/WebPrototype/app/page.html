@@ -73,12 +73,14 @@
       <div id="drawBoard" class="draw-board">
         <canvas id="drawCanvas" class="draw-canvas" aria-label="Zeichenfläche, 32 mal 32 Kästchen"></canvas>
         <div id="drawHint" class="hint" hidden>
-          <p><b>Zeichne los, oben ist vorne.</b> Drei Dinge zählen:</p>
-          <ul>
-            <li>Dünne Striche sind Klingen, auch schräge.</li>
-            <li>Gefüllte Flächen sind Panzer.</li>
-            <li>Was nicht dranhängt, tropft ab.</li>
-          </ul>
+          <div class="hint-text">
+            <p><b>Zeichne los, oben ist vorne.</b></p>
+            <ul>
+              <li>Dünne Striche sind Klingen, auch schräge.</li>
+              <li>Gefüllte Flächen sind Panzer.</li>
+              <li>Was nicht dranhängt, tropft ab.</li>
+            </ul>
+          </div>
           <button id="drawHintOk" class="btn small primary" type="button">Alles klar</button>
         </div>
       </div>
@@ -156,7 +158,7 @@
       <button id="sndSolo" class="btn small snd" type="button" aria-pressed="false">Ton an</button>
     </div>
     <div class="panel">
-      <p>Du zeichnest einen Helden und seine Wurfwaffe. Vor jeder Welle zeichnest du auch den Gegner und bestimmst den Einsatz: ein höherer Einsatz bringt mehr Beute, aber auch mehr oder zähere Gegner, die härter zuschlagen und schneller sind. Schwere Gegner drücken mit ihrem Gewicht, bei höherem Einsatz noch stärker. Dein Panzer heilt zwischen den Wellen nicht von selbst. Nach 5 Wellen kommt der Endgegner aus allen deinen Gegnern; dort gibt es keinen Einsatz und niemand drückt.</p>
+      <p>Du zeichnest einen Helden und seine Wurfwaffe. Vor jeder Welle zeichnest du auch den Gegner und bestimmst den Einsatz: ein höherer Einsatz bringt mehr Beute, aber auch mehr oder zähere Gegner, die härter zuschlagen und schneller sind. Schwere Gegner drücken mit ihrem Gewicht, bei höherem Einsatz noch stärker. Dein Panzer heilt zwischen den Wellen nicht von selbst. Nach 5 Wellen kommt der Endgegner aus allen deinen Gegnern; dort gibt es keinen Einsatz und niemand drückt. Tipp: Halte Abstand, deine Waffe wirft von selbst.</p>
       <p><b>Wähle deine Startfarbe.</b> Schwarz hast du immer; Schwarz ist neutral und hat kein Element.</p>
       <div class="colour-pick">
         <button id="soloC2" class="btn big c2" type="button">Glut<small>schlägt Moos</small></button>
@@ -226,6 +228,7 @@
       <h3>Wurfwaffe</h3>
       <p id="rulesWeapon" class="fine"></p>
       <p id="rulesHonest" class="fine honest">Alle Zahlen hier sind Testwerte dieses Prototyps. Nichts davon ist endgültig entschieden.</p>
+      <p class="rules-end"><button id="rulesClose2" class="btn small" type="button">Schließen</button></p>
     </div>
   </div>
 

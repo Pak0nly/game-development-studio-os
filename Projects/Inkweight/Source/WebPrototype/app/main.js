@@ -195,7 +195,7 @@ $('btnFree').addEventListener('click', async () => {
       + ', dazu mehr Beute und mehr oder zähere Gegner. Jeder Gegner läuft ' + num(so.enemySpeedBase, 0) + ' Kästchen pro Sekunde plus ' + pctText(so.enemySpeedMult)
       + ' % vom Tempo seiner Zeichnung. Als Gegner hat eine Zeichnung eigene Werte: unter den Einsatz-Knöpfen steht, was ein Treffer genau dieses Gegners deinem Helden nimmt, wie schnell er läuft und wie viel Panzer er hat. '
       + (so.bossCrushMult === 0 ? 'Im Endkampf gibt es keinen Einsatz, und dort drückt niemand: ' : 'Im Endkampf gibt es keinen Einsatz: ')
-      + 'eine stumpfe Berührung macht dort ' + num(tuning.stats.bluntDamage * so.enemyDamageMult, 2) + ' Schaden. Dein Panzer heilt nur durch „Flicken“.';
+      + 'eine stumpfe Berührung macht dort ' + num(tuning.stats.bluntDamage * so.enemyDamageMult, 2) + ' Schaden (vor dem Element). Dein Panzer heilt nur durch „Flicken“.';
     // The thrown weapon: none of the figure lines about armour, top speed or
     // the lower limit of a cut hold for it (core/solo.js, soloStep).
     const sec = (n) => num(core.soloThrowIntervalTicks(tuning, n) / tuning.physics.tickRate, 2);
@@ -212,6 +212,7 @@ $('btnFree').addEventListener('click', async () => {
   $('btnRules').addEventListener('click', open);
   $('drawRules').addEventListener('click', open);
   $('rulesClose').addEventListener('click', () => { sfx('click'); layer.hidden = true; });
+  $('rulesClose2').addEventListener('click', () => { sfx('click'); layer.hidden = true; });
 }
 
 // ---- gallery

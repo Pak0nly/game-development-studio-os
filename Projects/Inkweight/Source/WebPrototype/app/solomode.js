@@ -74,7 +74,7 @@ async function playSolo(startColour) {
         title: 'Welle ' + waveNo + ' von ' + core.SOLO_WAVES + ': dein Gegner',
         sub: 'Klein = Schwarm, groß = Brocken.',
         kind: 'figure', budget: so.enemyInkBudget, canPick: true, initial: lastEnemy,
-        backLabel: 'Ende', backConfirm: true, endAsk: 'Lauf beenden?', endMsg: 'Noch einmal tippen, dann endet der ganze Lauf.', doneLabel: 'In den Kampf',
+        rowNote: 'als Figur', backLabel: 'Ende', backConfirm: true, endAsk: 'Lauf beenden?', endMsg: 'Noch einmal tippen, dann endet der ganze Lauf.', doneLabel: 'In den Kampf',
         extra: (box) => {
           const buttons = [];
           const wrap = el('div', { class: 'stakes', role: 'group', 'aria-label': 'Einsatz' });
@@ -85,7 +85,10 @@ async function playSolo(startColour) {
             wrap.append(b);
           }
           box.append(wrap);
-          const noteEl = el('p', { class: 'fine stake-note', id: 'stakeNote' });
+          // two fixed lines: the copy's real values, then a warning or a note
+          const lineA = el('span', { id: 'stakeLine' });
+          const lineB = el('span', { id: 'stakeSoft' });
+          const noteEl = el('p', { class: 'fine stake-note', id: 'stakeNote' }, [lineA, lineB]);
           box.append(noteEl);
           let lastN = 0;
           let lastStats = null;
@@ -125,18 +128,21 @@ async function playSolo(startColour) {
             stakeText = text;
             show();
           }
-          // one line of fixed height: a warning of the drawing screen takes it over
+          // Two lines of fixed height. The first always carries the stake
+          // line with the copy's real touch, speed and armour, so no warning
+          // can push those out. The second carries a warning that stops
+          // nothing (drips, ink used up) or says what the rows above are. A
+          // warning that needs an answer ("Lauf beenden?") takes both lines.
           let stakeText = '';
           let warnText = '';
           let softText = '';
           function show() {
-            // a warning that stops nothing (drips, ink used up) rides along with the stake line
-            // The line is cut at its end on a narrow screen: a drip warning
-            // (something to fix) goes first, "ink is empty" (the meter shows
-            // it too) goes last.
-            const dripFirst = softText.indexOf('tropf') !== -1;
-            noteEl.textContent = softText ? (dripFirst ? softText + ' · ' + stakeText : stakeText + ' · ' + softText) : (warnText || stakeText);
-            noteEl.classList.toggle('warn', warnText !== '' && softText === '');
+            const hard = warnText !== '' && softText === '';
+            lineA.textContent = hard ? warnText : stakeText;
+            lineA.style.whiteSpace = hard ? 'normal' : '';
+            lineB.textContent = hard ? '' : (softText || (lastN > 0 ? 'Die Zeilen oben zeigen die Zeichnung als Figur.' : ''));
+            lineB.classList.toggle('soft', !hard && softText !== '');
+            noteEl.classList.toggle('warn', hard);
           }
           paint.setMsg = (text, warn, soft) => { warnText = warn ? text : ''; softText = soft || ''; show(); };
           paint(null);
@@ -151,9 +157,17 @@ async function playSolo(startColour) {
       fightStake = stake > 0 ? ' · Einsatz ' + stakeLabel(stake) : '';
     } else {
       clearHud();
+      // What is coming, from the core (solo.js soloStartBoss): the boss keeps
+      // the armour of the merged drawing times bossArmourMult, and every wave
+      // design sends bossEscortCopies copies along.
+      const bossStats = core.buildFigure(core.soloBossCells(run), W, H, tuning, 'figure', W * H).stats;
+      const bossArmour = Math.round(bossStats.armour * so.bossArmourMult);
+      const escorts = run.enemyDrawings.length * so.bossEscortCopies;
       const r = await fightOverlay('Der Endgegner', [
         el('div', { class: 'lineup' }, [el('div', { class: 'card' }, [thumbCanvas(core.soloBossCells(run), 64), el('span', { class: 'card-name', text: 'Alle in einem' })])]),
         el('p', { text: 'Er besteht aus allen Gegnern, die du gezeichnet hast, und bringt je einen davon mit.' }),
+        el('p', { id: 'bossFacts', text: 'Sein Panzer: ' + bossArmour + ' · Begleiter: ' + escorts + ' · dein Panzer: ' + Math.ceil(run.heroHp) + ' von ' + Math.round(run.heroMaxHp) }),
+        el('p', { id: 'bossTip', text: 'Tipp: Halte Abstand. Deine Waffe wirft von selbst, und dein Panzer heilt im Kampf nicht.' }),
         el('p', { class: 'fine', text: 'Hier gibt es keinen Einsatz: alle schlagen in Grundstärke zu, und auch schwere Gegner drücken hier nicht mit ihrem Gewicht.' }),
       ], 'In den Kampf', 'Zum Menü');
       if (r !== 'primary') { goHome(); return; }

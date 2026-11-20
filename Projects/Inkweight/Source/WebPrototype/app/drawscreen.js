@@ -146,11 +146,14 @@ function updatePanel() {
     else wWhy = 'träge · dicke Hülle schiebt härter';
   }
   setWhy('stWeightWhy', wWhy);
-  setWhy('stArmourWhy', has ? 'volle Fläche schützt · ' + st.C + (st.C === 1 ? ' Kern-Punkt' : ' Kern-Punkte') : 'volle Flächen halten mehr aus');
+  // On the solo enemy screen (rowNote) the rows say that they describe the
+  // drawing as a figure: the wave copy has its own armour and speed below.
+  const rowNote = s.rowNote ? s.rowNote + ' · ' : '';
+  setWhy('stArmourWhy', has ? rowNote + (st.C === 0 ? 'kein Kern-Punkt · jedes Kästchen zählt etwas' : 'volle Fläche schützt · ' + st.C + (st.C === 1 ? ' Kern-Punkt' : ' Kern-Punkte')) : 'volle Flächen halten mehr aus');
   const cut = num(tst.sharpArmourCut * 100, 1);
   setWhy('stSharpWhy', !has ? 'dünne Striche sind Klingen, auch schräge'
     : (st.S > 0 ? st.S + (st.S === 1 ? ' Klinge' : ' Klingen') + ' · Schnitt: auch ' + cut + ' % Panzer' : 'keine Klinge · dünner Strich schneidet'));
-  setWhy('stSpeedWhy', 'Kästchen pro Sekunde · leicht ist flink');
+  setWhy('stSpeedWhy', (has ? rowNote : '') + 'Kästchen pro Sekunde · leicht ist flink');
   // bar ends are the real ranges of valid drawings with this much ink
   setBar('stWeightBar', st.N / s.budget);
   setBar('stArmourBar', has ? st.armour / (tst.armourBase + 1.1 * s.budget) : 0);
@@ -463,6 +466,12 @@ function layout() {
   canvas.style.width = size + 'px';
   canvas.style.height = size + 'px';
   fitCanvas(canvas, size, size);
+  // the first-run hint sits on the top edge of the sheet, never wider than it
+  const hint = $('drawHint');
+  hint.style.left = (canvas.offsetLeft + 6) + 'px';
+  hint.style.top = (canvas.offsetTop + 6) + 'px';
+  hint.style.right = 'auto';
+  hint.style.width = (size - 12) + 'px';
   fitCanvas(preview, preview.clientWidth || 52, preview.clientHeight || 52);
 }
 if (typeof ResizeObserver === 'function') new ResizeObserver(() => { if (S) layout(); }).observe($('drawBoard'));
@@ -643,7 +652,7 @@ export function openDraw(opts) {
     }
     if (filled > budget) { cells = core.emptyDrawing(W, H).cells; filled = 0; }
     S = {
-      resolve, kind, budget, allowed, cells, filled,
+      resolve, kind, budget, allowed, cells, filled, rowNote: opts.rowNote || '',
       mark: new Array(W * H).fill(0),
       undo: [], tool: 1, brush: 1,
       stats: null, onStats: null,
