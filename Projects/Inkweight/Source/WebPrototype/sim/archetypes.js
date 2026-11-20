@@ -81,6 +81,13 @@ export const ARCHETYPES = [
     set(c, 16, 7, v); set(c, 16, 9, v); set(c, 16, 11, v);
   }, true),
   mk('splinter', 1, 'small', 'optimiser: the smallest valid blade, 12 cells (fastest, all sharp)', (c, v) => rect(c, 16, 10, 16, 21, v), true),
+  // from the INK-CORE-V2 review (finding I5): thick empty shells
+  mk('hoop2', 3, 'hollow', 'optimiser: empty box with walls two cells thick near the canvas border, 216 ink', (c, v) => {
+    rect(c, 1, 1, 29, 29, v); rect(c, 3, 3, 27, 27, 0);
+  }, true),
+  mk('hoop3', 4, 'hollow', 'optimiser: empty box with walls three cells thick, 216 ink', (c, v) => {
+    rect(c, 5, 5, 25, 25, v); rect(c, 8, 8, 22, 22, 0);
+  }, true),
 ];
 
 export function archetype(name) {

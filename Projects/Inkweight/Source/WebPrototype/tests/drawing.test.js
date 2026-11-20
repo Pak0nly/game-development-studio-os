@@ -120,7 +120,12 @@ test('enclosed space and pocket cells, hand-derived', () => {
   const lp = blank(); rect(lp, 4, 4, 27, 27, 1); rect(lp, 5, 5, 26, 26, 0);
   const sl = stats(lp);
   assert.equal(sl.enclosed, 22 * 22); assert.equal(sl.P, 20 * 20); assert.equal(sl.S, sl.N);
-  assert.equal(sl.armour, T.stats.armourBase);
+  assert.equal(sl.pocketCells, 0);
+  assert.equal(sl.armour, T.stats.armourBase + T.stats.armourPerCell * sl.N);
+  assert.equal(sl.push, sl.N, 'no pocket cells counted, so it pushes with its ink only');
+  assert.equal(sf.pocketCells, Math.min(100, T.stats.pocketCapPerCell * 112));
+  assert.equal(sf.push, sf.N + T.stats.pushPerPocket * sf.pocketCells);
+  assert.equal(buildFigure(fr, W, H, T, 'figure').mass, sf.push);
   // a gap in the wall opens the space, also a diagonal gap
   const open = fr.slice(); set(open, 8, 15, 0); set(open, 9, 15, 0);
   assert.equal(stats(open).enclosed, 0);
@@ -205,4 +210,23 @@ test('figure template lists body cells in index order with local coordinates', (
   assert.equal(f.grid[0], -1);
   assert.equal(f.boundary.length, 12);
   assert.equal(f.mass, 16);
+});
+
+// Review finding I5: "filled areas are armour" must be visibly true
+test('filled areas are armour: solids out-armour lines, dots and every hollow shell of the same ink', () => {
+  const a = (name) => stats(ARCHETYPES.find((x) => x.name === name).cells);
+  const disc = a('disc'); const line = a('line'); const dot = a('dot');
+  assert.ok(disc.armour >= 2.5 * line.armour, 'disc ' + disc.armour + ' against line ' + line.armour);
+  assert.ok(dot.armour < 0.5 * disc.armour, 'dot ' + dot.armour + ' against disc ' + disc.armour);
+  for (const hollow of ['ring', 'frame', 'hoop', 'hoop2', 'hoop3']) {
+    const h = a(hollow);
+    const side = Math.floor(Math.sqrt(h.N));
+    const solid = blank(); rect(solid, 0, 0, side - 1, side - 1, 1); // a filled square of at most the same ink
+    const s = stats(solid);
+    assert.ok(s.N <= h.N);
+    assert.ok(h.armour < s.armour, hollow + ' ' + h.armour + ' against a filled square of ' + s.N + ' cells with ' + s.armour);
+  }
+  // the hardest case: all ink in a thick shell with the largest pocket
+  const shell = blank(); rect(shell, 1, 1, 29, 29, 1); rect(shell, 3, 3, 27, 27, 0);
+  assert.ok(stats(shell).armour < a('disc').armour);
 });

@@ -137,7 +137,7 @@ test('contact damage: sharp or blunt, element multiplier, cooldown per direction
       const key = e.from + '>' + e.to;
       if (lastHit[key] !== undefined) assert.ok(i - lastHit[key] >= T.physics.hitCooldownTicks, 'cooldown respected');
       lastHit[key] = i;
-      if (e.sharp) assert.equal(e.damage, Math.max(T.stats.bluntDamage, w.bodies[e.from].fig.stats.sharpness));
+      if (e.sharp) assert.equal(e.damage, Math.max(T.stats.bluntDamage, w.bodies[e.from].fig.stats.sharpness) + T.stats.sharpArmourCut * w.bodies[e.to].maxHp);
       else assert.equal(e.damage, T.stats.bluntDamage);
     }
   }

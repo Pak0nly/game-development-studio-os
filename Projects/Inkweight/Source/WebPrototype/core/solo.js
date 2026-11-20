@@ -104,33 +104,43 @@ function beginFight(tuning, run, enemyBodies) {
   run.phase = 'fight';
 }
 
-// Armour of one enemy copy: a small flat part plus enemyArmourMult times the
-// armour the drawing has above the flat base every figure gets. A swarm of
-// thin copies is therefore fragile, a filled brute is tough.
-export function soloEnemyArmour(tuning, fig) {
+// How much of the staked wave budget each copy carries, compared with what a
+// copy costs: budget * stake / (copies * (N + copyInkOverhead)), limited to
+// copyArmourScaleMin .. copyArmourScaleMax. Above 1 when the copy limit leaves
+// ink unspent, below 1 when the budget does not even pay for one copy.
+export function soloWaveArmourScale(tuning, waveIndex, stakeIndex, N) {
   const so = tuning.solo;
-  return so.enemyArmourBase + so.enemyArmourMult * (fig.stats.armour - tuning.stats.armourBase);
+  const copies = soloCopies(tuning, waveIndex, stakeIndex, N);
+  let scale = so.waveBudgets[waveIndex] * so.stakes[stakeIndex] / (copies * (N + so.copyInkOverhead));
+  if (scale < so.copyArmourScaleMin) scale = so.copyArmourScaleMin;
+  if (scale > so.copyArmourScaleMax) scale = so.copyArmourScaleMax;
+  return scale;
+}
+
+// Armour of one enemy copy: enemyArmourMult times the armour of the drawing,
+// times the wave scale (1 for boss escorts).
+export function soloEnemyArmour(tuning, fig, scale) {
+  return tuning.solo.enemyArmourMult * fig.stats.armour * scale;
 }
 
 // isBoss: the boss keeps its full armour times bossArmourMult.
-function spawnEnemy(tuning, run, fig, isBoss, stakeIndex) {
+function spawnEnemy(tuning, run, fig, isBoss, stakeIndex, scale) {
   const so = tuning.solo;
   const u = randomUnit(run);
   const d = so.arenaRadius - so.enemySpawnInset;
   const body = createBody(fig, u[0] * d, u[1] * d, -u[0], -u[1], 1, 1,
     so.enemySpeedMult * so.stakeSpeedMult[stakeIndex], so.enemyDamageMult * so.stakeDamageMult[stakeIndex]);
-  body.hp = isBoss ? fig.stats.armour * so.bossArmourMult : soloEnemyArmour(tuning, fig);
+  body.hp = isBoss ? fig.stats.armour * so.bossArmourMult : soloEnemyArmour(tuning, fig, scale);
   body.maxHp = body.hp;
   return body;
 }
 
-// Ink of one drop in a wave: the whole staked wave budget is paid out over
-// the copies, and a drop is never worth less than the enemy's own ink.
+// Ink of one drop in a wave: the staked wave budget divided by the copies,
+// rounded down. A wave never pays more than its staked budget.
 export function soloDropValue(tuning, waveIndex, stakeIndex, N) {
   const so = tuning.solo;
   const copies = soloCopies(tuning, waveIndex, stakeIndex, N);
-  const share = Math.floor(so.waveBudgets[waveIndex] * so.stakes[stakeIndex] / copies);
-  return share > N ? share : N;
+  return Math.floor(so.waveBudgets[waveIndex] * so.stakes[stakeIndex] / copies);
 }
 
 // Start wave run.wave (0..4) with the player's enemy drawing and stake index.
@@ -146,8 +156,9 @@ export function soloStartWave(tuning, run, enemyCells, stakeIndex) {
   run.stake = tuning.solo.stakes[stakeIndex];
   run.stakeIndex = stakeIndex;
   run.dropValue = soloDropValue(tuning, run.wave, stakeIndex, fig.stats.N);
+  const scale = soloWaveArmourScale(tuning, run.wave, stakeIndex, fig.stats.N);
   const enemies = [];
-  for (let i = 0; i < run.copies; i++) enemies.push(spawnEnemy(tuning, run, fig, false, stakeIndex));
+  for (let i = 0; i < run.copies; i++) enemies.push(spawnEnemy(tuning, run, fig, false, stakeIndex, scale));
   beginFight(tuning, run, enemies);
 }
 
@@ -169,10 +180,10 @@ export function soloStartBoss(tuning, run) {
   const so = tuning.solo;
   const total = run.W * run.H;
   const bossFig = buildFigure(soloBossCells(run), run.W, run.H, tuning, 'figure', total);
-  const enemies = [spawnEnemy(tuning, run, bossFig, true, 0)];
+  const enemies = [spawnEnemy(tuning, run, bossFig, true, 0, 1)];
   for (let w = 0; w < run.enemyDrawings.length; w++) {
     const fig = buildFigure(run.enemyDrawings[w], run.W, run.H, tuning, 'figure', total);
-    for (let c = 0; c < so.bossEscortCopies; c++) enemies.push(spawnEnemy(tuning, run, fig, false, 0));
+    for (let c = 0; c < so.bossEscortCopies; c++) enemies.push(spawnEnemy(tuning, run, fig, false, 0, 1));
   }
   run.copies = enemies.length;
   run.stake = 1;

@@ -235,8 +235,9 @@ export function computeStats(cells, W, H, tuning, kind, budget) {
     }
     if (!tie && bestCount > 0) element = best;
   }
-  // enclosed space: pocket cells count as armour, at most pocketCapPerCell for
-  // every body cell that is not a sharp cell (a wall of blade cells holds nothing)
+  // enclosed space: pocket cells count (a little as armour, more as push
+  // weight), at most pocketCapPerCell for every body cell that is not a sharp
+  // cell (a wall of blade cells holds nothing)
   const enc = countEnclosed(body, W, H);
   let pocketArmourCells = enc.pockets;
   if (pocketArmourCells > st.pocketCapPerCell * (N - S)) pocketArmourCells = st.pocketCapPerCell * (N - S);
@@ -250,6 +251,8 @@ export function computeStats(cells, W, H, tuning, kind, budget) {
     N, C, S,
     enclosed: enc.enclosed,
     P: enc.pockets,
+    pocketCells: pocketArmourCells,
+    push: N + st.pushPerPocket * pocketArmourCells,
     colourCounts: [colourCounts[1], colourCounts[2], colourCounts[3], colourCounts[4]],
     element,
     bigEnough,

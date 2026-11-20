@@ -237,7 +237,7 @@ export function runRingBalanceAll(overrides, opts) {
 // Solo smoke: bot hero through the five waves against one enemy design per run.
 export function runSoloSmoke(tuning, seeds) {
   const heroes = [['disc', 0], ['hedgehog', 1], ['star', 0], ['line', 0]];
-  const enemies = ['dot', 'needle', 'block', 'comb', 'cross', 'splinter'];
+  const enemies = ['dot', 'needle', 'block', 'comb', 'cross', 'splinter', 'spiral'];
   const weapon = recolour(archetype('needle').cells, 1);
   const out = [];
   for (const [heroName, style] of heroes) {

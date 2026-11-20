@@ -12,10 +12,11 @@
     "weaponMinBodyCells": 12
   },
   "stats": {
-    "armourBase": 170,
-    "armourPerCore": 0.7,
-    "armourPerCell": 0,
-    "armourPerPocket": 0.8,
+    "armourBase": 60,
+    "armourPerCore": 1,
+    "armourPerCell": 0.3,
+    "armourPerPocket": 0.3,
+    "pushPerPocket": 0.5,
     "pocketCapPerCell": 1,
     "sharpBase": 1,
     "sharpMax": 1.2,
@@ -24,7 +25,8 @@
     "sharpPurityWeightRef": 60,
     "speedBase": 38,
     "speedWeightRef": 70,
-    "bluntDamage": 1.2
+    "bluntDamage": 1.2,
+    "sharpArmourCut": 0.01
   },
   "element": {
     "minColouredPercent": 30,
@@ -53,6 +55,9 @@
     "dashRestitution": 0.3,
     "maxStepCells": 0.4,
     "maxSubSteps": 8,
+    "deepNormalShare": 0.5,
+    "deepContactDepth": 0.25,
+    "extraSeparationPasses": 2,
     "hitKnockbackPerDamage": 39
   },
   "ring": {
@@ -68,7 +73,7 @@
     "shrinkEndTick": 2700,
     "suddenDeathTick": 3600,
     "suddenDeathShrinkPerTick": 0.05,
-    "startDistanceFraction": 0.55,
+    "startDistanceFraction": 0.6,
     "winsToTakeMatch": 3,
     "catchUpPercentPerLostRound": 15,
     "catchUpMaxSteps": 4,
@@ -121,8 +126,9 @@
     "enemyInkBudget": 220,
     "enemySpawnInset": 6,
     "enemySpeedMult": 0.55,
-    "enemyArmourBase": 30,
-    "enemyArmourMult": 1.2,
+    "enemyArmourMult": 0.4,
+    "copyArmourScaleMin": 0.5,
+    "copyArmourScaleMax": 2,
     "enemyDamageMult": 0.6,
     "enemyDashRange": 8,
     "enemyDashChancePercent": 2,
