@@ -4,7 +4,7 @@ import assert from 'node:assert/strict';
 import {
   buildFigure, createBody, createWorld, stepWorld, ringCreateMatch, ringStartRound, ringStep, ringBotInputs,
 } from '../core/index.js';
-import { overlap } from '../sim/overlap_probe.js';
+import { overlap, probePair, probeCrowd } from '../sim/overlap_probe.js';
 import { loadTuning } from '../tools/load_tuning.js';
 import { blank, rect, W, H, archetype } from '../sim/archetypes.js';
 
@@ -208,6 +208,40 @@ test('I4: meshing teeth (comb against hedgehog) overlap deeper than 0.5 in under
     }
   }
   assert.ok(deep * 100 < ticks, deep + ' of ' + ticks + ' ticks');
+});
+
+// R2 (INK-CORE-V3): the meshing bound for teeth against teeth and for crowds.
+// Deep contacts are pushed again up to extraSeparationPasses times and, with
+// three or more bodies, the pairs are relaxed up to crowdRelaxPasses times.
+test('R2: comb against comb overlaps deeper than 0.5 in under 0.5 percent of ticks, never for half a second', () => {
+  const r = probePair(T, fig('comb'), fig('comb'), 2);
+  assert.ok(r.ticks > 3000);
+  assert.ok(r.deep * 200 < r.ticks, r.deep + ' of ' + r.ticks + ' ticks');
+  assert.ok(r.run < 30, 'longest row ' + r.run);
+});
+
+test('R2: random four-figure rounds overlap deeper than 0.5 in under 0.5 percent of ticks', () => {
+  const r = probeCrowd(T, 8);
+  assert.ok(r.ticks > 8000);
+  assert.ok(r.deep * 200 < r.ticks, r.deep + ' of ' + r.ticks + ' ticks');
+});
+
+test('R2: the crowd relaxation moves positions only and leaves duels alone', () => {
+  // three blocks of one team (no hits) pressed into each other at rest: they come apart, nobody gains speed
+  const bs = [createBody(fig('block'), -6, 0, 0, -1, 0), createBody(fig('block'), 0, 0, 0, -1, 0), createBody(fig('block'), 6, 0, 0, -1, 0)];
+  const w = createWorld(bs, 0);
+  for (let t = 0; t < 30; t++) stepWorld(w, [], T);
+  for (let i = 0; i < 3; i++) { assert.equal(bs[i].vx, 0); assert.equal(bs[i].vy, 0); }
+  assert.ok(overlap(bs[0], bs[1]) <= 0.5 && overlap(bs[1], bs[2]) <= 0.5);
+  // a duel is bit-identical with and without the relaxation
+  const T0 = loadTuning(); T0.physics.crowdRelaxPasses = 0;
+  const run = (tun) => {
+    const m = ringCreateMatch(tun, 2, 5);
+    ringStartRound(tun, m, [buildFigure(archetype('comb').cells, W, H, tun, 'figure'), buildFigure(archetype('hedgehog').cells, W, H, tun, 'figure')]);
+    while (m.phase === 'fight') ringStep(tun, m, ringBotInputs(tun, m, null));
+    return [m.tick, m.roundWinner, m.world.bodies[0].x, m.world.bodies[1].hp];
+  };
+  assert.deepEqual(run(T), run(T0));
 });
 
 // m2

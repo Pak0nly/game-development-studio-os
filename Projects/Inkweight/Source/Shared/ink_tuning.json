@@ -57,7 +57,8 @@
     "maxSubSteps": 8,
     "deepNormalShare": 0.5,
     "deepContactDepth": 0.25,
-    "extraSeparationPasses": 2,
+    "extraSeparationPasses": 8,
+    "crowdRelaxPasses": 4,
     "hitKnockbackPerDamage": 39
   },
   "ring": {

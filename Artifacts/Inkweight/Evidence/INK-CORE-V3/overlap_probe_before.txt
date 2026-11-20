@@ -1,0 +1,18 @@
+overrides {"physics.extraSeparationPasses":2,"physics.crowdRelaxPasses":0}
+line turns into block, 400 ticks: ticks with overlap > 0.5: 0, max 0.012, after 2 s idle 0.000
+line vs block          rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 22964, max 0.06
+needle vs disc         rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 24758, max 0.24
+lance vs shield        rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 23791, max 0.22
+cross vs block         rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 23610, max 0.07
+star vs wedge          rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 24912, max 0.25
+splinter vs disc       rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 27889, max 0.24
+spiral vs block        rounds 12, rounds with overlap > 0.5: 0, ticks > 0.5: 0 of 27507, max 0.04
+comb vs hedgehog       rounds 12, rounds with overlap > 0.5: 8, ticks > 0.5: 52 of 21305, max 0.79
+teeth pairs (6 seeds, both styles, every tick):
+comb vs comb           ticks 20131, above 0.5: 238 (1.182 %), max 0.97, run 58
+hedgehog vs hedgehog   ticks 26500, above 0.5: 10 (0.038 %), max 0.91, run 5
+comb vs hedgehog       ticks 21305, above 0.5: 52 (0.244 %), max 0.79, run 8
+comb vs grille         ticks 16174, above 0.5: 0 (0.000 %), max 0.12, run 0
+grille vs spiral       ticks 16337, above 0.5: 0 (0.000 %), max 0.05, run 0
+comb vs star           ticks 17862, above 0.5: 4 (0.022 %), max 0.66, run 2
+30 four-figure rounds  ticks 51105, above 0.5: 247 (0.483 %), max 0.99, run 25
