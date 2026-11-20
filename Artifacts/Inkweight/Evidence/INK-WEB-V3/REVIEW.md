@@ -1,6 +1,129 @@
 # INK-WEB-V3 Independent Review
 
-Independent review verdict: FAIL
+Independent review verdict: PASS
+
+## Re-review after correction round 1
+
+Reviewer: QA Lead (same independent Reviewer task), 2026-11-20 about 03:09 to
+03:35 UTC. Candidate: HEAD `a2699a0` ("INK-WEB-V3 correction round 1 (re-review
+pending)"). Nothing was fixed, committed or pushed by me; this file is the only
+file I changed; the rebuild changed no dist file.
+
+PASS because: F-1 and F-2 are corrected and every number and sentence I checked
+on the drawing screen, in the rules panel and in the solo stakes is true for
+rules version 2; the canvas no longer moves during or after the first stroke;
+N-1 stays fixed; no blocker; the automated check passes in all seven setups;
+the page rules and the scope hold.
+
+### What I ran (real output)
+
+```text
+$ git diff --stat 7231a04 HEAD -- core Source/Shared        -> empty
+$ git diff --name-only 4a0f3e6 HEAD                        -> only WebPrototype/app, build/verify.cjs, dist, Artifacts
+$ node build/build.mjs
+BUILD OK modules=20 inkweight.html=218330B inkweight.artifact.html=218203B
+sha256 before = after (f57b2b0b...a326 artifact, 704a6dca...0674 html) -> IDENTICAL
+$ node build/verify.cjs all --shots /tmp/rv3b
+PASS phone: drew a figure, Ring match finished after 3 rounds, solo run played 5 fights with 4 different shop purchases, 100 rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (74 s)
+PASS landscape: drew a figure, Ring match finished after 3 rounds, solo run played 5 fights with 4 different shop purchases, 90 rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (72 s)
+PASS desktop: drew a figure, Ring match finished after 3 rounds, solo run played 5 fights with 4 different shop purchases, 106 rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (73 s)
+PASS artifact: drew a figure, Ring match finished after 3 rounds, solo run played 5 fights with 4 different shop purchases, 98 rams, rules panel read, 0 console errors, 0 network requests, no sideways scroll (73 s)
+PASS duo: two humans drew in turns, a drawing timed out and got a placeholder, both keyboard zones were held, leaving took two taps, 0 console errors (38 s)
+PASS checks: 21 single checks passed (double taps, asking before discarding, ink empty, finger off the canvas, rotation in a stroke, bot twin, stains, honest stakes, both solo loss paths; version 2: block with blade, diagonal blade, pocket marks, what Ende asks), 0 console errors, 0 network requests (60 s)
+PASS stable: the canvas kept its rectangle before, in and after the first stroke on 15 drawing screens (400 x 780, 400 x 660, 780 x 400), main button always inside the window, shop tap with a second finger works, 0 console errors (55 s)
+VERIFY OK phone landscape desktop artifact duo checks stable
+```
+
+### Truthfulness (my own stats script against the page, 400 x 780)
+
+All 15 drawings of the first review (block, straight blade, diagonal blade,
+stick figure, dot, disc, thin ring, thick shell, 30 %, 29 %, tie, 20 red + 10
+blue, 27 % mixed, loose bits, over-budget scribble) show the same weight,
+armour, sharpness, speed, element and bars as my values; blade marks equal S;
+pocket rings drawn: thick shell 100, thin ring 0, stick figure 0.
+
+| Case | Shown element line | True? |
+|---|---|---|
+| 29 % red | "ab 30 % bunter Tinte (jetzt 29 %)" | yes |
+| 27 % red + blue | "ab 30 % bunter Tinte (jetzt 27 %)" | yes |
+| 30 % red | Glut, "schlägt Moos, verliert gegen Flut" | yes |
+| 20 red + 10 blue | Glut | yes (30 % coloured, red plurality) |
+| 20 red + 20 blue | Neutral, "Gleichstand der Farben: kein Element" | yes |
+
+Stat lines, all true: "träge · dicke Hülle schiebt härter", "Schub 122,0 ·
+Hohlraum schiebt mit" (thick shell, push 122), "Hohlraum zählt erst mit dicker
+Wand" (thin ring, stick head), "volle Fläche schützt · 64 Kern-Punkte" / "1
+Kern-Punkt", "12 Klingen · Schnitt: auch 0,4 % Panzer", "keine Klinge · dünner
+Strich schneidet", "Kästchen pro Sekunde · leicht ist flink", "1 Kästchen hängt
+nicht dran und tropft ab."
+
+Rules panel (read in full): weight (+0,1 per pocket, at most 10 %, definition
+of a Kringel), armour (60, +0,3 per cell, +1 per core cell, +0,3 per pocket
+capped by the non-blade cells), sharpness (2 x 2 rule, blunt 1,2, cut = sharpness
+but at least 1,2, plus 0,4 % of full armour), speed (12 -> 32, 220 -> 9),
+element (30 % coloured ink, plurality, tie neutral, x1,5 / x0,75, circle Glut >
+Moos > Flut > Glut), fight lines: every sentence and number agrees with
+INK_RULES_V2.md sections 3 to 6 and ink_tuning.json. F-2 and m-6 fixed.
+
+Solo stakes, waves 1 to 5 at 400 x 660: every "n Gegner · m Beute" matched my
+formula; notes "×1: Gegner mit +13 % / +7 % / +8 % / +13 % Panzer" and "Gegner in
+Grundstärke" match my armour scale (1,13 / 1,07 / 1,08 / 1,13 / 1,02).
+
+### F-3 canvas (my own measurement)
+
+Free drawing, all 15 drawings at 400 x 780: rectangle 24.5 76.2 351 351
+before, during and after the first stroke and at the end. Same for 5 drawings
+at 400 x 660 and 780 x 400 each. Ring drawing at 400 x 780 and hero, weapon and
+enemy at 400 x 660 in my play runs: no move logged (the first review logged
+346 -> 360 and 192 -> 172 with the same script). Enemy screen main button at
+400 x 660: bottom 652 of 660 (m-1 fixed). F-3 fixed.
+
+### Old findings of the first review
+
+| Finding | State |
+|---|---|
+| F-1 element line | fixed (table above) |
+| F-2 armour line | fixed |
+| F-3 canvas jumps | fixed |
+| m-1 short phone | fixed (652 of 660, canvas 245 px per verify, no move) |
+| m-2 lines cut sideways | fixed for the stat lines; one remains, see r-1 |
+| m-3 grammar | fixed ("1 Kästchen hängt ... tropft ab", "1 Kern-Punkt") |
+| m-4 "mehr Gegner" | fixed ("mehr oder zähere Gegner", intro also says armour does not heal) |
+| m-5 rings that count nothing | fixed (thin ring: 0 rings drawn) |
+| m-6 "wie die Schärfe" | fixed ("mindestens aber 1,2") |
+| m-7 shop tap with a finger down | fixed per the new `stable` check ("Geflickt."); my own runs lifted the finger first, so not reproduced independently |
+| N-1 to N-8 | unchanged from the first review (fixed, N-5/N-7/N-8 in code) |
+
+### Remaining findings (none blocks PASS)
+
+- **r-1 (minor)** Sideways (780 x 400) "Gleichstand der Farben: kein Element"
+  ends in "..." (`stElementWhy` cut). Fix: "Gleichstand: kein Element" in
+  landscape.
+- **r-2 (balance, not a fail reason)** First Ring match is now hard. My
+  phone-size match, figure: 10 x 10 block with a 12-cell sword (112 / 158 / 2,0),
+  steering at the nearest bot from the centre side with Sprint when close,
+  against "Bot 2" placeholder 157 ink / 216 armour (circler) and "Bot 3"
+  hoop 180 / 204 (rusher): 0 : 0 : 3, I was pushed out every round, rounds
+  about 13 to 15 s, match 52 s. The first review's same figure won 3 : 0 against
+  78 and 84 ink placeholders. A first-time player who draws a normal figure
+  with half the ink now has little chance in round 1; the catch-up ink (+15 %)
+  helps only if they redraw bigger. Suggest a first placeholder of about 110
+  to 130 ink (`pickBotDrawing` thresholds in `app/ringmode.js`).
+- **r-3 (minor)** The rules panel now scrolls on a phone and the stat bars
+  are hidden in upright windows up to 700 px; both are said by the Worker and
+  are acceptable.
+
+Play also confirmed: solo x1 with "Flicken" each pause at 400 x 660 won
+including the boss (hero 158 -> 133 -> 119 -> 104 -> 83 -> 38 before the
+heals, 1272 ink); 0 console errors, 0 network requests, no sideways scroll in
+all my runs.
+
+---
+
+# First review (kept)
+
+
+First review verdict (superseded): FAIL
 
 Reviewer: QA Lead (independent Reviewer task; did not build the candidate).
 Date: 2026-11-20, about 02:00 to 03:20 UTC (over the 50-minute target).
