@@ -23,8 +23,6 @@ Vorbereitung dessen."
 
 ## Read first
 
-## Read first
-
 `Projects/Inkweight/Source/Shared/CHANGES_V3.md` (the app checklist),
 `Projects/Inkweight/Docs/INK_RULES_V2.md` (rules as built, now version 3),
 `Artifacts/Inkweight/Evidence/INK-WEB-V3/WORKER_RESULT.md` and `REVIEW.md`
